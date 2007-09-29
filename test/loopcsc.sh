@@ -7,9 +7,8 @@ eval `scramv1 runtime -sh`
 while ( true ) ; 
   do 
   echo "---------------------> Starting CMSRUN " 
-  (set -x; cmsRun  ecal_dqm_sourceclient-live.cfg; sleep 10 )
+  (set -x; cmsRun  csc_dqm_sourceclient-live.cfg; sleep 10 )
 done
-
 
 
 
