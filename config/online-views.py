@@ -35,6 +35,7 @@ views = [
    "Layouts/L1T Layouts/Summary/DTTF_quality",
    "Layouts/L1T Layouts/Summary/DTTF_eta_value",
    "Layouts/L1T Layouts/Summary/DTTF_phi_value",
-   "Layouts/L1T Layouts/Summary/DTTF_ntrack"])
- 
+   "Layouts/L1T Layouts/Summary/DTTF_ntrack"]),
+ ('Strip', [
+   "Layouts/Strip Layouts/SiStrip_Digi_Summary"])
 ]

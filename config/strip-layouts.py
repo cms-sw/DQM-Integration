@@ -1,6 +1,6 @@
-def dtlayout(i, p, *rows): i["Layouts/SiStrip Layouts/" + p] = DQMItem(layout=rows)
+def striplayout(i, p, *rows): i["Layouts/Strip Layouts/" + p] = DQMItem(layout=rows)
 
-dtlayout(dqmitems, "SiStrip_Digi_Summary",
+striplayout(dqmitems, "SiStrip_Digi_Summary",
   ["SiStrip/MechanicalView/TIB/Summary_NumberOfDigis_in_TIB"],
   ["SiStrip/MechanicalView/TOB/Summary_NumberOfDigis_in_TOB"],
   ["SiStrip/MechanicalView/TID/side_0/Summary_NumberOfDigis_in_side_0",
