@@ -21,6 +21,8 @@ server = DQMServerSpec (
     DQMBackendSpec('dqm', 'Client', [ '--collector localhost:9090' ], waitFor = 'commands'),
     DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
     DQMBackendSpec('l1t', 'Layout', [ CONFIGDIR + '/l1t-layouts.py' ]),
+    DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
     DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
+    DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ]),
     DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ])
   ])
