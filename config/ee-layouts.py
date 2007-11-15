@@ -232,39 +232,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-01/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-01"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-01"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-01/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-01"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-02/0-Channel-Global-Integrity",
@@ -455,39 +455,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-02/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-02"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-02"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-02/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-02"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-03/0-Channel-Global-Integrity",
@@ -678,39 +678,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-03/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-03"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-03"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-03/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-03"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-04/0-Channel-Global-Integrity",
@@ -901,39 +901,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-04/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-04"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-04"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-04/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-04"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-05/0-Channel-Global-Integrity",
@@ -1124,39 +1124,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-05/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-05"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-05"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-05/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-05"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-06/0-Channel-Global-Integrity",
@@ -1347,39 +1347,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-06/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-06"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-06"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-06/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-06"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-07/0-Channel-Global-Integrity",
@@ -1570,39 +1570,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-07/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-07"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-07"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-07/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-07"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-08/0-Channel-Global-Integrity",
@@ -1793,39 +1793,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-08/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-08"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-08"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-08/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-08"])
 
 eelayout(dqmitems, "1-Integrity/EE-/EE-09/0-Channel-Global-Integrity",
@@ -2016,39 +2016,39 @@ eelayout(dqmitems, "7-Timing/EE-/EE-09/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE-09"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE-09"])
 
 eelayout(dqmitems, "8-Trigger/EE-/EE-09/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE-09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE-09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE-09"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+01/0-Channel-Global-Integrity",
@@ -2239,39 +2239,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+01/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+01"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+01"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+01/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+01"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+01"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+01"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+02/0-Channel-Global-Integrity",
@@ -2462,39 +2462,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+02/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+02"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+02"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+02/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+02"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+02"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+02"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+03/0-Channel-Global-Integrity",
@@ -2685,39 +2685,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+03/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+03"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+03"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+03/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+03"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+03"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+03"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+04/0-Channel-Global-Integrity",
@@ -2908,39 +2908,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+04/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+04"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+04"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+04/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+04"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+04"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+04"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+05/0-Channel-Global-Integrity",
@@ -3131,39 +3131,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+05/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+05"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+05"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+05/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+05"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+05"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+05"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+06/0-Channel-Global-Integrity",
@@ -3354,39 +3354,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+06/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+06"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+06"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+06/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+06"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+06"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+06"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+07/0-Channel-Global-Integrity",
@@ -3577,39 +3577,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+07/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+07"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+07"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+07/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+07"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+07"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+07"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+08/0-Channel-Global-Integrity",
@@ -3800,39 +3800,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+08/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+08"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+08"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+08/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+08"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+08"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+08"])
 
 eelayout(dqmitems, "1-Integrity/EE+/EE+09/0-Channel-Global-Integrity",
@@ -4023,39 +4023,39 @@ eelayout(dqmitems, "7-Timing/EE+/EE+09/1-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/1-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT EmulError Real Digis EE+09"],
+  ["EcalEndcap/EETriggerTowerTask/EETTT EmulError EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Et map Real Digis EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/2-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 000 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 000 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 000 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/3-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 001 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 001 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 001 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/4-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 011 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 011 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 011 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/5-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 100 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 100 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 100 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/6-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bit 101 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bit 101 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bit 101 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/7-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT Flags Errors Bits 110+111 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFlagError Bits 110+111 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT Flags Real Digis Bits 110+111 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/8-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 0 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 0 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 0 EE+09"])
 
 eelayout(dqmitems, "8-Trigger/EE+/EE+09/9-Trigger",
-  ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Errors Flag 1 EE+09"],
+  ["EcalEndcap/EETriggerTowerClient/EETTT EmulFineGrainVetoError Flag 1 EE+09"],
   ["EcalEndcap/EETriggerTowerClient/EETTT FineGrainVeto Real Digis Flag 1 EE+09"])
 
 eelayout(dqmitems, "9-Cluster/0-Cluster",
