@@ -34,8 +34,8 @@ eelayout(dqmitems, "0-Summary/7-Timing-Summary",
    "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary"])
 
 eelayout(dqmitems, "0-Summary/8-Trigger-Summary",
-  ["EcalEndcap/EESummaryClient/EETTT EE - Et trigger tower quality summary",
-   "EcalEndcap/EESummaryClient/EETTT EE + Et trigger tower quality summary"])
+  ["EcalEndcap/EESummaryClient/EETTT EE - Et trigger tower summary",
+   "EcalEndcap/EESummaryClient/EETTT EE + Et trigger tower summary"])
 
 eelayout(dqmitems, "0-Summary/9-Trigger-Summary",
   ["EcalEndcap/EESummaryClient/EETTT EE - emulator error quality summary",

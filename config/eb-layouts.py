@@ -23,7 +23,7 @@ eblayout(dqmitems, "0-Summary/7-Timing-Summary",
   ["EcalBarrel/EBSummaryClient/EBTMT timing quality summary"])
 
 eblayout(dqmitems, "0-Summary/8-Trigger-Summary",
-  ["EcalBarrel/EBSummaryClient/EBTTT Et trigger tower quality summary"])
+  ["EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary"])
 
 eblayout(dqmitems, "0-Summary/9-Trigger-Summary",
   ["EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary"])
