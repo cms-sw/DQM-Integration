@@ -11,7 +11,7 @@ eblayout(dqmitems, "00-Summary/2-Occupancy-Summary",
   ["EcalBarrel/EBSummaryClient/EBOT occupancy summary"])
 
 eblayout(dqmitems, "00-Summary/3-Cosmic-Summary",
-  ["EcalBarrel/EBSummaryClient/EBCT cosmic quality summary"])
+  ["EcalBarrel/EBSummaryClient/EBCT cosmic summary"])
 
 eblayout(dqmitems, "00-Summary/4-PedestalOnline-Summary",
   ["EcalBarrel/EBSummaryClient/EBPOT pedestal quality summary G12"])

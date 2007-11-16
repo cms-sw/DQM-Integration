@@ -14,8 +14,8 @@ eelayout(dqmitems, "00-Summary/2-Occupancy-Summary",
    "EcalEndcap/EESummaryClient/EEOT EE + occupancy summary"])
 
 eelayout(dqmitems, "00-Summary/3-Cosmic-Summary",
-  ["EcalEndcap/EESummaryClient/EECT EE - cosmic quality summary",
-   "EcalEndcap/EESummaryClient/EECT EE + cosmic quality summary"])
+  ["EcalEndcap/EESummaryClient/EECT EE - cosmic summary",
+   "EcalEndcap/EESummaryClient/EECT EE + cosmic summary"])
 
 eelayout(dqmitems, "00-Summary/4-PedestalOnline-Summary",
   ["EcalEndcap/EESummaryClient/EEPOT EE - pedestal quality summary G12",
