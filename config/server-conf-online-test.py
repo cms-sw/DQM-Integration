@@ -4,7 +4,7 @@ PORT = 8030
 
 envsetup = """
  source ~cmssw/cmsset_default.sh
- source /nfs/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.0.0/etc/profile.d/dependencies-setup.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.0.0/etc/profile.d/dependencies-setup.sh
  export QUIET_ASSERT=a
 """
 
