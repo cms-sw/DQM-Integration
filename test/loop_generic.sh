@@ -12,7 +12,7 @@ cfg=$2
 
 echo "$0: starting loop of ${me} for ${cfg}"
 
-cd $HOME/CMSSW_1_6_0_DAQ3/src/DQM/Integration/test
+cd $HOME/$CMSSW_VERSION/src/DQM/Integration/test
 eval `scramv1 runtime -sh` > /dev/null
 
 CFG=${me}_dqm_sourceclient-${cfg}.cfg

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/CMSSW_1_6_0_DAQ3/src/DQM/Integration/test
+cd $HOME/$CMSSW_VERSION/src/DQM/Integration/test
 eval `scramv1 runtime -sh`
 
 
