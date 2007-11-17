@@ -29,7 +29,7 @@ export CVS_RSH=ssh CVSROOT=:pserver:anonymous@cmscvs.cern.ch:/cvs_server/reposit
 cvs co -r V01-00-10 VisMonitoring/DQMServer
 
 cvs co -r V00-00-01 DQM/Integration
-cvs co -r V00-00-01 DQM/RenderPlugins
+cvs co -r V00-00-04 DQM/RenderPlugins
 cvs co -r V00-04-12 DQM/EcalCommon
 scramv1 b
 
