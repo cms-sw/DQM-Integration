@@ -1,6 +1,6 @@
 
 source ~cmssw/cmsset_default.sh
-CMSSW_VERSION=CMSSW_1_7_0_pre10
+CMSSW_VERSION=CMSSW_1_7_0
 DQM_BASE=/home/dqm                  # Choose a directory of your liking
 GUICONF=$DQM_BASE/config/server-conf-online-test.py
 
@@ -28,9 +28,9 @@ cd src
 export CVS_RSH=ssh CVSROOT=:pserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW
 cvs co -r V01-00-10 VisMonitoring/DQMServer
 
-cvs co -r V00-00-02 DQM/Integration
+cvs co -r V00-00-05 DQM/Integration
 cvs co -r V00-00-04 DQM/RenderPlugins
-cvs co -r V00-04-12 DQM/EcalCommon
+cvs co -r V00-04-13 DQM/EcalCommon
 scramv1 b
 
 ln -s $CMSSW_VERSION/src/DQM/Integration/config $DQM_BASE/config

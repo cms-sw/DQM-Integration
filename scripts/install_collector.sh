@@ -2,7 +2,7 @@
 #!/bin/bash
 
 source ~cmssw/cmsset_default.sh
-CMSSW_VERSION=CMSSW_1_7_0_pre10
+CMSSW_VERSION=CMSSW_1_7_0
 DQM_BASE=/home/dqm                  # Choose a directory of your liking
 mkdir -p $DQM_BASE/collector
 
