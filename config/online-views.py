@@ -53,5 +53,11 @@ views = [
    "Layouts/L1T Layouts/Summary/DTTF_phi_value",
    "Layouts/L1T Layouts/Summary/DTTF_ntrack"]),
  ('Strip', [
-   "Layouts/Strip Layouts/SiStrip_Digi_Summary"])
+   "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary",
+   "Layouts/Strip Layouts/SiStrip_NumberOfClusters_Summary",
+   "Layouts/Strip Layouts/SiStrip_ClusterWidth_Summary",
+   "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary_TIB_Layer1"]),
+ ('Pixel', [
+   "Layouts/Pixel Layouts/Pixel_RawData_Toplevel_Summary",
+   "Layouts/Pixel Layouts/Pixel_Digi_Toplevel_Summary"])
 ]
