@@ -59,5 +59,19 @@ views = [
    "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary_TIB_Layer1"]),
  ('Pixel', [
    "Layouts/Pixel Layouts/Pixel_RawData_Toplevel_Summary",
-   "Layouts/Pixel Layouts/Pixel_Digi_Toplevel_Summary"])
+   "Layouts/Pixel Layouts/Pixel_Digi_Toplevel_Summary"]),
+ ('HCAL', [
+   "Layouts/HCAL Layouts/HCAL Data Format Summary",
+   "Layouts/HCAL Layouts/HCAL Digitization Summary",
+   "Layouts/HCAL Layouts/HCAL Reconstruction Summary",
+   "Layouts/HCAL Layouts/HCAL Reconstruction Threshold Summary",
+   "Layouts/HCAL Layouts/HCAL Hot Cell Summary",
+   "Layouts/HCAL Layouts/HCAL Hot Cell NADA Summary",
+   "Layouts/HCAL Layouts/HCAL Dead Cell Summary",
+   "Layouts/HCAL Layouts/HCAL Pedestal Summary",
+   "Layouts/HCAL Layouts/HCAL LED Summary",
+   "Layouts/HCAL Layouts/HCAL Barrel Summary",
+   "Layouts/HCAL Layouts/HCAL Endcap Summary",
+   "Layouts/HCAL Layouts/HCAL Outer Summary",
+   "Layouts/HCAL Layouts/HCAL Forward Summary"])
 ]
