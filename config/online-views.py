@@ -56,7 +56,7 @@ views = [
    "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary",
    "Layouts/Strip Layouts/SiStrip_NumberOfClusters_Summary",
    "Layouts/Strip Layouts/SiStrip_ClusterWidth_Summary",
-   "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary_TIB_Layer1"]),
+   "Layouts/Strip Layouts/SiStrip_NumberOfDigis_Summary_TIB_Layer"]),
  ('Pixel', [
    "Layouts/Pixel Layouts/Pixel_RawData_Toplevel_Summary",
    "Layouts/Pixel Layouts/Pixel_Digi_Toplevel_Summary"]),

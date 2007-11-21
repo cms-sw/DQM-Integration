@@ -21,7 +21,7 @@ striplayout(dqmitems, "SiStrip_ClusterWidth_Summary",
    "SiStrip/MechanicalView/TID/side_1/Summary_ClusterWidth_in_side_1"],
   ["SiStrip/MechanicalView/TEC/side_0/Summary_ClusterWidth_in_side_0",
    "SiStrip/MechanicalView/TEC/side_1/Summary_ClusterWidth_in_side_1"])
-striplayout(dqmitems, "SiStrip_NumberOfDigis_Summary_TIB_Layer1",
+striplayout(dqmitems, "SiStrip_NumberOfDigis_Summary_TIB_Layer",
   ["SiStrip/MechanicalView/TIB/layer_1/Summary_NumberOfDigis_in_layer_1"],
   ["SiStrip/MechanicalView/TIB/layer_2/Summary_NumberOfDigis_in_layer_2"],
   ["SiStrip/MechanicalView/TIB/layer_3/Summary_NumberOfDigis_in_layer_3"],
