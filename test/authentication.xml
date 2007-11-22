@@ -12,6 +12,10 @@
    <parameter name="user" value="CMS_COND_GENERAL_R"/>
    <parameter name="password" value="sg1927cb"/>
  </connection>
+ <connection name="oracle://orcon/CMS_COND_ON_170_ECAL">
+   <parameter name="user" value="CMS_COND_ON_170_ECAL_R" />
+   <parameter name="password" value="sg1927cb" />
+ </connection>
  <connection name="oracle://orcon/CMS_COND_HCAL">
    <parameter name="user" value="CMS_COND_GENERAL_R"/>
    <parameter name="password" value="sg1927cb"/>
