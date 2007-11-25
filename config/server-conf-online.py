@@ -27,4 +27,5 @@ server = DQMServerSpec (
     DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ]),
     DQMBackendSpec('pixel','Layout', [ CONFIGDIR + '/pixel-layouts.py' ]),
     DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ])
+  ])  
 
