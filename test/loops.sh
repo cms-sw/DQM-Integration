@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CLIENTS="rpc l1t hcal ecal"
+CLIENTS="pixel rpc csc l1t hcal ecal"
 MODE="playback"
 #MODE="live"
 
