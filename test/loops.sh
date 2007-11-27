@@ -1,11 +1,11 @@
 #! /bin/sh
 
-CLIENTS="csc l1t dt hcal ecal"
+CLIENTS="rpc l1t hcal ecal"
 MODE="playback"
 #MODE="live"
 
 for c in $CLIENTS;
 do
   echo "starting $c ... "
-  ./loop_generic.sh $c &
+  ./loop_generic.sh $c $MODE &
 done
