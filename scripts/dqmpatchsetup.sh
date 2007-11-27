@@ -49,6 +49,6 @@ fi
 echo 
 echo "  done. Now type scramv1 b to build the tags"
 
-scramv1 b
+#scramv1 b
 
 
