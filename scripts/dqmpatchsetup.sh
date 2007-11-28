@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -eq 0 ] ; then  echo "Usage $0 [-a ] dqmpatch" ;  exit  ; fi  
+if [ "$#" -lt 1 ] ; then  echo "  Usage $0 [-a ] dqmpatch" ;  exit  ; fi
 
 while getopts a: opt
 do
@@ -16,7 +16,7 @@ echo "  dqmpatchversion: $dqmpatch"
 
 if [ -z "$LOCALRT" ]; then echo "  First setup your scramv1 area for CMSSW_1_7_1 - exiting " ; exit ; fi
 if [ $CMSSW_VERSION != CMSSW_1_7_1 ] ; then echo "  First setup your area for CMSSW_1_7_1 - exiting " ; exit ; fi
-if [ $dqmpatch -ne "1" ]  ; then echo "  This DQM patch version not available - exiting " ; exit ; fi
+if [ $dqmpatch != "1" ]  ; then echo "  This DQM patch version not available - exiting " ; exit ; fi
 
 echo "  installing tags for DQMPATCH:$dqmpatch in your project area:"
 if [ $all != "true" ] ; 
