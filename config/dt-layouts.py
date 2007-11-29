@@ -1,108 +1,114 @@
 def dtlayout(i, p, *rows): i["Layouts/DT Layouts/" + p] = DQMItem(layout=rows)
 
 dtlayout(dqmitems, "DTIntegrityCheck_Summary",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_TTSValues",
-          "DT/DataIntegrity/FED770/FED770_EventLenght"],
-         ["DT/DataIntegrity/FED770/FED770_ROSStatus",
-          "DT/DataIntegrity/FED770/FED770_FIFOStatus",
-          "DT/DataIntegrity/FED770/FED770_EventType"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_TTSValues",
+          "DT/DataIntegrity/FED772/FED772_EventLenght"],
+         ["DT/DataIntegrity/FED772/FED772_ROSStatus",
+          "DT/DataIntegrity/FED772/FED772_FIFOStatus",
+          "DT/DataIntegrity/FED772/FED772_EventType"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/TriggerAndSeg/TrigEff_Phi_W0",
+          "DT/Tests/DTLocalTrigger/Wheel0/TriggerAndSeg/TrigEffHHHL_Phi_W0"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/LocalTriggerPhi/CorrectBX_Phi_W0",
+          "DT/Tests/DTLocalTrigger/Wheel0/LocalTriggerPhi/CorrFraction_Phi_W0"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec1",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC1/FED770_SC1_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS1/FED770_ROS1_ROSError",
-          "DT/DataIntegrity/FED770/ROS1/FED770_ROS1_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC1/FED770_SC1_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC1/FED772_SC1_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS1/FED772_ROS1_ROSError",
+          "DT/DataIntegrity/FED772/ROS1/FED772_ROS1_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC1/FED772_SC1_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec2",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC2/FED770_SC2_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS2/FED770_ROS2_ROSError",
-          "DT/DataIntegrity/FED770/ROS2/FED770_ROS2_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC2/FED770_SC2_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC2/FED772_SC2_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS2/FED772_ROS2_ROSError",
+          "DT/DataIntegrity/FED772/ROS2/FED772_ROS2_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC2/FED772_SC2_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec3",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC3/FED770_SC3_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS3/FED770_ROS3_ROSError",
-          "DT/DataIntegrity/FED770/ROS3/FED770_ROS3_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC3/FED770_SC3_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC3/FED772_SC3_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS3/FED772_ROS3_ROSError",
+          "DT/DataIntegrity/FED772/ROS3/FED772_ROS3_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC3/FED772_SC3_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec4",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC4/FED770_SC4_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS4/FED770_ROS4_ROSError",
-          "DT/DataIntegrity/FED770/ROS4/FED770_ROS4_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC4/FED770_SC4_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC4/FED772_SC4_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS4/FED772_ROS4_ROSError",
+          "DT/DataIntegrity/FED772/ROS4/FED772_ROS4_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC4/FED772_SC4_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec5",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC5/FED770_SC5_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS5/FED770_ROS5_ROSError",
-          "DT/DataIntegrity/FED770/ROS5/FED770_ROS5_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC5/FED770_SC5_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC5/FED772_SC5_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS5/FED772_ROS5_ROSError",
+          "DT/DataIntegrity/FED772/ROS5/FED772_ROS5_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC5/FED772_SC5_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec6",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC6/FED770_SC6_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS6/FED770_ROS6_ROSError",
-          "DT/DataIntegrity/FED770/ROS6/FED770_ROS6_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC6/FED770_SC6_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC6/FED772_SC6_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS6/FED772_ROS6_ROSError",
+          "DT/DataIntegrity/FED772/ROS6/FED772_ROS6_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC6/FED772_SC6_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec7",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC7/FED770_SC7_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS7/FED770_ROS7_ROSError",
-          "DT/DataIntegrity/FED770/ROS7/FED770_ROS7_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC7/FED770_SC7_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC7/FED772_SC7_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS7/FED772_ROS7_ROSError",
+          "DT/DataIntegrity/FED772/ROS7/FED772_ROS7_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC7/FED772_SC7_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec8",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC8/FED770_SC8_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS8/FED770_ROS8_ROSError",
-          "DT/DataIntegrity/FED770/ROS8/FED770_ROS8_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC8/FED770_SC8_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC8/FED772_SC8_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS8/FED772_ROS8_ROSError",
+          "DT/DataIntegrity/FED772/ROS8/FED772_ROS8_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC8/FED772_SC8_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec9",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC9/FED770_SC9_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS9/FED770_ROS9_ROSError",
-          "DT/DataIntegrity/FED770/ROS9/FED770_ROS9_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC9/FED770_SC9_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC9/FED772_SC9_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS9/FED772_ROS9_ROSError",
+          "DT/DataIntegrity/FED772/ROS9/FED772_ROS9_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC9/FED772_SC9_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec10",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC10/FED770_SC10_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS10/FED770_ROS10_ROSError",
-          "DT/DataIntegrity/FED770/ROS10/FED770_ROS10_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC10/FED770_SC10_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC10/FED772_SC10_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS10/FED772_ROS10_ROSError",
+          "DT/DataIntegrity/FED772/ROS10/FED772_ROS10_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC10/FED772_SC10_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec11",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC11/FED770_SC11_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS11/FED770_ROS11_ROSError",
-          "DT/DataIntegrity/FED770/ROS11/FED770_ROS11_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC11/FED770_SC11_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC11/FED772_SC11_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS11/FED772_ROS11_ROSError",
+          "DT/DataIntegrity/FED772/ROS11/FED772_ROS11_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC11/FED772_SC11_SCTriggerQuality"])
 
 dtlayout(dqmitems, "DTIntegrityCheck_W0_Sec12",
-         ["DT/DataIntegrity/FED770/FED770_ROSSummary",
-          "DT/DataIntegrity/FED770/FED770_EventLenght",
-          "DT/DataIntegrity/FED770/SC12/FED770_SC12_SCTriggerBX"],
-         ["DT/DataIntegrity/FED770/ROS12/FED770_ROS12_ROSError",
-          "DT/DataIntegrity/FED770/ROS12/FED770_ROS12_ROSEventLenght",
-          "DT/DataIntegrity/FED770/SC12/FED770_SC12_SCTriggerQuality"])
+         ["DT/DataIntegrity/FED772/FED772_ROSSummary",
+          "DT/DataIntegrity/FED772/FED772_EventLenght",
+          "DT/DataIntegrity/FED772/SC12/FED772_SC12_SCTriggerBX"],
+         ["DT/DataIntegrity/FED772/ROS12/FED772_ROS12_ROSError",
+          "DT/DataIntegrity/FED772/ROS12/FED772_ROS12_ROSEventLenght",
+          "DT/DataIntegrity/FED772/SC12/FED772_SC12_SCTriggerQuality"])
 
 dtlayout(dqmitems, "W0_Sec1_St1_Signal",
          ["DT/DTDigiTask/Wheel0/Station1/Sector1/Occupancies/$1",
@@ -440,425 +446,869 @@ dtlayout(dqmitems, "W0_Sec12_St4_Signal",
          ["DT/DTDigiTask/Wheel0/Station4/Sector12/TimeBoxes/$1",
           "DT/DTDigiTask/Wheel0/Station4/Sector12/TimeBoxes/$2"])
 
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec1_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec1_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec1_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec1_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec2_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec2_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec2_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec2_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec3_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec3_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec3_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec3_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec4_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec4_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec4_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec4_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec5_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec5_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec5_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec5_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec6_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec6_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec6_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec6_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec7_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec7_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec7_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec7_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec8_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec8_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec8_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec8_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec9_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec9_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec9_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec9_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec10_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec10_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec10_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec10_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec11_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec11_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec11_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec11_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec12_Station1",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec12_Station2",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec12_Station3",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0__Sec12_Station4",
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/$1",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/$2"],
-         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/$3",
-          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerTheta/$1"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec1_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec2_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec3_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec4_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec5_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec6_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec7_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec8_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec9_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec10_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec11_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec12_Client_Phi",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/TriggerAndSeg/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/LocalTriggerPhi/$1"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/LocalTriggerPhi/$2",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/LocalTriggerPhi/$3"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec1_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec2_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec3_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec4_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec5_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec6_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec7_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec8_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec9_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec10_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec11_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/LocalTriggerTheta/$2"])
-
-dtlayout(dqmitems, "DTLocalTrigger_W0_Sec12_Client_Theta",
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/TriggerAndSeg/$2"],
-         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/LocalTriggerTheta/$1",
-          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/LocalTriggerTheta/$2"])
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec1_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec1_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec1_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec1_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec1_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec1_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec1_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec1_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec1_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec1_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec1_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec1_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec2_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec2_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec2_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec2_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec2_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec2_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec2_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec2_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec2_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec2_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec2_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec2_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec3_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec3_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec3_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec3_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec3_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec3_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec3_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec3_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec3_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec3_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec3_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec3_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec4_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec4_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec4_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec4_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec4_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec4_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec4_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec4_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec4_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec4_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec4_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec4_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec5_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec5_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec5_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec5_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec5_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec5_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec5_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec5_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec5_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec5_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec5_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec5_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec6_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec6_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec6_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec6_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec6_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec6_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec6_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec6_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec6_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec6_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec6_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec6_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec7_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec7_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec7_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec7_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec7_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec7_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec7_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec7_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec7_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec7_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec7_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec7_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec8_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec8_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec8_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec8_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec8_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec8_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec8_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec8_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec8_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec8_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec8_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec8_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec9_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec9_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec9_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec9_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec9_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec9_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec9_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec9_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec9_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec9_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec9_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec9_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec10_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec10_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec10_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec10_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec10_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec10_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec10_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec10_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec10_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec10_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec10_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec10_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec11_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec11_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec11_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec11_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec11_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec11_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec11_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec11_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec11_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec11_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec11_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec11_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec12_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_BXvsQual_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec12_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/LocalTriggerPhi/DCC_BestQual_W0_Sec12_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec12_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_BXvsQual_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec12_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/LocalTriggerPhi/DCC_BestQual_W0_Sec12_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec12_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_BXvsQual_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec12_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/LocalTriggerPhi/DCC_BestQual_W0_Sec12_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_producer_W0_Sec12_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_BXvsQual_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_Flag1stvsBX_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_Flag1stvsQual_W0_Sec12_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_QualvsPhirad_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_QualvsPhibend_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/LocalTriggerPhi/DCC_BestQual_W0_Sec12_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec1_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec1_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec1_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec1_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec1_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec1_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec1_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec1_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec1_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec1_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec1_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec1_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec1_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec1_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec1_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector1/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec1_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec2_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec2_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec2_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec2_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec2_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec2_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec2_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec2_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec2_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec2_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec2_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec2_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec2_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec2_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec2_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector2/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec2_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec3_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec3_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec3_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec3_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec3_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec3_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec3_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec3_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec3_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec3_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec3_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec3_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec3_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec3_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec3_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector3/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec3_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec4_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec4_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec4_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec4_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec4_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec4_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec4_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec4_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec4_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec4_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec4_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec4_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec4_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec4_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec4_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector4/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec4_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec5_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec5_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec5_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec5_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec5_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec5_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec5_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec5_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec5_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec5_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec5_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec5_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec5_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec5_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec5_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector5/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec5_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec6_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec6_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec6_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec6_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec6_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec6_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec6_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec6_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec6_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec6_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec6_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec6_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec6_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec6_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec6_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector6/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec6_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec7_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec7_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec7_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec7_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec7_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec7_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec7_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec7_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec7_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec7_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec7_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec7_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec7_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec7_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec7_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector7/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec7_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec8_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec8_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec8_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec8_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec8_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec8_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec8_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec8_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec8_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec8_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec8_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec8_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec8_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec8_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec8_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector8/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec8_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec9_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec9_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec9_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec9_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec9_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec9_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec9_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec9_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec9_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec9_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec9_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec9_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec9_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec9_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec9_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector9/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec9_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec10_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec10_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec10_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec10_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec10_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec10_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec10_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec10_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec10_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec10_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec10_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec10_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec10_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec10_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec10_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector10/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec10_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec11_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec11_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec11_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec11_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec11_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec11_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec11_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec11_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec11_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec11_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec11_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec11_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec11_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec11_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec11_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector11/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec11_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec12_Station1",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_TrackPosvsAngle_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec12_St1"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_HitstkvsQualtrig_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_PhitkvsPhitrig_W0_Sec12_St1",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station1/Segment/DCC_PhibtkvsPhibtrig_W0_Sec12_St1"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec12_Station2",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_TrackPosvsAngle_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec12_St2"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_HitstkvsQualtrig_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_PhitkvsPhitrig_W0_Sec12_St2",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station2/Segment/DCC_PhibtkvsPhibtrig_W0_Sec12_St2"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec12_Station3",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_TrackPosvsAngle_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec12_St3"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_HitstkvsQualtrig_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_PhitkvsPhitrig_W0_Sec12_St3",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station3/Segment/DCC_PhibtkvsPhibtrig_W0_Sec12_St3"])
+
+dtlayout(dqmitems, "DTLocalTrigger_segment_W0_Sec12_Station4",
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_TrackPosvsAngle_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_TrackPosvsAngleandTrig_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_TrackPosvsAngleandTrigHHHL_W0_Sec12_St4"],
+         ["DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_HitstkvsQualtrig_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_PhitkvsPhitrig_W0_Sec12_St4",
+          "DT/DTLocalTriggerTask/Wheel0/Sector12/Station4/Segment/DCC_PhibtkvsPhibtrig_W0_Sec12_St4"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec1_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffPos_Phi_W0_Sec1_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffAngle_Phi_W0_Sec1_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffPosvsAngle_Phi_W0_Sec1_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffPosHHHL_Phi_W0_Sec1_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffAngleHHHL_Phi_W0_Sec1_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector1/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec1_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec2_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffPos_Phi_W0_Sec2_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffAngle_Phi_W0_Sec2_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffPosvsAngle_Phi_W0_Sec2_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffPosHHHL_Phi_W0_Sec2_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffAngleHHHL_Phi_W0_Sec2_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector2/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec2_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec3_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffPos_Phi_W0_Sec3_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffAngle_Phi_W0_Sec3_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffPosvsAngle_Phi_W0_Sec3_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffPosHHHL_Phi_W0_Sec3_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffAngleHHHL_Phi_W0_Sec3_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector3/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec3_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec4_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffPos_Phi_W0_Sec4_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffAngle_Phi_W0_Sec4_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffPosvsAngle_Phi_W0_Sec4_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffPosHHHL_Phi_W0_Sec4_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffAngleHHHL_Phi_W0_Sec4_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector4/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec4_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec5_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffPos_Phi_W0_Sec5_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffAngle_Phi_W0_Sec5_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffPosvsAngle_Phi_W0_Sec5_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffPosHHHL_Phi_W0_Sec5_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffAngleHHHL_Phi_W0_Sec5_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector5/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec5_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec6_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffPos_Phi_W0_Sec6_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffAngle_Phi_W0_Sec6_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffPosvsAngle_Phi_W0_Sec6_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffPosHHHL_Phi_W0_Sec6_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffAngleHHHL_Phi_W0_Sec6_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector6/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec6_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec7_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffPos_Phi_W0_Sec7_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffAngle_Phi_W0_Sec7_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffPosvsAngle_Phi_W0_Sec7_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffPosHHHL_Phi_W0_Sec7_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffAngleHHHL_Phi_W0_Sec7_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector7/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec7_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec8_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffPos_Phi_W0_Sec8_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffAngle_Phi_W0_Sec8_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffPosvsAngle_Phi_W0_Sec8_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffPosHHHL_Phi_W0_Sec8_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffAngleHHHL_Phi_W0_Sec8_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector8/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec8_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec9_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffPos_Phi_W0_Sec9_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffAngle_Phi_W0_Sec9_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffPosvsAngle_Phi_W0_Sec9_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffPosHHHL_Phi_W0_Sec9_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffAngleHHHL_Phi_W0_Sec9_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector9/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec9_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec10_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffPos_Phi_W0_Sec10_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffAngle_Phi_W0_Sec10_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffPosvsAngle_Phi_W0_Sec10_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffPosHHHL_Phi_W0_Sec10_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffAngleHHHL_Phi_W0_Sec10_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector10/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec10_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec11_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffPos_Phi_W0_Sec11_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffAngle_Phi_W0_Sec11_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffPosvsAngle_Phi_W0_Sec11_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffPosHHHL_Phi_W0_Sec11_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffAngleHHHL_Phi_W0_Sec11_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector11/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec11_St5"])
+
+dtlayout(dqmitems, "DTLocalTrigger_W0_Sec12_Station5_Client_Phi",
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffPos_Phi_W0_Sec12_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffAngle_Phi_W0_Sec12_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffPosvsAngle_Phi_W0_Sec12_St5"],
+         ["DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffPosHHHL_Phi_W0_Sec12_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffAngleHHHL_Phi_W0_Sec12_St5",
+          "DT/Tests/DTLocalTrigger/Wheel0/Sector12/Station5/TrigEffPosvsAngleHHHL_Phi_W0_Sec12_St5"])
 
 dtlayout(dqmitems, "Summary_Efficiency_W0_Sec1_St1",
          ["DT/Tests/DTEfficiency/Wheel0/Station1/Sector1/$1",
