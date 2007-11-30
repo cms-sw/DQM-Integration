@@ -1,0 +1,40 @@
+<TESTSCONFIGURATION>
+
+<QTEST name="SectorTrigEffInRangePhi">
+	<TYPE>ContentsYRange</TYPE>	
+	<PARAM name="ymin">0.50</PARAM>
+	<PARAM name="ymax">1.00</PARAM>
+	<PARAM name="error">0.80</PARAM>
+	<PARAM name="warning">0.90</PARAM>
+</QTEST>
+
+<QTEST name="ChEfficiencyInRangeX">
+	<TYPE>ContentsYRange</TYPE>	
+	<PARAM name="ymin">0,98</PARAM>
+	<PARAM name="ymax">1.00</PARAM>
+	<PARAM name="error">0.30</PARAM>
+	<PARAM name="warning">0.70</PARAM>
+</QTEST>
+
+
+<QTEST name="ChEfficiencyInRangeY">
+	<TYPE>ContentsYRange</TYPE>	
+	<PARAM name="ymin">0,98</PARAM>
+	<PARAM name="ymax">1.00</PARAM>
+	<PARAM name="error">0.30</PARAM>
+	<PARAM name="warning">0.70</PARAM>
+</QTEST>
+
+<LINK name="*TrigEffSec_Phi_*">
+	<TestName activate="true">SectorTrigEffInRangePhi</TestName>
+</LINK>
+
+<LINK name="*xEfficiency_*">
+	<TestName activate="true">ChEfficiencyInRangeX</TestName>
+</LINK>
+
+<LINK name="*yEfficiency_*">
+	<TestName activate="true">ChEfficiencyInRangeY</TestName>
+</LINK>
+
+</TESTSCONFIGURATION>
