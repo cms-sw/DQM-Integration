@@ -34,7 +34,7 @@ cvs co -r V00-05-11 DQMServices/CoreROOT
 cvs co -r V00-05-11 DQMServices/Components
 cvs co -r V00-05-11 DQMServices/Examples
 
-cvs co -r V00-00-09 DQM/Integration
+cvs co -r V00-00-10 DQM/Integration
 
 if [ $all == "true" ] ; 
 then echo "  now checking out subsystem tags  ... " ; sleep 2
@@ -43,8 +43,12 @@ cvs co -r V00-07-05 DQM/HcalMonitorModule
 cvs co -r V00-07-04 DQM/HcalMonitorClient
 cvs co -r V00-07-04 DQM/HcalMonitorTasks
 cvs co -r V00-06-00 DQM/RPCMonitorDigi
+
 cvs co -r V02-00-03 DQM/CSCMonitorModule 
 cvs co -r V01-08-10 EventFilter/CSCRawToDigi 
+
+cvs co -r V00-16-05 DQM/DTMonitorModule
+cvs co -r V00-03-04 DQM/DTMonitorClient
 
 fi
 
