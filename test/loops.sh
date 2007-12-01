@@ -1,8 +1,8 @@
 #! /bin/sh
 
 CLIENTS="dt sistrip rpc csc l1t hcal ecal"
-MODE="playback"
-#MODE="live"
+#MODE="playback"
+MODE="live"
 
 for c in $CLIENTS;
 do
