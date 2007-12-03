@@ -12,15 +12,7 @@ views = [
    "Layouts/DT Layouts/W1_St1_OccupancyPerLayer",
    "Layouts/DT Layouts/W1_St2_OccupancyPerLayer",
    "Layouts/DT Layouts/W1_St3_OccupancyPerLayer",
-   "Layouts/DT Layouts/W1_St4_OccupancyPerLayer",
-   "Layouts/DT Layouts/DTIntegrityCheck_station1_first",
-   "Layouts/DT Layouts/DTIntegrityCheck_station1_second",
-   "Layouts/DT Layouts/DTIntegrityCheck_station2_first",
-   "Layouts/DT Layouts/DTIntegrityCheck_station2_second",
-   "Layouts/DT Layouts/DTIntegrityCheck_station3_first",
-   "Layouts/DT Layouts/DTIntegrityCheck_station3_second",
-   "Layouts/DT Layouts/DTIntegrityCheck_station4_first",
-   "Layouts/DT Layouts/DTIntegrityCheck_station4_second" ]),
+   "Layouts/DT Layouts/W1_St4_OccupancyPerLayer"]),
  ('ECAL', [
    "Layouts/ECAL Layouts/00-Global-Summary" ]),
  ('EB', [
@@ -63,15 +55,9 @@ views = [
  ('HCAL', [
    "Layouts/HCAL Layouts/HCAL Data Format Summary",
    "Layouts/HCAL Layouts/HCAL Digitization Summary",
-   "Layouts/HCAL Layouts/HCAL Reconstruction Summary",
-   "Layouts/HCAL Layouts/HCAL Reconstruction Threshold Summary",
    "Layouts/HCAL Layouts/HCAL Hot Cell Summary",
    "Layouts/HCAL Layouts/HCAL Hot Cell NADA Summary",
-   "Layouts/HCAL Layouts/HCAL Dead Cell Summary",
-   "Layouts/HCAL Layouts/HCAL Pedestal Summary",
-   "Layouts/HCAL Layouts/HCAL LED Summary",
-   "Layouts/HCAL Layouts/HCAL Barrel Summary",
-   "Layouts/HCAL Layouts/HCAL Endcap Summary",
-   "Layouts/HCAL Layouts/HCAL Outer Summary",
-   "Layouts/HCAL Layouts/HCAL Forward Summary"])
+   "Layouts/HCAL Layouts/HCAL Dead Cell Summary"]),
+ ('RPC', [
+   "Layouts/RPC Layouts/RPC_Summary"])
 ]
