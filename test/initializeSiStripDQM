@@ -61,12 +61,13 @@ print "make directories ...\n";
 #
 print "copy cfg files ...\n";
 
-copy("$dqm_int/sistrip_dqm_sourceclient-playback.cfg", "$ENV{PWD}/sistrip_dqm_sourceclient-playback.cfg");
+copy("$dqm_int/sistrip_dqm_sourceclient-file.cfg", "$ENV{PWD}/sistrip_dqm_sourceclient-file.cfg");
+
+
 
 # make source xml input
 
-copy("$dqm_int/sistrip_qualitytest_config.xml", "$ENV{PWD}/.");
-copy("$dqm_int/authentication.xml", "$ENV{PWD}/.");
+copy("$dqm_dir/../data/sistrip_qualitytest_config.xml", "$ENV{PWD}/.");
 
 
 #
@@ -106,10 +107,9 @@ print XML makeXmlProfileTrailer();
 #
 print "make xdaq  configuration ...\n";
 
-my @properties = ("parameterSet", "string","file:$pwd/sistrip_dqm_sourceclient-playback.cfg",
+my @properties = ("parameterSet", "string","file:$pwd/sistrip_dqm_sourceclient-file.cfg",
 		    "collReconnSec","integer","-1",
 		    "hasPrescaleService","boolean","false",
-		    "isRunNumberSetter","boolean","false",
 		    "hasSharedMemory","boolean","false");
 
 open (XML,">./xml/evf.xml") or die ("Can't open file: $!\n");
@@ -123,6 +123,7 @@ print XML makeXmlComm(@apps);
   print XML makeXmlAppProperties($appname,@properties);
   print XML makeXmlAppTrailer(1,$libpath,$libname);
   print XML makeXmlContextTrailer();
+
 
 print XML makeXmlPartitionTrailer();
 close (XML);
