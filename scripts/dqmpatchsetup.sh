@@ -53,9 +53,9 @@ cvs co -r V02-03-03-03 DataFormats/L1Trigger
 
 cvs co -r V00-05-01 EventFilter/EcalRawToDigiDev
 
-cvs co -r V00-07-05 DQM/HcalMonitorClient
-cvs co -r V00-07-05 DQM/HcalMonitorTasks
-cvs co -r V00-07-07 DQM/HcalMonitorModule
+cvs co -r V00-07-04 DQM/HcalMonitorClient
+cvs co -r V00-07-04 DQM/HcalMonitorTasks
+cvs co -r V00-07-05 DQM/HcalMonitorModule
 
 cvs co -r V00-06-03 DQM/RPCMonitorDigi  
 
