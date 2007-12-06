@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CLIENTS="dt sistrip rpc csc l1t hcal ecal"
+CLIENTS="dt csc rpc l1t hcal"
 #MODE="playback"
 MODE="live"
 
