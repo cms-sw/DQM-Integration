@@ -38,8 +38,8 @@ cvs co -r V00-05-12 DQMServices/CoreROOT
 cvs co -r V00-05-11 DQMServices/Components
 cvs co -r V00-05-11 DQMServices/Examples
 
-cvs co -r V00-00-12 DQM/Integration
-cvs co -r V00-00-09 DQM/RenderPlugins
+cvs co -r V00-00-13 DQM/Integration
+cvs co -r V00-00-10 DQM/RenderPlugins
 
 if [ $all == "true" ] ; 
 then echo "  now checking out subsystem tags  ... " ; sleep 2
@@ -53,9 +53,9 @@ cvs co -r V02-03-03-03 DataFormats/L1Trigger
 
 cvs co -r V00-05-01 EventFilter/EcalRawToDigiDev
 
-cvs co -r V00-07-04 DQM/HcalMonitorClient
-cvs co -r V00-07-04 DQM/HcalMonitorTasks
-cvs co -r V00-07-05 DQM/HcalMonitorModule
+cvs co -r GREN DQM/HcalMonitorClient
+cvs co -r GREN DQM/HcalMonitorTasks
+cvs co -r GREN DQM/HcalMonitorModule
 
 cvs co -r V00-06-03 DQM/RPCMonitorDigi  
 
