@@ -70,8 +70,8 @@ copy("$dqm_int/$cfg_file", "$ENV{PWD}/$cfg_file");
 
 # make source xml input
 
-copy("$dqm_dir/../data/sistrip_qualitytest_config.xml", "$ENV{PWD}/.");
-
+copy("$dqm_int/sistrip_qualitytest_config.xml", "$ENV{PWD}/.") unless -e "$ENV{PWD}/sistrip_qualitytest_config.xml";
+copy("$dqm_int/authentication.xml", "$ENV{PWD}/.") unless -e "$ENV{PWD}/authentication.xml";
 
 #
 # make XDAQ 'profile.xml'
