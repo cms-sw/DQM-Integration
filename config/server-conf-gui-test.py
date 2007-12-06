@@ -14,17 +14,19 @@ server = DQMServerSpec (
   serverDir   = '/home/dqm/gui',
   baseUrl     = '/dqm/gui-test',
   title       = 'CMS data quality',
-  views       = CONFIGDIR + '/online-views.py',
+  workspaces  = CONFIGDIR + '/online-workspaces.py',
   services    = CONFIGDIR + '/dqm-services.py',
   serviceName = "GUI test",
   backends    = [
-    DQMBackendSpec('dqm', 'Client', [ '--collector localhost:9090' ], waitFor = 'commands'),
-    DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
-    DQMBackendSpec('l1t', 'Layout', [ CONFIGDIR + '/l1t-layouts.py' ]),
-    DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
-    DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
-    DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ]),
-    DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ]),
-    DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ])
+    DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-18:9090' ]),
+    # DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector localhost:9090' ]),
+    DQMBackendSpec('dqm', 'Client', [ '--listen 9092 --collector localhost:9091' ]),
+    # DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
+    # DQMBackendSpec('l1t', 'Layout', [ CONFIGDIR + '/l1t-layouts.py' ]),
+    # DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
+    # DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
+    # DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ]),
+    # DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ]),
+    # DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ])
   ])
 
