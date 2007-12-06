@@ -38,7 +38,7 @@ cvs co -r V00-05-12 DQMServices/CoreROOT
 cvs co -r V00-05-11 DQMServices/Components
 cvs co -r V00-05-11 DQMServices/Examples
 
-cvs co -r V00-00-13 DQM/Integration
+cvs co -r V00-00-14 DQM/Integration
 cvs co -r V00-00-10 DQM/RenderPlugins
 
 if [ $all == "true" ] ; 
