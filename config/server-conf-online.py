@@ -30,5 +30,4 @@ server = DQMServerSpec (
     # DQMBackendSpec('csc','Layout', [ CONFIGDIR + '/csc-layouts.py' ]),
     # DQMBackendSpec('pixel','Layout', [ CONFIGDIR + '/pixel-layouts.py' ]),
     # DQMBackendSpec('l1t', 'Layout', [ CONFIGDIR + '/l1t-layouts.py' ])
-  ])  
-
+  ])
