@@ -39,8 +39,8 @@ cvs co -r V00-05-11 DQMServices/Components
 cvs co -r V00-05-11 DQMServices/Examples
 
 cvs co -r V00-00-14 DQM/Integration
-cvs co -r V00-00-10 DQM/RenderPlugins
-cvs co -r V01-01-00 VisMonitoring/DQMServer
+cvs co -r V00-00-11 DQM/RenderPlugins
+cvs co -r V01-01-02 VisMonitoring/DQMServer
 
 if [ $all == "true" ] ; 
 then echo "  now checking out subsystem tags  ... " ; sleep 2
