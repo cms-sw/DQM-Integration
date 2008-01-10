@@ -37,6 +37,8 @@ my $pwd = `pwd`; chomp $pwd;
 my $mode = $ARGV[0];
 my $dqm_dir = $ENV{"CMSSW_BASE"}."/src/DQM/SiStripMonitorClient/test";
 my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
+my $dqm_common = $ENV{"CMSSW_BASE"}."/src/DQM/TrackerCommon/test";
+
 my $cfg_file = "sistrip_dqm_sourceclient-".$mode.".cfg";
 print "cfg file name : $cfg_file\n";
 #
@@ -203,9 +205,13 @@ copy("$dqm_dir/TrackerMapPlot.html", "$ENV{PWD}/.");
 $SERVED_DIR="http://$hostname:40000/temporary";
 system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$ENV{PWD}/WebLib.js]; 
 
-system qq[cp], qq[-r], qq[$dqm_dir/js_files], qq[$ENV{PWD}/js_files];
-system qq[cp], qq[-r], qq[$dqm_dir/css_files], qq[$ENV{PWD}/css_files];
-system qq[cp], qq[-r], qq[$dqm_dir/images], qq[$ENV{PWD}/images];
+system qq[cp], qq[-r], qq[$dqm_common/js_files],  qq[$ENV{PWD}/js_files];
+system qq[cp], qq[-r], qq[$dqm_common/css_files], qq[$ENV{PWD}/css_files];
+system qq[cp], qq[-r], qq[$dqm_common/images],    qq[$ENV{PWD}/images];
+copy("$dqm_dir/js_files/CommonActions.js", "$ENV{PWD}/js_files/CommonActions.js");
+copy("$dqm_dir/js_files/RequestHistos.js", "$ENV{PWD}/js_files/RequestHistos.js");
+copy("$dqm_dir/js_files/sistrip_svgmap.js", "$ENV{PWD}/js_files/sistrip_svgmap.js");
+copy("$dqm_dir/css_files/style.css", "$ENV{PWD}/css_files/style.css");
 
 #
 # start processes
