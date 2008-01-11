@@ -4206,8 +4206,8 @@ eelayout(dqmitems, "10-Cluster/3-Cluster",
    None])
 
 eelayout(dqmitems, "10-Cluster/4-Cluster",
-  ["EcalEndcap/EEClusterTask/EECLT island s1s9",
-   "EcalEndcap/EEClusterTask/EECLT island s9s25"],
+  ["EcalEndcap/EEClusterTask/EECLT s1s9",
+   "EcalEndcap/EEClusterTask/EECLT s9s25"],
   ["EcalEndcap/EEClusterTask/EECLT dicluster invariant mass",
    None])
 

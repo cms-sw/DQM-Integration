@@ -7196,26 +7196,26 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+18/1-Cosmic",
   ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+18"])
 
 eblayout(dqmitems, "10-Cluster/0-Cluster",
-  ["EcalBarrel/EBClusterTask/EBCLT island BC energy"],
-  ["EcalBarrel/EBClusterTask/EBCLT island BC energy map"])
+  ["EcalBarrel/EBClusterTask/EBCLT BC energy"],
+  ["EcalBarrel/EBClusterTask/EBCLT BC energy map"])
 
 eblayout(dqmitems, "10-Cluster/1-Cluster",
-  ["EcalBarrel/EBClusterTask/EBCLT island BC size"],
-  ["EcalBarrel/EBClusterTask/EBCLT island BC size map"])
+  ["EcalBarrel/EBClusterTask/EBCLT BC size"],
+  ["EcalBarrel/EBClusterTask/EBCLT BC size map"])
 
 eblayout(dqmitems, "10-Cluster/2-Cluster",
-  ["EcalBarrel/EBClusterTask/EBCLT island BC number"],
-  ["EcalBarrel/EBClusterTask/EBCLT island BC number map"])
+  ["EcalBarrel/EBClusterTask/EBCLT BC number"],
+  ["EcalBarrel/EBClusterTask/EBCLT BC number map"])
 
 eblayout(dqmitems, "10-Cluster/3-Cluster",
-  ["EcalBarrel/EBClusterTask/EBCLT hybrid SC energy",
-   "EcalBarrel/EBClusterTask/EBCLT hybrid SC size"],
-  ["EcalBarrel/EBClusterTask/EBCLT hybrid SC number",
+  ["EcalBarrel/EBClusterTask/EBCLT SC energy",
+   "EcalBarrel/EBClusterTask/EBCLT SC size"],
+  ["EcalBarrel/EBClusterTask/EBCLT SC number",
    None])
 
 eblayout(dqmitems, "10-Cluster/4-Cluster",
-  ["EcalBarrel/EBClusterTask/EBCLT hybrid s1s9",
-   "EcalBarrel/EBClusterTask/EBCLT hybrid s9s25"],
+  ["EcalBarrel/EBClusterTask/EBCLT s1s9",
+   "EcalBarrel/EBClusterTask/EBCLT s9s25"],
   ["EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass",
    None])
 
