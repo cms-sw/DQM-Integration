@@ -8,7 +8,7 @@ eblayout(dqmitems, "00-Summary/1-Integrity-Summary",
   ["EcalBarrel/EBSummaryClient/EBIT integrity quality summary"])
 
 eblayout(dqmitems, "00-Summary/2-Occupancy-Summary",
-  ["EcalBarrel/EBSummaryClient/EBOT occupancy summary"])
+  ["EcalBarrel/EBSummaryClient/EBOT digi occupancy summary"])
 
 eblayout(dqmitems, "00-Summary/3-Cosmic-Summary",
   ["EcalBarrel/EBSummaryClient/EBCT cosmic summary"])
@@ -33,7 +33,7 @@ eblayout(dqmitems, "01-Integrity/0-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-01"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-01"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-01"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-01"],
@@ -49,7 +49,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-01/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-01"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-01"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-01"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-01"],
@@ -232,7 +232,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-01/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-02"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-02"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-02"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-02"],
@@ -248,7 +248,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-02/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-02"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-02"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-02"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-02"],
@@ -431,7 +431,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-02/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-03"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-03"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-03"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-03"],
@@ -447,7 +447,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-03/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-03"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-03"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-03"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-03"],
@@ -630,7 +630,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-03/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-04"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-04"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-04"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-04"],
@@ -646,7 +646,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-04/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-04"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-04"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-04"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-04"],
@@ -829,7 +829,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-04/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-05"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-05"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-05"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-05"],
@@ -845,7 +845,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-05/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-05"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-05"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-05"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-05"],
@@ -1028,7 +1028,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-05/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-06"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-06"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-06"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-06"],
@@ -1044,7 +1044,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-06/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-06"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-06"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-06"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-06"],
@@ -1227,7 +1227,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-06/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-07"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-07"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-07"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-07"],
@@ -1243,7 +1243,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-07/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-07"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-07"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-07"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-07"],
@@ -1426,7 +1426,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-07/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-08"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-08"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-08"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-08"],
@@ -1442,7 +1442,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-08/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-08"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-08"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-08"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-08"],
@@ -1625,7 +1625,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-08/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-09"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-09"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-09"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-09"],
@@ -1641,7 +1641,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-09/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-09"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-09"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-09"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-09"],
@@ -1824,7 +1824,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-09/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-10"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-10"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-10"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-10"],
@@ -1840,7 +1840,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-10/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-10"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-10"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-10"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-10"],
@@ -2023,7 +2023,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-10/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-11"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-11"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-11"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-11"],
@@ -2039,7 +2039,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-11/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-11"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-11"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-11"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-11"],
@@ -2222,7 +2222,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-11/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-12"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-12"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-12"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-12"],
@@ -2238,7 +2238,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-12/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-12"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-12"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-12"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-12"],
@@ -2421,7 +2421,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-12/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-13"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-13"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-13"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-13"],
@@ -2437,7 +2437,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-13/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-13"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-13"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-13"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-13"],
@@ -2620,7 +2620,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-13/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-14"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-14"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-14"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-14"],
@@ -2636,7 +2636,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-14/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-14"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-14"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-14"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-14"],
@@ -2819,7 +2819,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-14/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-15"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-15"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-15"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-15"],
@@ -2835,7 +2835,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-15/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-15"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-15"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-15"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-15"],
@@ -3018,7 +3018,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-15/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-16"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-16"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-16"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-16"],
@@ -3034,7 +3034,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-16/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-16"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-16"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-16"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-16"],
@@ -3217,7 +3217,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-16/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-17"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-17"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-17"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-17"],
@@ -3233,7 +3233,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-17/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-17"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-17"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-17"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-17"],
@@ -3416,7 +3416,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-17/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-18"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB-18"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-18"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-18"],
@@ -3432,7 +3432,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-18/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB-18"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB-18"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB-18"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB-18"],
@@ -3615,7 +3615,7 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-18/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+01"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+01"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+01"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+01"],
@@ -3631,7 +3631,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+01/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+01"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+01"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+01"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+01"],
@@ -3814,7 +3814,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+01/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+02"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+02"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+02"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+02"],
@@ -3830,7 +3830,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+02/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+02"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+02"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+02"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+02"],
@@ -4013,7 +4013,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+02/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+03"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+03"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+03"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+03"],
@@ -4029,7 +4029,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+03/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+03"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+03"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+03"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+03"],
@@ -4212,7 +4212,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+03/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+04"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+04"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+04"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+04"],
@@ -4228,7 +4228,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+04/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+04"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+04"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+04"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+04"],
@@ -4411,7 +4411,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+04/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+05"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+05"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+05"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+05"],
@@ -4427,7 +4427,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+05/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+05"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+05"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+05"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+05"],
@@ -4610,7 +4610,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+05/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+06"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+06"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+06"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+06"],
@@ -4626,7 +4626,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+06/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+06"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+06"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+06"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+06"],
@@ -4809,7 +4809,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+06/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+07"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+07"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+07"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+07"],
@@ -4825,7 +4825,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+07/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+07"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+07"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+07"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+07"],
@@ -5008,7 +5008,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+07/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+08"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+08"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+08"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+08"],
@@ -5024,7 +5024,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+08/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+08"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+08"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+08"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+08"],
@@ -5207,7 +5207,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+08/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+09"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+09"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+09"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+09"],
@@ -5223,7 +5223,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+09/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+09"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+09"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+09"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+09"],
@@ -5406,7 +5406,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+09/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+10"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+10"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+10"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+10"],
@@ -5422,7 +5422,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+10/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+10"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+10"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+10"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+10"],
@@ -5605,7 +5605,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+10/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+11"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+11"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+11"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+11"],
@@ -5621,7 +5621,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+11/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+11"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+11"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+11"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+11"],
@@ -5804,7 +5804,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+11/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+12"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+12"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+12"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+12"],
@@ -5820,7 +5820,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+12/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+12"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+12"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+12"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+12"],
@@ -6003,7 +6003,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+12/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+13"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+13"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+13"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+13"],
@@ -6019,7 +6019,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+13/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+13"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+13"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+13"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+13"],
@@ -6202,7 +6202,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+13/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+14"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+14"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+14"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+14"],
@@ -6218,7 +6218,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+14/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+14"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+14"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+14"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+14"],
@@ -6401,7 +6401,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+14/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+15"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+15"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+15"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+15"],
@@ -6417,7 +6417,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+15/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+15"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+15"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+15"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+15"],
@@ -6600,7 +6600,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+15/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+16"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+16"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+16"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+16"],
@@ -6616,7 +6616,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+16/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+16"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+16"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+16"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+16"],
@@ -6799,7 +6799,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+16/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+17"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+17"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+17"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+17"],
@@ -6815,7 +6815,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+17/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+17"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+17"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+17"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+17"],
@@ -6998,7 +6998,7 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+17/1-Cosmic",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/0-Channel-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+18"],
-  ["EcalBarrel/EBOccupancyTask/EBOT occupancy EB+18"])
+  ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+18"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/1-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+18"],
@@ -7014,7 +7014,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+18/3-TT-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/4-MemBox-Global-Integrity",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality MEM EB+18"],
-  ["EcalBarrel/EBOccupancyTask/EBOT MEM occupancy EB+18"])
+  ["EcalBarrel/EBOccupancyTask/EBOT MEM digi occupancy EB+18"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/5-MemBox-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/MemChId/EBIT MemChId EB+18"],

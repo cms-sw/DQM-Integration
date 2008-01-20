@@ -10,8 +10,8 @@ eelayout(dqmitems, "00-Summary/1-Integrity-Summary",
    "EcalEndcap/EESummaryClient/EEIT EE + integrity quality summary"])
 
 eelayout(dqmitems, "00-Summary/2-Occupancy-Summary",
-  ["EcalEndcap/EESummaryClient/EEOT EE - occupancy summary",
-   "EcalEndcap/EESummaryClient/EEOT EE + occupancy summary"])
+  ["EcalEndcap/EESummaryClient/EEOT EE - digi occupancy summary",
+   "EcalEndcap/EESummaryClient/EEOT EE + digi occupancy summary"])
 
 eelayout(dqmitems, "00-Summary/3-Cosmic-Summary",
   ["EcalEndcap/EESummaryClient/EECT EE - cosmic summary",
@@ -46,7 +46,7 @@ eelayout(dqmitems, "01-Integrity/0-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-01"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-01"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-01"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-01"],
@@ -62,7 +62,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-01/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-01"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-01"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-01"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-01"],
@@ -276,7 +276,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-01/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-02"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-02"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-02"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-02"],
@@ -292,7 +292,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-02/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-02"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-02"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-02"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-02"],
@@ -506,7 +506,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-02/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-03"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-03"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-03"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-03"],
@@ -522,7 +522,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-03/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-03"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-03"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-03"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-03"],
@@ -736,7 +736,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-03/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-04"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-04"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-04"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-04"],
@@ -752,7 +752,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-04/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-04"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-04"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-04"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-04"],
@@ -966,7 +966,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-04/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-05"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-05"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-05"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-05"],
@@ -982,7 +982,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-05/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-05"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-05"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-05"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-05"],
@@ -1196,7 +1196,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-05/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-06"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-06"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-06"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-06"],
@@ -1212,7 +1212,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-06/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-06"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-06"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-06"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-06"],
@@ -1426,7 +1426,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-06/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-07"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-07"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-07"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-07"],
@@ -1442,7 +1442,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-07/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-07"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-07"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-07"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-07"],
@@ -1656,7 +1656,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-07/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-08"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-08"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-08"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-08"],
@@ -1672,7 +1672,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-08/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-08"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-08"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-08"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-08"],
@@ -1886,7 +1886,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-08/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-09"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE-09"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-09"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-09"],
@@ -1902,7 +1902,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-09/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE-09"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE-09"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE-09"])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE-09"],
@@ -2116,7 +2116,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-09/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+01"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+01"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+01"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+01"],
@@ -2132,7 +2132,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+01/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+01"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+01"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+01"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+01"],
@@ -2346,7 +2346,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+01/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+02"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+02"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+02"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+02"],
@@ -2362,7 +2362,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+02/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+02"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+02"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+02"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+02"],
@@ -2576,7 +2576,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+02/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+03"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+03"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+03"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+03"],
@@ -2592,7 +2592,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+03/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+03"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+03"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+03"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+03"],
@@ -2806,7 +2806,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+03/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+04"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+04"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+04"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+04"],
@@ -2822,7 +2822,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+04/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+04"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+04"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+04"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+04"],
@@ -3036,7 +3036,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+04/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+05"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+05"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+05"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+05"],
@@ -3052,7 +3052,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+05/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+05"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+05"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+05"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+05"],
@@ -3266,7 +3266,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+05/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+06"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+06"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+06"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+06"],
@@ -3282,7 +3282,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+06/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+06"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+06"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+06"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+06"],
@@ -3496,7 +3496,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+06/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+07"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+07"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+07"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+07"],
@@ -3512,7 +3512,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+07/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+07"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+07"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+07"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+07"],
@@ -3726,7 +3726,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+07/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+08"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+08"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+08"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+08"],
@@ -3742,7 +3742,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+08/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+08"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+08"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+08"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+08"],
@@ -3956,7 +3956,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+08/1-Cosmic",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/0-Channel-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+09"],
-  ["EcalEndcap/EEOccupancyTask/EEOT occupancy EE+09"])
+  ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+09"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/1-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+09"],
@@ -3972,7 +3972,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+09/3-TT-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/4-MemBox-Global-Integrity",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality MEM EE+09"],
-  ["EcalEndcap/EEOccupancyTask/EEOT MEM occupancy EE+09"])
+  ["EcalEndcap/EEOccupancyTask/EEOT MEM digi occupancy EE+09"])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/5-MemBox-Channel-Integrity",
   ["EcalEndcap/EEIntegrityTask/MemChId/EEIT MemChId EE+09"],
