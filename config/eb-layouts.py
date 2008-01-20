@@ -41,7 +41,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-01/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-01"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-01"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-01"],
@@ -240,7 +240,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-02/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-02"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-02"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-02"],
@@ -439,7 +439,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-03/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-03"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-03"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-03"],
@@ -638,7 +638,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-04/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-04"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-04"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-04"],
@@ -837,7 +837,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-05/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-05"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-05"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-05"],
@@ -1036,7 +1036,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-06/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-06"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-06"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-06"],
@@ -1235,7 +1235,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-07/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-07"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-07"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-07"],
@@ -1434,7 +1434,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-08/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-08"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-08"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-08"],
@@ -1633,7 +1633,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-09/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-09"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-09"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-09"],
@@ -1832,7 +1832,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-10/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-10"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-10"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-10"],
@@ -2031,7 +2031,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-11/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-11"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-11"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-11"],
@@ -2230,7 +2230,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-12/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-12"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-12"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-12"],
@@ -2429,7 +2429,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-13/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-13"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-13"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-13"],
@@ -2628,7 +2628,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-14/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-14"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-14"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-14"],
@@ -2827,7 +2827,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-15/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-15"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-15"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-15"],
@@ -3026,7 +3026,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-16/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-16"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-16"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-16"],
@@ -3225,7 +3225,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-17/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-17"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-17"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-17"],
@@ -3424,7 +3424,7 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-18/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-18"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB-18"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-18"],
@@ -3623,7 +3623,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+01/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+01"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+01"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+01"],
@@ -3822,7 +3822,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+02/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+02"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+02"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+02"],
@@ -4021,7 +4021,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+03/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+03"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+03"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+03"],
@@ -4220,7 +4220,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+04/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+04"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+04"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+04"],
@@ -4419,7 +4419,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+05/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+05"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+05"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+05"],
@@ -4618,7 +4618,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+06/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+06"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+06"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+06"],
@@ -4817,7 +4817,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+07/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+07"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+07"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+07"],
@@ -5016,7 +5016,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+08/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+08"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+08"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+08"],
@@ -5215,7 +5215,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+09/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+09"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+09"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+09"],
@@ -5414,7 +5414,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+10/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+10"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+10"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+10"],
@@ -5613,7 +5613,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+11/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+11"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+11"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+11"],
@@ -5812,7 +5812,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+12/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+12"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+12"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+12"],
@@ -6011,7 +6011,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+13/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+13"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+13"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+13"],
@@ -6210,7 +6210,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+14/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+14"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+14"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+14"],
@@ -6409,7 +6409,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+15/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+15"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+15"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+15"],
@@ -6608,7 +6608,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+16/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+16"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+16"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+16"],
@@ -6807,7 +6807,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+17/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+17"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+17"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+17"],
@@ -7006,7 +7006,7 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+18/1-Channel-Integrity",
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/2-Gain-Integrity",
   ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+18"],
-  ["EcalBarrel/EBIntegrityTask/GainSwitchStay/EBIT gain switch stay EB+18"])
+   None)
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/3-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+18"],
