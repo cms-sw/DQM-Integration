@@ -41,7 +41,7 @@ eelayout(dqmitems, "00-Summary/09-Trigger-Summary",
   ["EcalEndcap/EESummaryClient/EETTT EE - emulator error quality summary"],
   ["EcalEndcap/EESummaryClient/EETTT EE + emulator error quality summary"])
 
-eblayout(dqmitems, "00-Summary/10-StatusFlags-Summary",
+eelayout(dqmitems, "00-Summary/10-StatusFlags-Summary",
   ["EcalBarrel/EESummaryClient/EESFT EE - front-end status summary"],
   ["EcalBarrel/EESummaryClient/EESFT EE + front-end status summary"])
 
@@ -4262,7 +4262,7 @@ eelayout(dqmitems, "09-StatusFlags/EE+/EE+09/00-StatusFlags",
 
 eelayout(dqmitems, "10-Cluster/00-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC energy",
-   "EcalEndcap/EEClusterTask/EECLT BC size"]
+   "EcalEndcap/EEClusterTask/EECLT BC size"],
   ["EcalEndcap/EEClusterTask/EECLT BC number",
    None])
 
@@ -4272,7 +4272,7 @@ eelayout(dqmitems, "10-Cluster/01-Cluster",
    "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -"])
 
 eelayout(dqmitems, "10-Cluster/02-Cluster",
-   "EcalEndcap/EEClusterTask/EECLT BC energy map EE +"],
+  ["EcalEndcap/EEClusterTask/EECLT BC energy map EE +"],
   ["EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +",
    "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +"])
 
