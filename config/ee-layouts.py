@@ -276,7 +276,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-01/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-01"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-01/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-01"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-01/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-01"],
@@ -510,7 +511,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-02/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-02"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-02/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-02"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-02/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-02"],
@@ -744,7 +746,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-03/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-03"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-03/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-03"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-03/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-03"],
@@ -978,7 +981,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-04/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-04"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-04/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-04"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-04/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-04"],
@@ -1212,7 +1216,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-05/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-05"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-05/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-05"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-05/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-05"],
@@ -1446,7 +1451,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-06/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-06"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-06/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-06"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-06/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-06"],
@@ -1680,7 +1686,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-07/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-07"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-07/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-07"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-07/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-07"],
@@ -1914,7 +1921,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-08/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-08"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-08/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-08"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-08/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-08"],
@@ -2148,7 +2156,8 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-09/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE-09"])
 
 eelayout(dqmitems, "09-Cosmic/EE-/EE-09/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE-09"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09"])
 
 eelayout(dqmitems, "09-StatusFlags/EE-/EE-09/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-09"],
@@ -2382,7 +2391,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+01/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+01"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+01/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+01"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+01/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+01"],
@@ -2616,7 +2626,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+02/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+02"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+02/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+02"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+02/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+02"],
@@ -2850,7 +2861,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+03/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+03"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+03/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+03"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+03/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+03"],
@@ -3084,7 +3096,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+04/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+04"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+04/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+04"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+04/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+04"],
@@ -3318,7 +3331,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+05/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+05"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+05/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+05"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+05/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+05"],
@@ -3552,7 +3566,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+06/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+06"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+06/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+06"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+06/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+06"],
@@ -3786,7 +3801,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+07/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+07"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+07/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+07"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+07/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+07"],
@@ -4020,7 +4036,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+08/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+08"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+08/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+08"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+08/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+08"],
@@ -4254,7 +4271,8 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+09/00-Cosmic",
   ["EcalEndcap/EBCosmicTask/Cut/EECT energy cut EE+09"])
 
 eelayout(dqmitems, "09-Cosmic/EE+/EE+09/01-Cosmic",
-  ["EcalEndcap/EECosmicTask/Spectrum/EECT energy spectrum EE+09"])
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09"],
+  ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09"])
 
 eelayout(dqmitems, "09-StatusFlags/EE+/EE+09/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+09"],

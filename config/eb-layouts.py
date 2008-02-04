@@ -231,7 +231,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-01/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-01"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-01/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-01"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-01"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-01"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-01/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-01"],
@@ -434,7 +435,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-02/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-02"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-02/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-02"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-02"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-02"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-02/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-02"],
@@ -637,7 +639,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-03/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-03"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-03/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-03"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-03"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-03"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-03/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-03"],
@@ -840,7 +843,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-04/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-04"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-04/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-04"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-04"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-04"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-04/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-04"],
@@ -1043,7 +1047,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-05/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-05"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-05/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-05"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-05"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-05"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-05/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-05"],
@@ -1246,7 +1251,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-06/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-06"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-06/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-06"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-06"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-06"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-06/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-06"],
@@ -1449,7 +1455,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-07/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-07"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-07/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-07"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-07"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-07"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-07/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-07"],
@@ -1652,7 +1659,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-08/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-08"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-08/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-08"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-08"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-08"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-08/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-08"],
@@ -1855,7 +1863,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-09/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-09"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-09/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-09"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-09"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-09"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-09/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-09"],
@@ -2058,7 +2067,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-10/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-10"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-10/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-10"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-10"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-10"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-10/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-10"],
@@ -2261,7 +2271,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-11/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-11"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-11/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-11"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-11"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-11"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-11/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-11"],
@@ -2464,7 +2475,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-12/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-12"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-12/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-12"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-12"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-12"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-12/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-12"],
@@ -2667,7 +2679,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-13/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-13"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-13/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-13"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-13"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-13"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-13/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-13"],
@@ -2870,7 +2883,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-14/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-14"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-14/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-14"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-14"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-14"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-14/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-14"],
@@ -3073,7 +3087,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-15/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-15"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-15/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-15"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-15"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-15"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-15/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-15"],
@@ -3276,7 +3291,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-16/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-16"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-16/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-16"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-16"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-16"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-16/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-16"],
@@ -3479,7 +3495,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-17/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-17"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-17/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-17"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-17"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-17"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-17/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-17"],
@@ -3682,7 +3699,8 @@ eblayout(dqmitems, "09-Cosmic/EB-/EB-18/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-18"])
 
 eblayout(dqmitems, "09-Cosmic/EB-/EB-18/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB-18"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-18"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-18"])
 
 eblayout(dqmitems, "10-StatusFlags/EB-/EB-18/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-18"],
@@ -3885,7 +3903,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+01/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+01"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+01/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+01"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+01"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+01"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+01/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+01"],
@@ -4088,7 +4107,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+02/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+02"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+02/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+02"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+02"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+02"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+02/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+02"],
@@ -4291,7 +4311,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+03/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+03"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+03/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+03"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+03"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+03"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+03/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+03"],
@@ -4494,7 +4515,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+04/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+04"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+04/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+04"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+04"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+04"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+04/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+04"],
@@ -4697,7 +4719,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+05/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+05"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+05/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+05"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+05"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+05"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+05/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+05"],
@@ -4900,7 +4923,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+06/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+06"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+06/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+06"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+06"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+06"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+06/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+06"],
@@ -5103,7 +5127,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+07/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+07"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+07/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+07"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+07"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+07"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+07/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+07"],
@@ -5306,7 +5331,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+08/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+08"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+08/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+08"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+08"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+08"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+08/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+08"],
@@ -5509,7 +5535,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+09/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+09"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+09/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+09"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+09"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+09"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+09/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+09"],
@@ -5712,7 +5739,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+10/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+10"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+10/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+10"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+10"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+10"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+10/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+10"],
@@ -5915,7 +5943,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+11/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+11"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+11/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+11"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+11"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+11"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+11/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+11"],
@@ -6118,7 +6147,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+12/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+12"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+12/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+12"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+12"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+12"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+12/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+12"],
@@ -6321,7 +6351,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+13/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+13"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+13/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+13"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+13"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+13"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+13/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+13"],
@@ -6524,7 +6555,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+14/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+14"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+14/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+14"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+14"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+14"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+14/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+14"],
@@ -6727,7 +6759,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+15/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+15"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+15/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+15"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+15"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+15"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+15/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+15"],
@@ -6930,7 +6963,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+16/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+16"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+16/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+16"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+16"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+16"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+16/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+16"],
@@ -7133,7 +7167,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+17/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+17"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+17/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+17"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+17"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+17"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+17/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+17"],
@@ -7336,7 +7371,8 @@ eblayout(dqmitems, "09-Cosmic/EB+/EB+18/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+18"])
 
 eblayout(dqmitems, "09-Cosmic/EB+/EB+18/01-Cosmic",
-  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT energy spectrum EB+18"])
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+18"],
+  ["EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+18"])
 
 eblayout(dqmitems, "10-StatusFlags/EB+/EB+18/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18"],
