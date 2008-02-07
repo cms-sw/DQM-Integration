@@ -58,7 +58,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-01/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-01"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-01/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-01"],
@@ -293,7 +293,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-02/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-02"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-02/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-02"],
@@ -528,7 +528,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-03/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-03"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-03/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-03"],
@@ -763,7 +763,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-04/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-04"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-04/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-04"],
@@ -998,7 +998,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-05/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-05"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-05/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-05"],
@@ -1233,7 +1233,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-06/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-06"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-06/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-06"],
@@ -1468,7 +1468,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-07/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-07"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-07/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-07"],
@@ -1703,7 +1703,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-08/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-08"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-08/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-08"],
@@ -1938,7 +1938,7 @@ eelayout(dqmitems, "01-Integrity/EE-/EE-09/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE-09"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE-/EE-09/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE-09"],
@@ -2173,7 +2173,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+01/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+01"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+01/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+01"],
@@ -2408,7 +2408,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+02/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+02"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+02/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+02"],
@@ -2643,7 +2643,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+03/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+03"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+03/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+03"],
@@ -2878,7 +2878,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+04/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+04"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+04/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+04"],
@@ -3113,7 +3113,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+05/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+05"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+05/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+05"],
@@ -3348,7 +3348,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+06/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+06"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+06/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+06"],
@@ -3583,7 +3583,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+07/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+07"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+07/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+07"],
@@ -3818,7 +3818,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+08/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+08"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+08/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+08"],
@@ -4053,7 +4053,7 @@ eelayout(dqmitems, "01-Integrity/EE+/EE+09/01-Channel-Integrity",
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/02-Gain-Integrity",
   ["EcalEndcap/EEIntegrityTask/GainSwitch/EEIT gain switch EE+09"],
-   None)
+  [None])
 
 eelayout(dqmitems, "01-Integrity/EE+/EE+09/03-TT-Integrity",
   ["EcalEndcap/EEIntegrityTask/TTId/EEIT TTId EE+09"],

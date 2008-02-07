@@ -43,7 +43,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-01/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-01"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-01"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-01"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-01/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-01"],
@@ -113,12 +114,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-01/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-01/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-01 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-01 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-01 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-01 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-01/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-01 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-01 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-01 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-01 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-01/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-01"],
@@ -145,12 +148,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-01/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-01/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-01/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-01/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-01",
@@ -167,12 +172,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-01/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-01/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-01/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-01/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-01"],
@@ -240,7 +247,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-02/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-02"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-02"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-02"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-02/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-02"],
@@ -310,12 +318,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-02/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-02/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-02 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-02 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-02 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-02 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-02/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-02 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-02 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-02 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-02 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-02/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-02"],
@@ -342,12 +352,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-02/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-02/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-02/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-02/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-02",
@@ -364,12 +376,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-02/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-02/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-02/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-02/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-02"],
@@ -437,7 +451,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-03/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-03"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-03"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-03"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-03/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-03"],
@@ -507,12 +522,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-03/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-03/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-03 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-03 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-03 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-03 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-03/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-03 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-03 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-03 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-03 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-03/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-03"],
@@ -539,12 +556,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-03/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-03/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-03/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-03/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-03",
@@ -561,12 +580,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-03/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-03/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-03/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-03/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-03"],
@@ -634,7 +655,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-04/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-04"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-04"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-04"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-04/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-04"],
@@ -704,12 +726,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-04/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-04/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-04 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-04 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-04 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-04 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-04/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-04 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-04 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-04 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-04 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-04/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-04"],
@@ -736,12 +760,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-04/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-04/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-04/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-04/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-04",
@@ -758,12 +784,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-04/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-04/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-04/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-04/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-04"],
@@ -831,7 +859,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-05/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-05"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-05"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-05"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-05/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-05"],
@@ -901,12 +930,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-05/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-05/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-05 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-05 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-05 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-05 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-05/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-05 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-05 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-05 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-05 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-05/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-05"],
@@ -933,12 +964,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-05/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-05/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-05/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-05/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-05",
@@ -955,12 +988,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-05/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-05/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-05/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-05/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-05"],
@@ -1028,7 +1063,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-06/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-06"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-06"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-06"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-06/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-06"],
@@ -1098,12 +1134,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-06/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-06/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-06 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-06 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-06 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-06 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-06/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-06 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-06 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-06 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-06 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-06/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-06"],
@@ -1130,12 +1168,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-06/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-06/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-06/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-06/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-06",
@@ -1152,12 +1192,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-06/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-06/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-06/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-06/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-06"],
@@ -1225,7 +1267,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-07/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-07"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-07"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-07"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-07/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-07"],
@@ -1295,12 +1338,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-07/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-07/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-07 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-07 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-07 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-07 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-07/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-07 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-07 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-07 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-07 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-07/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-07"],
@@ -1327,12 +1372,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-07/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-07/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-07/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-07/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-07",
@@ -1349,12 +1396,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-07/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-07/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-07/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-07/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-07"],
@@ -1422,7 +1471,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-08/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-08"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-08"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-08"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-08/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-08"],
@@ -1492,12 +1542,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-08/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-08/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-08 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-08 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-08 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-08 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-08/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-08 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-08 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-08 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-08 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-08/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-08"],
@@ -1524,12 +1576,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-08/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-08/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-08/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-08/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-08",
@@ -1546,12 +1600,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-08/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-08/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-08/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-08/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-08"],
@@ -1619,7 +1675,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-09/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-09"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-09"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-09"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-09/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-09"],
@@ -1689,12 +1746,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-09/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-09/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-09 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-09 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-09 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-09 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-09/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-09 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-09 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-09 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-09 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-09/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-09"],
@@ -1721,12 +1780,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-09/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-09/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-09/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-09/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-09",
@@ -1743,12 +1804,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-09/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-09/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-09/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-09/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-09"],
@@ -1816,7 +1879,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-10/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-10"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-10"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-10"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-10/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-10"],
@@ -1886,12 +1950,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-10/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-10/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-10 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-10 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-10 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-10 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-10/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-10 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-10 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-10 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-10 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-10/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-10"],
@@ -1918,12 +1984,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-10/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-10/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-10/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-10/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-10",
@@ -1940,12 +2008,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-10/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-10/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-10/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-10/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-10"],
@@ -2013,7 +2083,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-11/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-11"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-11"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-11"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-11/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-11"],
@@ -2083,12 +2154,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-11/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-11/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-11 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-11 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-11 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-11 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-11/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-11 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-11 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-11 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-11 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-11/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-11"],
@@ -2115,12 +2188,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-11/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-11/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-11/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-11/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-11",
@@ -2137,12 +2212,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-11/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-11/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-11/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-11/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-11"],
@@ -2210,7 +2287,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-12/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-12"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-12"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-12"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-12/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-12"],
@@ -2280,12 +2358,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-12/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-12/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-12 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-12 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-12 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-12 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-12/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-12 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-12 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-12 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-12 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-12/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-12"],
@@ -2312,12 +2392,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-12/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-12/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-12/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-12/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-12",
@@ -2334,12 +2416,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-12/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-12/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-12/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-12/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-12"],
@@ -2407,7 +2491,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-13/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-13"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-13"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-13"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-13/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-13"],
@@ -2477,12 +2562,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-13/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-13/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-13 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-13 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-13 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-13 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-13/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-13 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-13 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-13 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-13 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-13/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-13"],
@@ -2509,12 +2596,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-13/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-13/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-13/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-13/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-13",
@@ -2531,12 +2620,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-13/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-13/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-13/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-13/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-13"],
@@ -2604,7 +2695,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-14/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-14"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-14"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-14"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-14/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-14"],
@@ -2674,12 +2766,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-14/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-14/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-14 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-14 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-14 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-14 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-14/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-14 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-14 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-14 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-14 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-14/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-14"],
@@ -2706,12 +2800,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-14/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-14/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-14/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-14/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-14",
@@ -2728,12 +2824,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-14/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-14/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-14/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-14/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-14"],
@@ -2801,7 +2899,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-15/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-15"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-15"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-15"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-15/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-15"],
@@ -2871,12 +2970,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-15/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-15/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-15 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-15 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-15 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-15 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-15/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-15 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-15 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-15 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-15 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-15/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-15"],
@@ -2903,12 +3004,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-15/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-15/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-15/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-15/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-15",
@@ -2925,12 +3028,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-15/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-15/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-15/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-15/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-15"],
@@ -2998,7 +3103,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-16/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-16"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-16"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-16"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-16/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-16"],
@@ -3068,12 +3174,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-16/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-16/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-16 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-16 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-16 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-16 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-16/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-16 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-16 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-16 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-16 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-16/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-16"],
@@ -3100,12 +3208,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-16/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-16/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-16/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-16/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-16",
@@ -3122,12 +3232,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-16/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-16/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-16/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-16/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-16"],
@@ -3195,7 +3307,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-17/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-17"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-17"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-17"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-17/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-17"],
@@ -3265,12 +3378,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-17/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-17/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-17 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-17 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-17 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-17 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-17/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-17 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-17 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-17 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-17 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-17/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-17"],
@@ -3297,12 +3412,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-17/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-17/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-17/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-17/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-17",
@@ -3319,12 +3436,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-17/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-17/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-17/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-17/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-17"],
@@ -3392,7 +3511,8 @@ eblayout(dqmitems, "01-Integrity/EB-/EB-18/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB-18"])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-18"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-18"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB-/EB-18/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-18"],
@@ -3462,12 +3582,14 @@ eblayout(dqmitems, "04-TestPulse/EB-/EB-18/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB-/EB-18/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB-18 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-18 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-18 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB-18 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB-/EB-18/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB-18 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB-18 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-18 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-18 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-18/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-18"],
@@ -3494,12 +3616,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-18/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-18/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-18/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-18/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-18",
@@ -3516,12 +3640,14 @@ eblayout(dqmitems, "05-Laser/EB-/EB-18/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB-/EB-18/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB-/EB-18/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB-/EB-18/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB-18"],
@@ -3589,7 +3715,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+01/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+01"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+01"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+01"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+01/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+01"],
@@ -3659,12 +3786,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+01/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+01/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+01 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+01 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+01 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+01 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+01/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+01 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+01 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+01 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+01 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+01/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+01"],
@@ -3691,12 +3820,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+01/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+01/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+01/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+01/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+01",
@@ -3713,12 +3844,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+01/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+01/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+01/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+01/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+01"],
@@ -3786,7 +3919,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+02/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+02"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+02"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+02"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+02/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+02"],
@@ -3856,12 +3990,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+02/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+02/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+02 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+02 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+02 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+02 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+02/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+02 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+02 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+02 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+02 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+02/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+02"],
@@ -3888,12 +4024,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+02/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+02/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+02/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+02/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+02",
@@ -3910,12 +4048,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+02/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+02/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+02/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+02/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+02"],
@@ -3983,7 +4123,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+03/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+03"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+03"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+03"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+03/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+03"],
@@ -4053,12 +4194,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+03/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+03/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+03 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+03 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+03 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+03 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+03/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+03 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+03 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+03 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+03 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+03/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+03"],
@@ -4085,12 +4228,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+03/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+03/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+03/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+03/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+03",
@@ -4107,12 +4252,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+03/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+03/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+03/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+03/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+03"],
@@ -4180,7 +4327,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+04/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+04"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+04"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+04"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+04/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+04"],
@@ -4250,12 +4398,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+04/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+04/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+04 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+04 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+04 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+04 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+04/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+04 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+04 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+04 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+04 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+04/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+04"],
@@ -4282,12 +4432,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+04/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+04/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+04/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+04/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+04",
@@ -4304,12 +4456,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+04/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+04/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+04/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+04/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+04"],
@@ -4377,7 +4531,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+05/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+05"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+05"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+05"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+05/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+05"],
@@ -4447,12 +4602,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+05/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+05/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+05 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+05 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+05 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+05 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+05/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+05 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+05 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+05 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+05 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+05/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+05"],
@@ -4479,12 +4636,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+05/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+05/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+05/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+05/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+05",
@@ -4501,12 +4660,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+05/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+05/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+05/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+05/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+05"],
@@ -4574,7 +4735,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+06/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+06"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+06"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+06"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+06/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+06"],
@@ -4644,12 +4806,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+06/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+06/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+06 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+06 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+06 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+06 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+06/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+06 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+06 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+06 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+06 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+06/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+06"],
@@ -4676,12 +4840,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+06/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+06/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+06/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+06/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+06",
@@ -4698,12 +4864,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+06/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+06/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+06/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+06/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+06"],
@@ -4771,7 +4939,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+07/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+07"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+07"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+07"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+07/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+07"],
@@ -4841,12 +5010,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+07/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+07/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+07 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+07 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+07 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+07 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+07/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+07 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+07 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+07 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+07 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+07/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+07"],
@@ -4873,12 +5044,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+07/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+07/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+07/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+07/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+07",
@@ -4895,12 +5068,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+07/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+07/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+07/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+07/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+07"],
@@ -4968,7 +5143,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+08/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+08"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+08"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+08"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+08/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+08"],
@@ -5038,12 +5214,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+08/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+08/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+08 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+08 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+08 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+08 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+08/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+08 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+08 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+08 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+08 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+08/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+08"],
@@ -5070,12 +5248,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+08/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+08/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+08/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+08/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+08",
@@ -5092,12 +5272,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+08/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+08/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+08/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+08/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+08"],
@@ -5165,7 +5347,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+09/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+09"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+09"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+09"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+09/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+09"],
@@ -5235,12 +5418,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+09/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+09/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+09 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+09 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+09 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+09 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+09/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+09 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+09 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+09 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+09 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+09/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+09"],
@@ -5267,12 +5452,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+09/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+09/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+09/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+09/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+09",
@@ -5289,12 +5476,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+09/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+09/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+09/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+09/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+09"],
@@ -5362,7 +5551,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+10/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+10"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+10"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+10"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+10/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+10"],
@@ -5432,12 +5622,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+10/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+10/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+10 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+10 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+10 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+10 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+10/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+10 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+10 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+10 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+10 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+10/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+10"],
@@ -5464,12 +5656,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+10/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+10/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+10/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+10/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+10",
@@ -5486,12 +5680,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+10/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+10/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+10/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+10/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+10"],
@@ -5559,7 +5755,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+11/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+11"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+11"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+11"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+11/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+11"],
@@ -5629,12 +5826,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+11/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+11/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+11 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+11 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+11 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+11 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+11/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+11 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+11 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+11 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+11 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+11/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+11"],
@@ -5661,12 +5860,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+11/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+11/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+11/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+11/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+11",
@@ -5683,12 +5884,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+11/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+11/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+11/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+11/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+11"],
@@ -5756,7 +5959,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+12/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+12"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+12"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+12"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+12/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+12"],
@@ -5826,12 +6030,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+12/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+12/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+12 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+12 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+12 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+12 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+12/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+12 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+12 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+12 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+12 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+12/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+12"],
@@ -5858,12 +6064,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+12/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+12/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+12/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+12/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+12",
@@ -5880,12 +6088,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+12/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+12/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+12/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+12/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+12"],
@@ -5953,7 +6163,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+13/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+13"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+13"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+13"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+13/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+13"],
@@ -6023,12 +6234,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+13/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+13/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+13 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+13 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+13 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+13 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+13/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+13 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+13 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+13 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+13 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+13/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+13"],
@@ -6055,12 +6268,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+13/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+13/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+13/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+13/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+13",
@@ -6077,12 +6292,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+13/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+13/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+13/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+13/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+13"],
@@ -6150,7 +6367,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+14/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+14"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+14"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+14"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+14/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+14"],
@@ -6220,12 +6438,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+14/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+14/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+14 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+14 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+14 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+14 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+14/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+14 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+14 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+14 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+14 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+14/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+14"],
@@ -6252,12 +6472,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+14/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+14/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+14/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+14/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+14",
@@ -6274,12 +6496,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+14/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+14/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+14/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+14/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+14"],
@@ -6347,7 +6571,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+15/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+15"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+15"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+15"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+15/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+15"],
@@ -6417,12 +6642,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+15/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+15/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+15 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+15 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+15 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+15 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+15/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+15 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+15 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+15 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+15 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+15/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+15"],
@@ -6449,12 +6676,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+15/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+15/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+15/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+15/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+15",
@@ -6471,12 +6700,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+15/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+15/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+15/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+15/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+15"],
@@ -6544,7 +6775,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+16/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+16"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+16"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+16"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+16/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+16"],
@@ -6614,12 +6846,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+16/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+16/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+16 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+16 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+16 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+16 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+16/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+16 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+16 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+16 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+16 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+16/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+16"],
@@ -6646,12 +6880,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+16/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+16/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+16/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+16/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+16",
@@ -6668,12 +6904,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+16/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+16/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+16/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+16/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+16"],
@@ -6741,7 +6979,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+17/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+17"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+17"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+17"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+17/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+17"],
@@ -6811,12 +7050,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+17/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+17/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+17 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+17 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+17 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+17 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+17/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+17 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+17 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+17 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+17 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+17/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+17"],
@@ -6843,12 +7084,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+17/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+17/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+17/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+17/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+17",
@@ -6865,12 +7108,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+17/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+17/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+17/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+17/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+17"],
@@ -6938,7 +7183,8 @@ eblayout(dqmitems, "01-Integrity/EB+/EB+18/01-Channel-Integrity",
   ["EcalBarrel/EBIntegrityTask/ChId/EBIT ChId EB+18"])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/02-Gain-Integrity",
-  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+18"],)
+  ["EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+18"],
+  [None])
 
 eblayout(dqmitems, "01-Integrity/EB+/EB+18/03-TT-Integrity",
   ["EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+18"],
@@ -7008,12 +7254,14 @@ eblayout(dqmitems, "04-TestPulse/EB+/EB+18/PNs/00-TestPulse-PNs",
 eblayout(dqmitems, "04-TestPulse/EB+/EB+18/PNs/Gain01/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs pedestal EB+18 G01",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+18 G01"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+18 G01"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain01/EBPDT PNs amplitude EB+18 G01",
+   None])
 
 eblayout(dqmitems, "04-TestPulse/EB+/EB+18/PNs/Gain16/00-TestPulse-PNs",
   ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs pedestal EB+18 G16",
    "EcalBarrel/EBTestPulseClient/EBPDT PNs pedestal rms EB+18 G16"],
-  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+18 G16"])
+  ["EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+18 G16",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+18/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+18"],
@@ -7040,12 +7288,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+18/L1/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+18/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+18/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L1",
    "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L1"],
-  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L1"])
+  ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L1",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+18/L4/00-Laser",
   ["EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+18",
@@ -7062,12 +7312,14 @@ eblayout(dqmitems, "05-Laser/EB+/EB+18/L4/01-Laser",
 eblayout(dqmitems, "05-Laser/EB+/EB+18/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L4",
+   None])
 
 eblayout(dqmitems, "05-Laser/EB+/EB+18/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L4",
    "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L4"],
-  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L4"])
+  ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L4",
+   None])
 
 eblayout(dqmitems, "07-Timing/EB+/EB+18/00-Timing",
   ["EcalBarrel/EBTimingClient/EBTMT timing quality EB+18"],
@@ -7129,7 +7381,8 @@ eblayout(dqmitems, "10-StatusFlags/EB+/EB+18/00-StatusFlags",
 eblayout(dqmitems, "10-Cluster/00-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC energy",
    "EcalBarrel/EBClusterTask/EBCLT BC size"],
-  ["EcalBarrel/EBClusterTask/EBCLT BC number"])
+  ["EcalBarrel/EBClusterTask/EBCLT BC number",
+   None])
 
 eblayout(dqmitems, "10-Cluster/01-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC energy map"],
@@ -7154,12 +7407,14 @@ eblayout(dqmitems, "10-Cluster/04-Cluster",
 eblayout(dqmitems, "10-Cluster/05-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT SC energy",
    "EcalBarrel/EBClusterTask/EBCLT SC size"],
-  ["EcalBarrel/EBClusterTask/EBCLT SC number"])
+  ["EcalBarrel/EBClusterTask/EBCLT SC number",
+   None])
 
 eblayout(dqmitems, "10-Cluster/06-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT s1s9",
    "EcalBarrel/EBClusterTask/EBCLT s9s25"],
-  ["EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass"])
+  ["EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass",
+   None])
 
 eblayout(dqmitems, "11-Occupancy/00-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy"],
