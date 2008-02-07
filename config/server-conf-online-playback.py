@@ -24,7 +24,7 @@ server = DQMServerSpec (
     # DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ]),
     # DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
     DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
-    DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ])
+    DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ]),
     # DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ])
     # DQMBackendSpec('rpc','Layout', [ CONFIGDIR + '/rpc-layouts.py' ]),
     # DQMBackendSpec('csc','Layout', [ CONFIGDIR + '/csc-layouts.py' ]),
