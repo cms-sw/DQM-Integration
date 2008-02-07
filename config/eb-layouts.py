@@ -70,17 +70,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-01/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-01/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-01"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-01/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-01"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-01/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-01"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-01/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-01"],
@@ -274,17 +274,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-02/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-02/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-02"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-02/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-02"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-02/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-02"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-02/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-02"],
@@ -478,17 +478,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-03/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-03/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-03"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-03/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-03"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-03/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-03"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-03/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-03"],
@@ -682,17 +682,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-04/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-04/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-04"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-04/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-04"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-04/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-04"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-04/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-04"],
@@ -886,17 +886,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-05/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-05/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-05"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-05/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-05"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-05/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-05"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-05/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-05"],
@@ -1090,17 +1090,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-06/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-06/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-06"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-06/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-06"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-06/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-06"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-06/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-06"],
@@ -1294,17 +1294,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-07/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-07/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-07"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-07/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-07"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-07/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-07"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-07/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-07"],
@@ -1498,17 +1498,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-08/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-08/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-08"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-08/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-08"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-08/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-08"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-08/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-08"],
@@ -1702,17 +1702,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-09/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-09/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-09"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-09/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-09"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-09/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-09"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-09/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-09"],
@@ -1906,17 +1906,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-10/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-10/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-10"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-10/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-10"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-10/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-10"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-10/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-10"],
@@ -2110,17 +2110,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-11/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-11/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-11"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-11/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-11"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-11/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-11"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-11/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-11"],
@@ -2314,17 +2314,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-12/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-12/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-12"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-12/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-12"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-12/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-12"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-12/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-12"],
@@ -2518,17 +2518,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-13/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-13/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-13"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-13/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-13"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-13/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-13"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-13/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-13"],
@@ -2722,17 +2722,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-14/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-14/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-14"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-14/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-14"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-14/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-14"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-14/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-14"],
@@ -2926,17 +2926,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-15/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-15/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-15"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-15/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-15"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-15/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-15"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-15/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-15"],
@@ -3130,17 +3130,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-16/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-16/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-16"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-16/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-16"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-16/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-16"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-16/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-16"],
@@ -3334,17 +3334,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-17/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-17/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-17"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-17/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-17"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-17/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-17"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-17/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-17"],
@@ -3538,17 +3538,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB-/EB-18/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB-/EB-18/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB-18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB-18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB-18"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-18/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB-18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB-18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB-18"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-18/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB-18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB-18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB-18"])
 
 eblayout(dqmitems, "03-Pedestal/EB-/EB-18/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB-18"],
@@ -3742,17 +3742,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+01/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+01/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+01"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+01/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+01"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+01/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+01"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+01",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+01"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+01"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+01/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+01"],
@@ -3946,17 +3946,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+02/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+02/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+02"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+02/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+02"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+02/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+02"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+02",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+02"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+02"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+02/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+02"],
@@ -4150,17 +4150,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+03/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+03/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+03"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+03/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+03"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+03/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+03"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+03",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+03"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+03"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+03/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+03"],
@@ -4354,17 +4354,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+04/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+04/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+04"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+04/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+04"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+04/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+04"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+04",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+04"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+04"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+04/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+04"],
@@ -4558,17 +4558,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+05/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+05/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+05"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+05/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+05"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+05/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+05"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+05",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+05"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+05"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+05/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+05"],
@@ -4762,17 +4762,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+06/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+06/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+06"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+06/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+06"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+06/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+06"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+06",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+06"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+06"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+06/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+06"],
@@ -4966,17 +4966,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+07/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+07/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+07"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+07/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+07"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+07/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+07"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+07",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+07"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+07"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+07/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+07"],
@@ -5170,17 +5170,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+08/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+08/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+08"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+08/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+08"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+08/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+08"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+08",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+08"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+08"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+08/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+08"],
@@ -5374,17 +5374,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+09/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+09/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+09"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+09/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+09"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+09/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+09"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+09",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+09"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+09"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+09/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+09"],
@@ -5578,17 +5578,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+10/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+10/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+10"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+10/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+10"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+10/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+10"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+10",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+10"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+10"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+10/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+10"],
@@ -5782,17 +5782,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+11/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+11/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+11"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+11/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+11"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+11/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+11"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+11",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+11"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+11"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+11/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+11"],
@@ -5986,17 +5986,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+12/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+12/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+12"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+12/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+12"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+12/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+12"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+12",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+12"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+12"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+12/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+12"],
@@ -6190,17 +6190,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+13/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+13/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+13"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+13/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+13"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+13/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+13"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+13",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+13"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+13"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+13/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+13"],
@@ -6394,17 +6394,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+14/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+14/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+14"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+14/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+14"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+14/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+14"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+14",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+14"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+14"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+14/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+14"],
@@ -6598,17 +6598,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+15/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+15/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+15"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+15/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+15"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+15/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+15"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+15",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+15"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+15"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+15/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+15"],
@@ -6802,17 +6802,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+16/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+16/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+16"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+16/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+16"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+16/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+16"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+16",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+16"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+16"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+16/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+16"],
@@ -7006,17 +7006,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+17/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+17/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+17"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+17/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+17"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+17/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+17"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+17",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+17"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+17"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+17/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+17"],
@@ -7210,17 +7210,17 @@ eblayout(dqmitems, "02-PedestalOnline/EB+/EB+18/Gain12/00-PedestalOnline",
 eblayout(dqmitems, "03-Pedestal/EB+/EB+18/Gain01/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G01 EB+18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G01 EB+18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G01 EB+18"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+18/Gain06/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G06 EB+18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G06 EB+18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G06 EB+18"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+18/Gain12/00-Pedestal",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality G12 EB+18"],
   ["EcalBarrel/EBPedestalClient/EBPT pedestal mean G12 EB+18",
-   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+18"]),
+   "EcalBarrel/EBPedestalClient/EBPT pedestal rms G12 EB+18"])
 
 eblayout(dqmitems, "03-Pedestal/EB+/EB+18/PNs/00-Pedestal-PNs",
   ["EcalBarrel/EBPedestalClient/EBPT pedestal quality PNs G01 EB+18"],

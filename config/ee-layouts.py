@@ -84,17 +84,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-01/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-01/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-01"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-01/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-01"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-01/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-01"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-01/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-01"],
@@ -319,17 +319,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-02/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-02/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-02"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-02/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-02"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-02/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-02"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-02/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-02"],
@@ -554,17 +554,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-03/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-03/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-03"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-03/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-03"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-03/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-03"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-03/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-03"],
@@ -789,17 +789,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-04/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-04/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-04"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-04/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-04"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-04/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-04"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-04/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-04"],
@@ -1024,17 +1024,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-05/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-05/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-05"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-05/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-05"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-05/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-05"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-05/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-05"],
@@ -1259,17 +1259,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-06/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-06/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-06"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-06/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-06"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-06/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-06"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-06/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-06"],
@@ -1494,17 +1494,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-07/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-07/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-07"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-07/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-07"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-07/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-07"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-07/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-07"],
@@ -1729,17 +1729,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-08/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-08/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-08"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-08/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-08"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-08/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-08"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-08/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-08"],
@@ -1964,17 +1964,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE-/EE-09/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE-/EE-09/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE-09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE-09"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-09/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE-09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE-09"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-09/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE-09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE-09"])
 
 eelayout(dqmitems, "03-Pedestal/EE-/EE-09/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE-09"],
@@ -2199,17 +2199,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+01/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+01/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+01"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+01/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+01"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+01/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+01"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+01",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+01"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+01"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+01/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+01"],
@@ -2434,17 +2434,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+02/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+02/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+02"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+02/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+02"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+02/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+02"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+02",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+02"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+02"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+02/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+02"],
@@ -2669,17 +2669,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+03/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+03/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+03"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+03/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+03"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+03/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+03"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+03",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+03"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+03"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+03/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+03"],
@@ -2904,17 +2904,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+04/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+04/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+04"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+04/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+04"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+04/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+04"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+04",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+04"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+04"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+04/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+04"],
@@ -3139,17 +3139,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+05/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+05/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+05"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+05/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+05"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+05/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+05"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+05",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+05"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+05"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+05/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+05"],
@@ -3374,17 +3374,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+06/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+06/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+06"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+06/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+06"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+06/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+06"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+06",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+06"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+06"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+06/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+06"],
@@ -3609,17 +3609,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+07/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+07/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+07"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+07/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+07"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+07/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+07"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+07",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+07"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+07"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+07/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+07"],
@@ -3844,17 +3844,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+08/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+08/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+08"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+08/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+08"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+08/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+08"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+08",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+08"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+08"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+08/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+08"],
@@ -4079,17 +4079,17 @@ eelayout(dqmitems, "02-PedestalOnline/EE+/EE+09/Gain12/00-PedestalOnline",
 eelayout(dqmitems, "03-Pedestal/EE+/EE+09/Gain01/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G01 EE+09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G01 EE+09"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+09/Gain06/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G06 EE+09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G06 EE+09"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+09/Gain12/00-Pedestal",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+09"],
   ["EcalEndcap/EEPedestalClient/EEPT pedestal mean G12 EE+09",
-   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+09"]),
+   "EcalEndcap/EEPedestalClient/EEPT pedestal rms G12 EE+09"])
 
 eelayout(dqmitems, "03-Pedestal/EE+/EE+09/PNs/00-Pedestal-PNs",
   ["EcalEndcap/EEPedestalClient/EEPT pedestal quality PNs G01 EE+09"],
