@@ -279,7 +279,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-01/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-01/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-01/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-01"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-01"])
 
@@ -514,7 +514,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-02/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-02/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-02/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-02"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-02"])
 
@@ -749,7 +749,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-03/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-03/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-03/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-03"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-03"])
 
@@ -984,7 +984,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-04/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-04/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-04/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-04"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-04"])
 
@@ -1219,7 +1219,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-05/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-05/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-05/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-05"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-05"])
 
@@ -1454,7 +1454,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-06/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-06/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-06/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-06"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-06"])
 
@@ -1689,7 +1689,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-07/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-07/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-07/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-07"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-07"])
 
@@ -1924,7 +1924,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-08/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-08/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-08/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-08"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-08"])
 
@@ -2159,7 +2159,7 @@ eelayout(dqmitems, "09-Cosmic/EE-/EE-09/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09"])
 
-eelayout(dqmitems, "09-StatusFlags/EE-/EE-09/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE-/EE-09/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-09"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-09"])
 
@@ -2394,7 +2394,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+01/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+01/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+01/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+01"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+01"])
 
@@ -2629,7 +2629,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+02/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+02/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+02/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+02"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+02"])
 
@@ -2864,7 +2864,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+03/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+03/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+03/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+03"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+03"])
 
@@ -3099,7 +3099,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+04/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+04/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+04/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+04"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+04"])
 
@@ -3334,7 +3334,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+05/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+05/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+05/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+05"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+05"])
 
@@ -3569,7 +3569,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+06/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+06/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+06/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+06"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+06"])
 
@@ -3804,7 +3804,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+07/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+07/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+07/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+07"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+07"])
 
@@ -4039,7 +4039,7 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+08/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+08/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+08/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+08"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+08"])
 
@@ -4274,114 +4274,114 @@ eelayout(dqmitems, "09-Cosmic/EE+/EE+09/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09"])
 
-eelayout(dqmitems, "09-StatusFlags/EE+/EE+09/00-StatusFlags",
+eelayout(dqmitems, "10-StatusFlags/EE+/EE+09/00-StatusFlags",
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+09"],
   ["EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+09"])
 
-eelayout(dqmitems, "10-Cluster/00-Cluster",
+eelayout(dqmitems, "11-Cluster/00-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC energy",
    "EcalEndcap/EEClusterTask/EECLT BC size"],
   ["EcalEndcap/EEClusterTask/EECLT BC number",
    None])
 
-eelayout(dqmitems, "10-Cluster/01-Cluster",
+eelayout(dqmitems, "11-Cluster/01-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC energy map EE -"],
   ["EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -",
    "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -"])
 
-eelayout(dqmitems, "10-Cluster/02-Cluster",
+eelayout(dqmitems, "11-Cluster/02-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC energy map EE +"],
   ["EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +",
    "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +"])
 
-eelayout(dqmitems, "10-Cluster/03-Cluster",
+eelayout(dqmitems, "11-Cluster/03-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC size map EE -"],
   ["EcalEndcap/EEClusterTask/EECLT BC size projection R EE -",
    "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE -"])
 
-eelayout(dqmitems, "10-Cluster/04-Cluster",
+eelayout(dqmitems, "11-Cluster/04-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC size map EE +"],
   ["EcalEndcap/EEClusterTask/EECLT BC size projection R EE +",
    "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE +"])
 
-eelayout(dqmitems, "10-Cluster/05-Cluster",
+eelayout(dqmitems, "11-Cluster/05-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC ET map EE -"],
   ["EcalEndcap/EEClusterTask/EECLT BC ET projection R EE -",
    "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE -"])
 
-eelayout(dqmitems, "10-Cluster/06-Cluster",
+eelayout(dqmitems, "11-Cluster/06-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC ET map EE +"],
   ["EcalEndcap/EEClusterTask/EECLT BC ET projection R EE +",
    "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE +"])
 
-eelayout(dqmitems, "10-Cluster/07-Cluster",
+eelayout(dqmitems, "11-Cluster/07-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC number map EE -"],
   ["EcalEndcap/EEClusterTask/EECLT BC number projection R EE -",
    "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE -"])
 
-eelayout(dqmitems, "10-Cluster/08-Cluster",
+eelayout(dqmitems, "11-Cluster/08-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT BC number map EE +"],
   ["EcalEndcap/EEClusterTask/EECLT BC number projection R EE +",
    "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE +"])
 
-eelayout(dqmitems, "10-Cluster/09-Cluster",
+eelayout(dqmitems, "11-Cluster/09-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT SC energy",
    "EcalEndcap/EEClusterTask/EECLT SC size"],
   ["EcalEndcap/EEClusterTask/EECLT SC number",
    None])
 
-eelayout(dqmitems, "10-Cluster/10-Cluster",
+eelayout(dqmitems, "11-Cluster/10-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT s1s9",
    "EcalEndcap/EEClusterTask/EECLT s9s25"],
   ["EcalEndcap/EEClusterTask/EECLT dicluster invariant mass",
    None])
 
-eelayout(dqmitems, "11-Occupancy/00-Occupancy",
+eelayout(dqmitems, "12-Occupancy/00-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection R",
    "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/01-Occupancy",
+eelayout(dqmitems, "12-Occupancy/01-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE +"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/02-Occupancy",
+eelayout(dqmitems, "12-Occupancy/02-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection R",
    "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/03-Occupancy",
+eelayout(dqmitems, "12-Occupancy/03-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE +"],
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/04-Occupancy",
+eelayout(dqmitems, "12-Occupancy/04-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE - projection R",
    "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE - projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/05-Occupancy",
+eelayout(dqmitems, "12-Occupancy/05-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE +"],
   ["EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE + projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/06-Occupancy",
+eelayout(dqmitems, "12-Occupancy/06-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/07-Occupancy",
+eelayout(dqmitems, "12-Occupancy/07-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE +"],
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE + projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/08-Occupancy",
+eelayout(dqmitems, "12-Occupancy/08-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection phi"])
 
-eelayout(dqmitems, "11-Occupancy/09-Occupancy",
+eelayout(dqmitems, "12-Occupancy/09-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE +"],
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi"])

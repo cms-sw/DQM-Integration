@@ -7378,65 +7378,65 @@ eblayout(dqmitems, "10-StatusFlags/EB+/EB+18/00-StatusFlags",
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18"],
   ["EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18"]) 
 
-eblayout(dqmitems, "10-Cluster/00-Cluster",
+eblayout(dqmitems, "11-Cluster/00-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC energy",
    "EcalBarrel/EBClusterTask/EBCLT BC size"],
   ["EcalBarrel/EBClusterTask/EBCLT BC number",
    None])
 
-eblayout(dqmitems, "10-Cluster/01-Cluster",
+eblayout(dqmitems, "11-Cluster/01-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC energy map"],
   ["EcalBarrel/EBClusterTask/EBCLT BC energy projection eta",
    "EcalBarrel/EBClusterTask/EBCLT BC energy projection phi"])
 
-eblayout(dqmitems, "10-Cluster/02-Cluster",
+eblayout(dqmitems, "11-Cluster/02-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC size map"],
   ["EcalBarrel/EBClusterTask/EBCLT BC size projection eta",
    "EcalBarrel/EBClusterTask/EBCLT BC size projection phi"])
 
-eblayout(dqmitems, "10-Cluster/03-Cluster",
+eblayout(dqmitems, "11-Cluster/03-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC ET map"],
   ["EcalBarrel/EBClusterTask/EBCLT BC ET projection eta",
    "EcalBarrel/EBClusterTask/EBCLT BC ET projection phi"])
 
-eblayout(dqmitems, "10-Cluster/04-Cluster",
+eblayout(dqmitems, "11-Cluster/04-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT BC number map"],
   ["EcalBarrel/EBClusterTask/EBCLT BC number projection eta",
    "EcalBarrel/EBClusterTask/EBCLT BC number projection phi"])
 
-eblayout(dqmitems, "10-Cluster/05-Cluster",
+eblayout(dqmitems, "11-Cluster/05-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT SC energy",
    "EcalBarrel/EBClusterTask/EBCLT SC size"],
   ["EcalBarrel/EBClusterTask/EBCLT SC number",
    None])
 
-eblayout(dqmitems, "10-Cluster/06-Cluster",
+eblayout(dqmitems, "11-Cluster/06-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT s1s9",
    "EcalBarrel/EBClusterTask/EBCLT s9s25"],
   ["EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass",
    None])
 
-eblayout(dqmitems, "11-Occupancy/00-Occupancy",
+eblayout(dqmitems, "12-Occupancy/00-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection phi"])
 
-eblayout(dqmitems, "11-Occupancy/01-Occupancy",
+eblayout(dqmitems, "12-Occupancy/01-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection phi"])
 
-eblayout(dqmitems, "11-Occupancy/02-Occupancy",
+eblayout(dqmitems, "12-Occupancy/02-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection phi"])
 
-eblayout(dqmitems, "11-Occupancy/03-Occupancy",
+eblayout(dqmitems, "12-Occupancy/03-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi"])
 
-eblayout(dqmitems, "11-Occupancy/04-Occupancy",
+eblayout(dqmitems, "12-Occupancy/04-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection phi"])
