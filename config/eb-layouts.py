@@ -249,13 +249,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L1",
    None])
 
@@ -273,13 +273,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L4",
    None])
 
@@ -461,13 +461,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L1",
    None])
 
@@ -485,13 +485,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L4",
    None])
 
@@ -673,13 +673,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L1",
    None])
 
@@ -697,13 +697,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L4",
    None])
 
@@ -885,13 +885,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L1",
    None])
 
@@ -909,13 +909,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L4",
    None])
 
@@ -1097,13 +1097,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L1",
    None])
 
@@ -1121,13 +1121,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L4",
    None])
 
@@ -1309,13 +1309,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L1",
    None])
 
@@ -1333,13 +1333,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L4",
    None])
 
@@ -1521,13 +1521,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L1",
    None])
 
@@ -1545,13 +1545,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L4",
    None])
 
@@ -1733,13 +1733,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L1",
    None])
 
@@ -1757,13 +1757,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L4",
    None])
 
@@ -1945,13 +1945,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L1",
    None])
 
@@ -1969,13 +1969,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L4",
    None])
 
@@ -2157,13 +2157,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L1",
    None])
 
@@ -2181,13 +2181,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L4",
    None])
 
@@ -2369,13 +2369,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L1",
    None])
 
@@ -2393,13 +2393,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L4",
    None])
 
@@ -2581,13 +2581,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L1",
    None])
 
@@ -2605,13 +2605,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L4",
    None])
 
@@ -2793,13 +2793,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L1",
    None])
 
@@ -2817,13 +2817,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L4",
    None])
 
@@ -3005,13 +3005,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L1",
    None])
 
@@ -3029,13 +3029,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L4",
    None])
 
@@ -3217,13 +3217,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L1",
    None])
 
@@ -3241,13 +3241,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L4",
    None])
 
@@ -3429,13 +3429,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L1",
    None])
 
@@ -3453,13 +3453,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L4",
    None])
 
@@ -3641,13 +3641,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L1",
    None])
 
@@ -3665,13 +3665,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L4",
    None])
 
@@ -3853,13 +3853,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L1",
    None])
 
@@ -3877,13 +3877,13 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L4",
    None])
 
@@ -4065,13 +4065,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L1",
    None])
 
@@ -4089,13 +4089,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L4",
    None])
 
@@ -4277,13 +4277,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L1",
    None])
 
@@ -4301,13 +4301,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L4",
    None])
 
@@ -4489,13 +4489,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L1",
    None])
 
@@ -4513,13 +4513,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L4",
    None])
 
@@ -4701,13 +4701,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L1",
    None])
 
@@ -4725,13 +4725,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L4",
    None])
 
@@ -4913,13 +4913,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L1",
    None])
 
@@ -4937,13 +4937,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L4",
    None])
 
@@ -5125,13 +5125,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L1",
    None])
 
@@ -5149,13 +5149,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L4",
    None])
 
@@ -5337,13 +5337,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L1",
    None])
 
@@ -5361,13 +5361,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L4",
    None])
 
@@ -5549,13 +5549,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L1",
    None])
 
@@ -5573,13 +5573,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L4",
    None])
 
@@ -5761,13 +5761,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L1",
    None])
 
@@ -5785,13 +5785,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L4",
    None])
 
@@ -5973,13 +5973,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L1",
    None])
 
@@ -5997,13 +5997,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L4",
    None])
 
@@ -6185,13 +6185,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L1",
    None])
 
@@ -6209,13 +6209,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L4",
    None])
 
@@ -6397,13 +6397,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L1",
    None])
 
@@ -6421,13 +6421,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L4",
    None])
 
@@ -6609,13 +6609,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L1",
    None])
 
@@ -6633,13 +6633,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L4",
    None])
 
@@ -6821,13 +6821,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L1",
    None])
 
@@ -6845,13 +6845,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L4",
    None])
 
@@ -7033,13 +7033,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L1",
    None])
 
@@ -7057,13 +7057,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L4",
    None])
 
@@ -7245,13 +7245,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L1",
    None])
 
@@ -7269,13 +7269,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L4",
    None])
 
@@ -7457,13 +7457,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L1",
    None])
 
@@ -7481,13 +7481,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L4",
    None])
 
@@ -7669,13 +7669,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L1/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L1",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L1",
    None])
 
@@ -7693,13 +7693,13 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L4/01-Laser",
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L4",
    None])
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/03-Laser/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L4",
    None])
 
@@ -7891,13 +7891,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L1",
    None])
 
@@ -7915,13 +7915,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-01 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-01/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-01 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L4",
    None])
 
@@ -8095,13 +8095,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L1",
    None])
 
@@ -8119,13 +8119,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-02 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-02/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-02 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L4",
    None])
 
@@ -8299,13 +8299,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L1",
    None])
 
@@ -8323,13 +8323,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-03 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-03/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-03 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L4",
    None])
 
@@ -8503,13 +8503,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L1",
    None])
 
@@ -8527,13 +8527,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-04 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-04/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-04 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L4",
    None])
 
@@ -8707,13 +8707,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L1",
    None])
 
@@ -8731,13 +8731,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-05 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-05/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-05 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L4",
    None])
 
@@ -8911,13 +8911,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L1",
    None])
 
@@ -8935,13 +8935,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-06 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-06/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-06 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L4",
    None])
 
@@ -9115,13 +9115,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L1",
    None])
 
@@ -9139,13 +9139,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-07 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-07/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-07 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L4",
    None])
 
@@ -9319,13 +9319,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L1",
    None])
 
@@ -9343,13 +9343,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-08 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-08/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-08 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L4",
    None])
 
@@ -9523,13 +9523,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L1",
    None])
 
@@ -9547,13 +9547,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-09 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-09/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-09 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L4",
    None])
 
@@ -9727,13 +9727,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L1",
    None])
 
@@ -9751,13 +9751,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-10 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-10/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-10 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L4",
    None])
 
@@ -9931,13 +9931,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L1",
    None])
 
@@ -9955,13 +9955,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-11 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-11/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-11 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L4",
    None])
 
@@ -10135,13 +10135,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L1",
    None])
 
@@ -10159,13 +10159,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-12 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-12/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-12 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L4",
    None])
 
@@ -10339,13 +10339,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L1",
    None])
 
@@ -10363,13 +10363,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-13 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-13/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-13 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L4",
    None])
 
@@ -10543,13 +10543,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L1",
    None])
 
@@ -10567,13 +10567,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-14 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-14/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-14 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L4",
    None])
 
@@ -10747,13 +10747,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L1",
    None])
 
@@ -10771,13 +10771,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-15 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-15/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-15 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L4",
    None])
 
@@ -10951,13 +10951,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L1",
    None])
 
@@ -10975,13 +10975,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-16 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-16/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-16 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L4",
    None])
 
@@ -11155,13 +11155,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L1",
    None])
 
@@ -11179,13 +11179,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-17 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-17/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-17 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L4",
    None])
 
@@ -11359,13 +11359,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L1",
    None])
 
@@ -11383,13 +11383,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB-18 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB-/EB-18/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB-18 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L4",
    None])
 
@@ -11563,13 +11563,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L1",
    None])
 
@@ -11587,13 +11587,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+01 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+01/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+01 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L4",
    None])
 
@@ -11767,13 +11767,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L1",
    None])
 
@@ -11791,13 +11791,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+02 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+02/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+02 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L4",
    None])
 
@@ -11971,13 +11971,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L1",
    None])
 
@@ -11995,13 +11995,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+03 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+03/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+03 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L4",
    None])
 
@@ -12175,13 +12175,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L1",
    None])
 
@@ -12199,13 +12199,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+04 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+04/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+04 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L4",
    None])
 
@@ -12379,13 +12379,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L1",
    None])
 
@@ -12403,13 +12403,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+05 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+05/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+05 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L4",
    None])
 
@@ -12583,13 +12583,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L1",
    None])
 
@@ -12607,13 +12607,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+06 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+06/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+06 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L4",
    None])
 
@@ -12787,13 +12787,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L1",
    None])
 
@@ -12811,13 +12811,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+07 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+07/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+07 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L4",
    None])
 
@@ -12991,13 +12991,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L1",
    None])
 
@@ -13015,13 +13015,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+08 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+08/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+08 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L4",
    None])
 
@@ -13195,13 +13195,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L1",
    None])
 
@@ -13219,13 +13219,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+09 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+09/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+09 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L4",
    None])
 
@@ -13399,13 +13399,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L1",
    None])
 
@@ -13423,13 +13423,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+10 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+10/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+10 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L4",
    None])
 
@@ -13603,13 +13603,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L1",
    None])
 
@@ -13627,13 +13627,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+11 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+11/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+11 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L4",
    None])
 
@@ -13807,13 +13807,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L1",
    None])
 
@@ -13831,13 +13831,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+12 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+12/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+12 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L4",
    None])
 
@@ -14011,13 +14011,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L1",
    None])
 
@@ -14035,13 +14035,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+13 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+13/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+13 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L4",
    None])
 
@@ -14215,13 +14215,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L1",
    None])
 
@@ -14239,13 +14239,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+14 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+14/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+14 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L4",
    None])
 
@@ -14419,13 +14419,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L1",
    None])
 
@@ -14443,13 +14443,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+15 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+15/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+15 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L4",
    None])
 
@@ -14623,13 +14623,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L1",
    None])
 
@@ -14647,13 +14647,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+16 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+16/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+16 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L4",
    None])
 
@@ -14827,13 +14827,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L1",
    None])
 
@@ -14851,13 +14851,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+17 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+17/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+17 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L4",
    None])
 
@@ -15031,13 +15031,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L1/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L1/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L1",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L1/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L1",
-   "EcalBarrel/EBLaserClient/Laser1/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L1"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L1"],
   ["EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L1",
    None])
 
@@ -15055,13 +15055,13 @@ eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L4/01-Laser",
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L4/02-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain01/EBPDT PNs pedestal rms EB+18 G01 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L4",
    None])
 
 eblayout(dqmitems, "99-Experts/05-Laser/EB+/EB+18/L4/03-Laser",
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L4",
-   "EcalBarrel/EBLaserClient/Laser4/PN/Gain16/EBPDT PNs pedestal rms EB+18 G16 L4"],
+   "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L4"],
   ["EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L4",
    None])
 

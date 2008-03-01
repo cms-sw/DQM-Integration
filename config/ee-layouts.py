@@ -26,8 +26,8 @@ eelayout(dqmitems, "00-Summary/05-LaserL1-Summary",
   ["EcalEndcap/EESummaryClient/EELT EE + laser quality summary L1"])
 
 eelayout(dqmitems, "00-Summary/06-Led-Summary",
-  ["EcalEndcap/EESummaryClient/EELDT EE - led quality summary"],
-  ["EcalEndcap/EESummaryClient/EELDT EE + led quality summary"])
+  ["EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1"],
+  ["EcalEndcap/EESummaryClient/EELDT EE + led quality summary L1"])
 
 eelayout(dqmitems, "00-Summary/07-Timing-Summary",
   ["EcalEndcap/EESummaryClient/EETMT EE - timing quality summary"],
@@ -190,9 +190,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-01/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-01"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-01", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-01", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-01"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-01"],
@@ -335,45 +335,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-01"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-01",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-01",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-01"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-01",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-01",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-01"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-01"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-01",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-01"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-01",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-01",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-01"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-01",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-01"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-01 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-01 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-01 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-01 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-01 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-01 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/05-Timing/00-Timing",
@@ -446,9 +446,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-02/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-02"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-02", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-02", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-02"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-02"],
@@ -591,45 +591,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-02"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-02",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-02",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-02"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-02",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-02",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-02"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-02"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-02",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-02"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-02",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-02",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-02"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-02",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-02"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-02 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-02 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-02 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-02 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-02 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-02 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/05-Timing/00-Timing",
@@ -702,9 +702,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-03/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-03"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-03", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-03", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-03"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-03"],
@@ -847,45 +847,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-03"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-03",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-03",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-03"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-03",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-03",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-03"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-03"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-03",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-03"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-03",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-03",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-03"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-03",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-03"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-03 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-03 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-03 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-03 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-03 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-03 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/05-Timing/00-Timing",
@@ -958,9 +958,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-04/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-04"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-04", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-04", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-04"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-04"],
@@ -1103,45 +1103,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-04"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-04",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-04",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-04"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-04",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-04",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-04"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-04"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-04",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-04"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-04",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-04",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-04"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-04",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-04"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-04 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-04 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-04 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-04 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-04 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-04 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/05-Timing/00-Timing",
@@ -1214,9 +1214,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-05/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-05"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-05", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-05", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-05"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-05"],
@@ -1359,45 +1359,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-05"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-05",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-05",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-05"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-05",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-05",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-05"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-05"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-05",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-05"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-05",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-05",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-05"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-05",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-05"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-05 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-05 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-05 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-05 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-05 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-05 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/05-Timing/00-Timing",
@@ -1470,9 +1470,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-06/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-06"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-06", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-06", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-06"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-06"],
@@ -1615,45 +1615,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-06"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-06",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-06",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-06"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-06",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-06",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-06"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-06"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-06",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-06"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-06",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-06",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-06"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-06",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-06"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-06 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-06 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-06 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-06 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-06 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-06 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/05-Timing/00-Timing",
@@ -1726,9 +1726,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-07/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-07"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-07", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-07", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-07"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-07"],
@@ -1871,45 +1871,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-07"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-07",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-07",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-07"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-07",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-07",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-07"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-07"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-07",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-07"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-07",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-07",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-07"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-07",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-07"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-07 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-07 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-07 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-07 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-07 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-07 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/05-Timing/00-Timing",
@@ -1982,9 +1982,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-08/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-08"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-08", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-08", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-08"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-08"],
@@ -2127,45 +2127,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-08"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-08",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-08",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-08"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-08",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-08",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-08"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-08"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-08",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-08"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-08",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-08",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-08"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-08",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-08"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-08 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-08 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-08 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-08 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-08 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-08 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/05-Timing/00-Timing",
@@ -2238,9 +2238,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-09/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE-09"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE-09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-09", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-09", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE-09"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE-09"],
@@ -2383,45 +2383,45 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-09"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-09",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-09",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-09"])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-09",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-09",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-09"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-09"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-09",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-09"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-09",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-09",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-09"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-09",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-09"])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-09 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-09 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-09 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-09 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-09 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-09 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/05-Timing/00-Timing",
@@ -2494,9 +2494,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+01/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+01"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+01", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+01", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+01"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+01"],
@@ -2639,45 +2639,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+01"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+01",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+01",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+01"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+01",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+01",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+01"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+01"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+01",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+01"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+01",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+01",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+01"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+01",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+01"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+01 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+01 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+01 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+01 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+01 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+01 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/05-Timing/00-Timing",
@@ -2750,9 +2750,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+02/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+02"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+02", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+02", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+02"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+02"],
@@ -2895,45 +2895,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+02"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+02",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+02",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+02"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+02",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+02",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+02"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+02"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+02",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+02"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+02",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+02",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+02"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+02",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+02"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+02 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+02 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+02 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+02 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+02 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+02 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/05-Timing/00-Timing",
@@ -3006,9 +3006,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+03/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+03"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+03", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+03", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+03"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+03"],
@@ -3151,45 +3151,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+03"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+03",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+03",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+03"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+03",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+03",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+03"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+03"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+03",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+03"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+03",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+03",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+03"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+03",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+03"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+03 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+03 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+03 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+03 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+03 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+03 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/05-Timing/00-Timing",
@@ -3262,9 +3262,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+04/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+04"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+04", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+04", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+04"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+04"],
@@ -3407,45 +3407,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+04"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+04",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+04",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+04"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+04",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+04",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+04"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+04"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+04",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+04"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+04",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+04",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+04"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+04",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+04"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+04 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+04 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+04 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+04 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+04 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+04 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/05-Timing/00-Timing",
@@ -3518,9 +3518,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+05/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+05"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+05", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+05", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+05"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+05"],
@@ -3663,45 +3663,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+05"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+05",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+05",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+05"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+05",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+05",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+05"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+05"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+05",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+05"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+05",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+05",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+05"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+05",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+05"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+05 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+05 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+05 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+05 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+05 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+05 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/05-Timing/00-Timing",
@@ -3774,9 +3774,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+06/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+06"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+06", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+06", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+06"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+06"],
@@ -3919,45 +3919,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+06"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+06",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+06",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+06"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+06",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+06",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+06"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+06"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+06",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+06"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+06",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+06",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+06"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+06",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+06"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+06 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+06 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+06 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+06 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+06 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+06 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/05-Timing/00-Timing",
@@ -4030,9 +4030,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+07/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+07"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+07", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+07", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+07"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+07"],
@@ -4175,45 +4175,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+07"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+07",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+07",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+07"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+07",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+07",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+07"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+07"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+07",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+07"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+07",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+07",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+07"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+07",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+07"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+07 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+07 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+07 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+07 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+07 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+07 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/05-Timing/00-Timing",
@@ -4286,9 +4286,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+08/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+08"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+08", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+08", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+08"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+08"],
@@ -4431,45 +4431,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+08"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+08",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+08",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+08"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+08",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+08",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+08"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+08"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+08",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+08"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+08",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+08",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+08"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+08",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+08"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+08 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+08 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+08 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+08 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+08 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+08 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/05-Timing/00-Timing",
@@ -4542,9 +4542,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+09/03-Laser",
    "EcalEndcap/EELaserClient/EELT amplitude L1B EE+09"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/04-Led",  
-  ["EcalEndcap/EELedClient/EELDT led quality EE+09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+09", 
-   "EcalEndcap/EELedClient/EELDT amplitude B EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+09", 
+   "EcalEndcap/EELedClient/EELDT amplitude L1B EE+09"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/05-Timing",
   ["EcalEndcap/EETimingClient/EETMT timing quality EE+09"],
@@ -4687,45 +4687,45 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/03-Laser/L4/01-Laser",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/03-Laser/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/03-Laser/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L4",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+09"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+09",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+09",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+09"])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+09",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+09",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+09"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+09"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+09",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+09"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+09",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+09",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+09"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+09",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+09"])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+09 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+09 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+09 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+09 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+09 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+09 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L1",
    None])
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/05-Timing/00-Timing",
@@ -4804,8 +4804,8 @@ eelayout(dqmitems, "99-Experts/00-Summary/05-LaserL1-Summary",
   ["EcalEndcap/EESummaryClient/EELT EE + laser quality summary L1"])
 
 eelayout(dqmitems, "99-Experts/00-Summary/06-Led-Summary",
-  ["EcalEndcap/EESummaryClient/EELDT EE - led quality summary"],
-  ["EcalEndcap/EESummaryClient/EELDT EE + led quality summary"])
+  ["EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1"],
+  ["EcalEndcap/EESummaryClient/EELDT EE + led quality summary L1"])
 
 eelayout(dqmitems, "99-Experts/00-Summary/07-Timing-Summary",
   ["EcalEndcap/EESummaryClient/EETMT EE - timing quality summary"],
@@ -4939,13 +4939,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L1",
    None])
 
@@ -4963,45 +4963,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-01/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-01"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-01",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-01",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-01"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-01",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-01",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-01"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-01"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-01",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-01"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-01",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-01"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-01",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-01"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-01",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-01"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-01 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-01 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-01 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-01 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-01 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-01 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-01/00-Timing",
@@ -5174,13 +5174,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L1",
    None])
 
@@ -5198,45 +5198,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-02/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-02"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-02",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-02",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-02"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-02",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-02",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-02"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-02"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-02",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-02"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-02",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-02"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-02",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-02"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-02",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-02"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-02 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-02 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-02 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-02 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-02 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-02 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-02/00-Timing",
@@ -5409,13 +5409,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L1",
    None])
 
@@ -5433,45 +5433,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-03/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-03"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-03",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-03",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-03"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-03",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-03",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-03"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-03"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-03",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-03"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-03",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-03"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-03",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-03"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-03",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-03"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-03 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-03 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-03 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-03 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-03 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-03 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-03/00-Timing",
@@ -5644,13 +5644,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L1",
    None])
 
@@ -5668,45 +5668,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-04/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-04"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-04",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-04",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-04"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-04",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-04",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-04"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-04"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-04",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-04"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-04",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-04"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-04",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-04"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-04",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-04"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-04 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-04 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-04 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-04 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-04 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-04 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-04/00-Timing",
@@ -5879,13 +5879,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L1",
    None])
 
@@ -5903,45 +5903,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-05/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-05"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-05",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-05",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-05"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-05",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-05",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-05"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-05"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-05",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-05"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-05",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-05"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-05",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-05"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-05",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-05"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-05 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-05 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-05 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-05 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-05 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-05 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-05/00-Timing",
@@ -6114,13 +6114,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L1",
    None])
 
@@ -6138,45 +6138,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-06/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-06"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-06",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-06",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-06"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-06",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-06",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-06"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-06"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-06",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-06"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-06",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-06"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-06",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-06"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-06",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-06"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-06 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-06 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-06 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-06 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-06 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-06 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-06/00-Timing",
@@ -6349,13 +6349,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L1",
    None])
 
@@ -6373,45 +6373,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-07/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-07"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-07",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-07",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-07"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-07",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-07",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-07"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-07"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-07",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-07"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-07",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-07"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-07",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-07"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-07",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-07"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-07 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-07 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-07 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-07 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-07 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-07 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-07/00-Timing",
@@ -6584,13 +6584,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L1",
    None])
 
@@ -6608,45 +6608,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-08/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-08"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-08",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-08",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-08"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-08",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-08",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-08"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-08"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-08",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-08"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-08",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-08"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-08",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-08"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-08",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-08"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-08 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-08 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-08 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-08 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-08 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-08 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-08/00-Timing",
@@ -6819,13 +6819,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L1",
    None])
 
@@ -6843,45 +6843,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE-/EE-09/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE-09"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE-09",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE-09",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE-09"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE-09",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE-09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE-09",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE-09"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE-09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE-09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-09"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE-09",
-   "EcalEndcap/EELedClient/EELDT les shape A EE-09"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE-09",
-   "EcalEndcap/EELedClient/EELDT led shape B EE-09"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE-09",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE-09"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE-09",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE-09"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE-09 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE-09 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-09 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE-09 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE-09 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE-09 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE-/EE-09/00-Timing",
@@ -7054,13 +7054,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L1",
    None])
 
@@ -7078,45 +7078,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+01/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+01"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+01",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+01",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+01"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+01",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+01"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+01",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+01"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+01"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+01",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+01"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+01",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+01"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+01",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+01"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+01",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+01"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+01",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+01"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+01 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+01 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+01 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+01 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+01 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+01 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+01/00-Timing",
@@ -7289,13 +7289,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L1",
    None])
 
@@ -7313,45 +7313,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+02/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+02"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+02",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+02",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+02"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+02",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+02"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+02",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+02"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+02"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+02",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+02"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+02",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+02"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+02",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+02"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+02",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+02"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+02",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+02"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+02 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+02 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+02 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+02 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+02 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+02 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+02/00-Timing",
@@ -7524,13 +7524,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L1",
    None])
 
@@ -7548,45 +7548,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+03/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+03"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+03",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+03",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+03"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+03",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+03"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+03",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+03"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+03"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+03",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+03"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+03",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+03"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+03",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+03"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+03",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+03"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+03",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+03"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+03 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+03 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+03 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+03 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+03 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+03 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+03/00-Timing",
@@ -7759,13 +7759,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L1",
    None])
 
@@ -7783,45 +7783,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+04/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+04"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+04",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+04",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+04"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+04",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+04"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+04",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+04"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+04"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+04",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+04"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+04",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+04"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+04",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+04"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+04",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+04"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+04",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+04"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+04 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+04 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+04 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+04 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+04 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+04 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+04/00-Timing",
@@ -7994,13 +7994,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L1",
    None])
 
@@ -8018,45 +8018,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+05/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+05"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+05",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+05",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+05"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+05",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+05"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+05",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+05"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+05"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+05",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+05"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+05",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+05"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+05",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+05"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+05",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+05"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+05",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+05"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+05 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+05 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+05 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+05 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+05 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+05 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+05/00-Timing",
@@ -8229,13 +8229,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L1",
    None])
 
@@ -8253,45 +8253,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+06/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+06"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+06",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+06",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+06"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+06",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+06"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+06",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+06"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+06"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+06",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+06"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+06",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+06"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+06",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+06"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+06",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+06"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+06",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+06"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+06 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+06 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+06 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+06 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+06 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+06 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+06/00-Timing",
@@ -8464,13 +8464,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L1",
    None])
 
@@ -8488,45 +8488,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+07/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+07"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+07",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+07",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+07"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+07",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+07"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+07",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+07"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+07"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+07",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+07"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+07",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+07"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+07",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+07"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+07",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+07"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+07",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+07"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+07 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+07 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+07 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+07 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+07 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+07 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+07/00-Timing",
@@ -8699,13 +8699,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L1",
    None])
 
@@ -8723,45 +8723,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+08/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+08"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+08",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+08",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+08"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+08",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+08"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+08",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+08"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+08"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+08",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+08"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+08",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+08"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+08",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+08"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+08",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+08"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+08",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+08"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+08 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+08 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+08 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+08 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+08 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+08 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+08/00-Timing",
@@ -8934,13 +8934,13 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L1/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L1/02-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G01 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L1/03-Laser",
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L1",
-   "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16 L1"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G16 L1"],
   ["EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L1",
    None])
 
@@ -8958,45 +8958,45 @@ eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L4/01-Laser",
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L4/02-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G01 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/05-Laser/EE+/EE+09/L4/03-Laser",
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L4",
-   "EcalEndcap/EELaserClient/Laser4/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16 L4"],
+   "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G16 L4"],
   ["EcalEndcap/EELaserTask/Laser4/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L4",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/00-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 EE+09"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led quality PNs G01 EE+09",
-   "EcalEndcap/EELedClient/EELDT led quality PNs G16 EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led quality L1 PNs G01 EE+09",
+   "EcalEndcap/EELedClient/EELDT led quality L1 PNs G16 EE+09"])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/00-Led",
-  ["EcalEndcap/EELedClient/EELDT amplitude A EE+09",
-   "EcalEndcap/EELedClient/EELDT amplitude A over PN EE+09"],
-  ["EcalEndcap/EELedClient/EELDT amplitude B EE+09",
-   "EcalEndcap/EELedClient/EELDT amplitude B over PN EE+09"])
+  ["EcalEndcap/EELedClient/EELDT amplitude L1A EE+09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+09"],
+  ["EcalEndcap/EELedClient/EELDT amplitude L1B EE+09",
+   "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+09"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/01-Led",
-  ["EcalEndcap/EELedClient/EELDT led timing A EE+09",
-   "EcalEndcap/EELedClient/EELDT les shape A EE+09"],
-  ["EcalEndcap/EELedClient/EELDT led timing B EE+09",
-   "EcalEndcap/EELedClient/EELDT led shape B EE+09"])
+  ["EcalEndcap/EELedClient/EELDT led timing L1A EE+09",
+   "EcalEndcap/EELedClient/EELDT led shape L1A EE+09"],
+  ["EcalEndcap/EELedClient/EELDT led timing L1B EE+09",
+   "EcalEndcap/EELedClient/EELDT led shape L1B EE+09"])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/02-Led",
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs pedestal EE+09 G01",
-   "EcalEndcap/EELedClient/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01"],
-  ["EcalEndcap/EELedTask/PN/Gain01/EEPDT PNs amplitude EE+09 G01",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+09 G01 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/03-Led",
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs pedestal EE+09 G16",
-   "EcalEndcap/EELedClient/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16"],
-  ["EcalEndcap/EELedTask/PN/Gain16/EEPDT PNs amplitude EE+09 G16",
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L1",
+   "EcalEndcap/EELedClient/EEPDT PNs pedestal rms EE+09 G16 L1"],
+  ["EcalEndcap/EELedTask/Led1/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L1",
    None])
 
 eelayout(dqmitems, "99-Experts/07-Timing/EE+/EE+09/00-Timing",
