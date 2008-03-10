@@ -1,5 +1,13 @@
 <TESTSCONFIGURATION>
 
+<QTEST name="SectorCorrFractionInRange">
+	<TYPE>ContentsYRange</TYPE>	
+	<PARAM name="ymin">0.50</PARAM>
+	<PARAM name="ymax">1.00</PARAM>
+	<PARAM name="error">0.80</PARAM>
+	<PARAM name="warning">0.90</PARAM>
+</QTEST>
+
 <QTEST name="SectorTrigEffInRangePhi">
 	<TYPE>ContentsYRange</TYPE>	
 	<PARAM name="ymin">0.50</PARAM>
@@ -24,6 +32,10 @@
 	<PARAM name="error">0.30</PARAM>
 	<PARAM name="warning">0.70</PARAM>
 </QTEST>
+
+<LINK name="*CorrFractionSec_Phi_*">
+	<TestName activate="true">SectorCorrFractionInRange</TestName>
+</LINK>
 
 <LINK name="*TrigEffSec_Phi_*">
 	<TestName activate="true">SectorTrigEffInRangePhi</TestName>

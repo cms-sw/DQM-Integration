@@ -1,13 +1,5 @@
 <TESTSCONFIGURATION>
 
-<QTEST name="tTrigOffSet">
-	<TYPE>ContentsYRange</TYPE>	
-	<PARAM name="ymin">-10</PARAM>
-	<PARAM name="ymax">10</PARAM>
-	<PARAM name="error">0.30</PARAM>
-	<PARAM name="warning">0.70</PARAM>
-</QTEST>
-
 <QTEST name="ResidualsDistributionGaussianTest">
         <TYPE>MeanWithinExpected</TYPE>
         <PARAM name="error">0.05</PARAM>
@@ -72,10 +64,6 @@
 	<PARAM name="warning">0.70</PARAM>
 </QTEST>
 
-
-<LINK name="*tTrigTest*">
-	<TestName activate="true">tTrigOffSet</TestName>
-</LINK>
 
 <LINK name="*hResDist_W*">
         <TestName activate="true">ResidualsDistributionGaussianTest</TestName>
