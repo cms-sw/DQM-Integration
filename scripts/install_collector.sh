@@ -2,7 +2,7 @@
 #!/bin/bash
 
 source ~cmssw/cmsset_default.sh
-CMSSW_VERSION=CMSSW_1_7_0
+CMSSW_VERSION=CMSSW_1_8_0
 DQM_BASE=/home/dqm                  # Choose a directory of your liking
 mkdir -p $DQM_BASE/collector
 
@@ -44,5 +44,4 @@ cat > $DQM_BASE/collector/collector.crontab << EOF
 EOF
 
 # start collector either by hand or by crontab
-
 
