@@ -1,42 +1,44 @@
 module dtunpacker = DTUnpackingModule {
-    string dataType = "DDU"
-    untracked bool fedbyType = true
-    untracked bool useStandardFEDid = true
-    PSet readOutParameters  = {
-        untracked bool localDAQ = false
-        untracked bool performDataIntegrityMonitor = true
-        untracked bool debug = false
-        PSet rosParameters = {
-            untracked bool localDAQ = false
-            untracked bool readingDDU = true
-            untracked bool writeSC = true
-            untracked bool readDDUIDfromDDU = true
-            untracked bool performDataIntegrityMonitor = true
-            untracked bool debug = false
-        }
+  string dataType = "DDU"
+  untracked bool fedbyType = true
+  untracked bool useStandardFEDid = true
+  PSet readOutParameters  = {
+    untracked bool localDAQ = false
+    untracked bool performDataIntegrityMonitor = true
+    untracked bool debug = false
+    PSet rosParameters = {
+      untracked bool localDAQ = false
+      untracked bool readingDDU = true
+      untracked bool writeSC = true
+      untracked bool readDDUIDfromDDU = true
+      untracked bool performDataIntegrityMonitor = true
+      untracked bool debug = false
     }
+  }
 }
 
+# DataBase
 es_source DTMapping = PoolDBESSource {
-    string timetype = "runnumber"
-    string connect = "frontier://FrontierDev/CMS_COND_DT"
-    #string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_170_DT"
-    PSet DBParameters = {
-	untracked int32 messageLevel = 0
-    }
-    VPSet toGet = {
-	{ string record = "DTReadOutMappingRcd"
-	    string tag = "GRENmap_774" },
-	{ string record = "DTT0Rcd"
-	    string tag = "GRENt0" }  ,
-	{ string record = "DTTtrigRcd"
-	    string tag = "GRENttrigTest" } ,
-	{string record = "DTStatusFlagRcd" 
-	    string tag = "GRENnoise"}
-    }
+  //string connect = "oracle://orcon/CMS_COND_ON_18X_DT" 
+  //string connect = "oracle://cms_orcoff/CMS_COND_ON_18X_DT"
+  //string connect = "frontier://Frontier/CMS_COND_ON_18X_DT"
+  string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_18X_DT"
+  PSet DBParameters = {
+    untracked int32 messageLevel = 0
+  }
+
+  string timetype = "runnumber"
+  VPSet toGet = {
+    { string record = "DTReadOutMappingRcd"
+      string tag = "map_GRUMM" },
+    { string record = "DTT0Rcd"
+      string tag = "t0_GRUMM" },
+    { string record = "DTTtrigRcd"
+      string tag = "tTrig_GRUMM" },
+    { string record = "DTStatusFlagRcd"
+      string tag = "noise_GRUMM" }
+  }
 }
-
-
 
 include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
 include "Geometry/DTGeometry/data/dtGeometry.cfi"
