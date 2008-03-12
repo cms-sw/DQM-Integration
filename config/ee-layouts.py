@@ -169,8 +169,6 @@ eelayout(dqmitems, "02-Cluster/10-Cluster",
   ["EcalEndcap/EEClusterTask/EECLT dicluster invariant mass",
    None])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-01"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-01"])
@@ -424,8 +422,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-02"],
@@ -681,8 +677,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-03"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-03"])
@@ -936,8 +930,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-04"],
@@ -1193,8 +1185,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-05"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-05"])
@@ -1448,8 +1438,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-06"],
@@ -1705,8 +1693,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-07"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-07"])
@@ -1960,8 +1946,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-08"],
@@ -2217,8 +2201,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-09"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE-09"])
@@ -2472,8 +2454,6 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+01"],
@@ -2729,8 +2709,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+02"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+02"])
@@ -2984,8 +2962,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+03"],
@@ -3241,8 +3217,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+04"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+04"])
@@ -3496,8 +3470,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+05"],
@@ -3753,8 +3725,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+06"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+06"])
@@ -4008,8 +3978,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06"])
-
-
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+07"],
@@ -4265,8 +4233,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+08"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+08"])
@@ -4521,8 +4487,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08"])
 
-
-
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/00-Integrity (Channel Global)",
   ["EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+09"],
   ["EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE+09"])
@@ -4776,8 +4740,6 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/07-Cosmic/00-Cosmic",
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/07-Cosmic/01-Cosmic",
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09"],
   ["EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09"])
-
-
 
 eelayout(dqmitems, "99-Experts/00-Summary/00-Global-Summary",
   ["EcalEndcap/EESummaryClient/EE global summary EE -"],

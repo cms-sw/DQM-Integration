@@ -112,7 +112,6 @@ eblayout(dqmitems, "02-Cluster/06-Cluster",
   ["EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass",
    None])
 
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-01"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-01"])
@@ -322,8 +321,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-01"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-02/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-02"],
@@ -535,8 +532,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-02/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-02"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-02"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-03"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-03"])
@@ -746,8 +741,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-03/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-03"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-03"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-04/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-04"],
@@ -959,8 +952,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-04/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-04"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-04"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-05"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-05"])
@@ -1170,8 +1161,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-05/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-05"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-05"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-06/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-06"],
@@ -1383,8 +1372,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-06/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-06"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-06"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-07"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-07"])
@@ -1594,8 +1581,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-07/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-07"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-07"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-08/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-08"],
@@ -1807,8 +1792,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-08/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-08"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-08"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-09"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-09"])
@@ -2018,8 +2001,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-09/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-09"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-09"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-10/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-10"],
@@ -2231,8 +2212,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-10/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-10"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-10"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-11"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-11"])
@@ -2442,8 +2421,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-11/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-11"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-11"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-12/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-12"],
@@ -2655,8 +2632,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-12/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-12"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-12"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-13"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-13"])
@@ -2866,8 +2841,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-13/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-13"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-13"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-14/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-14"],
@@ -3079,8 +3052,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-14/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-14"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-14"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-15"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-15"])
@@ -3290,8 +3261,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-15/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-15"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-15"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-16/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-16"],
@@ -3503,8 +3472,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-16/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-16"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-16"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-17"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB-17"])
@@ -3714,8 +3681,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB-/EB-17/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-17"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-17"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-18/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-18"],
@@ -3927,8 +3892,6 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-18/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-18"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB-18"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+01"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+01"])
@@ -4138,8 +4101,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+01/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+01"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+01"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+02/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+02"],
@@ -4351,8 +4312,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+02/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+02"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+02"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+03"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+03"])
@@ -4562,8 +4521,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+03/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+03"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+03"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+04/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+04"],
@@ -4775,8 +4732,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+04/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+04"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+04"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+05"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+05"])
@@ -4986,8 +4941,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+05/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+05"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+05"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+06/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+06"],
@@ -5199,8 +5152,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+06/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+06"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+06"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+07"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+07"])
@@ -5410,8 +5361,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+07/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+07"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+07"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+08/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+08"],
@@ -5623,8 +5572,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+08/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+08"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+08"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+09"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+09"])
@@ -5834,8 +5781,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+09/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+09"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+09"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+10/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+10"],
@@ -6047,8 +5992,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+10/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+10"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+10"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+11"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+11"])
@@ -6258,8 +6201,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+11/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+11"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+11"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+12/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+12"],
@@ -6471,8 +6412,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+12/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+12"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+12"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+13"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+13"])
@@ -6682,8 +6621,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+13/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+13"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+13"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+14/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+14"],
@@ -6895,8 +6832,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+14/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+14"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+14"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+15"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+15"])
@@ -7106,8 +7041,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+15/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+15"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+15"])
-
-
 
 eblayout(dqmitems, "03-SubSummary/EB+/EB+16/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+16"],
@@ -7319,8 +7252,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+16/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+16"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+16"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+17/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+17"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+17"])
@@ -7531,8 +7462,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+17/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+17"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+17"])
 
-
-
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/00-Integrity (Channel Global)",
   ["EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+18"],
   ["EcalBarrel/EBOccupancyTask/EBOT digi occupancy EB+18"])
@@ -7742,8 +7671,6 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/05-Trigger/07-Trigger",
 eblayout(dqmitems, "03-SubSummary/EB+/EB+18/Experts/06-Cosmic/00-Cosmic",
   ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+18"],
   ["EcalBarrel/EBCosmicTask/Cut/EBCT energy cut EB+18"])
-
-
 
 eblayout(dqmitems, "99-Experts/00-Summary/00-Global-Summary",
   ["EcalBarrel/EBSummaryClient/EB global summary"])
@@ -15196,5 +15123,4 @@ eblayout(dqmitems, "99-Experts/12-Occupancy/06-Occupancy",
 eblayout(dqmitems, "99-Experts/12-Occupancy/07-Occupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT pedestal digi occupancy"],
   [None, None])
-
 
