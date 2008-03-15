@@ -18,9 +18,9 @@ server = DQMServerSpec (
   services    = CONFIGDIR + '/dqm-services.py',
   serviceName = "Online Playback",
   backends    = [
-    DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-18:9090' ]),
-    DQMBackendSpec('dqm', 'Client', [ '--listen 9092 --collector localhost:9091' ]),
-    # DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ])
+    # DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-18:9090' ]),
+    DQMBackendSpec('dqm', 'Client', [ '--listen 9091 --collector localhost:9090' ]),
+    DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
     # DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ]),
     # DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
     DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
