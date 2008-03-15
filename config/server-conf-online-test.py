@@ -18,8 +18,8 @@ server = DQMServerSpec (
   services    = CONFIGDIR + '/dqm-services.py',
   serviceName = "Online test",
   backends    = [
-    DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-16:9090' ]),
-    DQMBackendSpec('dqm', 'Client', [ '--listen 9092 --collector localhost:9091' ]),
+    # DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-16:9090' ]),
+    DQMBackendSpec('dqm', 'Client', [ '--listen 9091 --collector localhost:9090' ]),
     # DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
     # DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ]),
     # DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
