@@ -94,19 +94,19 @@ eelayout(dqmitems, "01-Occupancy/09-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi"])
 
-eblayout(dqmitems, "01-Occupancy/Experts/00-Occupancy",
+eelayout(dqmitems, "01-Occupancy/Experts/00-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE +"])
 
-eblayout(dqmitems, "01-Occupancy/Experts/01-Occupancy",
+eelayout(dqmitems, "01-Occupancy/Experts/01-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE +"])
 
-eblayout(dqmitems, "01-Occupancy/Experts/02-Occupancy",
+eelayout(dqmitems, "01-Occupancy/Experts/02-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE +"])
 
-eblayout(dqmitems, "01-Occupancy/Experts/03-Occupancy",
+eelayout(dqmitems, "01-Occupancy/Experts/03-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE +"])
 
@@ -9125,19 +9125,19 @@ eelayout(dqmitems, "99-Experts/12-Occupancy/09-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi"])
 
-eblayout(dqmitems, "99-Experts/12-Occupancy/10-Occupancy",
+eelayout(dqmitems, "99-Experts/12-Occupancy/10-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE +"])
 
-eblayout(dqmitems, "99-Experts/12-Occupancy/11-Occupancy",
+eelayout(dqmitems, "99-Experts/12-Occupancy/11-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE +"])
 
-eblayout(dqmitems, "99-Experts/12-Occupancy/12-Occupancy",
+eelayout(dqmitems, "99-Experts/12-Occupancy/12-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE +"])
 
-eblayout(dqmitems, "99-Experts/12-Occupancy/13-Occupancy",
+eelayout(dqmitems, "99-Experts/12-Occupancy/13-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE +"])
 
