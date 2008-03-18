@@ -1,4 +1,4 @@
-def l1tlayout(i, p, *rows): i["Layouts/L1T Layouts/" + p] = DQMItem(layout=rows)
+def l1tlayout(i, p, *rows): i["L1T/Layouts/" + p] = DQMItem(layout=rows)
 
 l1tlayout(dqmitems, "Summary/GT Decision bit correlations",
   ["L1T/L1TGT/GT decision bit correlation"])

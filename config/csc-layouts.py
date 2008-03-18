@@ -1,4 +1,4 @@
-def csclayout(i, p, *rows): i["Layouts/CSC Layouts/" + p] = DQMItem(layout=rows)
+def csclayout(i, p, *rows): i["CSC/Layouts/" + p] = DQMItem(layout=rows)
 
 csclayout(dqmitems,"EMU - CSCs with Format Errors",
 ["EMU/h2_EMU_CSC_Data_Format_Errors"]

@@ -1,31 +1,25 @@
-import os.path, socket
+import os.path
+global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
-PORT = 8030
+LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in
+	   ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1temulator", "l1t",
+	    "pixel", "rpc", "strip"))
 
+modules = ("GuiDQM",)
 envsetup = """
  source ~cmssw/cmsset_default.sh
  source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.0.0/etc/profile.d/dependencies-setup.sh
  export QUIET_ASSERT=a
 """
 
-server = DQMServerSpec (
-  port       = PORT,
-  localBase   = '%s:%d' % (socket.gethostname(), PORT),
-  serverDir   = '/home/dqm/gui',
-  baseUrl     = '/dqm/gui-test',
-  title       = 'CMS data quality',
-  workspaces  = CONFIGDIR + '/online-workspaces.py',
-  services    = CONFIGDIR + '/dqm-services.py',
-  serviceName = "GUI test",
-  backends    = [
-    # DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector srv-c2d05-18:9090' ]),
-    # DQMBackendSpec('collector', 'Collector', [ '--listen 9091 --collector localhost:9090' ]),
-    DQMBackendSpec('dqm', 'Client', [ '--listen 9091 --collector localhost:9090' ]),
-    # DQMBackendSpec('dt', 'Layout', [ CONFIGDIR + '/dt-layouts.py' ]),
-    # DQMBackendSpec('l1t', 'Layout', [ CONFIGDIR + '/l1t-layouts.py' ]),
-    # DQMBackendSpec('ecal', 'Layout', [ CONFIGDIR + '/ecal-layouts.py' ]),
-    # DQMBackendSpec('eb', 'Layout', [ CONFIGDIR + '/eb-layouts.py' ]),
-    # DQMBackendSpec('ee', 'Layout', [ CONFIGDIR + '/ee-layouts.py' ]),
-    # DQMBackendSpec('strip','Layout', [ CONFIGDIR + '/strip-layouts.py' ]),
-    # DQMBackendSpec('hcal', 'Layout', [ CONFIGDIR + '/hcal-layouts.py' ])
-  ])
+server.serverDir   = '/home/dqm/gui'
+server.baseUrl     = '/dqm/gui-test'
+server.title       = 'CMS data quality'
+server.serviceName = 'GUI test'
+
+server.source('dqm', 'DQMLive', '--listen 9091', '--collector localhost:9090')
+server.source('file', 'DQMArchive', '/home/dqm/dqm.db', '--listen 9097')
+server.source('layouts', 'DQMLayout', *LAYOUTS)
+
+execfile(CONFIGDIR + "/dqm-services.py")
+execfile(CONFIGDIR + "/online-workspaces.py")

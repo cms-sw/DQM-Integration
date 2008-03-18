@@ -1,4 +1,4 @@
-def pixellayout(i, p, *rows): i["Layouts/Pixel Layouts/" + p] = DQMItem(layout=rows)
+def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
 
 pixellayout(dqmitems, "Pixel_RawData_Toplevel_Summary",
   ["Pixel/SUMRAW_errorType_Barrel",

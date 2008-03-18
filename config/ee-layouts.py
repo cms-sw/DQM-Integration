@@ -1,5 +1,4 @@
-
-def eelayout(i, p, *rows): i["Layouts/EE Layouts/" + p] = DQMItem(layout=rows)
+def eelayout(i, p, *rows): i["EcalEndcap/Layouts/" + p] = DQMItem(layout=rows)
 
 eelayout(dqmitems, "00-Summary/00-Global-Summary",
   ["EcalEndcap/EESummaryClient/EE global summary EE -"],

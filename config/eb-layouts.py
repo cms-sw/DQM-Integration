@@ -1,5 +1,4 @@
-
-def eblayout(i, p, *rows): i["Layouts/EB Layouts/" + p] = DQMItem(layout=rows)
+def eblayout(i, p, *rows): i["EcalBarrel/Layouts/" + p] = DQMItem(layout=rows)
 
 eblayout(dqmitems, "00-Summary/00-Global-Summary",
   ["EcalBarrel/EBSummaryClient/EB global summary"])

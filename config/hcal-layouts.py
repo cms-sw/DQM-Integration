@@ -1,4 +1,4 @@
-def hcallayout(i, p, *rows): i["Layouts/HCAL Layouts/" + p] = DQMItem(layout=rows)
+def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
 hcallayout(dqmitems, "HCAL Data Format Summary",
            ["Hcal/DataFormatMonitor/HTR Error Word by Crate"],

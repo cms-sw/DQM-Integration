@@ -1,4 +1,4 @@
-def dtlayout(i, p, *rows): i["Layouts/DT Layouts/" + p] = DQMItem(layout=rows)
+def dtlayout(i, p, *rows): i["DT/Layouts/" + p] = DQMItem(layout=rows)
 
 dtlayout(dqmitems, "Wheel0/Sector1/Station1/Trigger(DDU)_W0_St1_Sec1",
 	["DT/DTLocalTriggerTask/Wheel0/Sector1/Station1/LocalTriggerPhi/DDU_BXvsQual1st_W0_Sec1_St1",
