@@ -94,6 +94,12 @@ eelayout(dqmitems, "01-Occupancy/09-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R",
    "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi"])
 
+eelayout(dqmitems, "01-Occupancy/10-Occupancy",
+  ["EcalEndcap/EcalInfo/EEMM DCC",
+   "EcalEndcap/EcalInfo/EEMM digi number profile"],
+  ["EcalEndcap/EcalInfo/EEMM hit number profile",
+   "EcalEndcap/EcalInfo/EEMM TP digi number profile"])
+
 eelayout(dqmitems, "01-Occupancy/Experts/00-Occupancy",
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE -"],
   ["EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE +"])
