@@ -19,7 +19,7 @@ shiftEcalBarrelLayout(dqmitems, "05-RecHitOccupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection phi"])
 
-shiftEcalBarrelLayout(dqmitems, "06-TPGDigisOccupancy",
+shiftEcalBarrelLayout(dqmitems, "06-TPDigisOccupancy",
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy"],
   ["EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection eta",
    "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi"])
