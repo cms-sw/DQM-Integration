@@ -60,20 +60,23 @@ print "make directories ...\n";
 `mkdir -p log`;
 `mkdir -p soap`;
 `mkdir -p xml`;
+`mkdir -p TkMap`;
 
 #
 # make cfg files
 #
 print "copy cfg files ...\n";
 
-copy("$dqm_int/$cfg_file", "$ENV{PWD}/$cfg_file");
+copy("$dqm_int/$cfg_file", "$ENV{PWD}/.");
+copy("$dqm_dir/Reference.root", "$ENV{PWD}/Reference.root");
 
+copy("$dqm_dir/../data/layer.js", "$ENV{PWD}/TkMap/layer.js");
+copy("$dqm_dir/../data/crate.js", "$ENV{PWD}/TkMap/crate.js");
+copy("$dqm_dir/../data/viewer.js", "$ENV{PWD}/TkMap/viewer.js");
+copy("$dqm_dir/../data/viewer.css", "$ENV{PWD}/TkMap/viewer.css");
+copy("$dqm_dir/../data/viewerHeader.xhtml", "$ENV{PWD}/TkMap/viewerHeader.xhtml");
+copy("$dqm_dir/../data/viewerTrailer.xhtml", "$ENV{PWD}/TkMap/viewerTrailer.xhtml");
 
-
-# make source xml input
-
-copy("$dqm_int/sistrip_qualitytest_config.xml", "$ENV{PWD}/.") unless -e "$ENV{PWD}/sistrip_qualitytest_config.xml";
-copy("$dqm_int/authentication.xml", "$ENV{PWD}/.") unless -e "$ENV{PWD}/authentication.xml";
 
 #
 # make XDAQ 'profile.xml'
@@ -114,8 +117,8 @@ print "make xdaq  configuration ...\n";
 
 my @properties = ("parameterSet", "string","file:$pwd/$cfg_file",
 		    "collReconnSec","integer","-1",
-		    "hasPrescaleService","boolean","false",
-		    "isRunNumberSetter","boolean","false",
+                    "hasPrescaleService","boolean","false",
+                    "isRunNumberSetter","boolean","false",
 		    "hasSharedMemory","boolean","false");
 
 open (XML,">./xml/evf.xml") or die ("Can't open file: $!\n");
@@ -195,7 +198,7 @@ close (CTL);
 #
 # copy scripts and other auxiliary files
 #
-copy("$dqm_dir/.WebLib.js",  "$ENV{PWD}/WebLib.js");
+copy("$dqm_dir/.WebLib.js", "$ENV{PWD}/WebLib.js");
 copy("$dqm_dir/Online.html", "$ENV{PWD}/.");
 copy("$dqm_dir/loader.html", "$ENV{PWD}/.");
 copy("$dqm_dir/TrackerMapFrame.html", "$ENV{PWD}/.");
@@ -204,13 +207,14 @@ copy("$dqm_dir/TrackerMapPlot.html", "$ENV{PWD}/.");
 
 $SERVED_DIR="http://$hostname:40000/temporary";
 system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$ENV{PWD}/WebLib.js]; 
+system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$ENV{PWD}/TkMap/viewerHeader.xhtml]; 
 
 system qq[cp], qq[-r], qq[$dqm_common/js_files],  qq[$ENV{PWD}/js_files];
 system qq[cp], qq[-r], qq[$dqm_common/css_files], qq[$ENV{PWD}/css_files];
 system qq[cp], qq[-r], qq[$dqm_common/images],    qq[$ENV{PWD}/images];
 copy("$dqm_dir/js_files/CommonActions.js", "$ENV{PWD}/js_files/CommonActions.js");
 copy("$dqm_dir/js_files/RequestHistos.js", "$ENV{PWD}/js_files/RequestHistos.js");
-copy("$dqm_dir/js_files/sistrip_svgmap.js", "$ENV{PWD}/js_files/sistrip_svgmap.js");
+copy("$dqm_dir/js_files/TkMapFrame.js", "$ENV{PWD}/js_files/TkMapFrame.js");
 copy("$dqm_dir/css_files/style.css", "$ENV{PWD}/css_files/style.css");
 
 #
@@ -470,14 +474,16 @@ sub makeCtlDestroy
     $result = $result . "print \"$cmd ...\\n\";\n\n";
     $result = $result . "`$cmd`;\n\n";
     $result = $result . "print \"remove files and dirs ...\n\";\n\n";
-    $result = $result . "`rm -rf  soap/ xml/ log/ /tmp/sm "
+    $result = $result . "`rm -rf  soap/ xml/ log/ /tmp/sm TkMap/ "
           . "start configure enable halt stop gennums.txt"
           . " summaryCatalog.txt test.root`;\n\n";
-    $result = $result . "`rm -rf  sistrip\*.cfg sistrip_qualitytest_config.xml`;\n\n"; 
-    $result = $result . "`rm -rf Online.html loader.html "
+    $result = $result . "`rm -rf  \*.cfg`;\n\n"; 
+    $result = $result . "`rm -rf Online.html loader.html \*.root \*.coor "
           . " TrackerMapFrame.html TrackerMapPlot.html TrackerMapSelection.html "
+          . " fedtrackermap.html "
           . " css_files js_files images WebLib.js `;\n\n";
     $result = $result . "`rm -rf svgmap.xml svgmap_fed.xml Layer\*.xml \*.png`;\n\n";
+    $result = $result . "`rm -rf \*.html \*.xml \*.xhtml \*.js \*.css`;\n\n";
     $result = $result . "print \"FUShmCleanUp_t ...\\n\";\n\n";
     $result = $result . "`FUShmCleanUp_t`;\n\n";
     $result = $result . "print \"XDAQ session destroyed!\\n\";\n\n";
