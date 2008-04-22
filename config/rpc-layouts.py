@@ -1,4 +1,4 @@
-def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
+def rpclayout(i, p, *rows): i["Layouts/RPC Layouts/" + p] = DQMItem(layout=rows)
 
 
 
@@ -30,12 +30,12 @@ rpclayout(dqmitems, "RPC_Barrel_Summary",
            "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_1_Sector_3"],
           
           
-          ["RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_10",
-           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_11",
-           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_12",
-           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_1",
-           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_2",
-           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_0_Sector_3"])
+          ["RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_10",
+           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_11",
+           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_12",
+           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_1",
+           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_2",
+           "RPC/RecHits/SumarryHistograms/SectorOccupancy_Wheel_2_Sector_3"])
 
 
 
@@ -162,7 +162,7 @@ rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_0/Sector_11",
            "RPC/RecHits/Barrel/Wheel_0/station_4/sector_11/Occupancy_W+0_RB4_S11-_Backward"])
         
 
-rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_12/Sector_12",
+rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_0/Sector_12",
 
           ["RPC/RecHits/Barrel/Wheel_0/station_1/sector_12/Occupancy_W+0_RB1in_S12_Forward",
            "RPC/RecHits/Barrel/Wheel_0/station_1/sector_12/Occupancy_W+0_RB1in_S12_Backward",
@@ -310,7 +310,7 @@ rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_1/Sector_11",
            "RPC/RecHits/Barrel/Wheel_1/station_4/sector_11/Occupancy_W+1_RB4_S11-_Backward"])
         
 
-rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_12/Sector_12",
+rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_1/Sector_12",
 
           ["RPC/RecHits/Barrel/Wheel_1/station_1/sector_12/Occupancy_W+1_RB1in_S12_Forward",
            "RPC/RecHits/Barrel/Wheel_1/station_1/sector_12/Occupancy_W+1_RB1in_S12_Backward",
@@ -338,7 +338,7 @@ rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_12/Sector_12",
 
 
 
-rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_0/Sector_01",
+rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_2/Sector_01",
 
           ["RPC/RecHits/Barrel/Wheel_2/station_1/sector_01/Occupancy_W+2_RB1in_S01_Forward",
            "RPC/RecHits/Barrel/Wheel_2/station_1/sector_01/Occupancy_W+2_RB1in_S01_Backward",
@@ -458,7 +458,7 @@ rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_2/Sector_11",
            "RPC/RecHits/Barrel/Wheel_2/station_4/sector_11/Occupancy_W+2_RB4_S11-_Backward"])
         
 
-rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_12/Sector_12",
+rpclayout(dqmitems, "RPC_Occupancy_RB1_RB2_RB3_RB4/Wheel_2/Sector_12",
 
           ["RPC/RecHits/Barrel/Wheel_2/station_1/sector_12/Occupancy_W+2_RB1in_S12_Forward",
            "RPC/RecHits/Barrel/Wheel_2/station_1/sector_12/Occupancy_W+2_RB1in_S12_Backward",
