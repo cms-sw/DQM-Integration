@@ -29,7 +29,7 @@ shiftEcalBarrelLayout(dqmitems, "07-RecHitAndTPGProfiles",
   ["EcalBarrel/EcalInfo/EBMM TP digi number profile"])
 
 shiftEcalBarrelLayout(dqmitems, "08-Cosmics",
-  ["EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01"])
+  ["EcalBarrel/EBSummaryClient/EBCT cosmic summary"]) 
 
 shiftEcalBarrelLayout(dqmitems, "09-Timing",
   ["EcalBarrel/EBSummaryClient/EBTMT timing quality summary"])
