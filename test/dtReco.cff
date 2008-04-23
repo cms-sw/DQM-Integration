@@ -19,10 +19,11 @@ module dtunpacker = DTUnpackingModule {
 
 # DataBase
 es_source DTMapping = PoolDBESSource {
-  //string connect = "oracle://orcon/CMS_COND_ON_18X_DT" 
-  //string connect = "oracle://cms_orcoff/CMS_COND_ON_18X_DT"
-  //string connect = "frontier://Frontier/CMS_COND_ON_18X_DT"
-  string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_18X_DT"
+  //string connect = "oracle://orcon/CMS_COND_ON_20X_DT" 
+  //string connect = "oracle://cms_orcoff/CMS_COND_ON_20X_DT"
+  //string connect = "frontier://Frontier/CMS_COND_ON_20X_DT" 
+  //string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_20X_DT"
+  string connect = "frontier://(serverurl=http://frontier2.cms:8000/FrontierOnProd)(proxyurl=http://localhost:3128)(retrieve-ziplevel=0)/CMS_COND_20X_DT"
   PSet DBParameters = {
     untracked int32 messageLevel = 0
   }
@@ -30,13 +31,13 @@ es_source DTMapping = PoolDBESSource {
   string timetype = "runnumber"
   VPSet toGet = {
     { string record = "DTReadOutMappingRcd"
-      string tag = "map_GRUMM" },
+      string tag = "map_GRUMM_maskFix" },
     { string record = "DTT0Rcd"
-      string tag = "t0_GRUMM" },
-    { string record = "DTTtrigRcd"
-      string tag = "tTrig_GRUMM" },
+      string tag = "t0_GRUMM_hlt" },
     { string record = "DTStatusFlagRcd"
-      string tag = "noise_GRUMM" }
+      string tag = "noise_GRUMM_hlt"},
+    { string record = "DTTtrigRcd"
+      string tag = "tTrig_GRUMM_37919corr_hlt" }
   }
 }
 
@@ -49,15 +50,15 @@ include "RecoLocalMuon/DTRecHit/data/dt1DRecHits_LinearDrift_CosmicData.cfi"
 include "RecoLocalMuon/DTSegment/data/dt2DSegments_CombPatternReco2D_LinearDrift_CosmicData.cfi"
 include "RecoLocalMuon/DTSegment/data/dt4DSegments_CombPatternReco4D_LinearDrift_CosmicData.cfi"
 
-include "Geometry/CommonDetUnit/data/globalTrackingGeometry.cfi"
-include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
+// include "Geometry/CommonDetUnit/data/globalTrackingGeometry.cfi"
+// include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
 
-include "RecoMuon/DetLayers/data/muonDetLayerGeometry.cfi"
-include "RecoMuon/MuonSeedGenerator/data/CosmicMuonSeedProducer.cfi"
-replace CosmicMuonSeed.EnableCSCMeasurement = false
-include "RecoMuon/CosmicMuonProducer/data/cosmicMuons.cfi"
-replace	cosmicMuons.TrajectoryBuilderParameters.EnableDTMeasurement = true
-replace cosmicMuons.TrajectoryBuilderParameters.EnableCSCMeasurement = false
-replace cosmicMuons.TrajectoryBuilderParameters.EnableRPCMeasurement = false
+// include "RecoMuon/DetLayers/data/muonDetLayerGeometry.cfi"
+// include "RecoMuon/MuonSeedGenerator/data/CosmicMuonSeedProducer.cfi"
+// replace CosmicMuonSeed.EnableCSCMeasurement = false
+// include "RecoMuon/CosmicMuonProducer/data/cosmicMuons.cfi"
+// replace	cosmicMuons.TrajectoryBuilderParameters.EnableDTMeasurement = true
+// replace cosmicMuons.TrajectoryBuilderParameters.EnableCSCMeasurement = false
+// replace cosmicMuons.TrajectoryBuilderParameters.EnableRPCMeasurement = false
 
-include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagator.cfi"
+// include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagator.cfi"
