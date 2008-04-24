@@ -24,7 +24,7 @@ server.workspace('DT', 'DQMContent', '^DT/',
                  'DT/Layouts/DTIntegrityCheck_station4_second')
 
 server.workspace('ECAL', 'DQMContent', '^Ecal',
-                 'ECAL/Layouts/00-Global-Summary')
+                 'Ecal/Layouts/00-Global-Summary')
 
 server.workspace('EB', 'DQMContent', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/0-Global-Summary',
