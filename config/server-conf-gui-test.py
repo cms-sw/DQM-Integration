@@ -7,7 +7,7 @@ LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 
 modules = ("GuiDQM",)
 envsetup = """
- source ~cmssw/cmsset_default.sh
+ source ~cmssw2/cmsset_default.sh
  source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.0.0/etc/profile.d/dependencies-setup.sh
  export QUIET_ASSERT=a
 """
