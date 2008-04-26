@@ -1,3 +1,4 @@
+"""
 def dtlayout(i, p, *rows): i["DT/Layouts/" + p] = DQMItem(layout=rows)
 
 dtlayout(dqmitems, "Wheel0/Sector1/Station1/Trigger(DDU)_W0_St1_Sec1",
@@ -12377,4 +12378,4 @@ dtlayout(dqmitems,"Wheel2/Summary/LocalTrigger(Client)_W2",
 	["DT/Tests/DTLocalTrigger/Wheel2/LocalTriggerTheta/HFraction_Theta_W2",
 	 "DT/Tests/DTLocalTrigger/Wheel2/TriggerAndSeg/TrigEff_Theta_W2",
 	 "DT/Tests/DTLocalTrigger/Wheel2/TriggerAndSeg/TrigEffH_Theta_W2"])
-
+"""
