@@ -1,12 +1,18 @@
 import os.path
 global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
-LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in ("dt", "eb", "ee", "l1t"))
+LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
+	   ("eb", "ecal", "ee")]
+LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
+            ("eb",)]
+# LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in
+# 	   ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1temulator", "l1t",
+# 	    "pixel", "rpc", "strip"))
 
 modules = ("GuiDQM",)
 envsetup = """
- source ~cmssw/cmsset_default.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.0.0/etc/profile.d/dependencies-setup.sh
+ source /home/dqm/rpms/cmsset_default.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.3.0/etc/profile.d/dependencies-setup.sh
  export QUIET_ASSERT=a
 """
 
