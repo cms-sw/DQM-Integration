@@ -74,5 +74,6 @@ server.workspace('L1T', 'DQMContent', '^L1T',
                  'L1TMonitor/Layouts/Summary/DTTF_phi_value',
                  'L1TMonitor/Layouts/Summary/DTTF_ntrack')
 
+server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
                  'SiStrip/Layouts/SiStrip_Digi_Summary')
