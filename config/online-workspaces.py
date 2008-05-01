@@ -1,5 +1,6 @@
 server.workspace('Summary', 'DQMSummary')
 server.workspace('Everything', 'DQMContent', '^')
+server.workspace('CSC', 'DQMContent', '^CSC/')
 server.workspace('DT', 'DQMContent', '^DT/',
                  'DT/Layouts/DTIntegrityCheck_Summary',
                  'DT/Layouts/W1_St1_Signal',
