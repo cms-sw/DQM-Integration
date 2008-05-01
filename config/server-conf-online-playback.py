@@ -1,9 +1,10 @@
 import os.path
 global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
-LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-           ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1temulator", "l1t",
-            "pixel", "rpc", "strip"))
+LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
+	   ("csc", "eb", "ecal", "ee")]
+LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
+            ("eb",)]
 
 modules = ("GuiDQM",)
 envsetup = """
@@ -19,8 +20,7 @@ server.serviceName = 'Online Playback'
 
 server.source('dqm', 'DQMLive', '--listen 9091', '--collector localhost:9090')
 server.source('file', 'DQMArchive', '/home/dqm/dqm.db', '--listen 9097')
-#server.source('layouts', 'DQMLayout', *LAYOUTS)
+server.source('layouts', 'DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/online-workspaces.py")
-
