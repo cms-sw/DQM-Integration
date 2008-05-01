@@ -1,6 +1,6 @@
-def ecallayouts(i, p, *rows): i["Ecal/Layouts/" + p] = DQMItem(layout=rows)
+def ecallayout(i, p, *rows): i["Ecal/Layouts/" + p] = DQMItem(layout=rows)
 
-ecallayouts(dqmitems, "00-Global-Summary",
+ecallayout(dqmitems, "00-Global-Summary",
   [None,
    { 'path': "EcalEndcap/EESummaryClient/EE global summary EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
    None],
