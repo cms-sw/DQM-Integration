@@ -1,4 +1,12 @@
 <TESTSCONFIGURATION> 
+<!--
+<QTEST name="XrangeWithin:0-255" activate="true"> 
+     <TYPE>ContentsXRange</TYPE> 
+     <PARAM name="error">0.95</PARAM> 
+     <PARAM name="warning">0.99</PARAM> 
+     <PARAM name="xmin">0.0</PARAM> 
+     <PARAM name="xmax">255.0</PARAM> 
+</QTEST> -->
 <QTEST name="MeanWithinExpected:75-130" activate="true"> 
      <TYPE>MeanWithinExpected</TYPE> 
      <PARAM name="error">0.75</PARAM> 
@@ -242,10 +250,10 @@
 
 
 
-<LINK name="*SUMDIG_adc_Barrel*"> 
+<LINK name="*SUMDIG_adc_PixelBarrel*"> 
   <TestName activate="true">YrangeWithin:85-105</TestName> 
 </LINK>
-<LINK name="*SUMDIG_ndigis_Barrel*"> 
+<LINK name="*SUMDIG_ndigis_PixelBarrel*"> 
   <TestName activate="true">YrangeWithin:2.5-12</TestName> 
 </LINK>
 <LINK name="*SUMDIG_adc_Shell*"> 
@@ -290,10 +298,10 @@
 <LINK name="*Layer_3/SUMDIG_ndigis_Ladder*"> 
   <TestName activate="true">YrangeWithin:1.5-8.5</TestName> 
 </LINK>
-<LINK name="*SUMDIG_adc_Endcap*"> 
+<LINK name="*SUMDIG_adc_PixelEndcap*"> 
   <TestName activate="true">YrangeWithin:75-130</TestName> 
 </LINK>
-<LINK name="*SUMDIG_ndigis_Endcap*"> 
+<LINK name="*SUMDIG_ndigis_PixelEndcap*"> 
   <TestName activate="true">YrangeWithin:1.4-4</TestName> 
 </LINK>
 <LINK name="*SUMDIG_adc_HalfCylinder*"> 

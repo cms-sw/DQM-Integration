@@ -36,15 +36,19 @@ my $pwd = `pwd`; chomp $pwd;
 
 my $dqm_dir = $ENV{"CMSSW_BASE"}."/src/DQM/SiPixelMonitorClient/test";
 my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
+my $dqm_common = $ENV{"CMSSW_BASE"}."/src/DQM/TrackerCommon/test";
+
+my $cfg_file = "pixel_dqm_sourceclient-".$mode.".cfg";
+print "cfg file name : $cfg_file\n";
 #
 # interpret command line
 #
-foreach $param (@ARGV) {
-    if    ($hostname eq "fillme")    { $hostname=$param; }
-    elsif ($param    eq "-host")     { $hostname="fillme"; }
-
-    else { die ("Unknown parameter $param!\n"); }
-}
+#foreach $param (@ARGV) {
+#    if    ($hostname eq "fillme")    { $hostname=$param; }
+#    elsif ($param    eq "-host")     { $hostname="fillme"; }
+#
+#    else { die ("Unknown parameter $param!\n"); }
+#}
 
 print "hostname = $hostname\n";
 
@@ -55,19 +59,15 @@ print "make directories ...\n";
 `mkdir -p log`;
 `mkdir -p soap`;
 `mkdir -p xml`;
+`mkdir -p $dqm_int/TkMap`;
 
 #
 # make cfg files
 #
 print "copy cfg files ...\n";
 
-copy("$dqm_int/pixel_dqm_sourceclient-file.cfg", "$ENV{PWD}/pixel_dqm_sourceclient-file.cfg");
+copy("$dqm_int/$cfg_file", "$ENV{PWD}/.") unless -e "$ENV{PWD}/$cfg_file";
 
-
-
-# make source xml input
-
-copy("$dqm_dir/../scripts/sipixel_qualitytest_config.xml", "$ENV{PWD}/.");
 
 
 #
@@ -107,9 +107,10 @@ print XML makeXmlProfileTrailer();
 #
 print "make xdaq  configuration ...\n";
 
-my @properties = ("parameterSet", "string","file:$pwd/pixel_dqm_sourceclient-file.cfg",
+my @properties = ("parameterSet", "string","file:$pwd/$cfg_file",
 		    "collReconnSec","integer","-1",
 		    "hasPrescaleService","boolean","false",
+                    "isRunNumberSetter","boolean","false",
 		    "hasSharedMemory","boolean","false");
 
 open (XML,">./xml/evf.xml") or die ("Can't open file: $!\n");
@@ -464,10 +465,9 @@ sub makeCtlDestroy
     $result = $result . "print \"$cmd ...\\n\";\n\n";
     $result = $result . "`$cmd`;\n\n";
     $result = $result . "print \"remove files and dirs ...\n\";\n\n";
-    $result = $result . "`rm -rf  soap/ xml/ log/ /tmp/sm "
+    $result = $result . "`rm -rf  soap/ xml/ log/ /tmp/sm $dqm_int/TkMap/ "
           . "start configure enable halt stop gennums.txt"
           . " summaryCatalog.txt test.root`;\n\n";
-    $result = $result . "`rm -rf  pixel\*.cfg pixel_qualitytest_config.xml`;\n\n"; 
     $result = $result . "`rm -rf Online.html loader.html rightEmbedded.html"
           . " TrackerMapFrame.html TrackerMapME.html TrackerMapHeader.txt "
           . " css_files js_files images WebLib.js `;\n\n";
