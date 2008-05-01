@@ -3,7 +3,7 @@
 import os,time,sys,shutil
 
 def filereg(db,file,logfile):
-    tmpdb = '/nfshome0/hkseo/dqm-tmp.db'
+    tmpdb = '/cms/mon/data/.dropbox_test/dqm-tmp.db'
     newdb = db[:-3]+'-new.db'
     if os.path.exists(tmpdb): os.remove(tmpdb)
     if os.path.exists(db): shutil.copy2(db, tmpdb)
@@ -16,7 +16,7 @@ def filereg(db,file,logfile):
 def uniq_chk(filename):
     if os.path.exists(filename):
         log = filename[:-4]+'log'
-        newname = filename[:-27]+'.1'+filename[-27:]
+        newname = filename[:-5]+'.1'+filename[-5:]
         newlog = newname[:-4]+'log'
         uniq_chk(newname)
         os.rename(filename,newname)
@@ -27,15 +27,15 @@ def uniq_chk(filename):
 	
 # runs for testing 403  409  420  426  429
 # find /cms/mon/data/dqm/results -name 'DQM_*_R000038403*.root' | grep -v _RPCexpert_ | xargs visDQMRegisterFile dqm.db /Global/Online/ALL "Global run"
-DIR = '/cms/mon/data/dropbox_test'
+DIR = '/cms/mon/data/dropbox'  # directory to search new files
 #DIR = '/cms/mon/data/dqm/results/000/038/483'
-DB = '/cms/mon/data/dqm/dqm.db' #mastor db: /cms/mon/data/dqm/dqm.db
-FILEDIR = '/cms/mon/data/archive_test'
-TMPDIR = '/nfshome0/hkseo/tmp'
+DB = '/cms/mon/data/dqm/dqm.db'
+FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which merged file is stored
+#FILEDIR = '/cms/mon/data/dqm/results' # directory, to which merged file is stored
+TMPDIR = '/cms/mon/data/.dropbox_test' # directory, in which merged file is created
 
 #SIZE_LIMIT = 5000000000  # size limit for merged file (5~10 Gbyte)
-SIZE_LIMIT =10000000
-WAIT = 30 # waiting time for new files (sec)
+WAITTIME = 300 # waiting time for new files (sec)
 
 
 
@@ -45,72 +45,83 @@ if not os.path.exists(TMPDIR +'/timeTag'):
 ####### ENDLESS LOOP WITH SLEEP
 while 1:
 
-    #### check new files
+    #### search new files
+    #NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TMPDIR +'/timeTag | grep -v DQM_V').read().split()
     NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TMPDIR +'/timeTag').read().split()
     if len(NEW_)==0:
         print 'waiting for new files...'
-        time.sleep(WAIT)
+        time.sleep(WAITTIME)
         continue
-
     print 'Found '+str(len(NEW_))+' new file(s).'
 
+    #### sort new files by run number
+    pairs = []
+    for fname in NEW_:
+        run = fname[-14:-5] #run number of new file
+        pairs.append((run,fname))
+    pairs.sort()
+
+    NEW_ = []
+    for pair in pairs:
+        NEW_.append(pair[1])
+        
     #### loop for new files
     for NEW in NEW_:
         if NEW==NEW_[0]: os.system('touch '+ TMPDIR +'/timeTag')
         print NEW
-        TMP_NEW = NEW.replace(DIR,TMPDIR)
+        run = NEW[-14:-5] #run number of new file
+        SUBDIR = '/'+run[0:3]+'/'+run[3:6]+'/'+run[6:9]
+        NEWDIR = FILEDIR + SUBDIR # directory, to which merged file is stored
+        #NEWDIR = NEW[0:NEW.find('DQM')-1]
+        TMP_NEW = NEW.replace(NEWDIR,TMPDIR)
         shutil.copy2(NEW,TMP_NEW)
 
-        #### check if merged file exist & the size of the last merged file
-        if NEW==NEW_[0]:
-            FILE_EXIST = len(os.popen('ls '+ FILEDIR + '/DQM_V*.root').read().split())
-            if FILE_EXIST > 0:
-                INI_MERGED = MERGED = os.popen('ls -rt '+ FILEDIR + '/DQM_V*.root | tail -1').read().strip()
-                INI_LOG = LOG = MERGED[:-4]+'log'
-                TMP_MERGED = MERGED.replace(FILEDIR,TMPDIR)
-                TMP_LOG = TMP_MERGED[:-4]+'log'
-                shutil.copy2(MERGED,TMP_MERGED)
-                shutil.copy2(LOG,TMP_LOG)
-            else:
-                INI_MERGED = FILEDIR + '/DQM_V0000_R000000000-R000000000.root'
-                INI_LOG = INI_MERGED[:-4]+'log'
+
+        #### check if merged file exist
+        if len(os.popen('ls '+ TMPDIR + '/DQM_V????_R'+run+'_R'+run+'.root').read().split()):
+            TMP_MERGED = os.popen('ls -rt '+ TMPDIR + '/DQM_V????_R'+run+'_R'+run+'.root | tail -1').read().strip()
+            TMP_LOG = TMP_MERGED[:-4]+'log'
+            irun = TMP_MERGED[-14:-5]
+            FILE_EXIST = 1
+        elif len(os.popen('ls '+ NEWDIR + '/DQM_V*_R'+run+'_R'+run+'.root').read().split()):
+            MERGED = os.popen('ls -rt '+ NEWDIR + '/DQM_V*_R'+run+'_R'+run+'.root | tail -1').read().strip()
+            LOG = MERGED[:-4]+'log'
+            TMP_MERGED = MERGED.replace(NEWDIR,TMPDIR)
+            TMP_LOG = TMP_MERGED[:-4]+'log'
+            shutil.copy2(MERGED,TMP_MERGED)
+            shutil.copy2(LOG,TMP_LOG)
+            irun = TMP_MERGED[-14:-5]
+            FILE_EXIST = 1
         else:
-            FILE_EXIST = len(os.popen('ls '+ TMPDIR + '/DQM_V*.root').read().split())
-            if FILE_EXIST > 0:
-                TMP_MERGED = os.popen('ls -rt '+ TMPDIR + '/DQM_V*.root | tail -1').read().strip()
-                TMP_LOG = TMP_MERGED[:-4]+'log'
-                MERGED = TMP_MERGED.replace(TMPDIR,FILEDIR)
-                LOG = MERGED[:-4]+'log'
-                
-        if FILE_EXIST > 0:
-            FILE_SIZE = os.path.getsize(TMP_MERGED) + os.path.getsize(NEW)
-            if FILE_SIZE > SIZE_LIMIT:
-                FILE_EXIST = 0
-                if NEW != NEW_[0]:
-                    if os.path.exists(INI_MERGED): os.remove(INI_MERGED)
-                    uniq_chk(MERGED)
-                    shutil.move(TMP_MERGED,MERGED)
-                    print 'Start file registering...'
-                    LOGFILE = open(TMP_NEW_LOG,'a')
-                    filereg(DB,MERGED,LOGFILE) #file registration
-                    LOGFILE.close()
-                    if os.path.exists(INI_LOG): os.remove(INI_LOG)
-                    shutil.move(TMP_LOG,LOG)
-        
-        run = NEW[-14:-5] #run number of new file
+            FILE_EXIST = 0
 
+        ### if new file has different run number from the previous one, register the previous merged file
+        if NEW!=NEW_[0] and run != oldrun:
+            ### move previous merged file to master directory & do file registration
+            SUBDIR = '/'+oldrun[0:3]+'/'+oldrun[3:6]+'/'+oldrun[6:9]
+            NEWDIR = FILEDIR + SUBDIR
+            if not os.path.exists(NEWDIR): os.makedirs(NEWDIR)
+            NEW_MERGED = TMP_OLD_MERGED.replace(TMPDIR,NEWDIR)
+            NEW_LOG = TMP_OLD_LOG.replace(TMPDIR,NEWDIR)
+            if len(os.popen('ls '+ NEWDIR + '/DQM_V*_R'+oldrun+'*root').read().split()):
+                OLD_MERGED = os.popen('ls '+ NEWDIR + '/DQM_V*_R'+oldrun+'*root').read().strip()
+                OLD_LOG = OLD_MERGED[:-4]+'log'
+                os.remove(OLD_MERGED)
+                os.remove(OLD_LOG)
+            uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
+            shutil.move(TMP_OLD_MERGED, NEW_MERGED)
+            
+            print 'Start file registering...'
+            filereg(DB,NEW_MERGED,LOGFILE) #file registration
+            print NEW_MERGED + ' is registerd'
+            LOGFILE.close()
+            shutil.move(TMP_OLD_LOG, NEW_LOG)
+            
+            
         if FILE_EXIST > 0:
-
             ### create the name of new merged file
-            ver = int(MERGED[-31:-27])
-            irun = MERGED[-25:-16]
-            frun = MERGED[-14:-5]
-
-            if run > frun:
-                frun = run
-            elif run < irun:
-                irun = run
-
+            irun = run
+            ver = int(TMP_MERGED[TMP_MERGED.find('_V')+2:TMP_MERGED.find('_V')+6])
             ver += 1
             if ver < 10:
                 ver = '000' + str(ver)
@@ -118,13 +129,14 @@ while 1:
                 ver = '00' + str(ver)
             elif ver < 1000:
                 ver = '0' + str(ver)
-
+                
             ### merge new file in temp area
-            TMP_NEW_MERGED = TMPDIR + '/DQM_V' + ver + '_R' + irun + '-R' + frun + '.root'
+            TMP_NEW_MERGED = TMPDIR + '/DQM_V' + ver + '_R' + irun + '_R' + irun +'.root'
             TMP_NEW_LOG = TMP_NEW_MERGED[:-4]+'log'
-
+            
             shutil.copy2(TMP_LOG,TMP_NEW_LOG)
             LOGFILE = open(TMP_NEW_LOG,'a')
+            #LOGFILE.write(os.popen('hadd '+TMP_NEW_MERGED+' '+NEW+ ' '+TMP_MERGED).read())
             LOGFILE.write(os.popen('hadd '+TMP_NEW_MERGED+' '+TMP_NEW+ ' '+TMP_MERGED).read())
             LOGFILE.flush()
             os.remove(TMP_MERGED)
@@ -132,23 +144,34 @@ while 1:
             os.remove(TMP_LOG)
         else:
             irun = run
-            frun = run
-            TMP_NEW_MERGED = TMPDIR + '/DQM_V0001_R'+irun+'-R'+frun+'.root'
+            TMP_NEW_MERGED = TMPDIR + '/DQM_V0001_R'+ irun + '_R' + irun +'.root'
             TMP_NEW_LOG = TMP_NEW_MERGED[:-4]+'log'
-            shutil.move(TMP_NEW,TMP_NEW_MERGED)
+            shutil.copy2(NEW,TMP_NEW_MERGED)
             LOGFILE = open(TMP_NEW_LOG,'a')
 
-
+        oldrun = run
+        TMP_OLD_MERGED = TMP_NEW_MERGED
+        TMP_OLD_LOG = TMP_NEW_LOG
+        
         ### move merged file to master directory & do file registration
         if NEW==NEW_[len(NEW_)-1]:
-            NEW_MERGED = TMP_NEW_MERGED.replace(TMPDIR,FILEDIR)
-            NEW_LOG = TMP_NEW_LOG.replace(TMPDIR,FILEDIR)
-            if os.path.exists(INI_MERGED): os.remove(INI_MERGED)
+            SUBDIR = '/'+run[0:3]+'/'+run[3:6]+'/'+run[6:9]
+            NEWDIR = FILEDIR + SUBDIR
+            if not os.path.exists(NEWDIR): os.makedirs(NEWDIR)
+            NEW_MERGED = TMP_NEW_MERGED.replace(TMPDIR,NEWDIR)
+            NEW_LOG = TMP_NEW_LOG.replace(TMPDIR,NEWDIR)
+            if len(os.popen('ls '+ NEWDIR + '/DQM_V*_R'+run+'*root').read().split()):
+                OLD_MERGED = os.popen('ls '+ NEWDIR + '/DQM_V*_R'+run+'*root').read().strip()
+                OLD_LOG = OLD_MERGED[:-4]+'log'
+                os.remove(OLD_MERGED)
+                os.remove(OLD_LOG)
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
-            shutil.move(TMP_NEW_MERGED, FILEDIR)
+            shutil.move(TMP_NEW_MERGED, NEWDIR)
 
             print 'Start file registering...'
             filereg(DB,NEW_MERGED,LOGFILE) #file registration
+            print NEW_MERGED + ' is registerd'
             LOGFILE.close()
-            if os.path.exists(INI_LOG): os.remove(INI_LOG)
-            shutil.move(TMP_NEW_LOG, FILEDIR)
+            shutil.move(TMP_NEW_LOG, NEWDIR)
+
+
