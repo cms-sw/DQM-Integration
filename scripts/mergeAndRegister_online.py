@@ -38,6 +38,8 @@ CMSMON = 'srv-c2c06-02' # machine to which merged file is transfered
 #SIZE_LIMIT = 5000000000  # size limit for merged file (5~10 Gbyte)
 WAITTIME = 300 # waiting time for new files (sec)
 
+os.popen('rm '+TMPDIR+'/DQM*')  # clean up temporary directory when start
+
 if not os.path.exists(TMPDIR +'/timeTag'):
     os.system('touch -t 01010000 '+ TMPDIR +'/timeTag')
 
@@ -110,16 +112,23 @@ while 1:
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
             #shutil.move(TMP_OLD_MERGED, NEW_MERGED)
             os.system('scp '+TMP_OLD_MERGED+ ' '+CMSMON+':'+NEW_MERGED)
-            os.remove(TMP_OLD_MERGED)
-            
-            print 'Start file registering...'
-            filereg(DB,NEW_MERGED,LOGFILE) #file registration
-            print NEW_MERGED + ' is registerd'
-            LOGFILE.close()
-            #shutil.move(TMP_OLD_LOG, NEW_LOG)
-            os.system('scp '+TMP_OLD_LOG+ ' '+CMSMON+':'+NEW_LOG)
-            os.remove(TMP_OLD_LOG)
-            
+
+            tag = 1
+            while tag:
+                if os.path.exists(NEW_MERGED):
+                    os.remove(TMP_OLD_MERGED)
+                    print 'Start file registering : '+ NEW_MERGED
+                    filereg(DB,NEW_MERGED,LOGFILE) #file registration
+                    LOGFILE.close()
+                    #shutil.move(TMP_OLD_LOG, NEW_LOG)
+                    os.system('scp '+TMP_OLD_LOG+ ' '+CMSMON+':'+NEW_LOG)
+                    os.remove(TMP_OLD_LOG)
+                    tag = 0
+                else:
+                    print 'Cannot start file registering because '+NEW_MERGED +' is not created yet!!!'
+                    print 'Registeration will start automatically some time later...'
+                    time.sleep(60)
+                               
         if FILE_EXIST > 0:
             ### create the name of new merged file
             irun = run
@@ -171,13 +180,21 @@ while 1:
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
             #shutil.move(TMP_NEW_MERGED, NEWDIR)
             os.system('scp '+TMP_NEW_MERGED+ ' '+CMSMON+':'+NEWDIR)
-            os.remove(TMP_NEW_MERGED)
 
-            print 'Start file registering...'
-            filereg(DB,NEW_MERGED,LOGFILE) #file registration
-            print NEW_MERGED + ' is registerd'
-            LOGFILE.close()
-            #shutil.move(TMP_NEW_LOG, NEWDIR)
-            os.system('scp '+TMP_NEW_LOG+ ' '+CMSMON+':'+NEWDIR)
-            os.remove(TMP_NEW_LOG)
+            tag = 1
+            while tag:
+                if os.path.exists(NEW_MERGED):
+                    os.remove(TMP_NEW_MERGED)
+                    print 'Start file registering...'
+                    filereg(DB,NEW_MERGED,LOGFILE) #file registration
+                    print NEW_MERGED + ' is registerd'
+                    LOGFILE.close()
+                    #shutil.move(TMP_NEW_LOG, NEWDIR)
+                    os.system('scp '+TMP_NEW_LOG+ ' '+CMSMON+':'+NEWDIR)
+                    os.remove(TMP_NEW_LOG)
+                    tag = 0
+                else:
+                    print 'Cannot start file registering because '+NEW_MERGED +' is not created yet!!!'
+                    print 'Registeration will start automatically some time later...'
+                    time.sleep(60)
 
