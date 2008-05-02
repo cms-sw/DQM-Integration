@@ -23,4 +23,4 @@ server.source('file', 'DQMArchive', '/home/dqm/dqm.db', '--listen 9097')
 server.source('layouts', 'DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
-execfile(CONFIGDIR + "/online-workspaces.py")
+execfile(CONFIGDIR + "/workspaces-online.py")
