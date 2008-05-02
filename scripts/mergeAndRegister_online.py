@@ -30,14 +30,13 @@ def uniq_chk(filename):
 DIR = '/cms/mon/data/dropbox'  # directory to search new files
 #DIR = '/cms/mon/data/dqm/results/000/038/483'
 DB = '/cms/mon/data/dqm/dqm.db'
-FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which merged file is stored
-#FILEDIR = '/cms/mon/data/dqm/results' # directory, to which merged file is stored
+#FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which merged file is stored
+FILEDIR = '/cms/mon/data/dqm/results' # directory, to which merged file is stored
 TMPDIR = '/cms/mon/data/.dropbox_test' # directory, in which merged file is created
+CMSMON = 'srv-c2c06-02' # machine to which merged file is transfered
 
 #SIZE_LIMIT = 5000000000  # size limit for merged file (5~10 Gbyte)
 WAITTIME = 300 # waiting time for new files (sec)
-
-
 
 if not os.path.exists(TMPDIR +'/timeTag'):
     os.system('touch -t 01010000 '+ TMPDIR +'/timeTag')
@@ -73,7 +72,7 @@ while 1:
         SUBDIR = '/'+run[0:3]+'/'+run[3:6]+'/'+run[6:9]
         NEWDIR = FILEDIR + SUBDIR # directory, to which merged file is stored
         #NEWDIR = NEW[0:NEW.find('DQM')-1]
-        TMP_NEW = NEW.replace(NEWDIR,TMPDIR)
+        TMP_NEW = TMPDIR + '/'+ NEW[NEW.find('DQM'):]
         shutil.copy2(NEW,TMP_NEW)
 
 
@@ -109,14 +108,17 @@ while 1:
                 os.remove(OLD_MERGED)
                 os.remove(OLD_LOG)
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
-            shutil.move(TMP_OLD_MERGED, NEW_MERGED)
+            #shutil.move(TMP_OLD_MERGED, NEW_MERGED)
+            os.system('scp '+TMP_OLD_MERGED+ ' '+CMSMON+':'+NEW_MERGED)
+            os.remove(TMP_OLD_MERGED)
             
             print 'Start file registering...'
             filereg(DB,NEW_MERGED,LOGFILE) #file registration
             print NEW_MERGED + ' is registerd'
             LOGFILE.close()
-            shutil.move(TMP_OLD_LOG, NEW_LOG)
-            
+            #shutil.move(TMP_OLD_LOG, NEW_LOG)
+            os.system('scp '+TMP_OLD_LOG+ ' '+CMSMON+':'+NEW_LOG)
+            os.remove(TMP_OLD_LOG)
             
         if FILE_EXIST > 0:
             ### create the name of new merged file
@@ -146,7 +148,8 @@ while 1:
             irun = run
             TMP_NEW_MERGED = TMPDIR + '/DQM_V0001_R'+ irun + '_R' + irun +'.root'
             TMP_NEW_LOG = TMP_NEW_MERGED[:-4]+'log'
-            shutil.copy2(NEW,TMP_NEW_MERGED)
+            #shutil.copy2(NEW,TMP_NEW_MERGED)
+            shutil.move(TMP_NEW,TMP_NEW_MERGED)
             LOGFILE = open(TMP_NEW_LOG,'a')
 
         oldrun = run
@@ -166,12 +169,15 @@ while 1:
                 os.remove(OLD_MERGED)
                 os.remove(OLD_LOG)
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
-            shutil.move(TMP_NEW_MERGED, NEWDIR)
+            #shutil.move(TMP_NEW_MERGED, NEWDIR)
+            os.system('scp '+TMP_NEW_MERGED+ ' '+CMSMON+':'+NEWDIR)
+            os.remove(TMP_NEW_MERGED)
 
             print 'Start file registering...'
             filereg(DB,NEW_MERGED,LOGFILE) #file registration
             print NEW_MERGED + ' is registerd'
             LOGFILE.close()
-            shutil.move(TMP_NEW_LOG, NEWDIR)
-
+            #shutil.move(TMP_NEW_LOG, NEWDIR)
+            os.system('scp '+TMP_NEW_LOG+ ' '+CMSMON+':'+NEWDIR)
+            os.remove(TMP_NEW_LOG)
 
