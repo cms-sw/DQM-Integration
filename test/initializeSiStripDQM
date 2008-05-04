@@ -69,7 +69,7 @@ print "copy cfg files ...\n";
 
 
 copy("$dqm_int/$cfg_file", "$ENV{PWD}/.") unless -e "$ENV{PWD}/$cfg_file";
-copy("$dqm_dir/Reference.root", "$ENV{PWD}/Reference.root") unless -e "$ENV{PWD}/Reference.root";
+copy("/data1/sistrip/sistrip_reference.root", "$ENV{PWD}/.") unless -e "$ENV{PWD}/sistrip_reference.root";
 
 copy("$dqm_dir/../data/layer.js",           "$dqm_int/TkMap/layer.js");
 copy("$dqm_dir/../data/crate.js",           "$dqm_int/TkMap/crate.js");
