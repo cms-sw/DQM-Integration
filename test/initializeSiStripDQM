@@ -12,6 +12,8 @@
 ################################################################################
 use File::Copy;
 
+my $mode = shift || die "usage: $0 mode => file/live/playback, stopped";
+
 # welcome
 print "\n============================================================";
 print "\ninitialize ...";
@@ -34,7 +36,6 @@ my $libname = "libEventFilterProcessor.so";
 
 my $pwd = `pwd`; chomp $pwd;
 
-my $mode = $ARGV[0];
 my $dqm_dir = $ENV{"CMSSW_BASE"}."/src/DQM/SiStripMonitorClient/test";
 my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
 my $dqm_common = $ENV{"CMSSW_BASE"}."/src/DQM/TrackerCommon/test";
