@@ -2,12 +2,9 @@ import os.path
 global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-	   ("eb", "ecal", "ee")]
+	   ("csc", "eb", "ecal", "ee", "hcal", "rpc")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("eb",)]
-# LAYOUTS = ("%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-# 	   ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1temulator", "l1t",
-# 	    "pixel", "rpc", "strip"))
+            ("eb", "hcal")]
 
 modules = ("GuiDQM",)
 envsetup = """
