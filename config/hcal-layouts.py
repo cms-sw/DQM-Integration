@@ -1,9 +1,11 @@
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
 hcallayout(dqmitems, "HCAL Data Format Summary",
-           ["Hcal/DataFormatMonitor/HTR Error Word by Crate"],
-           ["Hcal/DataFormatMonitor/Bad Quality Digis",
-            "Hcal/DataFormatMonitor/Unmapped Digis"],
+           ["Hcal/DataFormatMonitor/HTR Error Word by Crate",
+            "Hcal/DataFormatMonitor/Spigot Format Errors",
+            "Hcal/DigiMonitor/Bad Digi Fraction"],
+           ["Hcal/DataFormatMonitor/Event Fragment Size for each FED",
+            "Hcal/DataFormatMonitor/EvN Inconsistent - HTR vs Ref HTR"],
            ["Hcal/DataFormatMonitor/Event Fragments violating the Common Data Format",
             "Hcal/DataFormatMonitor/DCC Event Format violation",
             "Hcal/DataFormatMonitor/DCC Error and Warning",
@@ -19,10 +21,10 @@ hcallayout(dqmitems, "HCAL Digitization Summary",
             "Hcal/DigiMonitor/HE/HE # of Digis",
             "Hcal/DigiMonitor/HF/HF # of Digis",
             "Hcal/DigiMonitor/HO/HO # of Digis"],
-           ["Hcal/DigiMonitor/HB/HB QIE ADC Value",
-            "Hcal/DigiMonitor/HE/HE QIE ADC Value",
-            "Hcal/DigiMonitor/HF/HF QIE ADC Value",
-            "Hcal/DigiMonitor/HO/HO QIE ADC Value"]
+           ["Hcal/DigiMonitor/HB/HB Digi Shape - over thresh",
+            "Hcal/DigiMonitor/HE/HE Digi Shape - over thresh",
+            "Hcal/DigiMonitor/HF/HF Digi Shape - over thresh",
+            "Hcal/DigiMonitor/HO/HO Digi Shape - over thresh"]
            )
 
 hcallayout(dqmitems, "HCAL Reconstruction Summary",
@@ -50,8 +52,7 @@ hcallayout(dqmitems, "HCAL Reconstruction Threshold Summary",
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell Summary",
-           ["Hcal/HotCellMonitor/HotCellEnergy",
-            "Hcal/HotCellMonitor/HotCellTime"],
+           ["Hcal/HotCellMonitor/HCAL/HCALEnergy"],
            ["Hcal/HotCellMonitor/HB/HBHotCellOccMapThresh0",
             "Hcal/HotCellMonitor/HE/HEHotCellOccMapThresh0",
             "Hcal/HotCellMonitor/HF/HFHotCellOccMapThresh0",
@@ -59,8 +60,8 @@ hcallayout(dqmitems, "HCAL Hot Cell Summary",
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell NADA Summary",
-           ["Hcal/HotCellMonitor/nadaNumHotCells",
-            "Hcal/HotCellMonitor/nadaNumNegCells"],
+           ["Hcal/HotCellMonitor/HCAL/nadaNumHotCells",
+            "Hcal/HotCellMonitor/HCAL/nadaNumNegCells"],
            ["Hcal/HotCellMonitor/HB/HBnadaOccMap",
             "Hcal/HotCellMonitor/HE/HEnadaOccMap",
             "Hcal/HotCellMonitor/HF/HFnadaOccMap",
@@ -82,44 +83,6 @@ hcallayout(dqmitems, "HCAL Dead Cell Summary",
             "Hcal/DeadCellMonitor/HO/HO_NADA_CoolCellMap"]
            )
 
-hcallayout(dqmitems, "HCAL Pedestal Summary",
-           ["Hcal/PedestalMonitor/HB/HB Normalized RMS Values",
-            "Hcal/PedestalMonitor/HE/HE Normalized RMS Values",
-            "Hcal/PedestalMonitor/HF/HF Normalized RMS Values",
-            "Hcal/PedestalMonitor/HO/HO Normalized RMS Values"],           
-            ["Hcal/PedestalMonitor/HB/HB Subtracted Mean Values",
-             "Hcal/PedestalMonitor/HE/HE Subtracted Mean Values",
-             "Hcal/PedestalMonitor/HF/HF Subtracted Mean Values",
-             "Hcal/PedestalMonitor/HO/HO Subtracted Mean Values"],
-            ["Hcal/PedestalMonitor/HB/HB CapID RMS Variance",
-             "Hcal/PedestalMonitor/HE/HE CapID RMS Variance",
-             "Hcal/PedestalMonitor/HF/HF CapID RMS Variance",
-             "Hcal/PedestalMonitor/HO/HO CapID RMS Variance"],
-            ["Hcal/PedestalMonitor/HB/HB CapID Mean Variance",
-             "Hcal/PedestalMonitor/HE/HE CapID Mean Variance",
-             "Hcal/PedestalMonitor/HF/HF CapID Mean Variance",
-             "Hcal/PedestalMonitor/HO/HO CapID Mean Variance"]
-           )
-
-hcallayout(dqmitems, "HCAL LED Summary",
-           ["Hcal/LEDMonitor/HB/HB Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HE/HE Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HF/HF Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HO/HO Ped Subtracted Pulse Shape"],
-           ["Hcal/LEDMonitor/HB/HB Average Pulse Shape",
-            "Hcal/LEDMonitor/HE/HE Average Pulse Shape",
-            "Hcal/LEDMonitor/HF/HF Average Pulse Shape",
-            "Hcal/LEDMonitor/HO/HO Average Pulse Shape"],
-           ["Hcal/LEDMonitor/HB/HB Average Pulse Time",
-            "Hcal/LEDMonitor/HE/HE Average Pulse Time",
-            "Hcal/LEDMonitor/HF/HF Average Pulse Time",
-            "Hcal/LEDMonitor/HO/HO Average Pulse Time"],
-           ["Hcal/LEDMonitor/LED Mean Energy Depth 1",
-            "Hcal/LEDMonitor/LED Mean Energy Depth 2",
-            "Hcal/LEDMonitor/LED Mean Energy Depth 3",
-            "Hcal/LEDMonitor/LED Mean Energy Depth 4"]
-)
-
 hcallayout(dqmitems, "HCAL Barrel Summary",
            ["Hcal/DigiMonitor/HB/HB # of Digis",
             "Hcal/DigiMonitor/HB/HB QIE ADC Value"],
@@ -132,13 +95,6 @@ hcallayout(dqmitems, "HCAL Barrel Summary",
            ["Hcal/DeadCellMonitor/HB/HB_deadADCOccupancyMap",
             "Hcal/DeadCellMonitor/HB/HB_CoolCell_belowPed",
             "Hcal/DeadCellMonitor/HB/HB_NADA_CoolCellMap"],
-           ["Hcal/PedestalMonitor/HB/HB Normalized RMS Values",
-            "Hcal/PedestalMonitor/HB/HB Subtracted Mean Values",
-            "Hcal/PedestalMonitor/HB/HB CapID RMS Variance",
-            "Hcal/PedestalMonitor/HB/HB CapID Mean Variance"],
-           ["Hcal/LEDMonitor/HB/HB Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HB/HB Average Pulse Shape",
-            "Hcal/LEDMonitor/HB/HB Average Pulse Time"]
 )
 
 hcallayout(dqmitems, "HCAL Endcap Summary",
@@ -153,13 +109,6 @@ hcallayout(dqmitems, "HCAL Endcap Summary",
            ["Hcal/DeadCellMonitor/HE/HE_deadADCOccupancyMap",
             "Hcal/DeadCellMonitor/HE/HE_CoolCell_belowPed",
             "Hcal/DeadCellMonitor/HE/HE_NADA_CoolCellMap"],
-           ["Hcal/PedestalMonitor/HE/HE Normalized RMS Values",
-            "Hcal/PedestalMonitor/HE/HE Subtracted Mean Values",
-            "Hcal/PedestalMonitor/HE/HE CapID RMS Variance",
-            "Hcal/PedestalMonitor/HE/HE CapID Mean Variance"],
-           ["Hcal/LEDMonitor/HE/HE Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HE/HE Average Pulse Shape",
-            "Hcal/LEDMonitor/HE/HE Average Pulse Time"]
 )
 
 hcallayout(dqmitems, "HCAL Forward Summary",
@@ -174,14 +123,6 @@ hcallayout(dqmitems, "HCAL Forward Summary",
            ["Hcal/DeadCellMonitor/HF/HF_deadADCOccupancyMap",
             "Hcal/DeadCellMonitor/HF/HF_CoolCell_belowPed",
             "Hcal/DeadCellMonitor/HF/HF_NADA_CoolCellMap"],
-           ["Hcal/PedestalMonitor/HF/HF Normalized RMS Values",
-            "Hcal/PedestalMonitor/HF/HF Subtracted Mean Values",
-            "Hcal/PedestalMonitor/HF/HF CapID RMS Variance",
-            "Hcal/PedestalMonitor/HF/HF CapID Mean Variance"],
-           ["Hcal/LEDMonitor/HF/HF Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HF/HF Average Pulse Shape",
-            "Hcal/LEDMonitor/HF/HF Average Pulse Time"]
-
 )
 
 hcallayout(dqmitems, "HCAL Outer Summary",
@@ -196,11 +137,5 @@ hcallayout(dqmitems, "HCAL Outer Summary",
            ["Hcal/DeadCellMonitor/HO/HO_deadADCOccupancyMap",
             "Hcal/DeadCellMonitor/HO/HO_CoolCell_belowPed",
             "Hcal/DeadCellMonitor/HO/HO_NADA_CoolCellMap"],
-           ["Hcal/PedestalMonitor/HO/HO Normalized RMS Values",
-            "Hcal/PedestalMonitor/HO/HO Subtracted Mean Values",
-            "Hcal/PedestalMonitor/HO/HO CapID RMS Variance",
-            "Hcal/PedestalMonitor/HO/HO CapID Mean Variance"],
-           ["Hcal/LEDMonitor/HO/HO Ped Subtracted Pulse Shape",
-            "Hcal/LEDMonitor/HO/HO Average Pulse Shape",
-            "Hcal/LEDMonitor/HO/HO Average Pulse Time"]
 )
+

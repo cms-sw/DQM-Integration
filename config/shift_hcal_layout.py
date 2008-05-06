@@ -3,22 +3,21 @@ def shiftHcalLayout(i, p, *rows): i["Shift/Hcal/" + p] = DQMItem(layout=rows)
 
 shiftHcalLayout(dqmitems,"Shifter Hcal Summary",
                 # DataFormatMonitor, DigiMonitor
-                ["HTR Error Word by Crate",
-                 "BCN from HTRs",
-                 "Ev Frag Size 2d",
-                 "Bad Digi Fraction"],
-                 ["Digi Depth 1 Occupancy Map",
-                  "Digi Depth 2 Occupancy Map",
-                  "Digi Depth 3 Occupancy Map",
-                  "Digi Depth 4 Occupancy Map"],
+                ["Hcal/DataFormatMonitor/HTR Error Word by Crate",
+                 "Hcal/DigiMonitor/Bad Digi Fraction",
+                 "Hcal/DataFormatMonitor/Ev Frag Size 2d"],
+                 ["Hcal/DigiMonitor/Digi Depth 1 Occupancy Map",
+                  "Hcal/DigiMonitor/Digi Depth 2 Occupancy Map",
+                  "Hcal/DigiMonitor/Digi Depth 3 Occupancy Map",
+                  "Hcal/DigiMonitor/Digi Depth 4 Occupancy Map"],
 
                 # 2 hists each from RecHitMonitor, TrigPrim Monitor
-                ["RecHit Eta Energy Map",
-                 "RecHit Phi Energy Map",
-                 "TrigPrim Geo Energy Map",
-                 "TP Timing"],
+                ["Hcal/RecHitMonitor/RecHit Eta Energy Map",
+                 "Hcal/RecHitMonitor/RecHit Phi Energy Map",
+                 "Hcal/TrigPrimMonitor/TrigPrim Geo Energy Map",
+                 "Hcal/TrigPrimMonitor/TP Timing"],
 
                 # DeadCellMonitor, HotCellMonitor
-                ["HCAL_CoolCell_belowPed",
-                 "HCALHotCellEnergyMapThresh0",
-                 "HCALnadaOccMap"])
+                ["Hcal/DeadCellMonitor/HCAL/HCAL_CoolCell_belowPed",
+                 "Hcal/HotCellMonitor/HCAL/HCALHotCellEnergyMapThresh0",
+                 "Hcal/HotCellMonitor/HCAL/HCALnadaOccMap"])
