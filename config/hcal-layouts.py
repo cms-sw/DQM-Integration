@@ -32,11 +32,14 @@ hcallayout(dqmitems, "HCAL Reconstruction Summary",
            ["Hcal/RecHitMonitor/RecHit Total Energy"],
            ["Hcal/RecHitMonitor/HB/HB RecHit Energies",
             "Hcal/RecHitMonitor/HE/HE RecHit Energies",
-            "Hcal/RecHitMonitor/HF/HF RecHit Energies",
+            "Hcal/RecHitMonitor/HF/HF Short RecHit Energies",
+            "Hcal/RecHitMonitor/HF/HF Long
+            RecHit Energies",
             "Hcal/RecHitMonitor/HO/HO RecHit Energies"],
            ["Hcal/RecHitMonitor/HB/HB RecHit Times",
             "Hcal/RecHitMonitor/HE/HE RecHit Times",
-            "Hcal/RecHitMonitor/HF/HF RecHit Times",
+            "Hcal/RecHitMonitor/HF/HF Short RecHit Times",
+            "Hcal/RecHitMonitor/HF/HF Long RecHit Times",
             "Hcal/RecHitMonitor/HO/HO RecHit Times"]
            )
 
