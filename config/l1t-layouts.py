@@ -1,20 +1,22 @@
 def l1tlayout(i, p, *rows): i["L1T/Layouts/" + p] = DQMItem(layout=rows)
 
-l1tlayout(dqmitems, "Summary/GT Decision bit correlations",
-  ["L1T/L1TGT/GT decision bit correlation"])
 
-l1tlayout(dqmitems, "Summary/GT FE Bx",
-  ["L1T/L1TGT/GT FE Bx"])
+l1tlayout(dqmitems, "GT Information",
+  ["L1T/L1TGT/algo_bits"])
 
-l1tlayout(dqmitems, "Summary/GT decision bits",
-  ["L1T/L1TGT/GT decision bits"])
+l1tlayout(dqmitems, "GMT Information",
+  ["L1T/L1TGMT/GMT_eta",
+  "L1T/L1TGMT/GMT_phi",
+  "L1T/L1TGMT/Regional_trigger"])
 
-l1tlayout(dqmitems, "Summary/DTTF_quality",
-          ["L1T/L1TDTTF/DTTF_quality"])
-l1tlayout(dqmitems,"Summary/DTTF_eta_value",
-          ["L1T/L1TDTTF/DTTF_eta_value"])
-l1tlayout(dqmitems, "Summary/DTTF_phi_value",
-          ["L1T/L1TDTTF/DTTF_phi_value"])
+l1tlayout(dqmitems, "GCT Information",
+          ["L1T/EventInfo/errorSummarySegments/IsoEmRankEtaPhiSumm",
+	  "L1T/EventInfo/errorSummarySegments/NonIsoEmRankEtaPhiSumm"])
 
-l1tlayout(dqmitems, "Summary/DTTF_ntrack",
-          ["L1T/L1TDTTF/DTTF_ntrack"])
+l1tlayout(dqmitems, "CSCTF Information",
+  ["L1T/L1TGT/CSCTF_errors",
+   "L1T/L1TCSCTF/CSCTF_occupancies"])
+
+l1tlayout(dqmitems, "DTTF Information",
+  ["L1T/EventInfo/errorSummarySegments/DT_TPG_phi_map"])
+
