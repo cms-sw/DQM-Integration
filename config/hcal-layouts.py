@@ -1,15 +1,16 @@
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
 hcallayout(dqmitems, "HCAL Data Format Summary",
-           ["Hcal/DataFormatMonitor/HTR Error Word by Crate",
-            "Hcal/DataFormatMonitor/Spigot Format Errors",
+           [{ 'path': "Hcal/DataFormatMonitor/HTR Error Word by Crate",
+                   'description': 'Ignore only OpDat Err, Clock Err, Link Err, CapID Err, and FE Format Err' },
+            "Hcal/DataFormatMonitor/Invalid HTR Data",
             "Hcal/DigiMonitor/Bad Digi Fraction"],
            ["Hcal/DataFormatMonitor/Event Fragment Size for each FED",
             "Hcal/DataFormatMonitor/EvN Inconsistent - HTR vs Ref HTR"],
-           ["Hcal/DataFormatMonitor/Event Fragments violating the Common Data Format",
+           ["Hcal/DataFormatMonitor/Common Data Format violations",
             "Hcal/DataFormatMonitor/DCC Event Format violation",
             "Hcal/DataFormatMonitor/DCC Error and Warning",
-            "Hcal/DataFormatMonitor/DCC View of Spigot Conditions"]
+            "Hcal/DataFormatMonitor/DCC Nonzero Spigot Conditions"]
            )
 
 hcallayout(dqmitems, "HCAL Digitization Summary",
@@ -60,8 +61,8 @@ hcallayout(dqmitems, "HCAL Hot Cell Summary",
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell NADA Summary",
-           ["Hcal/HotCellMonitor/HCAL/nadaNumHotCells",
-            "Hcal/HotCellMonitor/HCAL/nadaNumNegCells"],
+           ["Hcal/HotCellMonitor/HCAL/HCALnadaNumHotCells",
+            "Hcal/HotCellMonitor/HCAL/HCALnadaNumNegCells"],
            ["Hcal/HotCellMonitor/HB/HBnadaOccMap",
             "Hcal/HotCellMonitor/HE/HEnadaOccMap",
             "Hcal/HotCellMonitor/HF/HFnadaOccMap",
@@ -70,16 +71,16 @@ hcallayout(dqmitems, "HCAL Hot Cell NADA Summary",
 
 hcallayout(dqmitems, "HCAL Dead Cell Summary",
            ["Hcal/DeadCellMonitor/HB/HB_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HE/HE_deadADCOccupancyMap"],
-           ["Hcal/DeadCellMonitor/HF/HF_deadADCOccupancyMap",
+            "Hcal/DeadCellMonitor/HE/HE_deadADCOccupancyMap",
+            "Hcal/DeadCellMonitor/HF/HF_deadADCOccupancyMap",
             "Hcal/DeadCellMonitor/HO/HO_deadADCOccupancyMap"],
            ["Hcal/DeadCellMonitor/HB/HB_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HE/HE_CoolCell_belowPed"
-            "Hcal/DeadCellMonitor/HF/HF_CoolCell_belowPed"
+            "Hcal/DeadCellMonitor/HE/HE_CoolCell_belowPed",
+            "Hcal/DeadCellMonitor/HF/HF_CoolCell_belowPed",
             "Hcal/DeadCellMonitor/HO/HO_CoolCell_belowPed"],
-           ["Hcal/DeadCellMonitor/HB/HB_NADA_CoolCellMap"
-            "Hcal/DeadCellMonitor/HE/HE_NADA_CoolCellMap"
-            "Hcal/DeadCellMonitor/HF/HF_NADA_CoolCellMap"
+           ["Hcal/DeadCellMonitor/HB/HB_NADA_CoolCellMap",
+            "Hcal/DeadCellMonitor/HE/HE_NADA_CoolCellMap",
+            "Hcal/DeadCellMonitor/HF/HF_NADA_CoolCellMap",
             "Hcal/DeadCellMonitor/HO/HO_NADA_CoolCellMap"]
            )
 
@@ -114,7 +115,8 @@ hcallayout(dqmitems, "HCAL Endcap Summary",
 hcallayout(dqmitems, "HCAL Forward Summary",
            ["Hcal/DigiMonitor/HF/HF # of Digis",
             "Hcal/DigiMonitor/HF/HF QIE ADC Value"],
-           ["Hcal/RecHitMonitor/HF/HF RecHit Energies",
+           ["Hcal/RecHitMonitor/HF/HF Short RecHit Energies",
+            Hcal/RecHitMonitor/HF/HF Long RecHit Energies",
             "Hcal/RecHitMonitor/HF/HF RecHit Times",
             "Hcal/RecHitMonitor/HF/HF RecHit Total Energy - Threshold",
             "Hcal/RecHitMonitor/HF/HF RecHit Times - Threshold"],
