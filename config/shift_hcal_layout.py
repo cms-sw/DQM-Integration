@@ -3,7 +3,8 @@ def shiftHcalLayout(i, p, *rows): i["Shift/Hcal/" + p] = DQMItem(layout=rows)
 
 shiftHcalLayout(dqmitems,"Shifter Hcal Summary",
                 # DataFormatMonitor, DigiMonitor
-                ["Hcal/DataFormatMonitor/HTR Error Word by Crate",
+                [{ 'path': "Hcal/DataFormatMonitor/HTR Error Word by Crate",
+                   'description': 'Ignore only OpDat Err, Clock Err, Link Err, CapID Err, and FE Format Err' },
                  "Hcal/DigiMonitor/Bad Digi Fraction",
                  "Hcal/DataFormatMonitor/Ev Frag Size 2d"],
                  ["Hcal/DigiMonitor/Digi Depth 1 Occupancy Map",
