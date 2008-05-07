@@ -71,20 +71,6 @@ hcallayout(dqmitems, "HCAL Hot Cell NADA Summary",
             "Hcal/HotCellMonitor/HO/HOnadaOccMap"]
            )
 
-hcallayout(dqmitems, "HCAL Dead Cell Summary",
-           ["Hcal/DeadCellMonitor/HB/HB_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HE/HE_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HF/HF_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HO/HO_deadADCOccupancyMap"],
-           ["Hcal/DeadCellMonitor/HB/HB_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HE/HE_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HF/HF_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HO/HO_CoolCell_belowPed"],
-           ["Hcal/DeadCellMonitor/HB/HB_NADA_CoolCellMap",
-            "Hcal/DeadCellMonitor/HE/HE_NADA_CoolCellMap",
-            "Hcal/DeadCellMonitor/HF/HF_NADA_CoolCellMap",
-            "Hcal/DeadCellMonitor/HO/HO_NADA_CoolCellMap"]
-           )
 
 hcallayout(dqmitems, "HCAL Barrel Summary",
            ["Hcal/DigiMonitor/HB/HB # of Digis",
@@ -94,10 +80,7 @@ hcallayout(dqmitems, "HCAL Barrel Summary",
             "Hcal/RecHitMonitor/HB/HB RecHit Total Energy - Threshold",
             "Hcal/RecHitMonitor/HB/HB RecHit Times - Threshold"],
            ["Hcal/HotCellMonitor/HB/HBHotCellOccMapThresh0",
-            "Hcal/HotCellMonitor/HB/HBnadaOccMap"],
-           ["Hcal/DeadCellMonitor/HB/HB_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HB/HB_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HB/HB_NADA_CoolCellMap"],
+            "Hcal/HotCellMonitor/HB/HBnadaOccMap"]
 )
 
 hcallayout(dqmitems, "HCAL Endcap Summary",
@@ -108,10 +91,7 @@ hcallayout(dqmitems, "HCAL Endcap Summary",
             "Hcal/RecHitMonitor/HE/HE RecHit Total Energy - Threshold",
             "Hcal/RecHitMonitor/HE/HE RecHit Times - Threshold"],
            ["Hcal/HotCellMonitor/HE/HEHotCellOccMapThresh0",
-            "Hcal/HotCellMonitor/HE/HEnadaOccMap"],
-           ["Hcal/DeadCellMonitor/HE/HE_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HE/HE_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HE/HE_NADA_CoolCellMap"],
+            "Hcal/HotCellMonitor/HE/HEnadaOccMap"]
 )
 
 hcallayout(dqmitems, "HCAL Forward Summary",
@@ -123,10 +103,7 @@ hcallayout(dqmitems, "HCAL Forward Summary",
             "Hcal/RecHitMonitor/HF/HF RecHit Total Energy - Threshold",
             "Hcal/RecHitMonitor/HF/HF RecHit Times - Threshold"],
            ["Hcal/HotCellMonitor/HF/HFHotCellOccMapThresh0",
-            "Hcal/HotCellMonitor/HF/HFnadaOccMap"],
-           ["Hcal/DeadCellMonitor/HF/HF_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HF/HF_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HF/HF_NADA_CoolCellMap"],
+            "Hcal/HotCellMonitor/HF/HFnadaOccMap"]
 )
 
 hcallayout(dqmitems, "HCAL Outer Summary",
@@ -137,9 +114,6 @@ hcallayout(dqmitems, "HCAL Outer Summary",
             "Hcal/RecHitMonitor/HO/HO RecHit Total Energy - Threshold",
             "Hcal/RecHitMonitor/HO/HO RecHit Times - Threshold"],
            ["Hcal/HotCellMonitor/HO/HOHotCellOccMapThresh0",
-            "Hcal/HotCellMonitor/HO/HOnadaOccMap"],
-           ["Hcal/DeadCellMonitor/HO/HO_deadADCOccupancyMap",
-            "Hcal/DeadCellMonitor/HO/HO_CoolCell_belowPed",
-            "Hcal/DeadCellMonitor/HO/HO_NADA_CoolCellMap"],
+            "Hcal/HotCellMonitor/HO/HOnadaOccMap"]
 )
 
