@@ -75,11 +75,11 @@ server.workspace('HCAL', 'DQMContent', '^Hcal',
                  'Hcal/Layouts/HCAL Outer Summary')
 
 server.workspace('L1T', 'DQMContent', '^L1T',
-                 'L1T/Layouts/GT Information',
-                 'L1T/Layouts/GMT Information',
-                 'L1T/Layouts/GCT Information',
-                 'L1T/Layouts/CSCTF Information',
-                 'L1T/Layouts/DTTF Information')
+                 'L1T/Layouts/GT-Summary/algo_bits',
+                 'L1T/Layouts/GMT-Summary/Regional_trigger',
+                 'L1T/Layouts/GCT-Summary/IsoEmRankEtaPhiSumm',
+                 'L1T/Layouts/CSCTF-Summary/CSCTF_occupancies',
+                 'L1T/Layouts/DTTF-Summary/DT_TPG_phi_map')
 
 server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
