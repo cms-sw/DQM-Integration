@@ -13,28 +13,12 @@ server.workspace('CSC', 'DQMContent', '^CSC/',
 		 'CSC/Layouts/EMU00 Summary/EMU Test11 - CSCs without Data Blocks')
 
 server.workspace('DT', 'DQMContent', '^DT/',
-                 'DT/Layouts/DTIntegrityCheck_Summary',
-                 'DT/Layouts/W1_St1_Signal',
-                 'DT/Layouts/W1_St2_Signal',
-                 'DT/Layouts/W1_St3_Signal',
-                 'DT/Layouts/W1_St4_Signal',
-                 'DT/Layouts/DTLocalTrigger_Station_1',
-                 'DT/Layouts/DTLocalTrigger_Station_2',
-                 'DT/Layouts/DTLocalTrigger_Station_3',
-                 'DT/Layouts/DTLocalTrigger_Station_4',
-                 'DT/Layouts/W1_St1_OccupancyPerLayer',
-                 'DT/Layouts/W1_St2_OccupancyPerLayer',
-                 'DT/Layouts/W1_St3_OccupancyPerLayer',
-                 'DT/Layouts/W1_St4_OccupancyPerLayer',
-                 'DT/Layouts/DTIntegrityCheck_station1_first',
-                 'DT/Layouts/DTIntegrityCheck_station1_second',
-                 'DT/Layouts/DTIntegrityCheck_station2_first',
-                 'DT/Layouts/DTIntegrityCheck_station2_second',
-                 'DT/Layouts/DTIntegrityCheck_station3_first',
-                 'DT/Layouts/DTIntegrityCheck_station3_second',
-                 'DT/Layouts/DTIntegrityCheck_station4_first',
-                 'DT/Layouts/DTIntegrityCheck_station4_second')
-
+                 'DT/DataIntegrity/FED770/FED770_ROSSummary',
+                 'DT/DataIntegrity/FED771/FED771_ROSSummary',
+                 'DT/DataIntegrity/FED772/FED772_ROSSummary',
+                 'DT/DataIntegrity/FED773/FED773_ROSSummary',
+                 'DT/DataIntegrity/FED774/FED774_ROSSummary')
+                 
 server.workspace('ECAL', 'DQMContent', '^Ecal',
                  'Ecal/Layouts/00-Global-Summary')
 
