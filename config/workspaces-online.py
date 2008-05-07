@@ -59,13 +59,11 @@ server.workspace('HCAL', 'DQMContent', '^Hcal',
                  'Hcal/Layouts/HCAL Outer Summary')
 
 server.workspace('L1T', 'DQMContent', '^L1T',
-                 'L1TMonitor/Layouts/Summary/GT decision bit correlation',
-                 'L1TMonitor/Layouts/Summary/GT FE Bx',
-                 'L1TMonitor/Layouts/Summary/GT decision bits',
-                 'L1TMonitor/Layouts/Summary/DTTF_quality',
-                 'L1TMonitor/Layouts/Summary/DTTF_eta_value',
-                 'L1TMonitor/Layouts/Summary/DTTF_phi_value',
-                 'L1TMonitor/Layouts/Summary/DTTF_ntrack')
+                 'L1T/Layouts/GT Information',
+                 'L1T/Layouts/GMT Information',
+                 'L1T/Layouts/GCT Information',
+                 'L1T/Layouts/CSCTF Information',
+                 'L1T/Layouts/DTTF Information')
 
 server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
