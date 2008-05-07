@@ -18,7 +18,6 @@ shiftHcalLayout(dqmitems,"Shifter Hcal Summary",
                  "Hcal/TrigPrimMonitor/TrigPrim Geo Energy Map",
                  "Hcal/TrigPrimMonitor/TP Timing"],
 
-                # DeadCellMonitor, HotCellMonitor
-                ["Hcal/DeadCellMonitor/HCAL/HCAL_CoolCell_belowPed",
-                 "Hcal/HotCellMonitor/HCAL/HCALHotCellEnergyMapThresh0",
+                # HotCellMonitor
+                ["Hcal/HotCellMonitor/HCAL/HCALHotCellEnergyMapThresh0",
                  "Hcal/HotCellMonitor/HCAL/HCALnadaOccMap"])
