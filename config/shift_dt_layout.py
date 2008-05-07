@@ -1,4 +1,4 @@
-def shiftdtlayout(i, p, *rows): i["Shift/DT" + p] = DQMItem(layout=rows)
+def shiftdtlayout(i, p, *rows): i["Shift/DT/" + p] = DQMItem(layout=rows)
 
 shiftdtlayout(dqmitems, "01-DataIntegrity",
   ["DT/DataIntegrity/FED770/FED770_ROSSummary",
@@ -13,11 +13,3 @@ shiftdtlayout(dqmitems, "02-CorrelatedTriggers",
    "DT/Tests/DTLocalTrigger/Wheel0/LocalTriggerPhi/CorrFraction_Phi_W0"],
   ["DT/Tests/DTLocalTrigger/Wheel1/LocalTriggerPhi/CorrFraction_Phi_W1",
    "DT/Tests/DTLocalTrigger/Wheel2/LocalTriggerPhi/CorrFraction_Phi_W2"])
-
-shiftdtlayout(dqmitems, "03-Efficiency",
-  ["DT/Tests/DTEfficiency/SummaryPlot/ESummary_testFailedByAtLeastBadSL"],
-  ["DT/Tests/DTEfficiency/SummaryPlot/UESummary_testFailedByAtLeastBadSL"])
-
-shiftdtlayout(dqmitems, "04-Resolution",
-  ["DT/Tests/DTResolution/SummaryPlot/MeanSummaryRes_testFailedByAtLeastBadSL_STEP3"],
-  ["DT/Tests/DTResolution/SummaryPlot/SigmaSummaryRes_testFailedByAtLeastBadSL_STEP3"])
