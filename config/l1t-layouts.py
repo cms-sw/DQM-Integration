@@ -1,33 +1,32 @@
 def l1tlayout(i, p, *rows): i["L1T/Layouts/" + p] = DQMItem(layout=rows)
 
-def l1_gt_single(i, dir, name):
+def l1t_gt_single(i, dir, name):
   i["L1T/Layouts/GT-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_gmt_single(i, dir, name):
+def l1t_gmt_single(i, dir, name):
   i["L1T/Layouts/GMT-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_gct_single(i, dir, name):
+def l1t_gct_single(i, dir, name):
   i["L1T/Layouts/GCT-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_rct_single(i, dir, name):
+def l1t_rct_single(i, dir, name):
   i["L1T/Layouts/RCT-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_rpctf_single(i, dir, name):
+def l1t_rpctf_single(i, dir, name):
   i["L1T/Layouts/RPCTF-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_dttf_single(i, dir, name):
+def l1t_dttf_single(i, dir, name):
   i["L1T/Layouts/DTTF-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1_csctf_single(i, dir, name):
+def l1t_csctf_single(i, dir, name):
   i["L1T/Layouts/CSCTF-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)) 
-
+    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
 # list of summary GT histograms (dqmitems, dirPath , histoName)
 l1t_gt_single(dqmitems, "L1TGT", "algo_bits")
