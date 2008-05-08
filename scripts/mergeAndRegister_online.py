@@ -2,6 +2,23 @@
 
 import os,time,sys,shutil
 
+def fileunreg(db,file,logfile):
+    tmpdb = '/cms/mon/data/.dropbox_test/dqm-tmp.db'
+    newdb = db[:-3]+'-new.db'
+    server = 'srv-c2d05-19'
+    if os.path.exists(tmpdb): os.remove(tmpdb)
+    #if os.path.exists(db): shutil.copy2(db, tmpdb)
+    logfile.write(os.popen('scp '+server+ ':'+db+' '+tmpdb).read())
+    logfile.write('*** File Register ***\n')
+    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + file).read())
+    #shutil.move(tmpdb, newdb)
+    logfile.write(os.popen('scp '+tmpdb+' '+server+':'+newdb).read())
+    os.remove(tmpdb)
+    #if os.path.exists(db): os.remove(db)
+    #os.rename(newdb,db)
+    # logfile.write(os.popen('ssh '+server+' -t rm '+db).read())
+    logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
+
 def filereg(db,file,logfile):
     tmpdb = '/cms/mon/data/.dropbox_test/dqm-tmp.db'
     newdb = db[:-3]+'-new.db'
@@ -35,7 +52,6 @@ def uniq_chk(filename):
 # find /cms/mon/data/dqm/results -name 'DQM_*_R000038403*.root' | grep -v _RPCexpert_ | xargs visDQMRegisterFile dqm.db /Global/Online/ALL "Global run"
 DIR = '/cms/mon/data/dropbox'  # directory to search new files
 #DIR = '/cms/mon/data/dropbox_test'  # directory to search new files
-#DIR = '/cms/mon/data/dqm/results/000/038/483'
 #DB = '/cms/mon/data/dqm/dqm.db'
 DB = '/home/dqm/dqm.db'
 #FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which merged file is stored
@@ -119,6 +135,7 @@ while 1:
             if len(os.popen('ls '+ NEWDIR + '/DQM_V*_R'+oldrun+'*root').read().split()):
                 OLD_MERGED = os.popen('ls '+ NEWDIR + '/DQM_V*_R'+oldrun+'*root').read().strip()
                 OLD_LOG = OLD_MERGED[:-4]+'log'
+		fileunreg(DB, OLD_MERGED, LOGFILE)
                 os.remove(OLD_MERGED)
                 os.remove(OLD_LOG)
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
@@ -188,6 +205,7 @@ while 1:
             if len(os.popen('ls '+ NEWDIR + '/DQM_V*_R'+run+'*root').read().split()):
                 OLD_MERGED = os.popen('ls '+ NEWDIR + '/DQM_V*_R'+run+'*root').read().strip()
                 OLD_LOG = OLD_MERGED[:-4]+'log'
+		fileunreg(DB, OLD_MERGED, LOGFILE)
                 os.remove(OLD_MERGED)
                 os.remove(OLD_LOG)
             uniq_chk(NEW_MERGED) #check if the name of new merged file is unique
