@@ -14,7 +14,7 @@ csclayout(dqmitems,"EMU00 Summary/EMU Test05 - DDU Inputs Status",
   	["CSC/All_DDUs_Live_Inputs"],
 	["CSC/All_DDUs_Inputs_with_Data"])
 
-csclayout(dqmitems,"EMU00 Summary/EMU Test06 - DDU Inputs in ERROR/WARNING State",
+csclayout(dqmitems,"EMU00 Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State",
   	["CSC/All_DDUs_Inputs_Errors"],
 	["CSC/All_DDUs_Inputs_Warnings"])
 

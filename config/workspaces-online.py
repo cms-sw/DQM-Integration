@@ -1,13 +1,11 @@
 server.workspace('Summary', 'DQMSummary')
 server.workspace('Everything', 'DQMContent', '^')
 server.workspace('CSC', 'DQMContent', '^CSC/',
-		 'CSC/Layouts/EMU00 Summary/EMU Test00 - Readout Buffer Errors',
 		 'CSC/Layouts/EMU00 Summary/EMU Test01 - DDUs in Readout',
-		 'CSC/Layouts/EMU00 Summary/EMU Test02 - DDU Event Size',
 		 'CSC/Layouts/EMU00 Summary/EMU Test03 - DDU Reported Errors',
 		 'CSC/Layouts/EMU00 Summary/EMU Test04 - DDU Format Errors',
 		 'CSC/Layouts/EMU00 Summary/EMU Test05 - DDU Inputs Status',
-		 'CSC/Layouts/EMU00 Summary/EMU Test06 - DDU Inputs in ERROR/WARNING State',
+		 'CSC/Layouts/EMU00 Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
 		 'CSC/Layouts/EMU00 Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
 		 'CSC/Layouts/EMU00 Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
 		 'CSC/Layouts/EMU00 Summary/EMU Test11 - CSCs without Data Blocks')
