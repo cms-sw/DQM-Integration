@@ -57,10 +57,18 @@ server.workspace('HCAL', 'DQMContent', '^Hcal',
 
 server.workspace('L1T', 'DQMContent', '^L1T',
                  'L1T/Layouts/GT-Summary/algo_bits',
+                 'L1T/Layouts/GMT-Summary/GMT_etaphi',
+                 'L1T/Layouts/GMT-Summary/etaphi_DTCSC_and_RPC',
                  'L1T/Layouts/GMT-Summary/Regional_trigger',
                  'L1T/Layouts/GCT-Summary/IsoEmRankEtaPhiSumm',
+                 'L1T/Layouts/GCT-Summary/NonIsoEmRankEtaPhiSumm',
+                 'L1T/Layouts/GCT-Summary/IsoEmRank',
+                 'L1T/Layouts/GCT-Summary/NonIsoEmRank',
+                 'L1T/Layouts/RCT-Summary/RctIsoEmOccEtaPhi',
+                 'L1T/Layouts/RCT-Summary/RctNonIsoEmOccEtaPhi',
                  'L1T/Layouts/CSCTF-Summary/CSCTF_occupancies',
-                 'L1T/Layouts/DTTF-Summary/DT_TPG_phi_map')
+                 'L1T/Layouts/DTTF-Summary/DT_TPG_phi_map',
+                 'L1T/Layouts/RPCTF-Summary/RPCTF_muons_eta_phipacked')
 
 server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
