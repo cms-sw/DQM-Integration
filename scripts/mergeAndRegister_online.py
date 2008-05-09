@@ -167,7 +167,10 @@ while 1:
 
             print 'Run '+run+' is being merged...'
             LOGFILE = open(TMP_LOG,'a')
-            LOGFILE.write(os.popen('hadd '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
+            if int(ver)==1:
+                shutil.copy(TMP_FILES[0],TMP_MERGED)
+            else:
+                LOGFILE.write(os.popen('hadd '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
             print 'moving merged file to the master directory'
             os.system('scp '+TMP_MERGED+' '+CMSMON+':'+MERGED)
             os.remove(TMP_MERGED)
