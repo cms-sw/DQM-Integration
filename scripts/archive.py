@@ -163,7 +163,7 @@ def SendFile(filepath) :
     print result
 
 #    ls = "ls -l " + filename
-    ls = "rfdir %s%s" (%targetdir, %filepath)
+    ls = "rfdir %s%s" (%targetdir, %filename)
     print ls 
     result = os.popen('%s' %ls)
     print result 
