@@ -31,5 +31,6 @@ csclayout(dqmitems,"EMU00 Summary/EMU Test10 - CSCs with Errors and Warnings (Fr
 csclayout(dqmitems,"EMU00 Summary/EMU Test11 - CSCs without Data Blocks",
   	["CSC/CSC_wo_ALCT_Fract",
 	 "CSC/CSC_wo_CLCT_Fract"],
-	["CSC/CSC_wo_CFEB_Fract"])
+	["CSC/CSC_wo_CFEB_Fract",
+         ""])
 
