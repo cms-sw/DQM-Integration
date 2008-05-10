@@ -1,8 +1,9 @@
 #! /bin/sh
 
-CLIENTS="ecal dt csc rpc l1t hcal"
-MODE="playback"
-#MODE="live"
+CLIENTS="l1temulator"
+#CLIENTS="hcal"
+#MODE="playback"
+MODE="live"
 
 for c in $CLIENTS;
 do
