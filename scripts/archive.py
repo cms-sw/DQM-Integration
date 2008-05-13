@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 import os, time
+#import fileunreg from mergeAndRegister_online.py 
+#def fileunreg(db,file,logfile):
 
 #local testing area
-dir = "/cms/mon/data/dqm/" # Execution Directory, Local now
+dir = "/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/" # Execution Directory, Local now
+db = "/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/tmp.db" # master db
+adb = "/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/archival.db" # archival db
 targetdir = "/castor/cern.ch/user/s/smaruyam/Archive/" # Command for Archival, Local now
 #pnfsdir = "/pnfs/cms/WAX/2/mayaruma/Archive/" # Directory on Tape, dCache now
 disk_threshold = 80.0  # disk usage threshold, 80% now
@@ -12,6 +16,7 @@ Archiving Files
 """
 def Archive() :
     print "Starting Archiver "
+    if os.path.exists(adb) is False : CreatePrivateDBForArchival()
 #    count = 0
 #    DiskUsage()   # disabeled for now
     Transfer()
@@ -30,6 +35,7 @@ cmsnfshome0:/nfshome0
 # cmsmon is 5th line from top.
 """
 def DiskUsage() :
+    print "Checking Disk Usage"
     df_file=os.popen('df')
     usage = False
     lines = df_file.readlines()
@@ -52,50 +58,60 @@ rfdir out put is assumed as follows.
 -rw-r--r--   1 smaruyam zh                         10 May 08 22:35 /castor/cern.ch/user/s/smaruyam/Archive/test.txt
 """
 def ConfirmSize(filename, size) :
+    print "Confirming Copied File Size for " , filename
     time.sleep(10)
  #   ls = "ls -l " + pnfsdir + filename
     ls = "rfdir " + targetdir + filename
-    print ls
+#    print ls
     result = os.popen('%s' %ls)
-    print result
+#    print result
     for line in result :
-        if line == "%s%s: No such file or directory" (%targetdir, %filename) :
+        error_check = "%s%s: No such file or directory" %(targetdir, filename)
+        if line == error_check :
             return False
         else :
-            print line
+#            print line
             string = line.split()
             if len(string) == 9 :
-                print string[4]
+#                print string[4]
                 if string[4] == size :
                     print "Size matched, Copy Success"
                     return True
-
+                else : return False
+            else : return False
 
 """
 File Cleaner
 """
 def Cleaner() :
+    print "Cleaning File"
     flag = True
     archivedfiles = GetListFromMasterDB(flag).readlines()
-    if archivedfiles is not NULL :
+    if len(archivedfiles) != 0 :
         string = archivedfiles[0].rstrip() 
         string.split()
         filepath = string[0]
         Remover(filepath)
-    if archivedfiles is NULL : print "Cleaning Failed because DB gave a Null List!"
+    if len(archivedfiles) == 0 : print "Cleaning Failed because DB gave a Null List!"
 
 
 """
 Master DataBase Reference
 """
 def GetListFromMasterDB(flag) :
+    print "Getting Merged File List from Master DB"
     if flag is False : # Retrive Merged File Info Only
-        sqlite = "sqlite3 -separator \" \" /cms/mon/data/dqm/dqm.db \"select name, size, mtime from t_files where name like '/cms/mon/data/dqm/results/DQM_V%_R%.root' and not name like '%RPC%'\""
+        string = "'" + dir + "DQM_V%_R%.root" + "'"
+#        print string
+        search = "'%RPC%'" 
+        sqlite = "sqlite3 %s \"select name, size, mtime from t_files where name like %s and not name like %s \" "  %(db, string, search)
         result = os.popen(sqlite)
+#        print result
         return result
     if flag is True : # Retrive Merged and Un-Merged File Info # Need check on Un-Merged Files DB (where is it?)
-        sqlite = "sqlite3 -separator \" \" /cms/mon/data/dqm/dqm.db \"select name, mtime from t_files where name like '%DQM%.root' order by mtime asc'\""
+        sqlite = "sqlite3 %s \"select name, mtime from t_files where name like '%DQM%.root' order by mtime asc\""  %db
         result = os.popen(sqlite)
+#        print result
         return result
 
 
@@ -106,52 +122,80 @@ CREATE TABLE t_files (id integer primary key autoincrement, name text unique
 not null, size integer not null, mtime integer not null, atime text not null);
 """
 def CheckPrivateDB(filepath) :
-    sqlite = "sqlite3 -separator \" \" private_archive.db \"select name, size, mtime, atime from t_files where name '%s'\"" , %filepath
+    string = filepath.split('|')
+    print "Checking Archival DB for " , string[0]
+    search = "'" + string[0] + "'"
+    sqlite = "sqlite3 %s \"select name, size, mtime, atime from t_files where name like %s \""  %(adb, search)
     result = os.popen(sqlite)
-    if result is NULL :
+#    print result
+    check_result = result.readlines()
+#    print " Read Length is " , len(check_result)
+    if len(check_result) == 0 :
         return False # no entry
     else :
-        return True # entry exista
+        return True # entry exist
 
 
 """
 Tranfer Merged Files
 """
 def Transfer() :
-    print "Getting File List"
+    print "Starting File Transfer"
     flag = False
     mergedfiles = GetListFromMasterDB(flag) # Retrieve Merged File List 
+    archived = True
     for file in mergedfiles :
-        archived = CheckPrivateDB(file)
-    if archived is False :
+#        print file
+        string = file.split('|')
+        archived = CheckPrivateDB(string[0])
+        if archived is False :
 #        print "Here is Root File List ", mergedfiles
-        SendFile(file)
-    else : continue
+            SendFile(string[0])
+        else : continue
 
 
 """
 Update Private DB for Archival Information
 """
-def UpdatePrivateBDForArchival(filepath) :
+def UpdatePrivateDBForArchival(filepath) :
+    print "Updating Archival DB for " , filepath
     name = filepath
     size = os.path.getsize(filepath) 
     mtime = os.path.getmtime(filepath)
     tm = time.localtime(time.time())
     atime = time.strftime("%Y/%m/%d", tm) 
-    sqlite = "sqlite3 private_archive.db \"insert into t_files(name, size, mtime, atime) values('%s', '%d', '%d', '%s')\"" , (%name, %size, %mtime, %atime)
+    sqlite = "sqlite3 %s \"insert into t_files(name, size, mtime, atime) values('%s', '%d', '%d', '%s')\""  %(adb, name, size, mtime, atime)
     result = os.popen(sqlite)
-    if result is NULL :
+    check_result = result.readlines()
+#    print " Read Length is " , len(check_result)
+    if len(check_result) == 0 :
         return True
-    else : False
+    else : return False
+
+"""
+Create a DB if not present
+"""
+def CreatePrivateDBForArchival() :
+    print "Creating Archival DB"
+    sqlite = "sqlite3 %s \"CREATE TABLE t_files (id integer primary key autoincrement, name text unique not null, size integer not null, mtime integer not null, atime text not null); \" " %adb
+    result = os.popen(sqlite)
+    check_result = result.readlines()
+#    print " Read Length is " , len(check_result)
+    if len(check_result) == 0 :
+        return True
+    else : 
+        print result
+        return False
 
 
 """
 copy file to dcache or castor
 """
 def SendFile(filepath) :
-    print "Shipping %s to %s" (%filepath, %targetdir)
-    filename = filepath[-25:] # file name only
-    print filename
+    print "Shipping %s to %s" %(filepath, targetdir)
+#   Assumed root name =  DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
+    filename = filepath[-34:] # file name only
+#    print filename
 
 #    cdir = os.popen('pwd')
 #    pwd = cdir.readline().rstrip()
@@ -159,21 +203,22 @@ def SendFile(filepath) :
 #    print "srmcp -debug==true file:////%s/%s \"%s%s\"" %(pwd, filepath, targetdir, filename)
 
 #    result = os.popen('srmcp -debug==true file:////%s/%s "%s%s"' %(pwd, filepath, targetdir, filename) )
-    result = os.popen('rfcp %s %s' (%filepath, %targetdir) )
-    print result
+    result = os.popen('rfcp %s %s' %(filepath, targetdir) )
+#    print result
 
 #    ls = "ls -l " + filename
-    ls = "rfdir %s%s" (%targetdir, %filename)
-    print ls 
+    ls = "rfdir %s%s" %(targetdir, filename)
+#    print ls 
+    time.sleep(10)
     result = os.popen('%s' %ls)
-    print result 
+#    print result 
     size = ""
-    for line in result :
-        print line
+    for line in result.readlines() :
+#        print line
         string = line.split()
-        print string
+#        print string
         if len(string) == 9 :
-            print string[4]
+#            print string[4]
             size = string[4]
     success = False
     counter = 0
@@ -181,7 +226,7 @@ def SendFile(filepath) :
         counter += 1
         success = ConfirmSize(filename, size)
         if success is False :  ## now error check srmcp 
-            print "File Transfer Failed. This is %d time(s) Failure: " , %counter 
+            print "File Transfer Failed. This is %d time(s) Failure: "  %counter 
         else : continue
     if success is True :
             print "%s is copyied " %filepath
@@ -195,7 +240,7 @@ def SendFile(filepath) :
 Remove file from disk
 """
 def Remover(filepath) :
-    print "Removeing File %s" %filepath
+    print "Removeing File: %s" %filepath
     result = os.popen('rm -f %s' %filepath)
     for line in result.readlines() :
         if line == "" :  ## now error check rm
@@ -209,10 +254,10 @@ Main Script
 if __name__ == "__main__":
 ####### ENDLESS LOOP
     print "Starting Test Script ..."
-#    count = 0
+    count = 0
     while True :
         Archive()
-#        count += 1
-#        print count
-#        if count >= 3 : break
-#        else : continue
+        count += 1
+        print "Looping " , count, "Time(s)"
+        if count >= 2 : break
+        else : continue
