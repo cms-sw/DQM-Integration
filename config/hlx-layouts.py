@@ -194,6 +194,13 @@ hlxlayout(dqmitems, "HLX-Averages",
   ["HLX/Average/AvgOccBelowSet2","HLX/Average/AvgOccBetweenSet2",
    "HLX/Average/AvgOccAboveSet2"])
 
+hlxlayout(dqmitems, "HLX-Luminosity",
+  ["HLX/Luminosity/LumiEtSum","HLX/Luminosity/LumiOccSet1","HLX/Luminosity/LumiOccSet2"],
+  ["HLX/Luminosity/LumiDiffEtSumOcc1","HLX/Luminosity/LumiDiffEtSumOcc2","HLX/Luminosity/LumiDiffOcc1Occ2"])
+
+hlxlayout(dqmitems, "HLX-Occupancy-Check-Sums",
+  ["HLX/CheckSums/SumAllOccSet1","HLX/CheckSums/SumAllOccSet2"])
+
 
 
 

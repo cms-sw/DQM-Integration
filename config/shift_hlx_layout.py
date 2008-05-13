@@ -1,6 +1,8 @@
 def shifthlxlayout(i, p, *rows): i["Shift/HLX/" + p] = DQMItem(layout=rows)
 
 shifthlxlayout(dqmitems, "Shifter HLX Summary",
+  ["HLX/Luminosity/LumiEtSum","HLX/Luminosity/LumiOccSet1","HLX/Luminosity/LumiOccSet2"],
+  ["HLX/Luminosity/LumiDiffEtSumOcc1","HLX/Luminosity/LumiDiffEtSumOcc2","HLX/Luminosity/LumiDiffOcc1Occ2"],
   ["HLX/HFCompare/HFCompareEtSum"],
   ["HLX/HFCompare/HFCompareOccBelowSet1","HLX/HFCompare/HFCompareOccBetweenSet1",
    "HLX/HFCompare/HFCompareOccAboveSet1"],
