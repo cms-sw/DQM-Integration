@@ -7,7 +7,8 @@ shifteblayout(dqmitems, "02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal quality summary G12", 'description': "Quality map: checks that the first 3 samples of the pulse shape are consistent with pedestal (mean and RMS of the pedestal distribution) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteblayout(dqmitems, "03-DCCOccupancy",
-  [{ 'path': "EcalBarrel/EcalInfo/EBMM DCC", 'description': "1D distribution showing the occupancy of each DCC (= SM) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EcalInfo/EBMM DCC", 'description': "1D profile histogram showing the DCC occupancy: number of events (y-axis) vs DCC number (x-axis) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EcalInfo/EBMM digi number profile", 'description': "1D profile histogram of the digis occupancy: number of crystals (y-axis) vs DCC number (x-axis) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteblayout(dqmitems, "04-DigiOccupancy",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy", 'description': "2D digis occupancy map - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -25,8 +26,8 @@ shifteblayout(dqmitems, "06-TPDigisOccupancy",
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi", 'description': "phi projections of the 2D map - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteblayout(dqmitems, "07-RecHitAndTPProfiles",
-  [{ 'path': "EcalBarrel/EcalInfo/EBMM hit number profile", 'description': "1D profile histogram of the rec hits occupancy: crystal number (y-axis) vs DCC number (x-axis) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EcalInfo/EBMM TP digi number profile", 'description': "1D profile histogram of the trigger primitives digis occupancy: trigger tower number (y-axis) vs DCC number - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EcalInfo/EBMM hit number profile", 'description': "1D profile histogram of the rec hits occupancy: number of crystals (y-axis) vs DCC number (x-axis) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EcalInfo/EBMM TP digi number profile", 'description': "1D profile histogram of the trigger primitives digis occupancy: number of trigger primitives (y-axis) vs DCC number (x-axis) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteblayout(dqmitems, "08-Cosmics",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "2D map of 3x3 matrices with E3x3>125 MeV (~1/2 of the average MIP deposit) around seeds, where seeds are made from all the channels exceeding 7 ADC counts with the time of the peak inside the interval 4-7.5 (clocks) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
