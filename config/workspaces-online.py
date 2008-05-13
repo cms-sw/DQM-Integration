@@ -1,14 +1,14 @@
 server.workspace('Summary', 'DQMSummary')
 server.workspace('Everything', 'DQMContent', '^')
 server.workspace('CSC', 'DQMContent', '^CSC/',
-		 'CSC/Layouts/EMU00 Summary/EMU Test01 - DDUs in Readout',
-		 'CSC/Layouts/EMU00 Summary/EMU Test03 - DDU Reported Errors',
-		 'CSC/Layouts/EMU00 Summary/EMU Test04 - DDU Format Errors',
-		 'CSC/Layouts/EMU00 Summary/EMU Test05 - DDU Inputs Status',
-		 'CSC/Layouts/EMU00 Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
-		 'CSC/Layouts/EMU00 Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
-		 'CSC/Layouts/EMU00 Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
-		 'CSC/Layouts/EMU00 Summary/EMU Test11 - CSCs without Data Blocks')
+		 'CSC/Layouts/EMU Summary/EMU Test01 - DDUs in Readout',
+		 'CSC/Layouts/EMU Summary/EMU Test03 - DDU Reported Errors',
+		 'CSC/Layouts/EMU Summary/EMU Test04 - DDU Format Errors',
+		 'CSC/Layouts/EMU Summary/EMU Test05 - DDU Inputs Status',
+		 'CSC/Layouts/EMU Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
+		 'CSC/Layouts/EMU Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
+		 'CSC/Layouts/EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
+		 'CSC/Layouts/EMU Summary/EMU Test11 - CSCs without Data Blocks')
 
 server.workspace('DT', 'DQMContent', '^DT/',
                  'DT/DataIntegrity/FED770/FED770_ROSSummary',
