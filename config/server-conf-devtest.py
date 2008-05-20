@@ -20,8 +20,8 @@ server.baseUrl     = '/dqm/devtest'
 server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
-server.source('dqm', 'DQMLive', '--listen 9191', '--collector localhost:9090')
-server.source('file', 'DQMArchive', basedir + "/dqm.db", '--listen 9197')
+server.source('dqm', 'DQMLive', '--listen 9191', '--collector localhost:9190')
+server.source('file', 'DQMArchive', basedir + "/dqm.db", '--listen 9192')
 server.source('layouts', 'DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
