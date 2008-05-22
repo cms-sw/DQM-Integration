@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import os, time
-#import fileunreg from mergeAndRegister_online.py 
-#def fileunreg(db,file,logfile):
+#import mergeAndRegister_online.fileunreg 
+#DB = '/home/dqm/dqm.db'
+LOGFILE = open('archival_log.txt', 'a')
 
 #local testing area
 dir = "/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/" # Execution Directory, Local now
@@ -10,6 +11,21 @@ adb = "/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/
 targetdir = "/castor/cern.ch/user/s/smaruyam/Archive/" # Command for Archival, Local now
 #pnfsdir = "/pnfs/cms/WAX/2/mayaruma/Archive/" # Directory on Tape, dCache now
 disk_threshold = 80.0  # disk usage threshold, 80% now
+
+"""
+Temporary Port form Hyunkwan's Un-Register-File Script
+"""
+def fileunreg(db,file,logfile):
+    tmpdb = '/cms/mon/data/.dropbox_test/dqm-tmp.db'
+    newdb = db[:-3]+'-new.db'
+    server = 'srv-c2d05-19'
+    if os.path.exists(tmpdb): os.remove(tmpdb)
+    logfile.write(os.popen('scp '+server+ ':'+db+' '+tmpdb).read())
+    logfile.write('*** File UnRegister ***\n')
+    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + file).read())
+    logfile.write(os.popen('scp '+tmpdb+' '+server+':'+newdb).read())
+    os.remove(tmpdb)
+    logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
 
 """
 Archiving Files
@@ -245,6 +261,7 @@ def Remover(filepath) :
     for line in result.readlines() :
         if line == "" :  ## now error check rm
             print "File Removed"
+            fileunreg(db, filepath, LOGFILE) #def fileunreg(db,file,logfile):
         else :
             print "Cannot Remove This File because ", line
 
@@ -261,3 +278,4 @@ if __name__ == "__main__":
         print "Looping " , count, "Time(s)"
         if count >= 2 : break
         else : continue
+    LOGFILE.close()
