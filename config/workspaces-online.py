@@ -17,8 +17,8 @@ server.workspace('DT', 'DQMContent', '^DT/',
                  'DT/DataIntegrity/FED773/FED773_ROSSummary',
                  'DT/DataIntegrity/FED774/FED774_ROSSummary')
 
-server.workspace('ECAL', 'DQMContent', '^Ecal',
-                 'Ecal/Layouts/00-Global-Summary')
+#server.workspace('ECAL', 'DQMContent', '^Ecal',
+#                 'Ecal/Layouts/00-Global-Summary')
 
 server.workspace('EB', 'DQMContent', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/00-Global-Summary',
@@ -26,22 +26,22 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/02-Occupancy-Summary',
                  'EcalBarrel/Layouts/00-Summary/03-Cosmic-Summary',
                  'EcalBarrel/Layouts/00-Summary/04-PedestalOnline-Summary',
-                 'EcalBarrel/Layouts/00-Summary/05-LaserL1-Summary',
+#                 'EcalBarrel/Layouts/00-Summary/05-LaserL1-Summary',
                  'EcalBarrel/Layouts/00-Summary/07-Timing-Summary',
                  'EcalBarrel/Layouts/00-Summary/08-Trigger-Summary',
                  'EcalBarrel/Layouts/00-Summary/09-Trigger-Summary')
 
-server.workspace('EE', 'DQMContent', '^EcalEndcap/',
-                 'EcalEndcap/Layouts/00-Summary/00-Global-Summary',
-                 'EcalEndcap/Layouts/00-Summary/01-Integrity-Summary',
-                 'EcalEndcap/Layouts/00-Summary/02-Occupancy-Summary',
-                 'EcalEndcap/Layouts/00-Summary/03-Cosmic-Summary',
-                 'EcalEndcap/Layouts/00-Summary/04-PedestalOnline-Summary',
-                 'EcalEndcap/Layouts/00-Summary/05-LaserL1-Summary',
-                 'EcalEndcap/Layouts/00-Summary/06-Led-Summary',
-                 'EcalEndcap/Layouts/00-Summary/07-Timing-Summary',
-                 'EcalEndcap/Layouts/00-Summary/08-Trigger-Summary',
-                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
+#server.workspace('EE', 'DQMContent', '^EcalEndcap/',
+#                 'EcalEndcap/Layouts/00-Summary/00-Global-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/01-Integrity-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/02-Occupancy-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/03-Cosmic-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/04-PedestalOnline-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/05-LaserL1-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/06-Led-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/07-Timing-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/08-Trigger-Summary',
+#                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
 
 server.workspace('HCAL', 'DQMContent', '^Hcal',
                  'Hcal/Layouts/HCAL Data Format Summary',

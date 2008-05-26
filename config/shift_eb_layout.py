@@ -44,6 +44,6 @@ shifteblayout(dqmitems, "11-ClustersOccupancy",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number map", 'description': "2D map of basic cluster number (occupancy in terms of clusters) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC size map", 'description': "2D map of basic clusters size (number of crystals composing each cluster) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-shifteblayout(dqmitems, "12-Laser",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality map for laser events: checks the mean amplitude and RMS of the light pulses - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+#shifteblayout(dqmitems, "12-Laser",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality map for laser events: checks the mean amplitude and RMS of the light pulses - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
