@@ -1,8 +1,8 @@
 server.workspace('Summary', 'DQMSummary')
 server.workspace('Everything', 'DQMContent', '^')
 server.workspace('CSC', 'DQMContent', '^CSC/',
-                 '00 Top Physics Efficiency',
-                 '01 Station Physics Efficiency',
+                 'CSC/Layouts/00 Top Physics Efficiency',
+                 'CSC/Layouts/01 Station Physics Efficiency',
 		 'CSC/Layouts/02 EMU Summary/EMU Test01 - DDUs in Readout',
 		 'CSC/Layouts/02 EMU Summary/EMU Test03 - DDU Reported Errors',
 		 'CSC/Layouts/02 EMU Summary/EMU Test04 - DDU Format Errors',
