@@ -1,10 +1,12 @@
-def sistriplayout(i, p, *rows): i["Layouts/SiStrip Layouts/" + p] = DQMItem(layout=rows)
+def sistriplayout(i, p, *rows): i["SiStrip/Layouts/" + p] = DQMItem(layout=rows)
 
 sistriplayout(dqmitems, "GlobalTracks",
-  ["SiStrip/Tracks/NumberOfTracks_CosmicTk"],
-  ["SiStrip/Tracks/NumberOfRecHitsPerTrack_CosmicTk"],
-  ["SiStrip/Tracks/TrackPhi_CosmicTk"],
-  ["SiStrip/Tracks/TrackEta_CosmicTk"])
+  [{ 'path': "SiStrip/Tracks/NumberOfTracks_CosmicTk",
+     'description': ' Number of Reconstructed Tracks by Cosmic Track Finder'},
+   { 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CosmicTk",
+     'description' : ' Number of RecHits per Track by Cosmic Track Finder'}],
+  ["SiStrip/Tracks/TrackPhi_CosmicTk",
+   "SiStrip/Tracks/TrackEta_CosmicTk"])
 sistriplayout(dqmitems, "OnTrackCluster",
   ["SiStrip/MechanicalView/TOB/Summary_cStoNCorr_OnTrack_in_TOB"],
   ["SiStrip/MechanicalView/TIB/Summary_cStoNCorr_OnTrack_in_TIB"],
