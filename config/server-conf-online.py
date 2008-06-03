@@ -5,7 +5,7 @@ LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 	   ("csc", "dt", "eb", "hcal", "l1t", "rpc")]
 #	   ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1t", "rpc")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("dt", "eb", "hcal")]
+            ("dt", "eb", "hcal", "sistrip" , "csc")]
 
 modules = ("GuiDQM",)
 envsetup = """
