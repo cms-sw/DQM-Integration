@@ -1,4 +1,4 @@
-def shiftdtlayout(i, p, *rows): i["Shift/DT/" + p] = DQMItem(layout=rows)
+def shiftdtlayout(i, p, *rows): i["00 Shift/DT/" + p] = DQMItem(layout=rows)
 
 shiftdtlayout(dqmitems, "00-DataIntegritySummary",
   [{ 'path': "DT/DataIntegrity/DataIntegritySummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description</a>" }])

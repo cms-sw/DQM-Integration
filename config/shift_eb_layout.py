@@ -1,4 +1,4 @@
-def shifteblayout(i, p, *rows): i["Shift/EcalBarrel/" + p] = DQMItem(layout=rows)
+def shifteblayout(i, p, *rows): i["00 Shift/EcalBarrel/" + p] = DQMItem(layout=rows)
 
 shifteblayout(dqmitems, "01-Integrity",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "Quality map: checks that data follows all the formatting rules and all the constraints which are dictated by the design of the electronics - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])

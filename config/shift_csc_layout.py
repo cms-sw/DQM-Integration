@@ -1,4 +1,4 @@
-def csclayout(i, p, *rows): i["Shift/CSC/" + p] = DQMItem(layout=rows)
+def csclayout(i, p, *rows): i["00 Shift/CSC/" + p] = DQMItem(layout=rows)
   
 csclayout(dqmitems,"00 Top Physics Efficiency",
   	[{'path': "CSC/EventInfo/reportSummaryMap", 'description': "CSC Efficiency for Physics. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
