@@ -13,11 +13,10 @@ server.workspace('CSC', 'DQMContent', '^CSC/',
 		 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
 
 server.workspace('DT', 'DQMContent', '^DT/',
-                 'DT/DataIntegrity/FED770/FED770_ROSSummary',
-                 'DT/DataIntegrity/FED771/FED771_ROSSummary',
-                 'DT/DataIntegrity/FED772/FED772_ROSSummary',
-                 'DT/DataIntegrity/FED773/FED773_ROSSummary',
-                 'DT/DataIntegrity/FED774/FED774_ROSSummary')
+                 'DT/Layouts/00-Summary/00-DataIntegritySummary',
+                 'DT/Layouts/00-Summary/01-OccupancySummary',
+                 'DT/Layouts/00-Summary/02-SegmentSummary',
+                 'DT/Layouts/00-Summary/03-LocalTriggerSummary')
 
 #server.workspace('ECAL', 'DQMContent', '^Ecal',
 #                 'Ecal/Layouts/00-Global-Summary')
