@@ -45,16 +45,7 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
 #                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
 
 server.workspace('HCAL', 'DQMContent', '^Hcal',
-                 'Hcal/Layouts/HCAL Data Format Summary',
-                 'Hcal/Layouts/HCAL Digitization Summary',
-                 'Hcal/Layouts/HCAL Reconstruction Summary',
-                 'Hcal/Layouts/HCAL Reconstruction Threshold Summary',
-                 'Hcal/Layouts/HCAL Hot Cell Summary',
-                 'Hcal/Layouts/HCAL Hot Cell NADA Summary',
-                 'Hcal/Layouts/HCAL Barrel Summary',
-                 'Hcal/Layouts/HCAL Endcap Summary',
-                 'Hcal/Layouts/HCAL Forward Summary',
-                 'Hcal/Layouts/HCAL Outer Summary')
+                 'Hcal/Layouts/HCAL OverView')
 
 server.workspace('L1T', 'DQMContent', '^L1T',
                  'L1T/Layouts/GT-Summary/algo_bits',
