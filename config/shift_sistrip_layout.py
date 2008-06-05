@@ -1,19 +1,40 @@
 def sistriplayout(i, p, *rows): i["00 Shift/SiStrip/" + p] = DQMItem(layout=rows)
+
 sistriplayout(dqmitems, "GlobalTracks",
-  ["SiStrip/Tracks/NumberOfTracks_CosmicTk"],
-  ["SiStrip/Tracks/NumberOfRecHitsPerTrack_CosmicTk"],
-  ["SiStrip/Tracks/TrackPhi_CosmicTk"],
-  ["SiStrip/Tracks/TrackEta_CosmicTk"])
-#sistriplayout(dqmitems, "SiStrip_NumberOfDigis_Summary",
-#  ["SiStrip/MechanicalView/TIB/Summary_NumberOfDigis_in_TIB"],
-#  ["SiStrip/MechanicalView/TOB/Summary_NumberOfDigis_in_TOB"],
-#  ["SiStrip/MechanicalView/TID/Summary_NumberOfDigis_in_TID"],
-#  ["SiStrip/MechanicalView/TEC/Summary_NumberOfDigis_in_TEC"])
-sistriplayout(dqmitems, "SiStrip_cStoNCorr_OnTrack_Summary",
-  ["SiStrip/MechanicalView/TIB/Summary_cStoNCorr_OnTrack_in_TIB"],
-  ["SiStrip/MechanicalView/TOB/Summary_cStoNCorr_OnTrack_in_TOB"],
-  ["SiStrip/MechanicalView/TID/Summary_cStoNCorr_OnTrack_in_TID"],
-  ["SiStrip/MechanicalView/TEC/Summary_cStoNCorr_OnTrack_in_TEC"])
-
-
-
+  [{ 'path': "SiStrip/Tracks/NumberOfTracks_CosmicTk",
+     'description': ' Number of Reconstructed Tracks by Cosmic Track Finder'},
+   { 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CosmicTk",
+     'description': ' Number of RecHits per Track by Cosmic Track Finder'}],
+  [{ 'path': "SiStrip/Tracks/TrackPhi_CosmicTk",
+     'description': ' Phi distribution of Reconstructed Tracks by Cosmic Track Finder'},
+   { 'path': "SiStrip/Tracks/TrackEta_CosmicTk",
+     'description': ' Eta distribution of Reconstructed Tracks by Cosmic Track Finder'}])
+sistriplayout(dqmitems, "OnTrackCluster",
+  [{ 'path': "SiStrip/MechanicalView/TOB/Summary_cStoN_OnTrack_in_TOB",
+     'description': 'Signal-to-Noise from On-Track clusters in TOB'},
+   { 'path': "SiStrip/MechanicalView/TIB/Summary_cStoN_OnTrack_in_TIB",
+     'description': 'Signal-to-Noise from On-Track clusters in TIB'}],
+  [{ 'path': "SiStrip/MechanicalView/TEC/Summary_cStoN_OnTrack_in_TEC",
+     'description': 'Signal-to-Noise from On-Track clusters in TEC'},
+   { 'path': "SiStrip/MechanicalView/TID/Summary_cStoN_OnTrack_in_TID",
+     'description': 'Signal-to-Noise from On-Track clusters in TID'}])
+sistriplayout(dqmitems, "OffTrackCluster",
+  [{ 'path': "SiStrip/MechanicalView/TOB/Summary_cStoN_OffTrack_in_TOB",
+     'description': 'Signal-to-Noise from Off-Track clusters in TOB'},
+   { 'path': "SiStrip/MechanicalView/TIB/Summary_cStoN_OffTrack_in_TIB",
+     'description': 'Signal-to-Noise from Off-Track clusters in TIB'}],
+  [{ 'path': "SiStrip/MechanicalView/TEC/Summary_cStoN_OffTrack_in_TEC",
+     'description': 'Signal-to-Noise from Off-Track clusters in TEC'},
+   { 'path': "SiStrip/MechanicalView/TID/Summary_cStoN_OffTrack_in_TID",
+     'description': 'Signal-to-Noise from Off-Track clusters in TID'}])
+sistriplayout(dqmitems, "FedMonitoringSummary",
+  [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FaultyChannelsVsEvent",
+     'description': 'Total number of faulty channels per event (first 1000 events are used)'},
+   { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedBxError",
+     'description': 'Total number of FEDs with BxError'},
+   { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedFreeze",
+     'description': 'Total number of FEDs with FedFreeze error'}],
+   [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedGenericErrors",
+     'description': 'Total numbers of errors per FED'},
+   { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/TotalChannelsVsEvent",
+     'description': 'Total number of active channels per event (first 1000 events are used)'}, None])
