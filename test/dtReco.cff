@@ -33,13 +33,13 @@ es_source DTMapping = PoolDBESSource {
   string timetype = "runnumber"
   VPSet toGet = {
     { string record = "DTReadOutMappingRcd"
-      string tag = "map_GRUMM_maskFix" },
+      string tag = "map_CRUZET" },
     { string record = "DTT0Rcd"
       string tag = "t0_GRUMM_hlt" },
     { string record = "DTStatusFlagRcd"
-      string tag = "noise_GRUMM_hlt"},
+      string tag = "noise_CRUZET_hlt"},
     { string record = "DTTtrigRcd"
-      string tag = "tTrig_GRUMM_37919corr_hlt" }
+      string tag = "tTrig_CRUZET_080510_1304" }
   }
 }
 
