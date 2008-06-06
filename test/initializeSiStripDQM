@@ -25,7 +25,7 @@ chop(my $hostname = `hostname -f`);
 
 
 # set variables
-my $port = 40000;
+my $port = 22101;
 
 my $appname="evf::FUEventProcessor";
 
@@ -210,7 +210,7 @@ copy("$dqm_dir/TrackerMapFrame.html", "$dqm_wdir/.");
 copy("$dqm_dir/TrackerMapSelection.html", "$dqm_wdir/.");
 copy("$dqm_dir/TrackerMapPlot.html", "$dqm_wdir/.");
 
-$SERVED_DIR="http://$hostname:40000/temporary";
+$SERVED_DIR="http://$hostname:$port/temporary";
 system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$dqm_wdir/WebLib.js]; 
 system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$dqm_int/TkMap/viewerHeader.xhtml]; 
 
