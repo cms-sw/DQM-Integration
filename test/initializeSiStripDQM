@@ -29,7 +29,7 @@ my $port = 22101;
 
 my $appname="evf::FUEventProcessor";
 
-my $localid=27;
+my $localid=50;
 
 my $libpath = getLibraryPath("EventFilter/Processor");
 
