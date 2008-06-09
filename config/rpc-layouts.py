@@ -10,8 +10,8 @@ rpclayout(dqmitems, "RPC_Summary",
    "RPC/REcHits/SummaryHistograms/Wheel1DOccupancy_Wheel_0_1",
    "RPC/REcHits/SummaryHistograms/Wheel1DOccupancy_Wheel_0_2"])
 
-rpclayout(dqmitems, "RPC Cluster size by Wheels")   
-   "RPC/RecHits/SummaryHistograms/ClusterSize_for_Wheel_0_0",
+rpclayout(dqmitems, "RPC Cluster size by Wheels",  
+   ["RPC/RecHits/SummaryHistograms/ClusterSize_for_Wheel_0_0",
    "RPC/RecHits/SummaryHistograms/ClusterSize_for_Wheel_0_1",
    "RPC/RecHits/SummaryHistograms/ClusterSize_for_Wheel_0_2"])
 
