@@ -3,16 +3,16 @@
 import os,time,sys,shutil
 
 server = 'srv-c2c06-02' #machine to which files are transfered
-DIR = '/tmp/dqmpro/output'  #directory to search new files
-TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
-FILEDIR = '/cms/mon/data/dropbox' # directory, to which files are stored
-TimeTag = '/tmp/dqmpro/output/timetag' #file for time tag for searching new file
+#DIR = '/tmp/dqmpro/output'  #directory to search new files
+#TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
+#FILEDIR = '/cms/mon/data/dropbox' # directory, to which files are stored
+#TimeTag = '/tmp/dqmpro/output/timetag' #file for time tag for searching new file
 
 ### Fore test and development
-#DIR = '/tmp/dqmpro/output_test'  #directory to search new files
-#TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
-#FILEDIR = '/cms/mon/data/dqm/filereg_test/dropbox' # directory, to which files are stored
-#TimeTag = '/tmp/dqmpro/output_test/timetag' #file for time tag for searching new file
+DIR = '/home/dqmprolocal/output'  #directory to search new files
+TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
+FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which files are stored
+TimeTag = '/home/dqmprolocal/output/timetag' #file for time tag for searching new file
 
 WAITTIME = 120 # waiting time for new files (sec)
 
