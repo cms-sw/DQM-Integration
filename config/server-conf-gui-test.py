@@ -13,6 +13,10 @@ modules = ("GuiDQM",)
 envsetup = """
  source /home/dqm/rpms/cmsset_default.sh
  source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.3.0/etc/profile.d/dependencies-setup.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/external/py2-pil/1.1.6/etc/profile.d/init.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/external/libpng/1.2.10/etc/profile.d/init.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/external/libjpg/6b/etc/profile.d/init.sh
+ source /home/dqm/rpms/slc4_ia32_gcc345/external/libtiff/3.8.2/etc/profile.d/init.sh
  export QUIET_ASSERT=a
 """
 
@@ -21,7 +25,7 @@ server.baseUrl     = '/dqm/gui-test'
 server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
-server.source('dqm', 'DQMLive', '--listen 9091', '--collector localhost:9090')
+server.source('dqm', 'DQMLive', '--listen 9091', '--collector srv-c2d05-18:9090')
 server.source('file', 'DQMArchive', '/home/dqm/dqm.db', '--listen 9097')
 server.source('layouts', 'DQMLayout', *LAYOUTS)
 
