@@ -46,7 +46,11 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
 #                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
 
 server.workspace('HCAL', 'DQMContent', '^Hcal',
-                 'Hcal/Layouts/HCAL OverView')
+                 'Hcal/Layouts/HCAL OverView',
+                 'Hcal/Layouts/HCAL Digi Occupancy',
+                 'Hcal/Layouts/HCAL RecHit Energies',
+                 'Hcal/Layouts/HCAL Data Integrity',
+                 'Hcal/Layouts/HCAL Trigger Primitives')
 
 server.workspace('L1T', 'DQMContent', '^L1T',
                  'L1T/Layouts/GT-Summary/algo_bits',
