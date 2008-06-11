@@ -7,4 +7,4 @@ def hlt_evInfo_single(i, dir, name):
 
 
 # list of summary GT histograms (dqmitems, dirPath , histoName)
-hlt_evInfo_single(dqmitems, "FourVectorHLT", "abc")
+hlt_evInfo_single(dqmitems, "FourVectorHLT", "HLT1Electron_etaphi")
