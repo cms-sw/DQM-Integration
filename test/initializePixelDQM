@@ -243,14 +243,21 @@ copy("$dqm_dir/loader.html", "$dqm_wdir/.");
 copy("$dqm_dir/TrackerMapFrame.html", "$dqm_wdir/.");
 copy("$dqm_dir/TrackerMapME.html", "$dqm_wdir/.");
 copy("$dqm_dir/TrackerMapHeader.txt", "$dqm_wdir/.");
+copy("$dqm_dir/TrackerMapTrailer.txt",  "$dqm_wdir/.");
 copy("$dqm_dir/rightEmbedded.html", "$dqm_wdir/.");
+copy("$dqm_dir/embedded_svg.html",  	 "$dqm_wdir/.");
+copy("$dqm_dir/svgmap.xml", 		 "$dqm_wdir/.");
 
 $SERVED_DIR="http://$hostname:$port/temporary";
 system qq[perl], qq[-pi -e], qq[s#SERVED_DIRECTORY_URL#$SERVED_DIR#], qq[$dqm_wdir/WebLib.js]; 
+system qq[perl], qq[-pi -e], qq[s#40000#$port#], qq[$dqm_wdir/WebLib.js]; 
+system qq[perl], qq[-pi -e], qq[s#lid=27#lid=$localid#], qq[$dqm_wdir/WebLib.js]; 
 
 system qq[cp], qq[-r], qq[$dqm_dir/js_files], qq[$dqm_wdir/js_files];
 system qq[cp], qq[-r], qq[$dqm_dir/css_files], qq[$dqm_wdir/css_files];
 system qq[cp], qq[-r], qq[$dqm_dir/images], qq[$dqm_wdir/images];
+system qq[perl], qq[-pi -e], qq[s#40000#$port#], qq[$dqm_wdir/js_files/IMGC.js]; 
+system qq[perl], qq[-pi -e], qq[s#lid=27#lid=$localid#], qq[$dqm_wdir/js_files/IMGC.js]; 
 
 copy("$dqm_dir/js_files/.svgmap.js", "$dqm_wdir/js_files/svgmap.js");
 system qq[perl], qq[-pi -e], qq[s#serverHost#$COLLECTORNAME#g], qq[$dqm_wdir/js_files/svgmap.js];
