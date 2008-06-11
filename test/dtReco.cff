@@ -35,11 +35,11 @@ es_source DTMapping = PoolDBESSource {
     { string record = "DTReadOutMappingRcd"
       string tag = "map_CRUZET" },
     { string record = "DTT0Rcd"
-      string tag = "t0_GRUMM_hlt" },
+      string tag = "t0_CRUZET_hlt" },
     { string record = "DTStatusFlagRcd"
       string tag = "noise_CRUZET_hlt"},
     { string record = "DTTtrigRcd"
-      string tag = "tTrig_CRUZET_080510_1304" }
+      string tag = "tTrig_CRUZET_hlt" }
   }
 }
 
