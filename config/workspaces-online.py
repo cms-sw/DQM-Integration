@@ -72,7 +72,18 @@ server.workspace('L1T', 'DQMContent', '^L1T',
 		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
 		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
 
-server.workspace('Pixel', 'DQMContent', '^Pixel/')
+server.workspace('Pixel', 'DQMContent', '^Pixel/',
+                 'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
+                 'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
+                 'Pixel/Layouts/Pixel_PIB_Summary')
 server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
-                 'SiStrip/Layouts/SiStrip_Digi_Summary')
+                 'SiStrip/Layouts/GlobalTracks',
+                 'SiStrip/Layouts/OnTrackCluster',
+                 'SiStrip/Layouts/OffTrackCluster',
+                 'SiStrip/Layouts/TIBSummary',
+                 'SiStrip/Layouts/TOBSummary',
+                 'SiStrip/Layouts/TECFSummary',
+                 'SiStrip/Layouts/TECBSummary',
+                 'SiStrip/Layouts/TIDFSummary',
+                 'SiStrip/Layouts/TIDBSummary')
