@@ -72,6 +72,7 @@ server.workspace('L1T', 'DQMContent', '^L1T',
 		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
 		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
 
+server.workspace('Pixel', 'DQMContent', '^Pixel/')
 server.workspace('RPC', 'DQMContent', '^RPC/')
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
                  'SiStrip/Layouts/SiStrip_Digi_Summary')
