@@ -4,7 +4,7 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 	   ("csc", "dt", "eb", "hcal", "l1t", "rpc")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("csc", "dt", "eb", "hcal", "sistrip")]
+            ("csc", "dt", "eb", "hcal", "l1t", "sistrip")]
 
 modules = ("GuiDQM",)
 envsetup = """
