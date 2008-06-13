@@ -1,0 +1,6 @@
+<bin file=WriteDQMSummeryIntoOMDS.cpp name=WriteDQMSummeryIntoOMDS>
+  <use name=DQM/Integration>
+</bin>
+<bin file=GetAndWriteDQMSummeryIntoOMDS.cpp name=GetAndWriteDQMSummeryIntoOMDS>
+  <use name=DQM/Integration>
+</bin>
