@@ -15,20 +15,26 @@ eblayout(dqmitems, "00-Summary/03-Cosmic-Summary",
 eblayout(dqmitems, "00-Summary/04-PedestalOnline-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal quality summary G12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "00-Summary/05-LaserL1-Summary",
-#  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-Summary/07-Timing-Summary",
+eblayout(dqmitems, "00-Summary/05-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-Summary/08-Trigger-Summary",
+eblayout(dqmitems, "00-Summary/06-Trigger-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-Summary/09-Trigger-Summary",
+eblayout(dqmitems, "00-Summary/07-Trigger-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-Summary/10-StatusFlags-Summary",
+eblayout(dqmitems, "00-Summary/08-StatusFlags-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+#eblayout(dqmitems, "00-Summary/09-LaserL1-Summary",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+#eblayout(dqmitems, "00-Summary/11-Pedestal-Summary",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+#eblayout(dqmitems, "00-Summary/12-TestPulse-Summary",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-Occupancy/00-Occupancy",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -124,26 +130,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-01/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-01/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-01/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-01/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-01/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-01/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-01/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-01/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-01/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-01/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -334,26 +335,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-02/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-02/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-02/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-02/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-02/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-02/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-02/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-02/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-02/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-02/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -544,26 +540,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-03/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-03/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-03/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-03/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-03/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-03/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-03/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-03/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-03/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-03/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -754,26 +745,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-04/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-04/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-04/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-04/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-04/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-04/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-04/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-04/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-04/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-04/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -964,26 +950,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-05/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-05/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-05/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-05/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-05/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-05/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-05/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-05/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-05/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-05/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -1174,26 +1155,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-06/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-06/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-06/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-06/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-06/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-06/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-06/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-06/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-06/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-06/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -1384,26 +1360,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-07/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-07/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-07/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-07/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-07/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-07/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-07/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-07/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-07/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-07/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -1594,26 +1565,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-08/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-08/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-08/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-08/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-08/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-08/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-08/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-08/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-08/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-08/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -1804,26 +1770,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-09/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-09/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-09/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-09/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-09/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-09/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-09/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-09/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-09/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-09/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -2014,26 +1975,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-10/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-10/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-10/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-10/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-10/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-10/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-10/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-10/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-10/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-10/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -2224,26 +2180,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-11/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-11/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-11/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-11/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-11/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-11/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-11/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-11/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-11/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-11/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -2434,26 +2385,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-12/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-12/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-12/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-12/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-12/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-12/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-12/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-12/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-12/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-12/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -2644,26 +2590,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-13/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-13/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-13/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-13/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-13/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-13/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-13/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-13/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-13/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-13/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -2854,26 +2795,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-14/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-14/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-14/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-14/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-14/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-14/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-14/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-14/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-14/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-14/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -3064,26 +3000,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-15/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-15/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-15/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-15/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-15/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-15/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-15/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-15/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-15/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-15/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -3274,26 +3205,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-16/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-16/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-16/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-16/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-16/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-16/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-16/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-16/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-16/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-16/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -3484,26 +3410,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-17/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-17/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-17/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-17/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-17/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-17/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-17/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-17/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-17/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-17/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -3694,26 +3615,21 @@ eblayout(dqmitems, "03-SubSummary/EB-/EB-18/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB-/EB-18/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB-/EB-18/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-18/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-18/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-18/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-18/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-18/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB-/EB-18/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB-/EB-18/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -3904,26 +3820,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+01/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+01/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+01/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+01/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+01/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+01/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+01/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+01/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+01/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+01/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -4114,26 +4025,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+02/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+02/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+02/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+02/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+02/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+02/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+02/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+02/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+02/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+02/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -4324,26 +4230,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+03/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+03/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+03/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+03/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+03/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+03/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+03/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+03/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+03/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+03/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -4534,26 +4435,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+04/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+04/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+04/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+04/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+04/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+04/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+04/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+04/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+04/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+04/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -4744,26 +4640,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+05/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+05/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+05/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+05/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+05/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+05/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+05/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+05/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+05/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+05/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -4954,26 +4845,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+06/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+06/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+06/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+06/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+06/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+06/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+06/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+06/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+06/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+06/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -5164,26 +5050,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+07/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+07/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+07/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+07/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+07/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+07/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+07/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+07/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+07/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+07/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -5374,26 +5255,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+08/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+08/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+08/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+08/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+08/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+08/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+08/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+08/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+08/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+08/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -5584,26 +5460,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+09/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+09/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+09/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+09/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+09/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+09/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+09/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+09/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+09/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+09/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -5794,26 +5665,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+10/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+10/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+10/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+10/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+10/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+10/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+10/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+10/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+10/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+10/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -6004,26 +5870,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+11/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+11/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+11/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+11/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+11/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+11/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+11/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+11/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+11/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+11/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -6214,26 +6075,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+12/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+12/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+12/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+12/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+12/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+12/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+12/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+12/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+12/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+12/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -6424,26 +6280,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+13/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+13/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+13/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+13/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+13/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+13/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+13/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+13/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+13/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+13/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -6634,26 +6485,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+14/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+14/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+14/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+14/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+14/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+14/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+14/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+14/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+14/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+14/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -6844,26 +6690,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+15/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+15/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+15/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+15/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+15/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+15/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+15/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+15/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+15/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+15/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -7054,26 +6895,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+16/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+16/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+16/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+16/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+16/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+16/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+16/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+16/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+16/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+16/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -7264,26 +7100,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+17/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+17/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+17/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+17/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+17/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+17/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+17/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+17/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+17/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+17/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
@@ -7474,26 +7305,21 @@ eblayout(dqmitems, "03-SubSummary/EB+/EB+18/02-PedestalOnline",
   [{ 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal mean G12 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBPedestalOnlineClient/EBPOT pedestal rms G12 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-#eblayout(dqmitems, "03-SubSummary/EB+/EB+18/03-Laser",
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-#   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "03-SubSummary/EB+/EB+18/04-Timing",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+18/03-Timing",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+18/05-Trigger",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+18/04-Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+18/06-Cosmic",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+18/05-Cosmic",
   [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
    { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "03-SubSummary/EB+/EB+18/07-StatusFlags",
+eblayout(dqmitems, "03-SubSummary/EB+/EB+18/06-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
 
