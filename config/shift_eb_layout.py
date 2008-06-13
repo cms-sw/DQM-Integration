@@ -47,3 +47,9 @@ shifteblayout(dqmitems, "11-ClustersOccupancy",
 #shifteblayout(dqmitems, "12-Laser",
 #  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality map for laser events: checks the mean amplitude and RMS of the light pulses - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
+#shifteblayout(dqmitems, "13-Pedestal",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality summary", 'description': "Quality map for pedestal events: checks the mean and RMS of the pedestals - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+#shifteblayout(dqmitems, "14-TestPulse",
+#  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality summary", 'description': "Quality map for test pulse events: checks the mean amplitude and RMS of the test pulses - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
