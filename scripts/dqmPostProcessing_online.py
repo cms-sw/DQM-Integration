@@ -31,3 +31,5 @@ while 1:
     print '**** merged files ****'
     for filename in mergedfiles:
 	    print filename
+	    NEW_ = os.popen('GetAndWriteDQMSummeryIntoOMDS ' +  filename + ' GetAndWriteOMDSSummeryIntoOMDS.log').read()
+            print NEW_
