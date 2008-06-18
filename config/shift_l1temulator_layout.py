@@ -1,34 +1,21 @@
 def l1temulayout(i, p, *rows): i["00 Shift/L1TEMU/" + p] = DQMItem(layout=rows)
-  
-l1temulayout(dqmitems,"00-Error flag Summary",
-  	[{'path': "L1TEMU/CSCTF/CTFErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
 
-l1temulayout(dqmitems,"01-Num. Candidates (Data)",
-  	[{'path': "L1TEMU/CSCTPG/CTPErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
+l1temulayout(dqmitems,"00-Global Summary",
+             [{'path': "L1TEMU/common/sysrates", 'description': "Data|Emulator disagreement rates per subsystem. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/common/errorflag", 'description': "Data|Emulator overall disagreement flags. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/common/sysncandData", 'description': "Number of trigger objects per subsystem observed in data. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/common/sysncandEmul", 'description': "Number of trigger objects per subsystem expected by emulator. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
-l1temulayout(dqmitems,"02-Num. Candidates (Emulator)",
-  	[{'path': "L1TEMU/DTTF/DTFErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
+l1temulayout(dqmitems,"01-(Dis)Agreement Flag",
+             [{'path': "L1TEMU/ECAL/ErrorFlag", 'description': "Data|Emulator disagreement type for ECAL trigger primitives. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/HCAL/ErrorFlag", 'description': "Data|Emulator disagreement type for HCAL trigger primitives. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/RCT/ErrorFlag", 'description': "Data|Emulator disagreement type for RCT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/GCT/ErrorFlag", 'description': "Data|Emulator disagreement type for GCT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/DTTPG/ErrorFlag", 'description': "Data|Emulator disagreement type for DT trigger primitives. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/DTTF/ErrorFlag", 'description': "Data|Emulator disagreement type for DT track finder. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/CSCTPG/ErrorFlag", 'description': "Data|Emulator disagreement type for CSC trigger primitives. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/CSCTF/ErrorFlag", 'description': "Data|Emulator disagreement type for CSC track finder. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/RPC/ErrorFlag", 'description': "Data|Emulator disagreement type for RPC. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/GMT/ErrorFlag", 'description': "Data|Emulator disagreement type for GMT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/GT/ErrorFlag", 'description': "Data|Emulator disagreement type for GT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
-l1temulayout(dqmitems,"03-System Rates ",
-  	[{'path': "L1TEMU/DTTPG/DTPErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"04-System Rates ",
-  	[{'path': "L1TEMU/ECAL/ETPErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"05-System Rates ",
-  	[{'path': "L1TEMU/GCT/GCTErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"06-System Rates ",
-  	[{'path': "L1TEMU/GMT/GMTErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"07-System Rates ",
-  	[{'path': "L1TEMU/GT/GLTErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"08-System Rates ",
-  	[{'path': "L1TEMU/HCAL/HTPErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"09-System Rates ",
-  	[{'path': "L1TEMU/RCT/RCTErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
-
-l1temulayout(dqmitems,"10-System Rates ",
-  	[{'path': "L1TEMU/RPC/RPCErrorFlag", 'description': "Missing. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
