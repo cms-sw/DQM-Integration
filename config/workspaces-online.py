@@ -72,6 +72,12 @@ server.workspace('L1T', 'DQMContent', '^L1T',
 		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
 		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
 
+server.workspace('L1TEMU', 'DQMContent', '^L1TEMU',
+                 'L1TEMU/common/sysrates',
+                 'L1TEMU/common/errorflag',
+                 'L1TEMU/common/sysncandData',
+                 'L1TEMU/common/sysncandEmul')
+
 server.workspace('Pixel', 'DQMContent', '^Pixel/',
                  'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
                  'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
