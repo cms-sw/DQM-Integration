@@ -45,10 +45,10 @@ int  main(int argc, char *argv[])
    // now invocking the module that fist read data from the .txt file(argv[2]) and then build SUMMARYCONTENT table on oracle://cms_omds_lb/CMS_DQM_SUMMARY account 
      
    try {
-     WriteDQMSummeryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "***********");
+     WriteDQMSummeryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
      // app.dropTable("SUMMARYCONTENT"); app.dropView("SUMMARY");
      app.readData(argv[2]);
-     //      app.writeData("SUMMARYCONTENT");
+     app.writeData("SUMMARYCONTENT");
      
    }
    catch ( coral::Exception& e ) {
