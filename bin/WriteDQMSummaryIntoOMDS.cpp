@@ -1,6 +1,6 @@
 #include <iostream>
 #include <exception>
-#include "DQM/Integration/interface/WriteDQMSummeryIntoOMDS.h"
+#include "DQM/Integration/interface/WriteDQMSummaryIntoOMDS.h"
 #include "CoralBase/Exception.h"
 
 /*
@@ -17,7 +17,7 @@
 int main( int, char** )
 {
   try {
-   WriteDQMSummeryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
+   WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
    // app.dropTable("SUMMARYCONTENT"); app.dropView("SUMMARY");
 
         app.readData("tmp.txt");

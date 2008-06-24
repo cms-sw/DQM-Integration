@@ -1,4 +1,4 @@
-#include "CondTools/DQMInfo/interface/WriteDQMSummaryIntoOMDS.h"
+#include "DQM/Integration/interface/WriteDQMSummaryIntoOMDS.h"
 
 #include "RelationalAccess/ISession.h"
 #include "RelationalAccess/ITransaction.h"

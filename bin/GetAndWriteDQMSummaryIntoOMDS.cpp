@@ -1,6 +1,6 @@
 #include <Python.h>
 #include <exception>
-#include "CondTools/DQMInfo/interface/WriteDQMSummaryIntoOMDS.h"
+#include "DQM/Integration/interface/WriteDQMSummaryIntoOMDS.h"
 #include "CoralBase/Exception.h"
 #include <iostream>
 #include <exception>
@@ -37,7 +37,7 @@ int  main(int argc, char *argv[])
     
    object main_module = import("__main__").attr("__dict__");
    
-   std::string file = "getDQMSummary3.py";
+   std::string file = "getDQMSummary.py";
    exec_file(file.c_str(), main_module, main_module);
    Py_Finalize();
  
@@ -47,7 +47,7 @@ int  main(int argc, char *argv[])
      WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
      // app.dropTable("SUMMARYCONTENT"); app.dropView("SUMMARY");
      app.readData(argv[2]);
-     // app.writeData("SUMMARYCONTENT");
+     app.writeData("SUMMARYCONTENT");
      
    }
    catch ( coral::Exception& e ) {
