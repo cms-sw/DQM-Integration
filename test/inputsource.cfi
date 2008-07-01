@@ -2,7 +2,8 @@
 
         source = EventStreamHttpReader {
            ### proxyserver
-           string sourceURL = "http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30"
+           #string sourceURL = "http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30"
+           string sourceURL = "http://cmsmon:50082/urn:xdaq-application:lid=29"
            ### storagemanager
            // string sourceURL = "http://srv-c2c07-15.cms:11100/urn:xdaq-application:service=storagemanager"
            int32 max_event_size = 7000000
