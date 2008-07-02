@@ -1,33 +1,6 @@
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
-hcallayout(dqmitems, "HCAL OverView",
-          [{ 'path': "Hcal/DigiMonitor/Digi Depth 1 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/Digi Depth 2 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/Digi Depth 3 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/Digi Depth 4 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/DigiMonitor/HB/HB Digi Shape - over thresh",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/HE/HE Digi Shape - over thresh",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/HF/HF Digi Shape - over thresh",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/HO/HO Digi Shape - over thresh",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/DataFormatMonitor/Number of Event Fragments by FED ID",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/Common Data Format violations",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/DCC Event Format violation",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/EvN Inconsistent - HTR vs Ref HTR",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
-           )
-
-hcallayout(dqmitems, "HCAL Digi Occupancy",
+hcallayout(dqmitems, "HCAL Unsuppressed Channels",
           [{ 'path': "Hcal/DigiMonitor/Digi Depth 1 Occupancy Map",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/DigiMonitor/Digi Depth 2 Occupancy Map",
@@ -38,40 +11,15 @@ hcallayout(dqmitems, "HCAL Digi Occupancy",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
 
-hcallayout(dqmitems, "HCAL RecHit Energies",
-          [{ 'path': "Hcal/RecHitMonitor/HB/HB RecHit Energies",
+hcallayout(dqmitems, "HCAL Pedestals",
+          [{ 'path': "Hcal/PedestalMonitor/HB/HB All Pedestal Values",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/RecHitMonitor/HE/HE RecHit Energies",
+           { 'path': "Hcal/PedestalMonitor/HE/HE All Pedestal Values",
+                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+          [{ 'path': "Hcal/PedestalMonitor/HF/HF All Pedestal Values",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/RecHitMonitor/HO/HO RecHit Energies",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],           
-          [{ 'path': "Hcal/RecHitMonitor/HF/HF Long RecHit Energies",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/RecHitMonitor/HF/HF Short RecHit Energies",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
-           )
-
-hcallayout(dqmitems, "HCAL Data Integrity",
-          [{ 'path': "Hcal/DataFormatMonitor/BCN Inconsistent - HTR vs Ref HTR",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/BCN from DCCs",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/BCN from HTRs",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],           
-           [{ 'path': "Hcal/DataFormatMonitor/EvN Inconsistent - HTR vs Ref HTR",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/DCC Ev Fragment Size Distribution",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/Number of Event Fragments by FED ID",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],           
-           [{'path': "Hcal/DataFormatMonitor/Common Data Format violations",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DataFormatMonitor/DCC Event Format violation",                                                   
-                  'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>"  },
-           { 'path': "Hcal/DataFormatMonitor/DCC Error and Warning",                                                         
-                  'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>"  },
-           { 'path': "Hcal/DataFormatMonitor/DCC Nonzero Spigot Conditions",                                                 
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }] 
+           { 'path': "Hcal/PedestalMonitor/HO/HO All Pedestal Values",
+                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
 
 hcallayout(dqmitems, "HCAL Trigger Primitives",
@@ -80,3 +28,21 @@ hcallayout(dqmitems, "HCAL Trigger Primitives",
           [{ 'path': "Hcal/TrigPrimMonitor/TP vs Digi",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
+
+hcallayout(dqmitems, "HCAL Dead Cell Check",
+          [{ 'path': "Hcal/DeadCellMonitor/HCAL/HCALProblemDeadCells",
+                   'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+           )
+
+hcallayout(dqmitems, "HCAL Hot Cell Check",
+          [{ 'path': "Hcal/HotCellMonitor/HCAL/HCALProblemHotCells",
+                   'description': "A cell is considered potentially hot if: Above a threshold energy; More than 3 sigma above its pedestal value; or Energy is especially large compared to its neighbors. Seriously hot if hot for >5% of a full run. All depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+           )
+
+hcallayout(dqmitems, "HCAL Data Integrity Problems",
+          [{ 'path': "Hcal/DigiMonitor/HCAL/HCALProblemDigiCells",
+                   'description': "A digi cell is considered bad if there was no digi for that cell in the event, if the capid rotation for that digi was incorrect, or if the sum of ADC counts over all time slices for the digi is 0. If zero-suppression of the HCAL is enabled for a run, this plot may have high occupancy, and you should check the expert plots for more detailed information.All depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+           )
+
+
+
