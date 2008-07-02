@@ -16,8 +16,10 @@ server.workspace('DT', 'DQMContent', '^DT/',
                  'DT/Layouts/00-Summary/00-DataIntegritySummary',
                  'DT/Layouts/00-Summary/01-OccupancySummary',
                  'DT/Layouts/00-Summary/02-SegmentSummary',
-                 'DT/Layouts/00-Summary/03-LocalTriggerSummary',
-                 'DT/Layouts/00-Summary/04-DCC-TriggerSummary')
+                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
+                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary')
 
 #server.workspace('ECAL', 'DQMContent', '^Ecal',
 #                 'Ecal/Layouts/00-Global-Summary')
