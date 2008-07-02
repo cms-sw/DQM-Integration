@@ -46,10 +46,11 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
 #                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
 
 server.workspace('HCAL', 'DQMContent', '^Hcal',
-                 'Hcal/Layouts/HCAL OverView',
-                 'Hcal/Layouts/HCAL Digi Occupancy',
-                 'Hcal/Layouts/HCAL RecHit Energies',
-                 'Hcal/Layouts/HCAL Data Integrity',
+                 'Hcal/Layouts/HCAL Pedestals',
+                 'Hcal/Layouts/HCAL Unsuppressed Channels',
+                 'Hcal/Layouts/HCAL Dead Cell Check',
+                 'Hcal/Layouts/HCAL Hot Cell Check',
+                 'Hcal/Layouts/HCAL Data Integrity Problems',
                  'Hcal/Layouts/HCAL Trigger Primitives')
 
 server.workspace('L1T', 'DQMContent', '^L1T',
@@ -71,12 +72,6 @@ server.workspace('L1T', 'DQMContent', '^L1T',
 		 'L1T/L1TRPCTF/Client/RPCTF_phi_valuepacked_dead',
 		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
 		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
-
-server.workspace('L1TEMU', 'DQMContent', '^L1TEMU',
-                 'L1TEMU/common/sysrates',
-                 'L1TEMU/common/errorflag',
-                 'L1TEMU/common/sysncandData',
-                 'L1TEMU/common/sysncandEmul')
 
 server.workspace('Pixel', 'DQMContent', '^Pixel/',
                  'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
