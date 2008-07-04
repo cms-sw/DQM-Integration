@@ -1,10 +1,10 @@
 def l1temulayout(i, p, *rows): i["00 Shift/L1TEMU/" + p] = DQMItem(layout=rows)
 
 l1temulayout(dqmitems,"00-Global Summary",
-             [{'path': "L1TEMU/sysrates", 'description': "Data|Emulator disagreement rates per subsystem. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
-              {'path': "L1TEMU/errorflag", 'description': "Data|Emulator overall disagreement flags. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
-             [{'path': "L1TEMU/sysncandData", 'description': "Number of trigger objects per subsystem observed in data. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
-              {'path': "L1TEMU/sysncandEmul", 'description': "Number of trigger objects per subsystem expected by emulator. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+             [{'path': "L1TEMU/common/sysrates", 'description': "Data|Emulator disagreement rates per subsystem. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/common/errorflag", 'description': "Data|Emulator overall disagreement flags. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
+             [{'path': "L1TEMU/common/sysncandData", 'description': "Number of trigger objects per subsystem observed in data. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+              {'path': "L1TEMU/common/sysncandEmul", 'description': "Number of trigger objects per subsystem expected by emulator. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1temulayout(dqmitems,"01-ECAL (Dis)Agreement Flag",
              [{'path': "L1TEMU/ECAL/ETPErrorFlag", 'description': "Data|Emulator disagreement type for ECAL trigger primitives. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTriggerEmulator\">here</a>."}])
