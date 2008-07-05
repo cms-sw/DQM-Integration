@@ -23,9 +23,9 @@ hcallayout(dqmitems, "HCAL Pedestals",
            )
 
 hcallayout(dqmitems, "HCAL Trigger Primitives",
-          [{ 'path': "Hcal/TrigPrimMonitor/ADC spectrum positive TP",
+          [{ 'path': "Hcal/TrigPrimMonitor/Energy Plots/ADC spectrum positive TP",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/TrigPrimMonitor/TP vs Digi",
+          [{ 'path': "Hcal/TrigPrimMonitor/Electronics Plots/TP vs Digi",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
