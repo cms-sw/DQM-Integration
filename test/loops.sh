@@ -1,9 +1,18 @@
 #! /bin/sh
 
-CLIENTS="l1temulator"
-#CLIENTS="hcal"
-#MODE="playback"
-MODE="live"
+
+if [ $HOSTNAME == "srv-C2D05-09" ]; then
+CLIENTS="ecal hlt l1t l1temulator"
+fi
+if [ $HOSTNAME == "srv-C2D05-10" ]; then
+CLIENTS="hcal csc dt rpc"
+fi
+if [ $HOSTNAME == "srv-C2D05-11" ]; then
+CLIENTS="pixel sistrip"
+fi
+
+MODE="playback"
+#MODE="live"
 
 for c in $CLIENTS;
 do
