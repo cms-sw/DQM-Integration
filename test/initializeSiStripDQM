@@ -38,6 +38,7 @@ my $libname = "libEventFilterProcessor.so";
 my $pwd = `pwd`; chomp $pwd;
 
 `mkdir -p $pwd/SiStripDQM`;
+`cp StartSiStripDQMInEventProcessor $pwd/SiStripDQM`;
 
 my $dqm_dir = $ENV{"CMSSW_BASE"}."/src/DQM/SiStripMonitorClient/test";
 my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
