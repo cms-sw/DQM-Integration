@@ -90,7 +90,7 @@ copy("$dqm_dir/../data/viewerTrailer.xhtml","$dqm_int/TkMap/viewerTrailer.xhtml"
 print "make xdaq profile ...\n";
 
 my @EXproperties = ("logUrl",  "string","console",
-		    "logLevel","string","INFO");
+		    "logLevel","string","ERROR");
 
 
 my @Pathproperties = ("documentRoot", "string",q|${XDAQ_DOCUMENT_ROOT}|,
@@ -162,7 +162,6 @@ print XML makeXmlProfileTrailer();
 print "make xdaq  configuration ...\n";
 
 my @properties = ("parameterSet", "string","file:$dqm_int/$cfg_file",
-		    "collReconnSec","integer","-1",
                     "hasPrescaleService","boolean","false",
                     "isRunNumberSetter","boolean","false",
 		    "hasSharedMemory","boolean","false");
