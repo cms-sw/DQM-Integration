@@ -89,32 +89,27 @@ def getDQMSegSummaryResult(f, subdet):
       key = iter.Next()
   return reportSummaryContents, summary
          
-def getDQMDetSummaryResult():
-    
-   reportSummaryDir = DQMDataDir + '/' + rundirname + '/' + subdet + EventInfoDir
 
-   if os.path.exists(reportSummaryDir):
-       f.cd(reportSummaryDir)
-       reportSummaryDir = gDirectory
-       dirlist = reportSummaryDir.GetListOfKeys()
-       iter = dirlist.MakeIterator()
-       key = iter.Next()
-       tk = None
-       while key:
-           tk = key.ReadObj()
-           keyName = tk.GetName()
-           if(re.search(reportSummary, keyName)):
-               ms = re.split('=', keyName)
-               m = re.search('-?\d?\.?\d+', ms[1])
-               detsummary = m.group(0)
+def getDQMDetSummaryResult():
+   reportSummaryDir = DQMDataDir + '/' + rundirname + '/' + subdet + EventInfoDir
+   f.cd(reportSummaryDir)
+   reportSummaryDir = gDirectory
+   dirlist = reportSummaryDir.GetListOfKeys()
+   iter = dirlist.MakeIterator()
+   key = iter.Next()
+   tk = None
+   while key:
+       tk = key.ReadObj()
+       keyName = tk.GetName()
+       if(re.search(reportSummary, keyName)):
+           ms = re.split('=', keyName)
+           m = re.search('-?\d?\.?\d+', ms[1])
+           detsummary = m.group(0)
            break
        key = iter.Next()
-   
-   else:
-     detsummary=0   
    return detsummary
 
-DQMDataDir = "DQMData"
+
 
 f.cd(DQMDataDir)
 dirtmp = gDirectory
