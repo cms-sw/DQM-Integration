@@ -21,14 +21,14 @@ l1tlayout(dqmitems,"03 Regional Calorimeter Trigger",
 	[{'path': "L1T/L1TRCT/RctRegionsLocalOccEtaPhi", 'description': "Regional Candidates local occupancy plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
 	{'path': "L1T/L1TRCT/RctRegionsOccEtaPhi", 'description': "Regional Candidates occupancy plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
-l1tlayout(dqmitems,"04 CSC Track Finder",
-  	[{'path': "L1T/L1TCSCTF/CSCTF_occupancies", 'description': "CSCTF occupancy. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+l1tlayout(dqmitems,"04 DT Track Finder",
+  	[{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy_Summary", 'description': "DTTF occupancy plot for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
-l1tlayout(dqmitems,"05 DT Track Finder",
-  	[{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/dttf_p_phi_eta", 'description': "DTTF phi input map. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+l1tlayout(dqmitems,"05 CSC Track Finder",
+  	[{'path': "L1T/L1TCSCTF/CSCTF_occupancies", 'description': "CSCTF occupancy plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"06 RPC",
-  	[{'path': "L1T/L1TRPCTF/RPCTF_muons_tower_phipacked", 'description': "Occupancy. Tower is proportional to eta (standard trigger scale). Phi uses trigger phi scale (0...143). HotChannels and DeadChannels quality test are performed on this histo. Should be ~flat in each tower. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+  	[{'path': "L1T/L1TRPCTF/RPCTF_muons_tower_phipacked", 'description': "Occupancy plot. Tower is proportional to eta (standard trigger scale). Phi uses trigger phi scale (0...143). HotChannels and DeadChannels quality test are performed on this histo. Should be ~flat in each tower. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
 	{'path': "L1T/L1TRPCTF/RPCTF_ntrack", 'description': "Number of muon candidates found per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
-	[{'path': "L1T/L1TRPCTF/RPCTF_pt_value", 'description': "pt value of muon candidates. During CRUZET it should be equal to 140 (due to patterns used). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+	[{'path': "L1T/L1TRPCTF/RPCTF_pt_value", 'description': "Pt value of muon candidates. During CRUZET it should be equal to 140 (due to patterns used). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
 	{'path': "L1T/L1TRPCTF/RPCDigi_bx", 'description': "Tells if delays are properly set on our FEDs (bin 0 of the histogram should be way above other bins). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
