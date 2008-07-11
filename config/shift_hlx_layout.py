@@ -1,19 +1,22 @@
-def shifthlxlayout(i, p, *rows): i["Shift/HLX/" + p] = DQMItem(layout=rows)
+def shifthlxlayout(i, p, *rows): i["00 Shift/HLX/" + p] = DQMItem(layout=rows)
 
-shifthlxlayout(dqmitems, "Shifter HLX Summary",
-  ["HLX/Luminosity/LumiEtSum","HLX/Luminosity/LumiOccSet1","HLX/Luminosity/LumiOccSet2"],
-  ["HLX/Luminosity/LumiDiffEtSumOcc1","HLX/Luminosity/LumiDiffEtSumOcc2","HLX/Luminosity/LumiDiffOcc1Occ2"],
-  ["HLX/HFCompare/HFCompareEtSum"],
-  ["HLX/HFCompare/HFCompareOccBelowSet1","HLX/HFCompare/HFCompareOccBetweenSet1",
-   "HLX/HFCompare/HFCompareOccAboveSet1"],
-  ["HLX/HFCompare/HFCompareOccBelowSet2","HLX/HFCompare/HFCompareOccBetweenSet2",
-   "HLX/HFCompare/HFCompareOccAboveSet2"],
-  ["HLX/Average/AvgEtSum"],
-  ["HLX/Average/AvgOccBelowSet1","HLX/Average/AvgOccBetweenSet1",
-   "HLX/Average/AvgOccAboveSet1"],
-  ["HLX/Average/AvgOccBelowSet2","HLX/Average/AvgOccBetweenSet2",
-   "HLX/Average/AvgOccAboveSet2"])
+shifthlxlayout(dqmitems, "Shifter HLX Lumi Summary",
+  [ {'path':"HLX/Luminosity/LumiEtSum", 'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/Luminosity/LumiOccSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/Luminosity/LumiOccSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"} ])
 
+shifthlxlayout(dqmitems, "Shifter HLX HF Compare Summary",
+  [ {'path':"HLX/HFCompare/HFCompareEtSum",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"}],
+  [ {'path':"HLX/HFCompare/HFCompareOccBelowSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/HFCompare/HFCompareOccBelowSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"}])
 
+shifthlxlayout(dqmitems, "Shifter HLX Averages Summary",
+  [ {'path':"HLX/Average/AvgEtSum",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"}],
+  [ {'path':"HLX/Average/AvgOccBelowSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/Average/AvgOccBelowSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"}])
+
+shifthlxlayout(dqmitems, "Shifter HLX CheckSum Summary",
+  [ {'path':"HLX/CheckSums/SumAllOccSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/CheckSums/SumAllOccSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"} ])
 
 
