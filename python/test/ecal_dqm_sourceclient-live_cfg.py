@@ -18,7 +18,6 @@ import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
 process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
 
 import RecoLocalCalo.EcalRecProducers.ecalWeightUncalibRecHit_cfi
-
 process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalWeightUncalibRecHit_cfi.ecalWeightUncalibRecHit.clone()
 
 process.load("RecoLocalCalo.EcalRecProducers.ecalRecHit_cfi")
