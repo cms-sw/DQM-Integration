@@ -45,7 +45,11 @@ while key:
        break
    key = iter.Next()
    
+SummaryContentsDirExists = 0
+
 def getDQMSegSummaryResult(f, subdet):
+  global SummaryContentsDirExists
+  SummaryContentsDirExists = 0
   ReportSummaryContentsDir = "/Run summary/EventInfo/reportSummaryContents"
   SummaryContentsDir = DQMDataDir + '/' + rundirname + '/' + subdet + ReportSummaryContentsDir
   SegEventInfoDir = DQMDataDir + '/' + rundirname + '/' + subdet + EventInfoDir
@@ -56,7 +60,6 @@ def getDQMSegSummaryResult(f, subdet):
   iter = dirlist.MakeIterator()
   key = iter.Next()
   td = None
-  SummaryContentsDirExists = 0
 
   while key:
      td = key.ReadObj()
@@ -68,6 +71,7 @@ def getDQMSegSummaryResult(f, subdet):
   if(SummaryContentsDirExists):
      f.cd(SummaryContentsDir)
   else:
+     SummaryContentsDirExists = 0
      print "Warning: No reportSummaryContents directory found in", subdet
      return reportSummaryContents, summary
   SummaryContentsDir = gDirectory
@@ -89,9 +93,10 @@ def getDQMSegSummaryResult(f, subdet):
       key = iter.Next()
   return reportSummaryContents, summary
          
-
 def getDQMDetSummaryResult():
+    
    reportSummaryDir = DQMDataDir + '/' + rundirname + '/' + subdet + EventInfoDir
+
    f.cd(reportSummaryDir)
    reportSummaryDir = gDirectory
    dirlist = reportSummaryDir.GetListOfKeys()
@@ -99,17 +104,17 @@ def getDQMDetSummaryResult():
    key = iter.Next()
    tk = None
    while key:
-       tk = key.ReadObj()
-       keyName = tk.GetName()
-       if(re.search(reportSummary, keyName)):
-           ms = re.split('=', keyName)
-           m = re.search('-?\d?\.?\d+', ms[1])
-           detsummary = m.group(0)
-           break
-       key = iter.Next()
+      tk = key.ReadObj()
+      keyName = tk.GetName()
+      if(re.search(reportSummary, keyName)):
+         ms = re.split('=', keyName)
+         m = re.search('-?\d?\.?\d+', ms[1])
+         detsummary = m.group(0)
+         break
+      key = iter.Next()
    return detsummary
 
-
+DQMDataDir = "DQMData"
 
 f.cd(DQMDataDir)
 dirtmp = gDirectory
@@ -150,8 +155,9 @@ for subdet in SubDetectors:
    print >>ff, '============================'
    print >>ff, rundirname, subdet
    getDQMSegSummaryResult(f, subdet)
-   summary.push_back(float(getDQMDetSummaryResult()))
-   reportSummaryContents.push_back(reportSummary)
+   if( SummaryContentsDirExists == 1):
+      summary.push_back(float(getDQMDetSummaryResult()))
+      reportSummaryContents.push_back(reportSummary)
    j = 0
    for i in summary:
        print >> ff, reportSummaryContents[j], int(1000*i)
