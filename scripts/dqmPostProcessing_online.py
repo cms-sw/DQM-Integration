@@ -2,15 +2,15 @@
 
 import os,time,sys,shutil
 
-#DIR = '/cms/mon/data/dropbox'  # directory to search new files
-#TimeTag = '/cms/mon/data/dropbox/timetag' #file for time tag for searching new file
+DIR = '/cms/mon/data/dropbox'  # directory to search new files
+TimeTag = '/cms/mon/data/dropbox/timetag' #file for time tag for searching new file
 
 #### Directories and files for test and development
-DIR = '/cms/mon/data/dropbox_test'  # directory to search new files
-TimeTag = '/cms/mon/data/dropbox_test/timetag' #file for time tag for searching new file
+#DIR = '/cms/mon/data/dropbox_test'  # directory to search new files
+#TimeTag = '/cms/mon/data/dropbox_test/timetag' #file for time tag for searching new file
 
 WAITTIME = 120 # waiting time for new files (sec)
-MERGE_EXE = '/cms/mon/data/dqm/filereg_test/mergeAndRegister.py'
+MERGE_EXE = '/cms/mon/data/dqm/filereg/mergeAndRegister.py'
 
 if not os.path.exists(TimeTag):
         os.system('touch -t 01010000 '+ TimeTag)
@@ -28,8 +28,14 @@ while 1:
 
     #### start 'merge & register'
     execfile(MERGE_EXE)
-    print '**** merged files ****'
+
+    #### Get and write DQM summary to DBS
+    print '****** Start to get and write DQM summary to DBS ******'
     for filename in mergedfiles:
-	    print filename
-	    NEW_ = os.popen('GetAndWriteDQMSummeryIntoOMDS ' +  filename + ' GetAndWriteOMDSSummeryIntoOMDS.log').read()
-            print NEW_
+	    #print filename
+	    dir = filename[:filename.find('/DQM_')] #extract directory name
+	    run = filename[-14:-5] #extract run number
+	    DqmSummaryLog = dir + '/GetAndWriteDQMSummaryIntoOMDS_R' + run + '.log'
+	    OUT_ = os.popen('GetAndWriteDQMSummaryIntoOMDS '+  filename + ' ' + DqmSummaryLog).read()
+	    print OUT_
+	    
