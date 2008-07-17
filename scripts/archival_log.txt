@@ -1,24 +1,38 @@
 Starting Test Script ...
-Starting Archiver 
-Creating Archival DB
-Starting File Transfer
-Getting Merged File List from Master DB
-Checking Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
-Shipping /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root to /castor/cern.ch/user/s/smaruyam/Archive/
-Confirming Copied File Size for  DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
-Size matched, Copy Success
-/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root is copyied 
-Updating Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
-Checking Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root
-Shipping /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root to /castor/cern.ch/user/s/smaruyam/Archive/
-Confirming Copied File Size for  DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root
-Size matched, Copy Success
-/afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root is copyied 
-Updating Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root
+ *** Starting Archiver ***
+ *** Creating Archival DB ***
+ *** Starting File Transfer ***
+ *** Getting Merged File List from Master DB ***
+ *** Checking Archival DB ***
+Brand New File 
+ *** Shipping /nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root to Castor ***
+ *** Mock-Up Transfer Mode ***
+ *** Checking Archival DB ***
+/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root is queued 
+ *** Updating Archival DB ***
+ *** Checking File Status *** /nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root
+ *** Mock-Up Status Mode ***
+ *** Checking Archival DB ***
+/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root is copied 
+ *** Updating Archival DB ***
+ *** Checking Archival DB ***
+Brand New File 
+ *** Shipping /nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root to Castor ***
+ *** Mock-Up Transfer Mode ***
+ *** Checking Archival DB ***
+/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root is queued 
+ *** Updating Archival DB ***
+ *** Checking File Status *** /nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
+ *** Mock-Up Status Mode ***
+ *** Checking Archival DB ***
+/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root is copied 
+ *** Updating Archival DB ***
 Looping  1 Time(s)
-Starting Archiver 
-Starting File Transfer
-Getting Merged File List from Master DB
-Checking Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
-Checking Archival DB for  /afs/cern.ch/user/s/smaruyam/CMSSW_2_0_6/src/DQM/Integration/scripts/tmp/DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzq.root
+ *** Starting Archiver ***
+ *** Starting File Transfer ***
+ *** Getting Merged File List from Master DB ***
+ *** Checking Archival DB ***
+ Already Archived! 
+ *** Checking Archival DB ***
+ Already Archived! 
 Looping  2 Time(s)
