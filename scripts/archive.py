@@ -13,8 +13,7 @@ bare_script = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl "
 test_mode = "--destination TransferTest "
 logic_test = "--test "
 mock_up_mode = True
-targetdir = "/castor/cern.ch/user/s/smaruyam/Archive/" # Command for Archival, Local now
-#pnfsdir = "/pnfs/cms/WAX/2/mayaruma/Archive/" # Directory on Tape, dCache now
+targetdir = "/castor/cern.ch/cms/store/data/dqm/" # Path to Castor
 Null = "null"
 disk_threshold = 80.0  # disk usage threshold, 80% now
 
@@ -101,6 +100,85 @@ def ConfirmSize(filename, size) : # Disabled NOW
                     return True
                 else : return False
             else : return False
+
+"""
+Check File Path on Tape
+"""
+def ConfirmPath(filename, path) : # Disabled NOW
+    print " *** Checking File Path *** " , filename
+    time.sleep(10) 
+ #   ls = "ls -l " + pnfsdir + filename 
+    ls = "rfdir " + path + "/" + filename 
+#    print ls 
+    result = os.popen('%s' %ls) 
+#    print result 
+    for line in result.readlines() : 
+        error_check = "%s%s: No such file or directory" %(targetdir, filename)
+        if cmp(line, error_check) == 0 : 
+            return False 
+        else : return True 
+
+"""
+Path Specifier
+"""
+def CheckPath(filename) :
+	tm = time.localtime(time.time())
+        yearmonth = time.strftime("%Y%m", tm) 
+	path = targetdir + yearmonth
+	flag = ConfirmPath(filename, path)
+	if flag is True : return path
+	else :
+		ppath = PreviousMonth(path)
+	        flag = ConfirmPath(filename, ppath)
+	        if flag is True : return ppath
+		else :
+	                npath = NextMonth(path)
+        	        flag = ConfirmPath(filename, npath)
+                	if flag is True : return npath
+	                else : return Null ## Just for now! It should be crashed here
+
+"""
+PreviousMonth
+"""
+def PreviousMonth(path) :
+	year = int(path[-6:-2])
+	month= int(path[-2:])
+	firstdigit = int(path[-1])
+	if cmp(month, 01) == 0  :
+		month = 12
+		year = year - 1
+		path = targetdir + str(year) + str(month)
+		return path
+	else :
+		if month is 10 : month = "09"
+		elif month is 11 : month = 10
+		elif month is 12 : month = 11
+		else : 
+			firstdigit = firstdigit - 1
+		path = targetdir + str(year )+ "0" + str(firstdigit)
+		return path
+
+""" 
+NextMonth 
+"""
+def NextMonth(path) : 
+	year = int(path[-6:-2])
+	month= int(path[-2:])
+	firstdigit = int(path[-1])
+        if cmp(month, 12) == 0  :
+                month = "01" 
+                year = year + 1 
+		path = targetdir + str(year) + str(month)
+		return path
+        else : 
+                if cmp(month, "09") == 0 : month = 10
+		elif month is 10 : month = 11
+		elif month is 11 : month = 12
+                else :  
+                        firstdigit = firstdigit + 1
+		path = targetdir + str(year )+ "0" + str(firstdigit)
+		return path
+
 
 """
 File Cleaner
@@ -241,7 +319,7 @@ to avoid creating null entries in db
 """ 
 def MockUpStatus(filepath) : 
     print " *** Mock-Up Status Mode ***"
-    success_string = "FILES_TRANS_NEW: File found in database and being processed by T0 system.\n"
+    success_string = "FILES_TRANS_INSERTED: File found in database and sucessfully processed by T0 system.\n"
     fail_string = "File not found in database.\n"
     check = CheckPrivateDB(filepath) 
     if cmp(check,Null) == 0 : return fail_string.splitlines() 
@@ -275,10 +353,11 @@ def SendFile(filepath, status) :
 		result = MockUp(filepath)
 	else : 
 		transfer_string = transfer_script + "--runnumber " + nrun + "--filepath " + pathtofile + "--filename " + filename
-		result = os.popen('%s' %transfer_string ) 
+		tmp = os.popen('%s' %transfer_string )
+		result = tmp.readlines() 
 #	print result
 	check = False
-	for line in result : # ONLY good for mock up mode .readlines() :
+	for line in result :
 		if cmp(line,"File sucessfully submitted for transfer.") == 0:
 			check = True
 			status = "queued"
@@ -302,15 +381,16 @@ def SendFile(filepath, status) :
 	else :    
 		check_status = bare_script + "--check --filename " + filename
 		time.sleep(10)
-		result = os.popen('%s' %check_status)
+		tmp = os.popen('%s' %check_status)
+		result = tmp.readlinese()
 #	print result 
 #    size = ""
 	success = False
-	for line in result : # ONLY good for mock up mode  .readlines() :
-#        print line
-		if cmp(line, "FILES_TRANS_NEW: File found in database and being processed by T0 system.") == 0:
+	for line in result :
+		if cmp(line, "FILES_TRANS_INSERTED: File found in database and sucessfully processed by T0 system.") == 0:
 			success = True
 			status = "archived"
+			path = CheckPath(filename)
 			break
 #        string = line.split()
 #        print string
