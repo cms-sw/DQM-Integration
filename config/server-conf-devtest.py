@@ -4,7 +4,7 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 	   ("csc", "dt", "eb", "ecal", "ee", "hcal", "l1t", "rpc")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("dt", "eb", "hcal", "l1t", "l1temulator", "hlt")]
+            ("dt", "eb", "hcal", "l1t", "l1temulator", "hlt", "rpc")]
 
 modules = ("GuiDQM",)
 basedir = "/tmp/$USER/dqmgui".replace("$USER", pwd.getpwuid(os.geteuid())[0])
