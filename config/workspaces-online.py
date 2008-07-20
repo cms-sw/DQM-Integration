@@ -79,7 +79,12 @@ server.workspace('Pixel', 'DQMContent', '^Pixel/',
                  'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
                  'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
                  'Pixel/Layouts/Pixel_PIB_Summary')
-server.workspace('RPC', 'DQMContent', '^RPC/')
+
+server.workspace('RPC', 'DQMContent', '^RPC/',
+		 'RPC/Layouts/RPC_Summary',
+                 'RPC/Layouts/Wheel_1D_Occupancy',
+                 'RPC/Layouts/Barrel_Occupancy')      
+
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
                  'SiStrip/Layouts/GlobalTracks',
                  'SiStrip/Layouts/OnTrackCluster',
