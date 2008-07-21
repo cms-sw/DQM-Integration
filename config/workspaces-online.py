@@ -86,12 +86,12 @@ server.workspace('RPC', 'DQMContent', '^RPC/',
                  'RPC/Layouts/Barrel_Occupancy')      
 
 server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
-                 'SiStrip/Layouts/GlobalTracks',
-                 'SiStrip/Layouts/OnTrackCluster',
-                 'SiStrip/Layouts/OffTrackCluster',
-                 'SiStrip/Layouts/TIBSummary',
-                 'SiStrip/Layouts/TOBSummary',
-                 'SiStrip/Layouts/TECFSummary',
-                 'SiStrip/Layouts/TECBSummary',
-                 'SiStrip/Layouts/TIDFSummary',
-                 'SiStrip/Layouts/TIDBSummary')
+                 'SiStrip/Layouts/00 - Tracks',
+                 'SiStrip/Layouts/01 - OnTrackCluster',
+                 'SiStrip/Layouts/02 - OffTrackCluster',
+                 'SiStrip/Layouts/03 - TIBSummary',
+                 'SiStrip/Layouts/06 - TOBSummary',
+                 'SiStrip/Layouts/07 - TECFSummary',
+                 'SiStrip/Layouts/08 - TECBSummary',
+                 'SiStrip/Layouts/04 - TIDFSummary',
+                 'SiStrip/Layouts/05 - TIDBSummary')
