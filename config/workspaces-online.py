@@ -1,30 +1,27 @@
-server.workspace('Summary', 'DQMSummary')
-server.workspace('Everything', 'DQMContent', '^')
-server.workspace('CSC', 'DQMContent', '^CSC/',
-                 'CSC/Layouts/00 Top Physics Efficiency',
-                 'CSC/Layouts/01 Station Physics Efficiency',
-		 'CSC/Layouts/02 EMU Summary/EMU Test01 - DDUs in Readout',
-		 'CSC/Layouts/02 EMU Summary/EMU Test03 - DDU Reported Errors',
-		 'CSC/Layouts/02 EMU Summary/EMU Test04 - DDU Format Errors',
-		 'CSC/Layouts/02 EMU Summary/EMU Test05 - DDU Inputs Status',
-		 'CSC/Layouts/02 EMU Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
-		 'CSC/Layouts/02 EMU Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
-		 'CSC/Layouts/02 EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
-		 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
+server.workspace('DQMSummary', 0, 'Summaries', 'Summary')
+server.workspace('DQMQuality', 1, 'Summaries', 'Quality')
+server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 
-server.workspace('DT', 'DQMContent', '^DT/',
-                 'DT/Layouts/00-Summary/00-DataIntegritySummary',
-                 'DT/Layouts/00-Summary/01-OccupancySummary',
-                 'DT/Layouts/00-Summary/02-SegmentSummary',
-                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
-                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
-                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
-                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary')
+server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
+                 'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
+                 'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
+                 'Pixel/Layouts/Pixel_PIB_Summary')
 
-#server.workspace('ECAL', 'DQMContent', '^Ecal',
+server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
+                 'SiStrip/Layouts/00 - Tracks',
+                 'SiStrip/Layouts/01 - OnTrackCluster',
+                 'SiStrip/Layouts/02 - OffTrackCluster',
+                 'SiStrip/Layouts/03 - TIBSummary',
+                 'SiStrip/Layouts/06 - TOBSummary',
+                 'SiStrip/Layouts/07 - TECFSummary',
+                 'SiStrip/Layouts/08 - TECBSummary',
+                 'SiStrip/Layouts/04 - TIDFSummary',
+                 'SiStrip/Layouts/05 - TIDBSummary')
+
+#server.workspace('DQMContent', 20, 'Calorimeter', 'ECAL', '^Ecal',
 #                 'Ecal/Layouts/00-Global-Summary')
 
-server.workspace('EB', 'DQMContent', '^EcalBarrel/',
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/00-Global-Summary',
                  'EcalBarrel/Layouts/00-Summary/01-Integrity-Summary',
                  'EcalBarrel/Layouts/00-Summary/02-Occupancy-Summary',
@@ -35,7 +32,7 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/08-Trigger-Summary',
                  'EcalBarrel/Layouts/00-Summary/09-Trigger-Summary')
 
-#server.workspace('EE', 'DQMContent', '^EcalEndcap/',
+#server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
 #                 'EcalEndcap/Layouts/00-Summary/00-Global-Summary',
 #                 'EcalEndcap/Layouts/00-Summary/01-Integrity-Summary',
 #                 'EcalEndcap/Layouts/00-Summary/02-Occupancy-Summary',
@@ -47,7 +44,7 @@ server.workspace('EB', 'DQMContent', '^EcalBarrel/',
 #                 'EcalEndcap/Layouts/00-Summary/08-Trigger-Summary',
 #                 'EcalEndcap/Layouts/00-Summary/09-Trigger-Summary')
 
-server.workspace('HCAL', 'DQMContent', '^Hcal',
+server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Pedestals',
                  'Hcal/Layouts/HCAL Unsuppressed Channels',
                  'Hcal/Layouts/HCAL Dead Cell Check',
@@ -55,7 +52,33 @@ server.workspace('HCAL', 'DQMContent', '^Hcal',
                  'Hcal/Layouts/HCAL Data Integrity Problems',
                  'Hcal/Layouts/HCAL Trigger Primitives')
 
-server.workspace('L1T', 'DQMContent', '^L1T',
+server.workspace('DQMContent', 30, 'Muon', 'CSC', '^CSC/',
+                 'CSC/Layouts/00 Top Physics Efficiency',
+                 'CSC/Layouts/01 Station Physics Efficiency',
+		 'CSC/Layouts/02 EMU Summary/EMU Test01 - DDUs in Readout',
+		 'CSC/Layouts/02 EMU Summary/EMU Test03 - DDU Reported Errors',
+		 'CSC/Layouts/02 EMU Summary/EMU Test04 - DDU Format Errors',
+		 'CSC/Layouts/02 EMU Summary/EMU Test05 - DDU Inputs Status',
+		 'CSC/Layouts/02 EMU Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
+		 'CSC/Layouts/02 EMU Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
+		 'CSC/Layouts/02 EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
+		 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
+
+server.workspace('DQMContent', 30, 'Muon', 'DT', '^DT/',
+                 'DT/Layouts/00-Summary/00-DataIntegritySummary',
+                 'DT/Layouts/00-Summary/01-OccupancySummary',
+                 'DT/Layouts/00-Summary/02-SegmentSummary',
+                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
+                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary')
+
+server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
+		 'RPC/Layouts/RPC_Summary',
+                 'RPC/Layouts/Wheel_1D_Occupancy',
+                 'RPC/Layouts/Barrel_Occupancy')      
+
+server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
                  'L1T/L1TGT/event_lumi',
                  'L1T/L1TGT/evnum_trignum_lumi',
@@ -75,23 +98,8 @@ server.workspace('L1T', 'DQMContent', '^L1T',
 		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
 		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
 
-server.workspace('Pixel', 'DQMContent', '^Pixel/',
-                 'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
-                 'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
-                 'Pixel/Layouts/Pixel_PIB_Summary')
+server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1TEMU', '^L1TEMU/')
+server.workspace('DQMContent', 41, 'Trigger/DAQ', 'HLT', '^HLT/')
 
-server.workspace('RPC', 'DQMContent', '^RPC/',
-		 'RPC/Layouts/RPC_Summary',
-                 'RPC/Layouts/Wheel_1D_Occupancy',
-                 'RPC/Layouts/Barrel_Occupancy')      
-
-server.workspace('SiStrip', 'DQMContent', '^SiStrip/',
-                 'SiStrip/Layouts/00 - Tracks',
-                 'SiStrip/Layouts/01 - OnTrackCluster',
-                 'SiStrip/Layouts/02 - OffTrackCluster',
-                 'SiStrip/Layouts/03 - TIBSummary',
-                 'SiStrip/Layouts/06 - TOBSummary',
-                 'SiStrip/Layouts/07 - TECFSummary',
-                 'SiStrip/Layouts/08 - TECBSummary',
-                 'SiStrip/Layouts/04 - TIDFSummary',
-                 'SiStrip/Layouts/05 - TIDBSummary')
+server.workspace('DQMContent', 90, 'Other', 'Everything', '^')
+server.workspace('EVDSnapshot', 99, 'Other', 'Event display', '/home/dqm/iguana-snapshots')
