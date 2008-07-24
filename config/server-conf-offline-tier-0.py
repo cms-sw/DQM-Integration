@@ -19,7 +19,7 @@ server.baseUrl     = '/dqm/tier-0'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN Tier-0'
 
-server.source('file', 'DQMArchive', '/data/dqm/tier-0/dqm.db', '--listen 8031')
+server.source('DQMArchive', 'file', '/data/dqm/tier-0/dqm.db', '--listen 8031')
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/tier-0/upload')
 
 execfile(CONFIGDIR + "/dqm-services.py")
