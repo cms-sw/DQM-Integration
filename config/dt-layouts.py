@@ -23,6 +23,9 @@ dtlayout(dqmitems, "00-Summary/06-DCC_Trigger2ndFactionSummary",
   [{ 'path': "DT/03-LocalTrigger/DCC/DCC_2ndFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 
+dtlayout(dqmitems, "00-Summary/07-NoiseChannelsSummary",
+  [{ 'path': "DT/04-Noise/NoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+
 
 #### OCCUPANCIES #################################################################################
 
