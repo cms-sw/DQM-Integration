@@ -74,9 +74,7 @@ server.workspace('DQMContent', 30, 'Muon', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary')
 
 server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
-		 'RPC/Layouts/RPC_Summary',
-                 'RPC/Layouts/Wheel_1D_Occupancy',
-                 'RPC/Layouts/Barrel_Occupancy')      
+		 '00 Shift/RPC/00-BarrelOccupancy')
 
 server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
