@@ -1,4 +1,4 @@
-  def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
+def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
 
 rpclayout(dqmitems, "RPC_Summary",
   ["RPC/RecHits/SummaryHistograms/NumberOfClusters_for_Barrel",
