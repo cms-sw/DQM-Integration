@@ -2,11 +2,11 @@ import os.path
 global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-	   ("csc", "dt", "eb", "hcal", "l1t", "pixel", "rpc", "sistrip")]
+	   ("csc", "dt", "eb", "hcal", "hlt", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("csc", "dt", "eb", "hcal", "l1t", "pixel", "sistrip")]
+            ("csc", "dt", "eb", "hcal", "hlt", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
 
-modules = ("GuiDQM",)
+modules = ("GuiDQM", "GuiEventDisplay")
 envsetup = """
  source /home/dqm/rpms/cmsset_default.sh
  source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.3.0/etc/profile.d/dependencies-setup.sh
@@ -22,9 +22,9 @@ server.baseUrl     = '/dqm/online-test'
 server.title       = 'CMS data quality'
 server.serviceName = 'Online test'
 
-server.source('dqm', 'DQMLive', '--listen 9091', '--collector localhost:9090')
-server.source('file', 'DQMArchive', '/home/dqm/dqm.db', '--listen 9097')
-server.source('layouts', 'DQMLayout', *LAYOUTS)
+server.source('DQMLive', 'dqm', '--listen 9091', '--collector localhost:9090')
+server.source('DQMArchive', 'file', '/home/dqm/dqm.db', '--listen 9097')
+server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")
