@@ -28,6 +28,8 @@ process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
 
 process.load("Geometry.EcalMapping.EcalMapping_cfi")
 
+process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
+
 process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
 
 process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
