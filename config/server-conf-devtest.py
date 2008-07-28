@@ -26,7 +26,7 @@ server.serviceName = 'GUI test'
 
 server.source('DQMLive', 'dqm', '--listen 9191', '--collector localhost:9190')
 server.source('DQMArchive', 'file', basedir + "/dqm.db", '--listen 9192')
-server.source('DQMLayout', 'layout', *LAYOUTS)
+server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")
