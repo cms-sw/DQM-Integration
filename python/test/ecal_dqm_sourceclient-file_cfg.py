@@ -22,8 +22,6 @@ process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cff
 
 process.load("Geometry.CaloEventSetup.CaloGeometry_cfi")
 
-process.load("Geometry.CaloEventSetup.EcalTrigTowerConstituents_cfi")
-
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
 
 process.load("Geometry.EcalMapping.EcalMapping_cfi")
