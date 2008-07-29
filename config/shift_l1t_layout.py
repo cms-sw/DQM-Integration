@@ -22,7 +22,10 @@ l1tlayout(dqmitems,"03 Regional Calorimeter Trigger",
 	{'path': "L1T/L1TRCT/RctRegionsOccEtaPhi", 'description': "Regional Candidates occupancy plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"04 DT Track Finder",
-  	[{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy_Summary", 'description': "DTTF occupancy plot for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+  	[{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary", 'description': "DTTF occupancy plot (divided by the total number of events with a DTTF track) for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+  	{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/BX Summary", 'description': "DTTF BX plot (proportionate to total number of events) for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
+  	[{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/2nd Track Summary", 'description': "DTTF plot of fraction of events with 2nd track. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+  	{'path': "L1T/L1TDTTF/DTTF_TRACKS/INTEG/Fractional High Quality Summary", 'description': "DTTF high quality (quality>3) plot. For each bin, the fraction of high quality tracks to the total bin occupancy is calculated.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"05 CSC Track Finder",
   	[{'path': "L1T/L1TCSCTF/CSCTF_occupancies", 'description': "CSCTF occupancy plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
