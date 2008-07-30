@@ -235,8 +235,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 process.simEcalTriggerPrimitiveDigis.BarrelOnly = True
 
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics_ZS.txt.gz'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
