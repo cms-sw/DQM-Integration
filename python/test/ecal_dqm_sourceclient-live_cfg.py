@@ -223,7 +223,6 @@ process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
-process.simEcalTriggerPrimitiveDigis.BarrelOnly = True
 
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
