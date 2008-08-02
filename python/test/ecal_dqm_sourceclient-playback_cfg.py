@@ -243,3 +243,5 @@ process.hybridSuperClusters.eseed = 0.150
 
 process.islandSuperClusters.seedTransverseEnergyThreshold = 0.150
 
+#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_EcalBarrel_R000046798.root'
+
