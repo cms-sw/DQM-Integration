@@ -114,8 +114,13 @@ eblayout(dqmitems, "02-Cluster/05-Cluster",
 eblayout(dqmitems, "02-Cluster/06-Cluster",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s1s9", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT s9s25", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   None])
+  [None])
+
+eblayout(dqmitems, "02-Cluster/07-Cluster",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "03-SubSummary/EB-/EB-01/00-Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -15053,8 +15058,13 @@ eblayout(dqmitems, "99-Experts/11-Cluster/05-Cluster",
 eblayout(dqmitems, "99-Experts/11-Cluster/06-Cluster",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s1s9", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT s9s25", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   None])
+  [None])
+
+eblayout(dqmitems, "99-Experts/11-Cluster/07-Cluster",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "99-Experts/12-Occupancy/00-Occupancy",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
