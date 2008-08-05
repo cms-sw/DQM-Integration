@@ -204,8 +204,7 @@ process.MessageLogger = cms.Service("MessageLogger",
     destinations = cms.untracked.vstring('cout')
 )
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.islandBasicClusters*process.islandSuperClusters*process.hybridSuperClusters)
-
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmInfoEB*process.ecalBarrelMonitorClient*process.dqmQTestEB*process.dqmSaverEB)
 
 process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelPedestalOnlineTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelCosmicTask)
@@ -241,14 +240,9 @@ process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfi
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
-process.islandBasicClusters.IslandBarrelSeedThr = 0.150
-process.islandBasicClusters.IslandEndcapSeedThr = 0.150
-
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1
 process.hybridSuperClusters.eseed = 0.150
-
-process.islandSuperClusters.seedTransverseEnergyThreshold = 0.150
 
 process.DQM.collectorHost = 'srv-c2d05-16'
 process.DQMStore.verbose = 0
