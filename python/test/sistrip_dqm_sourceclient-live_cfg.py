@@ -131,4 +131,3 @@ process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver
 process.RecoForDQM = cms.Sequence(process.siStripDigis*process.offlineBeamSpot*process.striptrackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClient)
 
-process.dqmEnv.subSystemFolder = 'SiStrip'
