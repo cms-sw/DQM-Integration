@@ -40,4 +40,3 @@ process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
 
-process.source.sourceURL  = cms.string("http://srv-c2c05-27:50082/urn:xdaq-application:lid=29") 
