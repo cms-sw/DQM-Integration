@@ -16,7 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_playback_cfi")
+process.load("inputsource_playback_cfi")
 process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 
 #----------------------------
@@ -30,7 +30,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #----------------------------
 # DQM Playback Environment
 #-----------------------------
-process.load("DQM.Integration.test.environment_playback_cfi")
+process.load("environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
 
 #-----------------------------
