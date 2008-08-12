@@ -1,6 +1,3 @@
-# The following comments couldn't be translated into the new config version:
-
-# suppresses html output from HCalClient  
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("HCALDQM")
@@ -57,8 +54,8 @@ process.dqmEnv.subSystemFolder    = "Hcal"
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_20X_GLOBALTAG"
-process.GlobalTag.globaltag = 'CRUZET3_V6H2::All' # or any other appropriate
+process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+process.GlobalTag.globaltag = 'CRZT210_V1H::All' # or any other appropriate
 process.prefer("GlobalTag")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
@@ -95,6 +92,7 @@ process.hcalMonitor.HcalAnalysis = False
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 
 process.hcalClient.plotPedRAW = True
+# suppresses html output from HCalClient  
 process.hcalClient.baseHtmlDir = ''
 
 process.hcalClient.SummaryClient = True
