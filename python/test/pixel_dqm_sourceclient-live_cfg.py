@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("PIXELDQMPLAYBACK")
+process = cms.Process("PIXELDQMLIVE")
 
 process.MessageLogger = cms.Service("MessageLogger",
     debugModules = cms.untracked.vstring('siPixelDigis', 
@@ -16,7 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_playback_cfi")
+process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 
 #----------------------------
@@ -28,9 +28,9 @@ process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/pixel_referenc
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
-# DQM Playback Environment
+# DQM Live Environment
 #-----------------------------
-process.load("DQM.Integration.test.environment_playback_cfi")
+process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
 
 #-----------------------------
@@ -100,4 +100,3 @@ process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.DQMmodules = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.CLUmonitor*process.sipixelEDAClient)
-

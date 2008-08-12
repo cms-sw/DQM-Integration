@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("PIXELDQMPLAYBACK")
+process = cms.Process("PIXELDQMFILE")
 
 process.MessageLogger = cms.Service("MessageLogger",
     debugModules = cms.untracked.vstring('siPixelDigis', 
@@ -16,8 +16,10 @@ process.MessageLogger = cms.Service("MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_playback_cfi")
-process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
+process.source = cms.Source("PoolSource",
+     fileNames = cms.untracked.vstring('file:/home/dqmdevlocal/input/02D59D05-4151-DD11-9E79-001617DBD5AC.root')
+)
+process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(50))
 
 #----------------------------
 # DQM Environment
