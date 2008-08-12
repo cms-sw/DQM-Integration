@@ -66,7 +66,6 @@ process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
-
 process.hcalMonitor.PedestalsPerChannel = False
 process.hcalMonitor.PedestalsInFC = True
 process.hcalMonitor.DataFormatMonitor = True
