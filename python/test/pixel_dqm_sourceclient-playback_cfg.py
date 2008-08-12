@@ -44,12 +44,10 @@ process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
 process.load("Configuration.StandardSequences.Geometry_cff")
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-
-process.GlobalTag.connect = "sqlite_file:/nfshome0/malgeri/public/globtag/CRZT210_V1H.db"
-process.GlobalTag.globaltag = "CRZT210_V1CH::All"
-
-#process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_PIXEL"
+#process.GlobalTag.connect = "sqlite_file:/nfshome0/malgeri/public/globtag/CRZT210_V1H.db"
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 #process.GlobalTag.globaltag = "CRZT210_V1C::All"
+process.GlobalTag.globaltag = "CRZT210_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #If Frontier is used in xdaq environment use the following service
@@ -70,31 +68,8 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # Pixel DQM Source and Client
 #--------------------------
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
-process.SiPixelRawDataErrorSource.saveFile = False
-process.SiPixelRawDataErrorSource.isPIB = False
-process.SiPixelRawDataErrorSource.slowDown = False
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
-process.SiPixelDigiSource.saveFile = False
-process.SiPixelDigiSource.isPIB = False
-process.SiPixelDigiSource.slowDown = False
-process.SiPixelDigiSource.modOn = True
-process.SiPixelDigiSource.ladOn = False
-process.SiPixelDigiSource.layOn = False
-process.SiPixelDigiSource.phiOn = False
-process.SiPixelDigiSource.bladeOn = False
-process.SiPixelDigiSource.diskOn = False
-process.SiPixelDigiSource.ringOn = False
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
-process.SiPixelClusterSource.saveFile = False
-process.SiPixelClusterSource.isPIB = False
-process.SiPixelClusterSource.slowDown = False
-process.SiPixelClusterSource.modOn = True
-process.SiPixelClusterSource.ladOn = False
-process.SiPixelClusterSource.layOn = False
-process.SiPixelClusterSource.phiOn = False
-process.SiPixelClusterSource.bladeOn = False
-process.SiPixelClusterSource.diskOn = False
-process.SiPixelClusterSource.ringOn = False
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
     FileSaveFrequency = cms.untracked.int32(50),
