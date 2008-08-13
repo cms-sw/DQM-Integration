@@ -9,8 +9,9 @@ source = cms.Source("EventStreamHttpReader",
     consumerPriority = cms.untracked.string('normal'),
     max_event_size = cms.int32(7000000),
     consumerName = cms.untracked.string('DQM Source'),
+    SelectHLTOutput = cms.untracked.string('out4DQM'),
     max_queue_depth = cms.int32(5),
-    maxEventRequestRate = cms.untracked.double(15.0),
+    maxEventRequestRate = cms.untracked.double(25.0),
     SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('*DQM')
     ),
