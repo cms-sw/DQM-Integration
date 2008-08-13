@@ -14,12 +14,15 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_20X_GLOBALTAG" 	
-#process.GlobalTag.globaltag = 'CRUZET3_V6H::All' # or any other appropriate
-process.GlobalTag.globaltag = 'CRUZET3_V6H7::All' # or any other appropriate
-#process.GlobalTag.globaltag = 'IDEAL_V5::All' # or any other appropriate
-#process.es_prefer = cms.ESPrefer("GlobalTag")
+
+process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG" 	
+#process.GlobalTag.globaltag = 'CRUZET3_V6H7::All' 
+process.GlobalTag.globaltag = 'CRZT210_V1H::All'
+#process.es_prefer = cms.ESPrefer("PoolDBESSource","GlobalTag")
 process.prefer("GlobalTag")
+
+#print process.es_sources_()
+#print process.es_prefers_()
 
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
@@ -31,7 +34,9 @@ process.maxEvents = cms.untracked.PSet(
 process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051488.0001.DQM.storageManager.0.0000.dat')
     #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051437.0001.DQM.storageManager.1.0000.dat')
-    fileNames = cms.untracked.vstring('file:/tmp/wteo/28E1D7F9-214C-DD11-B42C-000423D9880C.root')
+    #fileNames = cms.untracked.vstring('file:/tmp/wteo/28E1D7F9-214C-DD11-B42C-000423D9880C.root')
+    fileNames = cms.untracked.vstring('file:/tmp/wteo/AC5529A1-D754-DD11-9362-000423D9863C.root')
+    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051218.0001.DQM.storageManager.0.0000.dat')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/E244612F-7751-DD11-8931-000423D94700.root')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/001365AC-1C1C-DD11-AA0B-0030487D62E6.root')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/1CD42767-9B60-DD11-B56E-001617DBD224.root')
@@ -42,7 +47,8 @@ process.source = cms.Source("PoolSource",
 process.DQMStore.verbose = 0
 process.DQM.collectorHost = "srv-c2d05-12"
 process.DQM.collectorPort = 9190
-#process.DQMStore.referenceFileName = "DQM_L1T_R000050658.root"
+#process.DQMStore.referenceFileName = "DQM_L1T_R000002467.root"
+#process.DQMStore.referenceFileName = "/nfshome0/wteo/test/rctL1tDqm.root"
 
 
 process.MessageLogger = cms.Service("MessageLogger",
