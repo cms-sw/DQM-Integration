@@ -7,7 +7,7 @@ process = cms.Process("HCALDQM")
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.python.test.inputsource_cfi")
+process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 
 # This comes from DQM/Integration/python/test/inputsource_cfi.py
@@ -43,7 +43,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = "Hcal"
 
-# This one ?  process.load("DQM.Integration.python.test.environment_cfi")
+# This one ?  process.load("DQM.Integration.test.environment_cfi")
 
 
 #-----------------------------
