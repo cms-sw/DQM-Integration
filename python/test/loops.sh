@@ -2,7 +2,7 @@
 
 
 if [ $HOSTNAME == "srv-C2D05-09" ]; then
-CLIENTS="hlx ecal hlt l1t l1temulator"
+CLIENTS="hlx eb hlt l1t l1temulator"
 fi
 if [ $HOSTNAME == "srv-C2D05-10" ]; then
 CLIENTS="hcal csc dt rpc"
