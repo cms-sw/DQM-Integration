@@ -20,9 +20,9 @@ def l1t_csctf_single(i, dir, name):
   i["L1T/Layouts/04-CSCTF-Summary/%s" % name] = \
     DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1t_dttf_single(i, dir, name):
-  i["L1T/Layouts/05-DTTF-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
+#def l1t_dttf_single(i, dir, name):
+#  i["L1T/Layouts/05-DTTF-Summary/%s" % name] = DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
+def l1t_dttf_single(i, p, *rows): i["L1T/Layouts/05-DTTF-Summary/" + p] = DQMItem(layout=rows)
 
 def l1t_rpctf_single(i, dir, name):
   i["L1T/Layouts/06-RPCTF-Summary/%s" % name] = \
@@ -92,20 +92,45 @@ l1t_rpctf_single(dqmitems, "L1TRPCTF", "RPCTF_pt_value")
 l1t_rpctf_single(dqmitems, "L1TRPCTF", "RPCTF_bx")
 l1t_rpctf_single(dqmitems, "L1TRPCTF", "RPCDigi_bx")
 
-# list of summary DTTF histograms (dqmitems, dirPath , histoName)
-#l1t_dttf_single(dqmitems, "EventInfo/errorSummarySegments", "DT_TPG_phi_map")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Occupancy Summary")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Occupancy Phi vs Eta")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Phi")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Eta")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Pt")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Charge")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Quality")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated BX")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Num Tracks Per Event")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "BX Summary")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "2nd Track Summary")
-l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Fractional High Quality Summary")
+#### list of summary DTTF histograms (dqmitems, dirPath , histoName)
+## l1t_dttf_single(dqmitems, "EventInfo/errorSummarySegments", "DT_TPG_phi_map")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Occupancy Summary")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Occupancy Phi vs Eta")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Phi")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Eta")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Pt")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Charge")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated Packed Quality")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Integrated BX")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Num Tracks Per Event")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "BX Summary")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "2nd Track Summary")
+## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Fractional High Quality Summary")
+
+l1t_dttf_single(dqmitems, "Occupancy Summary",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary", 'description' :  "DTTF occupancy plot (divided by the total number of events with a DTTF track) for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Occupancy Phi vs Eta",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Phi vs Eta", 'description' : "Integrated occupancy (proportionate to total number of events with a DTTF track) - phi vs eta.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated Packed Phi",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Phi", 'description' : "Integrated Paced Phi. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated Packed Eta",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Eta", 'description' : "Integrated Packed Eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated Packed Pt",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Pt", 'description' : "Integrated Packed Pt.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated Packed Charge",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Charge", 'description' : "Integrated Packed Charge. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated Packed Quality",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Quality", 'description' : "Integrated Packed Quality. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems, "Integrated BX",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated BX", 'description' : "Integrated BX plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+l1t_dttf_single(dqmitems, "Num Tracks Per Event",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Num Tracks Per Event", 'description' : "Integrated number of tracks per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+l1t_dttf_single(dqmitems, "BX Summary",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/BX Summary", 'description' : "Summary of BX's for each wheel (proportionate to total number of events with a DTTF track). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+l1t_dttf_single(dqmitems, "2nd Track Summary",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/2nd Track Summary", 'description' : "Number of 2nd tracks (proportionate to total number of events that have a DTTF track) - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+l1t_dttf_single(dqmitems, "Fractional High Quality Summary",
+               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Fractional High Quality Summary", 'description' : "Fractional high quality (qual>3) (proportional to total bin occupancy) summary - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\" target=\"_blank\">here</a>"}])
 
 #l1tlayout(dqmitems, "GT-Summary",
 #  ["L1T/L1TGT/algo_bits"])
