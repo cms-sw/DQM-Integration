@@ -72,7 +72,8 @@ server.workspace('DQMContent', 30, 'Muon', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
                  'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
                  'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
-                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary')
+                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary',
+                 'DT/Layouts/00-Summary/07-NoiseChannelsSummary')
 
 server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
 		 '00 Shift/RPC/00-BarrelOccupancy')
