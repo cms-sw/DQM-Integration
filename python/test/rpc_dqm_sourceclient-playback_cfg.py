@@ -19,21 +19,7 @@ process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 
 process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 
-process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
-)
-process.source = cms.Source("EventStreamHttpReader",
-    sourceURL = cms.string('http://cmsmon:50082/urn:xdaq-application:lid=29'),
-    consumerPriority = cms.untracked.string('normal'),
-    max_event_size = cms.int32(7000000),
-    consumerName = cms.untracked.string('RPC DQM Source'),
-    max_queue_depth = cms.int32(5),
-    maxEventRequestRate = cms.untracked.double(12.0),
-    SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('*')
-    ),
-    headerRetryInterval = cms.untracked.int32(3)
-)
+process.load("DQM.Integration.test.inputsource_playback_cfi")
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",
     DBParameters = cms.PSet(
