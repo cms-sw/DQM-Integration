@@ -11,5 +11,6 @@ ln -s  dt_dqm_sourceclient-live.cfg            dqmfu16-3.cfg
 ln -s  hlt_dqm_sourceclient-live.cfg           dqmfu16-4.cfg 
 ln -s  csc_dqm_sourceclient-live.cfg           dqmfu17-1.cfg 
 ln -s  l1t_dqm_sourceclient-live.cfg           dqmfu17-2.cfg 
+ln -s  rpc_dqm_sourceclient-live.cfg           dqmfu17-3.cfg 
 ln -s  l1temulator_dqm_sourceclient-live.cfg   dqmfu17-4.cfg 
 
