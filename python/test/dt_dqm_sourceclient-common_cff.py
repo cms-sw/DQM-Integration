@@ -39,11 +39,11 @@ DTLinearDriftAlgo_CosmicData.recAlgoConfig.tTrigModeConfig.kFactor = -0.7
 
 
 from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
-GlobalTag.globaltag = "CRZT210_V1::All" # or "IDEAL_V2::All" or... 
+#GlobalTag.globaltag = "CRZT210_V1::All" # or "IDEAL_V2::All" or... 
 es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
-#GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-#GlobalTag.globaltag = "CRZT210_V1H::All"
+GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+GlobalTag.globaltag = "CRZT210_V1H::All"
 
 
 # Data integrity
