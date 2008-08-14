@@ -16,7 +16,8 @@ server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
                  'SiStrip/Layouts/07 - TECFSummary',
                  'SiStrip/Layouts/08 - TECBSummary',
                  'SiStrip/Layouts/04 - TIDFSummary',
-                 'SiStrip/Layouts/05 - TIDBSummary')
+                 'SiStrip/Layouts/05 - TIDBSummary',
+                 'SiStrip/Layouts/09 - FedMonitoringSummary')
 
 #server.workspace('DQMContent', 20, 'Calorimeter', 'ECAL', '^Ecal',
 #                 'Ecal/Layouts/00-Global-Summary')
