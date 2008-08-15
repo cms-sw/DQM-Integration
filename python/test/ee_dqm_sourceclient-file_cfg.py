@@ -122,29 +122,13 @@ process.ecalConditions = cms.ESSource("PoolDBESSource",
 
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
-        EcalRawToDigiDevTowerId = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
         threshold = cms.untracked.string('WARNING'),
-        EcalRawToDigiDevTCC = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalRawToDigiDevSRP = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalDCCHeaderRuntypeDecoder = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
+        noLineBreaks = cms.untracked.bool(True),
+        noTimeStamps = cms.untracked.bool(True),
+        default = cms.untracked.PSet(
+            limit = cms.untracked.int32(0)
         ),
         EcalRawToDigiDev = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalRawToDigiDevMemGain = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalRawToDigiDevMemBlock = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalRawToDigiDevDccBlockSize = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
         EcalRawToDigiDevTriggerType = cms.untracked.PSet(
@@ -156,51 +140,72 @@ process.MessageLogger = cms.Service("MessageLogger",
         EcalRawToDigiDevNumTowerBlocks = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalEndcapMonitorModule = cms.untracked.PSet(
-            limit = cms.untracked.int32(0)
-        ),
-        EcalRawToDigiDevMemTowerId = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        EcalRawToDigiDevGainSwitch = cms.untracked.PSet(
+        EcalRawToDigiDevTowerId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
         EcalRawToDigiDevTowerSize = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevMemChId = cms.untracked.PSet(
-            limit = cms.untracked.int32(1000)
-        ),
-        noTimeStamps = cms.untracked.bool(True),
         EcalRawToDigiDevChId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
         EcalRawToDigiDevGainZero = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        default = cms.untracked.PSet(
-            limit = cms.untracked.int32(0)
+        EcalRawToDigiDevGainSwitch = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
         ),
-        noLineBreaks = cms.untracked.bool(True)
+        EcalRawToDigiDevDccBlockSize = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevMemBlock = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevMemTowerId = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevMemChId = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevMemGain = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevTCC = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalRawToDigiDevSRP = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalDCCHeaderRuntypeDecoder = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalBarrelMonitorModule = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        ),
+        EcalEndcapMonitorModule = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000)
+        )
     ),
-    categories = cms.untracked.vstring('EcalRawToDigiDev', 
-        'EcalRawToDigiDevTriggerType', 
-        'EcalRawToDigiDevTpg', 
-        'EcalRawToDigiDevNumTowerBlocks', 
-        'EcalRawToDigiDevTowerId', 
-        'EcalRawToDigiDevTowerSize', 
-        'EcalRawToDigiDevChId', 
-        'EcalRawToDigiDevGainZero', 
-        'EcalRawToDigiDevGainSwitch', 
-        'EcalRawToDigiDevDccBlockSize', 
-        'EcalRawToDigiDevMemBlock', 
-        'EcalRawToDigiDevMemTowerId', 
-        'EcalRawToDigiDevMemChId', 
-        'EcalRawToDigiDevMemGain', 
-        'EcalRawToDigiDevTCC', 
-        'EcalRawToDigiDevSRP', 
-        'EcalDCCHeaderRuntypeDecoder', 
-        'EcalEndcapMonitorModule'),
+    categories = cms.untracked.vstring('EcalTBInputService',
+                                       'EcalRawToDigiDev',
+                                       'EcalRawToDigiDevTriggerType',
+                                       'EcalRawToDigiDevTpg',
+                                       'EcalRawToDigiDevNumTowerBlocks',
+                                       'EcalRawToDigiDevTowerId',
+                                       'EcalRawToDigiDevTowerSize',
+                                       'EcalRawToDigiDevChId',
+                                       'EcalRawToDigiDevGainZero',
+                                       'EcalRawToDigiDevGainSwitch',
+                                       'EcalRawToDigiDevDccBlockSize',
+                                       'EcalRawToDigiDevMemBlock',
+                                       'EcalRawToDigiDevMemTowerId',
+                                       'EcalRawToDigiDevMemChId',
+                                       'EcalRawToDigiDevMemGain',
+                                       'EcalRawToDigiDevTCC',
+                                       'EcalRawToDigiDevSRP',
+                                       'EcalDCCHeaderRuntypeDecoder',
+                                       'EcalBarrelMonitorModule',
+                                       'EcalEndcapMonitorModule'),
     destinations = cms.untracked.vstring('cout')
 )
 
