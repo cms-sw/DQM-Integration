@@ -1,6 +1,8 @@
 #!/bin/sh
 eval `scramv1 runtime -sh`
 
+export XDAQ_DOCUMENT_ROOT=/opt/xdaq/htdocs
+export XDAQ_ROOT=/opt/xdaq
 echo "initializePixelDQM"
 ./initializePixelDQM
 echo " Start Application "

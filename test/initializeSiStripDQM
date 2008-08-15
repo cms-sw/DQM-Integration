@@ -25,7 +25,7 @@ chop(my $hostname = `hostname -f`);
 
 
 # set variables
-my $port = 22101;
+my $port = 32101;
 
 my $appname="evf::FUEventProcessor";
 

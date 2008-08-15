@@ -1,6 +1,9 @@
 #!/bin/sh
 eval `scramv1 runtime -sh`
 
+export XDAQ_DOCUMENT_ROOT=/opt/xdaq/htdocs
+export XDAQ_ROOT=/opt/xdaq
+
 echo "initializeSiStripDQM"
 #./initializeSiStripDQM playback
 echo " Start Application "
