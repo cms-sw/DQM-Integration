@@ -4,8 +4,8 @@ ln -s  daq_dqm_sourceclient-live.cfg           dqmfu10-1.cfg
 
 ln -s  sistrip_dqm_sourceclient-live.cfg       dqmfu15-1.cfg 
 ln -s  pixel_dqm_sourceclient-live.cfg         dqmfu15-2.cfg 
-ln -s  csc_dqm_sourceclient-live.cfg           dqmfu15-3.cfg 
-ln -s  shipper_dqm_sourceclient-live.cfg       dqmfu15-4.cfg 
+ln -s  shipper_dqm_sourceclient-live.cfg       dqmfu15-3.cfg 
+ln -s  csc_dqm_sourceclient-live.cfg           dqmfu15-4.cfg 
 
 ln -s  ee_dqm_sourceclient-live.cfg            dqmfu16-1.cfg 
 ln -s  eb_dqm_sourceclient-live.cfg            dqmfu16-2.cfg 
