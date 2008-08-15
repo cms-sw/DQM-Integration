@@ -34,7 +34,7 @@ process.dqmSaver.saveAtJobEnd      = True
 
 process.dqmEnv.subSystemFolder = "DT"
 
-process.load("DQM.Integration.test.dt_dqm_sourceclient-common_cff")
+process.load("DQM.Integration.test.dt_dqm_sourceclient_common_cff")
 
 
 
