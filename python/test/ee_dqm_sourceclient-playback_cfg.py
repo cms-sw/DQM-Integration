@@ -71,7 +71,7 @@ process.ecalConditions = cms.ESSource("PoolDBESSource",
         ), 
         cms.PSet(
             record = cms.string('EcalChannelStatusRcd'),
-            tag = cms.string('EcalChannelStatus_FromCruzet_v3_online')
+            tag = cms.string('EcalChannelStatus_FromCruzet3_v3_online')
         ), 
         cms.PSet(
             record = cms.string('EcalGainRatiosRcd'),
@@ -79,7 +79,7 @@ process.ecalConditions = cms.ESSource("PoolDBESSource",
         ), 
         cms.PSet(
             record = cms.string('EcalIntercalibConstantsRcd'),
-            tag = cms.string('EcalIntercalibConstants_mc')
+            tag = cms.string('EcalIntercalibConstants_mw33')
 #            tag = cms.string('EcalIntercalibConstants_CosmGain200')
         ), 
         cms.PSet(
@@ -104,8 +104,8 @@ process.ecalConditions = cms.ESSource("PoolDBESSource",
         )),
     messagelevel = cms.untracked.uint32(0),
     timetype = cms.string('runnumber'),
-    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_20X_ECAL'),
-#    connect = cms.string("frontier://FrontierProd/CMS_COND_20X_ECAL"),
+    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_ECAL'),
+#    connect = cms.string("frontier://FrontierProd/CMS_COND_21X_ECAL"),
     authenticationMethod = cms.untracked.uint32(1)
 )
 
