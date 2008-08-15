@@ -116,7 +116,7 @@ process.ecalConditions = cms.ESSource("PoolDBESSource",
         ), 
         cms.PSet(
             record = cms.string('EcalIntercalibConstantsRcd'),
-            tag = cms.string('EcalIntercalibConstants_mc')
+            tag = cms.string('EcalIntercalibConstants_mw33')
 #            tag = cms.string('EcalIntercalibConstants_CosmGain200')
         ), 
         cms.PSet(
