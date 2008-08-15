@@ -24,13 +24,19 @@ process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 
 process.load("DQM.EcalBarrelMonitorModule.EcalBarrelMonitorModule_cfi")
 
+process.load("DQM.EcalEndcapMonitorModule.EcalEndcapMonitorModule_cfi")
+
 process.load("DQM.EcalBarrelMonitorTasks.EcalBarrelMonitorTasks_cfi")
+
+process.load("DQM.EcalEndcapMonitorTasks.EcalEndcapMonitorTasks_cfi")
 
 process.load("Geometry.CaloEventSetup.EcalTrigTowerConstituents_cfi")
 
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cff")
 
 process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
+
+process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
 
 process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
@@ -48,10 +54,21 @@ process.dqmInfoEB = cms.EDFilter("DQMEventInfo",
     subSystemFolder = cms.untracked.string('EcalBarrel')
 )
 
+process.dqmInfoEE = cms.EDFilter("DQMEventInfo",
+    subSystemFolder = cms.untracked.string('EcalEndcap')
+)
+
 process.dqmQTestEB = cms.EDFilter("QualityTester",
     reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
+    getQualityTestsFromFile = cms.untracked.bool(True)
+)
+
+process.dqmQTestEE = cms.EDFilter("QualityTester",
+    reportThreshold = cms.untracked.string('red'),
+    prescaleFactor = cms.untracked.int32(1),
+    qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalEndcapQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
@@ -60,6 +77,14 @@ process.dqmSaverEB = cms.EDFilter("DQMFileSaver",
     dirName = cms.untracked.string('.'),
     saveAtJobEnd = cms.untracked.bool(True),
     fileName = cms.untracked.string('EcalBarrel'),
+    convention = cms.untracked.string('Online')
+)
+
+process.dqmSaverEE = cms.EDFilter("DQMFileSaver",
+    saveByRun = cms.untracked.int32(1),
+    dirName = cms.untracked.string('.'),
+    saveAtJobEnd = cms.untracked.bool(True),
+    fileName = cms.untracked.string('EcalEndcap'),
     convention = cms.untracked.string('Online')
 )
 
@@ -212,11 +237,14 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmInfoEB*process.ecalBarrelMonitorClient*process.dqmQTestEB*process.dqmSaverEB)
+process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmInfoEE*process.ecalEndcapMonitorClient*process.dqmQTestEE*process.dqmSaverEE)
 
 process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelPedestalOnlineTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelCosmicTask)
 
-process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
-process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalBarrelClusterTask)
+process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
+
+process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
+process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalEndcapCosmicTasksSequenceP5*process.ecalBarrelClusterTask*process.ecalEndcapClusterTask)
 
 process.ecalUncalibHit2.MinAmplBarrel = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.
@@ -235,6 +263,14 @@ process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:
 
 process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 
+process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+
+process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+
+process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+
+process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
@@ -245,6 +281,10 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Timing', 'Cosmic', 'Cluster', 'Summary']
+
+process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
+process.ecalEndcapMonitorClient.location = 'P5'
+process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1
