@@ -10,14 +10,13 @@ process.load("DQM.Integration.test.inputsource_playback_cfi")
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-
-#replace DQMStore.referenceFileName = "L1T_reference.root"
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
 # DQM Playback Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
+process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/l1t_reference.root'
 
 #-----------------------------
 #  DQM SOURCES

@@ -14,6 +14,7 @@ process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")
 process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/rpc_reference.root'
 
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 

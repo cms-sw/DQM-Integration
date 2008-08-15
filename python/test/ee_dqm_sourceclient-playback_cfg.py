@@ -9,6 +9,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_playback_cfi")
+#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/DQM_EcalEndcap_R000046798.root'
 
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 
@@ -244,5 +245,4 @@ process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1
 process.hybridSuperClusters.eseed = 0.150
 
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_EcalEndcap_R000046798.root'
 
