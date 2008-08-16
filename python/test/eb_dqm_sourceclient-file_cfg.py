@@ -34,8 +34,6 @@ process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
 
 process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
-process.load("CondCore.DBCommon.CondDBSetup_cfi")
-
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
@@ -70,56 +68,10 @@ process.source = cms.Source("NewEventStreamFileReader",
     fileNames = cms.untracked.vstring('file:/data1/lookarea/GlobalAug07.00017220.0001.A.storageManager.0.0000.dat')
 )
 
-process.ecalConditions = cms.ESSource("PoolDBESSource",
-    process.CondDBSetup,
-    siteLocalConfig = cms.untracked.bool(False),
-    toGet = cms.VPSet(cms.PSet(
-        record = cms.string('EcalPedestalsRcd'),
-        tag = cms.string('EcalPedestals_v2_online')
-    ), 
-        cms.PSet(
-            record = cms.string('EcalADCToGeVConstantRcd'),
-            tag = cms.string('EcalADCToGeVConstant_CosmGain200')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalChannelStatusRcd'),
-            tag = cms.string('EcalChannelStatus_FromCruzet3_v3_online')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalGainRatiosRcd'),
-            tag = cms.string('EcalGainRatios_TestPulse_online')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalIntercalibConstantsRcd'),
-            tag = cms.string('EcalIntercalibConstants_mw33')
-#            tag = cms.string('EcalIntercalibConstants_CosmGain200')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalWeightXtalGroupsRcd'),
-            tag = cms.string('EcalWeightXtalGroups_mc')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalTBWeightsRcd'),
-            tag = cms.string('EcalTBWeights_mc')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalLaserAlphasRcd'),
-            tag = cms.string('EcalLaserAlphas_mc')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalLaserAPDPNRatiosRcd'),
-            tag = cms.string('EcalLaserAPDPNRatios_mc')
-        ), 
-        cms.PSet(
-            record = cms.string('EcalLaserAPDPNRatiosRefRcd'),
-            tag = cms.string('EcalLaserAPDPNRatiosRef_mc')
-        )),
-    messagelevel = cms.untracked.uint32(0),
-    timetype = cms.string('runnumber'),
-    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_ECAL'),
-#    connect = cms.string("frontier://FrontierProd/CMS_COND_21X_ECAL"),
-    authenticationMethod = cms.untracked.uint32(1)
-)
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+process.GlobalTag.globaltag = "CRZT210_V3H::All"
+process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
