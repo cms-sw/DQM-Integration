@@ -38,6 +38,10 @@ process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
 
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
+
+process.load("L1TriggerConfig.L1GtConfigProducers.L1GtConfig_cff")
+
 import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
 process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
 
@@ -186,7 +190,7 @@ process.MessageLogger = cms.Service("MessageLogger",
     destinations = cms.untracked.vstring('cout')
 )
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmEnvEB*process.ecalBarrelMonitorClient*process.dqmQTestEB*process.dqmSaverEB)
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnvEE*process.ecalEndcapMonitorClient*process.dqmQTestEE*process.dqmSaverEE)
 
@@ -196,6 +200,9 @@ process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupan
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
 process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalEndcapCosmicTasksSequenceP5*process.ecalBarrelClusterTask*process.ecalEndcapClusterTask)
+
+from EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi import *
+l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'Ecal DQM Consumer'
 
