@@ -23,7 +23,7 @@ process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/pixel_reference.root'
+#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/pixel_reference.root'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -50,7 +50,7 @@ process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.GlobalTag.connect = "sqlite_file:/nfshome0/malgeri/public/globtag/CRZT210_V1H.db"
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 #process.GlobalTag.globaltag = "CRZT210_V1C::All"
-process.GlobalTag.globaltag = "CRZT210_V1H::All"
+process.GlobalTag.globaltag = "CRZT210_V3H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #If Frontier is used in xdaq environment use the following service
@@ -71,7 +71,9 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # Pixel DQM Source and Client
 #--------------------------
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
+process.SiPixelRawDataErrorSource.isPIB = True
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
+process.SiPixelDigiSource.isPIB = True
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
@@ -98,5 +100,5 @@ process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
-process.DQMmodules = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.CLUmonitor*process.sipixelEDAClient)
+process.DQMmodules = cms.Sequence(process.dqmEnv*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient)
