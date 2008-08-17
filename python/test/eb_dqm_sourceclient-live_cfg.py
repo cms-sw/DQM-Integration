@@ -161,8 +161,7 @@ process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupan
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalBarrelClusterTask)
 
-from EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi import *
-l1GtEvmUnpack.EvmGtInputTag = 'source'
+process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
 

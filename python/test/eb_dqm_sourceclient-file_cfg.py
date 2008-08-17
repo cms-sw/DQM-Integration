@@ -171,8 +171,7 @@ process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule
 
 process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelPedestalOnlineTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelCosmicTask)
 
-from EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi import *
-l1GtEvmUnpack.EvmGtInputTag = 'source'
+process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalBarrelClusterTask)

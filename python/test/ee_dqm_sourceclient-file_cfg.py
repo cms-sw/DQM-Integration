@@ -174,8 +174,7 @@ process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupan
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence)
 process.q = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
 
-from EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi import *
-l1GtEvmUnpack.EvmGtInputTag = 'source'
+process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.ecalUncalibHit2.MinAmplEndcap = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.
