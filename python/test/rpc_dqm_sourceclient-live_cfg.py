@@ -41,7 +41,7 @@ process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
 
 process.qTesterRPC = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/RPCMonitorClient/test/RPCQualityTests.xml'),
-    QualityTestPrescaler = cms.untracked.int32(10)
+    prescaleFactor = cms.untracked.int32(10)
 )
 
 process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm)
