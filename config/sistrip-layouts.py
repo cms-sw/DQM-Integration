@@ -76,7 +76,9 @@ sistriplayout(dqmitems, "09 - FedMonitoringSummary",
      'description': 'Total number of FEDs with BxError'},      
    { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedFreeze",
      'description': 'Total number of FEDs with FedFreeze error'}],   
-   [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedGenericErrors",
+  [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedGenericErrors",
      'description': 'Total numbers of errors per FED'},
    { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/TotalChannelsVsEvent",
-     'description': 'Total number of active channels per event (first 1000 events are used)'}, None])
+     'description': 'Total number of active channels per event (first 1000 events are used)'},
+   { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedCorruptBuffer",
+     'description': '# of Corrupted Buffers vs FED ID'}])
