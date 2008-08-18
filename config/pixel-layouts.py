@@ -1,14 +1,19 @@
 def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
 
+pixellayout(dqmitems, "Pixel_RawData_FED_Summary",
+  ["Pixel/AdditionalPixelErrors/SUMRAW_NErrors_FEDErrors",
+   "Pixel/AdditionalPixelErrors/SUMRAW_errorType_FEDErrors"])
 pixellayout(dqmitems, "Pixel_RawData_Toplevel_Summary",
   ["Pixel/Endcap/SUMRAW_NErrors_Endcap",
    "Pixel/Endcap/SUMRAW_errorType_Endcap"],
-  ["Pixel/Endcap/SUMRAW_TBMType_Endcap",
-   "Pixel/Endcap/SUMRAW_EvtNbr_Endcap"],
-  ["Pixel/Endcap/SUMRAW_ROCId_Endcap",
-   "Pixel/Endcap/SUMRAW_DCOLId_Endcap"],
-  ["Pixel/Endcap/SUMRAW_PXId_Endcap",
-   "Pixel/Endcap/SUMRAW_ROCNmbr_Endcap"])
+  ["Pixel/Endcap/HalfCylinder_mI/SUMRAW_NErrors_HalfCylinder_mI",
+   "Pixel/Endcap/HalfCylinder_mI/SUMRAW_errorType_HalfCylinder_mI"],
+  ["Pixel/Endcap/HalfCylinder_mO/SUMRAW_NErrors_HalfCylinder_mO",
+   "Pixel/Endcap/HalfCylinder_mO/SUMRAW_errorType_HalfCylinder_mO"],
+  ["Pixel/Endcap/HalfCylinder_pI/SUMRAW_NErrors_HalfCylinder_pI",
+   "Pixel/Endcap/HalfCylinder_pI/SUMRAW_errorType_HalfCylinder_pI"],
+  ["Pixel/Endcap/HalfCylinder_pO/SUMRAW_NErrors_HalfCylinder_pO",
+   "Pixel/Endcap/HalfCylinder_pO/SUMRAW_errorType_HalfCylinder_pO"])
 pixellayout(dqmitems, "Pixel_Digi_Toplevel_Summary",
   ["Pixel/Endcap/SUMDIG_adc_Endcap",
    "Pixel/Endcap/SUMDIG_ndigis_Endcap"],
@@ -20,14 +25,6 @@ pixellayout(dqmitems, "Pixel_Digi_Toplevel_Summary",
    "Pixel/Endcap/HalfCylinder_pI/SUMDIG_ndigis_HalfCylinder_pI"],
   ["Pixel/Endcap/HalfCylinder_pO/SUMDIG_adc_HalfCylinder_pO",
    "Pixel/Endcap/HalfCylinder_pO/SUMDIG_ndigis_HalfCylinder_pO"])
-pixellayout(dqmitems, "Pixel_Cluster_Toplevel_Summary",
-  ["Pixel/Endcap/SUMCLU_charge_Endcap",
-   "Pixel/Endcap/SUMCLU_nclusters_Endcap"],
-  ["Pixel/Endcap/HalfCylinder_mI/SUMCLU_charge_HalfCylinder_mI",
-   "Pixel/Endcap/HalfCylinder_mI/SUMCLU_nclusters_HalfCylinder_mI"],
-  ["Pixel/Endcap/HalfCylinder_mO/SUMCLU_charge_HalfCylinder_mO",
-   "Pixel/Endcap/HalfCylinder_mO/SUMCLU_nclusters_HalfCylinder_mO"],
-  ["Pixel/Endcap/HalfCylinder_pI/SUMCLU_charge_HalfCylinder_pI",
-   "Pixel/Endcap/HalfCylinder_pI/SUMCLU_nclusters_HalfCylinder_pI"],
-  ["Pixel/Endcap/HalfCylinder_pO/SUMCLU_charge_HalfCylinder_pO",
-   "Pixel/Endcap/HalfCylinder_pO/SUMCLU_nclusters_HalfCylinder_pO"])
+pixellayout(dqmitems, "Pixel_Digi_Occupancy_Summary",
+  ["Pixel/Endcap/endcapOccupancyMap",
+   "Pixel/Barrel/barrelOccupancyMap"])
