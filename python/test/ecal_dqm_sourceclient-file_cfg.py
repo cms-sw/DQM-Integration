@@ -248,6 +248,11 @@ process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1
 process.hybridSuperClusters.eseed = 0.150
 
+process.multi5x5BasicClusters.IslandBarrelSeedThr = 0.150
+process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
+
+process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
+
 process.DQM.collectorHost = 'srv-c2d05-16'
 process.DQMStore.verbose = 0
 #process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_EcalBarrel_R000046798.root'
