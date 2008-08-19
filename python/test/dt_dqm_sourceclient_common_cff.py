@@ -87,5 +87,5 @@ reco = cms.Sequence(dtunpacker + dttfunpacker + dt1DRecHits + dt4DSegments)
 
 dtDQMTask = cms.Sequence(dtDigiMonitor + dtSegmentAnalysisMonitor + dtTriggerMonitor + dtNoiseMonitor + dtResolutionAnalysisMonitor)
 
-dtDQMTest = cms.Sequence( dataIntegrityTest + triggerTest + dtOccupancyTest + segmentTest + dtNoiseAnalysisMonitor + dtSummaryClients + dtqTester)
+dtDQMTest = cms.Sequence( dataIntegrityTest + triggerTest + segmentTest + dtNoiseAnalysisMonitor + dtSummaryClients + dtqTester)
 
