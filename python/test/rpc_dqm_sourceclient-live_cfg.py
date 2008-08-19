@@ -13,13 +13,17 @@ process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
+process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
+
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 
-process.load("DQM.Integration.test.inputsource_cfi")
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder = 'RPC'
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",
     DBParameters = cms.PSet(
@@ -48,14 +52,7 @@ process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rp
 process.rpcClient = cms.Sequence(process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
 process.p = cms.Path(process.rpcDigi*process.rpcClient)
 process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
-process.DQMStore.verbose = 0
-process.DQM.collectorHost = 'srv-c2d05-19'
-process.dqmSaver.convention = 'Online'
-process.dqmSaver.dirName = '/cms/mon/data/dropbox'
-process.dqmSaver.producer = 'DQM'
-process.dqmEnv.subSystemFolder = 'RPC'
-process.dqmSaver.saveByRun = 1
-process.dqmSaver.saveAtJobEnd = True
+
 process.rpcdigidqm.DigiEventsInterval = 100
 process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
