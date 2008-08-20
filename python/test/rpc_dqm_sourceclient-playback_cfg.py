@@ -20,6 +20,8 @@ process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 
 process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 
+process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
+
 process.load("DQM.Integration.test.inputsource_playback_cfi")
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",
@@ -45,7 +47,7 @@ process.qTesterRPC = cms.EDFilter("QualityTester",
     QualityTestPrescaler = cms.untracked.int32(10)
 )
 
-process.p = cms.Path(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.qTesterRPC*process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
+process.p = cms.Path(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcAfterPulse*process.qTesterRPC*process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
 process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
 process.DQMStore.verbose = 0
 process.DQM.collectorHost = 'srv-c2d05-18'
