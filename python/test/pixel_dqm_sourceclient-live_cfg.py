@@ -72,9 +72,9 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # Pixel DQM Source and Client
 #--------------------------
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
-process.SiPixelRawDataErrorSource.isPIB = True
+process.SiPixelRawDataErrorSource.isPIB = False
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
-process.SiPixelDigiSource.isPIB = True
+process.SiPixelDigiSource.isPIB = False
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
