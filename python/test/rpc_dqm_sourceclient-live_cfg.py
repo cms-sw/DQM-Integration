@@ -22,6 +22,8 @@ process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 
+process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
+
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'RPC'
 
@@ -48,8 +50,8 @@ process.qTesterRPC = cms.EDFilter("QualityTester",
     prescaleFactor = cms.untracked.int32(10)
 )
 
-process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm)
-process.rpcClient = cms.Sequence(process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
+process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcAfterPulse)
+process.rpcClient = cms.Sequence(process.qTesterRPC*process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
 process.p = cms.Path(process.rpcDigi*process.rpcClient)
 process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
 
@@ -58,6 +60,7 @@ process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
+
 process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
 process.rpcEventSummary.RPCPrefixDir = 'RPC/RecHits'
 
