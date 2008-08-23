@@ -36,4 +36,8 @@ l1tlayout(dqmitems,"06 RPC",
   	[{'path': "L1T/L1TRPCTF/RPCTF_muons_tower_phipacked", 'description': "Occupancy plot. Tower is proportional to eta (standard trigger scale). Phi uses trigger phi scale (0...143). HotChannels and DeadChannels quality test are performed on this histo. Should be ~flat in each tower. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
 	{'path': "L1T/L1TRPCTF/RPCTF_ntrack", 'description': "Number of muon candidates found per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
 	[{'path': "L1T/L1TRPCTF/RPCTF_pt_value", 'description': "Pt value of muon candidates. During CRUZET it should be equal to 140 (due to patterns used). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
-	{'path': "L1T/L1TRPCTF/RPCDigi_bx", 'description': "Tells if delays are properly set on our FEDs (bin 0 of the histogram should be way above other bins). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+	{'path': "L1T/L1TRPCTF/RPCTF_bx", 'description': "Tells if delays are properly set on our FEDs (bin 0 of the histogram should be way above other bins). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+
+l1tlayout(dqmitems,"07 Timing",
+  	[{'path': "L1T/BXSynch/BxDiffAllFed", 'description': "BX shift wrt reference fed (GT), for all feds. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+
