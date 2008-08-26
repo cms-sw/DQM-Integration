@@ -1,5 +1,5 @@
-server.workspace('DQMSummary', 0, 'Summaries', 'Summary')
-server.workspace('DQMQuality', 1, 'Summaries', 'Quality')
+server.workspace('DQMQuality', 0, 'Summaries', 'Summary')
+server.workspace('DQMSummary', 1, 'Summaries', 'Reports')
 server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 
 server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
