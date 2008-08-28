@@ -3,7 +3,7 @@ def l1tlayout(i, p, *rows): i["00 Shift/L1T/" + p] = DQMItem(layout=rows)
 l1tlayout(dqmitems,"00 Global Trigger",
   	[{'path': "L1T/L1TGT/algo_bits", 'description': "Global Trigger bits. x-axis: GT algorithm number; y-axis: number of events with given bit on.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
 	[{'path': "L1T/L1TGT/event_lumi", 'description': "GT Event Number vs. Luminosity Section. x-axis: lumionosity segment of a given run; y-axis: average event number for that lumi segment.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
-	{'path': "L1T/L1TGT/evnum_trignum_lumi", 'description': "GT Event/Trigger Number ratio vs Luminosity Section.  x-axis: lumionosity segment of a given run; y-axis: ratio of event number (reset by resync) and trigger number (counting triggers from start of run).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+	{'path': "L1T/L1TGT/tt_bits", 'description': "Global Trigger Technical bits. x-axis: technical trigger algorithm number; y-axis: number of events with given bit on.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"01 Global Muon Trigger",
   	[{'path': "L1T/L1TGMT/Regional_trigger", 'description': "Regional Muon Trigger Contribution. x-axis: muon regional trigger; y-axis: number of triggers from given subsystem.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
