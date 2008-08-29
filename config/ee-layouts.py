@@ -324,13 +324,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -572,13 +572,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -820,13 +820,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -1068,13 +1068,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -1316,13 +1316,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -1564,13 +1564,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -1812,13 +1812,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -2060,13 +2060,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -2308,13 +2308,13 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -2556,13 +2556,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -2804,13 +2804,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -3052,13 +3052,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -3300,13 +3300,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -3548,13 +3548,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -3796,13 +3796,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -4044,13 +4044,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -4292,13 +4292,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
@@ -4540,13 +4540,13 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/01-Pedestal/PNs/00-Pedestal-
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/03-Laser/L1/02-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs pedestal EE+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain01/EEPDT PNs pedestal rms EE+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain01/EEPDT PNs amplitude EE+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
 #eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/03-Laser/L1/03-Laser",
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs pedestal EE+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-#   { 'path': "EcalEndcap/EELaserClient/Laser1/PN/Gain16/EEPDT PNs pedestal rms EE+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+#   { 'path': "EcalEndcap/EELaserClient/EEPDT PNs pedestal rms EE+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
 #  [{ 'path': "EcalEndcap/EELaserTask/Laser1/PN/Gain16/EEPDT PNs amplitude EE+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
 #   None])
 #
