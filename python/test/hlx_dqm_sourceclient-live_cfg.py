@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("hlxdqmlive")
 process.load("DQMServices.Components.test.MessageLogger_cfi")
 
-process.load("DQM.HLXMonitor.test.hlx_dqm_sourceclient_cfi")
+process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
