@@ -75,7 +75,10 @@ process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
 process.SiPixelRawDataErrorSource.isPIB = False
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
 process.SiPixelDigiSource.isPIB = False
+process.SiPixelDigiSource.hiRes = True
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
+process.SiPixelClusterSource.reducedSet = True
+
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
     FileSaveFrequency = cms.untracked.int32(50),
