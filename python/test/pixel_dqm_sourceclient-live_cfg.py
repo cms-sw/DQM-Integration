@@ -81,8 +81,9 @@ process.SiPixelClusterSource.reducedSet = True
 
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
-    FileSaveFrequency = cms.untracked.int32(50),
-    StaticUpdateFrequency = cms.untracked.int32(10)
+    EventOffsetForInit = cms.untracked.int32(10),
+    ActionOnLumiSection = cms.untracked.bool(False),
+    ActionOnRunEnd = cms.untracked.bool(True)
 )
 
 process.qTester = cms.EDFilter("QualityTester",
@@ -104,5 +105,5 @@ process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
-process.DQMmodules = cms.Sequence(process.dqmEnv*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient)
+process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.CLUmonitor*process.sipixelEDAClient)
