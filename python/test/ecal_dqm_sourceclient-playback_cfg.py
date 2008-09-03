@@ -8,31 +8,11 @@ process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-import DQMServices.Components.DQMEnvironment_cfi
-process.dqmEnvEB = DQMServices.Components.DQMEnvironment_cfi.dqmEnv.clone()
-process.dqmEnvEE = DQMServices.Components.DQMEnvironment_cfi.dqmEnv.clone()
-process.dqmSaverEB = DQMServices.Components.DQMEnvironment_cfi.dqmSaver.clone()
-process.dqmSaverEE = DQMServices.Components.DQMEnvironment_cfi.dqmSaver.clone()
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+process.dqmEnvEB = process.dqmEnv.clone()
+process.dqmEnvEE = process.dqmEnv.clone()
 
 process.load("DQM.Integration.test.environment_playback_cfi")
-
-process.dqmSaverEB.convention = 'Online'
-process.dqmSaverEB.dirName = '/home/dqmprolocal/output'
-process.dqmSaverEB.producer = 'DQM'
-process.dqmSaverEB.saveByTime = 2
-process.dqmSaverEB.saveByLumiSection = -1
-process.dqmSaverEB.saveByMinute = 8
-process.dqmSaverEB.saveByRun = -1
-process.dqmSaverEB.saveAtJobEnd = False
-
-process.dqmSaverEE.convention = 'Online'
-process.dqmSaverEE.dirName = '/home/dqmprolocal/output'
-process.dqmSaverEE.producer = 'DQM'
-process.dqmSaverEE.saveByTime = 2
-process.dqmSaverEE.saveByLumiSection = -1
-process.dqmSaverEE.saveByMinute = 8
-process.dqmSaverEE.saveByRun = -1
-process.dqmSaverEE.saveAtJobEnd = False
 
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 
@@ -191,14 +171,14 @@ process.MessageLogger = cms.Service("MessageLogger",
 )
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
-process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmEnvEB*process.ecalBarrelMonitorClient*process.dqmQTestEB*process.dqmSaverEB)
-process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnvEE*process.ecalEndcapMonitorClient*process.dqmQTestEE*process.dqmSaverEE)
+process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmEnvEB*process.ecalBarrelMonitorClient*process.dqmQTestEB)
+process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnvEE*process.ecalEndcapMonitorClient*process.dqmQTestEE)
 
 process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelPedestalOnlineTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelCosmicTask)
 
 process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
 
-process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
+process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
 process.q = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalEndcapCosmicTasksSequenceP5*process.ecalBarrelClusterTask*process.ecalEndcapClusterTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
