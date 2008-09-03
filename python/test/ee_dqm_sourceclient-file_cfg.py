@@ -61,7 +61,6 @@ process.dqmSaverEE = cms.EDFilter("DQMFileSaver",
     saveByRun = cms.untracked.int32(1),
     dirName = cms.untracked.string('.'),
     saveAtJobEnd = cms.untracked.bool(True),
-    fileName = cms.untracked.string('EcalEndcap'),
     convention = cms.untracked.string('Online')
 )
 
