@@ -12,13 +12,13 @@ modules = ("GuiDQM", "GuiEventDisplay")
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8888
-server.serverDir   = basedir + "/gui"
+server.serverDir   = BASEDIR + "/gui"
 server.baseUrl     = '/dqm/devtest'
 server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
 server.source('DQMLive', 'dqm', '--listen 9191', '--collector localhost:9190')
-server.source('DQMArchive', 'file', basedir + "/dqm.db", '--listen 9192')
+server.source('DQMArchive', 'file', BASEDIR + "/dqm.db", '--listen 9192')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
