@@ -41,3 +41,12 @@ l1tlayout(dqmitems,"06 RPC",
 l1tlayout(dqmitems,"07 Timing",
   	[{'path': "L1T/BXSynch/BxDiffAllFed", 'description': "BX shift wrt reference fed (GT), for all feds. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
+l1tlayout(dqmitems,"08 L1 Bits (from EvF)",
+  	[{'path': "L1T/L1Scalers_EvF/bxNum", 'description': "GT Bunch Crossing Occupancy. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+	{'path': "L1T/L1Scalers_EvF/l1AlgoBits_Vs_Bx", 'description': "Bunch Crossing Occupancy Vs GT Algo Bit. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
+	[{'path': "L1T/L1Scalers_EvF/l1TechAlgoBits_Vs_Bx", 'description': "Bunch Crossing Occupancy Vs GT Tech. Bit. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."},
+	{'path': "L1T/L1Scalers_EvF/l1Correlations", 'description': "GT Algo bis correlation. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+
+l1tlayout(dqmitems,"09 L1 Rates (based on EvF products)",
+  	[{'path': "L1T/L1Scalers_EvF/algo_cur_rate", 'description': "Lumi Section Rate per Algo Bit. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}],
+	[{'path': "L1T/L1Scalers_EvF/tt_cur_rate", 'description': "Lumi Section Rate per Technical Bit. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
