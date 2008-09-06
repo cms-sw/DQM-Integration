@@ -49,35 +49,10 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 # Calibration
 #--------------------------
-import CalibTracker.Configuration.Common.PoolDBESSource_cfi
-process.siStripCond = CalibTracker.Configuration.Common.PoolDBESSource_cfi.poolDBESSource.clone()
-process.siStripCond.toGet = cms.VPSet(
-    cms.PSet(record = cms.string('SiStripPedestalsRcd'), tag = cms.string('SiStripPedestals_TKCC_21X_v3_hlt')), 
-    cms.PSet(record = cms.string('SiStripNoisesRcd'),    tag = cms.string('SiStripNoise_TKCC_21X_v3_hlt')),
-    cms.PSet(record = cms.string('SiStripBadChannelRcd'),tag = cms.string('SiStripBadChannel_TKCC_21X_v3_hlt')),
-    cms.PSet(record = cms.string('SiStripFedCablingRcd'),tag = cms.string('SiStripFedCabling_TKCC_21X_v3_hlt'))
- )
-process.siStripCond.connect = 'oracle://cms_orcon_prod/CMS_COND_21X_STRIP'
-process.siStripCond.DBParameters.authenticationPath = '/nfshome0/xiezhen/conddb'
-
-process.sistripconn = cms.ESProducer("SiStripConnectivity")
-
-process.load("CalibTracker.SiStripESProducers.SiStripQualityESProducer_cfi")
-process.SiStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
-    cms.PSet(record = cms.string('SiStripDetCablingRcd'), tag = cms.string('')), 
-    cms.PSet(record = cms.string('SiStripBadChannelRcd'), tag = cms.string(''))
- )
-
-process.load("CalibTracker.Configuration.SiStripGain.SiStripGain_Fake_cff")
-
-process.load("CalibTracker.Configuration.SiStripLorentzAngle.SiStripLorentzAngle_Fake_cff")
-
-process.load("CalibTracker.Configuration.SiPixelLorentzAngle.SiPixelLorentzAngle_Fake_cff")
-
-process.load("CalibTracker.Configuration.TrackerAlignment.TrackerAlignment_Fake_cff")
-
-#If Frontier is used in xdaq environment use the following service
-#    service = SiteLocalConfigService {}
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+process.GlobalTag.globaltag = "CRUZET4_V4H::All"
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
 #  Reconstruction Modules
@@ -85,12 +60,13 @@ process.load("CalibTracker.Configuration.TrackerAlignment.TrackerAlignment_Fake_
 # Real data raw to digi
 process.load("EventFilter.SiStripRawToDigi.SiStripDigis_cfi")
 process.siStripDigis.ProductLabel = 'source'
+process.load("EventFilter.SiPixelRawToDigi.SiPixelRawToDigi_cfi")
+process.siPixelDigis.InputLabel = 'source'
 
 # Local and Track Reconstruction
 process.load("RecoLocalTracker.Configuration.RecoLocalTracker_Cosmics_cff")
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
-process.CTF_P5_MeasurementTracker.pixelClusterProducer = ''
-process.RS_P5_MeasurementTracker.pixelClusterProducer = ''
+
 # offline beam spot
 process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 
@@ -132,6 +108,6 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 process.SiStripSources = cms.Sequence(process.HardwareMonitor*process.CondDataMonitoring*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
-process.RecoForDQM = cms.Sequence(process.siStripDigis*process.offlineBeamSpot*process.striptrackerlocalreco*process.ctftracksP5)
+process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClient)
 
