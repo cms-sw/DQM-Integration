@@ -25,7 +25,7 @@ LOGDIR=/tmp/${USER}
 
 [ -d $LOGDIR ] || mkdir -p $LOGDIR 
 
-LOGFILE=${LOGDIR}/loop${me}_${cfg}.out
+LOGFILE=${LOGDIR}/${me}_${cfg}.out
 # keep one old logfile
 [ -f $LOGFILE ] && mv $LOGFILE ${LOGFILE}.old
 
