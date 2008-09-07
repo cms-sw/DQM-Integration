@@ -1,13 +1,13 @@
 def csclayout(i, p, *rows): i["CSC/Layouts/" + p] = DQMItem(layout=rows)
   
 csclayout(dqmitems,"00 Top Physics Efficiency",
-  	[{'path': "CSC/EventInfo/reportSummaryMap", 'description': "CSC Efficiency for Physics. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
+  	[{'path': "CSC/Summary/Physics_EMU", 'description': "CSC Efficiency for Physics. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
 
 csclayout(dqmitems,"01 Station Physics Efficiency",
-  	[{'path': "CSC/Summary/Summary_ME1", 'description': "EMU station ME1 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
-  	 {'path': "CSC/Summary/Summary_ME2", 'description': "EMU station ME2 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],
-  	[{'path': "CSC/Summary/Summary_ME3", 'description': "EMU station ME3 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
-  	 {'path': "CSC/Summary/Summary_ME4", 'description': "EMU station ME4 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+  	[{'path': "CSC/Summary/Physics_ME1", 'description': "EMU station ME1 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/Summary/Physics_ME2", 'description': "EMU station ME2 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],
+  	[{'path': "CSC/Summary/Physics_ME3", 'description': "EMU station ME3 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/Summary/Physics_ME4", 'description': "EMU station ME4 status: physics efficiency by reporting area and hardware efficiency based on reporting number of hardware elements. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
 
 csclayout(dqmitems,"02 EMU Summary/EMU Test01 - DDUs in Readout",
   	[{'path': "CSC/Summary/All_DDUs_in_Readout", 'description': "Number of Events in DDU. If Readout and Trigger Enable were started in a correct sequence (first, Readout Enable and, then, Trigger Enable) and the rate of events with CSC payload present is not too high (<100 CSCs with data per second per DDU) then all DDUs should give the exact same number of events. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#All_DDUs_in_Readout\">here</a>."}],

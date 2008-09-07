@@ -1,7 +1,7 @@
         untracked PSet maxEvents = {untracked int32 input = -1 }
 
         source = EventStreamHttpReader {
-       string sourceURL = "http://srv-c2c05-27:50082/urn:xdaq-application:lid=29"
+       string sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
        //string sourceURL = "http://srv-c2c04-27:50082/urn:xdaq-application:lid=29"
         //string sourceURL = "http://srv-c2c07-19.cms:11100/urn:xdaq-application:service=storagemanager"
         int32 max_event_size = 7000000
