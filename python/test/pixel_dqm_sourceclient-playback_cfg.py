@@ -4,10 +4,10 @@ process = cms.Process("PIXELDQMPLAYBACK")
 
 process.MessageLogger = cms.Service("MessageLogger",
     debugModules = cms.untracked.vstring('siPixelDigis', 
-                                         'siPixelClusters', 
+                                         #'siPixelClusters', 
                                          'SiPixelRawDataErrorSource', 
                                          'SiPixelDigiSource', 
-                                         'SiPixelClusterSource',
+                                         #'SiPixelClusterSource',
 					 'sipixelEDAClient'),
     cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
     destinations = cms.untracked.vstring('cout')
@@ -51,7 +51,7 @@ process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 #process.GlobalTag.globaltag = "CRZT210_V1C::All"
 #process.GlobalTag.globaltag = "CRZT210_V3H::All"
-process.GlobalTag.globaltag = "CRUZET4_V2H::All"
+process.GlobalTag.globaltag = "CRUZET4_V4H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #If Frontier is used in xdaq environment use the following service
@@ -72,14 +72,18 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # Pixel DQM Source and Client
 #--------------------------
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
-process.SiPixelRawDataErrorSource.isPIB = True
+process.SiPixelRawDataErrorSource.isPIB = False
+process.SiPixelRawDataErrorSource.reducedSet = True
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
-process.SiPixelDigiSource.isPIB = True
+process.SiPixelDigiSource.isPIB = False
+process.SiPixelDigiSource.hiRes = True
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
+process.SiPixelClusterSource.reducedSet = True
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
-    FileSaveFrequency = cms.untracked.int32(50),
-    StaticUpdateFrequency = cms.untracked.int32(10)
+    EventOffsetForInit = cms.untracked.int32(10),
+    ActionOnLumiSection = cms.untracked.bool(False),
+    ActionOnRunEnd = cms.untracked.bool(True)
 )
 
 process.qTester = cms.EDFilter("QualityTester",
@@ -97,10 +101,11 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 # Scheduling
 #--------------------------
-process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
+process.Reco = cms.Sequence(process.siPixelDigis)
+#process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
-process.DQMmodules = cms.Sequence(process.dqmEnv*process.dqmSaver)
+process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
 process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient)
 
