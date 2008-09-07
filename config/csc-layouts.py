@@ -43,3 +43,17 @@ csclayout(dqmitems,"02 EMU Summary/EMU Test11 - CSCs without Data Blocks",
 	[{'path': "CSC/Summary/CSC_wo_CFEB_Fract", 'description': "Histogram shows how often CSC events come without CFEB data. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_wo_CFEB_Fract\">here</a>."},
 	 {'path': "CSC/Summary/CSC_Format_Warnings_Fract", 'description': "Histogram shows occurrences when SCA cells were filled due to too-high rate of LCTs and/or LCT×L1A coincidences. In conditions of cosmic ray runs, appearance of entries is indicative of hardware problems, or more specifically hot CFEBs. This typically happens due to a loose CFEB-TMB cable generating a flood of CLCT pre-triggers (CBEBs are the only board that are readout on coincidence between pre-CLCT and L1A). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_Format_Warnings_Fract\">here</a>."}])
 
+csclayout(dqmitems,"03 Shifter/Chamber Errors and Warnings (Statistically Significant)",
+  	[{'path': "CSC/Summary/CSC_STATS_format_err", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_format_err\">here</a>."},
+  	 {'path': "CSC/Summary/CSC_STATS_l1sync_err", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_l1sync_err\">here</a>."}],
+  	[{'path': "CSC/Summary/CSC_STATS_fifofull_err", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_fifofull_err\">here</a>."},
+  	 {'path': "CSC/Summary/CSC_STATS_inputto_err", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_inputto_err\">here</a>."}])
+
+csclayout(dqmitems,"03 Shifter/Chamber Occupancy Exceptions (Statistically Significant)",
+  	[{'path': "CSC/Summary/CSC_STATS_occupancy", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_occupancy\">here</a>."}])
+
+csclayout(dqmitems,"03 Shifter/Chambers without Data (Statistically Significant)",
+  	[{'path': "CSC/Summary/CSC_STATS_wo_alct", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_alct\">here</a>."},
+  	 {'path': "CSC/Summary/CSC_STATS_wo_clct", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_clct\">here</a>."}],
+  	[{'path': "CSC/Summary/CSC_STATS_wo_cfeb", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_cfeb\">here</a>."},
+  	 {'path': "CSC/Summary/CSC_STATS_cfeb_bwords", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_cfeb_bwords\">here</a>."}])
