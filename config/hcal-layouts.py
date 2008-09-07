@@ -11,15 +11,15 @@ hcallayout(dqmitems, "HCAL Unsuppressed Channels",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
 
-hcallayout(dqmitems, "HCAL Pedestals",
-          [{ 'path': "Hcal/PedestalMonitor/HB/HB All Pedestal Values",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/PedestalMonitor/HE/HE All Pedestal Values",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/PedestalMonitor/HF/HF All Pedestal Values",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/PedestalMonitor/HO/HO All Pedestal Values",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
+hcallayout(dqmitems, "Raw HCAL Pedestals",
+          [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth1",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
+           { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth2",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28.. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+          [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth3",
+                   'description': "Should be fairly uniform in color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
+           { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth4",
+                   'description': "Should be fairly uniform in color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
 
 hcallayout(dqmitems, "HCAL Trigger Primitives",
