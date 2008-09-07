@@ -69,6 +69,7 @@ process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
 
 process.hcalMonitor.PedestalsPerChannel = False
 process.hcalMonitor.PedestalsInFC = True
@@ -76,7 +77,7 @@ process.hcalMonitor.DataFormatMonitor = True
 process.hcalMonitor.DigiMonitor = True
 process.hcalMonitor.RecHitMonitor = True
 process.hcalMonitor.TrigPrimMonitor = True
-process.hcalMonitor.PedestalMonitor = True
+process.hcalMonitor.PedestalMonitor = False
 process.hcalMonitor.DeadCellMonitor = True
 process.hcalMonitor.HotCellMonitor = True
 process.hcalMonitor.LEDMonitor = False
@@ -115,7 +116,7 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
-process.p = cms.Path(process.hcalDigis*process.horeco*process.hfreco*process.hbhereco*process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
+process.p = cms.Path(process.hcalDigis*process.horeco*process.hfreco*process.hbhereco*process.zdcreco*process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
 
 
 
