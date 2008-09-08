@@ -25,7 +25,7 @@ chop(my $hostname = `hostname -f`);
 
 
 # set variables
-my $port = 32101;
+my $port = 22101;
 
 my $appname="evf::FUEventProcessor";
 
@@ -110,10 +110,11 @@ my @XMasproperties = ("useDiscovery", "boolean","true",
 open (XML,">$dqm_wdir/xml/profile.xml") or die ("Can't open file: $!\n");
 print XML makeXmlHeader();
 print XML makeXmlProfileHeader();
-print XML makeXmlAppHeader(0,"executive::Application",0,"executive");
-#print XML makeXmlAppProperties("Executive",@EXproperties); 
-#print XML "      </properties>\n";
+print XML makeXmlAppHeader(0,"executive::Application",0,"executive","profile");
+print XML makeXmlAppProperties("Executive",@EXproperties); 
+print XML "      </properties>\n";
 print XML "    </xp:Application>\n";
+print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libb2innub.so");
 print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libexecutive.so");
 print XML makeXmlAppHeader(0,"pt::http::PeerTransportHTTP",1,);
 print XML makeXmlAppProperties("pt::http::PeerTransportHTTP",@Pathproperties);
@@ -129,29 +130,29 @@ print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxrelay.so");
 print XML makeXmlAppHeader(0,"hyperdaq::Application",3,"hyperdaq");
 print XML "    </xp:Application>\n";
 print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libhyperdaq.so");
-print XML makeXmlAppHeader(0,"xplore::Application",9);
-print XML makeXmlAppProperties("xplore::Application",@XPproperties);
-print XML "      </properties>\n";
-print XML "    </xp:Application>\n";
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libslp.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxslp.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxploreutils.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxplore.so");
-print XML makeXmlAppHeader(0,"sentinel::Application",21,"sentinel","exception");
-print XML makeXmlAppProperties("Sentinel",@STproperties);
-print XML "      </properties>\n";
-print XML "    </xp:Application>\n";
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libwsaddressing.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libwseventing.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libsentinelutils.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libsentinel.so");
-print XML makeXmlAppHeader(0,"xmas::sensor::Application",10,"sensor","c2d05,service,init3");
-print XML makeXmlAppProperties("xmas",@XMasproperties);
-print XML makeXmlAppPublish();
-print XML "      </properties>\n";
-print XML "    </xp:Application>\n";
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxmasutils.so");
-print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxmassensor.so");
+#print XML makeXmlAppHeader(0,"xplore::Application",9);
+#print XML makeXmlAppProperties("xplore::Application",@XPproperties);
+#print XML "      </properties>\n";
+#print XML "    </xp:Application>\n";
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libslp.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxslp.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxploreutils.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxplore.so");
+#print XML makeXmlAppHeader(0,"sentinel::Application",21,"sentinel","exception");
+#print XML makeXmlAppProperties("Sentinel",@STproperties);
+#print XML "      </properties>\n";
+#print XML "    </xp:Application>\n";
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libwsaddressing.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libwseventing.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libsentinelutils.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libsentinel.so");
+#print XML makeXmlAppHeader(0,"xmas::sensor::Application",10,"sensor","c2d05,service,init3");
+#print XML makeXmlAppProperties("xmas",@XMasproperties);
+#print XML makeXmlAppPublish();
+#print XML "      </properties>\n";
+#print XML "    </xp:Application>\n";
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxmasutils.so");
+#print XML makeXmlAppTrailer(0,q|${XDAQ_ROOT}/lib|,"libxmassensor.so");
 print XML makeXmlProfileTrailer();
 
 
