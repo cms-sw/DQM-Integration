@@ -10,7 +10,6 @@ process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
 
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
-process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 
 ################# RPC Unpacker  ######################
 process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
@@ -39,6 +38,7 @@ process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")
 process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'RPC'
