@@ -3,7 +3,10 @@ global CONFIGDIR
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 modules = ("GuiDQM",)
-envsetup = "export QUIET_ASSERT=a"
+envsetup = """
+  export YUI_ROOT=/data/sw/$SCRAM_ARCH/external/yui/2.4.1
+  export QUIET_ASSERT=a
+"""
 
 server.port        = 8050
 server.serverDir   = '/data/dqm/relval/gui'
