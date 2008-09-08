@@ -62,4 +62,7 @@ process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
-
+process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
+process.rpcEventSummary.RPCPrefixDir = 'RPC/RecHits'
+process.rpcEventSummary.RPCPrefixDir = 'RPC/RecHits'
+process.rpcEventSummary.PrescaleFactor = 10
