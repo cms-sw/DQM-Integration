@@ -10,7 +10,7 @@ shifthcallayout(dqmitems, "HCAL Unsuppressed Channels",
            { 'path': "Hcal/DigiMonitor/Digi Depth 4 Occupancy Map",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
-hcallayout(dqmitems, "Raw HCAL Pedestals",
+shifthcallayout(dqmitems, "Raw HCAL Pedestals",
           [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth1",
                    'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth2",
