@@ -11,7 +11,7 @@ hcallayout(dqmitems, "HCAL Unsuppressed Channels",
                    'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
            )
 
-hcallayout(dqmitems, "Raw HCAL Pedestals",
+hcallayout(dqmitems, "HCAL Pedestals",
           [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth1",
                    'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth2",
