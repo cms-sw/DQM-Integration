@@ -3,9 +3,12 @@ server.workspace('DQMSummary', 1, 'Summaries', 'Reports')
 server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 
 server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
-                 'Pixel/Layouts/Pixel_RawData_Toplevel_Summary',
-                 'Pixel/Layouts/Pixel_Digi_Toplevel_Summary',
-                 'Pixel/Layouts/Pixel_PIB_Summary')
+                 'Pixel/Layouts/00 - Pixel_RawData_FED_Summary',
+                 'Pixel/Layouts/01 - Pixel_RawData_Barrel_Summary',
+                 'Pixel/Layouts/02 - Pixel_RawData_Endcap_Summary',
+                 'Pixel/Layouts/03 - Pixel_Digi_Occupancy',
+                 'Pixel/Layouts/04 - Pixel_Digi_Barrel_Summary',
+                 'Pixel/Layouts/04 - Pixel_Digi_Endcap_Summary')
 
 server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
                  'SiStrip/Layouts/00 - Tracks',
