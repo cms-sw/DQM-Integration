@@ -8,7 +8,7 @@ server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/02 - Pixel_RawData_Endcap_Summary',
                  'Pixel/Layouts/03 - Pixel_Digi_Occupancy',
                  'Pixel/Layouts/04 - Pixel_Digi_Barrel_Summary',
-                 'Pixel/Layouts/04 - Pixel_Digi_Endcap_Summary')
+                 'Pixel/Layouts/05 - Pixel_Digi_Endcap_Summary')
 
 server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
                  'SiStrip/Layouts/00 - Tracks',
