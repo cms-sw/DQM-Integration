@@ -201,6 +201,16 @@ hlxlayout(dqmitems, "HLX-Luminosity",
 hlxlayout(dqmitems, "HLX-Occupancy-Check-Sums",
   ["HLX/CheckSums/SumAllOccSet1","HLX/CheckSums/SumAllOccSet2"])
 
+hlxlayout(dqmitems, "HLX-History-Plots",
+          ["HLX/History/HistAvgEtSumHFP","HLX/History/HistAvgEtSumHFM"],
+          ["HLX/History/HistAvgOccBelowSet1HFP","HLX/History/HistAvgOccBelowSet1HFM"],
+          ["HLX/History/HistAvgOccBetweenSet1HFP","HLX/History/HistAvgOccBetweenSet1HFM"],
+          ["HLX/History/HistAvgOccAboveSet1HFP","HLX/History/HistAvgOccAboveSet1HFM"],
+          ["HLX/History/HistAvgOccBelowSet2HFP","HLX/History/HistAvgOccBelowSet2HFM"],
+          ["HLX/History/HistAvgOccBetweenSet2HFP","HLX/History/HistAvgOccBetweenSet2HFM"],
+          ["HLX/History/HistAvgOccAboveSet2HFP","HLX/History/HistAvgOccAboveSet2HFM"],
+          ["HLX/History/HistLumiEtSum","HLX/History/HistLumiOccSet1","HLX/History/HistLumiOccSet2"])
+
 
 
 

@@ -49,6 +49,14 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
                  'EcalEndcap/Layouts/00-Summary/07-Trigger-Summary',
                  'EcalEndcap/Layouts/00-Summary/08-StatusFlags-Summary')
 
+server.workspace('DQMContent', 20, 'Luminosity', 'HLX', '^HLX',
+                 'HLX/Layouts/HF-Comparison',
+                 'HLX/Layouts/HLX-Averages',
+                 'HLX/Layouts/HLX-Luminosity',
+                 'HLX/Layouts/HLX-Occupancy-Check-Sums',
+                 'HLX/Layouts/HLX-EtSumAndLumi-History-Plots')
+
+
 server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Pedestals',
                  'Hcal/Layouts/HCAL Unsuppressed Channels',
