@@ -7,15 +7,7 @@ LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("csc", "dt", "eb", "ee", "hcal", "hlt", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
 
 modules = ("GuiDQM", "GuiEventDisplay")
-envsetup = """
- source /home/dqm/rpms/cmsset_default.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/cms/webtools/1.3.0/etc/profile.d/dependencies-setup.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/external/py2-pil/1.1.6/etc/profile.d/init.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/external/libpng/1.2.10/etc/profile.d/init.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/external/libjpg/6b/etc/profile.d/init.sh
- source /home/dqm/rpms/slc4_ia32_gcc345/external/libtiff/3.8.2/etc/profile.d/init.sh
- export QUIET_ASSERT=a
-"""
+envsetup = "export QUIET_ASSERT=a"
 
 server.serverDir   = '/home/dqm/gui'
 server.baseUrl     = '/dqm/online-test'
