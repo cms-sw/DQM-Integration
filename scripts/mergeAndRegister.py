@@ -4,44 +4,66 @@ import os,time,sys,shutil
 from sets import Set
 from datetime import datetime
 
-def fileunreg(db,bakdb,tmpdb,cmsdb,file,logfile):
+from ROOT import TFile
+
+def filecheck(rootfile):
+    f = TFile(rootfile)
+    if (f.IsZombie()):
+        #print "File corrupted"
+        f.Close()
+        return 0
+    else:
+        hist = f.FindObjectAny("reportSummaryContents")
+        if (hist == None):
+            #print "File is incomplete"
+            f.Close()
+            return 0
+        else:
+            #print "File is OK"
+            f.Close()
+            return 1
+        
+
+def fileunreg(db,bakdb,tmpdb,file,logfile):
     server = 'srv-c2d05-19'
     newdb = db[:-3]+'-new.db'
-    t = datetime.now()
-    tstamp = t.strftime("%Y%m%d_%H%M%S")
-    bakdb = bakdb+'.'+tstamp
-    logfile.write(os.popen('scp '+server+ ':'+db+' '+bakdb).read())
     if os.path.exists(tmpdb): os.remove(tmpdb)
-    logfile.write(os.popen('scp '+server+ ':'+db+' '+tmpdb).read())
+    #logfile.write(os.popen('scp -Cpc blowfish '+server+ ':'+db+' '+tmpdb).read())
+    cmsdb = os.popen('ls -rt ' + bakdb + '* | tail -1').read().strip()
+    shutil.copy(cmsdb,tmpdb)
     logfile.write('*** File UnRegister ***\n')
     logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + file).read())
-    logfile.write(os.popen('scp '+tmpdb+' '+server+':'+newdb).read())
-    os.rename(tmpdb,cmsdb)
+    logfile.write(os.popen('scp -Cpc blowfish '+tmpdb+' '+server+':'+newdb).read())
     logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
-
-def filereg(db,bakdb,tmpdb,cmsdb,file,logfile):
-    server = 'srv-c2d05-19'
-    newdb = db[:-3]+'-new.db'
     t = datetime.now()
     tstamp = t.strftime("%Y%m%d_%H%M%S")
     bakdb = bakdb+'.'+tstamp
-    logfile.write(os.popen('scp '+server+ ':'+db+' '+bakdb).read())
+    os.rename(tmpdb,bakdb)
+
+def filereg(db,bakdb,tmpdb,file,logfile):
+    server = 'srv-c2d05-19'
+    newdb = db[:-3]+'-new.db'
     if os.path.exists(tmpdb): os.remove(tmpdb)
-    logfile.write(os.popen('scp '+server+ ':'+db+' '+tmpdb).read())
+    #logfile.write(os.popen('scp -Cpc blowfish '+server+ ':'+db+' '+tmpdb).read())
+    cmsdb = os.popen('ls -rt ' + bakdb + '* | tail -1').read().strip()
+    shutil.copy(cmsdb,tmpdb)
     logfile.write('*** File Register ***\n')
     logfile.write(os.popen('visDQMRegisterFile '+ tmpdb +' "/Global/Online/ALL" "Global run" '+ file).read())
-    logfile.write(os.popen('scp '+tmpdb+' '+server+':'+newdb).read())
-    os.rename(tmpdb,cmsdb)
+    logfile.write(os.popen('scp -Cpc blowfish '+tmpdb+' '+server+':'+newdb).read())
     logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
+    t = datetime.now()
+    tstamp = t.strftime("%Y%m%d_%H%M%S")
+    bakdb = bakdb+'.'+tstamp
+    os.rename(tmpdb,bakdb)
 
 
-CMSMON = 'srv-c2c06-02' # machine to which merged file is transfered
+#CMSMON = 'srv-c2c06-02' # machine to which merged file is transfered
+CMSMON = 'srv-c2d17-02' # machine to which merged file is transfered (2008-07-29)
 
 DIR = '/cms/mon/data/dropbox'  # directory to search new files
 DB = '/home/dqm/dqm.db' #master db
 BAKDB = '/cms/mon/data/dqm/filereg/backups/dqm.db' #bakcup db (timestamp will be attatched)
 TMPDB = '/cms/mon/data/dropbox/dqm-tmp.db' # temporal db
-CMSDB = '/cms/mon/data/dqm/filereg/dqm.db' # master db on CMSMON
 FILEDIR = '/cms/mon/data/dqm/results' # directory, to which merged file is stored
 TMPDIR = '/cms/mon/data/.dropbox_tmp' # directory, in which merged file is created
 TimeTag = '/cms/mon/data/dropbox/timetag' #file for time tag for searching new file
@@ -52,7 +74,6 @@ LOGDIR = '/cms/mon/data/dqm/filereg/log'
 #DB = '/home/dqm/dqm.db' #master db
 #BAKDB = '/cms/mon/data/dqm/filereg_test/backups/dqm.db' #bakcup db (timestamp will be attatched)
 #TMPDB = '/cms/mon/data/dropbox_test/dqm-tmp.db' # temporal db
-#CMSDB = '/cms/mon/data/dqm/filereg_test/dqm.db' # master db on CMSMON
 #FILEDIR = '/cms/mon/data/dqm/results_test' # directory, to which merged file is stored
 #TMPDIR = '/cms/mon/data/.dropbox_tmp' # directory, in which merged file is created
 #TimeTag = '/cms/mon/data/dropbox_test/timetag' #file for time tag for searching new file
@@ -68,8 +89,9 @@ if not os.path.exists(TimeTag):
 
 
 #### search new files
-NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TimeTag +' | grep -v DQM_SiStrip | grep -v DQM_Reference').read().split()
-#NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TimeTag).read().split()
+NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TimeTag +' | grep -v DQM_Reference').read().split()
+#NEW_ = os.popen('find '+ DIR +'/ -type f -name "DQM_*_R?????????.root" -newer '+ TimeTag +' | grep -v DQM_SiStrip | grep -v DQM_Reference').read().split()
+
 if len(NEW_)==0:
     print 'Have not found new files...'
     os._exit(99)
@@ -83,10 +105,14 @@ print 'Found '+str(len(NEW_))+' new file(s).'
 #### sort new files by run number
 pairs = []
 for fname in NEW_:
-    run = fname[-14:-5] #run number of new file
-    pairs.append((run,fname))
+    if filecheck(fname) == 0:
+        print fname +' is incomplete. This file would not be merged.'
+    else:
+        run = fname[-14:-5] #run number of new file
+        pairs.append((run,fname))
 pairs.sort()
-    
+
+
 #### extract uniq runs
 Runs = []
 for pair in pairs:
@@ -157,7 +183,7 @@ for run in UniqRuns:
         LOGFILE.write(os.popen('visDQMMergeFile '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
         if os.path.exists(TMP_MERGED):
             print 'moving merged file to the master directory'
-            os.popen('scp '+TMP_MERGED+' '+CMSMON+':'+MERGED)
+            os.popen('scp -Cpc blowfish '+TMP_MERGED+' '+CMSMON+':'+MERGED)
             os.remove(TMP_MERGED)
             os.remove(TMP_OLD_MERGED)
         else:
@@ -172,12 +198,12 @@ for run in UniqRuns:
         tag = 1
         while tag:
             if os.path.exists(MERGED):
-                fileunreg(DB,BAKDB,TMPDB,CMSDB,OLD_MERGED,LOGFILE)
+                fileunreg(DB,BAKDB,TMPDB,OLD_MERGED,LOGFILE)
                 os.remove(OLD_MERGED)
                 print 'Start file registering : '+MERGED
-                filereg(DB,BAKDB,TMPDB,CMSDB,MERGED,LOGFILE) #file registration
+                filereg(DB,BAKDB,TMPDB,MERGED,LOGFILE) #file registration
                 LOGFILE.close()
-                os.system('scp '+TMP_LOG+ ' '+CMSMON+':'+LOG)
+                os.system('scp -Cpc blowfish '+TMP_LOG+ ' '+CMSMON+':'+LOG)
                 os.remove(OLD_LOG)
                 os.remove(TMP_LOG)
                 print MERGED + ' is registerd'
@@ -202,7 +228,7 @@ for run in UniqRuns:
 
         if os.path.exists(TMP_MERGED):
             print 'moving merged file to the master directory'
-            os.system('scp '+TMP_MERGED+' '+CMSMON+':'+MERGED)
+            os.system('scp -Cpc blowfish '+TMP_MERGED+' '+CMSMON+':'+MERGED)
             os.remove(TMP_MERGED)
         else:
             LOGFILE.write('Failed merging files for run '+run)
@@ -216,9 +242,9 @@ for run in UniqRuns:
         while tag:
             if os.path.exists(MERGED):
                 print 'Start file registering : '+MERGED
-                filereg(DB,BAKDB,TMPDB,CMSDB,MERGED,LOGFILE) #file registration
+                filereg(DB,BAKDB,TMPDB,MERGED,LOGFILE) #file registration
                 LOGFILE.close()
-                os.system('scp '+TMP_LOG+ ' '+CMSMON+':'+LOG)
+                os.system('scp -Cpc blowfish '+TMP_LOG+ ' '+CMSMON+':'+LOG)
                 os.remove(TMP_LOG)
                 print MERGED + ' is registerd'
                 tag = 0
