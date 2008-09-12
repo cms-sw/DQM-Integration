@@ -23,20 +23,26 @@ def filecheck(rootfile):
 
 
 def copy2dropbox(org,tmp,final):
-	server = 'srv-c2c06-02' #machine to which files are transfered
-	file_stats = os.stat(org)
-	t1 = time.localtime(file_stats[stat.ST_CTIME])[0:5]
-	t2 = time.localtime()[0:5]
-	while t1 == t2:
-		print t1, t2
-		print 'waiting for file creation is completed...'
-		time.sleep(60)
-		t2 = time.localtime()[0:5]
+	#server = 'srv-c2c06-02' #machine to which files are transfered
+	server = 'srv-c2d17-02' #machine to which files are transfered (2008-07-29)
+	#file_stats = os.stat(org)
+	#t1 = time.localtime(file_stats[stat.ST_CTIME])[0:5]
+	#t2 = time.localtime()[0:5]
+	#while t1 == t2:
+		#print t1, t2
+		#print 'waiting for file creation is completed...'
+		#time.sleep(60)
+		#t2 = time.localtime()[0:5]
 	### copy files to stealth area on cmsmon and move to final area
 	os.popen('scp '+org+' '+server+':'+tmp).read()
 	os.popen('ssh '+server+' -t mv '+tmp+' '+final).read()
+
 		
-						    
+def convert(infile, ofile):
+	exedir = '/cms/mon/data/dqm/filereg'
+	cmd = exedir + '/convert.sh ' + infile + ' ' +ofile
+	os.system(cmd)
+
 
 DIR = '/home/dqmprolocal/output'  #directory to search new files
 TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
@@ -45,7 +51,7 @@ TimeTag = '/home/dqmprolocal/output/timetag' #file for time tag for searching ne
 
 ### Fore test and development
 #DIR = '/cms/mon/data/dqm/filereg_test/output'  #directory to search new files
-#TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
+#TMPDIR = '/cms/mon/data/dqm/filereg_test/output-tmp' # stealth area on cmsmon
 #FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which files are stored
 #TimeTag = DIR+'/timetag' #file for time tag for searching new file
 
@@ -91,7 +97,10 @@ while 1:
 		
     #### extract new files & copy to dropbox
     for run in UniqRuns:#loop for runs
+	    subfiles = []
 	    subfiles = glob.glob(DIR + '/DQM_*_R????' + run + '_T*.root')
+	    playbacks = glob.glob(DIR + '/Playback*SiStrip_R????' + run + '_T*.root')
+	    subfiles = subfiles + playbacks
 
 	    ## extract head of file name (ex.'/home/dqmprolocal/output/DQM_SiStrip')
 	    fheads = []
@@ -115,6 +124,13 @@ while 1:
 				    print fname_T +' is incomplete'
 			    else:
 				    print fname_T +' is OK'
+				    ### For SiStrip files
+				    if fname_T.rfind('Playback') != -1:
+					    dqmfile = fname_T.replace('Playback','DQM')
+					    convert(fname_T,dqmfile)
+					    fname_T = dqmfile
+					    fname = fname.replace('Playback','DQM')
+					    
 				    tmpfile = fname.replace(fname[:fname.find('/DQM_')],TMPDIR)
 				    file = fname.replace(fname[:fname.find('/DQM_')],FILEDIR)
 				    copy2dropbox(fname_T,tmpfile,file)
