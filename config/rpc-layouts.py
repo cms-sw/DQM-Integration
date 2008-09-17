@@ -5,6 +5,9 @@ def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
 rpclayout(dqmitems, "RPC_BarrelOccupancy",
           [{ 'path': "RPC/RecHits/SummaryHistograms/BarrelOccupancy", 'description': "RPC BarrelOccupancy Summary view  >>> <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC>Description</a>" }])
 
+rpclayout(dqmitems, "RPC_EndCapOccupancy",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/EndcapOccupancy", 'description': "RPC BarrelOccupancy Summary view  >>> <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC>Description</a>" }])
+
 
 rpclayout(dqmitems, "RPC_Summary",
    [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfClusters_for_Barrel", 'description': "NumberOfClusters_for_Barrel >>> <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC> Description</a>"},
