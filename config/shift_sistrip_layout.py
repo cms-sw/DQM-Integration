@@ -1,22 +1,22 @@
-def sistriplayout(i, p, *rows): i["00 Shift/SiStrip/" + p] = DQMItem(layout=rows)
+def shiftsistriplayout(i, p, *rows): i["00 Shift/SiStrip/" + p] = DQMItem(layout=rows)
 
-sistriplayout(dqmitems, "00 RawDataMonitoringSummary",
+shiftsistriplayout(dqmitems, "00 RawDataMonitoringSummary",
   [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedCorruptBuffer",
      'description': '# of Corrupted Buffers vs FED ID'}],
   [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedGenericErrors",
      'description': 'Total numbers of errors vs FED ID'}])
-sistriplayout(dqmitems, "01 Tracks",
+shiftsistriplayout(dqmitems, "01 Tracks",
   [{ 'path': "SiStrip/Tracks/NumberOfTracks_CKFTk",
-     'description': ' Number of Reconstructed Tracks by CKF'}],
+     'description': "Number of Reconstructed Tracks by CKF - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
   [{ 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CKFTk",
-     'description': ' Number of RecHits per Track by CKF'}])
-sistriplayout(dqmitems, "02 OnTrackCluster",
+'description': "Number of RecHits per Track by CKF  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
+shiftsistriplayout(dqmitems, "02 OnTrackCluster",
   [{ 'path': "SiStrip/MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack_in_TIB",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TIB'},
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TIB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/MechanicalView/TOB/Summary_ClusterStoNCorr_OnTrack_in_TOB",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TOB'}],
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TOB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" } }],
   [{ 'path': "SiStrip/MechanicalView/TID/Summary_ClusterStoNCorr_OnTrack_in_TID",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TID'},
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/MechanicalView/TEC/Summary_ClusterStoNCorr_OnTrack_in_TEC",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TEC'}])
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
 
