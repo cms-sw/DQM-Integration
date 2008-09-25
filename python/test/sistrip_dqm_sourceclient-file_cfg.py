@@ -77,10 +77,11 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 
 process.SiStripClient = cms.EDFilter("SiStripAnalyser",
-    StaticUpdateFrequency = cms.untracked.int32(-1),
-    TkMapCreationFrequency = cms.untracked.int32(-1),
+    StaticUpdateFrequency    = cms.untracked.int32(-1),
+    TkMapCreationFrequency   = cms.untracked.int32(-1),
     SummaryCreationFrequency = cms.untracked.int32(1),
-    GlobalStatusFilling = cms.untracked.bool(True),                                     
+    GlobalStatusFilling      = cms.untracked.bool(True),
+    RawDataTag               = cms.untracked.InputTag("source"),                                     
     TkmapParameters = cms.PSet(
         loadFedCabling = cms.untracked.bool(True),
         trackerdatPath = cms.untracked.string('CommonTools/TrackerMap/data/'),
