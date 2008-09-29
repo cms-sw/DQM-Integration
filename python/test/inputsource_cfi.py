@@ -5,7 +5,7 @@ maxEvents = cms.untracked.PSet(
 )
 source = cms.Source("EventStreamHttpReader",
     sourceURL = cms.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),
-#    sourceURL = cms.string('http://srv-c2c05-27:50082/urn:xdaq-application:lid=29'),
+#    sourceURL = cms.string('http://srv-c2d05-05:50082/urn:xdaq-application:lid=29'),
     consumerPriority = cms.untracked.string('normal'),
     max_event_size = cms.int32(7000000),
     consumerName = cms.untracked.string('DQM Source'),
