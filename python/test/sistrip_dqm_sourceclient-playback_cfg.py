@@ -35,10 +35,12 @@ process.dqmEnv.subSystemFolder    = "SiStrip"
 #-----------------------------
 # Magnetic Field
 #-----------------------------
-process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
-# if 3.8T field is ON please comment above and un-comment following
+# 0T field
+process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+# 3.8T field
 #process.load("Configuration.StandardSequences.MagneticField_38T_cff")
-#process.prefer("VolumeBasedMagneticFieldESProducer")
+process.prefer("VolumeBasedMagneticFieldESProducer")
+
 
 #-------------------------------------------------
 # GEOMETRY
