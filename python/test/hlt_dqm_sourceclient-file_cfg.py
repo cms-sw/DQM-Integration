@@ -14,26 +14,25 @@ process.maxEvents = cms.untracked.PSet(
 process.source = cms.Source("PoolSource",
     debugVerbosity = cms.untracked.uint32(1),
     debugVebosity = cms.untracked.bool(True),
-    fileNames = cms.untracked.vstring('/store/data/Commissioning08/HLTDebug/RAW/CRUZET4_v1/000/058/042/0ECC6BE3-5F6F-DD11-A328-0019DB29C614.root')
+    fileNames = cms.untracked.vstring(
+    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
+    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
+    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
+    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root'
+    )
 )
 #process.source = cms.Source("NewEventStreamFileReader",
-#    fileNames = cms.untracked.vstring('file:/data1/lookarea/GlobalAug07.00017220.0001.A.storageManager.0.0000.dat')
+#    fileNames = cms.untracked.vstring('file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root')
 #)
 
-process.tsumm = cms.EDAnalyzer("TriggerSummaryAnalyzerAOD")
-process.tsumm.inputTag = cms.InputTag("hltTriggerSummaryAOD","","HLT")
 
-process.hltrep = cms.EDAnalyzer("HLTrigReport")
-process.hltrep.HLTriggerResults = cms.InputTag("TriggerResults","","HLT")
-process.ptsum = cms.Path(process.tsumm+process.hltrep)
-
-process.p = cms.EndPath(process.hlts+process.hltsClient)
+#process.p = cms.EndPath(process.hlts+process.hltsClient)
 
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.DQMStore.verbose = 0
-process.DQM.collectorHost = 'srv-c2d05-16'
-process.DQM.collectorPort = 9090
+process.DQM.collectorHost = 'srv-c2d05-12'
+process.DQM.collectorPort = 9190
 process.dqmSaver.dirName = '.'
 process.dqmSaver.producer = 'Playback'
 process.hltResults.plotAll = True
