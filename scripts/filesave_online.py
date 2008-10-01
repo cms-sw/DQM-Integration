@@ -2,29 +2,36 @@
 
 import os,time,sys,shutil,stat,glob
 from sets import Set
-from ROOT import TFile
+
+#set environments
+exedir = '/home/dqmprolocal/filecopy' # directory to execute the relevant scripts
+DIR = '/home/dqmprolocal/output'  #directory to search new files
+TMPDIR = '/data/dqm/.dropbox_tmp' # stealth area on cmsmon
+FILEDIR = '/data/dqm/dropbox' # directory, to which files are stored
+TimeTag = '/home/dqmprolocal/output/timetag' #file for time tag for searching new file
+server = 'srv-c2d05-19' #machine to which files are transfered
+
 
 def filecheck(rootfile):
-	f = TFile(rootfile)
-	if (f.IsZombie()):
-		#print "File corrupted"
-		f.Close()
+	cmd = exedir + '/filechk.sh ' + rootfile
+	a = os.popen(cmd).read().split()
+	tag = a.pop()
+	
+	if tag == '(int)(-1)':
+		print "File corrupted"
 		return 0
+	elif tag == '(int)0':
+		print "File is incomplete"
+		return 0
+	elif tag == '(int)1':
+		print "File is OK"
+		return 1
 	else:
-		hist = f.FindObjectAny("reportSummaryContents")
-		if (hist == None):
-			#print "File is incomplete"
-			f.Close()
-			return 0
-		else:
-			#print "File is OK"
-			f.Close()
-			return 1
-
+		return 0
+	
 
 def copy2dropbox(org,tmp,final):
-	#server = 'srv-c2c06-02' #machine to which files are transfered
-	server = 'srv-c2d17-02' #machine to which files are transfered (2008-07-29)
+        #server = 'srv-c2d05-19' #machine to which files are transfered (2008-07-29)
 	#file_stats = os.stat(org)
 	#t1 = time.localtime(file_stats[stat.ST_CTIME])[0:5]
 	#t2 = time.localtime()[0:5]
@@ -34,26 +41,15 @@ def copy2dropbox(org,tmp,final):
 		#time.sleep(60)
 		#t2 = time.localtime()[0:5]
 	### copy files to stealth area on cmsmon and move to final area
-	os.popen('scp '+org+' '+server+':'+tmp).read()
+	#os.popen('scp -Cpc blowfish '+org+' '+server+':'+tmp).read()
+        os.popen('scp '+org+' '+server+':'+tmp).read()
 	os.popen('ssh '+server+' -t mv '+tmp+' '+final).read()
 
 		
 def convert(infile, ofile):
-	exedir = '/cms/mon/data/dqm/filereg'
 	cmd = exedir + '/convert.sh ' + infile + ' ' +ofile
 	os.system(cmd)
 
-
-DIR = '/home/dqmprolocal/output'  #directory to search new files
-TMPDIR = '/cms/mon/data/.dropbox_tmp' # stealth area on cmsmon
-FILEDIR = '/cms/mon/data/dropbox' # directory, to which files are stored
-TimeTag = '/home/dqmprolocal/output/timetag' #file for time tag for searching new file
-
-### Fore test and development
-#DIR = '/cms/mon/data/dqm/filereg_test/output'  #directory to search new files
-#TMPDIR = '/cms/mon/data/dqm/filereg_test/output-tmp' # stealth area on cmsmon
-#FILEDIR = '/cms/mon/data/dropbox_test' # directory, to which files are stored
-#TimeTag = DIR+'/timetag' #file for time tag for searching new file
 
 WAITTIME = 120 # waiting time for new files (sec)
 
@@ -128,14 +124,17 @@ while 1:
 				    if fname_T.rfind('Playback') != -1:
 					    dqmfile = fname_T.replace('Playback','DQM')
 					    convert(fname_T,dqmfile)
+					    #os.remove(fname_T)
 					    fname_T = dqmfile
 					    fname = fname.replace('Playback','DQM')
 					    
 				    tmpfile = fname.replace(fname[:fname.find('/DQM_')],TMPDIR)
 				    file = fname.replace(fname[:fname.find('/DQM_')],FILEDIR)
 				    copy2dropbox(fname_T,tmpfile,file)
-				    #if not fname_T == fname:
-					    #shutil.copy2(fname_T,fname)
+				    if not fname_T == fname:
+					    os.rename(fname_T,fname)
+					    for j in numbers:
+						    if not (j==i or j==(i-1)): os.remove(fname_Ts[j])
 				    break								    
 
     shutil.copy2(TempTag,TimeTag)
