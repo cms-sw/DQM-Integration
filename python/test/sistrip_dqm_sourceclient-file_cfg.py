@@ -15,7 +15,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 # Event Source
 #-----------------------------
 process.source = cms.Source("PoolSource",
-     fileNames = cms.untracked.vstring('file:/home/dqmdevlocal/input/02D59D05-4151-DD11-9E79-001617DBD5AC.root')
+     fileNames = cms.untracked.vstring('file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root')
 )
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(50))
 
@@ -53,7 +53,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRUZET4_V4H::All"
+process.GlobalTag.globaltag = "CRZTOH_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
