@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o nounset
 
-exedir='/nfshome0/cmsmon/dqm/filereg'
+#WorkDir='/home/dqmprolocal/filecopy' #comment out because it is defined in alivecheck_filesave.sh
 
 [ $# -gt 1 ] || { echo Usage: $(basename $0) inputFile outputFile; exit 1; }
 inputFile=$1
@@ -24,5 +24,5 @@ echo $inputFile | grep 'Playback' > /dev/null
 #eval $(scramv1 runtime -sh)
 #cd -
 
-root -l -b -q $exedir/sistrip_reduce_file.C++"(\"$inputFile\", \"$outputFile\")"
+root -l -b -q $WorkDir/sistrip_reduce_file.C++"(\"$inputFile\", \"$outputFile\")"
 exit 0
