@@ -10,6 +10,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
+process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'

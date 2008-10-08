@@ -11,6 +11,7 @@ process.load("DQM.Integration.test.environment_playback_cfi")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/hlt_reference.root'
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
+process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'

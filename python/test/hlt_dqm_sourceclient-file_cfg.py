@@ -4,6 +4,8 @@ process = cms.Process("DQM")
 process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
+process.load("DQM.HLTEvF.HLTMonitorClient_cff")
+
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -11,18 +13,28 @@ process.maxEvents = cms.untracked.PSet(
 #    input = cms.untracked.int32(100)
     input = cms.untracked.int32(-1)
 )
+
 process.source = cms.Source("PoolSource",
     debugVerbosity = cms.untracked.uint32(1),
     debugVebosity = cms.untracked.bool(True),
     fileNames = cms.untracked.vstring(
-    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
-    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
-    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root',
-    'file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root'
+    'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
+    #'file:/tmp/wteo/068C4FCE-F485-DD11-AF6A-001617E30D38.root'
+    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
+    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
+    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
+    'file:/tmp/wteo/52BAB7DF-0487-DD11-95A3-000423D9989E.root'
+    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root'
     )
 )
+
+
 #process.source = cms.Source("NewEventStreamFileReader",
 #    fileNames = cms.untracked.vstring('file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root')
+#   fileNames = cms.untracked.vstring(
+#        'file:/cmsdisk1/lookarea_SM/GlobalMW40.00064245.0001.HLTDEBUG.storageManager.01.0000.dat',
+#        'file:/cmsdisk1/lookarea_SM/GlobalMW40.00064210.0001.HLTDEBUG.storageManager.03.0000.dat'
+#  )
 #)
 
 
