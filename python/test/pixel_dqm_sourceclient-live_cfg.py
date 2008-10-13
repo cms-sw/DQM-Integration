@@ -36,7 +36,12 @@ process.dqmEnv.subSystemFolder    = "Pixel"
 #-----------------------------
 # Magnetic Field
 #-----------------------------
-process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
+# 0T field
+#process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
+#process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+# 3.8T field
+process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+#process.prefer("VolumeBasedMagneticFieldESProducer")
 
 #-------------------------------------------------
 # GEOMETRY
@@ -51,7 +56,8 @@ process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 #process.GlobalTag.globaltag = "CRZT210_V1C::All"
 #process.GlobalTag.globaltag = "CRZT210_V3H::All"
-process.GlobalTag.globaltag = "CRUZET4_V5H::All"
+#process.GlobalTag.globaltag = "CRUZET4_V5H::All"
+process.GlobalTag.globaltag = "CRAFT_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #If Frontier is used in xdaq environment use the following service
@@ -85,6 +91,10 @@ process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
     EventOffsetForInit = cms.untracked.int32(10),
     ActionOnLumiSection = cms.untracked.bool(True),
     ActionOnRunEnd = cms.untracked.bool(True)
+    HighResolutionOccupancy = cms.untracked.bool(False),
+    NoiseRateCutValue = cms.untracked.double(-1.), #negative value means test is not run; default cut value is 0.001
+    NEventsForNoiseCalculation = cms.untracked.int32(100),
+    UseOfflineXMLFile = cms.untracked.bool(False)
 )
 
 process.qTester = cms.EDFilter("QualityTester",
@@ -108,4 +118,4 @@ process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient)
+process.p = cms.Path(process.Reco*process.dqmEnv*process.qTester*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient*process.dqmSaver)
