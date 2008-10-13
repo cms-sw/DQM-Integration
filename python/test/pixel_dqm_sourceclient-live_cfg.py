@@ -37,10 +37,10 @@ process.dqmEnv.subSystemFolder    = "Pixel"
 # Magnetic Field
 #-----------------------------
 # 0T field
-#process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
+process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
 #process.load("Configuration.StandardSequences.MagneticField_0T_cff")
 # 3.8T field
-process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 #process.prefer("VolumeBasedMagneticFieldESProducer")
 
 #-------------------------------------------------
@@ -90,7 +90,7 @@ process.SiPixelClusterSource.reducedSet = True
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
     EventOffsetForInit = cms.untracked.int32(10),
     ActionOnLumiSection = cms.untracked.bool(True),
-    ActionOnRunEnd = cms.untracked.bool(True)
+    ActionOnRunEnd = cms.untracked.bool(True),
     HighResolutionOccupancy = cms.untracked.bool(False),
     NoiseRateCutValue = cms.untracked.double(-1.), #negative value means test is not run; default cut value is 0.001
     NEventsForNoiseCalculation = cms.untracked.int32(100),
