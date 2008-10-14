@@ -6,7 +6,7 @@ process = cms.Process("EvFDQM")
 #### Event Source
 #----------------------------
 process.load("DQM.Integration.test.inputsource_playback_cfi")
-process.EventStreamHttpReader.consumerName = 'EvF DQM Consumer'
+process.EventStreamHttpReader.consumerName = 'FED DQM Consumer'
 
 
 #----------------------------

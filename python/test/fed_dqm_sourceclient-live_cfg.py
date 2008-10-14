@@ -6,7 +6,7 @@ process = cms.Process("EvFDQM")
 #### Event Source
 #----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'EvF DQM Consumer'
+process.EventStreamHttpReader.consumerName = 'FED DQM Consumer'
 
 
 #----------------------------
@@ -20,7 +20,7 @@ process.load("DQMServices.Core.DQM_cfg")
 #### DQM Live Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
-#process.dqmEnv.subSystemFolder = 'DT'
+process.dqmEnv.subSystemFolder = 'FED'
 #-----------------------------
 
 
