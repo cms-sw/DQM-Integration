@@ -156,9 +156,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnv*process.ecalEndcapMonitorClient*process.dqmQTestEE)
 
-#process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
-process.load("DQM.EcalEndcapMonitorTasks.EEHltTask_cfi")
-process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask*process.ecalEndcapHltTask)
+process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
 process.q = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
