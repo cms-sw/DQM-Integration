@@ -45,8 +45,7 @@ process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 
 # ECAL DQM sequences
 import DQM.EcalBarrelMonitorTasks.EBHltTask_cfi
-process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.cl
-one()
+process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.clone()
 import DQM.EcalEndcapMonitorTasks.EEHltTask_cfi
 process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.clone()
 
