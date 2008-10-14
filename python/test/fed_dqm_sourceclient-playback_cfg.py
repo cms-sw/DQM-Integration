@@ -43,9 +43,12 @@ process.GlobalTag.globaltag = "CRAFT_V1H::All"
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 
+# ECAL DQM sequences
+process.load("DQM.EcalBarrelMonitorTasks.EBHltTask_cfi")
+process.load("DQM.EcalEndcapMonitorTasks.EEHltTask_cfi")
 
 # DQM Modules
-process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
+process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver + process.ecalBarrelHltTask + process.ecalEndcapHltTask)
 
 
 #-----------------------------
