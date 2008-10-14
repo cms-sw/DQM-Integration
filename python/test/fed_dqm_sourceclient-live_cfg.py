@@ -48,8 +48,7 @@ import DQM.EcalBarrelMonitorTasks.EBHltTask_cfi
 process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.cl
 one()
 import DQM.EcalEndcapMonitorTasks.EEHltTask_cfi
-process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.clo
-ne()
+process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.clone()
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
