@@ -6,7 +6,7 @@ process = cms.Process("DQM")
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring("GlobalRunCosmicsDQM")
+    SelectEvents = cms.vstring("*")
 )
     
 #----------------------------

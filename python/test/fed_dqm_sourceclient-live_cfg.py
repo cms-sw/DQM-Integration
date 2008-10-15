@@ -40,6 +40,8 @@ process.GlobalTag.globaltag = "CRAFT_V1H::All"
 #-----------------------------
 #### Sub-system configuration follows
 
+# CSC DQM sequence
+# process.load("DQM.CSCMonitorModule.test.csc_hlt_dqm_sourceclient_cfi")
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 

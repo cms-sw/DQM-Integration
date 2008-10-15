@@ -13,7 +13,7 @@ source = cms.Source("EventStreamHttpReader",
     max_queue_depth = cms.int32(5),
     maxEventRequestRate = cms.untracked.double(25.0),
     SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('*DQM')
+        SelectEvents = cms.vstring('*')
     ),
     headerRetryInterval = cms.untracked.int32(3)
 )

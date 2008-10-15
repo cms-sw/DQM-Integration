@@ -13,7 +13,7 @@ process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")
 #replace DQMStore.referenceFileName = "L1TEMU_reference.root"
 
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring("GlobalRunCosmicsDQM")
+    SelectEvents = cms.vstring("*")
 )
 process.EventStreamHttpReader.consumerName = 'L1TEMU DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1TEMU'
