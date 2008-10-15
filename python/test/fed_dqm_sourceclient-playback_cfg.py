@@ -44,6 +44,10 @@ process.GlobalTag.globaltag = "CRAFT_V1H::All"
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 
 # ECAL DQM sequences
+process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
+process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
+process.load("Geometry.EcalMapping.EcalMapping_cfi")
+process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 import DQM.EcalBarrelMonitorTasks.EBHltTask_cfi
 process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.clone()
 import DQM.EcalEndcapMonitorTasks.EEHltTask_cfi
@@ -55,6 +59,6 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules + process.dtDQMEvF + process.ebDQMEvF + process.eeDQMEvF)
+process.evfDQMPath = cms.Path(process.dqmmodules + process.dtDQMEvF + process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF)
 
 
