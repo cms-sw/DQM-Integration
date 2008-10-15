@@ -8,6 +8,8 @@ envsetup = """
   export QUIET_ASSERT=a
 """
 
+LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in ("eb", "ee", "sistrip")]
+
 server.port        = 8030
 server.serverDir   = '/data/dqm/tier-0/gui'
 server.baseUrl     = '/dqm/tier-0'
@@ -16,6 +18,7 @@ server.serviceName = 'CERN Tier-0'
 
 server.source('DQMArchive', 'file', '/data/dqm/tier-0/dqm.db', '--listen 8031')
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/tier-0/upload')
+server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")
