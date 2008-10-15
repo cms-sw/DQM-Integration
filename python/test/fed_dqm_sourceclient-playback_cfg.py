@@ -59,6 +59,6 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules + process.dtDQMEvF + process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF)
+process.evfDQMPath = cms.Path(process.dqmmodules + process.dtDQMEvF + process.ecalEBunpacker + process.ebDQMEvF + process.eeDQMEvF)
 
 
