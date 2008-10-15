@@ -40,9 +40,9 @@ process.dqmSaver.saveByMinute = 16
 # Magnetic Field
 #-----------------------------
 # 0T field
-process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+#process.load("Configuration.StandardSequences.MagneticField_0T_cff")
 # 3.8T field
-#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 process.prefer("VolumeBasedMagneticFieldESProducer")
 
 #-------------------------------------------------
