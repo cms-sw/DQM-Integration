@@ -40,6 +40,9 @@ process.GlobalTag.globaltag = "CRAFT_V1H::All"
 #-----------------------------
 #### Sub-system configuration follows
 
+# CSC DQM sequence
+process.load("DQM.CSCMonitorModule.test.csc_hlt_dqm_sourceclient_cfi")
+
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 
@@ -53,12 +56,18 @@ process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.cl
 import DQM.EcalEndcapMonitorTasks.EEHltTask_cfi
 process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.clone()
 
+# L1T DQM sequences 
+process.load("DQM.L1TMonitor.L1TFED_cfi")
+
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
-
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules + process.dtDQMEvF + process.ecalEBunpacker + process.ebDQMEvF + process.eeDQMEvF)
+process.evfDQMPath = cms.Path(process.dqmmodules + 
+                              process.cscDQMEvF + 
+			      process.dtDQMEvF + 
+			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
+			      process.l1tfed )
 
 
