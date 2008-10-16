@@ -18,13 +18,13 @@ def filecheck(rootfile):
 	tag = a.pop()
 	
 	if tag == '(int)(-1)':
-		print "File corrupted"
+		#print "File corrupted"
 		return 0
 	elif tag == '(int)0':
-		print "File is incomplete"
+		#print "File is incomplete"
 		return 0
 	elif tag == '(int)1':
-		print "File is OK"
+		#print "File is OK"
 		return 1
 	else:
 		return 0
@@ -44,6 +44,14 @@ def copy2dropbox(org,tmp,final):
 	#os.popen('scp -Cpc blowfish '+org+' '+server+':'+tmp).read()
         os.popen('scp '+org+' '+server+':'+tmp).read()
 	os.popen('ssh '+server+' -t mv '+tmp+' '+final).read()
+	a=os.popen('ssh '+server+' -t ls '+final).read().split()
+	# check if file tranfer is success
+	while len(a) != 1:
+		print 'File transfer failed. try again 2 min later ...'
+		time.sleep(120)
+		os.popen('scp '+org+' '+server+':'+tmp).read()
+		os.popen('ssh '+server+' -t mv '+tmp+' '+final).read()
+		a=os.popen('ssh '+server+' -t ls '+final).read().split()
 
 		
 def convert(infile, ofile):
@@ -138,4 +146,5 @@ while 1:
 				    break								    
 
     shutil.copy2(TempTag,TimeTag)
+    os.remove(TempTag)
     
