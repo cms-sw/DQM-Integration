@@ -2,7 +2,7 @@
 
 name=dqm_sourceclient-live
 
-for i in ee eb hcal sistrip pixel hlt l1t l1temulator rpc dt csc hlx ; do
+for i in fed ee eb hcal sistrip pixel hlt l1t l1temulator rpc dt csc hlx ; do
 cfgfile=$i\_$name.cfg
 pyfile=$i\_$name\_cfg.py
 echo "==================="
