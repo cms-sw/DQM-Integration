@@ -7,8 +7,19 @@ calibrationEventsFilter = cms.EDFilter("TriggerTypeFilter",
                                        InputLabel = cms.string('source'),
                                        TriggerFedId = cms.int32(812),
                                        # 1=Physics, 2=Calibration, 3=Random, 4=Technical
-                                       SelectedTriggerType = cms.int32(1) 
+                                       SelectedTriggerType = cms.int32(2) 
                                        )
+
+# filter on trigger type
+physicsEventsFilter = cms.EDFilter("TriggerTypeFilter",
+                                   InputLabel = cms.string('source'),
+                                   TriggerFedId = cms.int32(812),
+                                   # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+                                   SelectedTriggerType = cms.int32(1) 
+                                   )
+
+
+
 
 # DT digitization and reconstruction
 from EventFilter.DTTFRawToDigi.dttfunpacker_cfi import *
@@ -32,10 +43,12 @@ dtunpacker = cms.EDProducer("DTUnpackingModule",
     )
 )
 
+
 from Configuration.StandardSequences.Geometry_cff import *
 from RecoLocalMuon.Configuration.RecoLocalMuonCosmics_cff import *
 dt1DRecHits.dtDigiLabel = 'dtunpacker'
 #DTLinearDriftAlgo_CosmicData.recAlgoConfig.tTrigModeConfig.kFactor = -0.7
+DTLinearDriftAlgo_CosmicData.recAlgoConfig.hitResolution = 0.05
 
 
 from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
@@ -43,7 +56,7 @@ from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
 es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-GlobalTag.globaltag = "CRUZET4_V6H::All"
+GlobalTag.globaltag = "CRAFT_V2H::All"
 
 
 # Data integrity
@@ -83,9 +96,20 @@ dtqTester = cms.EDFilter("QualityTester",
                          )
 
 
-reco = cms.Sequence(dtunpacker + dttfunpacker + dt1DRecHits + dt4DSegments)
+# test pulse monitoring
+dtTPmonitor = dtDigiMonitor.clone()
+dtTPmonitor.testPulseMode = True
+
+dtTPmonitorTest = dtOccupancyTest.clone()
+dtTPmonitorTest.testPulseMode = True
+
+
+unpackers = cms.Sequence(dtunpacker + dttfunpacker)
+
+reco = cms.Sequence(dt1DRecHits + dt4DSegments)
 
 dtDQMTask = cms.Sequence(dtDigiMonitor + dtSegmentAnalysisMonitor + dtTriggerMonitor + dtNoiseMonitor + dtResolutionAnalysisMonitor)
 
 dtDQMTest = cms.Sequence( dataIntegrityTest + triggerTest + dtOccupancyTest + segmentTest + dtNoiseAnalysisMonitor + dtSummaryClients + dtqTester)
 
+dtDQMCalib = cms.Sequence(dtTPmonitor + dtTPmonitorTest)
