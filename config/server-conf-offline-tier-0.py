@@ -8,7 +8,7 @@ envsetup = """
   export QUIET_ASSERT=a
 """
 
-LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in ("eb", "ee", "l1t", "pixel", "sistrip")]
+LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in ("eb", "ee", "hcal", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
 
 server.port        = 8030
 server.serverDir   = '/data/dqm/tier-0/gui'
