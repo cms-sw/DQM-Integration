@@ -59,6 +59,20 @@ process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.cl
 # L1T DQM sequences 
 process.load("DQM.L1TMonitor.L1TFED_cfi")
 
+# Pixel DQM sequences
+process.load("Geometry.TrackerSimData.trackerSimGeometryXML_cfi")
+process.load("Geometry.TrackerGeometryBuilder.trackerGeometry_cfi")
+process.load("Geometry.TrackerNumberingBuilder.trackerNumberingGeometry_cfi")
+process.load("Configuration.StandardSequences.MagneticField_cff")
+# Pixel RawToDigi conversion
+process.load("EventFilter.SiPixelRawToDigi.SiPixelRawToDigi_cfi")
+process.siPixelDigis.InputLabel = "source"
+process.siPixelDigis.Timing = False
+process.siPixelDigis.IncludeErrors = True
+process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorHLT_cfi")
+process.SiPixelHLTSource.saveFile = True
+process.SiPixelHLTSource.slowDown = False
+
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
@@ -68,5 +82,6 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
                               process.cscDQMEvF + 
 			      process.dtDQMEvF + 
 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      process.l1tfed )
+			      process.l1tfed +
+			      process.siPixelDigis + process.SiPixelHLTSource )
 
