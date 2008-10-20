@@ -73,6 +73,9 @@ process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorHLT_cfi")
 process.SiPixelHLTSource.saveFile = True
 process.SiPixelHLTSource.slowDown = False
 
+# SiStrip DQM sequences
+process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
+
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
@@ -83,6 +86,7 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
 			      process.dtDQMEvF + 
 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
 			      process.l1tfed +
-			      process.siPixelDigis + process.SiPixelHLTSource )
+			      process.siPixelDigis + process.SiPixelHLTSource +
+                              process.siStripFEDCheck )
 
 
