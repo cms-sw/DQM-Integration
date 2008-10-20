@@ -4,10 +4,10 @@ process = cms.Process("PIXELDQMLIVE")
 
 process.MessageLogger = cms.Service("MessageLogger",
     debugModules = cms.untracked.vstring('siPixelDigis', 
-                                         #'siPixelClusters', 
+                                         'siPixelClusters', 
                                          'SiPixelRawDataErrorSource', 
                                          'SiPixelDigiSource', 
-                                         #'SiPixelClusterSource',
+                                         'SiPixelClusterSource',
 					 'sipixelEDAClient'),
     cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
     destinations = cms.untracked.vstring('cout')
@@ -111,10 +111,10 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 # Scheduling
 #--------------------------
-process.Reco = cms.Sequence(process.siPixelDigis)
-#process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
+#process.Reco = cms.Sequence(process.siPixelDigis)
+process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.dqmEnv*process.qTester*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.dqmEnv*process.qTester*process.RAWmonitor*process.DIGImonitor*process.CLUmonitor*process.sipixelEDAClient*process.dqmSaver)
