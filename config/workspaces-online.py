@@ -12,15 +12,17 @@ server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
 
 server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
                  'SiStrip/Layouts/00 - Tracks',
-                 'SiStrip/Layouts/01 - OnTrackCluster',
-                 'SiStrip/Layouts/02 - OffTrackCluster',
-                 'SiStrip/Layouts/03 - TIBSummary',
-                 'SiStrip/Layouts/06 - TOBSummary',
-                 'SiStrip/Layouts/07 - TECFSummary',
-                 'SiStrip/Layouts/08 - TECBSummary',
-                 'SiStrip/Layouts/04 - TIDFSummary',
-                 'SiStrip/Layouts/05 - TIDBSummary',
-                 'SiStrip/Layouts/09 - FedMonitoringSummary')
+                 'SiStrip/Layouts/01 - OnTrackClusters(Total Number)',
+                 'SiStrip/Layouts/02 - OnTrackCluster (SbyN)', 
+                 'SiStrip/Layouts/03 - OffTrackCluster (Total Number)',
+                 'SiStrip/Layouts/04 - OffTrackCluster (SbyN)',
+                 'SiStrip/Layouts/05 - TIBSummary',
+                 'SiStrip/Layouts/06 - TIDFSummary',
+                 'SiStrip/Layouts/07 - TIDBSummary',
+                 'SiStrip/Layouts/08 - TOBSummary',
+                 'SiStrip/Layouts/09 - TECFSummary',
+                 'SiStrip/Layouts/10 - TECBSummary',
+                 'SiStrip/Layouts/11 - FedMonitoringSummary')
 
 #server.workspace('DQMContent', 20, 'Calorimeter', 'ECAL', '^Ecal',
 #                 'Ecal/Layouts/00-Global-Summary',
@@ -88,8 +90,7 @@ server.workspace('DQMContent', 30, 'Muon', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/07-NoiseChannelsSummary')
 
 server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
-		 'RPC/Layouts/RPC_BarrelOccupancy',
-                 'RPC/Layouts/RPC_EndcapOccupancy')
+		 '00 Shift/RPC/00-BarrelOccupancy')
 
 server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
