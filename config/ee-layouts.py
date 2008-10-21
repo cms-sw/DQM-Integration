@@ -9060,13 +9060,13 @@ eelayout(dqmitems, "99-Experts/12-Occupancy/13-Occupancy",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "99-Experts/13-RawData/00-RawData",
-  [{ 'path': "EcalEndcap/EBRawDataTask/EERDT event type pre calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EBRawDataTask/EERDT event type post calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eelayout(dqmitems, "99-Experts/13-RawData/00-RawData",
+  [{ 'path': "EcalEndcap/EERawDataTask/EERDT event type calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EERawDataTask/EERDT gap errors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "99-Experts/13-RawData/01-RawData",
-  [{ 'path': "EcalEndcap/EBRawDataTask/EERDT event type calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EBRawDataTask/EERDT gap errors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eelayout(dqmitems, "99-Experts/13-RawData/01-RawData",
+  [{ 'path': "EcalEndcap/EERawDataTask/EERDT event type pre calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EERawDataTask/EERDT event type post calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eelayout(dqmitems, "99-Experts/13-RawData/02-RawData",
   [{ 'path': "EcalEndcap/EERawDataTask/EERDT CRC errors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],

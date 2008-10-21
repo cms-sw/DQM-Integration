@@ -15107,12 +15107,12 @@ eblayout(dqmitems, "99-Experts/12-Occupancy/07-Occupancy",
   [None])
 
 eblayout(dqmitems, "99-Experts/13-RawData/00-RawData",
-  [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT event type pre calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT event type post calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "99-Experts/13-RawData/01-RawData",
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT event type calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT gap errors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "99-Experts/13-RawData/01-RawData",
+  [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT event type pre calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT event type post calibration BX", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "99-Experts/13-RawData/02-RawData",
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT CRC errors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
