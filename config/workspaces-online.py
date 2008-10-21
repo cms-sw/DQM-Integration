@@ -38,7 +38,10 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Summary/05-Timing-Summary',
                  'EcalBarrel/Layouts/00-Summary/06-Trigger-Summary',
                  'EcalBarrel/Layouts/00-Summary/07-Trigger-Summary',
-                 'EcalBarrel/Layouts/00-Summary/08-StatusFlags-Summary')
+                 'EcalBarrel/Layouts/00-Summary/08-StatusFlags-Summary',
+                 'EcalBarrel/Layouts/00-Summary/09-LaserL1-Summary',
+                 'EcalBarrel/Layouts/00-Summary/11-Pedestal-Summary',
+                 'EcalBarrel/Layouts/00-Summary/12-TestPulse-Summary')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
                  'EcalEndcap/Layouts/00-Summary/00-Global-Summary',
@@ -49,7 +52,11 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
                  'EcalEndcap/Layouts/00-Summary/05-Timing-Summary',
                  'EcalEndcap/Layouts/00-Summary/06-Trigger-Summary',
                  'EcalEndcap/Layouts/00-Summary/07-Trigger-Summary',
-                 'EcalEndcap/Layouts/00-Summary/08-StatusFlags-Summary')
+                 'EcalEndcap/Layouts/00-Summary/08-StatusFlags-Summary',
+                 'EcalEndcap/Layouts/00-Summary/09-LaserL1-Summary',
+                 'EcalEndcap/Layouts/00-Summary/10-Led-Summary',
+                 'EcalEndcap/Layouts/00-Summary/11-Pedestal-Summary',
+                 'EcalEndcap/Layouts/00-Summary/12-TestPulse-Summary')
 
 server.workspace('DQMContent', 20, 'Luminosity', 'HLX', '^HLX',
                  'HLX/Layouts/HF-Comparison',
