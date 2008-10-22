@@ -1,7 +1,7 @@
 def shiftdtlayout(i, p, *rows): i["00 Shift/DT/" + p] = DQMItem(layout=rows)
 
 shiftdtlayout(dqmitems, "00-DT Shift Histogram",
-  [{ 'path': "DT/DTSegmentsTask/phiSegments_numHitsVsSector", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>" }])
+  [{ 'path': "DT/DTSegmentsTask/02-Segments/segmentSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>" }])
 
 #shiftdtlayout(dqmitems, "00-DataIntegritySummary",
 #  [{ 'path': "DT/00-DataIntegrity/DataIntegritySummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>" }])
