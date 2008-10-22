@@ -67,7 +67,7 @@ from DQM.DTMonitorClient.dtDataIntegrityTest_cfi import *
 from DQM.DTMonitorModule.dtDigiTask_cfi import *
 from DQM.DTMonitorClient.dtOccupancyTest_cfi import *
 dtDigiMonitor.readDB = False 
-#dtDigiMonitor.filterSyncNoise = True
+dtDigiMonitor.filterSyncNoise = True
 
 # Local Trigger task
 from DQM.DTMonitorModule.dtTriggerTask_cfi import *
@@ -85,6 +85,7 @@ from DQM.DTMonitorModule.dtResolutionTask_cfi import *
 # noise task
 from DQM.DTMonitorModule.dtNoiseTask_cfi import *
 from DQM.DTMonitorClient.dtNoiseAnalysis_cfi import *
+dtNoiseAnalysisMonitor.doSynchNoise = True
 
 # report summary
 from DQM.DTMonitorClient.dtSummaryClients_cfi import *
@@ -100,6 +101,7 @@ dtqTester = cms.EDFilter("QualityTester",
 # test pulse monitoring
 dtTPmonitor = dtDigiMonitor.clone()
 dtTPmonitor.testPulseMode = True
+dtTPmonitor.filterSyncNoise = False
 
 dtTPmonitorTest = dtOccupancyTest.clone()
 dtTPmonitorTest.testPulseMode = True
