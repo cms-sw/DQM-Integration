@@ -10,7 +10,7 @@ pixellayout(dqmitems, "01 - Pixel_CLUSTER_Summary",
    { 'path': "Pixel/Barrel/SUMOFF_size_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}],
   [{ 'path': "Pixel/Endcap/SUMOFF_charge_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"},
    { 'path': "Pixel/Endcap/SUMOFF_nclusters_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"},
-   { 'path': "Pixel/Barrel/SUMOFF_size_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}])
+   { 'path': "Pixel/Endcap/SUMOFF_size_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}])
 pixellayout(dqmitems, "02 - Pixel_RECHIT_Summary",
   [{ 'path': "Pixel/Barrel/SUMOFF_ClustX_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"},
    { 'path': "Pixel/Barrel/SUMOFF_ClustY_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}],
