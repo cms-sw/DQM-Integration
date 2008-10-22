@@ -51,7 +51,7 @@ process.dqmEnv.subSystemFolder = "Hcal"
 #-----------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = 'CRUZET4_V5H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'CRAFT_V2H::All' # or any other appropriate
 process.prefer("GlobalTag")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
@@ -67,9 +67,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
-
 process.hcalMonitor.PedestalsPerChannel = False
 process.hcalMonitor.PedestalsInFC = True
+process.hcalMonitor.checkNevents = 250
+
 process.hcalMonitor.DataFormatMonitor = True
 process.hcalMonitor.DigiMonitor = True
 process.hcalMonitor.RecHitMonitor = True
