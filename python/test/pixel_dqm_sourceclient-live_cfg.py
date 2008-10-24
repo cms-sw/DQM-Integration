@@ -56,7 +56,7 @@ process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverur
 #process.GlobalTag.globaltag = "CRZT210_V1C::All"
 #process.GlobalTag.globaltag = "CRZT210_V3H::All"
 #process.GlobalTag.globaltag = "CRUZET4_V5H::All"
-process.GlobalTag.globaltag = "CRAFT_V2H::All"
+process.GlobalTag.globaltag = "CRAFT_V3H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #If Frontier is used in xdaq environment use the following service
