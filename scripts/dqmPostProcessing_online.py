@@ -6,13 +6,17 @@ import os,time,sys,shutil
 DIR = '/data/dqm/dropbox'  # directory to search new files
 DB = '/home/dqm/dqm.db' #master db
 BAKDB = '/data/dqm/filereg/backups/dqm.db' #bakcup db (timestamp will be attatched)
-TMPDB = '/data/dqm/dropbox/dqm-tmp.db' # temporal db
+TMPDB = '/home/dqm/dqm-tmp.db' # temporal db
 FILEDIR = '/data/dqm/results' # directory, to which merged file is stored
 TMPDIR = '/data/dqm/.dropbox_tmp' # directory, in which merged file is created
 TimeTag = '/data/dqm/dropbox/timetag' #file for time tag for searching new file
 LOGDIR = '/data/dqm/filereg/log'
 WAITTIME = 120 # waiting time for new files (sec)
 MERGE_EXE = '/data/dqm/filereg/mergeAndRegister.py'
+
+YourMail = "Hyunkwan.Seo@cern.ch"
+ServerMail = "dqm@srv-C2D05-19.cms"
+
 
 ## For test and development
 #DIR = '/data/dqm/dropbox_test'  # directory to search new files
