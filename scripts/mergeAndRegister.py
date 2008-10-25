@@ -3,8 +3,20 @@
 import os,time,sys,shutil,glob
 from sets import Set
 from datetime import datetime
-
+import smtplib
+from email.MIMEText import MIMEText
 from ROOT import TFile
+
+def sendmail(EmailAddress,run):
+    s=smtplib.SMTP("localhost")
+    tolist=[EmailAddress]
+    body="File merge failed by unknown reason for run"+run
+    msg = MIMEText(body)
+    msg['Subject'] = "File merge failed."
+    msg['From'] = ServerMail
+    msg['To'] = EmailAddress
+    s.sendmail(ServerMail,tolist,msg.as_string())
+    s.quit()
 
 def filecheck(rootfile):
     f = TFile(rootfile)
@@ -24,33 +36,8 @@ def filecheck(rootfile):
             return 1
         
 
-def fileunreg(db,bakdb,tmpdb,file,logfile):
-    #server = 'srv-c2d05-19'
-    newdb = db[:-3]+'-new.db'
-    if os.path.exists(tmpdb): os.remove(tmpdb)
-    #logfile.write(os.popen('scp -Cpc blowfish '+server+ ':'+db+' '+tmpdb).read())
-    #cmsdb = os.popen('ls -rt ' + bakdb + '* | tail -1').read().strip()
-    shutil.copy(db,tmpdb)
-    logfile.write('*** File UnRegister ***\n')
-    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + file).read())
-    #logfile.write(os.popen('scp -Cpc blowfish '+tmpdb+' '+server+':'+newdb).read())
-    #logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
-    shutil.copy(tmpdb,newdb)
-    os.rename(newdb,db)
-    t = datetime.now()
-    tstamp = t.strftime("%Y%m%d")
-    a = glob.glob(bakdb+'.'+tstamp+'*');
-    if not len(a):
-    	tstamp = t.strftime("%Y%m%d_%H%M%S")
-    	bakdb = bakdb+'.'+tstamp
-    	#os.rename(tmpdb,bakdb)
-    	shutil.move(tmpdb,bakdb)
-    else:
-	os.remove(tmpdb)
-
 def filereg(db,bakdb,tmpdb,file,logfile):
     #server = 'srv-c2d05-19'
-    newdb = db[:-3]+'-new.db'
     if os.path.exists(tmpdb): os.remove(tmpdb)
     #logfile.write(os.popen('scp -Cpc blowfish '+server+ ':'+db+' '+tmpdb).read())
     #cmsdb = os.popen('ls -rt ' + bakdb + '* | tail -1').read().strip()
@@ -59,18 +46,34 @@ def filereg(db,bakdb,tmpdb,file,logfile):
     logfile.write(os.popen('visDQMRegisterFile '+ tmpdb +' "/Global/Online/ALL" "Global run" '+ file).read())
     #logfile.write(os.popen('scp -Cpc blowfish '+tmpdb+' '+server+':'+newdb).read())
     #logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
-    shutil.copy(tmpdb,newdb)
-    os.rename(newdb,db)
     t = datetime.now()
     tstamp = t.strftime("%Y%m%d")
     a = glob.glob(bakdb+'.'+tstamp+'*');
     if not len(a):
         tstamp = t.strftime("%Y%m%d_%H%M%S")
         bakdb = bakdb+'.'+tstamp
-        #os.rename(tmpdb,bakdb)
-        shutil.move(tmpdb,bakdb)
+        shutil.copy(tmpdb,bakdb)
+        shutil.move(tmpdb,db)
     else:
-        os.remove(tmpdb)
+        shutil.move(tmpdb,db)
+
+def filereg2(db,bakdb,tmpdb,oldfile,file,logfile):
+    if os.path.exists(tmpdb): os.remove(tmpdb)
+    shutil.copy(db,tmpdb)
+    logfile.write('*** File UnRegister ***\n')
+    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + oldfile).read())
+    logfile.write('*** File Register ***\n')
+    logfile.write(os.popen('visDQMRegisterFile '+ tmpdb +' "/Global/Online/ALL" "Global run" '+ file).read())
+    t = datetime.now()
+    tstamp = t.strftime("%Y%m%d")
+    a = glob.glob(bakdb+'.'+tstamp+'*');
+    if not len(a):
+        tstamp = t.strftime("%Y%m%d_%H%M%S")
+        bakdb = bakdb+'.'+tstamp
+        shutil.copy(tmpdb,bakdb)
+        shutil.move(tmpdb,db)
+    else:
+        shutil.move(tmpdb,db)
 
 # The following variables are defined at the mother script (2008/10/01)
 #DIR = '/data/dqm/dropbox'  # directory to search new files
@@ -184,6 +187,16 @@ for run in UniqRuns:
         if os.path.exists(TMP_MERGED): os.remove(TMP_MERGED)
         LOGFILE = open(TMP_LOG,'a')
         LOGFILE.write(os.popen('visDQMMergeFile '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
+
+        num = 0
+        while not os.path.exists(TMP_MERGED):
+            print 'Failed merging files for run '+run+'. Try again after two minutes'
+            time.sleep(120)
+            num = num + 1
+            LOGFILE.write(os.popen('visDQMMergeFile '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
+            if num > 30:
+                break
+
         if os.path.exists(TMP_MERGED):
             print 'moving merged file to the master directory'
             #os.popen('scp -Cpc blowfish '+TMP_MERGED+' '+CMSMON+':'+MERGED)
@@ -191,10 +204,10 @@ for run in UniqRuns:
             os.remove(TMP_MERGED)
             os.remove(TMP_OLD_MERGED)
         else:
+            sendmail(YourEmail,run)
             os.remove(TMP_OLD_MERGED)
-            LOGFILE.write('Failed merging files for run '+run)
             LOGFILE.close()
-            shutil.move(TMP_LOG,LOGDIR)
+            os.remove(TMP_LOG)
             for file in TMP_FILES:
                 os.remove(file)
             continue
@@ -202,10 +215,9 @@ for run in UniqRuns:
         tag = 1
         while tag:
             if os.path.exists(MERGED):
-                fileunreg(DB,BAKDB,TMPDB,OLD_MERGED,LOGFILE)
+                print 'Start registering : '+MERGED
+                filereg2(DB,BAKDB,TMPDB,OLD_MERGED,MERGED,LOGFILE)
                 os.remove(OLD_MERGED)
-                print 'Start file registering : '+MERGED
-                filereg(DB,BAKDB,TMPDB,MERGED,LOGFILE) #file registration
                 LOGFILE.close()
                 #os.system('scp -Cpc blowfish '+TMP_LOG+ ' '+CMSMON+':'+LOG)
                 shutil.copy(TMP_LOG,LOG)
@@ -215,8 +227,8 @@ for run in UniqRuns:
                 tag = 0
             else:
                 print 'Cannot start file registering because '+MERGED +' is not created yet!!!'
-                print 'Registeration will start automatically some time later...'
-                time.sleep(60)
+                print 'Registeration will start automatically after 2 minutes...'
+                time.sleep(120)
     else:
         MERGED = NEWDIR+'/DQM_V' + ver + '_R' + run + '_R' + run +'.root'
         LOG = MERGED[:-4]+'log'
@@ -231,15 +243,24 @@ for run in UniqRuns:
         else:
             LOGFILE.write(os.popen('visDQMMergeFile '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
 
+
+        while not os.path.exists(TMP_MERGED):
+            print 'Failed merging files for run '+run+'. Try again after two minutes'
+            time.sleep(120)
+            num = num + 1
+            LOGFILE.write(os.popen('visDQMMergeFile '+TMP_MERGED+' '+TMPDIR+'/DQM_*_R'+run+'.root').read())
+            if num > 30:
+                break
+            
         if os.path.exists(TMP_MERGED):
             print 'moving merged file to the master directory'
             #os.system('scp -Cpc blowfish '+TMP_MERGED+' '+CMSMON+':'+MERGED)
             shutil.copy(TMP_MERGED,MERGED)
             os.remove(TMP_MERGED)
         else:
-            LOGFILE.write('Failed merging files for run '+run)
+            sendmail(YourEmail,run)
             LOGFILE.close()
-            shutil.move(TMP_LOG,LOGDIR)
+            os.remove(TMP_LOG)
             for file in TMP_FILES:
                 os.remove(file)
             continue
@@ -266,3 +287,4 @@ for run in UniqRuns:
     mergedfiles.append(MERGED)
 
 shutil.copy2(TempTag,TimeTag)
+os.remove(TempTag)
