@@ -22,6 +22,7 @@ process.DQMStore.referenceFileName = "/home/dqmdevlocal/reference/dt_reference.r
 #----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder = 'DT'
+process.dqmSaver.subSystemName = 'DT'
 #-----------------------------
 
 

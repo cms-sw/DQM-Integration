@@ -32,6 +32,7 @@ process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/csc_reference.
 
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "CSC"
+process.dqmSaver.subSystemName    = "CSC"
 
 #process.DQM.collectorHost = 'pccmsdqm02.cern.ch'
 #process.DQM.collectorHost = 'localhost'

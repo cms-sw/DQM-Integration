@@ -40,3 +40,4 @@ process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")
 
 process.EventStreamHttpReader.consumerName = 'L1TEMU DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1TEMU'
+process.dqmSaver.subSystemName = 'L1TEMU'

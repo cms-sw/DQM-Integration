@@ -32,6 +32,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
+process.dqmSaver.subSystemName    = "Pixel"
 
 #-----------------------------
 # Magnetic Field

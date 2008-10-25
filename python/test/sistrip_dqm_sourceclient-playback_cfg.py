@@ -31,6 +31,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "SiStrip"
+process.dqmSaver.subSystemName    = "SiStrip"
 
 #-----------------------------
 # Magnetic Field

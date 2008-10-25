@@ -54,6 +54,7 @@ process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
 process.DQMStore.verbose = 0
 process.DQM.collectorHost = 'srv-c2d05-18'
 process.dqmEnv.subSystemFolder = 'RPC'
+process.dqmSaver.subSystemName = 'RPC'
 process.rpcdigidqm.DigiEventsInterval = 100
 process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
