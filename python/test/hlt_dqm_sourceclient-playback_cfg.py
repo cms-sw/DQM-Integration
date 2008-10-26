@@ -16,6 +16,5 @@ process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'
 process.dqmEnv.subSystemFolder = 'HLT'
-process.dqmSaver.subSystemName = 'HLT'
 process.hltResults.plotAll = True
 

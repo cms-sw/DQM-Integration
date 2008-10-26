@@ -10,7 +10,7 @@ from DQMServices.Components.DQMEnvironment_cfi import *
 dqmSaver.convention = 'Online'
 dqmSaver.dirName = '/home/dqmdevlocal/output'
 dqmSaver.producer = 'Playback'
-dqmSaver.saveByMinute = 15
+dqmSaver.saveByMinute = 30
 dqmSaver.saveByRun = 1
 dqmSaver.saveAtJobEnd = True
 

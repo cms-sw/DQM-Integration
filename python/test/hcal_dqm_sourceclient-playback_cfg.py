@@ -38,7 +38,6 @@ process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/hcal_reference
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "Hcal"
-process.dqmSaver.subSystemName    = "Hcal"
 
 # process.DQM.collectorHost = 'vmepcS2F17-14.cms'
 # process.DQM.collectorPort = 9190

@@ -167,7 +167,6 @@ process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
 process.dqmEnv.subSystemFolder = 'EcalEndcap'
-process.dqmSaver.subSystemName = 'EcalEndcap'
 
 process.ecalUncalibHit2.MinAmplEndcap = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.

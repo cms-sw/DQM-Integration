@@ -39,5 +39,4 @@ process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
 
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
-process.dqmSaver.subSystemName = 'L1T'
 
