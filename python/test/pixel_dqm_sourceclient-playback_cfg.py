@@ -23,7 +23,7 @@ process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/pixel_reference.root'
+process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/pixel_reference.root'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -72,18 +72,51 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # Pixel DQM Source and Client
 #--------------------------
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorRawData_cfi")
+process.SiPixelRawDataErrorSource.saveFile = False
 process.SiPixelRawDataErrorSource.isPIB = False
+process.SiPixelRawDataErrorSource.slowDown = False
 process.SiPixelRawDataErrorSource.reducedSet = True
+process.SiPixelRawDataErrorSource.modOn = True
+process.SiPixelRawDataErrorSource.ladOn = False
+process.SiPixelRawDataErrorSource.layOn = False
+process.SiPixelRawDataErrorSource.phiOn = False
+process.SiPixelRawDataErrorSource.bladeOn = False
+process.SiPixelRawDataErrorSource.diskOn = False
+process.SiPixelRawDataErrorSource.ringOn = False
 process.load("DQM.SiPixelMonitorDigi.SiPixelMonitorDigi_cfi")
+process.SiPixelDigiSource.saveFile = False
 process.SiPixelDigiSource.isPIB = False
-process.SiPixelDigiSource.hiRes = True
+process.SiPixelDigiSource.slowDown = False
+process.SiPixelDigiSource.modOn = True
+process.SiPixelDigiSource.twoDimOn = True
+process.SiPixelDigiSource.hiRes = False
+process.SiPixelDigiSource.ladOn = False
+process.SiPixelDigiSource.layOn = False
+process.SiPixelDigiSource.phiOn = False
+process.SiPixelDigiSource.bladeOn = False
+process.SiPixelDigiSource.diskOn = False
+process.SiPixelDigiSource.ringOn = False
 process.load("DQM.SiPixelMonitorCluster.SiPixelMonitorCluster_cfi")
+process.SiPixelClusterSource.saveFile = False
+process.SiPixelClusterSource.isPIB = False
+process.SiPixelClusterSource.modOn = True
+process.SiPixelClusterSource.twoDimOn = True
 process.SiPixelClusterSource.reducedSet = True
+process.SiPixelClusterSource.ladOn = False
+process.SiPixelClusterSource.layOn = False
+process.SiPixelClusterSource.phiOn = False
+process.SiPixelClusterSource.bladeOn = False
+process.SiPixelClusterSource.diskOn = False
+process.SiPixelClusterSource.ringOn = False
 
 process.sipixelEDAClient = cms.EDFilter("SiPixelEDAClient",
     EventOffsetForInit = cms.untracked.int32(10),
     ActionOnLumiSection = cms.untracked.bool(False),
-    ActionOnRunEnd = cms.untracked.bool(True)
+    ActionOnRunEnd = cms.untracked.bool(True),
+    HighResolutionOccupancy = cms.untracked.bool(False),
+    NoiseRateCutValue = cms.untracked.double(-1.), #negative value means test is not run; default cut value is 0.001
+    NEventsForNoiseCalculation = cms.untracked.int32(1000),
+    UseOfflineXMLFile = cms.untracked.bool(False)
 )
 
 process.qTester = cms.EDFilter("QualityTester",
@@ -101,11 +134,11 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 # Scheduling
 #--------------------------
-process.Reco = cms.Sequence(process.siPixelDigis)
-#process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
+#process.Reco = cms.Sequence(process.siPixelDigis)
+process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.DQMmodules*process.RAWmonitor*process.DIGImonitor*process.sipixelEDAClient)
+process.p = cms.Path(process.Reco*process.dqmEnv*process.qTester*process.RAWmonitor*process.DIGImonitor*process.CLUmonitor*process.sipixelEDAClient*process.dqmSaver)
 
