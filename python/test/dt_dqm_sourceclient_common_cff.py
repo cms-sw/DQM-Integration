@@ -48,7 +48,7 @@ from Configuration.StandardSequences.Geometry_cff import *
 from RecoLocalMuon.Configuration.RecoLocalMuonCosmics_cff import *
 dt1DRecHits.dtDigiLabel = 'dtunpacker'
 #DTLinearDriftAlgo_CosmicData.recAlgoConfig.tTrigModeConfig.kFactor = -0.7
-DTLinearDriftAlgo_CosmicData.recAlgoConfig.hitResolution = 0.05
+#DTLinearDriftAlgo_CosmicData.recAlgoConfig.hitResolution = 0.05
 
 
 from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
