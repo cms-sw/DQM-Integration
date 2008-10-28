@@ -70,14 +70,14 @@ process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     testpulsePrescaleFactor = cms.untracked.int32(1)
 )
 
-process.dqmQTestEB = cms.EDFilter("QualityTester",
+process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(4),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
-process.dqmQTestEE = cms.EDFilter("QualityTester",
+process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(4),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalEndcapQualityTests.xml'),

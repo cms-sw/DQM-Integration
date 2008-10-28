@@ -60,29 +60,29 @@ process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     testpulsePrescaleFactor = cms.untracked.int32(1)
 )
 
-process.dqmInfoEB = cms.EDFilter("DQMEventInfo",
+process.dqmInfoEB = cms.EDAnalyzer("DQMEventInfo",
     subSystemFolder = cms.untracked.string('EcalBarrel')
 )
 
-process.dqmInfoEE = cms.EDFilter("DQMEventInfo",
+process.dqmInfoEE = cms.EDAnalyzer("DQMEventInfo",
     subSystemFolder = cms.untracked.string('EcalEndcap')
 )
 
-process.dqmQTestEB = cms.EDFilter("QualityTester",
+process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
-process.dqmQTestEE = cms.EDFilter("QualityTester",
+process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalEndcapQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
-process.dqmSaver = cms.EDFilter("DQMFileSaver",
+process.dqmSaver = cms.EDAnalyzer("DQMFileSaver",
     saveByRun = cms.untracked.int32(1),
     dirName = cms.untracked.string('.'),
     saveAtJobEnd = cms.untracked.bool(True),
