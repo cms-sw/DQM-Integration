@@ -177,7 +177,7 @@ process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
 process.dqmEnv.subSystemFolder = 'EcalEndcap'
 
-process.ecalUncalibHit2.MinAmplEndcap = 12.
+process.ecalUncalibHit2.MinAmplBarrel = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.
 process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
