@@ -233,12 +233,12 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
 process.ecalBarrelMonitorClient.location = 'P5'
-process.ecalBarrelMonitorClient.updateTime = 2
+process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
-process.ecalEndcapMonitorClient.updateTime = 2
+process.ecalEndcapMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
