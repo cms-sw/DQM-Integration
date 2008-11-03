@@ -99,12 +99,8 @@ dtqTester = cms.EDFilter("QualityTester",
 
 
 # test pulse monitoring
-dtTPmonitor = dtDigiMonitor.clone()
-dtTPmonitor.testPulseMode = True
-dtTPmonitor.filterSyncNoise = False
-
-dtTPmonitorTest = dtOccupancyTest.clone()
-dtTPmonitorTest.testPulseMode = True
+from DQM.DTMonitorModule.dtDigiTask_TP_cfi import *
+from DQM.DTMonitorClient.dtOccupancyTest_TP_cfi import *
 
 
 unpackers = cms.Sequence(dtunpacker + dttfunpacker)
