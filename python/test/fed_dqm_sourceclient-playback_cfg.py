@@ -70,7 +70,7 @@ process.siPixelDigis.InputLabel = "source"
 process.siPixelDigis.Timing = False
 process.siPixelDigis.IncludeErrors = True
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorHLT_cfi")
-process.SiPixelHLTSource.saveFile = True
+process.SiPixelHLTSource.saveFile = False
 process.SiPixelHLTSource.slowDown = False
 
 # SiStrip DQM sequences
