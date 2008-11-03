@@ -76,7 +76,7 @@ process.SiPixelHLTSource.slowDown = False
 # SiStrip DQM sequences
 process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 
-# FED Example sequences
+# FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 
 # DQM Modules

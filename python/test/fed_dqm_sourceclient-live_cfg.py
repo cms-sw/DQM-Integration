@@ -76,6 +76,9 @@ process.SiPixelHLTSource.slowDown = False
 # SiStrip DQM sequences
 process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 
+# FED Integrity Client
+process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
+
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
@@ -87,5 +90,6 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
 			      process.l1tfed +
 			      process.siPixelDigis + process.SiPixelHLTSource +
-			      process.siStripFEDCheck )
+			      process.siStripFEDCheck +
+			      process.DQMFEDIntegrityClient )
 
