@@ -7,6 +7,7 @@ process = cms.Process("CSCDQM")
 #-------------------------------------------------
 
 process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
+process.dqmClient.FractUpdateEventFreq = cms.untracked.uint32(100)
 
 #----------------------------
 # Event Source
