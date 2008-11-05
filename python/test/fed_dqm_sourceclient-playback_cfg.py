@@ -76,6 +76,21 @@ process.SiPixelHLTSource.slowDown = False
 # SiStrip DQM sequences
 process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 
+# Hcal DQM sequences
+process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
+process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
+# Turn on/off individual hcalMonitor modules ------------
+process.hcalMonitor.DataIntegrityTask   = True
+process.hcalMonitor.DataFormatMonitor   = False
+process.hcalMonitor.DigiMonitor         = False
+process.hcalMonitor.RecHitMonitor       = False
+process.hcalMonitor.TrigPrimMonitor     = False
+process.hcalMonitor.PedestalMonitor     = False
+process.hcalMonitor.DeadCellMonitor     = False
+process.hcalMonitor.HotCellMonitor      = False
+process.hcalMonitor.LEDMonitor          = False
+process.hcalMonitor.BeamMonitor         = False
+
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 
@@ -91,4 +106,5 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
 			      process.l1tfed +
 			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck +
+			      process.hcalDigis + process.hcalMonitor +
 			      process.DQMFEDIntegrityClient )
