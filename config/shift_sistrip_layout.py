@@ -1,10 +1,8 @@
 def shiftsistriplayout(i, p, *rows): i["00 Shift/SiStrip/" + p] = DQMItem(layout=rows)
 
 shiftsistriplayout(dqmitems, "00 RawDataMonitoringSummary",
- [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedCorruptBuffer",
-   'description': "# of Corrupted Buffers vs FED ID - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a>"}],
- [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FedGenericErrors",
-    'description': "Total numbers of errors vs FED ID - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a>"}])
+ [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/AnyErrors",
+   'description': "# of events with any FED error - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a>"}])
 shiftsistriplayout(dqmitems, "01 Tracks",
   [{ 'path': "SiStrip/Tracks/NumberOfTracks_CKFTk",
      'description': "Number of Reconstructed Tracks by CKF - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
