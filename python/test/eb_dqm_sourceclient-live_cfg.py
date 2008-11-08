@@ -48,6 +48,8 @@ process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
+process.load("HLTrigger.special.TriggerTypeFilter_cfi")
+
 process.preScaler = cms.EDFilter("Prescaler",
     prescaleFactor = cms.int32(1)
 )
@@ -59,6 +61,8 @@ process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     pedestalPrescaleFactor = cms.untracked.int32(1),
     testpulsePrescaleFactor = cms.untracked.int32(1)
 )
+
+process.triggerTypeFilter.SelectedTriggerType = 1
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string('red'),
@@ -170,8 +174,10 @@ process.ecalBarrelCosmicTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupan
 process.ecalBarrelCosmicTasksSequenceP5.remove(process.ecalBarrelSelectiveReadoutTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.dqmSaver)
-process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
+process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.triggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask)
 process.r = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalBarrelClusterTask)
+
+process.r.remove(process.ecalBarrelPedestalOnlineTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
