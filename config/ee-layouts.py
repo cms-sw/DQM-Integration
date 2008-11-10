@@ -372,9 +372,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-01/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -620,9 +620,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-02/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -868,9 +868,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-03/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -1116,9 +1116,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-04/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -1364,9 +1364,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-05/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -1612,9 +1612,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-06/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -1860,9 +1860,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-07/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -2108,9 +2108,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-08/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -2356,9 +2356,9 @@ eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE-/EE-09/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -2604,9 +2604,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+01/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -2852,9 +2852,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+02/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -3100,9 +3100,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+03/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -3348,9 +3348,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+04/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -3596,9 +3596,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+05/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -3844,9 +3844,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+06/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -4092,9 +4092,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+07/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -4340,9 +4340,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+08/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -4588,9 +4588,9 @@ eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/01-Led-PNs",
 
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "03-SubSummary/EE+/EE+09/Experts/04-Led/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -4857,9 +4857,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-01/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -5092,9 +5092,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-02/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -5327,9 +5327,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-03/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -5562,9 +5562,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-04/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -5797,9 +5797,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-05/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -6032,9 +6032,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-06/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -6267,9 +6267,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-07/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -6502,9 +6502,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-08/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -6737,9 +6737,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE-/EE-09/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -6972,9 +6972,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+01/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -7207,9 +7207,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+02/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -7442,9 +7442,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+03/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -7677,9 +7677,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+04/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -7912,9 +7912,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+05/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -8147,9 +8147,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+06/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -8382,9 +8382,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+07/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -8617,9 +8617,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+08/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -8852,9 +8852,9 @@ eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/01-Led",
 
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/00-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1A over PN EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EELedClient/EELDT amplitude L1B over PN EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EELedClient/EELDT amplitude over PN L1B EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
    
 eelayout(dqmitems, "99-Experts/06-Led/EE+/EE+09/L1/01-Led",
   [{ 'path': "EcalEndcap/EELedClient/EELDT led timing L1A EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
