@@ -65,7 +65,7 @@ process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
 process.triggerTypeFilter.SelectedTriggerType = 1
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
-    reportThreshold = cms.untracked.string('red'),
+#    reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(4),
     qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
