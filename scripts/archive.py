@@ -1,59 +1,45 @@
 #!/usr/bin/env python
-import os, time
-#import mergeAndRegister_online.fileunreg 
-#DB = '/home/dqm/dqm.db'
-LOGFILE = open('archival_log.txt', 'a')
+import os, time, shutil, zipfile, commands, sys, glob
+from datetime import datetime
+fileSizeThreshold = 1000000000 # 1GB to get away from technicality of large zip file size
+disk_threshold = 80 # 80% full
+transferScript = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"# T0 System Script
+targetdir = "/castor/cern.ch/cms/store/dqm/" # Castor Store Area
+dir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # File Directory
+dbdir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # db Directory
+cfgfile = " /xxxx/yyyy/config.txt "# configuration file
+cfgarg  = " --config " + cfgfile
+fullTransferArg = cfgarg + " --type dqm --hostname srv-C2D05-19 --lumisection 1 --appname CMSSW --appversion CMSSW_2_0_10 "
+statusCheck = cfgarg + " --check --filename "
+emptyString = "empty"
 
-#local testing area
-dir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/" # Execution Directory, Local now
-db =  "/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/tmp.db" # master db
-adb = "/nfshome0/smaruyam/CMSSW_2_0_10/src/DQM/Integration/scripts/tmp/archival.db" # archival db
-transfer_script = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl --type dqm --hostname srv-c2c06-02.cms --lumisection 1 --appname CMSSW --appversion CMSSW_2_0_10 "
-bare_script = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl "
-test_mode = "--destination TransferTest "
-logic_test = "--test "
-mock_up_mode = True
-targetdir = "/castor/cern.ch/cms/store/data/dqm/" # Path to Castor
-Null = "null"
-disk_threshold = 80.0  # disk usage threshold, 80% now
-
-"""
-Temporary Port form Hyunkwan's Un-Register-File Script
-"""
-def fileunreg(db,file,logfile):
-    tmpdb = '/cms/mon/data/.dropbox_test/dqm-tmp.db'
-    newdb = db[:-3]+'-new.db'
-    server = 'srv-c2d05-19'
-    if os.path.exists(tmpdb): os.remove(tmpdb)
-    logfile.write(os.popen('scp '+server+ ':'+db+' '+tmpdb).read())
-    logfile.write('*** File UnRegister ***\n')
-    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + file).read())
-    logfile.write(os.popen('scp '+tmpdb+' '+server+':'+newdb).read())
-    os.remove(tmpdb)
-    logfile.write(os.popen('ssh '+server+' -t mv '+newdb+' '+db).read())
+logfile = open('archival_log.txt', 'a')# Redundant, Temporaly Use
+tmpdb = dbdir + "tmp/tmp.db"
+bakdb = dbdir + "tmp/backup.db"
+db = dbdir + "db.db"
 
 """
-Archiving Files
+Check and Return Output
 """
-def Archive() :
-    print " *** Starting Archiver ***"
-    if os.path.exists(adb) is False : CreatePrivateDBForArchival()
-#    count = 0
-#    DiskUsage()   # disabeled for now
-    Transfer()
-#        diskusage = False # for test
+def CheckCommand(cmd):
+	result = commands.getstatusoutput(cmd)
+	if result[0] == 0:
+		output = result[1]
+		return result
+	else :
+		print "Command Exits with non-zero Status,", result[0]
+		return result
 
 """
 Disk Usage Check
 df out put is assumed as follows.
-Filesystem           1K-blocks      Used Available Use% Mounted on
-/dev/sda3             78012484   2627788  71421864   4% /
-/dev/sda1               101086     11487     84380  12% /boot
-none                   2068904         0   2068904   0% /dev/shm
-/dev/sdb1            5046428668 635248096 4154836768  14% /cms/mon/data
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda3              73G   45G   25G  65% /
+/dev/sda1              99M   12M   83M  12% /boot
+none                  2.0G     0  2.0G   0% /dev/shm
+/dev/sdb1             917G   83G  788G  10% /data
 cmsnfshome0:/nfshome0
-                     412849344 270910144 120967680  70% /cmsnfshome0/nfshome0
-# cmsmon is 5th line from top.
+                      805G  673G  133G  84% /cmsnfshome0/nfshome0
 """
 def DiskUsage() :
     print " *** Checking Disk Usage ***"
@@ -61,7 +47,7 @@ def DiskUsage() :
     usage = False
     lines = df_file.readlines()
     list = lines[4].split() # 5th line from top. Split at tab or white space
-    string = list[4][:-1] # NEED check for cmsmon #
+    string = list[4][:-1] # NEED check for the host
     fusage = float(string)
     print fusage
     if fusage > disk_threshold : # disk is more than 80% full
@@ -72,371 +58,306 @@ def DiskUsage() :
     else :
         print "Disk Usage is low enough"
 
-
-"""
-check copied file and its size
-rfdir out put is assumed as follows.
--rw-r--r--   1 smaruyam zh                         10 May 08 22:35 /castor/cern.ch/user/s/smaruyam/Archive/test.txt
-"""
-def ConfirmSize(filename, size) : # Disabled NOW
-    print " *** Confirming Copied File Size for *** " , filename
-    time.sleep(10)
- #   ls = "ls -l " + pnfsdir + filename
-    ls = "rfdir " + targetdir + filename
-#    print ls
-    result = os.popen('%s' %ls)
-#    print result
-    for line in result.readlines() :
-        error_check = "%s%s: No such file or directory" %(targetdir, filename)
-        if cmp(line, error_check) == 0 :
-            return False
-        else :
-#            print line
-            string = line.split()
-            if len(string) == 9 :
-#                print string[4]
-                if string[4] == size :
-                    print "Size matched, Copy Success"
-                    return True
-                else : return False
-            else : return False
-
 """
 Check File Path on Tape
+""" 
+def ConfirmPath(file, path) :
+	print " *** Checking File Path *** "
+	time.sleep(10) 
+	fullpath = path + "/" + file[len(dir):]
+	mycmd = "rfdir "
+	myarg = fullpath
+	cmd = mycmd + myarg
+	print cmd 
+	result = CheckCommand(cmd)
+	if result[0] == 0:
+		output = result[1]
+		if cmp(output,"") != 0:
+			for line in output.splitlines():
+				print " rfdir result is ",line
+				error_check = "No such file or directory"
+				if line.find(error_check) != -1 :return emptyString
+				print " rfdir result is ",line.split()
+				if len(line.split()) > 7:
+					string = line.split()[-1]
+					print "Last Item is ", string
+					print "Last Item is ", fullpath
+					if cmp(string,fullpath) == 0: return fullpath
+	return emptyString
+
 """
-def ConfirmPath(filename, path) : # Disabled NOW
-    print " *** Checking File Path *** " , filename
-    time.sleep(10) 
- #   ls = "ls -l " + pnfsdir + filename 
-    ls = "rfdir " + path + "/" + filename 
-#    print ls 
-    result = os.popen('%s' %ls) 
-#    print result 
-    for line in result.readlines() : 
-        error_check = "%s%s: No such file or directory" %(targetdir, filename)
-        if cmp(line, error_check) == 0 : 
-            return False 
-        else : return True 
+Scan Directories
+"""
+def ScanDir(file) :
+        mycmd = "rfdir "
+        myarg = targetdir
+        cmd = mycmd + myarg
+        print "Scanning tape area  ",cmd
+        result = CheckCommand(cmd)
+        if result[0] == 0:
+		if cmp(result[1],"") != 0:
+	                output = result[1].split('\n')
+        	        for line in output :
+				if len(line.split()) > 8:
+					newpath = targetdir + line.split()[-1]
+					print "Looking for File at ", newpath
+					confirmpath = ConfirmPath(file, newpath)
+					print "Returned Path ", confirmpath
+					if cmp(confirmpath, newpath + "/" + file[len(dir):] ) == 0: return confirmpath
+	return emptyString
 
 """
 Path Specifier
 """
 def CheckPath(filename) :
-	tm = time.localtime(time.time())
-        yearmonth = time.strftime("%Y%m", tm) 
-	path = targetdir + yearmonth
-	flag = ConfirmPath(filename, path)
-	if flag is True : return path
-	else :
-		ppath = PreviousMonth(path)
-	        flag = ConfirmPath(filename, ppath)
-	        if flag is True : return ppath
-		else :
-	                npath = NextMonth(path)
-        	        flag = ConfirmPath(filename, npath)
-                	if flag is True : return npath
-	                else : return Null ## Just for now! It should be crashed here
+	mtime = os.stat(filename).st_mtime
+	year = time.localtime(mtime)[0]
+        month = time.localtime(mtime)[1]
+	if month > 9: yearmonth = str(year) + str(month)
+	else: yearmonth = str(year) + "0" + str(month)
+        path = targetdir + yearmonth
+	print "Best Guess for the path is ", path
+        newpath = ConfirmPath(filename, path)
+        if cmp(newpath,emptyString) != 0 : return newpath
+        else :# scan all path
+		newpath = ScanDir(filename)
+		return newpath
 
 """
-PreviousMonth
+Set Path
 """
-def PreviousMonth(path) :
-	year = int(path[-6:-2])
-	month= int(path[-2:])
-	firstdigit = int(path[-1])
-	if cmp(month, 01) == 0  :
-		month = 12
-		year = year - 1
-		path = targetdir + str(year) + str(month)
-		return path
-	else :
-		if month is 10 : month = "09"
-		elif month is 11 : month = 10
-		elif month is 12 : month = 11
-		else : 
-			firstdigit = firstdigit - 1
-		path = targetdir + str(year )+ "0" + str(firstdigit)
-		return path
-
-""" 
-NextMonth 
-"""
-def NextMonth(path) : 
-	year = int(path[-6:-2])
-	month= int(path[-2:])
-	firstdigit = int(path[-1])
-        if cmp(month, 12) == 0  :
-                month = "01" 
-                year = year + 1 
-		path = targetdir + str(year) + str(month)
-		return path
-        else : 
-                if cmp(month, "09") == 0 : month = 10
-		elif month is 10 : month = 11
-		elif month is 11 : month = 12
-                else :  
-                        firstdigit = firstdigit + 1
-		path = targetdir + str(year )+ "0" + str(firstdigit)
-		return path
-
+def SetPath(file):
+	path = CheckPath(file)
+	print path
+	if cmp(path,emptyString) != 0:
+		newpath = "rfio:" + path
+		print "Register New Path ", newpath
+		filereg(db,bakdb,tmpdb,newpath,logfile)
+		return True
+	else :print "File Transferred, but not found on tape\n"
+	return False
 
 """
-File Cleaner
+File Cleaner, Remove the oldest file
 """
 def Cleaner() :
-    print " *** Cleaning File ***"
-    flag = True
-    archivedfiles = GetListFromMasterDB(flag).readlines()
-    if len(archivedfiles) != 0 :
-        string = archivedfiles[0].rstrip() 
-        string.split()
-        filepath = string[0]
-        Remover(filepath)
-    if len(archivedfiles) == 0 : print "Cleaning Failed because DB gave a Null List!"
-
-
-"""
-Master DataBase Reference
-"""
-def GetListFromMasterDB(flag) :
-    print " *** Getting Merged File List from Master DB ***"
-    if flag is False : # Retrive Merged File Info Only
-        string = "'" + dir + "DQM_V%_R%.root" + "'"
-#        print string
-        search = "'%RPC%'" 
-        sqlite = "sqlite3 %s \"select name, size, mtime from t_files where name like %s and not name like %s \" "  %(db, string, search)
-        result = os.popen(sqlite)
-#        print result
-        return result
-    if flag is True : # Retrive Merged and Un-Merged File Info # Need check on Un-Merged Files DB (where is it?)
-        sqlite = "sqlite3 %s \"select name, mtime from t_files where name like '%DQM%.root' order by mtime asc\""  %db
-        result = os.popen(sqlite)
-#        print result
-        return result
-
+	print " *** Cleaning File ***"
+	files = GetAllFiles()
+	for file in files:
+		if file.find(".zip") != -1:#zip file
+			status = CheckFileStatus(file)# check transfer status
+			if status is True:
+				pathfind = SetPath(file)
+				if pathfind is True :# path found on tape
+					Delete(file)# remove only if transferred 
+					return # exits when the files deleted
+		if file.find(".root") != -1:
+			Delete(file)
+			return # exits when the file deleted
+	else : print "No File to be removed!\n"
 
 """
-Private DataBase Check
-Private DB is asuumed as follows.
-CREATE TABLE t_files (id integer primary key autoincrement, name text unique
-not null, size integer not null, mtime integer not null, atime text not null, status text null, path text null);
+Getting All Files from DB
 """
-def CheckPrivateDB(filepath) :
-    string = filepath.split('|')
-    print " *** Checking Archival DB ***"
-    search = "'" + string[0] + "'"
-    sqlite = "sqlite3 %s \"select status from t_files where name like %s \""  %(adb, search)
-    result = os.popen(sqlite)
-#    print result
-    check_result = result.readlines()
-#    print " Read Length is " , len(check_result)
-    if len(check_result) == 0 :
-        return Null # no entry
-    else :
-        return check_result[0].rstrip() # entry exist
-
+def GetAllFiles() :
+	print " *** Getting All Files from db ***"
+        sqlite = db + " \"select name from t_files where name like '%DQM%.root' or name like '%DQM%.zip'order by mtime asc\""
+	mycmd = "sqlite3 "
+	myarg = sqlite
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		return output
+	else : return emptyString
 
 """
-Tranfer Merged Files
+Check File Status
 """
-def Transfer() :
-    print " *** Starting File Transfer ***"
-    flag = False
-    mergedfiles = GetListFromMasterDB(flag) # Retrieve Merged File List 
-    for file in mergedfiles :
-#        print file
-        string = file.split('|')
-	archived = CheckPrivateDB(string[0])
-        if archived is Null :
-            print "Brand New File "
-            SendFile(string[0], archived)
-        elif cmp(archived, "queued") == 0 :
-            print "Queued File "
-            SendFile(string[0], archived)
-        elif cmp(archived, "archived") == 0 : print " Already Archived! "
-
-
-"""
-Update Private DB for Archival Information
-"""
-def UpdatePrivateDBForArchival(filepath, status, path) :
-    print " *** Updating Archival DB ***"
-    name = filepath
-    size = os.path.getsize(filepath) 
-    mtime = os.path.getmtime(filepath)
-    tm = time.localtime(time.time())
-    atime = time.strftime("%Y/%m/%d", tm) 
-
-    if cmp(status,"queued") == 0 :
-	    sqlite = "sqlite3 %s \"insert into t_files(name, size, mtime, atime, status, path) values('%s', '%d', '%d', '%s', '%s', '%s')\""  %(adb, name, size, mtime, atime, status, path)
-	    result = os.popen(sqlite)
-	    check_result = result.readlines()
-#    print " Read Length is " , len(check_result)
-	    if len(check_result) == 0 :
-	        return True
-	    else : return False
-    if cmp(status,"archived") == 0 :
-	    sqlite = "sqlite3 %s \"update t_files set status = '%s' where name = '%s';\""  %(adb, status, filepath)
-	    result = os.popen(sqlite)
-	    check_result = result.readlines()
-#    print " Read Length is " , len(check_result)
-	    if len(check_result) == 0 :
-	        return True
-	    else : return False
-    if cmp(status,"archived") != 0 and cmp(status,"queued") != 0 : print " ***** Logic Flaw !!!! ****"
-
+def CheckFileStatus(filepath):
+        filename = filepath[len(dir):]
+	print filename
+	checkString = statusCheck + filename
+	mycmd = transferScript
+	myarg = checkString
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		for line in output:
+			print line
+			if line.find("FILES_TRANS_CHECKED: File found in database and checked by T0 system.") != -1: return True
+			elif line.find("File not found in database.") != -1: return False
+	flag = True
+	TransferWithT0System(filepath,flag)
+	mtime = os.stat(filepath).st_mtime
+	print "Old M Time is ", mtime
+	os.utime(filepath,None)# change mtime to help path search
+	mtime2 = os.stat(filepath).st_mtime
+	print "New M Time is ", mtime2
+	return False
 
 """
-Create a DB if not present
+Transfer File with T0 System
 """
-def CreatePrivateDBForArchival() :
-    print " *** Creating Archival DB ***"
-    sqlite = "sqlite3 %s \"CREATE TABLE t_files (id integer primary key autoincrement, name text unique not null, size integer not null, mtime integer not null, atime text not null, status text null, path text null); \" " %adb
-    result = os.popen(sqlite)
-    check_result = result.readlines()
-#    print " Read Length is " , len(check_result)
-    if len(check_result) == 0 :
-        return True
-    else : 
-        print result
-        return False
-
-"""
-Mock Up Transfer System
-to avoid creating null entries in db
-"""
-def MockUp(filepath) :
-    print " *** Mock-Up Transfer Mode ***"
-    success_string = "Warning: No filesize supplied (or filesize=0 chosen), but hostname = this machine: using size of file on disk\nDB inserts completed, running Tier 0 notification script\nFile sucessfully submitted for transfer.\n"
-    fail_string = "Warning: No filesize supplied (or filesize=0 chosen), but hostname = this machine: using size of file on disk\nError: Found file in DB. To see its status please execute:\n /nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl --check --filename test_transfer_test.root\n"
-    check = CheckPrivateDB(filepath)
-    if cmp(check, Null) == 0 : return success_string.splitlines()
-    else : return fail_string.splitlines()
-
-""" 
-Mock Up Transfer System 
-to avoid creating null entries in db 
-""" 
-def MockUpStatus(filepath) : 
-    print " *** Mock-Up Status Mode ***"
-    success_string = "FILES_TRANS_INSERTED: File found in database and sucessfully processed by T0 system.\n"
-    fail_string = "File not found in database.\n"
-    check = CheckPrivateDB(filepath) 
-    if cmp(check,Null) == 0 : return fail_string.splitlines() 
-    else : return success_string.splitlines()
-
+def TransferWithT0System(filepath, flag):
+	filename = filepath[len(dir):]
+	nrun = filepath[len(dir)+len("DQM_Online_R"):-len("_R000064807.zip")]
+	transfer_string = transferScript + " --runnumber " + nrun + " --path " + dir + " --filename " + filename
+#	transfer_string += " --test " # TEST, no file transfer, REMOVE this line if transfer is needed!
+	if flag is True: transfer_string += " --renotify "# transfer failed previously, trying to send it again
+	mycmd = transfer_string
+	myarg = fullTransferArg
+	cmd = mycmd + myarg
+	print cmd
+	result = CheckCommand(cmd)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		for line in output:
+			print line
+        	        if line.find("File sucessfully submitted for transfer.") != -1 and flag is False:
+                	        print "%s is queued " %filepath
+                        	return True
+        	        if line.find("File sucessfully re-submitted for transfer.") != -1 and flag is True:
+                	        print "%s is resubmitted " %filepath
+                        	return True
+	return False
 
 """
-copy file to dcache or castor
+Read and sort file from db
 """
-def SendFile(filepath, status) :
-#    print " Status is " , status
-    path = "null"
-#    print "Shipping %s to %s" %(filepath, targetdir)
-#   Assumed root name =  DQM_Vxx_Ryyyyyyyyy-Rzzzzzzzzz.root
-    filename = filepath[-34:] # file name only
-    if status is Null :
-    	print " *** Shipping %s to Castor ***" %filepath
-	nrun = filename[9:-16]
-#    print nrun
-	pathtofile = filepath[:-34]
-#    print pathtofile
-#    print filename
-
-#    cdir = os.popen('pwd')
-#    pwd = cdir.readline().rstrip()
-#    print pwd
-#    print "srmcp -debug==true file:////%s/%s \"%s%s\"" %(pwd, filepath, targetdir, filename)
-
-#    result = os.popen('srmcp -debug==true file:////%s/%s "%s%s"' %(pwd, filepath, targetdir, filename) )
-	if mock_up_mode == True :
-		result = MockUp(filepath)
-	else : 
-		transfer_string = transfer_script + "--runnumber " + nrun + "--filepath " + pathtofile + "--filename " + filename
-		tmp = os.popen('%s' %transfer_string )
-		result = tmp.readlines() 
-#	print result
-	check = False
-	for line in result :
-		if cmp(line,"File sucessfully submitted for transfer.") == 0:
-			check = True
-			status = "queued"
-        		print "%s is queued " %filepath
-	        	update = UpdatePrivateDBForArchival(filepath, status, path)
-        		if update is False : print "Updating Private DB Failed !"
-	        	time.sleep(10)
-			break
-		elif cmp(line, "Error: Found file in DB. To see its status please execute:") == 0:
-			print " Transfer Failed, because the file already exists on Tape! If not, you need rename the file name. " , result 
-        	        break
-		else : continue
-	if check == False :
-		print " Transfer Failed, because "  , result
-		return 0
-
-    if cmp(status, "queued") == 0 : 
-    	print " *** Checking File Status ***", filepath
-#    ls = "ls -l " + filename
-	if mock_up_mode == True : result = MockUpStatus(filepath)
-	else :    
-		check_status = bare_script + "--check --filename " + filename
-		time.sleep(10)
-		tmp = os.popen('%s' %check_status)
-		result = tmp.readlinese()
-#	print result 
-#    size = ""
-	success = False
-	for line in result :
-		if cmp(line, "FILES_TRANS_INSERTED: File found in database and sucessfully processed by T0 system.") == 0:
-			success = True
-			status = "archived"
-			path = CheckPath(filename)
-			break
-#        string = line.split()
-#        print string
-#        if len(string) == 9 :
-#            print string[4]
-#            size = string[4]
-#    success = False
-#    counter = 0
-#    while success == False and counter < 5 : # repeat up to five times
-#        counter += 1
-#        success = ConfirmSize(filename, size)
-#        if success is False :  ## now error check srmcp 
-#            print "File Transfer Failed. This is %d time(s) Failure: "  %counter 
-#        else : continue
-	if success is True :
-        	print "%s is copied " %filepath
-	        update = UpdatePrivateDBForArchival(filepath, status, path)
-        	if update is False : print "Updating Private DB Failed !"
-	        time.sleep(10)
-	elif success is False : print "Copying File was Failed! "
-    if cmp(status,Null) != 0 and cmp(status,"queued") != 0 and cmp(status,"archived") is not 0: print " ********** Logic Flaw *** Unreachable !!!! "
+def GetFileFromDB():
+	print " *** Getting Merged File List from Master DB ***"
+	string = "'%DQM_V%_R%.root'"
+        search1 = "'%RPC%'"
+        search2 = "'%zip%'"
+        sqlite = " %s \"select name, size, mtime from t_files where name like %s and not name like %s and not name like %s order by mtime asc\" "  %(db, string, search1, search2)
+	mycmd = "sqlite3"
+	myarg = sqlite
+	cmd = mycmd + myarg
+        result = CheckCommand(cmd)
+        if result[0] == 0:
+                return result[1]
+	else: return emptyString
 
 """
-Remove file from disk
+Get List of un-merged files
 """
-def Remover(filepath) :
-    print "Removeing File: %s" %filepath
-    result = os.popen('rm -f %s' %filepath)
-    for line in result.readlines() :
-        if line == "" :  ## now error check rm
-            print "File Removed"
-            fileunreg(db, filepath, LOGFILE) #def fileunreg(db,file,logfile):
-        else :
-            print "Cannot Remove This File because ", line
+def GetListOfFiles():
+	print "Retrieving list of files from DB ...\n"
+	totalSize = 0
+	zipFileList = ''
+	fileList = GetFileFromDB().split('\n')
+	for line in fileList:
+		if cmp(line,"") != 0 and cmp(line,emptyString) != 0:
+			string = line.rstrip().split('|')
+			name = string[0]
+			print name
+			print "String just read is ", string
+			number = string[1]
+			print "Number just read is ", number
+			totalSize += int(number)
+			print "Current File Size Sum is ", totalSize, " out of Limit", fileSizeThreshold
+			zipFileList += " " + name
+			if totalSize > fileSizeThreshold:
+        			return zipFileList
+	return emptyString # it's too small
 
 """
-Main Script
+Temporary Port form Hyunkwan's Un-Register-File Script
+"""
+def filereg(db,bakdb,tmpdb,file,logfile):
+    if os.path.exists(tmpdb): os.remove(tmpdb)
+    shutil.copy(db,tmpdb)
+    logfile.write('*** File Register ***\n')
+    logfile.write(os.popen('visDQMRegisterFile '+ tmpdb +' "/Global/Online/ALL" "Global run" '+ file).read())
+    t = datetime.now()
+    tstamp = t.strftime("%Y%m%d")
+    a = glob.glob(bakdb+'.'+tstamp+'*');
+    if not len(a):
+        tstamp = t.strftime("%Y%m%d_%H%M%S")
+        bakdb = bakdb+'.'+tstamp
+        shutil.copy(tmpdb,bakdb)
+        shutil.move(tmpdb,db)
+    else:
+        shutil.move(tmpdb,db)
+
+def fileunreg(db,bakdb,tmpdb,oldfile,logfile):
+    if os.path.exists(tmpdb): os.remove(tmpdb)
+    shutil.copy(db,tmpdb)
+    logfile.write('*** File UnRegister ***\n')
+    logfile.write(os.popen('visDQMUnregisterFile '+ tmpdb +' ' + oldfile).read())
+    t = datetime.now()
+    tstamp = t.strftime("%Y%m%d")
+    a = glob.glob(bakdb+'.'+tstamp+'*');
+    if not len(a):
+        tstamp = t.strftime("%Y%m%d_%H%M%S")
+        bakdb = bakdb+'.'+tstamp
+        shutil.copy(tmpdb,bakdb)
+        shutil.move(tmpdb,db)
+    else:
+        shutil.move(tmpdb,db)
+
+"""
+Remove and Unregister Files
+"""
+def Remove(oldFiles):
+	print "Removing Files ... "
+	for file in oldFiles.split():
+		Delete(file)
+
+"""
+Remove and Register Files
+"""
+def RemoveAndRegister(newFile,oldFiles):
+        for file in oldFiles.split():
+		newpath = newFile + "#" + file[len(dir):]
+		print "Registering New File Path ", newpath
+		filereg(db,bakdb,tmpdb,newpath,logfile)
+                Delete(file)
+
+"""
+Remove and Unregister A File
+"""
+def Delete(file):
+	fileunreg(db,bakdb,tmpdb,file,logfile)
+	print file, "removed from db..."
+	os.remove(file)
+	print file, "removed from disk..."
+
+"""
+Main Prog
 """
 if __name__ == "__main__":
-####### ENDLESS LOOP
-    print "Starting Test Script ..."
-    count = 0
-    while True :
-        Archive()
-        count += 1
-        print "Looping " , count, "Time(s)"
-        if count >= 2 : break
-        else : continue
-    LOGFILE.close()
+	print "Starting Archival *Test* Script ...\n"
+	DiskUsage()# check disk usage
+	zipFileList = GetListOfFiles() # get list of files for merging
+	print zipFileList
+	if cmp(zipFileList, emptyString) == 0 : print "Sum of Files is below Threshold = ", fileSizeThreshold, "\n"
+	else :# make zip file only if the output file will be large enough
+		firstFile = "DQM_Online_" + zipFileList.split()[0][len(dir)+len("DQM_V0010_"):-len("R000064807.root")]
+		lastFile  = zipFileList.split()[-1][len(dir)+len("DQM_V0010_R000064807_"):-len(".root")]
+		outputFileName = dir + firstFile + lastFile + ".zip"
+		print "1st File = ", firstFile, " Last File = ", lastFile
+		if os.path.exists(outputFileName) is True: os.remove(outputFileName)# remove old one if exists
+		if lastFile.find("R") != -1 and firstFile.find("R") != -1:
+			zip = zipfile.ZipFile(outputFileName, "w")# create zip file
+			for name in zipFileList.split():
+				print name
+				zip.write(name,os.path.basename(name), zipfile.ZIP_STORED)# add each file
+			zip.close()# close zip file
+			filepath = outputFileName
+			zipFileSize = os.path.getsize(filepath)
+			print "Zip File Size = ",zipFileSize 
+			if zipFileSize > fileSizeThreshold :# check if file is large enough 
+				zip = zipfile.ZipFile(outputFileName, "r")# open file to see it readable
+				for info in zip.infolist():# print to see zipfile is uncompressed
+					print info.filename, info.date_time, info.file_size, info.compress_size
+				zip.close()# close zip file
+#				filereg(db,bakdb,tmpdb,filepath,logfile)
+				flag = False# brand new transfer 
+				transfer = TransferWithT0System(filepath,flag)# Sending file to Castor
+				if transfer is True: RemoveAndRegister(filepath,zipFileList)# register newpaths and remove files
+			else: raise RuntimeError
+		else: raise RuntimeError
+	logfile.close()
