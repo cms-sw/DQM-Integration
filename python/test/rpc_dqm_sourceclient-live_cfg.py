@@ -13,7 +13,8 @@ process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 ################# RPC Unpacker  ######################
 process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
-    InputLabel = cms.untracked.InputTag("source")
+    InputLabel = cms.untracked.InputTag("source"),
+    doSynchro = cms.bool(False)
 )
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",

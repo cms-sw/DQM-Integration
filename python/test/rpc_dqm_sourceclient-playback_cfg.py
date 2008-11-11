@@ -41,7 +41,8 @@ process.RPCCabling = cms.ESSource("PoolDBESSource",
 )
 
 process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
-    InputLabel = cms.untracked.InputTag("source")
+    InputLabel = cms.untracked.InputTag("source"),
+    doSynchro = cms.bool(False)
 )
 
 process.qTesterRPC = cms.EDFilter("QualityTester",
