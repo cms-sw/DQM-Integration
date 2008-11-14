@@ -19,12 +19,24 @@ fi
 
 [ -e $DQM_DIR/dqm.db ] && mv $DQM_DIR/{dqm,new}.db
 
-for DATAFILE in $DQM_DIR/data/**/DQM_V0001*.root; do
-  ls -al $DATAFILE
-  PASS=$(echo $DATAFILE | perl -pe "s|$DQM_DIR/data/[^/]+/||; s|/.*||")
-  DATASET=$(echo $DATAFILE | perl -pe 's|.*?__|__|; s|.root$||; s|__|/|g')
-  (set -x; visDQMRegisterFile $DQM_DIR/new.db $DATASET $PASS $DATAFILE)
-done
+find $DQM_DIR/data -name 'DQM_V0001*.root' |
+  perl -ne '
+    chomp;
+    $datafile = $_;
+    $pass = $datafile;
+    $pass =~ s|'"$DQM_DIR"'/data/[^/]+/||;
+    $pass =~ s|/.*||;
+    $dataset = $datafile;
+    $dataset =~ s|.*?__|__|;
+    $dataset =~ s|.root$||;
+    $dataset =~ s|__|/|g;
+    push(@{$files{"$dataset $pass"}}, $datafile);
+
+    END {
+      foreach (keys %files) {
+        system("set -x; visDQMRegisterFile '"$DQM_DIR"'/new.db $_ @{$files{$_}}");
+      }
+    }'
 
 [ -e $DQM_DIR/new.db ] && mv $DQM_DIR/{new,dqm}.db
 rm -f $DQM_LOCK
