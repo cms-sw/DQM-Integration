@@ -1,268 +1,48 @@
 #!/usr/bin/env python
+#
+# import modules
 import os, time, shutil, zipfile, commands, sys, glob
 from datetime import datetime
-fileSizeThreshold = 1000000000 # 1GB to get away from technicality of large zip file size
-disk_threshold = 80 # 80% full
-transferScript = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"# T0 System Script
-targetdir = "/castor/cern.ch/cms/store/dqm/" # Castor Store Area
+# import ends
+#
+
+#
+# global variables for zipping and file transfer
+# Directory Setup
 dir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # File Directory
 dbdir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # db Directory
-cfgfile = " /xxxx/yyyy/config.txt "# configuration file
+arcdir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # Zipped File Directory
+cfgfile = " /nfshome0/smaruyam/CMSSW_2_0_10/src/test/myconfig.txt "# configuration file
+# Directory Setup over
+# Switches to en/disable functionalities
+EnableFileRemoval = True
+PathReplace = False
+EnableTransfer = False
+# Switches over
+fileSizeThreshold =  10000000 # <- Test Value! 1000000000 = 1GB to get away from technicality of large zip file size
+disk_threshold = 8 # 80% full
+transferScript = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"# T0 System Script
+targetdir = "/castor/cern.ch/cms/store/dqm/" # Castor Store Area
 cfgarg  = " --config " + cfgfile
 fullTransferArg = cfgarg + " --type dqm --hostname srv-C2D05-19 --lumisection 1 --appname CMSSW --appversion CMSSW_2_0_10 "
 statusCheck = cfgarg + " --check --filename "
 emptyString = "empty"
 
-logfile = open('archival_log.txt', 'a')# Redundant, Temporaly Use
-tmpdb = dbdir + "tmp/tmp.db"
-bakdb = dbdir + "tmp/backup.db"
-db = dbdir + "db.db"
+# temporary fix for sqlite3 path
+sqlite3 = "sqlite3 "
+#
 
-"""
-Check and Return Output
-"""
-def CheckCommand(cmd):
-	result = commands.getstatusoutput(cmd)
-	if result[0] == 0:
-		output = result[1]
-		return result
-	else :
-		print "Command Exits with non-zero Status,", result[0]
-		return result
+# commond database path and log file
+logfile = open('archival_log.txt', 'a')# log
+tmpdb = dbdir + "tmp/tmp.db" # temporary db
+bakdb = dbdir + "tmp/backup.db" # backup db
+db = dbdir + "db.db" # db
+# global variables definition ends
+#
 
-"""
-Disk Usage Check
-df out put is assumed as follows.
-Filesystem            Size  Used Avail Use% Mounted on
-/dev/sda3              73G   45G   25G  65% /
-/dev/sda1              99M   12M   83M  12% /boot
-none                  2.0G     0  2.0G   0% /dev/shm
-/dev/sdb1             917G   83G  788G  10% /data
-cmsnfshome0:/nfshome0
-                      805G  673G  133G  84% /cmsnfshome0/nfshome0
-"""
-def DiskUsage() :
-    print " *** Checking Disk Usage ***"
-    df_file=os.popen('df')
-    usage = False
-    lines = df_file.readlines()
-    list = lines[4].split() # 5th line from top. Split at tab or white space
-    string = list[4][:-1] # NEED check for the host
-    fusage = float(string)
-    print fusage
-    if fusage > disk_threshold : # disk is more than 80% full
-        print "Disk Usage too high"
-        usage = True
-    if usage == True :
-        Cleaner()
-    else :
-        print "Disk Usage is low enough"
-
-"""
-Check File Path on Tape
-""" 
-def ConfirmPath(file, path) :
-	print " *** Checking File Path *** "
-	time.sleep(10) 
-	fullpath = path + "/" + file[len(dir):]
-	mycmd = "rfdir "
-	myarg = fullpath
-	cmd = mycmd + myarg
-	print cmd 
-	result = CheckCommand(cmd)
-	if result[0] == 0:
-		output = result[1]
-		if cmp(output,"") != 0:
-			for line in output.splitlines():
-				print " rfdir result is ",line
-				error_check = "No such file or directory"
-				if line.find(error_check) != -1 :return emptyString
-				print " rfdir result is ",line.split()
-				if len(line.split()) > 7:
-					string = line.split()[-1]
-					print "Last Item is ", string
-					print "Last Item is ", fullpath
-					if cmp(string,fullpath) == 0: return fullpath
-	return emptyString
-
-"""
-Scan Directories
-"""
-def ScanDir(file) :
-        mycmd = "rfdir "
-        myarg = targetdir
-        cmd = mycmd + myarg
-        print "Scanning tape area  ",cmd
-        result = CheckCommand(cmd)
-        if result[0] == 0:
-		if cmp(result[1],"") != 0:
-	                output = result[1].split('\n')
-        	        for line in output :
-				if len(line.split()) > 8:
-					newpath = targetdir + line.split()[-1]
-					print "Looking for File at ", newpath
-					confirmpath = ConfirmPath(file, newpath)
-					print "Returned Path ", confirmpath
-					if cmp(confirmpath, newpath + "/" + file[len(dir):] ) == 0: return confirmpath
-	return emptyString
-
-"""
-Path Specifier
-"""
-def CheckPath(filename) :
-	mtime = os.stat(filename).st_mtime
-	year = time.localtime(mtime)[0]
-        month = time.localtime(mtime)[1]
-	if month > 9: yearmonth = str(year) + str(month)
-	else: yearmonth = str(year) + "0" + str(month)
-        path = targetdir + yearmonth
-	print "Best Guess for the path is ", path
-        newpath = ConfirmPath(filename, path)
-        if cmp(newpath,emptyString) != 0 : return newpath
-        else :# scan all path
-		newpath = ScanDir(filename)
-		return newpath
-
-"""
-Set Path
-"""
-def SetPath(file):
-	path = CheckPath(file)
-	print path
-	if cmp(path,emptyString) != 0:
-		newpath = "rfio:" + path
-		print "Register New Path ", newpath
-		filereg(db,bakdb,tmpdb,newpath,logfile)
-		return True
-	else :print "File Transferred, but not found on tape\n"
-	return False
-
-"""
-File Cleaner, Remove the oldest file
-"""
-def Cleaner() :
-	print " *** Cleaning File ***"
-	files = GetAllFiles()
-	for file in files:
-		if file.find(".zip") != -1:#zip file
-			status = CheckFileStatus(file)# check transfer status
-			if status is True:
-				pathfind = SetPath(file)
-				if pathfind is True :# path found on tape
-					Delete(file)# remove only if transferred 
-					return # exits when the files deleted
-		if file.find(".root") != -1:
-			Delete(file)
-			return # exits when the file deleted
-	else : print "No File to be removed!\n"
-
-"""
-Getting All Files from DB
-"""
-def GetAllFiles() :
-	print " *** Getting All Files from db ***"
-        sqlite = db + " \"select name from t_files where name like '%DQM%.root' or name like '%DQM%.zip'order by mtime asc\""
-	mycmd = "sqlite3 "
-	myarg = sqlite
-	cmd = mycmd + myarg
-	result = CheckCommand(cmd)
-	if result[0] == 0:
-		output = result[1].split('\n')
-		return output
-	else : return emptyString
-
-"""
-Check File Status
-"""
-def CheckFileStatus(filepath):
-        filename = filepath[len(dir):]
-	print filename
-	checkString = statusCheck + filename
-	mycmd = transferScript
-	myarg = checkString
-	cmd = mycmd + myarg
-	result = CheckCommand(cmd)
-	if result[0] == 0:
-		output = result[1].split('\n')
-		for line in output:
-			print line
-			if line.find("FILES_TRANS_CHECKED: File found in database and checked by T0 system.") != -1: return True
-			elif line.find("File not found in database.") != -1: return False
-	flag = True
-	TransferWithT0System(filepath,flag)
-	mtime = os.stat(filepath).st_mtime
-	print "Old M Time is ", mtime
-	os.utime(filepath,None)# change mtime to help path search
-	mtime2 = os.stat(filepath).st_mtime
-	print "New M Time is ", mtime2
-	return False
-
-"""
-Transfer File with T0 System
-"""
-def TransferWithT0System(filepath, flag):
-	filename = filepath[len(dir):]
-	nrun = filepath[len(dir)+len("DQM_Online_R"):-len("_R000064807.zip")]
-	transfer_string = transferScript + " --runnumber " + nrun + " --path " + dir + " --filename " + filename
-#	transfer_string += " --test " # TEST, no file transfer, REMOVE this line if transfer is needed!
-	if flag is True: transfer_string += " --renotify "# transfer failed previously, trying to send it again
-	mycmd = transfer_string
-	myarg = fullTransferArg
-	cmd = mycmd + myarg
-	print cmd
-	result = CheckCommand(cmd)
-	if result[0] == 0:
-		output = result[1].split('\n')
-		for line in output:
-			print line
-        	        if line.find("File sucessfully submitted for transfer.") != -1 and flag is False:
-                	        print "%s is queued " %filepath
-                        	return True
-        	        if line.find("File sucessfully re-submitted for transfer.") != -1 and flag is True:
-                	        print "%s is resubmitted " %filepath
-                        	return True
-	return False
-
-"""
-Read and sort file from db
-"""
-def GetFileFromDB():
-	print " *** Getting Merged File List from Master DB ***"
-	string = "'%DQM_V%_R%.root'"
-        search1 = "'%RPC%'"
-        search2 = "'%zip%'"
-        sqlite = " %s \"select name, size, mtime from t_files where name like %s and not name like %s and not name like %s order by mtime asc\" "  %(db, string, search1, search2)
-	mycmd = "sqlite3"
-	myarg = sqlite
-	cmd = mycmd + myarg
-        result = CheckCommand(cmd)
-        if result[0] == 0:
-                return result[1]
-	else: return emptyString
-
-"""
-Get List of un-merged files
-"""
-def GetListOfFiles():
-	print "Retrieving list of files from DB ...\n"
-	totalSize = 0
-	zipFileList = ''
-	fileList = GetFileFromDB().split('\n')
-	for line in fileList:
-		if cmp(line,"") != 0 and cmp(line,emptyString) != 0:
-			string = line.rstrip().split('|')
-			name = string[0]
-			print name
-			print "String just read is ", string
-			number = string[1]
-			print "Number just read is ", number
-			totalSize += int(number)
-			print "Current File Size Sum is ", totalSize, " out of Limit", fileSizeThreshold
-			zipFileList += " " + name
-			if totalSize > fileSizeThreshold:
-        			return zipFileList
-	return emptyString # it's too small
-
+#
+# file register and un-register
+# You don't need copy these!
 """
 Temporary Port form Hyunkwan's Un-Register-File Script
 """
@@ -298,66 +78,422 @@ def fileunreg(db,bakdb,tmpdb,oldfile,logfile):
     else:
         shutil.move(tmpdb,db)
 
+# file register and un-register over
+#
+
+#
+# generic function
+# check command exist status and retrive output messsage
 """
-Remove and Unregister Files
+Check and Return Output
 """
-def Remove(oldFiles):
-	print "Removing Files ... "
-	for file in oldFiles.split():
-		Delete(file)
+def CheckCommand(cmd, logfile):
+	result = commands.getstatusoutput(cmd)
+	if result[0] == 0:
+		output = result[1]
+		return result
+	else :
+		logfile.write("Command Exits with non-zero Status," + str(result[0]) + " Error = " + result[1] + "\n")
+		return result
+
+# generic function over
+#
+
+#
+# disk use check
+"""
+Disk Usage Check
+Reference to Cleaner()
+df out put is assumed as follows.
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda3              73G   45G   25G  65% /
+/dev/sda1              99M   12M   83M  12% /boot
+none                  2.0G     0  2.0G   0% /dev/shm
+/dev/sdb1             917G   83G  788G  10% /data
+cmsnfshome0:/nfshome0
+                      805G  673G  133G  84% /cmsnfshome0/nfshome0
+"""
+def DiskUsage(logfile) :
+    logfile.write(" *** Checking Disk Usage ***\n")
+    df_file=os.popen('df')
+    usage = False
+    lines = df_file.readlines()
+    list = lines[4].split() # 5th line from top. Split at tab or white space
+    string = list[4][:-1] # NEED check for the host
+    fusage = float(string)
+    if fusage > disk_threshold : # disk is more than 80% full
+        logfile.write("Disk Usage too high = " + string + "%\n")
+        usage = True
+    if usage == True :
+        Cleaner(logfile)
+    else :
+        logfile.write("Disk Usage is low enough = " + string + "%\n")
+
+# disk use check over
+#
+
+#
+# Confirm the path to Transferred file on Castor
+"""
+Set Path to Castor
+Reference to CheckPath(), filereg()
+"""
+def SetPath(file, logfile):
+	path = CheckPath(file,logfile)
+	if cmp(path,emptyString) != 0:
+		newpath = "rfio:" + path
+		logfile.write("Register New Path " +  newpath + "\n")
+		filereg(db,bakdb,tmpdb,newpath,logfile)
+		return True
+	else :logfile.write("File Transferred, but not found on tape\n")
+	return False
+
+"""
+Path Specifier
+Reference to ConfirmPath(), ScanDir()
+"""
+def CheckPath(filename, logfile) :
+	mtime = os.stat(filename).st_mtime
+	year = time.localtime(mtime)[0]
+        month = time.localtime(mtime)[1]
+	if month > 9: yearmonth = str(year) + str(month)
+	else: yearmonth = str(year) + "0" + str(month)
+        path = targetdir + yearmonth
+	logfile.write("Best Guess for the path is " + path + "\n")# guess the path based on mtime
+        newpath = ConfirmPath(filename, path, logfile)# check if the path is correct
+        if cmp(newpath,emptyString) != 0 : return newpath
+        else :# scan all path, if the guess is wrong
+		newpath = ScanDir(filename, logfile)
+		return newpath
+
+"""
+Check File Path on Tape
+Reference to CheckCommand()
+""" 
+def ConfirmPath(file, path, logfile) :
+	logfile.write(" *** Checking File Path ***\n ")
+	time.sleep(10) 
+	fullpath = path + "/" + file[len(arcdir):]
+	mycmd = "rfdir "
+	myarg = fullpath
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd, logfile)
+	if result[0] == 0:
+		output = result[1]
+		if cmp(output,"") != 0:
+			for line in output.split("\n"):
+				error_check = "No such file or directory"
+				if line.find(error_check) != -1 :return emptyString
+				logfile.write(" rfdir result is " + line + "\n")
+				if len(line.split()) > 7:
+					string = line.split()[-1]
+					if cmp(string,fullpath) == 0: return fullpath
+	return emptyString
+
+"""
+Scan Castor Directories
+Reference to ConfirmPath(), CheckCommand()
+"""
+def ScanDir(file, logfile) :
+        mycmd = "rfdir "
+        myarg = targetdir
+        cmd = mycmd + myarg
+        logfile.write("Scanning tape area  " + cmd + "\n")
+        result = CheckCommand(cmd, logfile)
+        if result[0] == 0:
+		if cmp(result[1],"") != 0:
+	                output = result[1].split('\n')
+        	        for line in output :
+				if len(line.split()) > 8:
+					newpath = targetdir + line.split()[-1]
+					logfile.write("Looking for File at " + newpath + "\n")
+					confirmpath = ConfirmPath(file, newpath, logfile)
+					logfile.write("Returned Path " + confirmpath + "\n")
+					if cmp(confirmpath, newpath + "/" + file[len(arcdir):] ) == 0: return confirmpath
+	return emptyString
+
+# path check over
+#
+
+#
+# T0 transfer functions
+"""
+Transfer File with T0 System
+Reference to CheckCommand()
+"""
+def TransferWithT0System(filepath, flag, logfile):
+	filename = filepath[len(arcdir):]
+	nrun = filepath[len(arcdir)+len("DQM_Online_R"):-len("_R000064807.zip")]# file name length matters!
+	transfer_string = transferScript + " --runnumber " + nrun + " --path " + arcdir + " --filename " + filename
+	if EnableTransfer is False: transfer_string += " --test "# TEST, no file transfer
+	if flag is True: transfer_string += " --renotify "# transfer failed previously, trying to send it again
+	mycmd = transfer_string
+	myarg = fullTransferArg
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd, logfile)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		for line in output:
+        	        if line.find("File sucessfully submitted for transfer.") != -1 and flag is False:
+                	        logfile.write("File is queued " + filepath + "\n")
+                        	return True
+        	        if line.find("File sucessfully re-submitted for transfer.") != -1 and flag is True:
+                	        logfile.write("File is resubmitted " + filepath + "\n")
+                        	return True
+	if EnableTransfer is False: logfile.write(" *** Transfer Test Mode ***\n No File Transferred.\n") # TEST, no file transfer
+	return False
+
+"""
+Check File Status of Transferred File 
+Reference to CheckCommand(), TransferWithT0System()
+"""
+def CheckFileStatus(filepath, logfile):
+        filename = filepath[len(arcdir):]
+	checkString = statusCheck + filename
+	mycmd = transferScript
+	myarg = checkString
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd, logfile)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		for line in output:
+			if line.find("FILES_TRANS_CHECKED: File found in database and checked by T0 system.") != -1: return True# file transferred successfully!
+			elif line.find("File not found in database.") != -1:# file not transferred at all
+				flag = False
+				TransferWithT0System(filepath,flag, logfile)
+				return False
+			elif line.find("FILES_INJECTED : File found in database and handed over to T0 system. ") != -1:# file must be transferred
+				flag = True
+				TransferWithT0System(filepath,flag, logfile)
+				mtime = os.stat(filepath).st_mtime
+				logfile.write("Old M Time is " + mtime + "\n")
+				os.utime(filepath,None)# change mtime to help path search
+				mtime2 = os.stat(filepath).st_mtime
+				logfile.write("New M Time is " + mtime2 + "\n")
+	logfile.write("File transfer need more time, please wait!\n")
+	return False
+
+# T0 transfer over
+#
+
+#
+# read file list from db
+"""
+Get List of un-merged files, for Zipping
+Reference to GetFileFromDB(), GetZippedFile()
+"""
+def GetListOfFiles(logfile):
+	logfile.write("Retrieving list of files from DB ...\n")
+	totalSize = 0
+	zipFileList = ''
+	if PathReplace is True:# file removal is involved
+		fileList = GetFileFromDB(logfile).split('\n')
+		for line in fileList:
+			if cmp(line,"") != 0 and cmp(line,emptyString) != 0:
+				string = line.rstrip().split('|')
+				name = string[0]
+				logfile.write("String just read is " + string + "\n")
+				number = string[1]
+				logfile.write("Number just read is " + number + "\n")
+				totalSize += int(number)
+				logfile.write("Current File Size Sum is " + str(totalSize) + " out of Limit" + str(fileSizeThreshold) + "\n")
+				zipFileList += " " + name
+				if totalSize > fileSizeThreshold:
+        				return zipFileList
+	if PathReplace is False:# file removal is NOT involved
+		activate = False
+		lastfile = ""
+		mergedfiles = GetZippedFile(logfile).split("\n")
+		if len(mergedfiles) > 0:
+			if cmp(mergedfiles[0],"") != 0 and cmp(mergedfiles[0],emptyString) != 0:
+				lastfile = mergedfiles[0]
+				logfile.write("Last Merged Zip File is " + lastfile + "\n")
+			elif  cmp(mergedfiles[0],"") == 0:
+				activate = True
+				logfile.write("No Merged Zip File \n")
+		if len(mergedfiles) == 0:
+			activate = True
+			logfile.write("No Merged Zip File \n")
+		fileList = GetFileFromDB(logfile).split("\n")
+		for line in fileList:
+			if cmp(line,"") != 0 and cmp(line,emptyString) != 0:
+				string = line.split('|')
+				name = string[0]
+				if activate is True:
+					logfile.write("Name just read is " + name + "\n")
+					number = string[1]
+					logfile.write("Number just read is " + number + "\n")
+					totalSize += int(number)
+					logfile.write("Current File Size Sum is " + str(totalSize) + " out of Limit" + str(fileSizeThreshold) + "\n")
+					zipFileList += " " + name
+					if totalSize > fileSizeThreshold:
+       						return zipFileList
+				if activate is False and cmp(lastfile,"") !=0:
+					if cmp(lastfile[len(arcdir)+len("DQM_Online_R000064821_"):-len(".zip")],name[len(dir)+len("DQM_V0001_R000064821_"):-len(".root")]) == 0:
+						activate = True
+	return emptyString # it's too small
+
+"""
+Read and sort file from db, for Zipping
+Reference to CheckCommand()
+"""
+def GetFileFromDB(logfile):
+	logfile.write(" *** Getting Per-Run File List from Master DB ***\n")
+	string = "'%DQM_V%_R%.root'"
+        search1 = "'%RPC%'"
+        search2 = "'%zip%'"
+        sqlite = " %s \"select name, size from t_files where name like %s and not name like %s and not name like %s order by mtime asc\" "  %(db, string, search1, search2)
+	mycmd = sqlite3
+	myarg = sqlite
+	cmd = mycmd + myarg
+        result = CheckCommand(cmd, logfile)
+        if result[0] == 0:
+                return result[1]
+	else:
+		logfile.write(result[1])
+		return emptyString
+
+"""
+Get the last merged File, for Zipping
+Reference to CheckCommand()
+"""
+def GetZippedFile(logfile):
+	logfile.write(" *** Getting Zipped File List from Master DB ***\n")
+	string = "'%DQM%.zip'"
+        sqlite = " %s \"select name from t_files where name like %s order by mtime desc\" "  %(db, string)
+	mycmd = sqlite3
+	myarg = sqlite
+	cmd = mycmd + myarg
+        result = CheckCommand(cmd, logfile)
+        if result[0] == 0:
+                return result[1]
+	else: return emptyString
+
+"""
+Getting All Files from DB, for File Removal
+Reference to CheckCommand()
+"""
+def GetAllFiles(logfile) :
+	logfile.write(" *** Getting All Files from db ***\n")
+        sqlite = db + " \"select name from t_files where name like '%DQM%.root' or name like '%DQM%.zip'order by mtime asc\""
+	mycmd = sqlite3
+	myarg = sqlite
+	cmd = mycmd + myarg
+	result = CheckCommand(cmd, logfile)
+	if result[0] == 0:
+		output = result[1].split('\n')
+		return output
+	else : return emptyString
+
+# file list over
+#
+
+#
+# remove files and register/unregister if needed
+"""
+File Cleaner, Remove the oldest file
+Reference to GetAllFiles(), CheckFileStatus(), SetPath(), Delete(), CheckZippedFiles()
+"""
+def Cleaner(logfile) :
+	logfile.write(" *** Cleaning File ***\n")
+	files = GetAllFiles(logfile)
+	for file in files:
+		if file.find(".zip") != -1:#zip file
+			status = CheckFileStatus(file, logfile)# check transfer status
+			if status is True and PathReplace is True:# remove file and replace the place
+				pathfind = SetPath(file, logfile)
+				if pathfind is True :# path found on tape
+					Delete(file, logfile)# remove only if transferred 
+					return # exits when the files deleted
+		if file.find(".root") != -1 and file.find(dir) != -1:# Select Per-Run files
+			if PathReplace is False: CheckZippedFiles(file, logfile)# need check if zipped or not
+			if PathReplace is True: Delete(file, logfile)# must be zipped by this step
+			return # exits when the file deleted. ie, delete only one file
+	else : logfile.write("No File to be removed!\n")
+
+"""
+Remove File if zipped
+Reference to Delete()
+"""
+def CheckZippedFiles(file, logfile):
+	logfile.write(" *** Check Zipped File ***\n")
+	mergedfiles = GetZippedFile(logfile).split("\n")
+	if len(mergedfiles) > 0:
+		for thisfile in mergedfiles:
+			if thisfile.find("zip") != -1 and cmp(thisfile,"") != 0 and cmp(thisfile,emptyString) != 0:
+				zip = zipfile.ZipFile(thisfile, "r")# open file to see it readable
+				for info in zip.infolist():# to see zipfile is uncompressed
+					print info.filename
+					if cmp(info.filename, file) == 0:
+						Delete(file,logfile)
+						return True
+	logfile.write("This file hasn't been zipped, " + file + " It shouldn't be deleted now!\n")
 
 """
 Remove and Register Files
+Reference to Delete(), filereg()
 """
-def RemoveAndRegister(newFile,oldFiles):
+def RemoveAndRegister(newFile,oldFiles, logfile):
         for file in oldFiles.split():
 		newpath = newFile + "#" + file[len(dir):]
-		print "Registering New File Path ", newpath
+		logfile.write("Registering New File Path " + newpath +"\n")
 		filereg(db,bakdb,tmpdb,newpath,logfile)
-                Delete(file)
+                Delete(file, logfile)
 
 """
 Remove and Unregister A File
+Reference to fileunreg()
 """
-def Delete(file):
+def Delete(file, logfile):
 	fileunreg(db,bakdb,tmpdb,file,logfile)
-	print file, "removed from db..."
+	logfile.write(file + "removed from db...\n")
 	os.remove(file)
-	print file, "removed from disk..."
+	logfile.write(file + "removed from disk...\n")
 
+# removal over
+#
+
+#
+# main program
 """
 Main Prog
+Reference to DiskUsage(), GetListOfFiles(), TransferWithT0System(), RemoveAndRegister()
 """
 if __name__ == "__main__":
-	print "Starting Archival *Test* Script ...\n"
-	DiskUsage()# check disk usage
-	zipFileList = GetListOfFiles() # get list of files for merging
-	print zipFileList
-	if cmp(zipFileList, emptyString) == 0 : print "Sum of Files is below Threshold = ", fileSizeThreshold, "\n"
+	logfile.write("Starting Archival *Test* Script ...\n")
+	if EnableFileRemoval is True: DiskUsage(logfile)# check disk usage
+	zipFileList = GetListOfFiles(logfile) # get list of files for merging
+	if cmp(zipFileList, emptyString) == 0 : logfile.write("Sum of Files is below Threshold = " + str(fileSizeThreshold) + "\n")
 	else :# make zip file only if the output file will be large enough
 		firstFile = "DQM_Online_" + zipFileList.split()[0][len(dir)+len("DQM_V0010_"):-len("R000064807.root")]
 		lastFile  = zipFileList.split()[-1][len(dir)+len("DQM_V0010_R000064807_"):-len(".root")]
-		outputFileName = dir + firstFile + lastFile + ".zip"
-		print "1st File = ", firstFile, " Last File = ", lastFile
+		outputFileName = arcdir + firstFile + lastFile + ".zip"
+		logfile.write("1st File = " + firstFile + " Last File = " + lastFile + "\n")
 		if os.path.exists(outputFileName) is True: os.remove(outputFileName)# remove old one if exists
 		if lastFile.find("R") != -1 and firstFile.find("R") != -1:
 			zip = zipfile.ZipFile(outputFileName, "w")# create zip file
 			for name in zipFileList.split():
-				print name
-				zip.write(name,os.path.basename(name), zipfile.ZIP_STORED)# add each file
+				zip.write(name,name, zipfile.ZIP_STORED)# add each file
 			zip.close()# close zip file
 			filepath = outputFileName
 			zipFileSize = os.path.getsize(filepath)
-			print "Zip File Size = ",zipFileSize 
+			logfile.write("Zip File Size = " + str(zipFileSize) + "\n") 
 			if zipFileSize > fileSizeThreshold :# check if file is large enough 
 				zip = zipfile.ZipFile(outputFileName, "r")# open file to see it readable
-				for info in zip.infolist():# print to see zipfile is uncompressed
-					print info.filename, info.date_time, info.file_size, info.compress_size
+				for info in zip.infolist():# to see zipfile is uncompressed
+					logfile.write("File = " + info.filename + "\n")
 				zip.close()# close zip file
-#				filereg(db,bakdb,tmpdb,filepath,logfile)
+				if PathReplace is False: filereg(db,bakdb,tmpdb,filepath,logfile)
 				flag = False# brand new transfer 
-				transfer = TransferWithT0System(filepath,flag)# Sending file to Castor
-				if transfer is True: RemoveAndRegister(filepath,zipFileList)# register newpaths and remove files
-			else: raise RuntimeError
-		else: raise RuntimeError
+				transfer = TransferWithT0System(filepath,flag, logfile)# Sending file to Castor
+				if transfer is True and PathReplace is True: RemoveAndRegister(filepath,zipFileList, logfile)# register newpaths and remove files
+			else:
+				logfile.write("Inconsistency! Created Zip File too small!\n")
+				raise RuntimeError
+		else:
+			logfile.write("Wrong File Name Stripping! Check directory path to the file!\n")
+			raise RuntimeError
 	logfile.close()
+
+# main program over
+#
