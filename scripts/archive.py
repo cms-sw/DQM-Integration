@@ -15,7 +15,7 @@ arcdir = "/nfshome0/smaruyam/CMSSW_2_0_10/src/test/" # Zipped File Directory
 cfgfile = " /nfshome0/smaruyam/CMSSW_2_0_10/src/test/myconfig.txt "# configuration file
 # Directory Setup over
 # Switches to en/disable functionalities
-EnableFileRemoval = True
+EnableFileRemoval = False
 PathReplace = False
 EnableTransfer = False
 # Switches over
@@ -303,7 +303,8 @@ def GetListOfFiles(logfile):
 	if PathReplace is False:# file removal is NOT involved
 		activate = False
 		lastfile = ""
-		mergedfiles = GetZippedFile(logfile).split("\n")
+		flag = True
+		mergedfiles = GetZippedFile(logfile,flag).split("\n")
 		if len(mergedfiles) > 0:
 			if cmp(mergedfiles[0],"") != 0 and cmp(mergedfiles[0],emptyString) != 0:
 				lastfile = mergedfiles[0]
@@ -357,10 +358,11 @@ def GetFileFromDB(logfile):
 Get the last merged File, for Zipping
 Reference to CheckCommand()
 """
-def GetZippedFile(logfile):
+def GetZippedFile(logfile, flag):
 	logfile.write(" *** Getting Zipped File List from Master DB ***\n")
 	string = "'%DQM%.zip'"
-        sqlite = " %s \"select name from t_files where name like %s order by mtime desc\" "  %(db, string)
+        if flag is True: sqlite = " %s \"select name from t_files where name like %s order by mtime desc\" "  %(db, string)
+        if flag is False: sqlite = " %s \"select name from t_files where name like %s order by mtime asc\" "  %(db, string)
 	mycmd = sqlite3
 	myarg = sqlite
 	cmd = mycmd + myarg
@@ -417,13 +419,13 @@ Reference to Delete()
 """
 def CheckZippedFiles(file, logfile):
 	logfile.write(" *** Check Zipped File ***\n")
-	mergedfiles = GetZippedFile(logfile).split("\n")
+	flag = False
+	mergedfiles = GetZippedFile(logfile,flag).split("\n")
 	if len(mergedfiles) > 0:
 		for thisfile in mergedfiles:
 			if thisfile.find("zip") != -1 and cmp(thisfile,"") != 0 and cmp(thisfile,emptyString) != 0:
 				zip = zipfile.ZipFile(thisfile, "r")# open file to see it readable
 				for info in zip.infolist():# to see zipfile is uncompressed
-					print info.filename
 					if cmp(info.filename, file) == 0:
 						Delete(file,logfile)
 						return True
