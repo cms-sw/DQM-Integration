@@ -19,8 +19,8 @@ EnableFileRemoval = False
 PathReplace = False
 EnableTransfer = False
 # Switches over
-fileSizeThreshold =  10000000 # <- Test Value! 1000000000 = 1GB to get away from technicality of large zip file size
-disk_threshold = 8 # 80% full
+fileSizeThreshold =  1000000000# = 1GB(default) to get away from technicality of large zip file size
+disk_threshold = 80#default 80% full
 transferScript = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"# T0 System Script
 targetdir = "/castor/cern.ch/cms/store/dqm/" # Castor Store Area
 cfgarg  = " --config " + cfgfile
