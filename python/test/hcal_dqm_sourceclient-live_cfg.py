@@ -1,7 +1,6 @@
-# The following comments couldn't be translated into the new config version:
-
-# suppresses html output from HCalClient  
 import FWCore.ParameterSet.Config as cms
+from DQM.HcalMonitorModule.HcalMonitorModule_cfi import * # Can this be done better?
+from DQM.HcalMonitorClient.HcalMonitorClient_cfi import * 
 
 process = cms.Process("HCALDQM")
 #----------------------------
@@ -10,8 +9,6 @@ process = cms.Process("HCALDQM")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 
-# This comes from DQM/Integration/python/test/inputsource_cfi.py
-# How do we include a file from a subdirectory of 'python'?   Figure that out later -- Jeff T.
 # process.maxEvents = cms.untracked.PSet(
 #     input = cms.untracked.int32(-1)
 #     )
@@ -28,14 +25,12 @@ process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 #                             headerRetryInterval = cms.untracked.int32(3)
 #                             )
 
-
 #----------------------------
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-
-#replace DQMStore.referenceFileName = "Hcal_reference.root"
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/hcal_reference.root'
 
 #----------------------------
 # DQM Live Environment
@@ -51,7 +46,7 @@ process.dqmEnv.subSystemFolder = "Hcal"
 #-----------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = 'CRAFT_V2H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'CRAFT_V4H::All' # or any other appropriate
 process.prefer("GlobalTag")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
@@ -61,48 +56,63 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 # Hcal DQM Source, including SimpleReconstrctor
 #-----------------------------
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
-
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
-process.hcalMonitor.PedestalsPerChannel = False
-process.hcalMonitor.PedestalsInFC = True
-process.hcalMonitor.checkNevents = 250
 
-process.hcalMonitor.DataFormatMonitor = True
-process.hcalMonitor.DigiMonitor = True
-process.hcalMonitor.RecHitMonitor = True
-process.hcalMonitor.TrigPrimMonitor = True
-process.hcalMonitor.PedestalMonitor = False
-process.hcalMonitor.DeadCellMonitor = True
-process.hcalMonitor.HotCellMonitor = True
-process.hcalMonitor.LEDMonitor = False
-process.hcalMonitor.CaloTowerMonitor = False
-process.hcalMonitor.MTCCMonitor = False
-process.hcalMonitor.HcalAnalysis = False
+# hcalMonitor configurable values -----------------------
+process.hcalMonitor.debug = 0
+process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
+process.hcalMonitor.pedestalsInFC = True
+process.hcalMonitor.showTiming = False
+process.hcalMonitor.checkNevents=100
+process.hcalMonitor.dump2database = False
 
+# Turn on/off individual hcalMonitor modules ------------
+process.hcalMonitor.DataFormatMonitor   = True
+process.hcalMonitor.DataIntegrityTask   = True
+process.hcalMonitor.DigiMonitor         = True
+process.hcalMonitor.RecHitMonitor       = True
+process.hcalMonitor.TrigPrimMonitor     = True
+process.hcalMonitor.DeadCellMonitor     = True
+process.hcalMonitor.HotCellMonitor      = True
+process.hcalMonitor.BeamMonitor         = True
+process.hcalMonitor.PedestalMonitor     = True
+process.hcalMonitor.LEDMonitor          = False
+process.hcalMonitor.CaloTowerMonitor    = False
+process.hcalMonitor.MTCCMonitor         = False
+process.hcalMonitor.HcalAnalysis        = False
+
+# This takes the default cfg values from the hcalMonitor base class and applies them to the subtasks.
+setHcalTaskValues(process.hcalMonitor)
+
+# Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
+process.hcalMonitor.DeadCellMonitor_pedestal_Nsigma     = 0
+process.hcalMonitor.DeadCellMonitor_makeDiagnosticPlots = False
+process.hcalMonitor.DeadCellMonitor_test_pedestal       = True
+process.hcalMonitor.DeadCellMonitor_test_occupancy      = True
+process.hcalMonitor.DeadCellMonitor_test_neighbor       = False
+
+process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
+process.hcalMonitor.HotCellMonitor_test_neighbor        = False
 
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 
-process.hcalClient.plotPedRAW = True
-process.hcalClient.baseHtmlDir = ''
+# hcalClient configurable values ------------------------
+# suppresses html output from HCalClient  
+process.hcalClient.baseHtmlDir = ''  # set to '' to ignore html output
 
-process.hcalClient.SummaryClient = True
-process.hcalClient.DataFormatClient = True
-process.hcalClient.DigiClient = True
-process.hcalClient.RecHitClient = True
-process.hcalClient.TrigPrimClient = True
-process.hcalClient.DeadCellClient = True
-process.hcalClient.HotCellClient = True
+# Set client settings to the same as monitor.  At the moment, this doesn't affect client minErrorFlag
+# Summary Client is also unaffected
+setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
-process.hcalClient.CaloTowerClient = False
-process.hcalClient.LEDClient = False
-process.hcalClient.PedestalClient = False
+process.hcalClient.SummaryClient        = True
+
 
 #-----------------------------
 # Scheduling
@@ -114,3 +124,15 @@ process.options = cms.untracked.PSet(
 )
 
 process.p = cms.Path(process.hcalDigis*process.horeco*process.hfreco*process.hbhereco*process.zdcreco*process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
+
+
+#-----------------------------
+# Quality Tester 
+# will add switch to select histograms to be saved soon
+#-----------------------------
+process.qTester = cms.EDFilter("QualityTester",
+    prescaleFactor = cms.untracked.int32(1),
+    qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
+    getQualityTestsFromFile = cms.untracked.bool(True)
+)
+
