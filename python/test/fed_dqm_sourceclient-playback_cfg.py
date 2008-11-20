@@ -91,6 +91,11 @@ process.hcalMonitor.HotCellMonitor      = False
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.BeamMonitor         = False
 
+# RPC
+process.load("EventFilter.RPCRawToDigi.RPCSQLiteCabling_cfi")
+process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
+process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
+
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 
@@ -107,4 +112,5 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
 			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck +
 			      process.hcalDigis + process.hcalMonitor +
+			      process.rpcunpacker + process.rpcFEDIntegrity + 
 			      process.DQMFEDIntegrityClient )
