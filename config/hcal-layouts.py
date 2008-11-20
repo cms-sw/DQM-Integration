@@ -1,26 +1,18 @@
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
-hcallayout(dqmitems, "HCAL Unsuppressed Channels",
-          [{ 'path': "Hcal/DigiMonitor/Digi Depth 1 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/Digi Depth 2 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/DigiMonitor/Digi Depth 3 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/Digi Depth 4 Occupancy Map",
-                   'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
-           )
-
 hcallayout(dqmitems, "HCAL Pedestals",
-          [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth1",
+          [{ 'path': "Hcal/PedestalMonitor_Hcal/HB HF Depth 1 Pedestal Mean Map ADC",
                    'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth2",
+           { 'path': "Hcal/PedestalMonitor_Hcal/HB HF Depth 2 Pedestal Mean Map ADC",
                    'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28.. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-          [{ 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth3",
-                   'description': "Should be fairly uniform in color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           { 'path': "Hcal/DigiMonitor/HCAL/RawPedestalMeanDepth4",
-                   'description': "Should be fairly uniform in color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]           
-           )
+          [{ 'path': "Hcal/PedestalMonitor_Hcal/HE Depth 1 Pedestal Mean Map ADC",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
+           { 'path': "Hcal/PedestalMonitor_Hcal/HE Depth 2 Pedestal Mean Map ADC",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28.. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+          [{ 'path': "Hcal/PedestalMonitor_Hcal/HE Depth 3 Pedestal Mean Map ADC",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
+           { 'path': "Hcal/PedestalMonitor_Hcal/HO ZDC Pedestal Mean Map ADC",
+                   'description': "Should be fairly uniform in color, except two vertical red stripes at abs(ieta) 28.. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],)
 
 hcallayout(dqmitems, "HCAL Trigger Primitives",
           [{ 'path': "Hcal/TrigPrimMonitor/Energy Plots/ADC spectrum positive TP",
@@ -30,12 +22,12 @@ hcallayout(dqmitems, "HCAL Trigger Primitives",
            )
 
 hcallayout(dqmitems, "HCAL Dead Cell Check",
-          [{ 'path': "Hcal/DeadCellMonitor/HCAL/HCALProblemDeadCells",
+          [{ 'path': "Hcal/DeadCellMonitor_Hcal/ ProblemDeadCells",
                    'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell Check",
-          [{ 'path': "Hcal/HotCellMonitor/HCAL/HCALProblemHotCells",
+          [{ 'path': "Hcal/HotCellMonitor_Hcal/ ProblemHotCells",
                    'description': "A cell is considered potentially hot if: Above a threshold energy; More than 3 sigma above its pedestal value; or Energy is especially large compared to its neighbors. Seriously hot if hot for >5% of a full run. All depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
