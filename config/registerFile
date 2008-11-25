@@ -4,7 +4,7 @@
 DQM_V=4.2.6c
 DQM_SW=/data/sw
 DQM_BASE=/data/dqm
-DQM_DIR=$(dirname $0)
+DQM_DIR=${1-$(dirname $0)}
 DQM_LOCK=$DQM_DIR/update.lock
 . $DQM_SW/cmsset_default.sh
 . $DQM_SW/slc4_ia32_gcc345/cms/dqmgui/$DQM_V/etc/profile.d/env.sh
