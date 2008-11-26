@@ -107,13 +107,16 @@ process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
-process.hcalClient.baseHtmlDir = ''  # set to '' to ignore html output
+process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 
 # Set client settings to the same as monitor.  At the moment, this doesn't affect client minErrorFlag
 # Summary Client is also unaffected
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
+process.hcalClient.HotCellClient        = False
+process.hcalClient.DeadCellClient       = False
+process.hcalClient.PedestalClient       = False
 
 
 #-----------------------------
