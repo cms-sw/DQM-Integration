@@ -7,7 +7,7 @@ process = cms.Process("CSCDQMLIVE")
 #-------------------------------------------------
 
 process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
-process.dqmClient.FractUpdateEventFreq = cms.untracked.uint32(100)
+process.dqmCSCClient.FractUpdateEventFreq = cms.untracked.uint32(100)
 
 #-------------------------------------------------
 # Offline DQM Module Configuration
@@ -112,5 +112,5 @@ MessageLogger = cms.Service("MessageLogger",
 # Sequences
 #--------------------------
 
-#process.p = cms.Path(process.dqmClient+process.dqmEnv+process.dqmSaver)
-process.p = cms.Path(process.dqmClient * process.muonCSCDigis * process.csc2DRecHits * process.cscSegments * process.cscMonitor + process.dqmEnv + process.dqmSaver)
+#process.p = cms.Path(process.dqmCSCClient+process.dqmEnv+process.dqmSaver)
+process.p = cms.Path(process.dqmCSCClient * process.muonCSCDigis * process.csc2DRecHits * process.cscSegments * process.cscMonitor + process.dqmEnv + process.dqmSaver)

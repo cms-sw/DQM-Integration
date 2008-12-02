@@ -94,7 +94,7 @@ MessageLogger = cms.Service("MessageLogger",
 
 )
 
-process.p = cms.Path(process.dqmClient+process.dqmEnv+process.dqmSaver)
+process.p = cms.Path(process.cscDQMEvF+process.dqmEnv+process.dqmSaver)
 
 process.DQM.collectorHost = 'pccmsdqm02.cern.ch'
 
