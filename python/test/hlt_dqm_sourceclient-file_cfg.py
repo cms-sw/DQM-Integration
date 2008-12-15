@@ -6,6 +6,11 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect = "frontier://PromptProd/CMS_COND_21X_GLOBALTAG"
+process.GlobalTag.globaltag = "CRUZET4_V4P::All"
+process.prefer("GlobalTag")
+
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -15,17 +20,16 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 process.source = cms.Source("PoolSource",
-    debugVerbosity = cms.untracked.uint32(1),
-    debugVebosity = cms.untracked.bool(True),
-    fileNames = cms.untracked.vstring(
-    'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
-    #'file:/tmp/wteo/068C4FCE-F485-DD11-AF6A-001617E30D38.root'
-    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
-    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
-    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root',
-    'file:/tmp/wteo/52BAB7DF-0487-DD11-95A3-000423D9989E.root'
-    #'file:/tmp/wteo/BA6DA407-A985-DD11-A0D8-000423D9A2AE.root'
-    )
+    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051488.0001.DQM.storageManager.0.0000.dat')
+    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051437.0001.DQM.storageManager.1.0000.dat')
+    #fileNames = cms.untracked.vstring('file:/tmp/wteo/28E1D7F9-214C-DD11-B42C-000423D9880C.root')
+    fileNames = cms.untracked.vstring('/store/data/Commissioning08/Monitor/RAW/v1/000/068/021/000BDAE4-37A6-DD11-8411-001D09F242EF.root')
+    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051218.0001.DQM.storageManager.0.0000.dat')
+    #fileNames = cms.untracked.vstring('file:/tmp/wteo/E244612F-7751-DD11-8931-000423D94700.root')
+    #fileNames = cms.untracked.vstring('file:/tmp/wteo/001365AC-1C1C-DD11-AA0B-0030487D62E6.root')
+    #fileNames = cms.untracked.vstring('file:/tmp/wteo/1CD42767-9B60-DD11-B56E-001617DBD224.root')
+
+
 )
 
 
@@ -47,7 +51,7 @@ process.DQM.collectorHost = 'srv-c2d05-12'
 process.DQM.collectorPort = 9190
 process.dqmSaver.dirName = '.'
 process.dqmSaver.producer = 'Playback'
-process.hltResults.plotAll = True
+#process.hltResults.plotAll = True
 process.dqmSaver.convention = 'Online'
 process.dqmEnv.subSystemFolder = 'HLT'
 process.dqmSaver.saveByRun = 1
