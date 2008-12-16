@@ -11,8 +11,10 @@
 
 
 #include <string>
-#include "SealKernel/Context.h"
-#include "SealKernel/IMessageService.h"
+#include "CoralKernel/Context.h"
+#include "CoralBase/MessageStream.h"
+
+//#include "SealKernel/IMessageService.h"
 
 namespace coral {
   class IConnection;
@@ -25,15 +27,14 @@ public:
   TestBase();
   virtual ~TestBase();
   virtual void run() = 0;
-  void setVerbosityLevel( seal::Msg::Level level );
-
+  void setVerbosityLevel( coral::MsgLevel level ) ;
 protected:
   coral::ISession* connect( const std::string& connectionString,
                             const std::string& user, 
                             const std::string& password );
 
 private:
-  seal::Handle<seal::Context> m_context;
+  //seal::Handle<seal::Context> m_context;
   coral::IConnection*         m_connection;
 };
 
