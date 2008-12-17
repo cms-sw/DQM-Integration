@@ -28,8 +28,8 @@ from EventFilter.DTRawToDigi.dtunpackerDDUGlobal_cfi import *
 #from EventFilter.DTRawToDigi.dtunpackerDDULocal_cfi import *
 dtunpacker.readOutParameters.performDataIntegrityMonitor = True
 dtunpacker.readOutParameters.rosParameters.performDataIntegrityMonitor = True
-dtunpacker.readOutParameters.debug = True
-dtunpacker.readOutParameters.rosParameters.debug = True
+dtunpacker.readOutParameters.debug = False
+dtunpacker.readOutParameters.rosParameters.debug = False
 
 
 from Configuration.StandardSequences.Geometry_cff import *
@@ -41,10 +41,10 @@ dt1DRecHits.dtDigiLabel = 'dtunpacker'
 from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
 #es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 # for P5 (online) DB access
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V2H::All"
+#process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+#process.GlobalTag.globaltag = "CRAFT_V2H::All"
 # for offline DB
-#process.GlobalTag.globaltag = "CRAFT_V2P::All"
+process.GlobalTag.globaltag = "CRAFT_V2P::All"
 
 
 
@@ -59,6 +59,7 @@ from DQM.DTMonitorModule.dtDigiTask_cfi import *
 from DQM.DTMonitorClient.dtOccupancyTest_cfi import *
 dtDigiMonitor.readDB = False 
 dtDigiMonitor.filterSyncNoise = True
+#dtDigiMonitor.lookForSyncNoise = True
 
 # Local Trigger task
 from DQM.DTMonitorModule.dtTriggerTask_cfi import *
