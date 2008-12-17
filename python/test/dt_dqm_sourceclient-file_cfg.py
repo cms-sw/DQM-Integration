@@ -5,17 +5,13 @@ process = cms.Process("DTDQM")
 # the source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-    '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/02FDBCC0-B89A-DD11-97E3-000423D94700.root',
-        '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/3A83F71C-B99A-DD11-B040-000423D6CA42.root',
-        '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/84904CC1-B89A-DD11-BCEC-000423D6CA02.root',
-        '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/9AF0CFBD-B89A-DD11-A763-000423D992DC.root',
-        '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/B472EDD1-B89A-DD11-A3C2-001617C3B6CC.root',
-        '/store/data/Commissioning08/Monitor/RAW/v1/000/066/286/E2F292EC-C29A-DD11-A9AA-000423D6AF24.root'
+    'file:/tmp/gmasetti/run68000_SkimBxDistance_Step2_1.root',
+    'file:/tmp/gmasetti/run68000_SkimBxDistance_Step2_2.root'
     )
 )
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+    input = cms.untracked.int32(1000)
     )
 
 process.load("DQMServices.Core.DQM_cfg")
@@ -31,13 +27,21 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.dqmSaver.convention = "Online"
 # /cms/mon/data/dropbox
 process.dqmSaver.dirName = "."
-process.dqmSaver.producer = "Playback"
+process.dqmSaver.producer = "DQM"
 process.dqmSaver.saveByRun         =  1
 process.dqmSaver.saveAtJobEnd      = True
 
 process.dqmEnv.subSystemFolder = "DT"
 
 process.load("DQM.Integration.test.dt_dqm_sourceclient_common_cff")
+# for P5 (online) DB access
+#process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
+#process.GlobalTag.globaltag = "CRAFT_V2H::All"
+# for offline DB
+process.GlobalTag.globaltag = "CRAFT_V2P::All"
+
+
+
 #process.DTDataIntegrityTask.debug = True
 
 
@@ -45,15 +49,15 @@ process.load("DQM.Integration.test.dt_dqm_sourceclient_common_cff")
 process.MessageLogger = cms.Service("MessageLogger",
                                     debugModules = cms.untracked.vstring('*'),
                                     destinations = cms.untracked.vstring('cout'),
-                                    categories = cms.untracked.vstring('DTOccupancyTest'), 
+                                    categories = cms.untracked.vstring('DTSegmentAnalysisTask'), 
                                     cout = cms.untracked.PSet(threshold = cms.untracked.string('WARNING'),
                                                               noLineBreaks = cms.untracked.bool(False),
                                                               DEBUG = cms.untracked.PSet(
                                                                       limit = cms.untracked.int32(0)),
                                                               INFO = cms.untracked.PSet(
                                                                       limit = cms.untracked.int32(0)),
-                                                              DTOccupancyTest = cms.untracked.PSet(
-                                                                                 limit = cms.untracked.int32(100000000))
+                                                              DTSegmentAnalysisTask = cms.untracked.PSet(
+                                                                                 limit = cms.untracked.int32(-1))
                                                               )
                                     )
 
@@ -68,5 +72,9 @@ process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + proces
 # f = file('aNewconfigurationFile.cfg', 'w')
 # f.write(process.dumpConfig())
 # f.close()
+
+process.options = cms.untracked.PSet(
+    fileMode = cms.untracked.string('FULLMERGE')
+    )
 
 
