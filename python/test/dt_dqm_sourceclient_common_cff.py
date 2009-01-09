@@ -44,7 +44,6 @@ dtunpacker = cms.EDProducer("DTUnpackingModule",
 )
 
 
-from Configuration.StandardSequences.Geometry_cff import *
 from RecoLocalMuon.Configuration.RecoLocalMuonCosmics_cff import *
 dt1DRecHits.dtDigiLabel = 'dtunpacker'
 #DTLinearDriftAlgo_CosmicData.recAlgoConfig.tTrigModeConfig.kFactor = -0.7
