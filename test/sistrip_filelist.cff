@@ -1,4 +1,0 @@
-replace PoolSource.fileNames = {
-  'file:/tmp/trackerdqm/Run00050725.root'
-}
-
