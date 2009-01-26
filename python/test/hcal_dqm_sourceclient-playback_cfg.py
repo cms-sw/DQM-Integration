@@ -66,10 +66,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
 
 # hcalMonitor configurable values -----------------------
 process.hcalMonitor.debug = 0
-process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
+#process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
-process.hcalMonitor.checkNevents=100
+process.hcalMonitor.checkNevents=1000
 process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
