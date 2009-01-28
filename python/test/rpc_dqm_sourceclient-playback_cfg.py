@@ -17,6 +17,8 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/rpc_reference.root'
 
 process.load("DQM.Integration.test.environment_playback_cfi")
+
+process.load("DQM.Integration.test.inputsource_playback_cfi")
 process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
@@ -25,7 +27,6 @@ process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 
 process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
 
-process.load("DQM.Integration.test.inputsource_playback_cfi")
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",
     DBParameters = cms.PSet(
