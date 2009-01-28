@@ -43,7 +43,7 @@ from Configuration.StandardSequences.FrontierConditions_GlobalTag_cff import *
 #process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 #process.GlobalTag.globaltag = "CRAFT_V2H::All"
 # for offline DB
-process.GlobalTag.globaltag = "CRAFT_V2P::All"
+GlobalTag.globaltag = "CRAFT_V2P::All"
 
 
 
