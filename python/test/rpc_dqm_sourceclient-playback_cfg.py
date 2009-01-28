@@ -17,6 +17,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/rpc_reference.root'
 
 process.load("DQM.Integration.test.environment_playback_cfi")
+process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 
