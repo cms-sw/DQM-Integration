@@ -14,6 +14,7 @@ server.baseUrl     = '/dqm/relval'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN RelVal'
 
+server.source('DQMUnknown', 'unknown', 'DQMArchive', 8051)
 server.source('DQMArchive', 'file', '/data/dqm/relval/dqm.db', '--listen 8051')
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/relval/upload')
 

@@ -17,6 +17,7 @@ server.baseUrl     = '/dqm/dev'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN Development'
 
+server.source('DQMUnknown', 'unknown', 'DQMArchive', 8063)
 server.source('DQMLive', 'live', '--collector localhost:8061', '--listen 8062')
 server.source('DQMArchive', 'file', '/data/dqm/dev/dqm.db', '--listen 8063')
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload')

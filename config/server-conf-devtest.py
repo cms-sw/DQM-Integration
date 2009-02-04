@@ -1,6 +1,6 @@
 import pwd, os, os.path
 global CONFIGDIR
-BASEDIR   = "/tmp/$USER/dqmgui".replace("$USER", pwd.getpwuid(os.geteuid())[0])
+BASEDIR   = "/build/lat/dqmtest".replace("$USER", pwd.getpwuid(os.geteuid())[0])
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
@@ -17,6 +17,7 @@ server.baseUrl     = '/dqm/devtest'
 server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
+server.source('DQMUnknown', 'unknown', 'DQMArchive', 9192)
 server.source('DQMLive', 'dqm', '--listen 9191', '--collector localhost:9190')
 server.source('DQMArchive', 'file', BASEDIR + "/dqm.db", '--listen 9192')
 server.source('DQMLayout', 'layouts', *LAYOUTS)

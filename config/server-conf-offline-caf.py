@@ -14,6 +14,7 @@ server.baseUrl     = '/dqm/caf'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN CAF'
 
+server.source('DQMUnknown', 'unknown', 'DQMArchive', 8041)
 server.source('DQMArchive', 'file', '/data/dqm/caf/dqm.db', '--listen 8041')
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/caf/upload')
 

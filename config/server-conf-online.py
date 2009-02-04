@@ -16,6 +16,7 @@ server.serviceName = 'Online'
 
 server.extend('EVDSnapshotUpload', '/home/dqm/iguana-snapshots')
 server.source('EVDSnapshot', 'evd', '/home/dqm/iguana-snapshots')
+server.source('DQMUnknown', 'unknown', 'DQMArchive', 9097)
 server.source('DQMLive', 'dqm', '--listen 9091', '--collector localhost:9090')
 server.source('DQMArchive', 'file', '/home/dqm/dqm.db', '--listen 9097')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
