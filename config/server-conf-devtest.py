@@ -1,6 +1,6 @@
 import pwd, os, os.path
 global CONFIGDIR
-BASEDIR   = "/build/lat/dqmtest".replace("$USER", pwd.getpwuid(os.geteuid())[0])
+BASEDIR   = "/tmp/$USER/dqmgui".replace("$USER", pwd.getpwuid(os.geteuid())[0])
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
