@@ -1,50 +1,53 @@
 def sistriplayout(i, p, *rows): i["SiStrip/Layouts/" + p] = DQMItem(layout=rows)
 
-sistriplayout(dqmitems, "00 - Tracks - CKF",
+sistriplayout(dqmitems, "00 - Tracks (CKFTk)",
   [{ 'path': "SiStrip/Tracks/NumberOfTracks_CKFTk",
-     'description': ' Number of Reconstructed Tracks by CKF'},
+     'description': "Number of Reconstructed Tracks by CKF algorithm - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CKFTk",
-     'description': ' Number of RecHits per Track by CKF'}],
-  [{ 'path': "SiStrip/Tracks/TrackPhi_CKFTk",
-     'description': ' Phi distribution of Reconstructed Tracks by CKF'},
-   { 'path': "SiStrip/Tracks/TrackEta_CKFTk",
-     'description': ' Eta distribution of Reconstructed Tracks by CKF'}])
-sistriplayout(dqmitems, "01 - Tracks - CosmicTF",
+     'description': "Number of RecHits per Track by CKF algorithm  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "01 - Tracks (CosmicTk)",
   [{ 'path': "SiStrip/Tracks/NumberOfTracks_CosmicTk",
-     'description': ' Number of Reconstructed Tracks by Cosmic Track Finder'},
+     'description': "Number of Reconstructed Tracks by CosmicTk algorithm - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CosmicTk",
-     'description': ' Number of RecHits per Track by Cosmic Track Finder'}],
-  [{ 'path': "SiStrip/Tracks/TrackPhi_CosmicTk",
-     'description': ' Phi distribution of Reconstructed Tracks by Cosmic Track Finder'},
-   { 'path': "SiStrip/Tracks/TrackEta_CosmicTk",
-     'description': ' Eta distribution of Reconstructed Tracks by Cosmic Track Finder'}])
-sistriplayout(dqmitems, "02 - Tracks - RS",
+     'description': "Number of RecHits per Track by CosmicTk algorithm - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "02 - Tracks (RSTk)",
   [{ 'path': "SiStrip/Tracks/NumberOfTracks_RSTk",
-     'description': ' Number of Reconstructed Tracks by Road Search'},
+     'description': "Number of Reconstructed Tracks by Road Search algorithm - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_RSTk",
-     'description': ' Number of RecHits per Track by Road Search'}],
-  [{ 'path': "SiStrip/Tracks/TrackPhi_RSTk",
-     'description': ' Phi distribution of Reconstructed Tracks by Road Search'},
-   { 'path': "SiStrip/Tracks/TrackEta_RSTk",
-     'description': ' Eta distribution of Reconstructed Tracks by Road Search'}])
-sistriplayout(dqmitems, "03 - OnTrackCluster",
+     'description': "Number of RecHits per Track by Road Search algorithm  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "03 - OnTrackCluster (Total Number)",
+  [{ 'path': "SiStrip/MechanicalView/TIB/Summary_TotalNumberOfClusters_OnTrack_in_TIB",
+     'description': "Total Number of On-Track clusters in TIB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
+   { 'path': "SiStrip/MechanicalView/TOB/Summary_TotalNumberOfClusters_OnTrack_in_TOB",
+     'description': "Total Number of On-Track clusters in TOB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}],
+  [{ 'path': "SiStrip/MechanicalView/TID/Summary_TotalNumberOfClusters_OnTrack_in_TID",
+     'description': "Total Number of On-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
+  {  'path':"SiStrip/MechanicalView/TEC/Summary_TotalNumberOfClusters_OnTrack_in_TEC",
+     'description': "TotalNumberOf On-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "04 - OnTrackCluster (StoN)",
   [{ 'path': "SiStrip/MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack_in_TIB",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TIB'},
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TIB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/MechanicalView/TOB/Summary_ClusterStoNCorr_OnTrack_in_TOB",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TOB'}],
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TOB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}],
   [{ 'path': "SiStrip/MechanicalView/TID/Summary_ClusterStoNCorr_OnTrack_in_TID",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TID'},
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
   {  'path':"SiStrip/MechanicalView/TEC/Summary_ClusterStoNCorr_OnTrack_in_TEC",
-     'description': 'Signal-to-Noise (corrected for the angle) for On-Track clusters in TEC'}])
-sistriplayout(dqmitems, "04 - OffTrackCluster",
+     'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "05 - OffTrackCluster (Total Number)",
+  [{ 'path': "SiStrip/MechanicalView/TIB/Summary_TotalNumberOfClusters_OffTrack_in_TIB",
+     'description': "Total Number of Off-Track clusters in TIB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
+   { 'path': "SiStrip/MechanicalView/TOB/Summary_TotalNumberOfClusters_OffTrack_in_TOB",
+     'description': "Total Number of Off-Track clusters in TOB  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}],
+  [{ 'path': "SiStrip/MechanicalView/TID/Summary_TotalNumberOfClusters_OffTrack_in_TID",
+     'description': "Total Number of Off-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }},
+  {  'path':"SiStrip/MechanicalView/TEC/Summary_TotalNumberOfClusters_OffTrack_in_TEC",
+     'description': "TotalNumberOf Off-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes" }}])
+sistriplayout(dqmitems, "06 - OffTrackCluster (Charge)",
   [{ 'path': "SiStrip/MechanicalView/TIB/Summary_ClusterCharge_OffTrack_in_TIB",
-     'description': 'Charge for Off-Track clusters in TIB'},
+     'description': "Charge for Off-Track clusters in TIB - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes"}},
    { 'path': "SiStrip/MechanicalView/TOB/Summary_ClusterCharge_OffTrack_in_TOB",
-     'description': 'Charge for Off-Track clusters in TOB'}],
+     'description': "Charge for Off-Track clusters in TOB - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes"}}],
   [{ 'path': "SiStrip/MechanicalView/TID/Summary_ClusterCharge_OffTrack_in_TID",
-     'description': 'Charge for Off-Track clusters in TID'},              
+     'description': "Charge for Off-Track clusters in TID - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes"}},             
    { 'path':"SiStrip/MechanicalView/TEC/Summary_ClusterCharge_OffTrack_in_TEC",
-     'description': 'Charge for Off-Track clusters in TEC'}])
-
-
-
+     'description': "Charge for Off-Track clusters in TEC - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripShiftersInstructionsForReReco>SiStripShiftersInstructionsForReReco</a> ", 'draw': { 'withref': "yes"}}])
