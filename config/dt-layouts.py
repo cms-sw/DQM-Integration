@@ -42,19 +42,19 @@ for wheel in range(-2, 3):
             if station != 4 and (sector == 13 or sector == 14):
                 continue
             name = "01-Occupancy/Wheel" + str(wheel) + "/St" + str(station) + "_Sec" + str(sector)
-            histoname = "DT/01-Digi/Wheel" + str(wheel) + "/Station" + str(station) + "/Sector" + str(sector) + "/OccupancyAllHits_perCh_W" + str(wheel) + "_St" + str(station) + "_Sec" +  str(sector)
+            histoname = "DT/01-Digi/Wheel" + str(wheel) + "/Sector" + str(sector) + "/Station" + str(station) +  "/OccupancyAllHits_perCh_W" + str(wheel) + "_St" + str(station) + "_Sec" +  str(sector)
             dtlayout(dqmitems, name,[{ 'path': histoname}])
 
             
 #### TIME BOXES #################################################################################
 
 for wheel in range(-2, 3):
-    for station in range (1, 5):
-        for sector in range (1, 15):
+    for sector in range (1, 15):
+        for station in range (1, 5):
             if station != 4 and (sector == 13 or sector == 14):
                 continue
             name = "02-TimeBoxes/Wheel" + str(wheel) + "/St" + str(station) + "_Sec" + str(sector)
-            histoname = "DT/01-Digi/Wheel" + str(wheel) + "/Station" + str(station) + "/Sector" + str(sector) + "/TimeBox_W" + str(wheel) + "_St" + str(station) + "_Sec" +  str(sector)
+            histoname = "DT/01-Digi/Wheel" + str(wheel) + "/Sector" + str(sector) + "/Station" + str(station) +  "/TimeBox_W" + str(wheel) + "_St" + str(station) + "_Sec" +  str(sector)
             histoname_SL1 = histoname + "_SL1"
             histoname_SL2 = histoname + "_SL2"
             histoname_SL3 = histoname + "_SL3"
