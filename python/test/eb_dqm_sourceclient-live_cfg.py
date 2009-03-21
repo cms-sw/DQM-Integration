@@ -50,9 +50,7 @@ process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cf
 
 process.load("HLTrigger.special.TriggerTypeFilter_cfi")
 
-process.preScaler = cms.EDFilter("Prescaler",
-    prescaleFactor = cms.int32(1)
-)
+process.load("FWCore.Modules.preScaler_cfi")
 
 process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
@@ -164,6 +162,8 @@ process.MessageLogger = cms.Service("MessageLogger",
                                        'EcalEndcapMonitorModule'),
     destinations = cms.untracked.vstring('cout')
 )
+
+process.preScaler.prescaleFactor = 1
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis)
 
