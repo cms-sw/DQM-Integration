@@ -21,7 +21,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #### DQM Live Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = 'EvF'
+process.dqmEnv.subSystemFolder = 'FED'
 
 process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
 process.load("DQM.TrigXMonitorClient.L1TScalersClient_cfi")
