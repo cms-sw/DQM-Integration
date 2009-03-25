@@ -72,10 +72,10 @@ process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.DataFormatMonitor   = True
-process.hcalMonitor.DataIntegrityTask   = True
+process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = True
 process.hcalMonitor.RecHitMonitor       = True
-process.hcalMonitor.TrigPrimMonitor     = True
+process.hcalMonitor.TrigPrimMonitor     = False
 process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True

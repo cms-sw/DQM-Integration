@@ -16,7 +16,9 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCosmics_CTF'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCosmics_CTF'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+
 
 #----------------------------
 # DQM Environment
@@ -40,10 +42,12 @@ process.dqmSaver.saveByMinute = 16
 # Magnetic Field
 #-----------------------------
 # 0T field
-#process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+process.load("Configuration.StandardSequences.MagneticField_0T_cff")
 # 3.8T field
-process.load("Configuration.StandardSequences.MagneticField_38T_cff")
-process.prefer("VolumeBasedMagneticFieldESProducer")
+#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+# 4.0T field
+#process.load("Configuration.StandardSequences.MagneticField_40T_cff")
+#process.prefer("VolumeBasedMagneticFieldESProducer")
 
 #-------------------------------------------------
 # GEOMETRY
