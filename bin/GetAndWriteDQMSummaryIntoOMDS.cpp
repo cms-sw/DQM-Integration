@@ -44,7 +44,7 @@ int  main(int argc, char *argv[])
    // now invocking the module that fist read data from the .txt file(argv[2]) and then build SUMMARYCONTENT table on oracle://cms_omds_lb/CMS_DQM_SUMMARY account 
      
    try {
-     WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
+     WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "****");
      // app.dropTable("SUMMARYCONTENT"); app.dropView("SUMMARY");
      app.readData(argv[2]);
      app.writeData("SUMMARYCONTENT");

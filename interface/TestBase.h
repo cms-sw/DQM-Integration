@@ -1,5 +1,5 @@
-#ifndef TestBaseDQM_H
-#define TestBaseDQM_H
+#ifndef DQM_Integration_TestBase_h
+#define DQM_Integration_TestBase_h
 
 /*
  *  \class TestBase
@@ -9,33 +9,27 @@
  *  
 */
 
-
 #include <string>
 #include "CoralKernel/Context.h"
 #include "CoralBase/MessageStream.h"
-
-//#include "SealKernel/IMessageService.h"
 
 namespace coral {
   class IConnection;
   class ISession;
 }
 
-class TestBase
-{
-public:
+class TestBase {
+ public:
   TestBase();
   virtual ~TestBase();
   virtual void run() = 0;
   void setVerbosityLevel( coral::MsgLevel level ) ;
-protected:
+ protected:
   coral::ISession* connect( const std::string& connectionString,
                             const std::string& user, 
                             const std::string& password );
-
-private:
-  //seal::Handle<seal::Context> m_context;
-  coral::IConnection*         m_connection;
+ private:
+  coral::IConnection* m_connection;
 };
 
 #endif

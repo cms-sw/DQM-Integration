@@ -17,7 +17,7 @@
 int main( int, char** )
 {
   try {
-   WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "CMSDQMSUMMARY2008");
+   WriteDQMSummaryIntoOMDS  app("oracle://cms_omds_lb/CMS_DQM_SUMMARY", "CMS_DQM_SUMMARY", "****");
    // app.dropTable("SUMMARYCONTENT"); app.dropView("SUMMARY");
 
         app.readData("tmp.txt");
