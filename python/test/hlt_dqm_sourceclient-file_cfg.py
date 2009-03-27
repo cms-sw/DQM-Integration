@@ -6,10 +6,10 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://PromptProd/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRUZET4_V4P::All"
-process.prefer("GlobalTag")
+#process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+#process.GlobalTag.connect = "frontier://PromptProd/CMS_COND_21X_GLOBALTAG"
+#process.GlobalTag.globaltag = "CRAFT_V4H::All"
+#process.prefer("GlobalTag")
 
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
