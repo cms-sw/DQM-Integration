@@ -66,12 +66,14 @@ server.workspace('DQMContent', 20, 'Luminosity', 'HLX', '^HLX',
 
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
-                 'Hcal/Layouts/HCAL Pedestals',
-                 'Hcal/Layouts/HCAL Unsuppressed Channels',
+                 'Hcal/Layouts/HCAL DataFormat Problems',
+                 'Hcal/Layouts/HCAL Data Integrity Problems',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
-                 'Hcal/Layouts/HCAL Data Integrity Problems',
-                 'Hcal/Layouts/HCAL Trigger Primitives')
+                 'Hcal/Layouts/HCAL Pedestals',
+                 #'Hcal/Layouts/HCAL Trigger Primitives',
+                 'Hcal/Layouts/HCAL Unsuppressed Channels',
+                 )
 
 server.workspace('DQMContent', 30, 'Muon', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
