@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 ################################################################################
 #
@@ -41,10 +41,10 @@ my $pwd = `pwd`; chomp $pwd;
 #my $mode = $ARGV[0];
 my $dqm_dir = $ENV{"CMSSW_BASE"}."/src/DQM/SiPixelMonitorClient/test";
 my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
-my $dqm_common = $ENV{"CMSSW_BASE"}."/src/DQM/TrackerCommon/test";
+my $dqm_common = $ENV{"CMSSW_RELEASE_BASE"}."/src/DQM/TrackerCommon/test";
 my $dqm_wdir = $pwd."/PixelDQM";
 
-my $cfg_file = "pixel_dqm_sourceclient-".$mode.".cfg";
+my $cfg_file = "pixel_dqm_sourceclient-".$mode."_cfg.py";
 print "cfg file name : $cfg_file\n";
 #
 # interpret command line
@@ -72,7 +72,7 @@ print "make directories ...\n";
 #
 print "copy cfg files ...\n";
 
-copy("$dqm_int/$cfg_file", "$ENV{PWD}/.") unless -e "$ENV{PWD}/$cfg_file";
+#copy("$dqm_int/$cfg_file", "$ENV{PWD}/.") unless -e "$ENV{PWD}/$cfg_file";
 #copy("$dqm_dir/../scripts/Reference.root", "$ENV{PWD}/Reference.root") unless -e "$ENV{PWD}/Reference.root";
 
 
