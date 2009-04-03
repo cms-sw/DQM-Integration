@@ -60,8 +60,8 @@ process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
 process.rpcEventSummary.PrescaleFactor = 5
 
 ############# chamber Quality #################
-process.load("DQM.RPCMonitorClient.RPCChamberQuality_cfi")
-
+#process.load("DQM.RPCMonitorClient.RPCChamberQuality_cfi")
+process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality")
 
 
 ################# DQM Client Modules ####################
