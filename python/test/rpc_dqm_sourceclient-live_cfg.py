@@ -33,7 +33,7 @@ process.RPCCabling = cms.ESSource("PoolDBESSource",
 
 ################# RPC Rec Hits  ######################
 process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")
-process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
+
 
 ################# DQM Cetral Modules ######################
 process.load("DQMServices.Core.DQM_cfg")
@@ -54,37 +54,20 @@ process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
 
-################# DQM Client Summaries ####################
+################# DQM Client Modules ####################
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
-process.rpcEventSummary.PrescaleFactor = 5
-
-############# chamber Quality #################
-#process.load("DQM.RPCMonitorClient.RPCChamberQuality_cfi")
-process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality")
-
-
-################# DQM Client Modules ####################
-process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
-process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest ")
-process.rpcdqmclient.DiagnosticGlobalPrescale = cms.untracked.int32(5)
-process.rpcdqmclient.NumberOfEndcapDisks  = cms.untracked.int32(3)
-
-
-################# Other Clients ############################
+process.rpcEventSummary.RPCPrefixDir = 'RPC/RecHits'
+process.rpcEventSummary.RPCPrefixDir = 'RPC/RecHits'
+process.rpcEventSummary.PrescaleFactor = 10
 process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
-
-
-################### FED ##################################
-process.load("DQM.RPCMonitorClient.RPCMonitorRaw_cfi")
-process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
-process.load("DQM.RPCMonitorClient.RPCMonitorLinkSynchro_cfi")
 
 ################# Quality Tests #########################
 process.qTesterRPC = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/RPCMonitorClient/test/RPCQualityTests.xml'),
     prescaleFactor = cms.untracked.int32(10)
 )
+
 
 process.RPCCabling = cms.ESSource("PoolDBESSource",
     DBParameters = cms.PSet(
@@ -103,12 +86,9 @@ process.RPCCabling = cms.ESSource("PoolDBESSource",
 
 ################  Sequences ############################
 process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcAfterPulse)
-
-process.rpcClient = cms.Sequence(process.qTesterRPC*process.dqmEnv*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.rpcMonitorRaw*process.rpcFEDIntegrity*process.rpcMonitorLinkSynchro*process.dqmSaver)
-
-
+process.rpcClient = cms.Sequence(process.qTesterRPC*process.dqmEnv*process.rpcEventSummary*process.dqmSaver)
 process.p = cms.Path(process.rpcDigi*process.rpcClient)
-
+process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
 
 
 
