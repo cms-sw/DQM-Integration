@@ -9,7 +9,7 @@ process.load("DQM.Integration.test.environment_playback_cfi")
 
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
 process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")    
-
+process.l1GtParameters.BstLengthBytes = 52
 process.load("Configuration.StandardSequences.Geometry_cff")
 
 #masking sequence: 
