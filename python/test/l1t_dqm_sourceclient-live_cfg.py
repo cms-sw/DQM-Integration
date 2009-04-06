@@ -35,6 +35,7 @@ process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
+process.l1GtParameters.BstLengthBytes = 52
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"   

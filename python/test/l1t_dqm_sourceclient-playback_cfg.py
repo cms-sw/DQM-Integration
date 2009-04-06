@@ -36,6 +36,7 @@ process.prefer("GlobalTag")
 
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
+process.l1GtParameters.BstLengthBytes = 52
 
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
