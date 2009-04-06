@@ -122,9 +122,9 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
-process.hcalClient.HotCellClient        = False
-process.hcalClient.DeadCellClient       = False
-process.hcalClient.PedestalClient       = False
+#process.hcalClient.HotCellClient        = False
+#process.hcalClient.DeadCellClient       = False
+#process.hcalClient.PedestalClient       = False
 
 
 #-----------------------------
