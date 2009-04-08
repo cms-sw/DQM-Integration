@@ -20,12 +20,12 @@ shifthcallayout(dqmitems, "HCAL Data Integrity Problems",
                    'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, or if the sum of ADC counts over all time slices for the digi is 0. If zero-suppression of the HCAL is enabled for a run, this plot may have high occupancy, and you should check the expert plots for more detailed information.All depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
-hcallayout(dqmitems, "HCAL DataFormat Problems",
+shifthcallayout(dqmitems, "HCAL DataFormat Problems",
            [{ 'path': "Hcal/DataFormatMonitor/ HardwareWatchCells",
               'description': "A Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                                  )
 
-hcallayout(dqmitems, "HCAL Unsuppressed Channels",
+shifthcallayout(dqmitems, "HCAL Unsuppressed Channels",
            [{ 'path': "Hcal/DataFormatMonitor/HTR Plots/Fraction UnSuppressed Events",
               'description': "This shows the fraction of unsuppressed events for each FED and SPIGOT. More (eventually)  at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistogra\ms>HcalDQMHistograms</a>" }]
                       )
