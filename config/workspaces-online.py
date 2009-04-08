@@ -67,7 +67,7 @@ server.workspace('DQMContent', 20, 'Luminosity', 'HLX', '^HLX',
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL DataFormat Problems',
-                 'Hcal/Layouts/HCAL Data Integrity Problems',
+                 'Hcal/Layouts/HCAL Digi Problems',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
                  'Hcal/Layouts/HCAL Pedestals',
