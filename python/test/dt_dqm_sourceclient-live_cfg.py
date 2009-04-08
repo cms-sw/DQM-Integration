@@ -43,7 +43,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
-process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + process.physicsEventsFilter * process.reco + process.dtDQMTask + process.dtDQMTest)
+process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + process.reco + process.dtDQMTask + process.dtDQMTest)
 
 #process.dtDQMPathCalib = cms.Path(process.unpackers + process.dqmmodules + process.calibrationEventsFilter * process.dtDQMCalib)
 
