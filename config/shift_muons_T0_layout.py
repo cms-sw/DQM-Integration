@@ -1,7 +1,7 @@
 def shiftmuonlayout(i, p, *rows): i["00 Shift/Muons/" + p] = DQMItem(layout=rows)
 
 shiftmuonlayout(dqmitems, "00-reportSummary",
-                [{ 'path': "Muons/EventInfo/reportSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineMuon>Description</a>" }])
+                [{ 'path': "Muons/EventInfo/reportSummaryMap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineMuon>Description</a>" }])
 
 
 shiftmuonlayout(dqmitems, "01-kinematicsSummary",
