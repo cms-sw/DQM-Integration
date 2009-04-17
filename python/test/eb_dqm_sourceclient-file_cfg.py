@@ -152,8 +152,7 @@ process.MessageLogger = cms.Service("MessageLogger",
             limit = cms.untracked.int32(1000)
         )
     ),
-    categories = cms.untracked.vstring('EcalTBInputService',
-                                       'EcalRawToDigiDev',
+    categories = cms.untracked.vstring('EcalRawToDigiDev',
                                        'EcalRawToDigiDevTriggerType',
                                        'EcalRawToDigiDevTpg',
                                        'EcalRawToDigiDevNumTowerBlocks',
@@ -174,6 +173,8 @@ process.MessageLogger = cms.Service("MessageLogger",
                                        'EcalEndcapMonitorModule'),
     destinations = cms.untracked.vstring('cout')
 )
+
+process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
