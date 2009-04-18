@@ -15,9 +15,11 @@ process.MessageLogger = cms.Service("MessageLogger",
 # Event Source
 #-----------------------------
 process.source = cms.Source("PoolSource",
-     fileNames = cms.untracked.vstring('file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root')
+     fileNames = cms.untracked.vstring(
+       'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'
+     )    
 )
-process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(50))
+process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 
 #----------------------------
 # DQM Environment
@@ -29,19 +31,23 @@ process.DQM.filter = '^SiStrip(/[^/]+){0,5}$'
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
-# DQM Playback Environment
+# DQM Live Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "SiStrip"
+process.dqmSaver.saveByTime       = 30
+process.dqmSaver.saveByMinute     = 30
 
 #-----------------------------
 # Magnetic Field
 #-----------------------------
 # 0T field
-process.load("Configuration.StandardSequences.MagneticField_0T_cff")
-# 3.8T field 
-#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
-process.prefer("VolumeBasedMagneticFieldESProducer")
+#process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+# 3.8T field
+process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+# 4.0T field
+#process.load("Configuration.StandardSequences.MagneticField_40T_cff")
+#process.prefer("VolumeBasedMagneticFieldESProducer")
 
 #-------------------------------------------------
 # GEOMETRY
@@ -53,7 +59,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V3H::All"
+process.GlobalTag.globaltag = "CRAFT_V4H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
@@ -76,22 +82,14 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
+process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 
-process.SiStripClient = cms.EDFilter("SiStripAnalyser",
-    StaticUpdateFrequency    = cms.untracked.int32(-1),
-    TkMapCreationFrequency   = cms.untracked.int32(-1),
-    SummaryCreationFrequency = cms.untracked.int32(1),
-    GlobalStatusFilling      = cms.untracked.int32(1),
-    RawDataTag               = cms.untracked.InputTag("source"),                                     
-    TkmapParameters = cms.PSet(
-        loadFedCabling = cms.untracked.bool(True),
-        trackerdatPath = cms.untracked.string('CommonTools/TrackerMap/data/'),
-        trackermaptxtPath = cms.untracked.string('DQM/Integration/test/TkMap/')
-    )
-)
+process.load("DQM.TrackingMonitor.TrackEfficiencyClient_cfi")
+process.TrackEffClient.AlgoName  = cms.string('CKFTk')
+process.TrackEffClient.FolderName = cms.string('SiStrip/Tracks/Efficiencies')
 
 #--------------------------
-# STRIP DQM Source and Client
+# Quality Test
 #--------------------------
 process.qTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
@@ -109,8 +107,8 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources = cms.Sequence(process.HardwareMonitor*process.CondDataMonitoring*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
+process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
+process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
-process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClient)
-
+process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
