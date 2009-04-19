@@ -103,25 +103,41 @@ server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
 
 server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
-                 'L1T/L1TGT/event_lumi',
-                 'L1T/L1TGT/evnum_trignum_lumi',
+                 'L1T/L1TGT/tt_bits',
                  'L1T/L1TGMT/Regional_trigger',
-                 'L1T/L1TGMT/GMT_candlumi',
-                 'L1T/L1TGMT/GMT_phi',
                  'L1T/L1TGMT/GMT_etaphi',
-                 'L1T/L1TGCT/IsoEmOccEtaPhi',
-                 'L1T/L1TGCT/NonIsoEmOccEtaPhi',
-                 'L1T/L1TRCT/RctIsoEmOccEtaPhi',
-                 'L1T/L1TRCT/RctNonIsoEmOccEtaPhi',
-                 'L1T/L1TRCT/RctRegionsLocalOccEtaPhi',
-                 'L1T/L1TRCT/RctRegionsOccEtaPhi',
-		 'L1T/L1TCSCTF/CSCTF_occupancies',
-		 'L1T/L1TRPCTF/Client/RPCTF_phi_valuepacked_bad',
-		 'L1T/L1TRPCTF/Client/RPCTF_phi_valuepacked_dead',
-		 'L1T/L1TRPCTF/Client/RPCTF_deadchannels',
-		 'L1T/L1TRPCTF/Client/RPCTF_noisychannels')
+                 'L1T/L1TGCT/IsoEmRankEtaPhi',
+                 'L1T/L1TGCT/NonIsoEmRankEtaPhi',
+                 'L1T/L1TGCT/CenJetsEtEtaPhi',
+                 'L1T/L1TGCT/ForJetsEtEtaPhi',
+                 'L1T/L1TGCT/TauJetsEtEtaPhi',
+                 'L1T/L1TRCT/RctEmNonIsoEmEtEtaPhi',
+                 'L1T/L1TRCT/RctEmIsoEmEtEtaPhi',
+                 'L1T/L1TRCT/RctRegionsEtEtaPhi',
+		 'L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary',
+		 'L1T/L1TCSCTF/CSCTF_Chamber_Occupancies',
+		 'L1T/L1TCSCTF/CSCTF_Occupancies',
+		 'L1T/L1TRPCTF/RPCTF_muons_tower_phipacked')
 
-server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1TEMU', '^L1TEMU/')
+server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1TEMU', '^L1TEMU/',
+                 'L1TEMU/common/sysrates',
+                 'L1TEMU/common/errorflag',
+                 'L1TEMU/common/sysncandData',
+                 'L1TEMU/common/sysncandEmul',
+                 'L1TEMU/GT/GLTErrorFlag',
+                 'L1TEMU/GCT/GCTErrorFlag',
+                 'L1TEMU/GMT/GMTErrorFlag',
+                 'L1TEMU/RCT/RCTErrorFlag',
+                 'L1TEMU/CSCTF/CTFErrorFlag',
+                 'L1TEMU/CSCTPG/CTPErrorFlag',
+                 'L1TEMU/DTTF/DTFErrorFlag',
+                 'L1TEMU/DTTPG/DTPErrorFlag',
+                 'L1TEMU/RPC/RPCErrorFlag',
+                 'L1TEMU/ECAL/ETPErrorFlag',
+                 'L1TEMU/HCAL/HTPErrorFlag')
+
+
+
 server.workspace('DQMContent', 41, 'Trigger/DAQ', 'HLT', '^HLT/')
 
 server.workspace('DQMContent', 90, 'Other', 'Everything', '^')
