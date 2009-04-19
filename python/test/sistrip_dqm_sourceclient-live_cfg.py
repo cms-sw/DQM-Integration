@@ -83,10 +83,7 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
-
-process.load("DQM.TrackingMonitor.TrackEfficiencyClient_cfi")
-process.TrackEffClient.AlgoName  = cms.string('CKFTk')
-process.TrackEffClient.FolderName = cms.string('SiStrip/Tracks/Efficiencies')
+process.SiStripAnalyser.TkMapCreationFrequency  = -1
 
 #--------------------------
 # Quality Test
@@ -108,7 +105,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 # Scheduling
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
-process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
+process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
