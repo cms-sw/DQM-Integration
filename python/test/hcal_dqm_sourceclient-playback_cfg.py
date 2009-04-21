@@ -82,7 +82,7 @@ process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.DataFormatMonitor   = True
-process.hcalMonitor.DataIntegrityTask   = True
+process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = True
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = False
@@ -99,11 +99,6 @@ process.hcalMonitor.HcalAnalysis        = False
 setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
-process.hcalMonitor.DeadCellMonitor_pedestal_Nsigma     = 0
-process.hcalMonitor.DeadCellMonitor_makeDiagnosticPlots = False
-process.hcalMonitor.DeadCellMonitor_test_pedestal       = True
-process.hcalMonitor.DeadCellMonitor_test_occupancy      = True
-process.hcalMonitor.DeadCellMonitor_test_neighbor       = False
 
 process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
 process.hcalMonitor.HotCellMonitor_test_neighbor        = False
