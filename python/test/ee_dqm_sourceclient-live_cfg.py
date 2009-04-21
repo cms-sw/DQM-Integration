@@ -73,7 +73,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V3H::All"
+process.GlobalTag.globaltag = "CRAFT_V14H::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
