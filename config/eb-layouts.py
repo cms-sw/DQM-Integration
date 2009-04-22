@@ -392,7 +392,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-01", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-01", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-01", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-01", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -609,7 +609,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-02", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-02", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-02", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-02", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -826,7 +826,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-03", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-03", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-03", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-03", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -1043,7 +1043,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-04", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-04", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-04", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-04", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -1260,7 +1260,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-05", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-05", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-05", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-05", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -1477,7 +1477,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-06", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-06", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-06", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-06", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -1694,7 +1694,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-07", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-07", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-07", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-07", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -1911,7 +1911,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-08", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-08", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-08", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-08", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -2128,7 +2128,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-09", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-09", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-09", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-09", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -2345,7 +2345,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-10", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-10", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-10", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-10", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -2562,7 +2562,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-11", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-11", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-11", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-11", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -2779,7 +2779,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-12", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-12", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-12", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-12", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -2996,7 +2996,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-13", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-13", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-13", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-13", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -3213,7 +3213,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-14", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-14", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-14", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-14", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -3430,7 +3430,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-15", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-15", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-15", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-15", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -3647,7 +3647,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-16", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-16", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-16", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-16", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -3864,7 +3864,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-17", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-17", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-17", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-17", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -4081,7 +4081,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB-18", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-18", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB-18", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB-18", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -4298,7 +4298,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+01", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+01", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+01", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+01", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -4515,7 +4515,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+02", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+02", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+02", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+02", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -4732,7 +4732,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+03", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+03", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+03", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+03", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -4949,7 +4949,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+04", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+04", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+04", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+04", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -5166,7 +5166,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+05", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+05", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+05", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+05", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -5383,7 +5383,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+06", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+06", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+06", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+06", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -5600,7 +5600,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+07", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+07", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+07", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+07", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -5817,7 +5817,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+08", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+08", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+08", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+08", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -6034,7 +6034,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+09", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+09", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+09", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+09", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -6251,7 +6251,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+10", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+10", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+10", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+10", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -6468,7 +6468,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+11", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+11", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+11", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+11", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -6685,7 +6685,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+12", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+12", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+12", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+12", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -6902,7 +6902,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+13", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+13", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+13", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+13", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -7119,7 +7119,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+14", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+14", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+14", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+14", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -7336,7 +7336,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+15", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+15", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+15", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+15", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -7553,7 +7553,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+16", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+16", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+16", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+16", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -7770,7 +7770,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+17", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+17", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+17", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+17", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/05-Trigger/08-FineGrainVeto-Flag1",
@@ -7987,7 +7987,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/05-Trigger/06-FlagBits110
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Flags Real Digis Bits 110+111 EB+18", 'description': "Values of bits 110+111 for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/05-Trigger/07-FineGrainVeto-Flag0",
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+18", 'description': "Number of errors comparing the values of fin grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFineGrainVetoError Flag 0 EB+18", 'description': "Number of errors comparing the values of fine grain veto flag 0 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT FineGrainVeto Real Digis Flag 0 EB+18", 'description': "Values of flag 0 of fine grain veto for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/05-Trigger/08-FineGrainVeto-Flag1",
