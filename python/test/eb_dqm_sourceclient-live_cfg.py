@@ -180,8 +180,6 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*
 process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.triggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask)
 process.r = cms.EndPath(process.ecalBarrelCosmicTasksSequenceP5*process.ecalBarrelClusterTask)
 
-process.r.remove(process.ecalBarrelPedestalOnlineTask)
-
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
