@@ -10,25 +10,25 @@ dtlayout(dqmitems, "00-Summary/02-SegmentSummary",
   [{ 'path': "DT/02-Segments/segmentSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a> - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 dtlayout(dqmitems, "00-Summary/03-DDU_TriggerCorrFactionSummary",
-  [{ 'path': "DT/03-LocalTrigger/DDU_CorrFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a> - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+  [{ 'path': "DT/04-LocalTrigger-DDU/DDU_CorrFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a> - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 dtlayout(dqmitems, "00-Summary/04-DDU_Trigger2ndFactionSummary",
-  [{ 'path': "DT/03-LocalTrigger/DDU_2ndFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a> - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+  [{ 'path': "DT/04-LocalTrigger-DDU/DDU_2ndFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a> - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 dtlayout(dqmitems, "00-Summary/05-DCC_TriggerCorrFactionSummary",
-  [{ 'path': "DT/03-LocalTrigger/DCC/DCC_CorrFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+  [{ 'path': "DT/03-LocalTrigger-DCC/DCC_CorrFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 
 dtlayout(dqmitems, "00-Summary/06-DCC_Trigger2ndFactionSummary",
-  [{ 'path': "DT/03-LocalTrigger/DCC/DCC_2ndFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+  [{ 'path': "DT/03-LocalTrigger-DCC/DCC_2ndFractionSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 
 dtlayout(dqmitems, "00-Summary/07-NoiseChannelsSummary",
-  [{ 'path': "DT/04-Noise/NoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+  [{ 'path': "DT/05-Noise/NoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 
 dtlayout(dqmitems, "00-Summary/08-SynchNoiseSummary",
-         [{ 'path': "DT/04-Noise/SynchNoise/SynchNoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
+         [{ 'path': "DT/05-Noise/SynchNoise/SynchNoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
 
 dtlayout(dqmitems, "00-Summary/09-TestPulseOccupancy",
          [{ 'path': "DT/99-TestPulses/OccupancySummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftDT>Description for the <b>Central DQM shifter</b></a>  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Instructions for the <b>DT shifter</b></a>" }])
