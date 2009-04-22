@@ -1,6 +1,20 @@
+def ecalendcaplayout(i, p, *rows): i["EcalEndcap/Layouts/" + p] = DQMItem(layout=rows)
 def eeshifterlayout(i, p, *rows): i["EcalEndcap/00 Shift/" + p] = DQMItem(layout=rows)
 def eeecalshifterlayout(i, p, *rows): i["EcalEndcap/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eelayout(i, p, *rows): i["EcalEndcap/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
+
+# Quick Collections
+ecalendcaplayout(dqmitems, "00-Global-Summary-EcalEndcap",
+  [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
+ecalendcaplayout(dqmitems, "01-Occupancy-Summary-EcalEndcap",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
+ecalendcaplayout(dqmitems, "02-Cluster-Summary-EcalEndcap",
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 # ALL shifters
 eeshifterlayout(dqmitems, "00-Event-Type",

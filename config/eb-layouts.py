@@ -1,6 +1,17 @@
+def ecalbarrellayout(i, p, *rows): i["EcalBarrel/Layouts/" + p] = DQMItem(layout=rows)
 def ebshifterlayout(i, p, *rows): i["EcalBarrel/00 Shift/" + p] = DQMItem(layout=rows)
 def ebecalshifterlayout(i, p, *rows): i["EcalBarrel/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eblayout(i, p, *rows): i["EcalBarrel/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
+
+# Quick Collections
+ecalbarrellayout(dqmitems, "00-Global-Summary-EcalBarrel",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EB global summary", 'description': "EcalBarrel - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
+ecalbarrellayout(dqmitems, "01-Occupancy-Summary-EcalBarrel",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy", 'description': "EcalBarrel - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
+ecalbarrellayout(dqmitems, "02-Cluster-Summary-EcalBarrel",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "EcalBarrel - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 # ALL shifters
 ebshifterlayout(dqmitems, "00-Event-Type",
