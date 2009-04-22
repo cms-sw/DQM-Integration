@@ -29,33 +29,14 @@ server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
 #                 'Ecal/Layouts/02-Cluster-Summary')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
-                 'EcalBarrel/Layouts/00-Summary/00-Global-Summary',
-                 'EcalBarrel/Layouts/00-Summary/01-Integrity-Summary',
-                 'EcalBarrel/Layouts/00-Summary/02-Occupancy-Summary',
-                 'EcalBarrel/Layouts/00-Summary/03-Cosmic-Summary',
-                 'EcalBarrel/Layouts/00-Summary/04-PedestalOnline-Summary',
-                 'EcalBarrel/Layouts/00-Summary/05-Timing-Summary',
-                 'EcalBarrel/Layouts/00-Summary/06-Trigger-Summary',
-                 'EcalBarrel/Layouts/00-Summary/07-Trigger-Summary',
-                 'EcalBarrel/Layouts/00-Summary/08-StatusFlags-Summary',
-                 'EcalBarrel/Layouts/00-Summary/09-LaserL1-Summary',
-                 'EcalBarrel/Layouts/00-Summary/11-Pedestal-Summary',
-                 'EcalBarrel/Layouts/00-Summary/12-TestPulse-Summary')
+                 'EcalBarrel/Layouts/00-Global-Summary-EcalBarrel',
+                 'EcalBarrel/Layouts/01-Occupancy-Summary-EcalBarrel',
+                 'EcalBarrel/Layouts/02-Cluster-Summary-EcalBarrel')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
-                 'EcalEndcap/Layouts/00-Summary/00-Global-Summary',
-                 'EcalEndcap/Layouts/00-Summary/01-Integrity-Summary',
-                 'EcalEndcap/Layouts/00-Summary/02-Occupancy-Summary',
-                 'EcalEndcap/Layouts/00-Summary/03-Cosmic-Summary',
-                 'EcalEndcap/Layouts/00-Summary/04-PedestalOnline-Summary',
-                 'EcalEndcap/Layouts/00-Summary/05-Timing-Summary',
-                 'EcalEndcap/Layouts/00-Summary/06-Trigger-Summary',
-                 'EcalEndcap/Layouts/00-Summary/07-Trigger-Summary',
-                 'EcalEndcap/Layouts/00-Summary/08-StatusFlags-Summary',
-                 'EcalEndcap/Layouts/00-Summary/09-LaserL1-Summary',
-                 'EcalEndcap/Layouts/00-Summary/10-Led-Summary',
-                 'EcalEndcap/Layouts/00-Summary/11-Pedestal-Summary',
-                 'EcalEndcap/Layouts/00-Summary/12-TestPulse-Summary')
+                 'EcalEndcap/Layouts/00-Global-Summary-EcalEndcap',
+                 'EcalEndcap/Layouts/01-Occupancy-Summary-EcalEndcap',
+                 'EcalEndcap/Layouts/02-Cluster-Summary-EcalEndcap')
 
 server.workspace('DQMContent', 20, 'Luminosity', 'HLX', '^HLX',
                  'HLX/Layouts/HF-Comparison',
