@@ -10647,3 +10647,111 @@ eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/07-LowInterestPayload",
   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT low interest payload EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT low interest payload EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-01",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-01", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-01",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-01", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-02",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-02", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-02",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-02", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-03",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-03", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-03",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-03", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-04",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-04", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-04",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-04", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-05",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-05", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-05",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-05", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-06",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-06", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-06",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-06", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-07",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-07", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-07",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-07", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-08",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-08", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-08",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-08", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerSize EE-09",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE-09", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE-/TowerFullReadoutFrequency EE-09",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE-09", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+01",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+01", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+01",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+01", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+02",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+02", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+02",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+02", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+03",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+03", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+03",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+03", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+04",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+04", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+04",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+04", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+05",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+05", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+05",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+05", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+06",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+06", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+06",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+06", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+07",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+07", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+07",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+07", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+08",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+08", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+08",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+08", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerSize EE+09",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT tower event size EE+09", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00-ByTask/14-SelectiveReadout/08-Towers/EE+/TowerFullReadoutFrequency EE+09",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT full readout frequency EE+09", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
