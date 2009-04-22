@@ -180,6 +180,8 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*
 process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.triggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask)
 process.r = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
 
+process.r.remove(process.ecalEndcapPedestalOnlineTask)
+
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
