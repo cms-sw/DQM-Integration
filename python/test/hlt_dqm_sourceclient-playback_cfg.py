@@ -10,7 +10,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_playback_cfi")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/hlt_reference.root'
 
-process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" ) // for muon hlt dqm
+process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" ) # for muon hlt dqm
 process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 
