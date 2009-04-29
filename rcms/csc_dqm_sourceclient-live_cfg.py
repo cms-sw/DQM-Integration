@@ -8,6 +8,8 @@ process = cms.Process("CSCDQMLIVE")
 
 process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
 process.dqmCSCClient.FractUpdateEventFreq = cms.untracked.uint32(100)
+process.dqmCSCClient.effParameters.threshold_hot = cms.untracked.double(10.0)
+process.dqmCSCClient.effParameters.sigfail_cold = cms.untracked.double(3.0)
 
 #-------------------------------------------------
 # Offline DQM Module Configuration

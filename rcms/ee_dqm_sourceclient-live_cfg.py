@@ -28,6 +28,10 @@ process.load("RecoLocalCalo.EcalRecProducers.ecalRecHit_cfi")
 
 process.load("Geometry.CaloEventSetup.CaloGeometry_cfi")
 
+process.load("Geometry.CaloEventSetup.CaloTopology_cfi")
+
+process.load("Geometry.CaloEventSetup.EcalTrigTowerConstituents_cfi")
+
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
 
 process.load("Geometry.EcalMapping.EcalMapping_cfi")
@@ -38,8 +42,6 @@ process.load("DQM.EcalEndcapMonitorModule.EcalEndcapMonitorModule_cfi")
 
 process.load("DQM.EcalEndcapMonitorTasks.EcalEndcapMonitorTasks_cfi")
 
-process.load("Geometry.CaloEventSetup.EcalTrigTowerConstituents_cfi")
-
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cff")
 
 process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
@@ -48,7 +50,7 @@ process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
-process.load("HLTrigger.special.TriggerTypeFilter_cfi")
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
 process.load("FWCore.Modules.preScaler_cfi")
 
@@ -60,7 +62,8 @@ process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     testpulsePrescaleFactor = cms.untracked.int32(1)
 )
 
-process.triggerTypeFilter.SelectedTriggerType = 1
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 #    reportThreshold = cms.untracked.string('red'),
@@ -71,7 +74,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V3H::All"
+process.GlobalTag.globaltag = "CRAFT_V14H::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -140,8 +143,7 @@ process.MessageLogger = cms.Service("MessageLogger",
             limit = cms.untracked.int32(1000)
         )
     ),
-    categories = cms.untracked.vstring('EcalTBInputService',
-                                       'EcalRawToDigiDev',
+    categories = cms.untracked.vstring('EcalRawToDigiDev',
                                        'EcalRawToDigiDevTriggerType',
                                        'EcalRawToDigiDevTpg',
                                        'EcalRawToDigiDevNumTowerBlocks',
@@ -163,6 +165,8 @@ process.MessageLogger = cms.Service("MessageLogger",
     destinations = cms.untracked.vstring('cout')
 )
 
+process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
+
 process.preScaler.prescaleFactor = 1
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis)
@@ -174,7 +178,7 @@ process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupan
 process.ecalEndcapCosmicTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
-process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.triggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask)
+process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask)
 process.r = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
 
 process.r.remove(process.ecalEndcapPedestalOnlineTask)
@@ -184,6 +188,7 @@ process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
 process.dqmEnv.subSystemFolder = 'EcalEndcap'
+process.dqmSaver.referenceHandling = 'all'
 
 process.ecalUncalibHit2.MinAmplBarrel = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.
@@ -225,5 +230,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_EcalEndcap_R000046798.root'
+process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_Ecal_R000079019.root'
 

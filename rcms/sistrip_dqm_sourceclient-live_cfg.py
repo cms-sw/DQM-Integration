@@ -82,22 +82,11 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
-
-process.SiStripClient = cms.EDFilter("SiStripAnalyser",
-    StaticUpdateFrequency    = cms.untracked.int32(-1),
-    TkMapCreationFrequency   = cms.untracked.int32(-1),
-    SummaryCreationFrequency = cms.untracked.int32(1),
-    GlobalStatusFilling      = cms.untracked.int32(1),
-    RawDataTag               = cms.untracked.InputTag("source"),                                     
-    TkmapParameters = cms.PSet(
-        loadFedCabling = cms.untracked.bool(True),
-        trackerdatPath = cms.untracked.string('CommonTools/TrackerMap/data/'),
-        trackermaptxtPath = cms.untracked.string('DQM/Integration/test/TkMap/')
-    )
-)
+process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+process.SiStripAnalyser.TkMapCreationFrequency  = -1
 
 #--------------------------
-# STRIP DQM Source and Client
+# Quality Test
 #--------------------------
 process.qTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
@@ -115,8 +104,10 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources = cms.Sequence(process.HardwareMonitor*process.CondDataMonitoring*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
+process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
+process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
-process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClient)
+process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
+
 

@@ -15,6 +15,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
 process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")    
+process.l1GtParameters.BstLengthBytes = 52
 
 #specify subsystems with qt's to be temporarily masked in summary map
 #sequence: dtf,dtp,ctf,ctp,rpc,gmt, etp,htp,rct,gct,gt
