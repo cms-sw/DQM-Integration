@@ -21,40 +21,21 @@
 def trigvalegammaZ(i, p, *rows): i["00 Shift/HLT/Egamma/Zee Preselection/" + p] = DQMItem(layout=rows)
   
 trigvalegammaZ(dqmitems,"doubleEle5SWL1R",
-[{'path': "HLT/HLTEgammaValidation/doubleEle5SWL1RDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for doubleEle5SWL1R"}])
+[{'path': "HLT/HLTEgammaValidation/HLT_DoubleEle5_SW_L1RDQMZee/efficiency_by_step_MC_matched", 'description':"per-event efficiency (MC matched) for doubleEle5SWL1R"}])
 
-trigvalegammaZ(dqmitems,"doubleElectron",
-[{'path': "HLT/HLTEgammaValidation/doubleElectronDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for doubleElectron"}])
+trigvalegammaZ(dqmitems,"Ele10LWL1R",
+[{'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_L1RDQMZee/efficiency_by_step_MC_matched", 'description':"per-event efficiency (MC matched) for Ele10LWL1R"}])
 
-trigvalegammaZ(dqmitems,"doubleElectronRelaxed",
-[{'path': "HLT/HLTEgammaValidation/doubleElectronDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for doubleElectron"}])
-
-trigvalegammaZ(dqmitems,"singleElectron",
-[{'path': "HLT/HLTEgammaValidation/singleElectronDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for singelElectron"}])
-
-trigvalegammaZ(dqmitems,"singleElectronRelaxed",
-[{'path': "HLT/HLTEgammaValidation/singleElectronRelaxedDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for singelElectronRelaxed"}])
-
-trigvalegammaZ(dqmitems,"ele15SWL1R",
-[{'path': "HLT/HLTEgammaValidation/ele15SWL1RDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for ele15SWL1R"}])
-
-trigvalegammaZ(dqmitems,"looseIsoEle15LWL1R",
-[{'path': "HLT/HLTEgammaValidation/looseIsoEle15LWL1RDQMZee/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for looseIsoEle15LWL1R"}])
+trigvalegammaZ(dqmitems,"Ele10LWEleIdL1R",
+[{'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_EleId_L1RDQMZee/efficiency_by_step_MC_matched", 'description':"per-event efficiency (MC matched) for Ele10LWEleIdL1R"}])
 
 def trigvalegammaW(i, p, *rows): i["00 Shift/HLT/Egamma/Wenu Preselection/" + p] = DQMItem(layout=rows)
 
-trigvalegammaW(dqmitems,"singleElectron",
-[{'path': "HLT/HLTEgammaValidation/singleElectronDQMWenu/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for singelElectron"}])
+trigvalegammaW(dqmitems,"Ele10LWL1R",
+[{'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_L1RDQMWenu/efficiency_by_step_MC_matched", 'description':"per-event efficiency (MC matched) for Ele10LWL1R"}])
 
-trigvalegammaW(dqmitems,"singleElectronRelaxed",
-[{'path': "HLT/HLTEgammaValidation/singleElectronRelaxedDQMWenu/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for singelElectronRelaxed"}])
-
-trigvalegammaW(dqmitems,"ele15SWL1R",
-[{'path': "HLT/HLTEgammaValidation/ele15SWL1RDQMWenu/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for ele15SWL1R"}])
-
-trigvalegammaW(dqmitems,"looseIsoEle15LWL1R",
-[{'path': "HLT/HLTEgammaValidation/looseIsoEle15LWL1RDQMWenu/efficiency by step MC matched", 'description':"per-event efficiency (MC matched) for looseIsoEle15LWL1R"}])
-
+trigvalegammaW(dqmitems,"Ele10LWEleIdL1R",
+[{'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_EleId_L1RDQMWenu/efficiency_by_step_MC_matched", 'description':"per-event efficiency (MC matched) for Ele10LWEleIdL1R"}])
 
 
 ###---- MUON selection goes here: ----
