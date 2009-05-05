@@ -92,26 +92,39 @@ ebecalshifterlayout(dqmitems, "02-Noise/02-PedestalOnline-AllCrystals",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/00-Occupancy-Summary",
+ebecalshifterlayout(dqmitems, "03-Occupancy/00-Summary",
   [{ 'path': "EcalBarrel/EcalInfo/EBMM DCC", 'description': "Occupancy of DCC. Non-uniform distribution in one bin means that the supermodule has not been readout in some event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EcalInfo/EBMM digi number profile", 'description': "Average occupancy of digis per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EcalInfo/EBMM hit number profile", 'description': "Average occupancy of reconstructed hits per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EcalInfo/EBMM TP digi number profile", 'description': "Average occupancy of trigger primitives per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/01-Digi-Occupancy",
+ebecalshifterlayout(dqmitems, "03-Occupancy/01-Digis",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy", 'description': "Map of the occupancy of ECAL digis. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/02-Rechits-Occupancy",
+ebecalshifterlayout(dqmitems, "03-Occupancy/02-Rechits",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/03-TriggerPrimitives-Occupancy",
+ebecalshifterlayout(dqmitems, "03-Occupancy/03-TriggerPrimitives",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "03-Occupancy/04-TriggerPrimitives-Threshold",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy", 'description': "Map of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Darker regions mean noisy towers. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "03-Occupancy/05-CalibrationEvents",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT test pulse digi occupancy", 'description': "Occupancy of test pulse events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT laser digi occupancy", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "03-Occupancy/06-CalibrationEvents",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT pedestal digi occupancy", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 ebecalshifterlayout(dqmitems, "04-Energy/00-BasicClusters-Summary",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -133,7 +146,7 @@ ebecalshifterlayout(dqmitems, "04-Energy/02-SuperClusters",
 ebecalshifterlayout(dqmitems, "04-Energy/03-Cosmic-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/00-Trigger-Summary",
+ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/00-Trigger-Timing",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/01-Trigger-Quality",
@@ -143,7 +156,7 @@ ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/02-TriggerPrimitive
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary", 'description': "Average transverse energy of L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/03-TriggerPrimitives-ETSpectrum",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower spectrum", 'description': "Mean of transverse energy of the trigger primitives (GeV). Each entry represents 1 trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower spectrum", 'description': "Mean of transverse energy of the trigger primitives (ADC counts: 4 ADCs = 1GeV). Each entry represents 1 trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/04-SelectiveReadout-EventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "ECAL barrel event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
@@ -152,6 +165,10 @@ ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/04-SelectiveReadout
 ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/05-SelectiveReadout-Payload",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Size of high interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Size of low interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/06-FullReadoutFrequency",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout frequency", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 ebecalshifterlayout(dqmitems, "06-Calibration/00-LaserL1-Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -365,7 +382,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-01", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-01", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-01", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-01", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -582,7 +599,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-02", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-02", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-02", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-02", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -799,7 +816,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-03", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-03", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-03", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-03", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1016,7 +1033,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-04", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-04", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-04", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-04", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1233,7 +1250,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-05", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-05", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-05", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-05", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1450,7 +1467,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-06", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-06", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-06", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-06", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1667,7 +1684,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-07", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-07", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-07", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-07", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1884,7 +1901,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-08", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-08", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-08", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-08", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2101,7 +2118,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-09", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-09", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-09", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-09", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2318,7 +2335,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-10", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-10", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-10", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-10", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2535,7 +2552,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-11", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-11", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-11", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-11", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2752,7 +2769,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-12", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-12", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-12", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-12", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2969,7 +2986,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-13", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-13", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-13", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-13", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3186,7 +3203,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-14", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-14", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-14", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-14", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3403,7 +3420,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-15", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-15", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-15", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-15", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3620,7 +3637,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-16", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-16", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-16", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-16", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3837,7 +3854,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-17", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-17", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-17", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-17", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4054,7 +4071,7 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB-18", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-18", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB-18", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB-18", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4271,7 +4288,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+01", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+01", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+01", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+01", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4488,7 +4505,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+02", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+02", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+02", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+02", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4705,7 +4722,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+03", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+03", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+03", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+03", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4922,7 +4939,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+04", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+04", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+04", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+04", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5139,7 +5156,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+05", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+05", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+05", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+05", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5356,7 +5373,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+06", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+06", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+06", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+06", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5573,7 +5590,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+07", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+07", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+07", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+07", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5790,7 +5807,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+08", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+08", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+08", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+08", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6007,7 +6024,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+09", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+09", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+09", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+09", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6224,7 +6241,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+10", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+10", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+10", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+10", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6441,7 +6458,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+11", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+11", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+11", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+11", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6658,7 +6675,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+12", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+12", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+12", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+12", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6875,7 +6892,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+13", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+13", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+13", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+13", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7092,7 +7109,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+14", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+14", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+14", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+14", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7309,7 +7326,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+15", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+15", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+15", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+15", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7526,7 +7543,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+16", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+16", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+16", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+16", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7743,7 +7760,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+17", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+17", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+17", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+17", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7960,7 +7977,7 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/04-Timing/00-Timing",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/05-Trigger/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulError EB+18", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+18", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Et map Real Digis EB+18", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/05-Trigger/01-FlagBit000",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT EmulFlagError Bit 000 EB+18", 'description': "Number of errors comparing the values of bit 000 for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8218,7 +8235,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-01/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-01", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-01", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-01", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-01/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8456,7 +8473,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-02/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-02", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-02", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-02", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-02/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8694,7 +8711,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-03/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-03", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-03", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-03", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-03/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8932,7 +8949,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-04/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-04", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-04", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-04", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-04/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -9170,7 +9187,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-05/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-05", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-05", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-05", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-05/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -9408,7 +9425,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-06/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-06", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-06", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-06", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-06/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -9646,7 +9663,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-07/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-07", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-07", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-07", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-07/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -9884,7 +9901,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-08/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-08", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-08", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-08", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-08/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -10122,7 +10139,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-09/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-09", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-09", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-09", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-09/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -10360,7 +10377,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-10/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-10", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-10", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-10", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-10/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-10", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -10598,7 +10615,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-11/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-11", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-11", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-11", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-11/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-11", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -10836,7 +10853,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-12/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-12", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-12", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-12", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-12/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-12", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -11074,7 +11091,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-13/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-13", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-13", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-13", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-13/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-13", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -11312,7 +11329,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-14/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-14", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-14", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-14", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-14/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-14", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -11550,7 +11567,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-15/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-15", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-15", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-15", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-15/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-15", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -11788,7 +11805,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-16/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-16", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-16", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-16", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-16/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-16", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -12026,7 +12043,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-17/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-17", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-17", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-17", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-17/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-17", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -12264,7 +12281,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-18/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB-18", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-18", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB-18", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB-/EB-18/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-18", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -12502,7 +12519,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+01/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+01", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+01", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+01", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+01/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -12740,7 +12757,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+02/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+02", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+02", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+02", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+02/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -12978,7 +12995,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+03/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+03", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+03", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+03", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+03/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -13216,7 +13233,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+04/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+04", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+04", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+04", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+04/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -13454,7 +13471,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+05/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+05", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+05", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+05", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+05/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -13692,7 +13709,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+06/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+06", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+06", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+06", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+06/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -13930,7 +13947,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+07/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+07", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+07", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+07", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+07/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -14168,7 +14185,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+08/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+08", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+08", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+08", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+08/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -14406,7 +14423,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+09/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+09", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+09", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+09", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+09/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -14644,7 +14661,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+10/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+10", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+10", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+10", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+10/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+10", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -14882,7 +14899,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+11/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+11", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+11", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+11", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+11/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+11", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -15120,7 +15137,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+12/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+12", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+12", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+12", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+12/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+12", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -15358,7 +15375,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+13/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+13", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+13", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+13", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+13/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+13", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -15596,7 +15613,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+14/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+14", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+14", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+14", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+14/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+14", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -15834,7 +15851,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+15/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+15", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+15", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+15", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+15/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+15", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -16072,7 +16089,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+16/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+16", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+16", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+16", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+16/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+16", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -16310,7 +16327,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+17/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+17", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+17", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+17", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+17/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+17", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -16548,7 +16565,7 @@ eblayout(dqmitems, "00-ByTask/08-Trigger/00-Trigger-Summary",
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+18/00-TransverseEnergy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulError EB+18", 'description': "Number of errors comparing the values of Et for real and emulated trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+18", 'description': "Average transverse energy (GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et map Real Digis EB+18", 'description': "Average transverse energy (ADC counts: 4 ADCs = 1 GeV) for real trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/08-Trigger/EB+/EB+18/01-TriggerPrimitivesTiming",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+18", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -16832,8 +16849,8 @@ eblayout(dqmitems, "00-ByTask/13-RawData/07-RawData",
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT bunch crossing SRP errors", 'description': "Number of bunch-crossing mismatches between the ECAL DCC header and its SRP block. It should be empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "00-ByTask/14-SelectiveReadout/00-DCC-EventSize",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [None])
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size vs DCC", 'description': "Event size distribution per each ECAL barrel DCC. Finer binning is used in the zero-suppressed region (0-0.608 kB), while granularity of one fully readout tower (0.608 kB) has been used for higher sizes. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>"}])
 
 eblayout(dqmitems, "00-ByTask/14-SelectiveReadout/01-SRFlags",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT readout unit with SR forced", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
