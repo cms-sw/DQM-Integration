@@ -215,6 +215,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
+#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup_FG.txt.gz'
 
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
