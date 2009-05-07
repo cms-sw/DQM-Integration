@@ -54,12 +54,13 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
 process.load("FWCore.Modules.preScaler_cfi")
 
-process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
+process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(6),
     laserPrescaleFactor = cms.untracked.int32(1),
     ledPrescaleFactor = cms.untracked.int32(1),
-    pedestalPrescaleFactor = cms.untracked.int32(1),
-    testpulsePrescaleFactor = cms.untracked.int32(1)
+    pedestalPrescaleFactor = cms.untracked.int32(2),
+    testpulsePrescaleFactor = cms.untracked.int32(2)
 )
 
 # 0=random, 1=physics, 2=calibration, 3=technical
@@ -169,19 +170,17 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler0*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit)
 
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnv*process.ecalEndcapMonitorClient*process.dqmQTestEE)
 
-process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
+process.ecalEndcapTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask)
 
-process.ecalEndcapCosmicTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
+process.ecalEndcapTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
-process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask)
-process.r = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
-
-process.r.remove(process.ecalEndcapPedestalOnlineTask)
+process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
+process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
