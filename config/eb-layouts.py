@@ -118,11 +118,15 @@ ebecalshifterlayout(dqmitems, "03-Occupancy/04-TriggerPrimitives-Threshold",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/05-CalibrationEvents",
+ebecalshifterlayout(dqmitems, "03-Occupancy/05-TestPulseEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT test pulse digi occupancy", 'description': "Occupancy of test pulse events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT laser digi occupancy", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [None])
 
-ebecalshifterlayout(dqmitems, "03-Occupancy/06-CalibrationEvents",
+ebecalshifterlayout(dqmitems, "03-Occupancy/06-LaserEvents",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT laser digi occupancy", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+ebecalshifterlayout(dqmitems, "03-Occupancy/07-PedestalEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT pedestal digi occupancy", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
