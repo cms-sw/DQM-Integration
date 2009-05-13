@@ -3,24 +3,24 @@
 if [ "$1" = "live" ] ; then
   echo live
 
-  ln -s  daq_dqm_sourceclient-live.cfg           dqmfu10-1.cfg 
+  ln -s daq_dqm_sourceclient-live_cfg.py              dqmfu10-1_cfg.py
+  ln -s sistrip_dqm_sourceclient-live_cfg.py          dqmfu15-1_cfg.py 
+  ln -s hlx_dqm_sourceclient-live_cfg.py              dqmfu15-2_cfg.py
+  ln -s ee_dqm_sourceclient-live_cfg.py               dqmfu16-1_cfg.py
+  ln -s eb_dqm_sourceclient-live_cfg.py               dqmfu16-2_cfg.py 
+  ln -s hcal_dqm_sourceclient-live_cfg.py             dqmfu16-3_cfg.py
+  ln -s dt_dqm_sourceclient-live_cfg.py               dqmfu16-4_cfg.py
+  ln -s hlt_dqm_sourceclient-live_cfg.py              dqmfu17-1_cfg.py
+  ln -s l1t_dqm_sourceclient-live_cfg.py              dqmfu17-2_cfg.py
+  ln -s l1temulator_dqm_sourceclient-live_cfg.py      dqmfu17-3_cfg.py
+  ln -s rpc_dqm_sourceclient-live_cfg.py              dqmfu17-4_cfg.py
+  ln -s pixel_dqm_sourceclient-live_cfg.py            dqmfu17-1_cfg.py
+  ln -s pixel_dqm_sourceclient-live_cfg.py            dqmfu18-1_cfg.py
+  ln -s csc_dqm_sourceclient-live_cfg.py              dqmfu18-2_cfg.py
+  ln -s fed_dqm_sourceclient-live_cfg.py              dqmfu18-3_cfg.py
+  ln -s iggi_2XX_dqm_sourceclient-live_cfg.py         dqmfu15-4_cfg.py
+  ln -s hcaltiming_dqm_sourceclient-live_cfg.py       dqmfu15-3_cfg.py
 
-  ln -s  sistrip_dqm_sourceclient-live.cfg       dqmfu15-1.cfg 
-  ln -s  hlx_dqm_sourceclient-live.cfg           dqmfu15-2.cfg 
-
-  ln -s  ee_dqm_sourceclient-live.cfg            dqmfu16-1.cfg 
-  ln -s  eb_dqm_sourceclient-live.cfg            dqmfu16-2.cfg 
-  ln -s  hcal_dqm_sourceclient-live.cfg          dqmfu16-3.cfg 
-  ln -s  dt_dqm_sourceclient-live.cfg            dqmfu16-4.cfg 
-
-  ln -s  hlt_dqm_sourceclient-live.cfg           dqmfu17-1.cfg 
-  ln -s  l1t_dqm_sourceclient-live.cfg           dqmfu17-2.cfg 
-  ln -s  l1temulator_dqm_sourceclient-live.cfg   dqmfu17-3.cfg 
-  ln -s  rpc_dqm_sourceclient-live.cfg           dqmfu17-4.cfg 
-
-  ln -s  pixel_dqm_sourceclient-live.cfg         dqmfu18-1.cfg 
-  ln -s  csc_dqm_sourceclient-live.cfg           dqmfu18-2.cfg 
-  ln -s  shipper_dqm_sourceclient-live.cfg       dqmfu18-3.cfg 
   cp ../python/test/*live_cfg.py .
 
 #
