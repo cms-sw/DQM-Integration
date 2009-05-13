@@ -18,6 +18,7 @@ if [ "$1" = "live" ] ; then
   ln -s pixel_dqm_sourceclient-live_cfg.py            dqmfu18-1_cfg.py
   ln -s csc_dqm_sourceclient-live_cfg.py              dqmfu18-2_cfg.py
   ln -s fed_dqm_sourceclient-live_cfg.py              dqmfu18-3_cfg.py
+  ln -s fedtest_dqm_sourceclient-live_cfg.py          dqmfu18-4_cfg.py
   ln -s iggi_2XX_dqm_sourceclient-live_cfg.py         dqmfu15-4_cfg.py
   ln -s hcaltiming_dqm_sourceclient-live_cfg.py       dqmfu15-3_cfg.py
 
