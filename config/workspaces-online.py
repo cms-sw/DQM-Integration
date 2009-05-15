@@ -121,6 +121,7 @@ server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1TEMU', '^L1TEMU/',
 server.workspace('DQMContent', 41, 'Trigger/DAQ', 'HLT', '^HLT/',
                  'HLT/HLTMonMuon/EfficiencySummary/CountHistos/hCountSummary',
                  'HLT/HLTMonMuon/EfficiencySummary/hEffSummary',
+                 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi')
 
