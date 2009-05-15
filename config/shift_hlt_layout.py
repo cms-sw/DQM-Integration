@@ -9,11 +9,15 @@ hltlayout(dqmitems,"01 Path efficiencies wrt L1MuOpen",
 please click <a 
 href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"02 HLT Muon Eta",
+hltlayout(dqmitems,"02 HLT Muon Occupancy",
+  	[{'path': "HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi", 'description': "Occupancy distribution for muon candidates passing any L1Muon path. 
+For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"03 HLT Muon Eta",
   	[{'path': "HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta", 'description': "Eta distribution for muon candidates passing any L1Muon path. For more 
 information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"03 HLT Muon Phi",
+hltlayout(dqmitems,"04 HLT Muon Phi",
   	[{'path': "HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi", 'description': "Phi distribution for muon candidates passing any L1Muon path. For more 
 information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
