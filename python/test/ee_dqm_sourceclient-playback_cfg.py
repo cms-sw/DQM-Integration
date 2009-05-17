@@ -9,7 +9,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_playback_cfi")
-#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/DQM_EcalEndcap_R000046798.root'
+process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/ee_reference.root'
 
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 
