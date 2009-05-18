@@ -9,7 +9,6 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_playback_cfi")
-process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/ee_reference.root'
 
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 
@@ -230,4 +229,6 @@ process.multi5x5BasicClusters.IslandBarrelSeedThr = 0.150
 process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
+
+process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/ee_reference.root'
 
