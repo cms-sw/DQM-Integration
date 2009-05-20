@@ -13,7 +13,7 @@ process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serveru
 
 
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'Event Display'
+process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
 #process.maxEvents = cms.untracked.PSet(
 #    input = cms.untracked.int32(-1)
 #)
@@ -46,10 +46,11 @@ process.add_(
 )
 
 
-
 process.load("VisReco.Analyzer.VisBasicCluster_cfi")
 process.load("VisReco.Analyzer.VisCaloTower_cfi")
 process.load("VisReco.Analyzer.VisCSCSegment_cfi")
+process.load("VisReco.Analyzer.VisDTDigi_cfi")
+process.load("VisReco.Analyzer.VisDTRecHit_cfi")
 process.load("VisReco.Analyzer.VisDTRecSegment4D_cfi")
 process.load("VisReco.Analyzer.VisEcalRecHit_cfi")
 process.load("VisReco.Analyzer.VisEvent_cfi")
@@ -61,10 +62,8 @@ process.load("VisReco.Analyzer.VisHORecHit_cfi")
 process.load("VisReco.Analyzer.VisJet_cfi")
 process.load("VisReco.Analyzer.VisMET_cfi")
 process.load("VisReco.Analyzer.VisMuon_cfi")
-#process.load("VisReco.Analyzer.VisPFCluster_cfi")
-#process.load("VisReco.Analyzer.VisPFRecHit_cfi")
-#process.load("VisReco.Analyzer.VisPFRecTrack_cfi")
 process.load("VisReco.Analyzer.VisPixelDigi_cfi")
+process.load("VisReco.Analyzer.VisRPCRecHit_cfi")
 process.load("VisReco.Analyzer.VisSiPixelCluster_cfi")
 process.load("VisReco.Analyzer.VisSiPixelRecHit_cfi")
 process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
@@ -75,14 +74,9 @@ process.load("VisReco.Analyzer.VisTrackingRecHit_cfi")
 process.VisTrack.visTrackTag = cms.InputTag("globalCosmicMuons")
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag("globalCosmicMuons")
 process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag("siStripDigis","ZeroSuppressed")
-process.VisEcalRecHit.visEcalRecHitTag = cms.InputTag("ecalRecHit", "EcalRecHitsEB")
 process.VisMuon.visMuonTag = cms.InputTag("muons")
 process.VisBasicCluster.visBasicClusterTag = cms.InputTag("cosmicBasicClusters","CosmicBarrelBasicClusters")
 process.VisPixelDigi.VisPixelDigiTag = cms.InputTag("siPixelDigis","")
-
-#process.VisPFCluster.visPFClusterTag = cms.InputTag("particleFlowClusterECAL")
-#process.VisPFRecHit.visPFRecHitTag = cms.InputTag("particleFlowRecHitECAL")
-#process.VisPFRecTrack.visPFRecTrackTag = cms.InputTag("elecpreid")
 
 process.p1 = cms.Path(process.RawToDigi_woGCT*
                       process.reconstructionCosmics*
@@ -90,10 +84,12 @@ process.p1 = cms.Path(process.RawToDigi_woGCT*
                       process.VisEventSetup*
                       process.VisTrack*
                       process.VisTrackingRecHit*
-                      process.VisBasicCluster*
                       process.VisCSCSegment*
                       process.VisCaloTower*
                       process.VisDTRecSegment4D*
+                      process.VisDTRecHit*
+                      process.VisDTDigi*
+                      process.VisRPCRecHit*
                       process.VisEcalRecHit*
                       process.VisHBRecHit*
                       process.VisHERecHit*
@@ -101,9 +97,6 @@ process.p1 = cms.Path(process.RawToDigi_woGCT*
                       process.VisHORecHit*
                       process.VisMET*
                       process.VisMuon*
-#                      process.VisPFCluster*
-#                      process.VisPFRecHit*
-#                      process.VisPFRecTrack*
                       process.VisPixelDigi*
                       process.VisSiPixelCluster*
                       process.VisSiPixelRecHit*
