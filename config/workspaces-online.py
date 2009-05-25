@@ -54,6 +54,9 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Pedestals',
                  #'Hcal/Layouts/HCAL Trigger Primitives',
                  'Hcal/Layouts/HCAL Unsuppressed Channels',
+                 "Hcal/Layouts/01 HCAL Shifter Checklist Plots - DataFormat",
+                 "Hcal/Layouts/02 HCAL Shifter Checklist Plots - RecHits",
+                 "Hcal/Layouts/03 HCAL Shifter Checklist Plots - Summaries"
                  )
 
 server.workspace('DQMContent', 30, 'Muon', 'CSC', '^CSC/',
