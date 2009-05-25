@@ -17,9 +17,14 @@ server.baseUrl     = '/dqm/devtest'
 server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
+server.plugin('render', BASEDIR + "/style/*.cc")
 server.source('DQMUnknown', 'unknown', 'DQMArchive', 9192)
-server.source('DQMLive', 'dqm', '--listen 9191', '--collector localhost:9190')
-server.source('DQMArchive', 'file', BASEDIR + "/dqm.db", '--listen 9192')
+server.source('DQMLive', 'dqm',
+              '--listen 9191', '--collector localhost:9190',
+              '--load ' + server.pathOfPlugin('render'))
+server.source('DQMArchive', 'file',
+              BASEDIR + "/dqm.db", '--listen 9192',
+              '--load ' + server.pathOfPlugin('render'))
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
