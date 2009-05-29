@@ -14,57 +14,42 @@ ecalbarrellayout(dqmitems, "02-Cluster-Summary-EcalBarrel",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "EcalBarrel - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 # ALL shifters
-ebshifterlayout(dqmitems, "00-Event-Type",
+ebshifterlayout(dqmitems, "00 Event Type",
   [{ 'path': "EcalBarrel/EcalInfo/EVTTYPE", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebshifterlayout(dqmitems, "01-Integrity-Summary",
+ebshifterlayout(dqmitems, "01 Integrity Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "Integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebshifterlayout(dqmitems, "02-Integrity-Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality errors summary", 'description': "Integrity errors by supermodule. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebshifterlayout(dqmitems, "03-FrontEnd-Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "Front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebshifterlayout(dqmitems, "04-PedestalOnline-Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal quality summary G12", 'description': "Pedestal quality summary. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebshifterlayout(dqmitems, "05-PedestalOnline-Rms",
+ebshifterlayout(dqmitems, "02 PedestalOnline RMS",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL barrel is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebshifterlayout(dqmitems, "06-PedestalOnline-AllCrystals",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-ebshifterlayout(dqmitems, "07-Occupancy-Summary",
-  [{ 'path': "EcalBarrel/EcalInfo/EBMM DCC", 'description': "Occupancy of DCC. Non-uniform distribution in one bin means that the supermodule has not been readout in some event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EcalInfo/EBMM digi number profile", 'description': "Average occupancy of digis per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EcalInfo/EBMM hit number profile", 'description': "Average occupancy of reconstructed hits per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EcalInfo/EBMM TP digi number profile", 'description': "Average occupancy of trigger primitives per supermodule. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-ebshifterlayout(dqmitems, "08-Occupancy-Rechits",
+ebshifterlayout(dqmitems, "03 Occupancy Rechits",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebshifterlayout(dqmitems, "09-Occupancy-TriggerPrimitives",
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+ebshifterlayout(dqmitems, "04 Occupancy Trigger Primitives",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy", 'description': "Map of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebshifterlayout(dqmitems, "10-Clusters-Summary",
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number", 'description': "Multiplicity of reconstructed hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   None])
-
-ebshifterlayout(dqmitems, "11-Clusters-Energy",
+ebshifterlayout(dqmitems, "05 Clusters Energy",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "Average energy (in GeV) of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection eta", 'description': "Eta projection of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection phi", 'description': "Phi projection of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebshifterlayout(dqmitems, "12-Trigger-Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebshifterlayout(dqmitems, "06 LaserL1 Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebshifterlayout(dqmitems, "08 Pedestal Gain12 Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebshifterlayout(dqmitems, "09 DCC EventSize",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+ebshifterlayout(dqmitems, "10 Selective Readout High Interest TTs",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
 
 # ECAL shifters
 ebecalshifterlayout(dqmitems, "00-Event-Type",

@@ -17,76 +17,66 @@ ecalendcaplayout(dqmitems, "02-Cluster-Summary-EcalEndcap",
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 # ALL shifters
-eeshifterlayout(dqmitems, "00-Event-Type",
+eeshifterlayout(dqmitems, "00 Event Type",
   [{ 'path': "EcalEndcap/EcalInfo/EVTTYPE", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeshifterlayout(dqmitems, "01-Integrity-Summary",
+eeshifterlayout(dqmitems, "01 Integrity Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "Integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE + integrity quality summary", 'description': "Integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeshifterlayout(dqmitems, "02-Integrity-Errors",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEIT integrity quality errors summary", 'description': "Integrity errors by sector. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eeshifterlayout(dqmitems, "03-FrontEnd-Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "Front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE + front-end status summary", 'description': "Front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eeshifterlayout(dqmitems, "04-PedestalOnline-Quality",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal quality summary G12", 'description': "Pedestal quality summary. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal quality summary G12", 'description': "Pedestal quality summary. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eeshifterlayout(dqmitems, "05-PedestalOnline-Rms",
+eeshifterlayout(dqmitems, "02 PedestalOnline RMS",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL endcap is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL endcap is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeshifterlayout(dqmitems, "06-PedestalOnline-AllCrystalsMean",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all endcap - crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all endcap + crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-eeshifterlayout(dqmitems, "07-PedestalOnline-AllCrystalsRms",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all endcap - crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all endcap + crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-eeshifterlayout(dqmitems, "08-Occupancy-Summary",
-  [{ 'path': "EcalEndcap/EcalInfo/EEMM DCC", 'description': "Occupancy of DCC. Non-uniform distribution in one bin means that the sector has not been readout in some event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EcalInfo/EEMM digi number profile", 'description': "Average occupancy of digis per sector. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EcalInfo/EEMM hit number profile", 'description': "Average occupancy of reconstructed hits per sector. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EcalInfo/EEMM TP digi number profile", 'description': "Average occupancy of trigger primitives per sector. Expect flat distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-eeshifterlayout(dqmitems, "09-Occupancy-Rechits",
+eeshifterlayout(dqmitems, "03 Occupancy Rechits EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE -", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "10-Occupancy-Rechits",
+eeshifterlayout(dqmitems, "03 Occupancy Rechits EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE +", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "11-Occupancy-TriggerPrimitives",
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE -", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection R", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eeshifterlayout(dqmitems, "04 Occupancy Trigger Primitives EE -",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE -", 'description': "Map of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "12-Clusters-Summary",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number", 'description': "Multiplicity of reconstructed hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   None])
+eeshifterlayout(dqmitems, "04 Occupancy Trigger Primitives EE +",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE +", 'description': "Map of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with energy > 4 ADC counts (~1 GeV). Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "13-Clusters-Energy",
+eeshifterlayout(dqmitems, "05 Clusters Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "14-Clusters-Energy",
+eeshifterlayout(dqmitems, "05 Clusters Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eeshifterlayout(dqmitems, "15-Trigger-Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eeshifterlayout(dqmitems, "06 LaserL1 Quality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeshifterlayout(dqmitems, "07 LedL1 Quality", 
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeshifterlayout(dqmitems, "08 Pedestal Gain12 Quality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeshifterlayout(dqmitems, "09 DCC EventSize",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average sector event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [None])
+
+eeshifterlayout(dqmitems, "10 Selective Readout High Interest TTs",
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT high interest TT Flags EE -", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT high interest TT Flags EE +", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 
 # ECAL shifters
