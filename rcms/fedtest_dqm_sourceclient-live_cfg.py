@@ -98,6 +98,7 @@ process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
 
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
+process.dqmFEDIntegrity.moduleName = "FEDTest"
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
@@ -112,5 +113,5 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
 #			      process.siPixelDigis + process.SiPixelHLTSource +
 #                              process.siStripFEDCheck +
 			      process.hcalDigis + process.hcalMonitor +
-			      process.rpcunpacker + process.rpcFEDIntegrity ) 
-#			      process.DQMFEDIntegrityClient )
+			      process.rpcunpacker + process.rpcFEDIntegrity +
+			      process.dqmFEDIntegrityClient )

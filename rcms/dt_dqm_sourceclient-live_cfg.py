@@ -31,9 +31,9 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("DQM.DTMonitorModule.dt_dqm_sourceclient_common_cff")
 #---- for P5 (online) DB access
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V4H::All"
+process.GlobalTag.globaltag = "CRAFT_V14H::All"
 #---- for offline DB
-#process.GlobalTag.globaltag = "CRAFT_V2P::All"
+#process.GlobalTag.globaltag = "CRAFT_V14P::All"
 
 # message logger
 process.MessageLogger = cms.Service("MessageLogger",
@@ -43,7 +43,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
-process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + process.reco + process.dtDQMTask + process.dtDQMTest)
+process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + process.physicsEventsFilter * process.reco + process.dtDQMTask + process.dtDQMTest)
 
 #process.dtDQMPathCalib = cms.Path(process.unpackers + process.dqmmodules + process.calibrationEventsFilter * process.dtDQMCalib)
 

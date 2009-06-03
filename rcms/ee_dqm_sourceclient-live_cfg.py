@@ -54,12 +54,13 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
 process.load("FWCore.Modules.preScaler_cfi")
 
-process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
+process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(6),
     laserPrescaleFactor = cms.untracked.int32(1),
     ledPrescaleFactor = cms.untracked.int32(1),
-    pedestalPrescaleFactor = cms.untracked.int32(1),
-    testpulsePrescaleFactor = cms.untracked.int32(1)
+    pedestalPrescaleFactor = cms.untracked.int32(2),
+    testpulsePrescaleFactor = cms.untracked.int32(2)
 )
 
 # 0=random, 1=physics, 2=calibration, 3=technical
@@ -74,7 +75,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V14H::All"
+process.GlobalTag.globaltag = "CRAFT_V15H::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -169,19 +170,17 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit*process.simEcalTriggerPrimitiveDigis)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler0*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit)
 
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnv*process.ecalEndcapMonitorClient*process.dqmQTestEE)
 
-process.ecalEndcapCosmicTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalOnlineTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapCosmicTask)
+process.ecalEndcapTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask)
 
-process.ecalEndcapCosmicTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
+process.ecalEndcapTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
-process.q = cms.Path(process.ecalDataSequence*~process.ecalPrescaler*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask)
-process.r = cms.EndPath(process.ecalEndcapCosmicTasksSequenceP5*process.ecalEndcapClusterTask)
-
-process.r.remove(process.ecalEndcapPedestalOnlineTask)
+process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
+process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
@@ -213,8 +212,9 @@ process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
+#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup_FG.txt.gz'
 
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
@@ -230,5 +230,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/DQM_Ecal_R000079019.root'
+#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/ee_reference.root'
 
