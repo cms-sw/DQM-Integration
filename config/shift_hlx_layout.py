@@ -1,9 +1,9 @@
 def shifthlxlayout(i, p, *rows): i["00 Shift/HLX/" + p] = DQMItem(layout=rows)
 
 shifthlxlayout(dqmitems, "Shifter HLX Lumi Summary",
-  [ {'path':"HLX/Luminosity/LumiEtSum", 'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
-    {'path':"HLX/Luminosity/LumiOccSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
-    {'path':"HLX/Luminosity/LumiOccSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"} ])
+  [ {'path':"HLX/Luminosity/LumiIntegratedEtSum", 'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/Luminosity/LumiIntegratedOccSet1",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"},
+    {'path':"HLX/Luminosity/LumiIntegratedOccSet2",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"} ])
 
 shifthlxlayout(dqmitems, "Shifter HLX HF Compare Summary",
   [ {'path':"HLX/HFCompare/HFCompareEtSum",'description':"<a href=https://twiki.cern.ch/twiki/bin/view/CMS/LumiWiki_SystemOperations>Lumi Shift Histos</a>"}],

@@ -195,23 +195,25 @@ hlxlayout(dqmitems, "HLX-Averages",
    "HLX/Average/AvgOccAboveSet2"])
 
 hlxlayout(dqmitems, "HLX-Luminosity",
-  ["HLX/Luminosity/LumiEtSum","HLX/Luminosity/LumiOccSet1","HLX/Luminosity/LumiOccSet2"],
-  ["HLX/Luminosity/LumiDiffEtSumOcc1","HLX/Luminosity/LumiDiffEtSumOcc2","HLX/Luminosity/LumiDiffOcc1Occ2"])
+  ["HLX/Luminosity/LumiAvgEtSum","HLX/Luminosity/LumiAvgOccSet1","HLX/Luminosity/LumiAvgOccSet2"],
+  ["HLX/Luminosity/LumiInstantEtSum","HLX/Luminosity/LumiInstantOccSet1","HLX/Luminosity/LumiInstantOccSet2"],
+  ["HLX/Luminosity/LumiIntegratedEtSum","HLX/Luminosity/LumiIntegratedOccSet1","HLX/Luminosity/LumiIntegratedOccSet2"] )
 
 hlxlayout(dqmitems, "HLX-Occupancy-Check-Sums",
   ["HLX/CheckSums/SumAllOccSet1","HLX/CheckSums/SumAllOccSet2"])
 
 hlxlayout(dqmitems, "HLX-EtSumAndLumi-History-Plots",
-          ["HLX/History/HistAvgEtSumHFP","HLX/History/HistAvgEtSumHFM"],
-          ["HLX/History/HistLumiEtSum","HLX/History/HistLumiOccSet1","HLX/History/HistLumiOccSet2"])
+          ["HLX/HistoryRaw/HistAvgEtSumHFP","HLX/HistoryRaw/HistAvgEtSumHFM"],
+          ["HLX/HistoryLumi/HistAvgLumiEtSum","HLX/HistoryLumi/HistAvgLumiOccSet1","HLX/HistoryLumi/HistAvgLumiOccSet2"],
+          ["HLX/HistoryLumi/HistInstantLumiEtSum","HLX/HistoryLumi/HistInstantLumiOccSet1","HLX/HistoryLumi/HistInstantLumiOccSet2"])
 
 hlxlayout(dqmitems, "HLX-Occupancy-History-Plots",
-          ["HLX/History/HistAvgOccBelowSet1HFP","HLX/History/HistAvgOccBelowSet1HFM"],
-          ["HLX/History/HistAvgOccBetweenSet1HFP","HLX/History/HistAvgOccBetweenSet1HFM"],
-          ["HLX/History/HistAvgOccAboveSet1HFP","HLX/History/HistAvgOccAboveSet1HFM"],
-          ["HLX/History/HistAvgOccBelowSet2HFP","HLX/History/HistAvgOccBelowSet2HFM"],
-          ["HLX/History/HistAvgOccBetweenSet2HFP","HLX/History/HistAvgOccBetweenSet2HFM"],
-          ["HLX/History/HistAvgOccAboveSet2HFP","HLX/History/HistAvgOccAboveSet2HFM"])
+          ["HLX/HistoryRaw/HistAvgOccBelowSet1HFP","HLX/HistoryRaw/HistAvgOccBelowSet1HFM"],
+          ["HLX/HistoryRaw/HistAvgOccBetweenSet1HFP","HLX/HistoryRaw/HistAvgOccBetweenSet1HFM"],
+          ["HLX/HistoryRaw/HistAvgOccAboveSet1HFP","HLX/HistoryRaw/HistAvgOccAboveSet1HFM"],
+          ["HLX/HistoryRaw/HistAvgOccBelowSet2HFP","HLX/HistoryRaw/HistAvgOccBelowSet2HFM"],
+          ["HLX/HistoryRaw/HistAvgOccBetweenSet2HFP","HLX/HistoryRaw/HistAvgOccBetweenSet2HFM"],
+          ["HLX/HistoryRaw/HistAvgOccAboveSet2HFP","HLX/HistoryRaw/HistAvgOccAboveSet2HFM"])
 
 
 
