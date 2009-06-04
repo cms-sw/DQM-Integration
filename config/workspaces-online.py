@@ -23,11 +23,11 @@ server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
                  'SiStrip/Layouts/10 - TECBSummary',
                  'SiStrip/Layouts/11 - FedMonitoringSummary')
 
-#server.workspace('DQMContent', 20, 'Calorimeter', 'ECAL', '^Ecal',
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower',
 #                 'Ecal/Layouts/00-Global-Summary',
-#                 'Ecal/Layouts/01-Occupancy-Summary',
+                 'Ecal/Layouts/01-IntegritySummary-EcalPreshower'
 #                 'Ecal/Layouts/02-Cluster-Summary')
-
+)
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00-Global-Summary-EcalBarrel',
                  'EcalBarrel/Layouts/01-Occupancy-Summary-EcalBarrel',
