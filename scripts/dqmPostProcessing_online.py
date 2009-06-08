@@ -4,7 +4,6 @@ import os, time, sys, shutil, glob, smtplib, re
 from datetime import datetime
 from email.MIMEText import MIMEText
 #from ROOT import TFile
-if len(sys.argv) <= 1: sys.exit(0)
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 
 DIR = '/data/dqm/dropbox'  # directory to search new files
@@ -13,7 +12,7 @@ TMPDB = '/home/dqm/dqm.db.tmp' # temporal db
 FILEDIR = '/data/dqm/merged' # directory, to which merged file is stored
 DONEDIR = '/data/dqm/done' # directory, to which processed files are stored
 WAITTIME = 120 # waiting time for new files (sec)
-MAX_TOTAL_RUNS = 100
+MAX_TOTAL_RUNS = 400
 MAX_RUNS = 10
 
 YourMail = "lilopera@cern.ch"
@@ -97,18 +96,13 @@ while True:
       tmpdestfile = "%s.tmp" % destfile
     
       print 'Merging run %s to %s (adding %s to %s)' % (run, destfile, files, oldfiles)
-      ntries = 0
-      while ntries < 30:
-        LOGFILE = open(logfile, 'a')
-        LOGFILE.write(os.popen('DQMMergeFile %s %s' % (tmpdestfile, " ".join(files))).read())
-	LOGFILE.close()
-        if not os.path.exists(tmpdestfile):
-          print 'Failed merging files for run %s. Try again after two minutes' % run
-          sendmail(YourMail,run)
-    	  time.sleep(WAITTIME)
-    	  ntries += 1
-        else:
-    	  break
+      LOGFILE = open(logfile, 'a')
+      LOGFILE.write(os.popen('DQMMergeFile %s %s' % (tmpdestfile, " ".join(files))).read())
+      LOGFILE.close()
+      if not os.path.exists(tmpdestfile):
+        print 'Failed merging files for run %s. Will try again later.' % run
+        sendmail(YourMail,run)
+	continue
     
       os.rename(tmpdestfile, destfile)
       for f in files:
@@ -125,29 +119,27 @@ while True:
     else:
       os.system('set -x; visDQMRegisterFile %s "/Global/Online/ALL" "Global run"' % TMPDB)
   
-    while len(allOldFiles) > 0:
-      (slice, rest) = (allOldFiles[0:50], allOldFiles[50:])
-      os.system('set -x; visDQMUnregisterFile %s %s' % (tmpdb, " ".join(slice)))
-      allOldFiles = rest
-      for old in slice:
-        os.remove(old)
+    if len(allOldFiles) > 0:
+      os.system('set -x; visDQMUnregisterFile %s %s' % (TMPDB, " ".join(allOldFiles)))
   
-    existing = [long(x) for x in os.popen("sqlite3 %s 'select distinct runnr from t_data order by runnr desc'" % TMPDB).read().split()]
+    existing = [long(x) for x in os.popen("sqlite3 %s 'select distinct runnr from t_data'" % TMPDB).read().split()]
     for runnr, file in newFiles:
       print 'Registering %s for run %d' % (file, runnr)
-      older = [x for x in existing if x < runnr]
-      newer = [x for x in existing if x > runnr]
+      older = sorted([x for x in existing if x < runnr])
+      newer = sorted([x for x in existing if x > runnr])
       if len(newer) > MAX_TOTAL_RUNS:
 	print "Too many newer runs (%d), not registering %s for run %d" % (len(newer), file, runnr)
 	continue
 
       if len(older) > MAX_TOTAL_RUNS:
 	print "Too many older runs (%d), pruning data for oldest run %d" % (len(older), older[0])
-	os.system(r"set -x; sqlite3 %s 'delete from t_data where runnr = %d'" % older[0])
-	os.system(r"set -x; sqlite3 %s 'delete from t_files where name like '\''%\_R%09d.root'\'' escape '\'\\\'" % older[0])
-	os.system(r"set -x; sqlite3 %s 'vacuum'")
+	os.system(r"set -x; sqlite3 %s 'delete from t_data where runnr = %d'" % (TMPDB, older[0]))
+	os.system(r"set -x; sqlite3 %s 'delete from t_files where name like '\''%%R%09d.root'\'" % (TMPDB, older[0]))
+	os.system(r"set -x; sqlite3 %s 'vacuum'" % TMPDB)
+	existing.remove(older[0])
 
       os.system('set -x; visDQMRegisterFile %s "/Global/Online/ALL" "Global run" %s' % (TMPDB, file))
+      existing.append(runnr)
   
     os.rename(TMPDB, DB)
 
