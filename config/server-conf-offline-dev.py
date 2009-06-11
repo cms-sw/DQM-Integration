@@ -18,7 +18,7 @@ server.serviceName = 'CERN Development'
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.source('DQMUnknown', 'unknown', 'DQMArchive', 8063)
 server.source('DQMLive', 'live',
-              '--collector localhost:8061', '--listen 8062',
+              '--listen 8062', '--collector localhost:8061',
               '--load ' + server.pathOfPlugin('render'))
 server.source('DQMArchive', 'file',
               '/data/dqm/dev/dqm.db', '--listen 8063',
