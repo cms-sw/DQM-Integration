@@ -213,8 +213,8 @@ process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup_FG.txt.gz'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
+#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup_FG.txt.gz'
 
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
@@ -230,5 +230,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/ee_reference.root'
+process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/ee_reference.root'
 

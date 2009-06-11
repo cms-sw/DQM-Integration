@@ -7,6 +7,8 @@ process = cms.Process("EvFDQM")
 #----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'FEDTest DQM Consumer'
+process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(100.0)
+
 
 
 #----------------------------
@@ -105,13 +107,14 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules +
-#                              process.cscDQMEvF +
+process.evfDQMPath = cms.Path(process.dqmmodules 
+# +                           process.cscDQMEvF +
 #			      process.dtDQMEvF +
 #			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      process.l1tfed +
+#			      process.l1tfed +
 #			      process.siPixelDigis + process.SiPixelHLTSource +
 #                              process.siStripFEDCheck +
-			      process.hcalDigis + process.hcalMonitor +
-			      process.rpcunpacker + process.rpcFEDIntegrity +
-			      process.dqmFEDIntegrityClient )
+#			      process.hcalDigis + process.hcalMonitor +
+#			      process.rpcunpacker + process.rpcFEDIntegrity +
+                            + process.dqmFEDIntegrityClient 
+)

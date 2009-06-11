@@ -14,7 +14,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
+process.load("DQM.Integration.test.inputsource_cfi_11")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCosmics_CTF'))
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
