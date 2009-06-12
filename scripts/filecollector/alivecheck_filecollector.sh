@@ -2,13 +2,13 @@
 
 export WorkDir=/nfshome0/dqm/filecollector
 export YourEmail=lilopera@cern.ch
-
+source $WorkDir/env.sh
 
 #set ROOT environment
-export ROOTSYS=/nfshome0/cmssw2/slc4_ia32_gcc345/lcg/root/5.18.00a-cms11/
-export ROOT_DIR=${ROOTSYS}
-export LD_LIBRARY_PATH=${ROOTSYS}/lib
-export PATH=${ROOTSYS}/bin:${PATH}
+#export ROOTSYS=/nfshome0/cmssw2/slc4_ia32_gcc345/lcg/root/5.18.00a-cms11/
+#export ROOT_DIR=${ROOTSYS}
+#export LD_LIBRARY_PATH=${ROOTSYS}/lib
+#export PATH=${ROOTSYS}/bin:${PATH}
 
 
 EXE=$WorkDir/filecollector.py
@@ -27,8 +27,8 @@ then
 else
     echo filecollector.py stopped by unknown reason and restarted now.
     LOG=$WorkDir/log/LOG.filesave.$HOSTNAME.$$
-    $EXE >& $LOG &
-    date >> $LOG
+    date >& $LOG
     echo filecollector.py stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
+    $EXE >> $LOG & 
     echo filecollector.py stopped by unknown reason and restarted now at $HOSTNAME. | mail $YourEmail
 fi
