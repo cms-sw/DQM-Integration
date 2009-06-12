@@ -1,6 +1,6 @@
 #! /bin/sh
 
-export WorkDir=/nfshome0/dqm/filecollector
+export WorkDir=/nfshome0/dqmpro/filecollector
 export YourEmail=lilopera@cern.ch
 source $WorkDir/env.sh
 
