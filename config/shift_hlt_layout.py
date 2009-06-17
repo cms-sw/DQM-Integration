@@ -1,10 +1,10 @@
 def hltlayout(i, p, *rows): i["00 Shift/HLT/" + p] = DQMItem(layout=rows)
   
 hltlayout(dqmitems,"00 Counts per muon HLT path",
-  	[{'path': "HLT/HLTMonMuon/EfficiencySummary/CountHistos/hCountSummary", 'description': "event count per muon path. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+  	[{'path': "HLT/HLTMonMuon/Summary/PassingBits_Summary", 'description': "event count per muon path. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltlayout(dqmitems,"01 Path efficiencies wrt L1MuOpen",
-  	[{'path': "HLT/HLTMonMuon/EfficiencySummary/hEffSummary", 'description': "Muon path efficiency with respect to the L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+  	[{'path': "HLT/HLTMonMuon/Client/Efficiency_PassingBits_Summary", 'description': "Muon path efficiency with respect to the L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltlayout(dqmitems,"02 HLT Muon Occupancy",
   	[{'path': "HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi", 'description': "Occupancy distribution for muon candidates passing any L1Muon path. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
