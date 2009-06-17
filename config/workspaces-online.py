@@ -123,7 +123,7 @@ server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1TEMU', '^L1TEMU/',
 
 server.workspace('DQMContent', 41, 'Trigger/DAQ', 'HLT', '^HLT/',
                  'HLT/HLTMonMuon/Summary/PassingBits_Summary',
-                 'HLT/HLTMonMuon/Client/Efficiency_PassingBits_Summary',
+                 'HLT/HLTMonMuon/Summary/Ratio_HLT_L1MuOpen',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi')
