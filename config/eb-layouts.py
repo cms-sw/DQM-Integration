@@ -73,9 +73,9 @@ ebecalshifterlayout(dqmitems, "02-Noise/00-PedestalOnline-Quality",
 ebecalshifterlayout(dqmitems, "02-Noise/01-PedestalOnline-Rms",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL barrel is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "02-Noise/02-PedestalOnline-AllCrystals",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all barrel crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+ebecalshifterlayout(dqmitems, "02-Noise/02-PedestalOnline-FEDAverage",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 mean", 'description': "Average mean of the pedestals in ADC counts for each FED. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 rms", 'description': "Average RMS of the pedestals in ADC counts for each FED. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.1 ADC counts (43 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "03-Occupancy/00-Summary",
   [{ 'path': "EcalBarrel/EcalInfo/EBMM DCC", 'description': "Occupancy of DCC. Non-uniform distribution in one bin means that the supermodule has not been readout in some event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -165,34 +165,38 @@ ebecalshifterlayout(dqmitems, "06-Calibration/00-LaserL1-Quality",
 ebecalshifterlayout(dqmitems, "06-Calibration/01-LaserL1-Errors",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L1", 'description': "Errors occupancy for laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/02-LaserL1-Response",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN", 'description': "Laser L1 Amplitude / PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 timing", 'description': "Laser L1 timing (in pulse shape samples). Expect a distribution with peak on 6. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/02-LaserL1-Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude summary", 'description': "Laser L1 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN summary", 'description': "Laser L1 Amplitude / PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/03-Pedestal-Quality-Gain01",
+ebecalshifterlayout(dqmitems, "06-Calibration/03-LaserL1-Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 timing summary", 'description': "Laser L1 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/04-Pedestal-Quality-Gain01",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G01 summary", 'description': "Quality summary of pedestal events for Gain 1. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/04-Pedestal-Quality-Gain06",
+ebecalshifterlayout(dqmitems, "06-Calibration/05-Pedestal-Quality-Gain06",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G06 summary", 'description': "Quality summary of pedestal events for Gain 6. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/05-Pedestal-Quality-Gain12",
+ebecalshifterlayout(dqmitems, "06-Calibration/06-Pedestal-Quality-Gain12",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/06-TestPulse-Quality-Gain01",
+ebecalshifterlayout(dqmitems, "06-Calibration/07-TestPulse-Quality-Gain01",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G01 summary", 'description': "Quality summary of test pulse events for Gain 1. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/07-TestPulse-Quality-Gain06",
+ebecalshifterlayout(dqmitems, "06-Calibration/08-TestPulse-Quality-Gain06",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G06 summary", 'description': "Quality summary of test pulse events for Gain 6. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/08-TestPulse-Quality-Gain12",
+ebecalshifterlayout(dqmitems, "06-Calibration/09-TestPulse-Quality-Gain12",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/09-TestPulse-AmplitudeG01AndG06",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G01 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G06 summary", 'description': "Test pulse amplitude in MGPA gain 06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/10-TestPulse-Amplitude-Gain01And06",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G01 summary", 'description': "Test pulse average amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G06 summary", 'description': "Test pulse average amplitude in MGPA gain 06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/10-TestPulse-AmplitudeG12",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G12 summary", 'description': "Test pulse amplitude in MGPA gain 12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+ebecalshifterlayout(dqmitems, "06-Calibration/11-TestPulse-Amplitude-Gain12",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G12 summary", 'description': "Test pulse average amplitude in MGPA gain 12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
 
@@ -229,7 +233,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -446,7 +454,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-02/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -663,7 +675,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-03/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -880,7 +896,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-04/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1097,7 +1117,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-05/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1314,7 +1338,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-06/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1531,7 +1559,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-07/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1748,7 +1780,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-08/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1965,7 +2001,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-09/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2182,7 +2222,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-10/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2399,7 +2443,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-11/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2616,7 +2664,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-12/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2833,7 +2885,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-13/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3050,7 +3106,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-14/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3267,7 +3327,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-15/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3484,7 +3548,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-16/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3701,7 +3769,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-17/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3918,7 +3990,11 @@ eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-18/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4135,7 +4211,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+01/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4352,7 +4432,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+02/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4569,7 +4653,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+03/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4786,7 +4874,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+04/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5003,7 +5095,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+05/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5220,7 +5316,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+06/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5437,7 +5537,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+07/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5654,7 +5758,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+08/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5871,7 +5979,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+09/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6088,7 +6200,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+10/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6305,7 +6421,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+11/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6522,7 +6642,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+12/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6739,7 +6863,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+13/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -6956,7 +7084,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+14/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7173,7 +7305,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+15/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7390,7 +7526,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+16/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7607,7 +7747,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+17/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -7824,7 +7968,11 @@ eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/06-Cosmic",
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/07-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+
+eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/08-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None]) 
 
 eblayout(dqmitems, "01-BySupermodule/EB+/EB+18/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/Gain/EBIT gain EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8278,7 +8426,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-01/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-01/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8516,7 +8668,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-02/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-02/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8754,7 +8910,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-03/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-03/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8992,7 +9152,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-04/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-04/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9230,7 +9394,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-05/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-05/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9468,7 +9636,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-06/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-06/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9706,7 +9878,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-07/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-07/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9944,7 +10120,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-08/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-08/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10182,7 +10362,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-09/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-09/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10420,7 +10604,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-10/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-10/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10658,7 +10846,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-11/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-11/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10896,7 +11088,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-12/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-12/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11134,7 +11330,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-13/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-13/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11372,7 +11572,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-14/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-14/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11610,7 +11814,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-15/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-15/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11848,7 +12056,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-16/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-16/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12086,7 +12298,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-17/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-17/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12324,7 +12540,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-18/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB-/EB-18/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12562,7 +12782,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+01/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+01/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12800,7 +13024,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+02/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+02/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13038,7 +13266,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+03/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+03/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13276,7 +13508,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+04/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+04/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13514,7 +13750,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+05/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+05/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13752,7 +13992,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+06/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+06/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13990,7 +14234,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+07/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+07/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14228,7 +14476,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+08/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+08/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14466,7 +14718,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+09/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+09/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14704,7 +14960,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+10/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+10/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14942,7 +15202,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+11/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+11/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15180,7 +15444,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+12/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+12/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15418,7 +15686,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+13/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+13/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15656,7 +15928,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+14/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+14/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15894,7 +16170,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+15/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+15/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16132,7 +16412,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+16/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+16/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16370,7 +16654,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+17/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+17/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16608,7 +16896,11 @@ eblayout(dqmitems, "00-ByTask/10-StatusFlags/00-StatusFlags-Summary",
 
 eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+18/00-StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }]) 
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT MEM front-end status EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/10-StatusFlags/EB+/EB+18/01-StatusFlags",
+  [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status bits EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eblayout(dqmitems, "00-ByTask/11-Cluster/00-BasicClusters-1D",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },

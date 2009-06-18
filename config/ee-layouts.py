@@ -5,16 +5,16 @@ def eelayout(i, p, *rows): i["EcalEndcap/02 ECAL Expert Shift/" + p] = DQMItem(l
 
 # Quick Collections
 ecalendcaplayout(dqmitems, "00-Global-Summary-EcalEndcap",
-  [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
-   { 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EESummaryClient/EE global summary EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 ecalendcaplayout(dqmitems, "01-Occupancy-Summary-EcalEndcap",
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
-   { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 ecalendcaplayout(dqmitems, "02-Cluster-Summary-EcalEndcap",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "EcalEndcap (z>0) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
 
 # ALL shifters
 eeshifterlayout(dqmitems, "00 Event Type",
@@ -51,12 +51,12 @@ eeshifterlayout(dqmitems, "04 Occupancy Trigger Primitives EE +",
 eeshifterlayout(dqmitems, "05 Clusters Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "Phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeshifterlayout(dqmitems, "05 Clusters Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "Phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeshifterlayout(dqmitems, "06 LaserL1 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -105,13 +105,9 @@ eeecalshifterlayout(dqmitems, "02-Noise/01-PedestalOnline-Rms",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL endcap is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL endcap is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "02-Noise/02-PedestalOnline-AllCrystalsMean",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all endcap - crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 mean", 'description': "Mean of the pedestals in ADC counts for all endcap + crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-eeecalshifterlayout(dqmitems, "02-Noise/03-PedestalOnline-AllCrystalsRms",
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all endcap - crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE + pedestal G12 rms", 'description': "RMS of the pedestals in ADC counts for all endcap + crystals. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected rms is 1.9 ADC counts (120 MeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eeecalshifterlayout(dqmitems, "02-Noise/02-PedestalOnline-FEDAverage",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT pedestal G12 mean", 'description': "Average mean of the pedestals in ADC counts for each FED. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPOT pedestal G12 rms", 'description': "Average RMS of the pedestals in ADC counts for each FED. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected mean is 200 ADC counts.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "03-Occupancy/00-Summary",
   [{ 'path': "EcalEndcap/EcalInfo/EEMM DCC", 'description': "Occupancy of DCC. Non-uniform distribution in one bin means that the sector has not been readout in some event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -122,12 +118,12 @@ eeecalshifterlayout(dqmitems, "03-Occupancy/00-Summary",
 eeecalshifterlayout(dqmitems, "03-Occupancy/01-Digis EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE -", 'description': "Map of the occupancy of ECAL digis. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection phi", 'description': "phi projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "03-Occupancy/02-Digis EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE +", 'description': "Map of the occupancy of ECAL digis. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection phi", 'description': "phi projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "03-Occupancy/03-Rechits EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE -", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -184,12 +180,12 @@ eeecalshifterlayout(dqmitems, "04-Energy/00-Clusters-Summary",
 eeecalshifterlayout(dqmitems, "04-Energy/01-BasicClusters-Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "Phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04-Energy/02-BasicClusters-Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "Average energy (in GeV) of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +", 'description': "R projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "Phi projection of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04-Energy/03-SuperClusters",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC number", 'description': "Multiplicity of reconstructed multi-5x5 superclusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -242,13 +238,13 @@ eeecalshifterlayout(dqmitems, "06-Calibration/00-LaserL1-Quality",
 eeecalshifterlayout(dqmitems, "06-Calibration/01-LaserL1-Errors",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT laser quality errors summary L1", 'description': "Errors occupancy for laser events for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "06-Calibration/02-LaserL1-AmplOverPN",
-  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser L1 amplitude over PN", 'description': "Laser L1 Amplitude / PN ratio for fired light modules in EE - . <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser L1 amplitude over PN", 'description': "Laser L1 Amplitude / PN ratio for fired light modules in EE +. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eeecalshifterlayout(dqmitems, "06-Calibration/02-LaserL1-Amplitude",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L1 amplitude summary", 'description': "Laser L1 average amplitude for fired light modules in EE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L1 amplitude over PN summary", 'description': "Laser L1 average amplitude / PN ratio for fired light modules in EE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeecalshifterlayout(dqmitems, "06-Calibration/03-LaserL1-Timing",
-  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser L1 timing", 'description': "Laser L1 timing (in pulse shape samples) in EE -. Expect a distribution with peak on 6. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser L1 timing", 'description': "Laser L1 timing (in pulse shape samples) in EE +. Expect a distribution with peak on 6. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L1 timing summary", 'description': "Laser L1 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eeecalshifterlayout(dqmitems, "06-Calibration/04-LedL1-Quality", 
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
@@ -257,13 +253,13 @@ eeecalshifterlayout(dqmitems, "06-Calibration/04-LedL1-Quality",
 eeecalshifterlayout(dqmitems, "06-Calibration/05-LedL1-Errors",
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT led quality errors summary L1", 'description': "Errors occupancy for led events for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "06-Calibration/06-LedL1-AmplOverPN",
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led L1 amplitude over PN", 'description': "Led L1 Amplitude / PN ratio for fired light modules in EE -. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led L1 amplitude over PN", 'description': "Led L1 Amplitude / PN ratio for fired light modules in EE +. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eeecalshifterlayout(dqmitems, "06-Calibration/06-LedL1-Amplitude",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT led L1 amplitude summary", 'description': "Led L1 average amplitude for fired light modules in EE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT led L1 amplitude over PN summary", 'description': "Led L1 average amplitude / PN ratio for fired light modules in EE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeecalshifterlayout(dqmitems, "06-Calibration/07-LedL1-Timing",
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led L1 timing", 'description': "Led L1 timing (in pulse shape samples) in EE -. Expect a distribution with peak on 6. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led L1 timing", 'description': "Led L1 timing (in pulse shape samples) in EE +. Expect a distribution with peak on 6. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT led L1 timing summary", 'description': "Led L1 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eeecalshifterlayout(dqmitems, "06-Calibration/08-Pedestal-Quality-Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for Gain 1. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -289,17 +285,13 @@ eeecalshifterlayout(dqmitems, "06-Calibration/13-TestPulse-Quality-Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "06-Calibration/14-TestPulse-Amplitude-Gain01",
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse amplitude G01 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse amplitude G01 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eeecalshifterlayout(dqmitems, "06-Calibration/14-TestPulse-Amplitude-Gain01And06",
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT test pulse amplitude G01 summary", 'description': "Test pulse average amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT test pulse amplitude G06 summary", 'description': "Test pulse average amplitude in MGPA gain 06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "06-Calibration/15-TestPulse-Amplitude-Gain06",
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse amplitude G06 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse amplitude G06 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eeecalshifterlayout(dqmitems, "06-Calibration/16-TestPulse-Amplitude-Gain12",
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse amplitude G12 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse amplitude G12 summary", 'description': "Test pulse amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+eeecalshifterlayout(dqmitems, "06-Calibration/15-TestPulse-Amplitude-Gain12",
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT test pulse amplitude G12 summary", 'description': "Test pulse average amplitude in MGPA gain 12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-01/00-Integrity (Channel Global)",
@@ -335,7 +327,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-01/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-01/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-01/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-01/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -591,7 +587,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-02/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-02/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-02/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-02/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -847,7 +847,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-03/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-03/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-03/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-03/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1103,7 +1107,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-04/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-04/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-04/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-04/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1359,7 +1367,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-05/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-05/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-05/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-05/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1615,7 +1627,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-06/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-06/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-06/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-06/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -1871,7 +1887,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-07/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-07/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-07/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-07/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2127,7 +2147,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-08/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-08/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-08/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-08/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2383,7 +2407,11 @@ eelayout(dqmitems, "01-BySupermodule/EE-/EE-09/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-09/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE-/EE-09/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE-/EE-09/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2639,7 +2667,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+01/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+01/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+01/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+01/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -2895,7 +2927,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+02/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+02/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+02/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+02/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3151,7 +3187,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+03/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+03/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+03/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+03/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3407,7 +3447,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+04/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+04/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+04/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+04/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3663,7 +3707,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+05/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+05/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+05/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+05/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -3919,7 +3967,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+06/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+06/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+06/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+06/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4175,7 +4227,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+07/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+07/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+07/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+07/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4431,7 +4487,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+08/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+08/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+08/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+08/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -4687,7 +4747,11 @@ eelayout(dqmitems, "01-BySupermodule/EE+/EE+09/06-Cosmic",
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+09/07-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "01-BySupermodule/EE+/EE+09/08-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01-BySupermodule/EE+/EE+09/Experts/00-Integrity/00-Channel-Integrity",
   [{ 'path': "EcalEndcap/EEIntegrityTask/Gain/EEIT gain EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -5261,7 +5325,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-01/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-01/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -5565,7 +5633,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-02/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-02/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -5869,7 +5941,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-03/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-03/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -6173,7 +6249,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-04/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-04/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -6477,7 +6557,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-05/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-05/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -6781,7 +6865,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-06/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-06/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -7085,7 +7173,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-07/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-07/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -7389,7 +7481,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-08/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-08/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -7693,7 +7789,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-09/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE-/EE-09/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -7997,7 +8097,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+01/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+01/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8301,7 +8405,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+02/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+02/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8605,7 +8713,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+03/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+03/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8909,7 +9021,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+04/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+04/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9213,7 +9329,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+05/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+05/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9517,7 +9637,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+06/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+06/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9821,7 +9945,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+07/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+07/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10125,7 +10253,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+08/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+08/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/01-Integrity/00-Integrity-Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10429,7 +10561,11 @@ eelayout(dqmitems, "00-ByTask/10-StatusFlags/01-FrontEnd-Summary",
 
 eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+09/00-StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT MEM front-end status EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eelayout(dqmitems, "00-ByTask/10-StatusFlags/EE+/EE+09/01-StatusFlags",
+  [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status bits EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "00-ByTask/11-Cluster/00-BasicClusters-1D",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
