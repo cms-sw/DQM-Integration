@@ -16,7 +16,10 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.source = cms.Source("PoolSource",
      fileNames = cms.untracked.vstring(
-       'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'
+#    MWGR-2009  
+     'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'
+#    CRAFT-2009 
+     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'       
      )    
 )
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
@@ -59,7 +62,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V4H::All"
+process.GlobalTag.globaltag = "CRAFT_V17H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
@@ -83,6 +86,8 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+process.SiStripAnalyser.TkMapCreationFrequency  = -1
+process.SiStripAnalyser.ShiftReportFrequency = -1
 
 #--------------------------
 # Quality Test
