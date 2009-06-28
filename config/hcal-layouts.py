@@ -38,7 +38,7 @@ hcallayout(dqmitems, "03 HCAL Shifter Checklist Plots - Summaries",
            )
 
 hcallayout(dqmitems, "HCAL Pedestals",
-          [{ 'path': "Hcal/PedestalMonitor_Hcal/HB HF Depth 1 Pedestal Mean Map ADC",
+          [{ 'path': "Hcal/BaselineMonitor_Hcal/HB HF Depth 1 Pedestal Mean Map ADC",
              'description': "All filled values should appear green (ADC value ~ = 3) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/PedestalMonitor_Hcal/HB HF Depth 2 Pedestal Mean Map ADC",
              'description': "All filled values should appear green (ADC value ~ = 3). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
