@@ -70,8 +70,6 @@ process.siPixelDigis.InputLabel = 'source'
 # Local and Track Reconstruction
 process.load("RecoLocalTracker.Configuration.RecoLocalTracker_Cosmics_cff")
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
-process.SiStripAnalyser.TkMapCreationFrequency  = -1
-process.SiStripAnalyser.ShiftReportFrequency = -1
 
 # offline beam spot
 process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
@@ -82,6 +80,7 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
+process.SiStripAnalyser.ShiftReportFrequency = -1
 
 #--------------------------
 # Quality Test
