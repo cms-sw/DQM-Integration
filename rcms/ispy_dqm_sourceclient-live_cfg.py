@@ -8,13 +8,12 @@ process.load("Configuration.StandardSequences.Reconstruction_cff")
 process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
-process.GlobalTag.globaltag = 'CRAFT_V11H::All'
+process.GlobalTag.globaltag = 'CRAFT_V2H::All'
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
 
 
-process.load("DQM.Integration.test.inputsource_cfi_11")
+process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
-#process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1.0)
 #process.maxEvents = cms.untracked.PSet(
 #    input = cms.untracked.int32(-1)
 #)
@@ -32,7 +31,7 @@ process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
 #	headerRetryInterval = cms.untracked.int32(3)
 #)
 
-#from FWCore.MessageLogger.MessageLogger_cfi import *
+from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
     cms.Service("IguanaService",
@@ -41,7 +40,7 @@ process.add_(
     outputMaxEvents = cms.untracked.int32(3000),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
-    online = cms.untracked.bool(False),
+    online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
 )

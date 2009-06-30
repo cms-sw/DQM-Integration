@@ -6,7 +6,7 @@ process = cms.Process("HCALDQM")
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi_11")
+process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 
 # process.maxEvents = cms.untracked.PSet(

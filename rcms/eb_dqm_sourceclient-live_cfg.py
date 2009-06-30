@@ -75,7 +75,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V15H::All"
+process.GlobalTag.globaltag = "CRAFT_V17H::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -228,5 +228,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/eb_reference.root'
+process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/eb_reference.root'
 

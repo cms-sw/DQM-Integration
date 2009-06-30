@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 process = cms.Process("HcalTimingTest")
 
-process.load("DQM.Integration.test.inputsource_cfi_11")
+process.load("DQM.Integration.test.inputsource_cfi")
 
 process.EventStreamHttpReader.consumerName = 'Hcal Timing DQM Consumer'
 
