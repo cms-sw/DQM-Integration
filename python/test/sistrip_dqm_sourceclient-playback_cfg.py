@@ -22,7 +22,7 @@ process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/sistrip_reference.root'
-process.DQM.filter = '^SiStrip(/[^/]+){0,5}$'
+process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -33,6 +33,12 @@ process.load("DQM.Integration.test.environment_playback_cfi")
 process.dqmEnv.subSystemFolder    = "SiStrip"
 process.dqmSaver.saveByTime       = 16
 process.dqmSaver.saveByMinute     = 16
+
+process.dqmEnvTr = cms.EDFilter("DQMEventInfo",
+                 subSystemFolder = cms.untracked.string('Tracking'),
+                 eventRateWindow = cms.untracked.double(0.5),
+                 eventInfoFolder = cms.untracked.string('EventInfo')
+)
 
 #-----------------------------
 # Magnetic Field
@@ -54,8 +60,8 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 # Calibration
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V18H::All"
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.globaltag = "GR09_31X_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
@@ -103,7 +109,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
 process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
-process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
+process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
 

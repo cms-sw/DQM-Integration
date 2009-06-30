@@ -17,9 +17,9 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.source = cms.Source("PoolSource",
      fileNames = cms.untracked.vstring(
 #    MWGR-2009  
-     'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'
-#    CRAFT-2009 
-     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'       
+     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'
+#    CRAFT-2008 
+#     'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'       
      )    
 )
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
@@ -29,25 +29,32 @@ process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
 process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/sistrip_reference.root'
-process.DQM.filter = '^SiStrip(/[^/]+){0,5}$'
+process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
-# DQM Live Environment
+# DQM Playback Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_playback_cfi")
+
 process.dqmEnv.subSystemFolder    = "SiStrip"
 process.dqmSaver.saveByTime       = 30
 process.dqmSaver.saveByMinute     = 30
+
+process.dqmEnvTr = cms.EDFilter("DQMEventInfo",
+                 subSystemFolder = cms.untracked.string('Tracking'),
+                 eventRateWindow = cms.untracked.double(0.5),
+                 eventInfoFolder = cms.untracked.string('EventInfo')
+)
 
 #-----------------------------
 # Magnetic Field
 #-----------------------------
 # 0T field
-#process.load("Configuration.StandardSequences.MagneticField_0T_cff")
+process.load("Configuration.StandardSequences.MagneticField_0T_cff")
 # 3.8T field
-process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 # 4.0T field
 #process.load("Configuration.StandardSequences.MagneticField_40T_cff")
 #process.prefer("VolumeBasedMagneticFieldESProducer")
@@ -61,8 +68,8 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 # Calibration
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_V18H::All"
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.globaltag = "GR09_31X_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
