@@ -6,9 +6,9 @@ shiftsistriplayout(dqmitems, "00 RawDataMonitoringSummary",
   [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/nBadActiveChannelStatusBits",
    'description': "# of active channels with bad status bits per event - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a>"}])
 shiftsistriplayout(dqmitems, "01 Tracks",
-  [{ 'path': "SiStrip/Tracks/NumberOfTracks_CKFTk",
+  [{ 'path': "Tracking/TrackParameters/NumberOfTracks_CKFTk",
      'description': "Number of Reconstructed Tracks by CKF - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
-  [{ 'path': "SiStrip/Tracks/NumberOfRecHitsPerTrack_CKFTk",
+  [{ 'path': "Tracking/TrackParameters/NumberOfRecHitsPerTrack_CKFTk",
 'description': "Number of RecHits per Track by CKF  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
 shiftsistriplayout(dqmitems, "02 OnTrackCluster",
   [{ 'path': "SiStrip/MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack_in_TIB",

@@ -9,19 +9,13 @@ server.workspace('DQMContent', 10, 'Tracker', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/03 - Pixel_Digi_Summary',
                  'Pixel/Layouts/04 - Pixel_Cluster_Summary')
 
-server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^SiStrip/',
-                 'SiStrip/Layouts/00 - Tracks',
-                 'SiStrip/Layouts/01 - OnTrackClusters(Total Number)',
-                 'SiStrip/Layouts/02 - OnTrackCluster (StoN)', 
-                 'SiStrip/Layouts/03 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/04 - OffTrackCluster (Charge)',
-                 'SiStrip/Layouts/05 - TIBSummary',
-                 'SiStrip/Layouts/06 - TIDFSummary',
-                 'SiStrip/Layouts/07 - TIDBSummary',
-                 'SiStrip/Layouts/08 - TOBSummary',
-                 'SiStrip/Layouts/09 - TECFSummary',
-                 'SiStrip/Layouts/10 - TECBSummary',
-                 'SiStrip/Layouts/11 - FedMonitoringSummary')
+server.workspace('DQMContent', 10, 'Tracker', 'SiStrip', '^(SiStrip|Tracking)/',
+                 'SiStrip/Layouts/00 - ReportSummary',
+                 'SiStrip/Layouts/01 - Tracks',
+                 'SiStrip/Layouts/02 - FedMonitoringSummary',
+                 'SiStrip/Layouts/03 - # of Digi Trend',
+                 'SiStrip/Layouts/04 - # of Cluster Trend',
+                 'SiStrip/Layouts/05 - OffTrackCluster (Total Number)')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower',
 #                 'Ecal/Layouts/00-Global-Summary',
