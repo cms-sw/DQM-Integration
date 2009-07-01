@@ -205,6 +205,7 @@ process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 process.ecalUncalibHit.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
+process.ecalRecHit.killDeadChannels = False
 process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
@@ -218,9 +219,7 @@ process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup_FG.txt.gz'
 
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
 process.ecalBarrelMonitorClient.location = 'P5'
