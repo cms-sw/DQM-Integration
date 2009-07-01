@@ -76,8 +76,10 @@ server.workspace('DQMContent', 30, 'Muon', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/07-NoiseChannelsSummary')
 
 server.workspace('DQMContent', 30, 'Muon', 'RPC', '^RPC/',
-                 'RPC/Layouts/RPC_BarrelOccupancy',      
-                 'RPC/Layouts/RPC_EndcapOccupancy') 
+                 'RPC/Layouts/RPC_Summary/TOP_Summary_ChamberQuality',
+                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',      
+                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy') 
+
 
 server.workspace('DQMContent', 40, 'Trigger/DAQ', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
