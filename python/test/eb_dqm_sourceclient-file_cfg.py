@@ -46,6 +46,8 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+
 process.load("FWCore.Modules.preScaler_cfi")
 
 process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
