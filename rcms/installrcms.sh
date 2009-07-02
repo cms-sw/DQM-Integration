@@ -2,7 +2,7 @@
 
 if [ "$1" = "live" ] ; then
   echo live
-
+  echo "creating softlinks"
   ln -s daq_dqm_sourceclient-live_cfg.py              dqmfu10-1_cfg.py
 
   ln -s eb_dqm_sourceclient-live_cfg.py               dqmfu12-2_cfg.py
@@ -28,12 +28,13 @@ if [ "$1" = "live" ] ; then
   ln -s csc_dqm_sourceclient-live_cfg.py              dqmfu18-2_cfg.py
   ln -s fed_dqm_sourceclient-live_cfg.py              dqmfu18-3_cfg.py
   ln -s fedtest_dqm_sourceclient-live_cfg.py          dqmfu18-4_cfg.py
-
-  
+  echo "copying cfg from python test"
   cp ../python/test/*live_cfg.py .
-
+  echo "done"
+  
 elif [ "$1" = "playback" ] ; then
   echo playback
+  echo "creating softlinks"
   ln -s ee_dqm_sourceclient-playback_cfg.py           dqmfu09-1_cfg.py  
   ln -s eb_dqm_sourceclient-playback_cfg.py           dqmfu09-2_cfg.py  
   ln -s l1t_dqm_sourceclient-playback_cfg.py          dqmfu09-3_cfg.py  
@@ -51,8 +52,13 @@ elif [ "$1" = "playback" ] ; then
   ln -s hcaltiming_dqm_sourceclient-playback_cfg.py   dqmfu11-3_cfg.py  
   ln -s sistrip_dqm_sourceclient-playback_cfg.py      dqmfu11-4_cfg.py
   ln -s es_dqm_sourceclient-playback_cfg.py           dqmfu11-5_cfg.py
+  echo "copying cfg from python test"
   cp ../python/test/*playback_cfg.py .
+
+  echo "done"
+
 else
+
  echo specify live or playback
 
 fi
