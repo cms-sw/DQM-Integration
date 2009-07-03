@@ -84,8 +84,8 @@ process.qTesterRPC = cms.EDFilter("QualityTester",
 
 ################ Chamber Quality ##################
 process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
-                                           MinimumRPCEvents = cms.untracked.int32(1000),
-                                           PrescaleFactor = cms.untracked.int32(5)
+                                           MinimumRPCEvents = cms.untracked.int32(1000)
+                                           # PrescaleFactor = cms.untracked.int32(1) 
                                            )
 
 ################  Sequences ############################
