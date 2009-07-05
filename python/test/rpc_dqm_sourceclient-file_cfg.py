@@ -1,29 +1,34 @@
+##########################################
+#                                        #
+#    RPC DQM config file for RAW Data    #
+#    unpack, DIGI, RecHit, RPC_source    #
+#              RPC_Client                #
+#                                        #
+#              CMSSW_3_1_X               #
+#                                        #
+##########################################
+
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
 
-####### Geometry ######
+####### Geometry #######
 process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 process.load("Geometry.RPCGeometry.rpcGeometry_cfi")
 process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
 
-###### BD ##########
+####### BD #######
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
-###### Muon RecHit #####
+####### Muon RecHit #######
 process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")
 process.rpcRecHits.rpcDigiLabel = 'rpcunpacker'
 
-######## DQM Central Modules ###############
+####### DQM Central Modules #######
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-
-######## Raw to Digi ######
-#process.load("EventFilter.RPCRawToDigi.RPCSQLiteCabling_cfi")
-#process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
-
-###### RPC Source DQM #####
+####### RPC Source DQM #######
 process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
 process.rpcdigidqm.DigiEventsInterval = 100
 process.rpcdigidqm.DigiDQMSaveRootFile = True
@@ -32,10 +37,7 @@ process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = True
 process.rpcdigidqm.RootFileNameDigi = '/tmp/dlomidze/DQM_3.root'
 
-#process.load("DQM.RPCMonitorClient.RPCQualityTests_cfi")
-
-
-#### Pool Source ##########
+####### Pool Source #######
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
 )
@@ -56,71 +58,48 @@ process.RPCCabling = cms.ESSource("PoolDBESSource",
         record = cms.string('RPCEMapRcd'),
         tag = cms.string('RPCEMap_v2')
     )),
-    # connect = cms.string('frontier://FrontierProd/CMS_COND_31X_RPC'),
-      connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_RPC'),
+    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_RPC'),
     siteLocalConfig = cms.untracked.bool(False)
 )
 
-
-############### RAW to Digi ###################
+####### RAW to Digi #######
 process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
     InputLabel = cms.InputTag("source"),
              doSynchro = cms.bool(True)                       
 )
 
-
-################# DQM Client Modules ####################
+####### DQM Client Modules #######
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
 process.rpcdqmclient.DiagnosticPrescale = cms.untracked.int32(5)
 process.rpcdqmclient.NumberOfEndcapDisks  = cms.untracked.int32(3)
 
-
-################# RPC Event Summary Module ####################
+####### RPC Event Summary Module #######
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
 process.rpcEventSummary.PrescaleFactor = 5
 
-################# Quality Tests #########################
+####### Quality Tests #######
 process.qTesterRPC = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/RPCMonitorClient/test/RPCQualityTests.xml'),
     QualityTestPrescaler = cms.untracked.int32(5)
 )
 
-################ Chamber Quality ##################
+####### Chamber Quality #######
 process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
                                            MinimumRPCEvents = cms.untracked.int32(100),
-                                           PrescaleFactor = cms.untracked.int32(5)
+                                           PrescaleFactor = cms.untracked.int32(1)
                                            )
 
-################ RPC Non Event Data ###############
-process.rpccond = cms.EDFilter("RPCConditionData",
-    ## 1 - LV; 2 - LH
-    type = cms.untracked.int32(1),
-                               
-    #oracle://devdb10/cms_rpc_dcs","CMS_RPC_DCS", "rpcdb123" )
-    MyUser = cms.untracked.string('CMS_RPC_DCS'),
-    MyPassword = cms.untracked.string('rpcdb123'),
-    MyConectText = cms.untracked.string('oracle://devdb10/cms_rpc_dcs'),
-    ## OMDS Access Delay in Minutes
-    OMDSAccessDelay = cms.untracked.int32(0),
-    prescaleLS = cms.untracked.int32(5),
-
-    monitorName = cms.untracked.string('RPC')
-    
-)
-
-################# Other Clients ############################
+####### Other Clients #######
 process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
 
-
-################### FED ##################################
+####### FED #######
 process.load("DQM.RPCMonitorClient.RPCMonitorRaw_cfi")
 process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
 process.load("DQM.RPCMonitorClient.RPCMonitorLinkSynchro_cfi")
 
-
-################# Message Loger #########################
+####### Message Loger #######
 process.MessageLogger = cms.Service("MessageLogger",
     detailedInfo = cms.untracked.PSet(
         threshold = cms.untracked.string('INFO')
@@ -141,8 +120,7 @@ process.MessageLogger = cms.Service("MessageLogger",
         'cout')
 )
 
-
-################# DQM environment #######################
+####### DQM environment #######
 #process.DQM.collectorHost = 'srv-c2d05-19'
 process.DQM.collectorPort = 9190
 process.DQM.debug = False
