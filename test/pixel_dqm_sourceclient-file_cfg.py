@@ -94,10 +94,11 @@ process.LockService = cms.Service("LockService",
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.GlobalTag.connect ="sqlite_file:/afs/cern.ch/user/m/malgeri/public/globtag/CRZT210_V1.db"
 #process.GlobalTag.connect = "frontier://FrontierProd/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_30X::All"
+process.GlobalTag.globaltag = "CRAFT_31X::All"
+#process.GlobalTag.globaltag = "CRAFT_V17H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 ## this next line is needed for xdaq running outside P5 network:
-process.SiteLocalConfigService = cms.Service("SiteLocalConfigService")
+#process.SiteLocalConfigService = cms.Service("SiteLocalConfigService")
 process.source = cms.Source("PoolSource",
     debugFlag = cms.untracked.bool(True),
     debugVebosity = cms.untracked.uint32(1),
@@ -165,7 +166,7 @@ process.source = cms.Source("PoolSource",
     )
 )
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+    input = cms.untracked.int32(2000)
 )
 
 ##----## Sequences and Paths:
