@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+"""
+	Syntax:
+	ExtracAppInfoFromXML [-s][-p][-a][-c] file
+	parameters:
+	file		file from where to read a RCMS configuration
+	-s  		list application servers found in the XML file
+	-p			list the ports used found in the XML file
+	-a			list the names of the applications configured in the XML file
+	-c			list the cfg (eg dqmfu09-1_cfg.py) files
+	
+	The default behavior is to present a table organized in the following way
+		SERVER APP_NAME PORT CFG_FILE
+	which is equivalent to using -sapc
+	
+	The options selected and their order will affect teeh fields shown and their
+	respective sorting. eg.
+		-sa will only show SERVER and APP_NAME and will sort first by SERVER and
+		 then by APP_NAME 
+		 
+	OUTPUT is always unique in a per row bases
+	"""
+if __name__ == "__main__":             
+    print self.__doc__
