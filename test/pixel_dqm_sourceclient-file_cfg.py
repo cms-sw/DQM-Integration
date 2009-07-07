@@ -82,7 +82,7 @@ process.MessageLogger = cms.Service("MessageLogger",
         'SiPixelRecHitSource', 
         'sipixelEDAClient'),
     cout = cms.untracked.PSet(
-        threshold = cms.untracked.string('INFO')
+        threshold = cms.untracked.string('ERROR')
     ),
     destinations = cms.untracked.vstring('cout')
 )
@@ -108,27 +108,14 @@ process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/user/c/chiochia/cmssw/Muon_FullValidation_150pre3.root')
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/relval/2008/6/6/RelVal-RelValTTbar-1212531852-IDEAL_V1-2nd-02/0000/081018D5-EC33-DD11-A623-000423D6CA42.root')
     fileNames = cms.untracked.vstring(
+        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
+        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
+        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
+        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root'
     )
 )
