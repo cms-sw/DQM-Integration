@@ -151,5 +151,6 @@ process.trackReconstruction = cms.Sequence(process.trackerLocalReco*process.offl
 #process.pathTrack = cms.Path(process.trackReconstruction*process.DQMmodules*process.monitors*process.sipixelEDAClient) 
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.qTester*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.trackReconstruction*process.dqmEnv*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
+#process.p = cms.Path(process.Reco*process.trackReconstruction*process.dqmEnv*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelP5DQM_source_woTrack*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
 
