@@ -41,12 +41,15 @@ process.siPixelDigis.IncludeErrors = True
 
 ##----## Central DQM:
 process.load("DQMServices.Core.DQM_cfg")
+#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/pixel_reference.root'
 process.load("DQMServices.Components.DQMEnvironment_cfi")
-process.DQM.collectorHost = ''
+process.load("DQM.Integration.test.environment_playback_cfi")
+process.DQM.collectorHost = 'vmepcs2b18-25.cms'
+process.DQM.collectorPort = 9190
 process.dqmSaver.convention = 'Online'
 process.dqmSaver.producer = 'DQM'
 process.dqmEnv.subSystemFolder = 'Pixel'
-process.dqmSaver.dirName = '/tmp/merkelp/'
+process.dqmSaver.dirName = '/home/dqmdevlocal/output/'
 process.dqmSaver.saveByLumiSection = -1
 process.dqmSaver.saveByRun = 1
 process.dqmSaver.saveAtJobEnd = True
@@ -92,10 +95,10 @@ process.LockService = cms.Service("LockService",
 
 ##----## Global tag and input data:
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-#process.GlobalTag.connect ="sqlite_file:/afs/cern.ch/user/m/malgeri/public/globtag/CRZT210_V1.db"
+process.GlobalTag.connect ="sqlite_file:/home/dqmdevlocal/input/CRAFT0831X_V1H.db"
 #process.GlobalTag.connect = "frontier://FrontierProd/CMS_COND_21X_GLOBALTAG"
-process.GlobalTag.globaltag = "CRAFT_31X::All"
-#process.GlobalTag.globaltag = "CRAFT_V17H::All"
+#process.GlobalTag.globaltag = "CRAFT_31X::All"
+process.GlobalTag.globaltag = "CRAFT0831X_V1H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 ## this next line is needed for xdaq running outside P5 network:
 #process.SiteLocalConfigService = cms.Service("SiteLocalConfigService")
@@ -105,7 +108,79 @@ process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/user/c/chiochia/cmssw/Muon_FullValidation_150pre3.root')
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/relval/2008/6/6/RelVal-RelValTTbar-1212531852-IDEAL_V1-2nd-02/0000/081018D5-EC33-DD11-A623-000423D6CA42.root')
     fileNames = cms.untracked.vstring(
-       'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
+        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
         'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
         'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
         'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
@@ -117,7 +192,7 @@ process.source = cms.Source("PoolSource",
     )
 )
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(2000)
+    input = cms.untracked.int32(-1)
 )
 
 ##----## Sequences and Paths:
