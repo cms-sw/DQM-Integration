@@ -13,29 +13,29 @@ process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 ##----## Reco:
 ##process.load("Configuration.StandardSequences.Reconstruction_cff")
-#process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
+process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
 
 process.load("EventFilter.SiPixelRawToDigi.SiPixelRawToDigi_cfi")
 process.siPixelDigis.InputLabel = 'source'
 process.siPixelDigis.IncludeErrors = True
 
-process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
+#process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 
-process.load("RecoLocalTracker.SiPixelRecHits.SiPixelRecHits_cfi")
-process.load("RecoLocalTracker.SiPixelRecHits.PixelCPEESProducers_cff")
+#process.load("RecoLocalTracker.SiPixelRecHits.SiPixelRecHits_cfi")
+#process.load("RecoLocalTracker.SiPixelRecHits.PixelCPEESProducers_cff")
 
-process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
-process.siStripDigis.ProductLabel = 'source'
+#process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
+#process.siStripDigis.ProductLabel = 'source'
 
-process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
-process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
+#process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
+#process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
 
-process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
-process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
-process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
+#process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+#process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
+#process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
 
 
@@ -82,7 +82,7 @@ process.MessageLogger = cms.Service("MessageLogger",
         'SiPixelRecHitSource', 
         'sipixelEDAClient'),
     cout = cms.untracked.PSet(
-        threshold = cms.untracked.string('ERROR')
+        threshold = cms.untracked.string('WARNING')
     ),
     destinations = cms.untracked.vstring('cout')
 )
