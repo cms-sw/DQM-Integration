@@ -133,17 +133,17 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 ##----## Sequences and Paths:
-process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
+process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters*process.siPixelRecHits)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.HITmonitor = cms.Sequence(process.SiPixelRecHitSource)
 process.DQMmodules = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.CERTmodules = cms.Sequence(process.sipixelDaqInfo*process.sipixelDcsInfo*process.sipixelCertification)
-process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
-process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
-process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
-process.trackReconstruction = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.tracksP5) #*process.rstracks 
+#process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
+#process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
+#process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
+#process.trackReconstruction = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.tracksP5) #*process.rstracks 
 #process.monitorTrack = cms.Sequence(process.SiPixelTrackResidualSource)
 #process.monitors = cms.Sequence(process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.SiPixelRecHitSource*process.SiPixelTrackResidualSource)
 
