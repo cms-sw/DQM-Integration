@@ -43,15 +43,30 @@ if __name__ == "__main__":
   # defined XML-RPC url 
   for rfile in args:
 
-    values = getSummaryValues(file_name = rfile, shift_type = opts['shift'])
+    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'])
+    dataset = getDatasetName(rfile)
+
+    if run_number == None:
+      print "Run number does not determined. Skipping file: %s" % rfile
+      continue
+    
+    if dataset == None:
+      print "Dataset name do not determined. Skipping file: %s" % rfile
+      continue
+
+    if values == None or len(values) == 0:
+      print "No content summary values found. Skipping file: %s" % rfile
+      continue
 
     try:
       json = dict2json(values)
       if opts['debug']:
-        print json
+        print "Run number: %d" % run_number
+        print "Dataset: %s" % dataset
+        print "Data: ", values
       else:
-        result = server.SummaryValuesWriter.write(json)
-        print "RR: %d rows modified for file %s" % (result, rfile)
+        result = server.SummaryValuesWriter.write(run_number, dataset, json)
+        print "RR: %d rows modified for run# %d dataset %s" % (result, run_number, dataset)
     except xmlrpclib.Error, errstring:
       print "ERROR", errstring
       sys.exit(3)

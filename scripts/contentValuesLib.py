@@ -21,27 +21,36 @@ SUBSYSTEMS  = {
   'SiStrip' :    'STRIP'
 }
 
+def getDatasetName(file_name):
+  """ Method to get dataset name from the file name"""
+  d = None
+  try:
+    d = re.search("(__[a-zA-Z0-9-_]+)+", file_name).group(0)
+    d = re.sub("__", "/", d)
+  except:
+    d = None
+  return d
+
 def getSummaryValues(file_name, shift_type):
   """ Method to extract keys from root file and return dict """
   ROOT.gROOT.Reset()
 
+  run_number = None
   result = {}
 
   f = ROOT.TFile(file_name, 'READ')
 
   root = f.GetDirectory("DQMData")
-  if root == None: return result
+  if root == None: return (run_number, result)
   
   run = None
   for key in root.GetListOfKeys():
     if re.match("^Run [0-9]+$", key.ReadObj().GetName()) and key.IsFolder():
-      result['run'] = int(re.sub("^Run ", "", key.ReadObj().GetName()))
+      run_number = int(re.sub("^Run ", "", key.ReadObj().GetName()))
       run = key.ReadObj()
       break
 
-  if run == None: return result
-
-  result['subs'] = {}
+  if run == None: return (run_number, result)
 
   for sub in run.GetListOfKeys():
 
@@ -50,8 +59,8 @@ def getSummaryValues(file_name, shift_type):
 
     sub_key = SUBSYSTEMS[sub_name]
 
-    if not result['subs'].has_key(sub_key):
-      result['subs'][sub_key] = {}
+    if not result.has_key(sub_key):
+      result[sub_key] = {}
 
     evInfo = sub.ReadObj().GetDirectory("Run summary/EventInfo")
     if evInfo == None: continue
@@ -65,18 +74,18 @@ def getSummaryValues(file_name, shift_type):
       if folder_id == 'DQM' and shift_type != None:
         folder_id = 'DQM ' + shift_type.upper()
 
-      result['subs'][sub_key][folder_id] = {}
+      result[sub_key][folder_id] = {}
 
       for value in folder.GetListOfKeys():
         full_name = value.ReadObj().GetName()
         if not value.IsFolder() and re.match("^<.+>f=-{,1}[0-9\.]+</.+>$", full_name):
           value_name = re.sub("<(?P<n>[^>]+)>.+", "\g<n>", full_name)
           value_numb = float(re.sub("<.+>f=(?P<n>-{,1}[0-9\.]+)</.+>", "\g<n>", full_name))
-          result['subs'][sub_key][folder_id][value_name] = value_numb
+          result[sub_key][folder_id][value_name] = value_numb
 
   f.Close()
 
-  return result
+  return (run_number, result)
 
 def dict2json(d):
   """ Convert dictionary (embedded) to json string """
