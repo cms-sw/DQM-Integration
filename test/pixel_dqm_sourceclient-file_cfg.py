@@ -82,7 +82,7 @@ process.MessageLogger = cms.Service("MessageLogger",
         'SiPixelRecHitSource', 
         'sipixelEDAClient'),
     cout = cms.untracked.PSet(
-        threshold = cms.untracked.string('WARNING')
+        threshold = cms.untracked.string('INFO')
     ),
     destinations = cms.untracked.vstring('cout')
 )
@@ -108,23 +108,27 @@ process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/user/c/chiochia/cmssw/Muon_FullValidation_150pre3.root')
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/relval/2008/6/6/RelVal-RelValTTbar-1212531852-IDEAL_V1-2nd-02/0000/081018D5-EC33-DD11-A623-000423D6CA42.root')
     fileNames = cms.untracked.vstring(
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root'
     )
 )
@@ -133,6 +137,7 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 ##----## Sequences and Paths:
+#process.Reco = cms.Sequence(process.siPixelRecHits)
 process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters*process.siPixelRecHits)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
@@ -151,7 +156,5 @@ process.CERTmodules = cms.Sequence(process.sipixelDaqInfo*process.sipixelDcsInfo
 #process.pathTrack = cms.Path(process.trackReconstruction*process.DQMmodules*process.monitors*process.sipixelEDAClient) 
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.qTester*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
-#process.p = cms.Path(process.Reco*process.trackReconstruction*process.dqmEnv*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
-#process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelP5DQM_source_woTrack*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
-process.p = cms.Path(process.siPixelDigis*process.dqmEnv*process.RAWmonitor*process.DIGImonitor*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.dqmEnv*process.DIGImonitor*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
 
