@@ -13,29 +13,29 @@ process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 ##----## Reco:
 ##process.load("Configuration.StandardSequences.Reconstruction_cff")
-process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
+#process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
 
 process.load("EventFilter.SiPixelRawToDigi.SiPixelRawToDigi_cfi")
 process.siPixelDigis.InputLabel = 'source'
 process.siPixelDigis.IncludeErrors = True
 
-#process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
+process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 
-#process.load("RecoLocalTracker.SiPixelRecHits.SiPixelRecHits_cfi")
-#process.load("RecoLocalTracker.SiPixelRecHits.PixelCPEESProducers_cff")
+process.load("RecoLocalTracker.SiPixelRecHits.SiPixelRecHits_cfi")
+process.load("RecoLocalTracker.SiPixelRecHits.PixelCPEESProducers_cff")
 
-#process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
-#process.siStripDigis.ProductLabel = 'source'
+process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
+process.siStripDigis.ProductLabel = 'source'
 
-#process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
-#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
-#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
-#process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
-#process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
+process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
+process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
+process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
+process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
+process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
 
-#process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
-#process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
-#process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
+process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
+process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
 
 
@@ -108,69 +108,24 @@ process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/user/c/chiochia/cmssw/Muon_FullValidation_150pre3.root')
     #fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/relval/2008/6/6/RelVal-RelValTTbar-1212531852-IDEAL_V1-2nd-02/0000/081018D5-EC33-DD11-A623-000423D6CA42.root')
     fileNames = cms.untracked.vstring(
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
         'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root',
-        'file:/home/dqmdevlocal/input/0029CA89-9B71-DD11-8B56-001617C3B6FE.root',
         'file:/home/dqmdevlocal/input/006945C8-40A5-DD11-BD7E-001617DBD556.root',
-        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root',
-        'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root',
-        'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root',
-        'file:/home/dqmdevlocal/input/48F6B6B5-519C-DD11-B32A-000423D6B444.root',
-        'file:/home/dqmdevlocal/input/ECBAB6B1-519C-DD11-BBB5-000423D94E70.root'
+        'file:/home/dqmdevlocal/input/00766F08-1BAE-DD11-8CE5-001617DBD5B2.root'
     )
 )
 process.maxEvents = cms.untracked.PSet(
@@ -178,18 +133,17 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 ##----## Sequences and Paths:
-#process.Reco = cms.Sequence(process.siPixelRecHits)
-process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters*process.siPixelRecHits)
+process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 process.RAWmonitor = cms.Sequence(process.SiPixelRawDataErrorSource)
 process.DIGImonitor = cms.Sequence(process.SiPixelDigiSource)
 process.CLUmonitor = cms.Sequence(process.SiPixelClusterSource)
 process.HITmonitor = cms.Sequence(process.SiPixelRecHitSource)
 process.DQMmodules = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
 process.CERTmodules = cms.Sequence(process.sipixelDaqInfo*process.sipixelDcsInfo*process.sipixelCertification)
-#process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
-#process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
-#process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
-#process.trackReconstruction = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.tracksP5) #*process.rstracks 
+process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
+process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
+process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
+process.trackReconstruction = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.tracksP5) #*process.rstracks 
 #process.monitorTrack = cms.Sequence(process.SiPixelTrackResidualSource)
 #process.monitors = cms.Sequence(process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.SiPixelRecHitSource*process.SiPixelTrackResidualSource)
 
@@ -197,5 +151,5 @@ process.CERTmodules = cms.Sequence(process.sipixelDaqInfo*process.sipixelDcsInfo
 #process.pathTrack = cms.Path(process.trackReconstruction*process.DQMmodules*process.monitors*process.sipixelEDAClient) 
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
 #process.p = cms.Path(process.Reco*process.dqmEnv*process.siPixelOfflineDQM_source_woTrack*process.qTester*process.PixelOfflineDQMClientWithDataCertification*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.dqmEnv*process.DIGImonitor*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
+process.p = cms.Path(process.Reco*process.trackReconstruction*process.dqmEnv*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
 
