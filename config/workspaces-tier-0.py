@@ -1,2 +1,127 @@
 server.workspace('DQMSummary', 0, 'Summaries', 'Summary')
-server.workspace('DQMContent', 90, 'Other', 'Everything', '^')
+server.workspace('DQMShift',   1, 'Summaries', 'Shift')
+server.workspace('DQMContent', 2, 'Summaries', 'Everything', '^')
+
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
+                 'Pixel/Layouts/00 - Pixel_RawData_FED_Summary',
+                 'Pixel/Layouts/01 - Pixel_RawData_Summary',
+                 'Pixel/Layouts/02 - Pixel_Digi_Occupancy',
+                 'Pixel/Layouts/03 - Pixel_Digi_Summary',
+                 'Pixel/Layouts/04 - Pixel_Cluster_Summary')
+
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
+                 'SiStrip/Layouts/SiStrip_NumberOfDigis_Summary',
+                 'SiStrip/Layouts/SiStrip_NumberOfClusters_Summary',
+                 'SiStrip/Layouts/SiStrip_ClusterWidth_Summary',
+                 'SiStrip/Layouts/SiStrip_Noise_Summary')
+               
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'CSC', '^CSC/',
+                 'CSC/Layouts/00 Top Physics Efficiency',
+                 'CSC/Layouts/01 Station Physics Efficiency',
+                 'CSC/Layouts/02 EMU Summary/EMU Test01 - DDUs in Readout',
+                 'CSC/Layouts/02 EMU Summary/EMU Test03 - DDU Reported Errors',
+                 'CSC/Layouts/02 EMU Summary/EMU Test04 - DDU Format Errors',
+                 'CSC/Layouts/02 EMU Summary/EMU Test05 - DDU Inputs Status',
+                 'CSC/Layouts/02 EMU Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
+                 'CSC/Layouts/02 EMU Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
+                 'CSC/Layouts/02 EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
+                 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
+
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'DT', '^DT/',
+                 'DT/Layouts/00-Summary/00-DataIntegritySummary',
+                 'DT/Layouts/00-Summary/01-OccupancySummary',
+                 'DT/Layouts/00-Summary/02-SegmentSummary',
+                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
+                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
+                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary',
+                 'DT/Layouts/00-Summary/07-NoiseChannelsSummary')
+
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'RPC', '^RPC/',
+                 'RPC/Layouts/RPC_Summary/TOP_Summary_ChamberQuality',
+                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',      
+                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy') 
+
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower',
+#                 'Ecal/Layouts/00-Global-Summary',
+                 'Ecal/Layouts/01-IntegritySummary-EcalPreshower'
+#                 'Ecal/Layouts/02-Cluster-Summary')
+)
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
+                 'EcalBarrel/Layouts/00-Global-Summary-EcalBarrel',
+                 'EcalBarrel/Layouts/01-Occupancy-Summary-EcalBarrel',
+                 'EcalBarrel/Layouts/02-Cluster-Summary-EcalBarrel')
+
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
+                 'EcalEndcap/Layouts/00-Global-Summary-EcalEndcap',
+                 'EcalEndcap/Layouts/01-Occupancy-Summary-EcalEndcap',
+                 'EcalEndcap/Layouts/02-Cluster-Summary-EcalEndcap')
+
+
+server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
+                 'Hcal/Layouts/HCAL DataFormat Problems',
+                 'Hcal/Layouts/HCAL Digi Problems',
+                 'Hcal/Layouts/HCAL Dead Cell Check',
+                 'Hcal/Layouts/HCAL Hot Cell Check',
+                 'Hcal/Layouts/HCAL Pedestals',
+                 #'Hcal/Layouts/HCAL Trigger Primitives',
+                 'Hcal/Layouts/HCAL Unsuppressed Channels',
+                 "Hcal/Layouts/01 HCAL Shifter Checklist Plots - DataFormat",
+                 "Hcal/Layouts/02 HCAL Shifter Checklist Plots - RecHits",
+                 "Hcal/Layouts/03 HCAL Shifter Checklist Plots - Summaries"
+                 )
+
+server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLX', '^HLX',
+                 'HLX/Layouts/HF-Comparison',
+                 'HLX/Layouts/HLX-Averages',
+                 'HLX/Layouts/HLX-Luminosity',
+                 'HLX/Layouts/HLX-Occupancy-Check-Sums',
+                 'HLX/Layouts/HLX-EtSumAndLumi-History-Plots')
+
+
+server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1T', '^L1T/',
+                 'L1T/L1TGT/algo_bits',
+                 'L1T/L1TGT/tt_bits',
+                 'L1T/L1TGMT/Regional_trigger',
+                 'L1T/L1TGMT/GMT_etaphi',
+                 'L1T/L1TGCT/IsoEmRankEtaPhi',
+                 'L1T/L1TGCT/NonIsoEmRankEtaPhi',
+                 'L1T/L1TGCT/CenJetsEtEtaPhi',
+                 'L1T/L1TGCT/ForJetsEtEtaPhi',
+                 'L1T/L1TGCT/TauJetsEtEtaPhi',
+                 'L1T/L1TRCT/RctEmNonIsoEmEtEtaPhi',
+                 'L1T/L1TRCT/RctEmIsoEmEtEtaPhi',
+                 'L1T/L1TRCT/RctRegionsEtEtaPhi',
+                 'L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary',
+                 'L1T/L1TCSCTF/CSCTF_Chamber_Occupancies',
+                 'L1T/L1TCSCTF/CSCTF_occupancies',
+                 'L1T/L1TRPCTF/RPCTF_muons_tower_phipacked_bx0')
+
+server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
+                 'L1TEMU/common/sysrates',
+                 'L1TEMU/common/errorflag',
+                 'L1TEMU/common/sysncandData',
+                 'L1TEMU/common/sysncandEmul',
+                 'L1TEMU/GT/GLTErrorFlag',
+                 'L1TEMU/GCT/GCTErrorFlag',
+                 'L1TEMU/GMT/GMTErrorFlag',
+                 'L1TEMU/RCT/RCTErrorFlag',
+                 'L1TEMU/CSCTF/CTFErrorFlag',
+                 'L1TEMU/CSCTPG/CTPErrorFlag',
+                 'L1TEMU/DTTF/DTFErrorFlag',
+                 'L1TEMU/DTTPG/DTPErrorFlag',
+                 'L1TEMU/RPC/RPCErrorFlag',
+                 'L1TEMU/ECAL/ETPErrorFlag',
+                 'L1TEMU/HCAL/HTPErrorFlag')
+
+
+server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLT', '^HLT/',
+                 'HLT/HLTMonMuon/Summary/PassingBits_Summary',
+                 'HLT/HLTMonMuon/Summary/Ratio_HLT_L1MuOpen',
+                 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
+                 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
+                 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi')
+
+
+
+server.workspace('EVDSnapshot', 99, 'Other', 'Event display', '/home/dqm/iguana-snapshots')
