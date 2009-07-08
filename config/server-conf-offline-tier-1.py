@@ -5,6 +5,8 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
            ("eb", "ee", "csc", "rpc", "hcal", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
+LAYOUTS += ["%s/%s_T0_layout.py" % (CONFIGDIR, x) for x in
+           ("pixel","sistrip")]
 
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
