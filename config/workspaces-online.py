@@ -32,13 +32,15 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'CSC', '^CSC/',
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/00-DataIntegritySummary',
+                 'DT/Layouts/00-Summary/00-ROChannelSummary',
                  'DT/Layouts/00-Summary/01-OccupancySummary',
                  'DT/Layouts/00-Summary/02-SegmentSummary',
-                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFactionSummary',
-                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFactionSummary',
-                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFactionSummary',
-                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFactionSummary',
-                 'DT/Layouts/00-Summary/07-NoiseChannelsSummary')
+                 'DT/Layouts/00-Summary/03-DDU_TriggerCorrFractionSummary',
+                 'DT/Layouts/00-Summary/04-DDU_Trigger2ndFractionSummary',
+                 'DT/Layouts/00-Summary/05-DCC_TriggerCorrFractionSummary',
+                 'DT/Layouts/00-Summary/06-DCC_Trigger2ndFractionSummary',
+                 'DT/Layouts/00-Summary/07-NoiseChannelsSummary',
+                 'DT/Layouts/00-Summary/08-SynchNoiseSummary')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'RPC', '^RPC/',
                  'RPC/Layouts/RPC_Summary/TOP_Summary_ChamberQuality',
