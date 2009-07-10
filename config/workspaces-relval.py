@@ -1,6 +1,7 @@
-server.workspace('DQMSummary', 0, 'Summaries', 'Summary')
-server.workspace('DQMShift',   1, 'Summaries', 'Shift')
-server.workspace('DQMContent', 2, 'Summaries', 'Everything', '^')
+server.workspace('DQMQuality', 0, 'Summaries', 'Summary')
+server.workspace('DQMSummary', 1, 'Summaries', 'Reports')
+server.workspace('DQMShift',   2, 'Summaries', 'Shift')
+server.workspace('DQMContent', 3, 'Summaries', 'Everything', '^')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/')
 server.workspace('DQMContent', 11, 'Tracker/Muons', 'SiStrip', '^SiStrip/')               
