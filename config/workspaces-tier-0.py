@@ -20,7 +20,9 @@ server.workspace('DQMContent', 14, 'Tracker/Muons', 'RPC', '^RPC/')
 server.workspace('DQMContent', 21, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/')
 server.workspace('DQMContent', 22, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/')
 server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshower')
-server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/')
+server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
+                 'Hcal/Layouts/HCAL DataFormat Problems',
+                 'Hcal/Layouts/HCAL Unsuppressed Channels')
 
 server.workspace('DQMContent', 31, 'Trigger/Lumi', 'L1T', '^L1T/')
 server.workspace('DQMContent', 32, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/')
