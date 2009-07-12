@@ -14,6 +14,96 @@
 ###
 
 
+###---- GENERIC - FourVector selection goes here: ####
+######################################################
+
+###---- GENERIC - FourVector Muon
+def trigvalFVMuon(i, p, *rows): i["00 Shift/HLT/FourVector/Muon/" + p] = DQMItem(layout=rows)
+  
+
+trigvalFVMuon(dqmitems,"Eff HLT to MC",
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Mu9"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Mu9"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to L1",
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Mu9"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Mu9"}])
+
+trigvalFVMuon(dqmitems,"Eff L1 to MC"
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Mu9"}])
+
+trigvalFVMuon(dqmitems,"Eff L1 to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__offEt_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO for path HLT_Mu9"}])
+
+###---- GENERIC - FourVector Electron
+def trigvalFVEle(i, p, *rows): i["00 Shift/HLT/FourVector/Electron/" + p] = DQMItem(layout=rows)
+  
+
+trigvalFVEle(dqmitems,"Eff HLT to MC",
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Ele10_LW_L1R"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Ele10_LW_L1R"}])
+
+trigvalFVEle(dqmitems,"Eff HLT to L1",
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R"}])
+
+trigvalFVEle(dqmitems,"Eff HLT to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Ele10_LW_L1R"}])
+
+trigvalFVEle(dqmitems,"Eff L1 to MC"
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Ele10_LW_L1R"}])
+
+trigvalFVEle(dqmitems,"Eff L1 to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__offEt_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO for path HLT_Ele10_LW_L1R"}])
+
+###---- GENERIC - FourVector Jet
+def trigvalFVJet(i, p, *rows): i["00 Shift/HLT/FourVector/Jet/" + p] = DQMItem(layout=rows)
+  
+
+trigvalFVJet(dqmitems,"Eff HLT to MC",
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Jet50"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Jet50"}])
+
+trigvalFVJet(dqmitems,"Eff HLT to L1",
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet50"}])
+
+trigvalFVJet(dqmitems,"Eff HLT to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet50"}])
+
+trigvalFVJet(dqmitems,"Eff L1 to MC"
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Jet50"}])
+
+trigvalFVJet(dqmitems,"Eff L1 to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__offEt_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO for path HLT_Jet50"}])
+
+###---- GENERIC - FourVector Photon
+def trigvalFVPho(i, p, *rows): i["00 Shift/HLT/FourVector/Photon/" + p] = DQMItem(layout=rows)
+  
+
+trigvalFVPho(dqmitems,"Eff HLT to MC",
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Photon15_L1R"}])
+
+trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Photon15_L1R"}])
+
+trigvalFVPho(dqmitems,"Eff HLT to L1",
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Photon15_L1R"}])
+
+trigvalFVPho(dqmitems,"Eff HLT to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Photon15_L1R"}])
+
+trigvalFVPho(dqmitems,"Eff L1 to MC"
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Photon15_L1R"}])
+
+trigvalFVPho(dqmitems,"Eff L1 to RECO",
+[{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__offEt_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO for path HLT_Photon15_L1R"}])
 
 
 ###---- EGAMMA selection goes here: ----
