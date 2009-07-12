@@ -8,11 +8,16 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/01 - Pixel_Digi_Summary',
                  'Pixel/Layouts/02 - Pixel_Cluster_Summary',
                  'Pixel/Layouts/03 - Pixel_Track_Summary')
-server.workspace('DQMContent', 11, 'Tracker/Muons', 'SiStrip', '^SiStrip/',
-                 'SiStrip/Layouts/SiStrip_NumberOfDigis_Summary',
-                 'SiStrip/Layouts/SiStrip_NumberOfClusters_Summary',
-                 'SiStrip/Layouts/SiStrip_ClusterWidth_Summary',
-                 'SiStrip/Layouts/SiStrip_Noise_Summary')               
+
+server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
+                 'SiStrip/Layouts/00 - ReportSummary',
+                 'SiStrip/Layouts/01 - FED Errors',
+                 'SiStrip/Layouts/02 - OnTrackCluster (StoN)',
+                 'SiStrip/Layouts/03 - OffTrackCluster (Total Number)',
+                 'SiStrip/Layouts/04 - Tracks - CKF',
+                 'SiStrip/Layouts/05 - Tracks - Cosmic Track Finder',
+                 'SiStrip/Layouts/06 - Tracks - Rod Search')
+
 server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/')
 server.workspace('DQMContent', 13, 'Tracker/Muons', 'DT', '^DT/')
 server.workspace('DQMContent', 14, 'Tracker/Muons', 'RPC', '^RPC/') 

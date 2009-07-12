@@ -12,11 +12,11 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - ReportSummary',
-                 'SiStrip/Layouts/01 - Tracks',
-                 'SiStrip/Layouts/02 - FedMonitoringSummary',
-                 'SiStrip/Layouts/03 - # of Digi Trend',
-                 'SiStrip/Layouts/04 - # of Cluster Trend',
-                 'SiStrip/Layouts/05 - OffTrackCluster (Total Number)')
+                 'SiStrip/Layouts/01 - FED Errors',
+                 'SiStrip/Layouts/02 - # of Digi Trend',
+                 'SiStrip/Layouts/03 - # of Cluster Trend',
+                 'SiStrip/Layouts/04 - OffTrackCluster (Total Number)',
+                 'SiStrip/Layouts/05 - Tracks')
                
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
