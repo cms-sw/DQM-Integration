@@ -31,7 +31,7 @@ def getDatasetName(file_name):
     d = None
   return d
 
-def getSummaryValues(file_name, shift_type):
+def getSummaryValues(file_name, shift_type, translate):
   """ Method to extract keys from root file and return dict """
   ROOT.gROOT.Reset()
 
@@ -57,7 +57,9 @@ def getSummaryValues(file_name, shift_type):
     sub_name = sub.ReadObj().GetName()
     if not SUBSYSTEMS.has_key(sub_name): continue
 
-    sub_key = SUBSYSTEMS[sub_name]
+    sub_key = sub_name
+    if translate:
+      sub_key = SUBSYSTEMS[sub_name]
 
     if not result.has_key(sub_key):
       result[sub_key] = {}
@@ -70,9 +72,11 @@ def getSummaryValues(file_name, shift_type):
       folder = evInfo.GetDirectory(folder_name)
       if folder == None: continue
       
-      folder_id = FOLDERS[folder_name]
-      if folder_id == 'DQM' and shift_type != None:
-        folder_id = 'DQM ' + shift_type.upper()
+      folder_id = folder_name
+      if translate:
+        folder_id = FOLDERS[folder_name]
+        if folder_id == 'DQM' and shift_type != None:
+          folder_id = 'DQM ' + shift_type.upper()
 
       result[sub_key][folder_id] = {}
 
