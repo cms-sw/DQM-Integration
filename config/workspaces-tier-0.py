@@ -11,7 +11,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - ReportSummary',
-                 'SiStrip/Layouts/01 - FED Errors',
+                 'SiStrip/Layouts/01 - FED-Detected Errors',
                  'SiStrip/Layouts/02 - OnTrackCluster (StoN)',
                  'SiStrip/Layouts/03 - OffTrackCluster (Total Number)',
                  'SiStrip/Layouts/04 - Tracks - CKF',
