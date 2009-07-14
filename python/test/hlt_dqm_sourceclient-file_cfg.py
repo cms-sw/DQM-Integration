@@ -10,7 +10,7 @@ process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 process.load("Configuration.StandardSequences.GeometryPilot2_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load( "Configuration.StandardSequences.FrontierConditions_GlobalTag_cff" )
-process.GlobalTag.globaltag = 'CRAFT_V14P::All'
+process.GlobalTag.globaltag = 'GR09_31X_V3P::All'
 process.prefer("GlobalTag")
 
 process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" )
@@ -18,8 +18,7 @@ process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeomet
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.maxEvents = cms.untracked.PSet(
-#    input = cms.untracked.int32(100)
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(100)
 )
 
 process.source = cms.Source("PoolSource",
