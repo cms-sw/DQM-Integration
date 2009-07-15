@@ -35,8 +35,8 @@ process.MessageLogger = cms.Service("MessageLogger",
 # Global tag
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_31X_V1H::All"
-process.prefer("GlobalTag")
+process.GlobalTag.globaltag = 'GR09_31X_V3H::All' # or any other appropriate
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 
 #-----------------------------
@@ -94,9 +94,9 @@ process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.BeamMonitor         = False
 
 # RPC
-process.load("EventFilter.RPCRawToDigi.RPCSQLiteCabling_cfi")
-process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
-process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
+#process.load("EventFilter.RPCRawToDigi.RPCSQLiteCabling_cfi")
+#process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
+#process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
 
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")

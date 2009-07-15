@@ -31,6 +31,6 @@ process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 
 process.pDQM = cms.Path(process.l1tsClient+
                         process.hltsClient+
-			process.DQMFEDIntegrityClient+
+			process.dqmFEDIntegrityClient+
 			process.dqmEnv+
 			process.dqmSaver)
