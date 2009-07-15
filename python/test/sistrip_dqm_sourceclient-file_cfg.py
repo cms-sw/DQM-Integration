@@ -17,7 +17,9 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.source = cms.Source("PoolSource",
      fileNames = cms.untracked.vstring(
 #    MWGR-2009  
-     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'
+#     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'
+#    MWGR-29 2009
+          'file:/nfshome0/dutta/B6C7837E-6071-DE11-8803-001D09F24763.root'
 #    CRAFT-2008 
 #     'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'       
      )    
@@ -117,6 +119,6 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
 process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
-process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmSaver)
+process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
