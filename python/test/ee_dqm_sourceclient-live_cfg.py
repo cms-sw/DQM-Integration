@@ -219,7 +219,9 @@ process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfi
 process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 3 ]
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
