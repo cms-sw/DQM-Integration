@@ -13,7 +13,8 @@ process.load("DQM.Integration.test.inputsource_playback_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
 
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-process.GlobalTag.globaltag = 'MC_31X_V1::All'
+process.GlobalTag.globaltag = "GR09_31X_V3H::ALL"
+process.GlobalTag.connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
 
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
