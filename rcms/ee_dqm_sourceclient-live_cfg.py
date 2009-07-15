@@ -75,7 +75,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_31X_V1H::All"
+process.GlobalTag.globaltag = "GR09_31X_V3H::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -218,6 +218,8 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
+#process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150

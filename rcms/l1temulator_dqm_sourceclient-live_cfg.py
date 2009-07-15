@@ -21,6 +21,11 @@ process.l1GtParameters.BstLengthBytes = 52
 #sequence: dtf,dtp,ctf,ctp,rpc,gmt, etp,htp,rct,gct,gt
 process.l1temuEventInfoClient.maskedSystems = [0,1,1,0,0,0, 0,1,0,0,1]
 
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.globaltag = 'GR09_31X_V1H::All' # or any other appropriate
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+
 #replace DQMStore.referenceFileName = "L1TEMU_reference.root"
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring("*")

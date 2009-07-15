@@ -24,7 +24,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = c
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/sistrip_reference.root'
+#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/sistrip_reference.root'
 process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
@@ -65,7 +65,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_31X_V1H::All"
+process.GlobalTag.globaltag = "GR09_31X_V3H::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
