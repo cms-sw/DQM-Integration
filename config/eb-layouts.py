@@ -56,15 +56,18 @@ ebecalshifterlayout(dqmitems, "00-Event-Type",
   [{ 'path': "EcalBarrel/EcalInfo/EVTTYPE", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "01-Electronics/00-Integrity-Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "Crystals integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "01-Electronics/01-Integrity-Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality errors summary", 'description': "integrity errors by supermodule. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality errors summary", 'description': "Crystals integrity errors by supermodule. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "01-Electronics/02-FrontEnd-Summary",
+ebecalshifterlayout(dqmitems, "01-Electronics/02-PN-Integrity-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT PN integrity quality summary", 'description': "PN diodes integrity quality summary. Expect all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "01-Electronics/03-FrontEnd-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "01-Electronics/03-CalibrationSequence-Errors",
+ebecalshifterlayout(dqmitems, "01-Electronics/04-CalibrationSequence-Errors",
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT trigger type errors", 'description': "Number of trigger type mismatches between the global trigger and ECAL DCC header. It is filled once per DCC with weight 1/36. It should be empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "02-Noise/00-PedestalOnline-Quality",
@@ -115,6 +118,10 @@ ebecalshifterlayout(dqmitems, "03-Occupancy/07-PedestalEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT pedestal digi occupancy", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+ebecalshifterlayout(dqmitems, "03-Occupancy/08-PN-Digis",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
 ebecalshifterlayout(dqmitems, "04-Energy/00-BasicClusters-Summary",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
@@ -159,46 +166,75 @@ ebecalshifterlayout(dqmitems, "05-TriggerAndSelectiveReadout/06-FullReadoutFrequ
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout frequency", 'description': "Fraction of events this tower was fully readout. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/00-LaserL1-Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/00-L1-Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser L1 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/01-LaserL1-Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L1", 'description': "Errors occupancy for laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/01-L1-Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L1", 'description': "Errors occupancy for laser L1 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/02-LaserL1-Amplitude",
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/02-L1-Amplitude",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude summary", 'description': "Laser L1 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN summary", 'description': "Laser L1 Amplitude / PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN summary", 'description': "Laser L1 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/03-LaserL1-Timing",
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/03-L1-Timing",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 timing summary", 'description': "Laser L1 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/04-Pedestal-Quality-Gain01",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G01 summary", 'description': "Quality summary of pedestal events for Gain 1. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/04-L1-PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L1", 'description': "Quality summary of laser L1 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L1", 'description': "Error occupancy for laser L1 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/05-Pedestal-Quality-Gain06",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G06 summary", 'description': "Quality summary of pedestal events for Gain 6. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/00-L3-Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser L3 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/06-Pedestal-Quality-Gain12",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/01-L3-Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L3", 'description': "Errors occupancy for laser L3 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/07-TestPulse-Quality-Gain01",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G01 summary", 'description': "Quality summary of test pulse events for Gain 1. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/02-L3-Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude summary", 'description': "Laser L3 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude over PN summary", 'description': "Laser L3 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06-Calibration/08-TestPulse-Quality-Gain06",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G06 summary", 'description': "Quality summary of test pulse events for Gain 6. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebecalshifterlayout(dqmitems, "06-Calibration/09-TestPulse-Quality-Gain12",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebecalshifterlayout(dqmitems, "06-Calibration/10-TestPulse-Amplitude-Gain01And06",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G01 summary", 'description': "Test pulse average amplitude in MGPA gain 01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G06 summary", 'description': "Test pulse average amplitude in MGPA gain 06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-ebecalshifterlayout(dqmitems, "06-Calibration/11-TestPulse-Amplitude-Gain12",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G12 summary", 'description': "Test pulse average amplitude in MGPA gain 12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/03-L3-Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 timing summary", 'description': "Laser L3 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+ebecalshifterlayout(dqmitems, "06-Calibration/00-Laser/04-L3-PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L3", 'description': "Quality summary of laser L3 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L3", 'description': "Error occupancy for laser L3 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/01-Pedestal/00-Quality-Gain01",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G01 summary", 'description': "Quality summary of pedestal events on crystals for Gain 1. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/01-Pedestal/01-Quality-Gain06",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G06 summary", 'description': "Quality summary of pedestal events on crystals for Gain 6. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/01-Pedestal/02-Quality-Gain12",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events on crystals for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/01-Pedestal/03-PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT PN pedestal quality G01 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 1. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBPT PN pedestal quality G16 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 16. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/00-Quality-Gain01",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G01 summary", 'description': "Crystals quality summary of test pulse events for Gain 1. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/01-Quality-Gain06",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G06 summary", 'description': "Crystals quality summary of test pulse events for Gain 6. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/02-Quality-Gain12",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G12 summary", 'description': "Crystals quality summary of test pulse events for Gain 12. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/03-Amplitude-Gain01And06",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G01 summary", 'description': "Test pulse average amplitude in MGPA gain 01 for crystals. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G06 summary", 'description': "Test pulse average amplitude in MGPA gain 06 for crystals. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/04-Amplitude-Gain12",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse amplitude G12 summary", 'description': "Test pulse average amplitude in MGPA gain 12 for crystals. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+ebecalshifterlayout(dqmitems, "06-Calibration/02-TestPulse/05-PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT PN test pulse quality G01 summary", 'description': "PN diodes quality summary of test pulse events for Gain 1. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT PN test pulse quality G16 summary", 'description': "PN diodes quality summary of test pulse events for Gain 16. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eblayout(dqmitems, "01-BySupermodule/EB-/EB-01/00-Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -8294,66 +8330,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-01/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-01 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-01/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8536,66 +8578,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-02/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-02 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-02/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -8778,66 +8826,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-03/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-03 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-03/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9020,66 +9074,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-04/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-04 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-04/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9262,66 +9322,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-05/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-05 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-05/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9504,66 +9570,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-06/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-06 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-06/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9746,66 +9818,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-07/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-07 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-07/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -9988,66 +10066,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-08/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-08 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-08/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10230,66 +10314,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-09/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-09 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-09/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10472,66 +10562,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-10/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-10 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-10/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10714,66 +10810,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-11/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-11 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-11/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -10956,66 +11058,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-12/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-12 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-12/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11198,66 +11306,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-13/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-13 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-13/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11440,66 +11554,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-14/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-14 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-14/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11682,66 +11802,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-15/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-15 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-15/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -11924,66 +12050,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-16/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-16 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-16/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12166,66 +12298,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-17/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-17 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-17/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12408,66 +12546,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB-/EB-18/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB-18 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB-18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB-18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB-/EB-18/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB-18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB-18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB-18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12650,66 +12794,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+01/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+01 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+01 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+01/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+01 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -12892,66 +13042,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+02/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+02 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+02 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+02/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+02 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13134,66 +13290,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+03/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+03 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+03 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+03/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+03 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13376,66 +13538,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+04/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+04 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+04 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+04/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+04 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13618,66 +13786,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+05/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+05 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+05 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+05/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+05 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -13860,66 +14034,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+06/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+06 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+06 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+06/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+06 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14102,66 +14282,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+07/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+07 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+07 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+07/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+07 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14344,66 +14530,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+08/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+08 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+08 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+08/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+08 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14586,66 +14778,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+09/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+09 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+09 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+09/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+09 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -14828,66 +15026,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+10/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+10 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+10 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+10/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+10 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15070,66 +15274,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+11/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+11 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+11 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+11/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+11 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15312,66 +15522,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+12/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+12 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+12 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+12/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+12 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15554,66 +15770,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+13/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+13 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+13 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+13/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+13 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -15796,66 +16018,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+14/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+14 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+14 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+14/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+14 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16038,66 +16266,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+15/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+15 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+15 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+15/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+15 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16280,66 +16514,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+16/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+16 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+16 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+16/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+16 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16522,66 +16762,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+17/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+17 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+17 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+17/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+17 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -16764,66 +17010,72 @@ eblayout(dqmitems, "00-ByTask/04-TestPulse/EB+/EB+18/05-PNs-G16",
   [{ 'path': "EcalBarrel/EBTestPulseTask/PN/Gain16/EBPDT PNs amplitude EB+18 G16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
+
 eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL1-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G01 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L4 PNs G16 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
-
 eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G01 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L1 PNs G16 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/01-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L1B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L1B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/01-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/02-Laser",
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L1B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L1B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/02-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/03-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/03-Laser",
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L1/04-Laser",
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBLaserTask/Laser1/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L1", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L4/00-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L4B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L4B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L4/01-Laser",
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L4B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L4B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00-ByTask/05-Laser/00-LaserL3-Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L4/02-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L3/00-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G01 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser quality L3 PNs G16 EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L3/01-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT amplitude L3B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT amplitude over PN L3B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L3/02-Laser",
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3A EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserClient/EBLT laser timing L3B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBLT laser shape L3B EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L3/03-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs pedestal EB+18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain01/EBPDT PNs amplitude EB+18 G01 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
 
-eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L4/03-Laser",
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBLaserTask/Laser4/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L4", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+eblayout(dqmitems, "00-ByTask/05-Laser/EB+/EB+18/L3/04-Laser",
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs pedestal EB+18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBLaserClient/EBPDT PNs pedestal rms EB+18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBLaserTask/Laser3/PN/Gain16/EBPDT PNs amplitude EB+18 G16 L3", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    None])
+
 
 eblayout(dqmitems, "00-ByTask/07-Timing/00-Timing-Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
