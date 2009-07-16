@@ -78,7 +78,8 @@ process.dqmSaver = cms.EDAnalyzer("DQMFileSaver",
     dirName = cms.untracked.string('.'),
     saveAtJobEnd = cms.untracked.bool(True),
     convention = cms.untracked.string('Online'),
-    referenceHandling = cms.untracked.string('all')
+    referenceHandling = cms.untracked.string('qtests')
+    #referenceHandling = cms.untracked.string('all')
 )
 
 process.maxEvents = cms.untracked.PSet(
