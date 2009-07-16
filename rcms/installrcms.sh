@@ -5,7 +5,7 @@ if [ "$1" = "live" ] ; then
   echo "creating softlinks"
   ln -s daq_dqm_sourceclient-live_cfg.py              dqmfu10-1_cfg.py
 
-  ln -s eb_dqm_sourceclient-live_cfg.py               dqmfu12-2_cfg.py
+  ln -s eb_dqm_sourceclient-live_cfg.py               dqmfu12-1_cfg.py
 
   ln -s ee_dqm_sourceclient-live_cfg.py               dqmfu13-1_cfg.py
 
