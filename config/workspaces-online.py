@@ -100,7 +100,7 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1T', '^L1T/',
                  'L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary',
                  'L1T/L1TCSCTF/CSCTF_Chamber_Occupancies',
                  'L1T/L1TCSCTF/CSCTF_occupancies',
-                 'L1T/L1TRPCTF/RPCTF_muons_tower_phipacked_bx0')
+                 'L1T/L1TRPCTF/RPCTF_muons_eta_phi_bx0')
 
 server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
                  'L1TEMU/common/sysrates',
