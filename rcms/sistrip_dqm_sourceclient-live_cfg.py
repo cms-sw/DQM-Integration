@@ -24,7 +24,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = c
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/sistrip_reference.root'
+process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/sistrip_reference.root'
 process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
