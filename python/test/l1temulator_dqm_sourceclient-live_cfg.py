@@ -11,6 +11,13 @@ process.load("DQM.Integration.test.environment_cfi")
 #process.GlobalTag.globaltag = 'CRAFT_V2H::All'
 #process.GlobalTag.connect = 'frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG'
 
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
+process.GlobalTag.globaltag = 'GR09_31X_V1H::All' # or any other appropriate
+#process.prefer("GlobalTag")
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+
+
 process.load("Configuration.StandardSequences.Geometry_cff")
 
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
