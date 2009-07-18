@@ -192,7 +192,7 @@ process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule
 
 process.ecalEndcapTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask)
 
-process.ecalEndcapTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
+#process.ecalEndcapTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence*process.dqmSaver)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
