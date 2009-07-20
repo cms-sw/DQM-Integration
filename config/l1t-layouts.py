@@ -12,9 +12,9 @@ def l1t_gct_single(i, dir, name):
   i["L1T/Layouts/02-GCT-Summary/%s" % name] = \
     DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
-def l1t_rct_single(i, dir, name):
-  i["L1T/Layouts/03-RCT-Summary/%s" % name] = \
-    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
+#def l1t_rct_single(i, dir, name):
+#  i["L1T/Layouts/03-RCT-Summary/%s" % name] = \
+#    DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
 def l1t_csctf_single(i, dir, name):
   i["L1T/Layouts/04-CSCTF-Summary/%s" % name] = \
@@ -28,12 +28,21 @@ def l1t_rpctf_single(i, dir, name):
   i["L1T/Layouts/06-RPCTF-Summary/%s" % name] = \
     DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
+def l1t_rct_expert(i, p, *rows): i["L1T/Layouts/03-RCT-Summary/" + p] = DQMItem(layout=rows)
+l1t_rct_expert(dqmitems, "RctEmIsoEmEtEtaPhi",
+  [{ 'path': "L1T/L1TRCT/RctEmIsoEmEtEtaPhi", 'description': "For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+
+l1t_rct_expert(dqmitems, "RctEmNonIsoEmEtEtaPhi",
+  [{ 'path': "L1T/L1TRCT/RctEmNonIsoEmEtEtaPhi", 'description': "For description see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a>  CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+
+l1t_rct_expert(dqmitems, "RctRegionsEtEtaPhi",
+  [{ 'path': "L1T/L1TRCT/RctRegionsEtEtaPhi", 'description': "For description see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+
 
 
 # list of summary GT histograms (dqmitems, dirPath , histoName)
 l1t_gt_single(dqmitems, "L1TGT", "algo_bits")
 l1t_gt_single(dqmitems, "L1TGT", "algo_bits_corr")
-l1t_gt_single(dqmitems, "L1TGT", "algo_bits_lumi")
 l1t_gt_single(dqmitems, "L1TGT", "event_lumi")
 l1t_gt_single(dqmitems, "L1TGT", "orbit_lumi")
 l1t_gt_single(dqmitems, "L1TGT", "evnum_trignum_lumi")
@@ -73,10 +82,10 @@ l1t_gct_single(dqmitems, "L1TGCT", "HFRing1Corr")
 l1t_gct_single(dqmitems, "L1TGCT", "HFTowerCountCorr")
 
 # list of summary RCT histograms (dqmitems, dirPath , histoName)
-l1t_rct_single(dqmitems, "L1TRCT", "RctIsoEmOccEtaPhi")
-l1t_rct_single(dqmitems, "L1TRCT", "RctNonIsoEmOccEtaPhi")
-l1t_rct_single(dqmitems, "L1TRCT", "RctIsoEmRank")
-l1t_rct_single(dqmitems, "L1TRCT", "RctNonIsoEmRank")
+#l1t_rct_single(dqmitems, "L1TRCT", "RctIsoEmOccEtaPhi")
+#l1t_rct_single(dqmitems, "L1TRCT", "RctNonIsoEmOccEtaPhi")
+#l1t_rct_single(dqmitems, "L1TRCT", "RctIsoEmRank")
+#l1t_rct_single(dqmitems, "L1TRCT", "RctNonIsoEmRank")
 
 # list of summary CSCTF histograms (dqmitems, dirPath , histoName)
 l1t_csctf_single(dqmitems, "L1TCSCTF", "CSCTF_errors")
