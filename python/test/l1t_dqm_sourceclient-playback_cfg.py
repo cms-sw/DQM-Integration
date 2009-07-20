@@ -30,20 +30,17 @@ process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG"   
 
-##process.GlobalTag.globaltag = 'CRUZET3_V6H2::All' # or any other appropriate
-#process.GlobalTag.globaltag = 'CRZT210_V1H::All' # or any other appropriate
-#process.prefer("GlobalTag")
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = 'GR09_31X_V1H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_31X_V3H::All' # or any other appropriate
 #process.prefer("GlobalTag")
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
-process.l1GtParameters.BstLengthBytes = 52
+#process.l1GtParameters.BstLengthBytes = 52
 
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
