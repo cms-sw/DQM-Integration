@@ -1,5 +1,4 @@
-#!/usr/bin/perl
-
+#!/usr/bin/env perl
 ################################################################################
 #
 # initialize
@@ -25,7 +24,8 @@ chop(my $hostname = `hostname -f`);
 
 
 # set variables
-my $port = 22101;
+#my $port = 22101;
+my $port = 40866;
 
 my $appname="evf::FUEventProcessor";
 
@@ -45,7 +45,7 @@ my $dqm_int = $ENV{"CMSSW_BASE"}."/src/DQM/Integration/test";
 my $dqm_common = $ENV{"CMSSW_RELEASE_BASE"}."/src/DQM/TrackerCommon/test";
 my $dqm_wdir = $pwd."/SiStripDQM";
 
-my $cfg_file = "sistrip_dqm_sourceclient-".$mode.".cfg";
+my $cfg_file = "sistrip_dqm_sourceclient-".$mode."_cfg.py";
 
 print "cfg file name : $cfg_file\n";
 #
@@ -78,8 +78,7 @@ print "copy cfg files ...\n";
 
 copy("$dqm_dir/../data/layer.js",           "$dqm_int/TkMap/layer.js");
 copy("$dqm_dir/../data/crate.js",           "$dqm_int/TkMap/crate.js");
-copy("$dqm_dir/../data/viewer.js",          "$dqm_int/TkMap/viewer.js");
-copy("$dqm_dir/../data/viewer.css",         "$dqm_int/TkMap/viewer.css");
+copy("$dqm_dir/../data/jqviewer.js",        "$dqm_int/TkMap/jqviewer.js");
 copy("$dqm_dir/../data/viewerHeader.xhtml", "$dqm_int/TkMap/viewerHeader.xhtml");
 copy("$dqm_dir/../data/viewerTrailer.xhtml","$dqm_int/TkMap/viewerTrailer.xhtml");
 
@@ -266,8 +265,9 @@ copy("$dqm_dir/js_files/CommonActions.js", "$dqm_wdir/js_files/CommonActions.js"
 copy("$dqm_dir/js_files/RequestHistos.js", "$dqm_wdir/js_files/RequestHistos.js");
 copy("$dqm_dir/js_files/TkMapFrame.js",    "$dqm_wdir/js_files/TkMapFrame.js");
 copy("$dqm_dir/css_files/style.css",       "$dqm_wdir/css_files/style.css");
-system qq[perl], qq[-pi -e], qq[s#40000#$port#], qq[$dqm_wdir/js_files/IMGC.js]; 
-system qq[perl], qq[-pi -e], qq[s#lid=27#lid=$localid#], qq[$dqm_wdir/js_files/IMGC.js]; 
+system qq[cp], qq[-r], qq[$dqm_common/jquery],    qq[$dqm_wdir/jquery];
+#system qq[perl], qq[-pi -e], qq[s#40000#$port#], qq[$dqm_wdir/js_files/IMGC.js]; 
+#system qq[perl], qq[-pi -e], qq[s#lid=27#lid=$localid#], qq[$dqm_wdir/js_files/IMGC.js]; 
 
 
 #
