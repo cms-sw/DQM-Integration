@@ -15,10 +15,15 @@ process.source = cms.Source("NewEventStreamFileReader",
                             #fileNames = cms.untracked.vstring('file:/cmsdisk1/lookarea_SM/MWGR21.00096778.0001.A.storageManager.00.0000.dat')
                             )
 
+import EventFilter.ESRawToDigi.esRawToDigi_cfi
+process.ecalPreshowerDigis = EventFilter.ESRawToDigi.esRawToDigi_cfi.esRawToDigi.clone()
+process.ecalPreshowerDigis.sourceTag = 'source'
+process.ecalPreshowerDigis.debugMode = False
 
-process.load('EventFilter/ESRawToDigi/esRawToDigi_cfi')
-process.esRawToDigi.sourceTag = 'source'
-process.esRawToDigi.debugMode = False
+process.load('RecoLocalCalo/EcalRecProducers/ecalPreshowerRecHit_cfi')
+process.ecalPreshowerRecHit.ESGain = cms.int32(2)
+process.ecalPreshowerRecHit.ESBaseline = cms.int32(0)
+process.ecalPreshowerRecHit.ESMIPADC = cms.double(50)
 
 process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.preScaler.prescaleFactor = 1
@@ -41,7 +46,7 @@ process.dqmSaver = cms.EDAnalyzer("DQMFileSaver",
 process.load("DQM/EcalPreshowerMonitorModule/EcalPreshowerMonitorTasks_cfi")
 process.load("DQM/EcalPreshowerMonitorClient/EcalPreshowerMonitorClient_cfi")
 
-process.p = cms.Path(process.preScaler*process.esRawToDigi*process.ecalPreshowerDefaultTasksSequence*process.ecalPreshowerMonitorClient*process.dqmSaver*process.dqmInfoES)
+process.p = cms.Path(process.preScaler*process.ecalPreshowerDigis*process.ecalPreshowerRecHit*process.ecalPreshowerDefaultTasksSequence*process.ecalPreshowerMonitorClient*process.dqmSaver*process.dqmInfoES)
 
 process.DQM.collectorHost = 'srv-c2c04-07'
 process.DQM.collectorPort = 9190
