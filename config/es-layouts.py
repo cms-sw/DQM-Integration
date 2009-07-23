@@ -1,5 +1,4 @@
 def ecalpreshowerlayout(i, p, *rows): i["EcalPreshower/Layouts/" + p] = DQMItem(layout=rows)
-def ecalpreshowerdescription(i, p, *rows): i["EcalPreshower/" + p] = DQMItem(layout=rows)
 
 # Quick Collections
 ecalpreshowerlayout(dqmitems, "01-IntegritySummary-EcalPreshower",
