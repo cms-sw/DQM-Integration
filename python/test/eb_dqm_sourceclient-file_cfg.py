@@ -194,9 +194,9 @@ process.ecalBarrelTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask
 
 #process.ecalBarrelTasksSequenceP5.remove(process.ecalBarrelSelectiveReadoutTask)
 
-process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.dqmSaver)
+process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask)
-process.r = cms.EndPath(process.ecalBarrelTasksSequenceP5)
+process.r = cms.EndPath(process.ecalBarrelTasksSequenceP5*process.dqmSaver)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
