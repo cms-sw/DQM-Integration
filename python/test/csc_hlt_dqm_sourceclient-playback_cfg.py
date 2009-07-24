@@ -7,6 +7,7 @@ process = cms.Process("CSC HLT DQM")
 #-------------------------------------------------
 
 process.load("DQM.CSCMonitorModule.test.csc_hlt_dqm_sourceclient_cfi")
+process.cscDQMEvF.EventProcessor.BINCHECKER_MODE_DDU = cms.untracked.bool(False)
 
 #----------------------------
 # Event Source
