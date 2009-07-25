@@ -14,8 +14,8 @@ SUBSYSTEMS  = {
   'EcalBarrel' : 'ECAL',
   'EcalEndcap' : 'ECAL',
   'Hcal' :       'HCAL',
-  'L1T' :        'TRG',
-  'L1TEMU' :     'TRG',
+  'L1T' :        'L1T',
+  'L1TEMU' :     'L1T',
   'Pixel' :      'PIX',
   'RPC' :        'RPC',
   'SiStrip' :    'STRIP'
