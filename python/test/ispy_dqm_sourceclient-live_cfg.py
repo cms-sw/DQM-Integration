@@ -18,7 +18,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
     cms.Service("IguanaService",
-    outputFileName = cms.untracked.string('/home/dqmdevlocal/output/iSpy_%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
@@ -64,7 +64,9 @@ process.load("VisReco.Analyzer.VisTrack_cfi")
 process.load("VisReco.Analyzer.VisTrackingRecHit_cfi")
 process.load("VisReco.Analyzer.VisTriggerEvent_cfi")
 
-process.VisCSCSegment.visCSCSegmentTag = cms.InputTag("muonCSCSegments")
+process.VisCSCSegment.visCSCSegmentTag = cms.InputTag("cscSegments")
+process.VisCSCSegment.VisCSCStripDigi = cms.InputTag("muonCSCDigis:MuonCSCStripDigi")
+process.VisCSCSegment.VisCSCWireDigi = cms.InputTag("muonCSCDigis:MuonCSCWireDigi")
 process.VisDTRecHit.visDTRecHitTag = cms.InputTag("dt1DRecHits")
 process.VisRPCRecHit.visRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.VisMET.visMETTag = cms.InputTag('genMetIC5GenJets')
@@ -95,7 +97,7 @@ process.vis = cms.Path(process.VisEvent*
                        process.VisHFRecHit*
                        process.VisHORecHit*
                        process.VisJet*
-                       process.VisMET*
+                       #process.VisMET*
                        #process.VisMuon*
                        process.VisPixelDigi*
                        process.VisSiPixelCluster*
