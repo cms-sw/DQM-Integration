@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("hlxdqmlive")
-process.load("DQMServices.Components.test.MessageLogger_cfi")
+process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
@@ -25,8 +25,10 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
     # untracked bool qtestOnEndJob = false
     qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml')
 )
+process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
+
 
 process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
-process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
+
 
 
