@@ -132,7 +132,7 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
                               process.cscDQMEvF +
  			      process.dtDQMEvF +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-#			      process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
+			      process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
  			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
