@@ -5,17 +5,15 @@ process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
     )
 
-#process.source = cms.Source("DQMHttpSource",
-#               sourceURL =   cms.untracked.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),        
-#               DQMconsumerName = cms.untracked.string('EventFilter Histogram Consumer'),
-#               DQMconsumerPriority = cms.untracked.string('normal'),
-#               headerRetryInterval = cms.untracked.int32(5),
-#               maxDQMEventRequestRate =  cms.untracked.double(1.0),
-#               topLevelFolderName =    cms.untracked.string('*')
-#                            )
+process.source = cms.Source("DQMHttpSource",
+               sourceURL =   cms.untracked.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),        
+               DQMconsumerName = cms.untracked.string('EventFilter Histogram Consumer'),
+               DQMconsumerPriority = cms.untracked.string('normal'),
+               headerRetryInterval = cms.untracked.int32(5),
+               maxDQMEventRequestRate =  cms.untracked.double(1.0),
+               topLevelFolderName =    cms.untracked.string('*')
+                            )
 
-process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'FED Consumer'
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
