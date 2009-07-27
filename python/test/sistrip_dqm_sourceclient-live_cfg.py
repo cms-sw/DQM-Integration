@@ -50,10 +50,12 @@ process.dqmEnvTr = cms.EDFilter("DQMEventInfo",
 # 0T field
 #process.load("Configuration.StandardSequences.MagneticField_0T_cff")
 # 3.8T field
-process.load("Configuration.StandardSequences.MagneticField_38T_cff")
+#process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 # 4.0T field
 #process.load("Configuration.StandardSequences.MagneticField_40T_cff")
 #process.prefer("VolumeBasedMagneticFieldESProducer")
+
+process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
 
 #-------------------------------------------------
 # GEOMETRY
