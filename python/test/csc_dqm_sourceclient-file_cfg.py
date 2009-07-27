@@ -8,6 +8,10 @@ process = cms.Process("CSCDQM")
 
 process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
 process.dqmCSCClient.EventProcessor.BINCHECKER_MODE_DDU = cms.untracked.bool(False)
+process.dqmCSCClient.EventProcessor.EFF_COLD_SIGFAIL = cms.untracked.double(2.0)
+process.dqmCSCClient.EventProcessor.EFF_HOT_THRESHOLD = cms.untracked.double(2.0)
+process.dqmCSCClient.EventProcessor.EFF_NODATA_THRESHOLD = cms.untracked.double(0.99)
+
 #process.dqmCSCClient.FractUpdateEventFreq = cms.untracked.uint32(100)
 #process.dqmCSCClient.effParameters.threshold_hot = cms.untracked.double(10.0)
 #process.dqmCSCClient.effParameters.sigfail_cold = cms.untracked.double(3.0)
