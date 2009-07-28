@@ -8,7 +8,7 @@ LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("csc", "dt", "eb", "ee", "hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
-modules = ("GuiDQM", "GuiEventDisplay")
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8888
@@ -18,12 +18,10 @@ server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.source('DQMUnknown', 'unknown', 'DQMArchive', 9192)
-server.source('DQMLive', 'dqm',
-              '--listen 9191', '--collector localhost:9190',
+server.source('DQMUnknown', 'unknown', 9191)
+server.source('DQMLive', 'dqm', 'localhost:9190', '--listen 9191',
               '--load ' + server.pathOfPlugin('render'))
-server.source('DQMArchive', 'file',
-              BASEDIR + "/dqm.db", '--listen 9192',
+server.source('DQMArchive', 'file', BASEDIR + "/idx", '--listen 9191',
               '--load ' + server.pathOfPlugin('render'))
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
