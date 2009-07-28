@@ -21,8 +21,8 @@ server.plugin('render', BASEDIR + "/style/*.cc")
 server.source('DQMUnknown', 'unknown', 9191)
 server.source('DQMLive', 'dqm', 'localhost:9190', '--listen 9191',
               '--load ' + server.pathOfPlugin('render'))
-server.source('DQMArchive', 'file', BASEDIR + "/idx", '--listen 9191',
-              '--load ' + server.pathOfPlugin('render'))
+server.source('DQMArchive', 'file', BASEDIR + "/idx", '^/Global/',
+              '--listen 9191', '--load ' + server.pathOfPlugin('render'))
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
