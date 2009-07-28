@@ -125,6 +125,3 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLT', '^HLT/',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi')
-
-server.workspace('EVDSnapshot', 99, 'Other', 'Event display', '/home/dqm/iguana-snapshots')
-
