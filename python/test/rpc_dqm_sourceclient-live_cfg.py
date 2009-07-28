@@ -54,7 +54,7 @@ process.rpcdigidqm.DigiEventsInterval = 100
 process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
-process.rpcdigidqm.DigiDQMSaveRootFile = True
+process.rpcdigidqm.DigiDQMSaveRootFile = False
 
 ################# DQM Client Modules ####################
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
