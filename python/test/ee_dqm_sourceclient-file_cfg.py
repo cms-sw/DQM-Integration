@@ -198,7 +198,8 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
 process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5*process.dqmSaver)
 
-process.q.remove(process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask)
+process.q.remove(process.simEcalTriggerPrimitiveDigis)
+process.q.remove(process.ecalEndcapTriggerTowerTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
