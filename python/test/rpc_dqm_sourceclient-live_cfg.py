@@ -89,7 +89,7 @@ process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
                                            )
 
 ################  Sequences ############################
-process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcMonitorLinkSynchro*process.rpcAfterPulse)
+process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcAfterPulse)
 process.rpcClient = cms.Sequence(process.qTesterRPC*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 process.p = cms.Path(process.rpcDigi*process.rpcClient)
 
