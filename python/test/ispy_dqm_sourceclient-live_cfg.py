@@ -12,7 +12,7 @@ process.GlobalTag.connect = "frontier://(serverurl=http://frontier1.cms:8000/Fro
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
-
+process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
@@ -20,6 +20,7 @@ process.add_(
     cms.Service("IguanaService",
     outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
+    bufferSize = cms.untracked.uint32(100),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
     outputMaxEvents = cms.untracked.int32(100),
@@ -58,7 +59,7 @@ process.load("VisReco.Analyzer.VisPixelDigi_cfi")
 process.load('VisReco.Analyzer.VisRPCRecHit_cfi')
 process.load("VisReco.Analyzer.VisSiPixelCluster_cfi")
 process.load("VisReco.Analyzer.VisSiPixelRecHit_cfi")
-process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
+#process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
 process.load("VisReco.Analyzer.VisSiStripDigi_cfi")
 process.load("VisReco.Analyzer.VisTrack_cfi")
 process.load("VisReco.Analyzer.VisTrackingRecHit_cfi")
@@ -71,10 +72,10 @@ process.VisDTRecHit.visDTRecHitTag = cms.InputTag("dt1DRecHits")
 process.VisRPCRecHit.visRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.VisMET.visMETTag = cms.InputTag('genMetIC5GenJets')
 process.VisMuon.visMuonTag = cms.InputTag('muons')
-process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
+#process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
 process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
-
+process.VisTrack.visTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
 process.vis = cms.Path(process.VisEvent*
                        process.VisEventSetup*
                        process.VisBasicCluster*
@@ -102,7 +103,7 @@ process.vis = cms.Path(process.VisEvent*
                        process.VisPixelDigi*
                        process.VisSiPixelCluster*
                        process.VisSiPixelRecHit*
-                       process.VisSiStripCluster*
+                       #process.VisSiStripCluster*
                        process.VisSiStripDigi*
                        process.VisL1GlobalTriggerReadoutRecord*
                        process.VisTriggerEvent)
