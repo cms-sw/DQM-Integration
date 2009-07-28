@@ -42,6 +42,18 @@ process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
 #process.l1GtParameters.BstLengthBytes = 52
 
+
+##  Available data masks (case insensitive):
+##    gt, muons, jets, taujets, isoem, nonisoem, met
+process.l1tEventInfoClient.dataMaskedSystems =
+cms.untracked.vstring("Jets","TauJets","IsoEm","NonIsoEm","MET")
+
+##  Available emulator masks (case insensitive):
+##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
+process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
+
+
+
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
 
