@@ -182,7 +182,8 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask)
 process.r = cms.EndPath(process.ecalBarrelTasksSequenceP5*process.dqmSaver)
 
-process.q.remove(process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask)
+process.q.remove(process.simEcalTriggerPrimitiveDigis)
+process.q.remove(process.ecalBarrelTriggerTowerTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
@@ -207,6 +208,8 @@ process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHi
 process.ecalBarrelCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 
 process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+#process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
+process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 
 process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 
@@ -219,7 +222,7 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.updateTime = 4
-#process.ecalBarrelMonitorClient.laserWavelengths = [ 1 ]
+#process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'Summary']

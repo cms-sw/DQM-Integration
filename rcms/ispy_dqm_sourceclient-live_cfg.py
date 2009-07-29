@@ -12,7 +12,7 @@ process.GlobalTag.connect = "frontier://(serverurl=http://frontier1.cms:8000/Fro
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
-
+process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
@@ -20,6 +20,7 @@ process.add_(
     cms.Service("IguanaService",
     outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
+    bufferSize = cms.untracked.uint32(100),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
     outputMaxEvents = cms.untracked.int32(100),
@@ -32,7 +33,7 @@ process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
 )
 
-process.load("VisReco.Analyzer.VisEventSetup_cfi")
+#process.load("VisReco.Analyzer.VisEventSetup_cfi")
 process.load("VisReco.Analyzer.VisEvent_cfi")
 process.load("VisReco.Analyzer.VisBasicCluster_cfi")
 process.load("VisReco.Analyzer.VisCSCSegment_cfi")
@@ -52,13 +53,13 @@ process.load("VisReco.Analyzer.VisHFRecHit_cfi")
 process.load("VisReco.Analyzer.VisHORecHit_cfi")
 process.load("VisReco.Analyzer.VisJet_cfi")
 process.load("VisReco.Analyzer.VisL1GlobalTriggerReadoutRecord_cfi")
-process.load("VisReco.Analyzer.VisMET_cfi")
-process.load("VisReco.Analyzer.VisMuon_cfi")
+#process.load("VisReco.Analyzer.VisMET_cfi")
+#process.load("VisReco.Analyzer.VisMuon_cfi")
 process.load("VisReco.Analyzer.VisPixelDigi_cfi")
 process.load('VisReco.Analyzer.VisRPCRecHit_cfi')
 process.load("VisReco.Analyzer.VisSiPixelCluster_cfi")
 process.load("VisReco.Analyzer.VisSiPixelRecHit_cfi")
-process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
+#process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
 process.load("VisReco.Analyzer.VisSiStripDigi_cfi")
 process.load("VisReco.Analyzer.VisTrack_cfi")
 process.load("VisReco.Analyzer.VisTrackingRecHit_cfi")
@@ -69,14 +70,22 @@ process.VisCSCSegment.VisCSCStripDigi = cms.InputTag("muonCSCDigis:MuonCSCStripD
 process.VisCSCSegment.VisCSCWireDigi = cms.InputTag("muonCSCDigis:MuonCSCWireDigi")
 process.VisDTRecHit.visDTRecHitTag = cms.InputTag("dt1DRecHits")
 process.VisRPCRecHit.visRPCRecHitTag = cms.InputTag("rpcRecHits")
-process.VisMET.visMETTag = cms.InputTag('genMetIC5GenJets')
-process.VisMuon.visMuonTag = cms.InputTag('muons')
-process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
+#process.VisMET.visMETTag = cms.InputTag('genMetIC5GenJets')
+#process.VisMuon.visMuonTag = cms.InputTag('muons')
+#process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
 process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
+process.VisTrack.visTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
+
+## Filtering out calilbration events
+
+process.physicsEventsFilter = cms.EDFilter("HLTTriggerTypeFilter",
+                                  # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+                                  SelectedTriggerType = cms.int32(1)
+                                  ) 
 
 process.vis = cms.Path(process.VisEvent*
-                       process.VisEventSetup*
+                       #process.VisEventSetup*
                        process.VisBasicCluster*
                        process.VisCSCSegment*
                        process.VisCSCStripDigi*
@@ -102,11 +111,11 @@ process.vis = cms.Path(process.VisEvent*
                        process.VisPixelDigi*
                        process.VisSiPixelCluster*
                        process.VisSiPixelRecHit*
-                       process.VisSiStripCluster*
+                       #process.VisSiStripCluster*
                        process.VisSiStripDigi*
                        process.VisL1GlobalTriggerReadoutRecord*
                        process.VisTriggerEvent)
 
-process.p3= cms.Path(process.RawToDigi)
+process.p3= cms.Path(process.physicsEventsFilter*process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
 process.schedule = cms.Schedule(process.p3,process.p4,process.vis)

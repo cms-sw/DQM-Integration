@@ -37,6 +37,16 @@ process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
 #process.l1GtParameters.BstLengthBytes = 52
 
+
+##  Available data masks (case insensitive):
+##    gt, muons, jets, taujets, isoem, nonisoem, met
+process.l1tEventInfoClient.dataMaskedSystems = cms.untracked.vstring("Jets","TauJets","IsoEm","NonIsoEm","MET")
+
+##  Available emulator masks (case insensitive):
+##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
+process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
+
+
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
 process.GlobalTag.globaltag = 'GR09_31X_V3H::All' # or any other appropriate

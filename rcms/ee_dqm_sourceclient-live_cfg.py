@@ -182,7 +182,8 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
 process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5*process.dqmSaver)
 
-process.q.remove(process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask)
+process.q.remove(process.simEcalTriggerPrimitiveDigis)
+process.q.remove(process.ecalEndcapTriggerTowerTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
@@ -207,8 +208,12 @@ process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHi
 process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
 process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+#process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
+process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
 
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+#process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
+process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
 process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
@@ -221,10 +226,10 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
-#process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
+process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 #process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
