@@ -8,6 +8,10 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
 process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")    
 
+from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
+newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
+process.globalReplace("L1HardwareValidation", newHWSequence)
+
 #include geometry only at top level cfg
 process.load("Configuration.StandardSequences.Geometry_cff")
 
@@ -22,7 +26,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 
 #online
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = 'GR09_31X_V3H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_31X_V3AH::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 
