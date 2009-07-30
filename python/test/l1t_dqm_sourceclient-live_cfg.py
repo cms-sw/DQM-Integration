@@ -39,7 +39,7 @@ process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
 
 
 ##  Available data masks (case insensitive):
-##    gt, muons, jets, taujets, isoem, nonisoem, met
+##    all, gt, muons, jets, taujets, isoem, nonisoem, met
 process.l1tEventInfoClient.dataMaskedSystems = cms.untracked.vstring("Jets","TauJets","IsoEm","NonIsoEm","MET")
 
 ##  Available emulator masks (case insensitive):
