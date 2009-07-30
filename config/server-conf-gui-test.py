@@ -8,7 +8,7 @@ LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("csc", "dt", "eb", "ee", "es","hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
-modules = ("GuiDQM", "GuiEventDisplay")
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 #server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'
@@ -20,6 +20,9 @@ server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
+server.extend('DQMFileAccess', None, None,
+	      { "dqm": "/dqmdata/dqm/merged",
+	        "ispy": "/dqmdata/EventDisplay/dropbox/000" })
 #server.extend('EVDSnapshotUpload', '/home/dqm/iguana-snapshots')
 #server.source('EVDSnapshot', 'evd', '/home/dqm/iguana-snapshots')
 server.source('DQMUnknown', 'unknown', 9091)
