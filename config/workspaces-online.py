@@ -47,7 +47,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'RPC', '^RPC/',
                  'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',      
                  'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy') 
 
-server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower',
+server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
