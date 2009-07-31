@@ -15,6 +15,16 @@ process.globalReplace("L1HardwareValidation", newHWSequence)
 #include geometry only at top level cfg
 process.load("Configuration.StandardSequences.Geometry_cff")
 
+
+##  Available data masks (case insensitive):
+##    all, gt, muons, jets, taujets, isoem, nonisoem, met
+process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
+
+##  Available emulator masks (case insensitive):
+##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
+#process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("")
+
+
 #specify subsystems with qt's to be temporarily masked in summary map
 #sequence: dtf,dtp,ctf,ctp,rpc,gmt, etp,htp,rct,gct,gt
 #process.l1temuEventInfoClient.maskedSystems = [0,1,1,0,0,0, 1,1,1,0,1]
