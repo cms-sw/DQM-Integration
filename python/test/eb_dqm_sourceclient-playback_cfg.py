@@ -174,13 +174,13 @@ process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker
 
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.dqmEnv*process.ecalBarrelMonitorClient*process.dqmQTestEB)
 
-process.ecalBarrelTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelSelectiveReadoutTask*process.ecalBarrelRawDataTask*process.ecalBarrelLaserTask*process.ecalBarrelPedestalTask*process.ecalBarrelTestPulseTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask)
-
-#process.ecalBarrelTasksSequenceP5.remove(process.ecalBarrelSelectiveReadoutTask)
+process.ecalBarrelTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelRawDataTask*process.ecalBarrelLaserTask*process.ecalBarrelPedestalTask*process.ecalBarrelTestPulseTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
-process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask)
+process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
 process.r = cms.EndPath(process.ecalBarrelTasksSequenceP5*process.dqmSaver)
+
+#process.q.remove(process.ecalBarrelSelectiveReadoutTask)
 
 process.q.remove(process.simEcalTriggerPrimitiveDigis)
 process.q.remove(process.ecalBarrelTriggerTowerTask)
