@@ -66,7 +66,7 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 #  Reconstruction Modules
 #-----------------------
 ###process.load("Configuration.StandardSequences.Reconstruction_cff")
-process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
+##process.load("Configuration.StandardSequences.ReconstructionCosmics_cff")
 # Real data raw to digi
 process.load("EventFilter.SiPixelRawToDigi.SiPixelRawToDigi_cfi")
 #process.load("Configuration.StandardSequences.RawToDigi_cff")
@@ -76,19 +76,19 @@ process.siPixelDigis.IncludeErrors = True
 # Local Reconstruction
 process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 
-process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
-process.siStripDigis.ProductLabel = 'source'
+#process.load("EventFilter.SiStripRawToDigi.SiStripRawToDigis_standard_cff")
+#process.siStripDigis.ProductLabel = 'source'
 
-process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
-process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
-process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
+#process.load("RecoLocalTracker.SiStripClusterizer.SiStripClusterizer_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitConverter_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi")
+#process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi")
+#process.load("RecoLocalTracker.SiStripZeroSuppression.SiStripZeroSuppression_cfi")
 
-process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
-process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
+#process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+#process.load("RecoPixelVertexing.Configuration.RecoPixelVertexing_cff")
 ##process.load("RecoLocalTracker.Configuration.RecoLocalTracker_Cosmics_cff")
-process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
+#process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
 
 #--------------------------
@@ -115,12 +115,12 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 #--------------------------
 #process.Reco = cms.Sequence(process.siPixelDigis)
 process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
-process.RecoStrips = cms.Sequence(process.siStripDigis*process.siStripClusters)
-process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
-process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
-process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
-process.trackReco = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.tracksP5) #*process.rstracks 
+#process.RecoStrips = cms.Sequence(process.siStripDigis*process.siStripClusters)
+#process.siPixelLocalReco = cms.Sequence(process.siPixelRecHits) 
+#process.siStripLocalReco = cms.Sequence(process.siStripMatchedRecHits)
+#process.trackerLocalReco = cms.Sequence(process.siPixelLocalReco*process.siStripLocalReco)
+#process.trackReco = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracksP5) #*process.rstracks 
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
 
-#process.p = cms.Path(process.siPixelDigis*process.dqmEnv*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.PixelP5DQMClientWithDataCertification*process.dqmSaver)
-process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)
+process.p = cms.Path(process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
+#process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)
