@@ -30,7 +30,7 @@ process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
-#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/hcal_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
 
 #----------------------------
 # DQM Live Environment
