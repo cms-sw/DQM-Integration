@@ -44,7 +44,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'DT', '^DT/',
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'RPC', '^RPC/',
                  'RPC/Layouts/RPC_Summary/TOP_Summary_ChamberQuality',
-                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',      
+                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',
                  'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy') 
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
@@ -53,15 +53,14 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
                 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
-                 'EcalBarrel/Layouts/00-Global-Summary-EcalBarrel',
-                 'EcalBarrel/Layouts/01-Occupancy-Summary-EcalBarrel',
-                 'EcalBarrel/Layouts/02-Cluster-Summary-EcalBarrel')
+                 'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
+                 'EcalBarrel/Layouts/01 Occupancy Summary EcalBarrel',
+                 'EcalBarrel/Layouts/02 Cluster Summary EcalBarrel')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
-                 'EcalEndcap/Layouts/00-Global-Summary-EcalEndcap',
-                 'EcalEndcap/Layouts/01-Occupancy-Summary-EcalEndcap',
-                 'EcalEndcap/Layouts/02-Cluster-Summary-EcalEndcap')
-
+                 'EcalEndcap/Layouts/00 Global Summary EcalEndcap',
+                 'EcalEndcap/Layouts/01 Occupancy Summary EcalEndcap',
+                 'EcalEndcap/Layouts/02 Cluster Summary EcalEndcap')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL DataFormat Problems',
