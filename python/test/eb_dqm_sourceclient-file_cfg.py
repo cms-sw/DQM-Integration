@@ -221,6 +221,16 @@ process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:
 #process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 
+#process.ecalBarrelPedestalTask.MGPAGains = [ 1, 6, 12 ]
+#process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
+#process.ecalBarrelPedestalTask.MGPAGainsPN = [ 1, 16 ]
+#process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
+
+#process.ecalBarrelTestPulseTask.MGPAGains = [ 1, 6, 12 ]
+#process.ecalBarrelTestPulseTask.MGPAGains = [ 12 ]
+#process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 1, 16 ]
+#process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 16 ]
+
 process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
@@ -233,6 +243,10 @@ process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfi
 process.ecalBarrelMonitorClient.location = 'P5'
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
+#process.ecalBarrelMonitorClient.MGPAGains = [ 1, 6, 12 ]
+#process.ecalBarrelMonitorClient.MGPAGains = [ 12 ]
+#process.ecalBarrelMonitorClient.MGPAGainsPN = [ 1, 16 ]
+#process.ecalBarrelMonitorClient.MGPAGainsPN = [ 16 ]
 #process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 

@@ -225,6 +225,16 @@ process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:Ec
 #process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
 process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
+#process.ecalEndcapPedestalTask.MGPAGains = [ 1, 6, 12 ]
+#process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
+#process.ecalEndcapPedestalTask.MGPAGainsPN = [ 1, 16 ]
+#process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
+
+#process.ecalEndcapTestPulseTask.MGPAGains = [ 1, 6, 12 ]
+#process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
+#process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 1, 16 ]
+#process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 16 ]
+
 process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
@@ -239,6 +249,10 @@ process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.MGPAGains = [ 1, 6, 12 ]
+#process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
+#process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
+#process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
 #process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
