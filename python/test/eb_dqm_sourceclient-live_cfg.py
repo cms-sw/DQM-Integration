@@ -248,5 +248,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/eb_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/eb_reference.root'
 
