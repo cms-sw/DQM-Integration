@@ -6,8 +6,8 @@ process.maxEvents = cms.untracked.PSet(
     )
 
 process.source = cms.Source("DQMHttpSource",
-               sourceURL =   cms.untracked.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),        
-               DQMconsumerName = cms.untracked.string('EventFilter Histogram Consumer'),
+               sourceURL =   cms.untracked.string('http://srv-c2c05-09.cms:22100/urn:xdaq-application:lid=30'),        
+               DQMconsumerName = cms.untracked.string('FED EventFilter Histogram Consumer'),
                DQMconsumerPriority = cms.untracked.string('normal'),
                headerRetryInterval = cms.untracked.int32(5),
                maxDQMEventRequestRate =  cms.untracked.double(1.0),
