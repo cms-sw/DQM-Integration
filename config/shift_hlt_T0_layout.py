@@ -62,7 +62,7 @@ hltlayout(dqmitems,"05-HLT Shift Histogram",
   	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__offEtaoffPhiOff", 'description': "X=eta and Y=phi for RECO muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"06-HLT Shift Histogram",
-  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__l1Etal1PhiOnL1", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"07-HLT Shift Histogram",
   	[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
