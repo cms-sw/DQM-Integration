@@ -174,13 +174,13 @@ process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker
 
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.dqmEnv*process.ecalEndcapMonitorClient*process.dqmQTestEE)
 
-process.ecalEndcapTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapSelectiveReadoutTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask)
-
-#process.ecalEndcapTasksSequenceP5.remove(process.ecalEndcapSelectiveReadoutTask)
+process.ecalEndcapTasksSequenceP5 = cms.Sequence(process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapRawDataTask*process.ecalEndcapLaserTask*process.ecalEndcapLedTask*process.ecalEndcapPedestalTask*process.ecalEndcapTestPulseTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask)
 
 process.p = cms.Path(process.ecalDataSequence*process.ecalEndcapMonitorSequence)
-process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask)
+process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalEndcapPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
 process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5*process.dqmSaver)
+
+#process.q.remove(process.ecalEndcapSelectiveReadoutTask)
 
 process.q.remove(process.simEcalTriggerPrimitiveDigis)
 process.q.remove(process.ecalEndcapTriggerTowerTask)
@@ -190,8 +190,6 @@ process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
 process.dqmEnv.subSystemFolder = 'EcalEndcap'
-process.dqmSaver.referenceHandling = 'qtests'
-#process.dqmSaver.referenceHandling = 'all'
 
 process.ecalUncalibHit2.MinAmplBarrel = 12.
 process.ecalUncalibHit2.MinAmplEndcap = 16.
@@ -215,6 +213,16 @@ process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:Ec
 #process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
 process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
+#process.ecalEndcapPedestalTask.MGPAGains = [ 1, 6, 12 ]
+process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
+#process.ecalEndcapPedestalTask.MGPAGainsPN = [ 1, 16 ]
+process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
+
+#process.ecalEndcapTestPulseTask.MGPAGains = [ 1, 6, 12 ]
+process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
+#process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 1, 16 ]
+process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 16 ]
+
 process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
@@ -230,6 +238,10 @@ process.ecalEndcapMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.MGPAGains = [ 1, 6, 12 ]
+process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
+#process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
+process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
 #process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
@@ -242,5 +254,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/ee_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/ee_reference.root'
 

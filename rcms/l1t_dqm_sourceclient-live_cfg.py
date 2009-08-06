@@ -14,7 +14,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
 
-#replace DQMStore.referenceFileName = "L1T_reference.root"
+replace DQMStore.referenceFileName = "/dqmdata/dqm/l1t_reference.root"
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
