@@ -13,8 +13,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-
-replace DQMStore.referenceFileName = "/dqmdata/dqm/l1t_reference.root"
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/l1t_reference.root"
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -49,10 +48,11 @@ process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = 'GR09_31X_V4H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_31X_V6H::All' # or any other appropriate
 #process.prefer("GlobalTag")
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
 
+#process.hltMonScal.remove("l1tscalers")

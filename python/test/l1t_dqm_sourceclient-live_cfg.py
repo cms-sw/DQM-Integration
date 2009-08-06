@@ -13,8 +13,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-
-replace DQMStore.referenceFileName = "/dqmdata/dqm/l1t_reference.root"
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/l1t_reference.root"
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -56,3 +55,4 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
 
+#process.hltMonScal.remove("l1tscalers")
