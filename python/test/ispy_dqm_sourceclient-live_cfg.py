@@ -7,7 +7,7 @@ process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cf
 process.load('Configuration.StandardSequences.RawToDigi_Data_cff')
 process.load('Configuration.StandardSequences.ReconstructionCosmics_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-process.GlobalTag.globaltag = 'GR09_31X_V4H::All'
+process.GlobalTag.globaltag = 'GR09_31X_V6H::All'
 process.GlobalTag.connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
 
 process.load("DQM.Integration.test.inputsource_cfi")

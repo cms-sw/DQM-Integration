@@ -8,6 +8,7 @@ DQM.collectorPort = 9090
 from DQMServices.Components.DQMEnvironment_cfi import *
 
 dqmSaver.convention = 'Online'
+dqmSaver.referenceHandling = 'all'
 dqmSaver.dirName = '/home/dqmprolocal/output'
 dqmSaver.producer = 'DQM'
 dqmSaver.saveByTime = 4

@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
 process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 process.load("DQMServices.Core.DQM_cfg")
 
@@ -15,7 +16,7 @@ process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeomet
 
 process.load( "Configuration.StandardSequences.FrontierConditions_GlobalTag_cff" )
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_31X_V4H::All"
+process.GlobalTag.globaltag = "GR09_31X_V6H::All"
 
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
