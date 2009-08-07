@@ -1,35 +1,35 @@
 def shiftpixellayout(i, p, *rows): i["00 Shift/Pixel/" + p] = DQMItem(layout=rows)
-shiftpixellayout(dqmitems, "00 - Mean number of FED errors per Pixel FED Crate",
+shiftpixellayout(dqmitems, "00 - Mean number of FED errors per FED",
   [{ 'path': "Pixel/AdditionalPixelErrors/SUMOFF_NErrors_FEDErrors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "01 - Mean number of FED errors per Pixel Barrel Ladder",
+shiftpixellayout(dqmitems, "01 - Mean number of FED errors Barrel",
   [{ 'path': "Pixel/Barrel/SUMOFF_NErrors_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "02 - Mean number of FED errors per Pixel Endcap Blade",
+shiftpixellayout(dqmitems, "02 - Mean number of FED errors Endcap",
   [{ 'path': "Pixel/Endcap/SUMOFF_NErrors_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "03 - Mean digi charge per Barrel Ladder",
+shiftpixellayout(dqmitems, "03 - Mean digi charge Barrel",
   [{ 'path': "Pixel/Barrel/SUMOFF_adc_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "04 - Mean digi occupancy per Barrel Ladder",
+shiftpixellayout(dqmitems, "04 - Mean digi occupancy Barrel",
   [{ 'path': "Pixel/Barrel/SUMOFF_ndigis_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "05 - Mean digi charge per Endcap Blade",
+shiftpixellayout(dqmitems, "05 - Mean digi charge Endcap",
   [{ 'path': "Pixel/Endcap/SUMOFF_adc_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "06 - Mean digi occupancy per Endcap Blade",
+shiftpixellayout(dqmitems, "06 - Mean digi occupancy Endcap",
   [{ 'path': "Pixel/Barrel/SUMOFF_ndigis_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "07 - Charge distribution for all Barrel clusters on tracks",
+shiftpixellayout(dqmitems, "07 - Charge of clusters on tracks Barrel",
   [{ 'path': "Pixel/Clusters/OnTrack/charge_siPixelClusters_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "08 - Charge distribution for all Endcap clusters on tracks",
+shiftpixellayout(dqmitems, "08 - Charge of clusters on tracks Endcap",
   [{ 'path': "Pixel/Clusters/OnTrack/charge_siPixelClusters_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "09 - Charge distribution for all Barrel clusters off tracks",
+shiftpixellayout(dqmitems, "09 - Charge of clusters off tracks Barrel",
   [{ 'path': "Pixel/Clusters/OffTrack/charge_siPixelClusters_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-shiftpixellayout(dqmitems, "10 - Charge distribution for all Endcap clusters off tracks",
+shiftpixellayout(dqmitems, "10 - Charge of clusters off tracks Endcap",
   [{ 'path': "Pixel/Clusters/OffTrack/charge_siPixelClusters_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
 shiftpixellayout(dqmitems, "11 - Pixel track counters",
