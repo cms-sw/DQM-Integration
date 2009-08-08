@@ -73,6 +73,9 @@ process.VisRPCRecHit.visRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.VisMET.visMETTag = cms.InputTag('genMetIC5GenJets')
 process.VisMuon.visMuonTag = cms.InputTag('muons')
 #process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
+process.VisPixelDigi.visPixelDigiTag= cms.InputTag('source')
+process.VisSiPixelCluster.visSiPixelClusterTag= cms.InputTag('source')
+
 process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
 process.VisTrack.visTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
@@ -101,13 +104,18 @@ process.vis = cms.Path(process.VisEvent*
                        #process.VisMET*
                        #process.VisMuon*
                        process.VisPixelDigi*
+		       process.VisSiPixelRecHit*
                        process.VisSiPixelCluster*
-                       process.VisSiPixelRecHit*
+                       
                        #process.VisSiStripCluster*
                        process.VisSiStripDigi*
                        process.VisL1GlobalTriggerReadoutRecord*
                        process.VisTriggerEvent)
-
-process.p3= cms.Path(process.RawToDigi)
+process.physicsEventsFilter = cms.EDFilter("HLTTriggerTypeFilter",
+                                  # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+                                  SelectedTriggerType = cms.int32(1)
+                                  ) 
+process.p3= cms.Path(process.physicsEventsFilter*process.RawToDigi)
+#process.p3= cms.Path(process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
 process.schedule = cms.Schedule(process.p3,process.p4,process.vis)

@@ -17,19 +17,27 @@ process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
     doSynchro = cms.bool(False)
 )
 
-process.RPCCabling = cms.ESSource("PoolDBESSource",
-    DBParameters = cms.PSet(
-        messageLevel = cms.untracked.int32(0),
-        authenticationPath = cms.untracked.string('/nfshome0/hltpro/cmssw/cfg/')
-    ),
-    timetype = cms.string('runnumber'),
-    toGet = cms.VPSet(cms.PSet(
-        record = cms.string('RPCEMapRcd'),
-        tag = cms.string('RPCEMap_v2')
-    )),
-    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_RPC'),
-    siteLocalConfig = cms.untracked.bool(False)
-)
+
+
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.globaltag = "GR09_31X_V6H::All"
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+
+
+## process.RPCCabling = cms.ESSource("PoolDBESSource",
+##     DBParameters = cms.PSet(
+##         messageLevel = cms.untracked.int32(0),
+##         authenticationPath = cms.untracked.string('/nfshome0/hltpro/cmssw/cfg/')
+##     ),
+##     timetype = cms.string('runnumber'),
+##     toGet = cms.VPSet(cms.PSet(
+##         record = cms.string('RPCEMapRcd'),
+##         tag = cms.string('RPCEMap_v2')
+##     )),
+##     connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_RPC'),
+##     siteLocalConfig = cms.untracked.bool(False)
+## )
 
 ################# RPC Rec Hits  ######################
 process.load("RecoLocalMuon.RPCRecHit.rpcRecHits_cfi")

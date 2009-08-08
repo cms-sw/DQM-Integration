@@ -182,8 +182,8 @@ process.r = cms.EndPath(process.ecalEndcapTasksSequenceP5*process.dqmSaver)
 
 #process.q.remove(process.ecalEndcapSelectiveReadoutTask)
 
-process.q.remove(process.simEcalTriggerPrimitiveDigis)
-process.q.remove(process.ecalEndcapTriggerTowerTask)
+#process.q.remove(process.simEcalTriggerPrimitiveDigis)
+#process.q.remove(process.ecalEndcapTriggerTowerTask)
 
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
@@ -242,8 +242,8 @@ process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
 #process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
 process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
-#process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
-process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'Summary']
+process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
+#process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1
