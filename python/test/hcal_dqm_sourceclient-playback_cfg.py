@@ -50,14 +50,8 @@ process.dqmEnv.subSystemFolder    = "Hcal"
 #-----------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_31X_V4H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_31X_V6H::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-
-#global tags for 3_1_X?
-#process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-#process.GlobalTag.globaltag = "CRAFT_30X::All"
-#process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
@@ -67,10 +61,47 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 #-----------------------------
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
+
+process.essourceSev =  cms.ESSource("EmptyESSource",
+                                    recordName = cms.string("HcalSeverityLevelComputerRcd"),
+                                    firstValid = cms.vuint32(1),
+                                    iovIsRunNotTime = cms.bool(True)
+                                    )
+
+
+process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
+                                      SeverityLevels = cms.VPSet(
+    cms.PSet( Level = cms.int32(0),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(5),
+              RecHitFlags = cms.vstring('HSCP_R1R2','HSCP_FracLeader','HSCP_OuterEnergy',
+                                        'HSCP_ExpFit','ADCSaturationBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(8),
+              RecHitFlags = cms.vstring('HBHEHpdHitMultiplicity', 'HBHEPulseShape', 'HOBit',
+                                        'HFDigiTime', 'HFLongShort', 'ZDCBit', 'CalibrationBit',
+                                        'TimingErrorBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(10),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellHot')
+              ),
+    cms.PSet( Level = cms.int32(20),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellOff', 'HcalCellDead')
+              )
+    ),
+                                      RecoveredRecHitBits = cms.vstring('TimingAddedBit','TimingSubtractedBit'),
+                                      DropChannelStatusBits = cms.vstring('HcalCellOff',) #'HcalCellDead' had also been present
+                                      )
 
 # hcalMonitor configurable values -----------------------
 process.hcalMonitor.debug = 0
@@ -86,6 +117,7 @@ process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = True
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = False
+process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
