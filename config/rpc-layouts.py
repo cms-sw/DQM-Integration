@@ -5,7 +5,8 @@ def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
 rpclink = "   >>> <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC>Description</a>";
 dead = "RPC Dead Channels Fraction ";
 onebin = "RPC Cluster Size In First Bin Normalized by Entries ";
-top = "RPC TOP Summary Histogram ";
+top = "RPC TOP Summary Histogram <br><font color=green><b>GREEN</b> - Good Chamber </font><br> <font color=blue><b>BLUE</b> - Chamber OFF</font><br> <font color=yellow><b>YALLOW</b> - Noisy Strip </font><br> <font color=orange><b>ORANGE</b> - Noisy Chamber </font><br> <font color=pink><b>PINK</b> - Partly Dead Chamber </font><br> <font color=red><b>RED</b> - Fully Dead Chamber </font><br> <font color=aqua><b>LIGHT BLUE</b> - Bad Occupancy Shape </font> <br>";
+
 asymmetry = "RPC AsymmetryLeftRight ";
 numberofdigi = "RPC NumberOfDigi ";
 noisy = "RPC NoisyStrips ";
