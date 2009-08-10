@@ -3,7 +3,7 @@ import ROOT, xmlrpclib
  
 FOLDERS     = { 
   'reportSummaryContents': 'DQM', 
-  'CertificationContents': 'Cert', 
+  'CertificationContents': 'CERT', 
   'DAQContents': 'DAQ', 
   'DCSContents': 'DCS' 
 }
@@ -60,7 +60,7 @@ def getSummaryValues(file_name, shift_type, translate):
     sub_key = sub_name
     if translate:
       sub_key = SUBSYSTEMS[sub_name]
-
+    
     if not result.has_key(sub_key):
       result[sub_key] = {}
 
@@ -78,14 +78,16 @@ def getSummaryValues(file_name, shift_type, translate):
         if folder_id == 'DQM' and shift_type != None:
           folder_id = 'DQM ' + shift_type.upper()
 
-      result[sub_key][folder_id] = {}
+      if not result[sub_key].has_key(folder_id):
+        result[sub_key][folder_id] = {}
 
       for value in folder.GetListOfKeys():
         full_name = value.ReadObj().GetName()
         if not value.IsFolder() and re.match("^<.+>f=-{,1}[0-9\.]+</.+>$", full_name):
           value_name = re.sub("<(?P<n>[^>]+)>.+", "\g<n>", full_name)
           value_numb = float(re.sub("<.+>f=(?P<n>-{,1}[0-9\.]+)</.+>", "\g<n>", full_name))
-          result[sub_key][folder_id][value_name] = value_numb
+          if not result[sub_key][folder_id].has_key(value_name):
+            result[sub_key][folder_id][value_name] = value_numb
 
   f.Close()
 
