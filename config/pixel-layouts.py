@@ -13,10 +13,10 @@ pixellayout(dqmitems, "00 - Pixel_Error_Summary",
   )
 pixellayout(dqmitems, "01 - Pixel_Digi_Occupancy",
   [{ 'path': "Pixel/Endcap/endcapOccupancyMap",
-     'description': "Digi occupancy map for all barrel modules combined",
+     'description': "Digi occupancy map for all Endcap modules combined",
      'draw': { 'withref': "no" }}],
   [{ 'path': "Pixel/Barrel/barrelOccupancyMap",
-     'description': "Digi occupancy map for all endcap modules combined",
+     'description': "Digi occupancy map for all Barrel modules combined",
      'draw': { 'withref': "no" }}]
   )
 pixellayout(dqmitems, "02 - Pixel_Noise_Summary",
@@ -114,3 +114,60 @@ pixellayout(dqmitems, "08 - Pixel_NoisyPixels_Summary",
      'description': "Ratio of events with at least one digi per module over all events taken, one entry per pixel - entries above 0.001 are noisy pixels!",
      'draw': { 'withref': "yes" }}]
   )
+
+pixellayout(dqmitems, "09 - Barrel_Digi_Occupancy_per_Shell",
+  [{ 'path': "Pixel/Barrel/Shell_mI/barrelOccupancyMap",
+     'description': "Digi occupancy map for all Barrel Shell_mI modules combined",
+     'draw': { 'withref': "no" }},
+   { 'path': "Pixel/Barrel/Shell_mO/barrelOccupancyMap",
+     'description': "Digi occupancy map for all Barrel Shell_mO modules combined",
+     'draw': { 'withref': "no" }}],
+  [{ 'path': "Pixel/Barrel/Shell_pI/barrelOccupancyMap",
+     'description': "Digi occupancy map for all Barrel Shell_pI modules combined",
+     'draw': { 'withref': "no" }},
+   { 'path': "Pixel/Barrel/Shell_pO/barrelOccupancyMap",
+     'description': "Digi occupancy map for all Barrel Shell_pO modules combined",
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "10 - Endcap_Digi_Occupancy_per_HalfCylinder",
+  [{ 'path': "Pixel/Endcap/HalfCylinder_mI/endcapOccupancyMap",
+     'description': "Digi occupancy map for all Endcap HalfCylinder_mI modules combined",
+     'draw': { 'withref': "no" }},
+   { 'path': "Pixel/Endcap/HalfCylinder_mO/endcapOccupancyMap",
+     'description': "Digi occupancy map for all Endcap HalfCylinder_mO modules combined",
+     'draw': { 'withref': "no" }}],
+  [{ 'path': "Pixel/Endcap/HalfCylinder_pI/endcapOccupancyMap",
+     'description': "Digi occupancy map for all Endcap HalfCylinder_pI modules combined",
+     'draw': { 'withref': "no" }},
+   { 'path': "Pixel/Endcap/HalfCylinder_pO/endcapOccupancyMap",
+     'description': "Digi occupancy map for all Endcap HalfCylinder_pO modules combined",
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "11 - Barrel_Digi_Summary_per_Shell",
+  [{ 'path': "Pixel/Barrel/Shell_mI/SUMDIG_adc_Shell_mI",
+     'description': "Mean digi charge in ADC counts per Barrel Shell_mI module",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Barrel/Shell_mO/SUMDIG_ndigis_Shell_mO",
+     'description': "Mean number of digis per event per Barrel Shell_mO module",
+     'draw': { 'withref': "yes" }}],
+  [{ 'path': "Pixel/Barrel/Shell_pI/SUMDIG_adc_Shell_pI",
+     'description': "Mean digi charge in ADC counts per Barrel Shell_pI module",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Barrel/Shell_pO/SUMDIG_ndigis_Shell_pO",
+     'description': "Mean number of digis per event per Barrel Shell_pO module",
+     'draw': { 'withref': "yes" }}]
+)     
+pixellayout(dqmitems, "12 - Endcap_Digi_Summary_per_HalfCylinder",
+  [{ 'path': "Pixel/Endcap/HalfCylinder_mI/SUMDIG_adc_HalfCylinder_mI",
+     'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_mI module",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Endcap/HalfCylinder_mO/SUMDIG_ndigis_HalfCylinder_mO",
+     'description': "Mean number of digis per event per Endcap HalfCylinder_mO module",
+     'draw': { 'withref': "yes" }}],
+  [{ 'path': "Pixel/Endcap/HalfCylinder_pI/SUMDIG_adc_HalfCylinder_pI",
+     'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_pI module",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Endcap/HalfCylinder_pO/SUMDIG_ndigis_HalfCylinder_pO",
+     'description': "Mean number of digis per event per Endcap HalfCylinder_pO module",
+     'draw': { 'withref': "yes" }}]
+)
