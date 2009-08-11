@@ -4,9 +4,9 @@ import ROOT, xmlrpclib
 FOLDERS     = { 
 # FOLDER UNDER EvInfo        NAME    SUMMARY VALUE IN EvInfo
   'reportSummaryContents': ( 'DQM',  'reportSummary' ),
-  'CertificationContents': ( 'CERT', 'Certification' ),
-  'DAQContents':           ( 'DAQ',  'DAQ' ),
-  'DCSContents':           ( 'DCS'   'DCS' )
+  'CertificationContents': ( 'CERT', 'CertificationSummary' ),
+  'DAQContents':           ( 'DAQ',  'DAQSummary' ),
+  'DCSContents':           ( 'DCS'   'DCSSummary' )
 }
 
 SUBSYSTEMS  = {
