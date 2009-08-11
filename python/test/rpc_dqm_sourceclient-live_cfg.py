@@ -53,8 +53,9 @@ process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'RPC'
-
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/rpc_reference.root'
 
 ################# DQM Digi Module ######################
 process.load("DQM.RPCMonitorDigi.RPCDigiMonitoring_cfi")
