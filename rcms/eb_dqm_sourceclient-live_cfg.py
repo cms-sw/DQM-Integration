@@ -75,7 +75,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_31X_V6H::All"
+process.GlobalTag.globaltag = "GR09_H_V1::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -180,11 +180,6 @@ process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
 process.r = cms.EndPath(process.ecalBarrelTasksSequenceP5*process.dqmSaver)
 
-#process.q.remove(process.ecalBarrelSelectiveReadoutTask)
-
-#process.q.remove(process.simEcalTriggerPrimitiveDigis)
-#process.q.remove(process.ecalBarrelTriggerTowerTask)
-
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
@@ -237,7 +232,6 @@ process.ecalBarrelMonitorClient.MGPAGains = [ 12 ]
 #process.ecalBarrelMonitorClient.MGPAGainsPN = [ 1, 16 ]
 process.ecalBarrelMonitorClient.MGPAGainsPN = [ 16 ]
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'TriggerTower', 'Summary']
-#process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'Cluster', 'Summary']
 
 process.hybridSuperClusters.HybridBarrelSeedThr = 0.150
 process.hybridSuperClusters.step = 1

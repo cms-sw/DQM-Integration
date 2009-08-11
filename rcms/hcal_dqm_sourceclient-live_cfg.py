@@ -57,10 +57,48 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 #-----------------------------
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hbhe_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_ho_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_hf_cfi")
-process.load("RecoLocalCalo.HcalRecProducers.HcalSimpleReconstructor_zdc_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
+process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
+
+# Turn off default blocking of dead channels from rechit reconstructor
+process.essourceSev =  cms.ESSource("EmptyESSource",
+                                               recordName = cms.string("HcalSeverityLevelComputerRcd"),
+                                               firstValid = cms.vuint32(1),
+                                               iovIsRunNotTime = cms.bool(True)
+                            )
+
+
+process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
+                                      SeverityLevels = cms.VPSet(
+    cms.PSet( Level = cms.int32(0),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(5),
+              RecHitFlags = cms.vstring('HSCP_R1R2','HSCP_FracLeader','HSCP_OuterEnergy',
+                                        'HSCP_ExpFit','ADCSaturationBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(8),
+              RecHitFlags = cms.vstring('HBHEHpdHitMultiplicity', 'HBHEPulseShape', 'HOBit',
+                                        'HFDigiTime', 'HFLongShort', 'ZDCBit', 'CalibrationBit',
+                                        'TimingErrorBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(10),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellHot')
+              ),
+    cms.PSet( Level = cms.int32(20),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellOff', 'HcalCellDead')
+              )
+    ),
+                                      RecoveredRecHitBits = cms.vstring('TimingAddedBit','TimingSubtractedBit'),
+                                      DropChannelStatusBits = cms.vstring('HcalCellOff',) #'HcalCellDead' had also been present
+                                      )
 
 # hcalMonitor configurable values -----------------------
 process.hcalMonitor.debug = 0
@@ -80,6 +118,7 @@ process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
 process.hcalMonitor.PedestalMonitor     = True
+process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
 process.hcalMonitor.MTCCMonitor         = False
