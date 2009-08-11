@@ -2,10 +2,11 @@ import sys, os, optparse, re
 import ROOT, xmlrpclib
  
 FOLDERS     = { 
-  'reportSummaryContents': 'DQM', 
-  'CertificationContents': 'CERT', 
-  'DAQContents': 'DAQ', 
-  'DCSContents': 'DCS' 
+# FOLDER UNDER EvInfo        NAME    SUMMARY VALUE IN EvInfo
+  'reportSummaryContents': ( 'DQM',  'reportSummary' ),
+  'CertificationContents': ( 'CERT', 'Certification' ),
+  'DAQContents':           ( 'DAQ',  'DAQ' ),
+  'DCSContents':           ( 'DCS'   'DCS' )
 }
 
 SUBSYSTEMS  = {
@@ -74,24 +75,33 @@ def getSummaryValues(file_name, shift_type, translate):
       
       folder_id = folder_name
       if translate:
-        folder_id = FOLDERS[folder_name]
+        folder_id = FOLDERS[folder_name][0]
         if folder_id == 'DQM' and shift_type != None:
           folder_id = 'DQM ' + shift_type.upper()
 
       if not result[sub_key].has_key(folder_id):
         result[sub_key][folder_id] = {}
 
-      for value in folder.GetListOfKeys():
-        full_name = value.ReadObj().GetName()
-        if not value.IsFolder() and re.match("^<.+>f=-{,1}[0-9\.]+</.+>$", full_name):
-          value_name = re.sub("<(?P<n>[^>]+)>.+", "\g<n>", full_name)
-          value_numb = float(re.sub("<.+>f=(?P<n>-{,1}[0-9\.]+)</.+>", "\g<n>", full_name))
-          if not result[sub_key][folder_id].has_key(value_name):
-            result[sub_key][folder_id][value_name] = value_numb
+      writeValues(folder, result[sub_key][folder_id], None)
+      writeValues(evInfo, result[sub_key][folder_id], {FOLDERS[folder_name][1]: 'Summary'})
 
   f.Close()
 
   return (run_number, result)
+
+def writeValues(folder, map, filter = None):
+  """ Write values (possibly filtered) from folder to map """
+  for value in folder.GetListOfKeys():
+    full_name = value.ReadObj().GetName()
+    if not value.IsFolder() and re.match("^<.+>f=-{,1}[0-9\.]+</.+>$", full_name):
+      value_name = re.sub("<(?P<n>[^>]+)>.+", "\g<n>", full_name)
+      value_numb = float(re.sub("<.+>f=(?P<n>-{,1}[0-9\.]+)</.+>", "\g<n>", full_name))
+      if filter == None or filter.has_key(value_name):
+        if not filter == None:
+          if not filter[value_name] == None:
+            value_name = filter[value_name]
+        if not map.has_key(value_name):
+          map[value_name] = value_numb
 
 def dict2json(d):
   """ Convert dictionary (embedded) to json string """
