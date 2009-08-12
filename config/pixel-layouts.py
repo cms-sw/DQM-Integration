@@ -140,3 +140,28 @@ pixellayout(dqmitems, "10 - Endcap_Digi_Summary_per_HalfCylinder",
      'description': "Mean number of digis per event per Endcap HalfCylinder_pO module",
      'draw': { 'withref': "yes" }}]
 )
+pixellayout(dqmitems, "11 - Barrel OnTrack cluster positions",
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_1",
+     'description': "Global position of OnTrack clusters in Barrel/Layer_1",
+     'draw': { 'withref': "yes" }}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_2",
+     'description': "Global position of OnTrack clusters in Barrel/Layer_2",
+     'draw': { 'withref': "yes" }}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_3",
+     'description': "Global position of OnTrack clusters in Barrel/Layer_3",
+     'draw': { 'withref': "yes" }}]
+)
+pixellayout(dqmitems, "12 - Endcap OnTrack cluster positions",
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_1",
+     'description': "Global position of OnTrack clusters in Endcap -z Disk_1",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_2",
+     'description': "Global position of OnTrack clusters in Endcap -z Disk_2",
+     'draw': { 'withref': "yes" }}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_pz_Disk_1",
+     'description': "Global position of OnTrack clusters in Endcap +z Disk_1",
+     'draw': { 'withref': "yes" }},
+   { 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_pz_Disk_2",
+     'description': "Global position of OnTrack clusters in Endcap +z Disk_2",
+     'draw': { 'withref': "yes" }}]
+)

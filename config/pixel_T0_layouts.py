@@ -51,3 +51,26 @@ pixellayout(dqmitems, "03 - Pixel_Track_Summary",
    { 'path': "Pixel/Clusters/OffTrack/size_siPixelClusters", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}],
   [{ 'path': "Pixel/Tracks/ntracks_rsWithMaterialTracksP5", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
+pixellayout(dqmitems, "04 - Barrel_Digi_Summary_per_Shell",
+  [{ 'path': "Pixel/Barrel/Shell_mI/SUMOFF_adc_Shell_mI", 'description': "Mean digi charge in ADC counts per Barrel Shell_mI module"},
+   { 'path': "Pixel/Barrel/Shell_mO/SUMOFF_ndigis_Shell_mO", 'description': "Mean number of digis per event per Barrel Shell_mO module"}],
+  [{ 'path': "Pixel/Barrel/Shell_pI/SUMOFF_adc_Shell_pI", 'description': "Mean digi charge in ADC counts per Barrel Shell_pI module"},
+   { 'path': "Pixel/Barrel/Shell_pO/SUMOFF_ndigis_Shell_pO", 'description': "Mean number of digis per event per Barrel Shell_pO module"}]
+)     
+pixellayout(dqmitems, "05 - Endcap_Digi_Summary_per_HalfCylinder",
+  [{ 'path': "Pixel/Endcap/HalfCylinder_mI/SUMOFF_adc_HalfCylinder_mI", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_mI module"},
+   { 'path': "Pixel/Endcap/HalfCylinder_mO/SUMOFF_ndigis_HalfCylinder_mO", 'description': "Mean number of digis per event per Endcap HalfCylinder_mO module"}],
+  [{ 'path': "Pixel/Endcap/HalfCylinder_pI/SUMOFF_adc_HalfCylinder_pI", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_pI module"},
+   { 'path': "Pixel/Endcap/HalfCylinder_pO/SUMOFF_ndigis_HalfCylinder_pO", 'description': "Mean number of digis per event per Endcap HalfCylinder_pO module"}]
+)
+pixellayout(dqmitems, "06 - Barrel OnTrack cluster positions",
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_1", 'description': "Global position of OnTrack clusters in Barrel/Layer_1"}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_2", 'description': "Global position of OnTrack clusters in Barrel/Layer_2"}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_3", 'description': "Global position of OnTrack clusters in Barrel/Layer_3"}]
+)
+pixellayout(dqmitems, "07 - Endcap OnTrack cluster positions",
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_1", 'description': "Global position of OnTrack clusters in Endcap -z Disk_1"},
+   { 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_2", 'description': "Global position of OnTrack clusters in Endcap -z Disk_2"}],
+  [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_pz_Disk_1", 'description': "Global position of OnTrack clusters in Endcap +z Disk_1"},
+   { 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_pz_Disk_2", 'description': "Global position of OnTrack clusters in Endcap +z Disk_2"}]
+)
