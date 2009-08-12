@@ -82,16 +82,20 @@ process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 # Turn on/off individual hcalMonitor modules ------------
-process.hcalMonitor.DataIntegrityTask   = True
 process.hcalMonitor.DataFormatMonitor   = False
+process.hcalMonitor.DataIntegrityTask   = True
 process.hcalMonitor.DigiMonitor         = False
 process.hcalMonitor.RecHitMonitor       = False
 process.hcalMonitor.TrigPrimMonitor     = False
-process.hcalMonitor.PedestalMonitor     = False
 process.hcalMonitor.DeadCellMonitor     = False
 process.hcalMonitor.HotCellMonitor      = False
-process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.BeamMonitor         = False
+process.hcalMonitor.PedestalMonitor     = False
+process.hcalMonitor.DetDiagNoiseMonitor = False
+process.hcalMonitor.LEDMonitor          = False
+process.hcalMonitor.CaloTowerMonitor    = False
+process.hcalMonitor.MTCCMonitor         = False
+process.hcalMonitor.HcalAnalysis        = False
 
 # RPC
 #process.RPCCabling = cms.ESSource("PoolDBESSource",
