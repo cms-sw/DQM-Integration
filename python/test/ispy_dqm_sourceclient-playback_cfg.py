@@ -20,6 +20,7 @@ process.add_(
     cms.Service("IguanaService",
     outputFileName = cms.untracked.string('/home/dqmdevlocal/output/iSpy_%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
+    bufferSize = cms.untracked.uint32(45),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
     outputMaxEvents = cms.untracked.int32(100),
