@@ -10,6 +10,7 @@ class OptionParser(optparse.OptionParser):
     optparse.OptionParser.__init__(self, usage="%prog [options] root_file ...", version="%prog 0.0.1", conflict_handler="resolve")
     self.add_option("--shift", "-s", action="store", type="choice", dest="shift", choices=("online","offline"), help="specify shift type: online or offline values allowed")
     self.add_option("--url", action="store", type="string", dest="url", default=SERVER_URL, help="specify RR XML-RPC server URL. Default is " + SERVER_URL)
+    self.add_option("--dataset", "-t", action="store", type="string", dest="dataset", default=None, help="explicitly specify dataset name. If not set then script will try to get it from the filename.")
     self.add_option("--debug", "-d", action="store_true", dest="debug", default=False, help="print values and exit. Do not write to RR")
 
 if __name__ == "__main__":
@@ -29,6 +30,9 @@ if __name__ == "__main__":
     print "Shift type must be provided, use --help for hit"
     sys.exit(1)
 
+  # Get default dataset name (optional)
+  default_dataset = opts['dataset']
+
   # Check if all files exists and are accessible
   for rfile in args:
     try:
@@ -44,7 +48,11 @@ if __name__ == "__main__":
   for rfile in args:
 
     (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'], translate = True)
-    dataset = getDatasetName(rfile)
+
+    if default_dataset == None:
+      dataset = getDatasetName(rfile)
+    else:
+      dataset = default_dataset
 
     if run_number == None:
       print "Run number does not determined. Skipping file: %s" % rfile
