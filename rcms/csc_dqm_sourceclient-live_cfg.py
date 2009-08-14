@@ -41,12 +41,16 @@ process.EventStreamHttpReader.consumerName = 'CSC DQM Consumer'
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder    = "CSC"
-
 #process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/csc_reference.root'
 #process.DQMStore.referenceFileName = '/afs/cern.ch/user/v/valdo/CMSSW_2_1_0/src/DQM/CSCMonitorModule/data/csc_reference.root'
 #process.DQMStore.referenceFileName = '/nfshome0/valdo/CMSSW_2_1_0/src/DQM/CSCMonitorModule/data/csc_reference.root'
+
+#----------------------------
+# DQM Playback Environment
+#-----------------------------
+
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder    = "CSC"
 
 #process.DQM.collectorHost = 'pccmsdqm02.cern.ch'
 #process.DQM.collectorHost = 'localhost'
