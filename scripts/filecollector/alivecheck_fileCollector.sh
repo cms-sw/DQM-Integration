@@ -11,8 +11,8 @@ source $WorkDir/env.sh
 #export PATH=${ROOTSYS}/bin:${PATH}
 
 
-EXE=$WorkDir/filecollector.py
-RUN_STAT=`ps -ef | grep filecollector.py | grep -v grep | wc | awk '{print $1}'`
+EXE=$WorkDir/fileCollector.py
+RUN_STAT=`ps -ef | grep fileCollector.py | grep -v grep | wc | awk '{print $1}'`
 #DOG_STAT=`ps -ef | grep alivecheck_filesave.sh | grep -v grep | wc | awk '{print $1}'`
 
 #if [ $DOG_STAT -gt 10 ]
@@ -23,12 +23,12 @@ RUN_STAT=`ps -ef | grep filecollector.py | grep -v grep | wc | awk '{print $1}'`
 
 if [ $RUN_STAT -ne 0 ]
 then
-    echo filecollector.py is running at $HOSTNAME.
+    echo fileCollector.py is running at $HOSTNAME.
 else
-    echo filecollector.py stopped by unknown reason and restarted now.
+    echo fileCollector.py stopped by unknown reason and restarted now.
     LOG=$WorkDir/log/LOG.filesave.$HOSTNAME.$$
     date >& $LOG
-    echo filecollector.py stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
+    echo fileCollector.py stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
     $EXE >> $LOG 2>&1 & 
-    echo filecollector.py stopped by unknown reason and restarted now at $HOSTNAME. | mail $YourEmail
+    echo fileCollector.py stopped by unknown reason and restarted now at $HOSTNAME. | mail -s "fileCollector not Running" $YourEmail
 fi

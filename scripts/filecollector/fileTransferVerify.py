@@ -6,47 +6,28 @@ import zipfile as zp
 from datetime import datetime
 from email.MIMEText import MIMEText
 
-SOURCEDIR = "/dqmdata/dqm/registered" #Directory where the original files are located.
-INJECTIONDIR = "/dqmdata/dqm/Tier0Shipping/inject"   #Directory where files get placed once they have been sent.
-VERIFYDIR= "/dqmdata/dqm/Tier0Shipping/verify"
+SOURCEDIR = "/dqmdata/dqm/Tier0Shipping/inject" #Directory where the original files are located.
 DONEDIR = "/dqmdata/dqm/done/merged"
 JUNKDIR = "/dqmdata/dqm/junk"
+VERIFYDIR = "/dqmdata/dqm/Tier0Shipping/verify"
 HOSTNAME = "srv-C2D05-19"
 CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
 INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
-
+STAGES=["st1","st2","st3","Error"]
 EMPTY_DONEDIR = False
 WAIT_TIME = 600
 ################################################################################
-def getFileLists():
-  newfiles={}
-  trashfiles=[]
-  filelist=[]
-  for dir1, subdirs, files in os.walk(SOURCEDIR):
-    for f in files:
-      try:
-        version=int(f.split("_V")[-1][:4])
-        vlfn=f.split("_V")[0]+f.split("_V")[1][4:]
-      except:
-        version=1
-        vlfn=f
-      if vlfn in newfiles.keys() and version >= newfiles[vlfn][0]:
-        newfiles[vlfn]=(version,"%s/%s" % (dir1,f))
-      elif vlfn not in newfiles.keys():
-        newfiles[vlfn]=(version,"%s/%s" % (dir1,f))
-      else:
-        trashfiles.append("%s/%s" % (dir1,f))
-  print "Found %d new files that will be registered, and %d files that will be %s" % (len(newfiles),len(trashfiles),(EMPTY_DONEDIR and "Erased" or "Skipped and sent to done"))
-  return (newfiles,trashfiles)
 #=====================================================================================
-def injectFile(f,renotify=False):
-  fname=f.rsplit("/",1)[-1]
-  dname=f.rsplit("/",1)[0]
+def renotifyFile(f,stage):
   run=f.split("_R")[-1][:9]
-  iname="%s/%s" % (INJECTIONSCRIPT,fname)
-  shutil.move(f,iname)
-  parameters=[#"--test",
-              "--filename %s" % fname,
+  verDir  = "%s/%s" % (VERIFYDIR,STAGES[stage+1]) 
+  verFile = "%s/%s" % (verDir,f.rsplit("/",1)[-1])
+  if not os.path.exists(verDir):
+    os.makedirs(verDir)
+  shutil.move(f,verFile)
+  parameters=["--test",
+              "--renotify",
+              "--filename %s" % verFile,
               "--type dqm",
               "--path %s" % INJECTIONSCRIPT,
               "--destination dqm",
@@ -62,76 +43,56 @@ def injectFile(f,renotify=False):
   if result[0] >= 1:
     output = result[1]
     print "Error injecting file %s to transfer system checking if it exists" % f
-    chkparameters=["--check","--filename %s" % fname,"--config %s" % CONFIGFILE]
-    cmd="%s %s" % (INJECTIONSCRIPT," ".join(chkparameters))
-    result = commands.getstatusoutput(cmd)
-    if result[0]==1:
-      if "File not found in database" in result[1]:
-        print "Error: file %s not found in transfer database, check configuration" % f
-        return 0
-      else:
-        print "Warning: file %s already exists in transfer database" % f
-	return 2
-    else:
-      if "File found in database" in result[1]:
-        print "Warning: file %s already exists in transfer database" % f
-	return 2
-      else:
-        print "Error: problem checking database entry for file %s\nAppError:%s" % (f,result[1])
-        return 0
-  else:
-    print "File %s injected successfully" % f
-  return 1
 #=====================================================================================
-def transferFiles():
-  while True:
-    #look for NEW files in SOURCEDIR and files that need to be cleared.
-    newfiles,trashfiles=getFileLists() 
-    
-    #Making sure destination directories exist
-    if not os.path.exists(DONEDIR):
-      os.makedirs(DONEDIR)
-    if not os.path.exists(INJECTIONDIR):
-      os.makedirs(INJECTIONDIR)
-    if not os.path.exists(JUNKDIR):
-      os.makedirs(JUNKDIR)
-      
-    #Dealing with trash can  
-    for tf in trashfiles:
-      if EMPTY_DONEDIR:
-        os.remove(tf)
-      else:
-        runnr=tf.split("_R")[-1][:9]
-        ftdir="%s/%s/%s" % (DONEDIR,runnr[:3],runnr[3:6])
-        if not os.path.exists(ftdir):
-          os.makedirs(ftdir)
-        tfname="%s/%s" % (ftdir,tf.rsplit("/",1)[-1])
-        if os.path.exists(tfname):
-          ftdir="%s/%s/%s" % (JUNKDIR,runnr[:3],runnr[3:6])
-          tfname="%s/%s" % (ftdir,tf.rsplit("/",1)[-1])
-        shutil.move(tf,tfname)
-        
-    #Down to bussines
-    for key in sorted(newfiles.keys())[::-1]:
-      ver,f=newfiles[key]
-      ifr=injectFile(f)
-      if ifr == 2:
-        runnr=f.split("_R")[-1][:9]
-        ftdir="%s/%s/%s" % (DONEDIR,runnr[:3],runnr[3:6])
-        if not os.path.exists(ftdir):
-          os.makedirs(ftdir)
-        tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
-        if os.path.exists(tfname):
-          ftdir="%s/%s/%s" % (JUNKDIR,runnr[:3],runnr[3:6])
-          if not os.path.exists(ftdir):
-            os.makedirs(ftdir)
-          tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
-        shutil.move(f,tfname)
-      #elif ifr == 1:
-      #  vdir="%s/%s" %(INJECTIONDIR,f.rsplit("/",1)[-1])
-      #  shutil.move(f,vdir)
-      
-    time.sleep(WAIT_TIME)
+def chkFileStat(fname):   
+  chkparameters=["--check","--filename %s" % fname,"--config %s" % CONFIGFILE]
+  cmd="%s %s" % (INJECTIONSCRIPT," ".join(chkparameters))
+  result = commands.getstatusoutput(cmd)
+  return result
+
+def saveFile(f):
+  runnr=f.split("_R")[-1][:9]
+  ftdir="%s/%s/%s" % (DONEDIR,runnr[:3],runnr[3:6])
+  if not os.path.exists(ftdir):
+    os.makedirs(ftdir)
+  tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
+  if os.path.exists(tfname):
+    print "file reapeared sending to junk"
+    ftdir="%s" % (JUNKDIR)
+    tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
+  shutil.move(f,tfname)
 #=====================================================================================
-if __name__ == "__main__": 
-  transferFiles()
+if __name__ == "__main__":
+  while True: 
+    for stage in range(len(STAGES)-1):
+      stageDir    = "%s/%s" % (VERIFYDIR,STAGES[stage]) 
+      print "Processing %s" % STAGES[stage]
+      for dir1, subdirs, files in os.walk(stageDir):
+        for f in files:
+          fileStat=chkFileStat(f)
+          if "FILES_TRANS_CHECKED" in fileStat[1]:
+            print "File %s has been succesfully transfered to CASTOR" % f
+            fullFName= "%s/%s" % (dir1,f)
+            saveFile(fullFName)
+          else:
+            print "File %s is being renotified" % f
+            fullFName= "%s/%s" % (dir1,f)
+            renotifyFile(fullFName,stage)
+  
+    for dir1, subdirs, files in os.walk(SOURCEDIR):
+      print "Processing %s" % dir1
+      for f in files:
+        fileStat=chkFileStat(f)
+        if "FILES_TRANS_CHECKED" in fileStat[1]:
+          fullFName= "%s/%s" % (dir1,f)
+          saveFile(fullFName)
+        else:
+          verDir  = "%s/%s" % (VERIFYDIR,STAGES[0]) 
+          verFile = "%s/%s" % (verDir,f)
+          if not os.path.exists(verDir):
+            os.makedirs(verDir)
+          fullFName= "%s/%s" % (dir1,f)
+          shutil.move(fullFName,verDir)
+         
+      time.sleep(WAIT_TIME)
+  
