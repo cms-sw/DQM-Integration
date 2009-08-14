@@ -1,7 +1,7 @@
 def shifteblayout(i, p, *rows): i["00 Shift/EcalBarrel/" + p] = DQMItem(layout=rows)
 
-shifteblayout(dqmitems, "00 Event Type",
-  [{ 'path': "EcalBarrel/EcalInfo/EVTTYPE", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+shifteblayout(dqmitems, "00 Report Summary",
+  [{ 'path': "EcalBarrel/EventInfo/reportSummaryMap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteblayout(dqmitems, "01 Integrity Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality summary", 'description': "Integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -30,9 +30,6 @@ shifteblayout(dqmitems, "06 LaserL1 Quality",
 shifteblayout(dqmitems, "08 Pedestal Gain12 Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-# shifteblayout(dqmitems, "09 DCC EventSize",
-#   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
-
-# shifteblayout(dqmitems, "10 Selective Readout High Interest TTs",
-#   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+shifteblayout(dqmitems, "09 TestPulse Gain12 Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed channels. Supermodules are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 

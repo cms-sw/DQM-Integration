@@ -1,7 +1,7 @@
 def shifteelayout(i, p, *rows): i["00 Shift/EcalEndcap/" + p] = DQMItem(layout=rows)
 
-shifteelayout(dqmitems, "00 Event Type",
-  [{ 'path': "EcalEndcap/EcalInfo/EVTTYPE", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+shifteelayout(dqmitems, "00 Report Summary",
+  [{ 'path': "EcalEndcap/EventInfo/reportSummaryMap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteelayout(dqmitems, "01 Integrity Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT EE - integrity quality summary", 'description': "Integrity quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -53,11 +53,7 @@ shifteelayout(dqmitems, "08 Pedestal Gain12 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-# shifteelayout(dqmitems, "09 DCC EventSize",
-#   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average sector event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
-#   [None])
-
-# shifteelayout(dqmitems, "10 Selective Readout High Interest TTs",
-#   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT high interest TT Flags EE -", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
-#   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT high interest TT Flags EE +", 'description': "Occupancy of high interest (energy of Trigger Tower over threshold) flags of selective readout. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+shifteelayout(dqmitems, "09 TestPulse Gain12 Quality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the calibration sequence fired, yellow elsewhere. Red spots are failed channels. Sectors are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green sector by sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the calibration sequence fired, yellow elsewhere. Red spots are failed channels. Sectors are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green sector by sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
