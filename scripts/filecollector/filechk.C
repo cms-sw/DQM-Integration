@@ -12,7 +12,8 @@ int filechk(string fname)
     //TH2F* hist;
     //hist = (TH2F*)f.FindObjectAny("reportSummaryMap");
     TDirectoryFile* hist;	
-    hist = (TDirectoryFile*)f.FindObjectAny("reportSummaryContents");
+    //hist = (TDirectoryFile*)f.FindObjectAny("reportSummaryContents");
+    hist = (TDirectoryFile*)f.FindObjectAny("reportSummaryMap");
     if (0 == hist) 
     {
       //cout << "File is incomplete" << endl;
