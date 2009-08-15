@@ -10,19 +10,20 @@ process.load("DQM.Integration.test.environment_cfi")
 #Please SPECIFY GLOBAL TAG for central OPERATIONS here!
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = 'GR09_31X_V6H::All' # or any other appropriate
+process.GlobalTag.globaltag = "GR09_H_V1::All"
 #process.prefer("GlobalTag")
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
-
 process.load("Configuration.StandardSequences.Geometry_cff")
-
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
 process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")    
 
 from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
 newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
 process.globalReplace("L1HardwareValidation", newHWSequence)
+
+process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
 
 ##  Available data masks (case insensitive):
