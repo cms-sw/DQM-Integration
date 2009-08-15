@@ -52,8 +52,33 @@ elif [ "$1" = "playback" ] ; then
 
   echo "done"
 
+elif [ "$1" = "fakelive" ] ; then
+  echo fakelive
+  echo "creating softlinks"
+    ln -sf eb_dqm_sourceclient-live_cfg.py		dqmfu09-1_cfg.py
+    ln -sf fedtest_dqm_sourceclient-live_cfg.py		dqmfu09-2_cfg.py
+    ln -sf l1t_dqm_sourceclient-live_cfg.py		dqmfu09-3_cfg.py
+    ln -sf l1temulator_dqm_sourceclient-live_cfg.py	dqmfu09-4_cfg.py
+    ln -sf hcal_dqm_sourceclient-live_cfg.py		dqmfu09-5_cfg.py
+    
+    ln -sf hcaltiming_dqm_sourceclient-live_cfg.py	dqmfu10-1_cfg.py
+    ln -sf ee_dqm_sourceclient-live_cfg.py		dqmfu10-2_cfg.py
+    ln -sf rpc_dqm_sourceclient-live_cfg.py		dqmfu10-3_cfg.py
+    ln -sf csc_dqm_sourceclient-live_cfg.py		dqmfu10-4_cfg.py
+    ln -sf es_dqm_sourceclient-live_cfg.py		dqmfu10-5_cfg.py
+
+    ln -sf dt_dqm_sourceclient-live_cfg.py		dqmfu11-1_cfg.py
+    ln -sf pixel_dqm_sourceclient-live_cfg.py		dqmfu11-2_cfg.py
+    ln -sf sistrip_dqm_sourceclient-live_cfg.py		dqmfu11-3_cfg.py
+    
+  echo "copying cfg from python test"
+  cp ../python/test/*live_cfg.py .
+  
+
+  echo "done"
+
 else
 
- echo specify live or playback
+ echo specify live, or playback
 
 fi
