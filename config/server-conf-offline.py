@@ -7,6 +7,8 @@ LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
            ("eb", "ee", "csc", "rpc", "hcal", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
            ("pixel","sistrip","hcal")]
+LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
+LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
