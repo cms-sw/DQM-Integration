@@ -82,18 +82,18 @@ def getAppNameFromCfg(filename):
 	"""
 	try:
 		f = open(filename)
-	except:
-		sys.stderr.write("Unable to open file: " + filename + " from <configFile> section of XML\n")
-		raise IOError
-	consumer = f.readline()
-	name=""
-	while consumer :
-		consumer=consumer.strip()
-		if "consumerName" in consumer:
-			name=consumer[consumer.index("'")+1:consumer.index("'",consumer.index("'")+1)] 
-			break
 		consumer = f.readline()
-	f.close()
+		name=""
+		while consumer :
+			consumer=consumer.strip()
+			if "consumerName" in consumer:
+				name=consumer[consumer.index("'")+1:consumer.index("'",consumer.index("'")+1)] 
+				break
+			consumer = f.readline()
+		f.close()
+	except:
+		sys.stderr.write("WARNING: Unable to open file: " + filename + " from <configFile> section of XML\n")
+		name = "CONFIG FILE IS M.I.A"        
 	return name
 ################################################################################
 def getProcNameFromCfg(filename):
