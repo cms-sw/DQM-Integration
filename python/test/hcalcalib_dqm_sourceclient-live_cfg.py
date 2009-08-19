@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 from DQM.HcalMonitorModule.HcalMonitorModule_cfi import * # Can this be done better?
-from DQM.HcalMonitorClient.HcalMonitorClient_cfi import * 
+from DQM.HcalMonitorClient.HcalMonitorClient_cfi import *
 
 process = cms.Process("HCALDQM")
 #----------------------------
