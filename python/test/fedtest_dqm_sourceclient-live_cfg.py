@@ -125,10 +125,18 @@ process.dqmFEDIntegrity.moduleName = "FEDTest"
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
-
+#process.physicsEventsFilter = cms.EDFilter("HLTTriggerTypeFilter",
+#                                  # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+#                                  SelectedTriggerType = cms.int32(1)
+#                                  ) 
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules +
+process.evfDQMHcalPath = cms.Path(
+			      process.hcalDigis + 
+			      process.hcalMonitor 
+)
+process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
+                              #process.dqmmodules +
                               process.cscDQMEvF +
  			      process.dtDQMEvF +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
@@ -136,7 +144,11 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
  			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
-			      process.hcalDigis + process.hcalMonitor +
+			      #process.hcalDigis + process.hcalMonitor +
 			      process.rpcunpacker + process.rpcFEDIntegrity +
                               process.dqmFEDIntegrityClient 
 )
+process.evfDQMmodulesPath = cms.Path(
+                              process.dqmmodules 
+)
+process.schedule = cms.Schedule(process.evfDQMHcalPath,process.evfDQMPath,process.evfDQMmodulesPath)
