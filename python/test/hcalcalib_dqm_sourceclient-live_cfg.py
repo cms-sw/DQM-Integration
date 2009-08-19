@@ -20,7 +20,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = "Hcal"
+process.dqmEnv.subSystemFolder = "HcalCalib"
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
 
 #-----------------------------
