@@ -90,6 +90,8 @@ process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
 process.hcalMonitor.dump2database = False
 
+process.hcalMonitor.subSystemFolder = cms.untracked.string("HcalCalib")
+
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.DetDiagPedestalMonitor = True
 process.hcalMonitor.DetDiagLaserMonitor    = True
