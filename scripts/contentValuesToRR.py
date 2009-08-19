@@ -3,6 +3,7 @@
 from contentValuesLib import *
  
 SERVER_URL = "http://cmswbm.cms/runregistry/xmlrpc"
+ONLINE_DATASET = '/Global/Online/ALL'
 
 class OptionParser(optparse.OptionParser):
   """ Option parser class """
@@ -10,7 +11,8 @@ class OptionParser(optparse.OptionParser):
     optparse.OptionParser.__init__(self, usage="%prog [options] root_file ...", version="%prog 0.0.1", conflict_handler="resolve")
     self.add_option("--shift", "-s", action="store", type="choice", dest="shift", choices=("online","offline"), help="specify shift type: online or offline values allowed")
     self.add_option("--url", action="store", type="string", dest="url", default=SERVER_URL, help="specify RR XML-RPC server URL. Default is " + SERVER_URL)
-    self.add_option("--dataset", "-t", action="store", type="string", dest="dataset", default=None, help="explicitly specify dataset name. If not set then script will try to get it from the filename.")
+    self.add_option("--dataset", "-t", action="store", type="string", dest="dataset", default=None, help="explicitly specify dataset name. If not set then script \
+      (1) for offline shift will try to get it from the filename or (2) for online shift will set it to " + ONLINE_DATASET)
     self.add_option("--debug", "-d", action="store_true", dest="debug", default=False, help="print values and exit. Do not write to RR")
 
 if __name__ == "__main__":
@@ -32,6 +34,8 @@ if __name__ == "__main__":
 
   # Get default dataset name (optional)
   default_dataset = opts['dataset']
+  if default_dataset == None and opts['shift'] == 'online':
+    default_dataset = ONLINE_DATASET
 
   # Check if all files exists and are accessible
   for rfile in args:
