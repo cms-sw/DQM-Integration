@@ -3,6 +3,9 @@ from DQM.HcalMonitorModule.HcalMonitorModule_cfi import * # Can this be done bet
 from DQM.HcalMonitorClient.HcalMonitorClient_cfi import *
 
 process = cms.Process("HCALDQM")
+
+subsystem="HcalCalib"
+
 #----------------------------
 # Event Source
 #-----------------------------
@@ -20,7 +23,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = "HcalCalib"
+process.dqmEnv.subSystemFolder = subsystem
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
 
 #-----------------------------
@@ -84,13 +87,12 @@ process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
 
 # hcalMonitor configurable values -----------------------
 process.hcalMonitor.debug = 0
-#process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
 process.hcalMonitor.dump2database = False
 
-process.hcalMonitor.subSystemFolder = cms.untracked.string("HcalCalib")
+process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.DetDiagPedestalMonitor = True
@@ -123,6 +125,8 @@ process.hcalMonitor.HotCellMonitor_test_neighbor        = False
 # Hcal DQM Client
 #-----------------------------
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
+process.hcalClient.subSystemFolder = cms.untracked.string(subsystem)
+process.hcalClient.prefixME = cms.untracked.string(subsystem)
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
@@ -133,10 +137,6 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
-#process.hcalClient.HotCellClient        = False
-#process.hcalClient.DeadCellClient       = False
-#process.hcalClient.PedestalClient       = False
-
 
 #-----------------------------
 # Scheduling
