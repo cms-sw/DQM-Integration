@@ -17,9 +17,9 @@ then
 else
     echo fileTransferVerify.py stopped by unknown reason and restarted now.
     TIMETAG=$(date +"%Y%m%d_%H%M%S")
-    LOG=$WorkDir/log/LOG.fileTransfer.$HOSTNAME.$TIMETAG
+    LOG=$WorkDir/log/LOG.fileTransferVerify.$HOSTNAME.$TIMETAG
     $EXE >& $LOG &
     date >> $LOG
     echo fileTransferVerify.py stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
-    echo fileTransferVerify.py stopped by unknown reason and restarted now at $HOSTNMAE. | mail mail -s "fileTransferVerify not Running" $YourEmail
+    echo fileTransferVerify.py stopped by unknown reason and restarted now at $HOSTNAME. | mail mail -s "fileTransferVerify not Running" $YourEmail
 fi

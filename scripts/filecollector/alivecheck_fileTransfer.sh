@@ -21,5 +21,5 @@ else
     $EXE >& $LOG &
     date >> $LOG
     echo fileTransfer.py stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
-    echo fileTransfer.py stopped by unknown reason and restarted now at $HOSTNMAE. | mail mail -s "fileTransfer not Running" $YourEmail
+    echo fileTransfer.py stopped by unknown reason and restarted now at $HOSTNAME. | mail mail -s "fileTransfer not Running" $YourEmail
 fi
