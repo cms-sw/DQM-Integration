@@ -32,7 +32,7 @@ def getDatasetName(file_name):
     d = None
   return d
 
-def getSummaryValues(file_name, shift_type, translate):
+def getSummaryValues(file_name, shift_type, translate, filters = None):
   """ Method to extract keys from root file and return dict """
   ROOT.gROOT.Reset()
 
@@ -61,6 +61,10 @@ def getSummaryValues(file_name, shift_type, translate):
     sub_key = sub_name
     if translate:
       sub_key = SUBSYSTEMS[sub_name]
+
+    if filters != None:
+      if not re.match(filters[0], sub_key):
+        continue
     
     if not result.has_key(sub_key):
       result[sub_key] = {}
@@ -79,29 +83,34 @@ def getSummaryValues(file_name, shift_type, translate):
         if folder_id == 'DQM' and shift_type != None:
           folder_id = 'DQM ' + shift_type.upper()
 
+      if filters != None:
+        if not re.match(filters[1], folder_id):
+          continue
+    
       if not result[sub_key].has_key(folder_id):
         result[sub_key][folder_id] = {}
 
-      writeValues(folder, result[sub_key][folder_id], None)
-      writeValues(evInfo, result[sub_key][folder_id], {FOLDERS[folder_name][1]: 'Summary'})
+      writeValues(folder, result[sub_key][folder_id], None, filters[2])
+      writeValues(evInfo, result[sub_key][folder_id], {FOLDERS[folder_name][1]: 'Summary'}, filters[2])
 
   f.Close()
 
   return (run_number, result)
 
-def writeValues(folder, map, filter = None):
-  """ Write values (possibly filtered) from folder to map """
+def writeValues(folder, map, keymap = None, filter = None):
+  """ Write values (possibly only for the keys in the keymap and filtered) from folder to map """
   for value in folder.GetListOfKeys():
     full_name = value.ReadObj().GetName()
     if not value.IsFolder() and re.match("^<.+>f=-{,1}[0-9\.]+</.+>$", full_name):
       value_name = re.sub("<(?P<n>[^>]+)>.+", "\g<n>", full_name)
       value_numb = float(re.sub("<.+>f=(?P<n>-{,1}[0-9\.]+)</.+>", "\g<n>", full_name))
-      if filter == None or filter.has_key(value_name):
-        if not filter == None:
-          if not filter[value_name] == None:
-            value_name = filter[value_name]
-        if not map.has_key(value_name):
-          map[value_name] = value_numb
+      if keymap == None or keymap.has_key(value_name):
+        if not keymap == None:
+          if not keymap[value_name] == None:
+            value_name = keymap[value_name]
+        if filter == None or re.match(filter, value_name):
+          if not map.has_key(value_name):
+            map[value_name] = value_numb
 
 def dict2json(d):
   """ Convert dictionary (embedded) to json string """
