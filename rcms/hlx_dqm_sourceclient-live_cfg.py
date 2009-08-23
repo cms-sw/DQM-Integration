@@ -29,7 +29,7 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml')
 )
 
-process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
+process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester)
 process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
 
 

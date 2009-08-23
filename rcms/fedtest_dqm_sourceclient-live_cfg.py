@@ -35,7 +35,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 # Global tag
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V1::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_31X_V6H::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 
@@ -82,20 +82,16 @@ process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 # Turn on/off individual hcalMonitor modules ------------
-process.hcalMonitor.DataFormatMonitor   = False
 process.hcalMonitor.DataIntegrityTask   = True
+process.hcalMonitor.DataFormatMonitor   = False
 process.hcalMonitor.DigiMonitor         = False
 process.hcalMonitor.RecHitMonitor       = False
 process.hcalMonitor.TrigPrimMonitor     = False
+process.hcalMonitor.PedestalMonitor     = False
 process.hcalMonitor.DeadCellMonitor     = False
 process.hcalMonitor.HotCellMonitor      = False
-process.hcalMonitor.BeamMonitor         = False
-process.hcalMonitor.PedestalMonitor     = False
-process.hcalMonitor.DetDiagNoiseMonitor = False
 process.hcalMonitor.LEDMonitor          = False
-process.hcalMonitor.CaloTowerMonitor    = False
-process.hcalMonitor.MTCCMonitor         = False
-process.hcalMonitor.HcalAnalysis        = False
+process.hcalMonitor.BeamMonitor         = False
 
 # RPC
 #process.RPCCabling = cms.ESSource("PoolDBESSource",
@@ -129,10 +125,18 @@ process.dqmFEDIntegrity.moduleName = "FEDTest"
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
-
+#process.physicsEventsFilter = cms.EDFilter("HLTTriggerTypeFilter",
+#                                  # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+#                                  SelectedTriggerType = cms.int32(1)
+#                                  ) 
 #-----------------------------
 ### Define the path
-process.evfDQMPath = cms.Path(process.dqmmodules +
+process.evfDQMHcalPath = cms.Path(
+			      process.hcalDigis + 
+			      process.hcalMonitor 
+)
+process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
+                              #process.dqmmodules +
                               process.cscDQMEvF +
  			      process.dtDQMEvF +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
@@ -140,7 +144,11 @@ process.evfDQMPath = cms.Path(process.dqmmodules +
  			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
-			      process.hcalDigis + process.hcalMonitor +
+			      #process.hcalDigis + process.hcalMonitor +
 			      process.rpcunpacker + process.rpcFEDIntegrity +
                               process.dqmFEDIntegrityClient 
 )
+process.evfDQMmodulesPath = cms.Path(
+                              process.dqmmodules 
+)
+process.schedule = cms.Schedule(process.evfDQMHcalPath,process.evfDQMPath,process.evfDQMmodulesPath)
