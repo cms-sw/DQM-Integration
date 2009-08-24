@@ -3,6 +3,8 @@ from DQM.HcalMonitorModule.HcalMonitorModule_cfi import * # Can this be done bet
 from DQM.HcalMonitorClient.HcalMonitorClient_cfi import * 
 
 process = cms.Process("HCALDQM")
+subsystem="Hcal" # specify subsystem name here
+
 #----------------------------
 # Event Source
 #-----------------------------
@@ -32,7 +34,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = "Hcal"
+process.dqmEnv.subSystemFolder = subsystem
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
 
 #-----------------------------
@@ -55,6 +57,30 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
+
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
+
+# Cosmics Corrections to reconstruction
+process.hbhereco.firstSample = 1
+process.hbhereco.samplesToAdd = 8
+process.hbhereco.correctForTimeslew = True
+process.hbhereco.correctForPhaseContainment = True
+process.hbhereco.correctionPhaseNS = 10.0
+process.horeco.firstSample = 1
+process.horeco.samplesToAdd = 8
+process.horeco.correctForTimeslew = True
+process.horeco.correctForPhaseContainment = True
+process.horeco.correctionPhaseNS = 10.
+process.hfreco.firstSample = 1
+process.hfreco.samplesToAdd = 8
+process.hfreco.correctForTimeslew = True
+process.hfreco.correctForPhaseContainment = True
+process.hfreco.correctionPhaseNS = 10.
+process.zdcreco.firstSample = 1
+process.zdcreco.samplesToAdd = 8
+process.zdcreco.correctForTimeslew = True
+process.zdcreco.correctForPhaseContainment = True
+process.zdcreco.correctionPhaseNS = 10.
 
 # Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
@@ -94,20 +120,32 @@ process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
                                       DropChannelStatusBits = cms.vstring('HcalCellOff',) #'HcalCellDead' had also been present
                                       )
 
-# hcalMonitor configurable values -----------------------
+
+#----------------------------
+# Trigger Emulator
+#----------------------------
+process.load('SimCalorimetry.HcalTrigPrimProducers.hcaltpdigi_cff')
+process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clone()
+process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
+process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
+
+
+# -------------------------------
+# hcalMonitor configurable values
+# -------------------------------
 process.hcalMonitor.debug = 0
-#process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
-process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
 process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
+process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
+
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = True
 process.hcalMonitor.RecHitMonitor       = True
-process.hcalMonitor.TrigPrimMonitor     = False
+process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
@@ -123,9 +161,6 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
-process.hcalMonitor.HotCellMonitor_test_neighbor        = False
-
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -134,15 +169,14 @@ process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
 process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
+process.hcalClient.subSystemFolder  = cms.untracked.string(subsystem)
+process.hcalClient.prefixME = cms.untracked.string(subsystem)
 
 # Set client settings to the same as monitor.  At the moment, this doesn't affect client minErrorFlag
 # Summary Client is also unaffected
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
-#process.hcalClient.HotCellClient        = False
-#process.hcalClient.DeadCellClient       = False
-#process.hcalClient.PedestalClient       = False
 
 
 #-----------------------------
@@ -155,6 +189,7 @@ process.options = cms.untracked.PSet(
 )
 
 process.p = cms.Path(process.hcalDigis
+                     *process.valHcalTriggerPrimitiveDigis
                      *process.horeco
                      *process.hfreco
                      *process.hbhereco
