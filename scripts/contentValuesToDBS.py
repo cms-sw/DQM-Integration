@@ -33,15 +33,7 @@ if __name__ == "__main__":
       sys.exit(2)
 
   # Take the filter
-  filter = None
-  if opts['filter'] != None:
-    try:
-      filter = eval(opts['filter'])
-      if type("") != type(filter[0]) or type("") != type(filter[1]) or type("") != type(filter[2]):
-        raise TypeError('')
-    except:
-      print "Bad filter value ", opts['filter'], ".\nFilter should be written in python tupple with 3 elements, i.e. \"('subsystem','folder','value')\". elements are in regexp format."
-      sys.exit(2)
+  filter = checkFilter(opts['filter'])
 
   server = xmlrpclib.ServerProxy(opts['url'])
 
@@ -66,9 +58,10 @@ if __name__ == "__main__":
 
     for sub in values.keys():
       for fol in values[sub].keys():
-        s = values[sub][fol]['Summary']
-        values[sub][fol].pop('Summary')
-        values[sub][fol][sub + '_' + fol + '_Summary'] = s
+        if values[sub][fol].has_key('Summary'):
+          s = values[sub][fol]['Summary']
+          values[sub][fol].pop('Summary')
+          values[sub][fol][sub + '_' + fol + '_Summary'] = s
 
     try:
       if opts['debug']:

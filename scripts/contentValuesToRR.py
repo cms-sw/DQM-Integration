@@ -14,6 +14,8 @@ class OptionParser(optparse.OptionParser):
     self.add_option("--dataset", "-t", action="store", type="string", dest="dataset", default=None, help="explicitly specify dataset name. If not set then script \
       (1) for offline shift will try to get it from the filename or (2) for online shift will set it to " + ONLINE_DATASET)
     self.add_option("--debug", "-d", action="store_true", dest="debug", default=False, help="print values and exit. Do not write to RR")
+    self.add_option("--filter", "-f", action="store", type="string", dest="filter", default=None, help="Specify filters in the form \"('subsystem','folder','value')\" \
+      in regexp expression. Default is None and this takes all the subsystems, all folders and allvalues")
 
 if __name__ == "__main__":
   
@@ -45,13 +47,16 @@ if __name__ == "__main__":
       print "File [", rfile, "] not exists or is not accessible?"
       sys.exit(2)
 
+  # Take the filter
+  filter = checkFilter(opts['filter'])
+
   server = xmlrpclib.ServerProxy(opts['url'])
 
   # Lets extract values from files one-by-one, construct hashmap and submit to
   # defined XML-RPC url 
   for rfile in args:
 
-    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'], translate = True, filter = None)
+    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'], translate = True, filters = filter)
 
     if default_dataset == None:
       dataset = getDatasetName(rfile)
