@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
-process.load("DQM.CSCMonitorModule.test.csc_hlt_dqm_sourceclient_cfi")
+process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
 process.cscDQMEvF.EventProcessor.BINCHECKER_MODE_DDU = cms.untracked.bool(False)
 
 process.load("DQMServices.Core.DQM_cfg")

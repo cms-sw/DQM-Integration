@@ -6,7 +6,7 @@ process = cms.Process("CSCDQM")
 # DQM Module Configuration
 #-------------------------------------------------
 
-process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
+process.load("DQM.CSCMonitorModule.csc_dqm_sourceclient_cfi")
 process.dqmCSCClient.EventProcessor.BINCHECKER_MODE_DDU = cms.untracked.bool(False)
 process.dqmCSCClient.EventProcessor.EFF_COLD_SIGFAIL = cms.untracked.double(2.0)
 process.dqmCSCClient.EventProcessor.EFF_HOT_THRESHOLD = cms.untracked.double(2.0)

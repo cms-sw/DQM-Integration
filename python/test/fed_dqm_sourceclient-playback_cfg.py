@@ -41,7 +41,7 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 #### Sub-system configuration follows
 
 # CSC DQM sequence
-process.load("DQM.CSCMonitorModule.test.csc_hlt_dqm_sourceclient_cfi")
+process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
 
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
