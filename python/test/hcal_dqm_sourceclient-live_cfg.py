@@ -143,7 +143,7 @@ process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = True
+process.hcalMonitor.DigiMonitor         = False # set false until we learn why it crashes
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DeadCellMonitor     = True
