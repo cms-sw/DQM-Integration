@@ -68,7 +68,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
+# Set expected orbit time to 6
 process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
+# Allow even bad-quality digis
+#process.hcalDigis.FilterDataQuality=False
 
 # Cosmics Corrections to reconstruction
 process.hbhereco.firstSample = 1
@@ -151,7 +154,7 @@ process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = False # disabled until we find why it crashes
+process.hcalMonitor.DigiMonitor         = True # disabled until we find why it crashes
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
@@ -159,6 +162,8 @@ process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
 process.hcalMonitor.PedestalMonitor     = True
+process.hcalMonitor.DetDiagNoiseMonitor = True
+process.hcalMonitor.DetDiagTimingMonitor = True
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
 process.hcalMonitor.MTCCMonitor         = False
@@ -168,9 +173,6 @@ process.hcalMonitor.HcalAnalysis        = False
 setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
-
-process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
-process.hcalMonitor.HotCellMonitor_test_neighbor        = False
 
 #-----------------------------
 # Hcal DQM Client
@@ -189,6 +191,14 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 
 process.hcalClient.SummaryClient        = True
 
+
+# ----------------------
+# Trigger Unpacker Stuff
+# ----------------------
+process.load("CondCore.DBCommon.CondDBSetup_cfi")
+process.load("L1Trigger.Configuration.L1DummyConfig_cff")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.l1GtUnpack.DaqGtInputTag = 'source'
 
 
 #-----------------------------
