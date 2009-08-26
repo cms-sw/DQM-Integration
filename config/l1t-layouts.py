@@ -28,6 +28,8 @@ def l1t_rpctf_single(i, dir, name):
   i["L1T/Layouts/06-RPCTF-Summary/%s" % name] = \
     DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
 
+def l1t_scal_single(i, p, *rows): i["L1T/Layouts/07-SCAL4Cosmics-Summary/" + p] = DQMItem(layout=rows)
+
 def l1t_rct_expert(i, p, *rows): i["L1T/Layouts/03-RCT-Summary/" + p] = DQMItem(layout=rows)
 l1t_rct_expert(dqmitems, "RctEmIsoEmEtEtaPhi",
   [{ 'path': "L1T/L1TRCT/RctEmIsoEmEtEtaPhi", 'description': "For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
@@ -140,6 +142,68 @@ l1t_dttf_single(dqmitems, "2nd Track Summary",
                [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/2nd Track Summary", 'description' : "Number of 2nd tracks (proportionate to total number of events that have a DTTF track) - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
 l1t_dttf_single(dqmitems, "Fractional High Quality Summary",
                [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Fractional High Quality Summary", 'description' : "Fractional high quality (qual>3) (proportional to total bin occupancy) summary - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\" target=\"_blank\">here</a>"}])
+
+
+# list of summary SCAL histograms (dqmitems, dirPath , histoName)
+l1t_scal_single(dqmitems, "Rate_AlgoBit_002",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_002", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_003",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_003", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_004",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_004", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_005",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_005", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_006",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_006", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_007",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_007", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_008",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_008", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_009",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_009", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_010",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_010", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_011",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_011", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_012",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_012", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_013",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_013", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_015",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_015", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_016",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_016", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_045",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_045", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_054",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_054", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_055",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_055", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_056",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_056", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_057",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_057", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_058",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_058", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_059",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_059", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_060",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_060", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_061",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_061", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_062",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_062", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_063",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_063", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_065",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_065", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_068",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_068", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_070",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_070", 'description' :  "none"}])
+l1t_scal_single(dqmitems, "Rate_AlgoBit_088",
+               [{'path':"L1T/L1TScalersSCAL/Level1TriggerRates/AlgorithmRates/Rate_AlgoBit_088", 'description' :  "none"}])
+
 
 #l1tlayout(dqmitems, "GT-Summary",
 #  ["L1T/L1TGT/algo_bits"])
