@@ -98,11 +98,15 @@ eeecalshifterlayout(dqmitems, "01 Electronics/00 Integrity Summary",
 eeecalshifterlayout(dqmitems, "01 Electronics/01 Integrity Errors",
   [{ 'path': "EcalEndcap/EESummaryClient/EEIT integrity quality errors summary", 'description': "Crystals integrity error counter by sector. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "01 Electronics/02 FrontEnd Summary",
+eeecalshifterlayout(dqmitems, "01 Electronics/02 PN Integrity Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEIT PN integrity quality summary", 'description': "Quality summary checking that data for each PN diode follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries; white means that no MEM is attached to that DCC (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+eeecalshifterlayout(dqmitems, "01 Electronics/03 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE + front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-eeecalshifterlayout(dqmitems, "01 Electronics/03 CalibrationSequence Errors",
+eeecalshifterlayout(dqmitems, "01 Electronics/04 CalibrationSequence Errors",
   [{ 'path': "EcalEndcap/EERawDataTask/EERDT trigger type errors", 'description': "Number of trigger type mismatches between the global trigger and ECAL DCC header. It is filled once per DCC with weight 1/36. It should be empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeecalshifterlayout(dqmitems, "02 Noise/00 PedestalOnline Quality",
@@ -178,6 +182,10 @@ eeecalshifterlayout(dqmitems, "03 Occupancy/11 LedEvents",
 eeecalshifterlayout(dqmitems, "03 Occupancy/12 PedestalEvents",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE -", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE +", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeecalshifterlayout(dqmitems, "03 Occupancy/13 PN Digis",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). Digis are expected only in EE+/-2,3,7,8 which have MEM box attached (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eeecalshifterlayout(dqmitems, "04 Energy/00 Clusters Summary",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
@@ -270,6 +278,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/03 L1 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L1 timing summary", 'description': "Laser L1 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/04 L1 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality summary L1", 'description': "Quality summary of laser L1 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality errors summary L1", 'description': "Error occupancy for laser L1 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
 eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/00 L2 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser quality summary L2", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser quality summary L2", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -284,6 +296,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/02 L2 Amplitude",
 eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/03 L2 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L2 timing summary", 'description': "Laser L2 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/04 L2 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality summary L2", 'description': "Quality summary of laser L2 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality errors summary L2", 'description': "Error occupancy for laser L2 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/00 L3 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser quality summary L3", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -300,6 +316,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/03 L3 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L3 timing summary", 'description': "Laser L3 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/04 L3 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality summary L3", 'description': "Quality summary of laser L3 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality errors summary L3", 'description': "Error occupancy for laser L3 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
 eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/00 L4 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE - laser quality summary L4", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser quality summary L4", 'description': "Quality summary of laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -314,6 +334,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/02 L4 Amplitude",
 eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/03 L4 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT laser L4 timing summary", 'description': "Laser L4 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/00 Laser/04 L4 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality summary L4", 'description': "Quality summary of laser L4 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELT PN laser quality errors summary L4", 'description': "Error occupancy for laser L4 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/00 L1 Quality", 
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
@@ -330,6 +354,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/03 L1 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT led L1 timing summary", 'description': "Led L1 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/04 L1 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT PN led quality summary L1", 'description': "Quality summary of led L1 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT PN led quality errors summary L1", 'description': "Error occupancy for led L1 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
 eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/00 L2 Quality", 
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L2", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led quality summary L2", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -345,6 +373,10 @@ eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/03 L2 Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EELDT led L2 timing summary", 'description': "Led L2 average timing (in pulse shape samples) for fired light modules in EE. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
+eeecalshifterlayout(dqmitems, "06 Calibration/01 Led/04 L2 PNQuality",
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT PN led quality summary L2", 'description': "Quality summary of led L2 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT PN led quality errors summary L2", 'description': "Error occupancy for led L2 events on PN diodes for every sector. Expect 0 entries if no errors or no laser events in a given sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
 eeecalshifterlayout(dqmitems, "06 Calibration/02 Pedestal/00 Quality Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for Gain 01 in EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for Gain 01 in EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -356,6 +388,14 @@ eeecalshifterlayout(dqmitems, "06 Calibration/02 Pedestal/00 Quality Gain06",
 eeecalshifterlayout(dqmitems, "06 Calibration/02 Pedestal/00 Quality Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12 in EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12 in EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/02 Pedestal/01 PNQuality Gain01",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT PN pedestal quality G01 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 01. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/02 Pedestal/01 PNQuality Gain16",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT PN pedestal quality G16 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 16. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eeecalshifterlayout(dqmitems, "06 Calibration/03 TestPulse/00 Quality Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE - test pulse quality G01 summary", 'description': "Quality summary of test pulse events for Gain 01 in EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -377,6 +417,14 @@ eeecalshifterlayout(dqmitems, "06 Calibration/03 TestPulse/00 Quality Gain12",
 
 eeecalshifterlayout(dqmitems, "06 Calibration/03 TestPulse/01 Amplitude Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT test pulse amplitude G12 summary", 'description': "Test pulse average amplitude in MGPA gain 12 for crystals for each EE sector. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/03 TestPulse/05 PNQuality Gain01",
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT PN test pulse quality G01 summary", 'description': "PN diodes quality summary of test pulse events for Gain 01. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
+
+eeecalshifterlayout(dqmitems, "06 Calibration/03 TestPulse/05 PNQuality Gain16",
+  [{ 'path': "EcalEndcap/EESummaryClient/EETPT PN test pulse quality G16 summary", 'description': "PN diodes quality summary of test pulse events for Gain 16. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 eelayout(dqmitems, "01 By Supermodule/EE-01/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],

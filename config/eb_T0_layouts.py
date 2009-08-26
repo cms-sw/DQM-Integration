@@ -264,11 +264,11 @@ ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/00 Quality Gain06",
 ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/00 Quality Gain12",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events on crystals for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/03 PNQuality Gain01",
+ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/01 PNQuality Gain01",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT PN pedestal quality G01 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 01. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/03 PNQuality Gain16",
+ebecalshifterlayout(dqmitems, "06 Calibration/01 Pedestal/01 PNQuality Gain16",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT PN pedestal quality G16 summary", 'description': "Quality summary of pedestal events on PN diodes for Gain 16. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
   [None])
 
