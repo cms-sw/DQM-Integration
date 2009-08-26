@@ -6,7 +6,7 @@ process = cms.Process("CSCDQMLIVE")
 # DQM Module Configuration
 #-------------------------------------------------
 
-process.load("DQM.CSCMonitorModule.test.csc_dqm_sourceclient_cfi")
+process.load("DQM.CSCMonitorModule.csc_dqm_sourceclient_cfi")
 process.dqmCSCClient.EventProcessor.BINCHECKER_MODE_DDU = cms.untracked.bool(False)
 process.dqmCSCClient.EventProcessor.EFF_COLD_SIGFAIL = cms.untracked.double(2.0)
 process.dqmCSCClient.EventProcessor.EFF_HOT_THRESHOLD = cms.untracked.double(2.0)
@@ -41,7 +41,7 @@ process.EventStreamHttpReader.consumerName = 'CSC DQM Consumer'
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-#process.DQMStore.referenceFileName = '/home/dqmprolocal/reference/csc_reference.root'
+#process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/csc_reference.root'
 #process.DQMStore.referenceFileName = '/afs/cern.ch/user/v/valdo/CMSSW_2_1_0/src/DQM/CSCMonitorModule/data/csc_reference.root'
 #process.DQMStore.referenceFileName = '/nfshome0/valdo/CMSSW_2_1_0/src/DQM/CSCMonitorModule/data/csc_reference.root'
 
