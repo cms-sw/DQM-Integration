@@ -206,8 +206,8 @@ process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:
 process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
 
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
-#process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
-process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
+process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
+#process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
 #process.ecalEndcapPedestalTask.MGPAGains = [ 1, 6, 12 ]
 process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
@@ -233,8 +233,8 @@ process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
-#process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
-process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
+process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
+#process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 #process.ecalEndcapMonitorClient.MGPAGains = [ 1, 6, 12 ]
 process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
 #process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
