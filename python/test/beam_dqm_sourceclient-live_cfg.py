@@ -3,10 +3,21 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("DQM")
 
 #----------------------------
+# Event Source
+#-----------------------------
+process.load("DQM.Integration.test.inputsource_cfi")
+
+#----------------------------
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+#----------------------------
+# DQM Live Environment
+#-----------------------------
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder = 'BeamSpot'
 
 #----------------------------
 # BeamMonitor
@@ -54,25 +65,11 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 
 #### END OF TRACKING RECONSTRUCTION ####
 
-#----------------------------
-# Event Source
-#-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-
 
 
 process.tracking = cms.Path(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5*process.cosmictracksP5)
 process.monitor = cms.Path(process.dqmBeamMonitor+process.dqmBeamCondMonitor+process.dqmEnv+process.dqmSaver)
 
-process.DQMStore.verbose = 0
-process.DQM.collectorHost = 'srv-c2d05-18'
-process.DQM.collectorPort = 9090
-process.dqmSaver.dirName = '.'
-process.dqmSaver.producer = 'Playback'
-process.dqmSaver.convention = 'Online'
-process.dqmEnv.subSystemFolder = 'BeamMonitor'
-process.dqmSaver.saveByRun = 1
-process.dqmSaver.saveAtJobEnd = True
 
 # # summary
 process.options = cms.untracked.PSet(
