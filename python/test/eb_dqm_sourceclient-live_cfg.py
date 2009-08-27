@@ -184,6 +184,7 @@ process.r = cms.EndPath(process.dqmEnv*process.ecalBarrelTasksSequenceP5*process
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 process.dqmEnv.subSystemFolder = 'EcalBarrel'
 

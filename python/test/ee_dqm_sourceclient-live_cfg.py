@@ -184,6 +184,7 @@ process.r = cms.EndPath(process.dqmEnv*process.ecalEndcapTasksSequenceP5*process
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 process.dqmEnv.subSystemFolder = 'EcalEndcap'
 
