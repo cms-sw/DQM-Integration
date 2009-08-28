@@ -22,9 +22,21 @@ server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/')
 server.workspace('DQMContent', 13, 'Tracker/Muons', 'DT', '^DT/')
 server.workspace('DQMContent', 14, 'Tracker/Muons', 'RPC', '^RPC/') 
 
-server.workspace('DQMContent', 21, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/')
-server.workspace('DQMContent', 22, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/')
-server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshower')
+server.workspace('DQMContent', 21, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
+                 'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
+                 'EcalBarrel/Layouts/01 Occupancy Summary EcalBarrel',
+                 'EcalBarrel/Layouts/02 Cluster Summary EcalBarrel')
+
+server.workspace('DQMContent', 22, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
+                 'EcalEndcap/Layouts/00 Global Summary EcalEndcap',
+                 'EcalEndcap/Layouts/01 Occupancy Summary EcalEndcap',
+                 'EcalEndcap/Layouts/02 Cluster Summary EcalEndcap')
+
+server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
+                'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
+                'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
+                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
+                
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL DataFormat Problems',
                  'Hcal/Layouts/HCAL Unsuppressed Channels')
