@@ -72,8 +72,8 @@ hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs eta-phi",
   	[{'path': "HLT/FourVector/client/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltlayout(dqmitems,"Jet Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet50"}])
+[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
 hltlayout(dqmitems,"Jet Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet50"}])
+[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet30U"}])
 
