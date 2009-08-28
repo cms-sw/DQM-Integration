@@ -68,7 +68,8 @@ ebecalshifterlayout(dqmitems, "01 Electronics/01 Integrity Errors",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBIT integrity quality errors summary", 'description': "Crystals integrity error counter by supermodule. Expect 0 entries in every bin. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "01 Electronics/02 PN Integrity Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT PN integrity quality summary", 'description': "Quality summary checking that data for each PN diode follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBIT PN integrity quality summary", 'description': "Quality summary checking that data for each PN diode follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [None])
 
 ebecalshifterlayout(dqmitems, "01 Electronics/03 FrontEnd Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
