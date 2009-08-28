@@ -168,19 +168,23 @@ ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/04 Trigger Quality
 ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/05 TTF mismatch",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT TT flag mismatch", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 SelectiveReadout EventSize",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 Trigger Timing Occupancy",
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et vs bx Real Digis", 'description': "Average Et of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TP occupancy vs bx Real Digis", 'description': "Average number of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 SelectiveReadout EventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "ECAL barrel event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 SelectiveReadout AverageEventSize",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 SelectiveReadout AverageEventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average supermodule event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 SelectiveReadout Payload",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/09 SelectiveReadout Payload",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Size of high interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Size of low interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/09 FullReadout SRFlags",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/10 FullReadout SRFlags",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate of full readout Selective Readout flags. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "06 Calibration/00 Laser/00 L1 Quality",
