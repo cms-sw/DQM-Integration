@@ -26,7 +26,7 @@ hcallayout(dqmitems, "02 HCAL Shifter Checklist Plots - RecHits",
 
 hcallayout(dqmitems, "03 HCAL Shifter Checklist Plots - Summaries",
            [{ 'path':"Hcal/EventInfo/reportSummaryMap",
-             'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green, except ZDC, which should be grey."}],
+             'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green, except HFLumi, which should be gray.  You may ignore HO0, HO12, and HFlumi for now."}],
            [{ 'path': "Hcal/EventInfo/reportSummaryContents/Hcal_HB",
               'description':  "This number indicates the fraction of good cells in HB"},
             { 'path': "Hcal/EventInfo/reportSummaryContents/Hcal_HE",
@@ -37,7 +37,7 @@ hcallayout(dqmitems, "03 HCAL Shifter Checklist Plots - Summaries",
               'description':  "This number indicates the fraction of good cells in H0"}],
            )
 
-hcallayout(dqmitems, "HCAL Pedestals",
+hcallayout(dqmitems, "HCAL Pedestal *Estimates*",
           [{ 'path': "Hcal/BaselineMonitor_Hcal/HB HE HF Depth 1 Pedestal Mean Map ADC",
              'description': "Estimate of Pedestals -- use HcalCalib workspace for true pedestal values! All filled values should appear green (ADC value ~ = 3) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/BaselineMonitor_Hcal/HB HE HF Depth 2 Pedestal Mean Map ADC",
@@ -56,24 +56,24 @@ hcallayout(dqmitems, "HCAL Trigger Primitives",
 
 hcallayout(dqmitems, "HCAL Dead Cell Check",
           [{ 'path': "Hcal/DeadCellMonitor_Hcal/ ProblemDeadCells",
-             'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/DeadCellMonitor_Hcal/Problem_TotalDeadCells_HCAL",
-             'description': "Total number of dead cells found in HCAL"}],
+             'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+           [{ 'path': "Hcal/DeadCellMonitor_Hcal/Problem_TotalDeadCells_HCAL_vs_LS",
+             'description': "Total number of dead cells found in HCAL vs luminosity section"}],
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell Check",
           [{ 'path': "Hcal/HotCellMonitor_Hcal/ ProblemHotCells",
-                   'description': "A cell is considered potentially hot if: Above a threshold energy; More than 3 sigma above its pedestal value; or Energy is especially large compared to its neighbors. Seriously hot if hot for >5% of a full run. All depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+                   'description': "A cell is considered potentially hot if it is above some threshold energy, or if it is persistently below some (lower) threshold enery for a number of consecutive events. Seriously hot if hot for >5% of a full run. All depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
 hcallayout(dqmitems, "HCAL Digi Problems",
           [{ 'path': "Hcal/DigiMonitor_Hcal/ ProblemDigis",
-                   'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, or if the sum of ADC counts over all time slices for the digi is 0. This plot is the sum of bad digis over all depths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+                   'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, if the digi's data valid/error flags are incorrect, or if there is an IDLE-BCN mismatch.  Currently, only digis with IDLE-BCN mismatches are displayed.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
 hcallayout(dqmitems, "HCAL DataFormat Problems",
            [{ 'path': "Hcal/DataFormatMonitor/ HardwareWatchCells",
-              'description': "A Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all d\epths. iPhi (0 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistogra\ms>HcalDQMHistograms</a>" }]
+              'description': "A Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all d\epths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistogra\ms>HcalDQMHistograms</a>" }]
                       )
 
 
