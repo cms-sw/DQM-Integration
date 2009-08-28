@@ -1,12 +1,12 @@
 import sys, os, optparse, re
 import ROOT, xmlrpclib
  
-FOLDERS     = { 
 # FOLDER UNDER EvInfo        NAME    SUMMARY VALUE IN EvInfo
+FOLDERS     = { 
   'reportSummaryContents': ( 'DQM',  'reportSummary' ),
   'CertificationContents': ( 'CERT', 'CertificationSummary' ),
   'DAQContents':           ( 'DAQ',  'DAQSummary' ),
-  'DCSContents':           ( 'DCS'   'DCSSummary' )
+  'DCSContents':           ( 'DCS',  'DCSSummary' )
 }
 
 SUBSYSTEMS  = {
@@ -82,7 +82,7 @@ def getSummaryValues(file_name, shift_type, translate, filters = None):
         folder_id = FOLDERS[folder_name][0]
         if folder_id == 'DQM' and shift_type != None:
           folder_id = 'DQM ' + shift_type.upper()
-
+      
       if filters != None:
         if not re.match(filters[1], folder_id):
           continue
