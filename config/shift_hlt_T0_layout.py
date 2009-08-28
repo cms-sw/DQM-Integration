@@ -75,5 +75,5 @@ hltlayout(dqmitems,"Jet Eff HLT to L1",
 [{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
 hltlayout(dqmitems,"Jet Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet30U"}])
+[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Etal1Phi_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
