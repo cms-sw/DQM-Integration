@@ -10,6 +10,7 @@ class OptionParser(optparse.OptionParser):
     optparse.OptionParser.__init__(self, usage="%prog [options] root_file ...", version="%prog 0.0.1", conflict_handler="resolve")
     self.add_option("--url", action="store", type="string", dest="url", default=SERVER_URL, help="specify DBS DQM XML-RPC server URL. Default is " + SERVER_URL)
     self.add_option("--debug", "-d", action="store_true", dest="debug", default=False, help="print values and exit. Do not write to DBS")
+    self.add_option("--shift", "-s", action="store", type="choice", dest="shift", default="offline", choices=("online","offline"), help="specify shift type: online or offline values allowed")
     self.add_option("--filter", "-f", action="store", type="string", dest="filter", default=None, help="Specify filters in the form \"('subsystem','folder','value')\" in regexp expression. Default is None and this takes all the subsystems, all folders and allvalues")
 
 if __name__ == "__main__":
@@ -41,7 +42,7 @@ if __name__ == "__main__":
   # defined XML-RPC url 
   for rfile in args:
 
-    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = None, translate = False, filters = filter)
+    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'], translate = True, filters = filter)
     dataset = getDatasetName(rfile)
 
     if run_number == None:
@@ -55,13 +56,6 @@ if __name__ == "__main__":
     if values == None or len(values) == 0:
       print "No content summary values found. Skipping file: %s" % rfile
       continue
-
-    for sub in values.keys():
-      for fol in values[sub].keys():
-        if values[sub][fol].has_key('Summary'):
-          s = values[sub][fol]['Summary']
-          values[sub][fol].pop('Summary')
-          values[sub][fol][sub + '_' + fol + '_Summary'] = s
 
     try:
       if opts['debug']:
