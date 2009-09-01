@@ -9,7 +9,7 @@ class OptionParser(optparse.OptionParser):
   """ Option parser class """
   def __init__(self):
     optparse.OptionParser.__init__(self, usage="%prog [options] root_file ...", version="%prog 0.0.1", conflict_handler="resolve")
-    self.add_option("--shift", "-s", action="store", type="choice", dest="shift", choices=("online","offline"), help="specify shift type: online or offline values allowed")
+    self.add_option("--shift", "-s", action="store", type="choice", dest="shift", choices=("online","offline"), help="specify shift type: online or offline values allowed. Default is offline.")
     self.add_option("--url", action="store", type="string", dest="url", default=SERVER_URL, help="specify RR XML-RPC server URL. Default is " + SERVER_URL)
     self.add_option("--dataset", "-t", action="store", type="string", dest="dataset", default=None, help="explicitly specify dataset name. If not set then script \
       (1) for offline shift will try to get it from the filename or (2) for online shift will set it to " + ONLINE_DATASET)
