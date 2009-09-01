@@ -1,28 +1,15 @@
 #!/usr/bin/env python
 
-import os, time, sys, shutil, glob, smtplib, re, commands
-import getopt as gop
-import zipfile as zp
-from datetime import datetime
-from email.MIMEText import MIMEText
+import os, time, sys, shutil, glob, re, commands
+from RootArchivalAndTransferSystem_cfg import *
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 
-SOURCEDIR = "/dqmdata/dqm/registered" #Directory where the original files are located.
-INJECTIONDIR = "/dqmdata/dqm/Tier0Shipping/inject"   #Directory where files get placed once they have been sent.
-VERIFYDIR= "/dqmdata/dqm/Tier0Shipping/verify"
-DONEDIR = "/dqmdata/dqm/done/merged"
-JUNKDIR = "/dqmdata/dqm/junk"
-HOSTNAME = "srv-C2D05-19"
-CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
-INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
-
-EMPTY_DONEDIR = False
-WAIT_TIME = 3600*4
 ################################################################################
 def getFileLists():
   newfiles={}
   trashfiles=[]
   filelist=[]
-  for dir1, subdirs, files in os.walk(SOURCEDIR):
+  for dir1, subdirs, files in os.walk(REGISTERED_DIR):
     for f in files:
       try:
         version=int(f.split("_V")[-1][:4])
@@ -43,18 +30,17 @@ def getFileLists():
 #=====================================================================================
 def injectFile(f,renotify=False):
   fname=f.rsplit("/",1)[-1]
-  dname=f.rsplit("/",1)[0]
   run=f.split("_R")[-1][:9]
-  iname="%s/%s" % (INJECTIONDIR,fname)
+  iname="%s/%s" % (INJECTION_DIR,fname)
   shutil.move(f,iname)
   parameters=[#"--test",
               #renotify and "--renotify" or " ",
               "--filename %s" % fname,
               "--type dqm",
-              "--path %s" % INJECTIONDIR,
+              "--path %s" % INJECTION_DIR,
               "--destination dqm",
-              "--hostname %s" % HOSTNAME,
-              "--config %s" % CONFIGFILE,
+              "--hostname %s" % TRANSFER_HOSTNAME,
+              "--config %s" % TRANSFER_CONFIGFILE,
               "--runnumber %s" % run,
               "--lumisection 95",
               "--numevents 834474816",
@@ -65,7 +51,7 @@ def injectFile(f,renotify=False):
   if result[0] >= 1:
     output = result[1]
     print "Error injecting file %s to transfer system checking if it exists" % f
-    chkparameters=["--check","--filename %s" % fname,"--config %s" % CONFIGFILE]
+    chkparameters=["--check","--filename %s" % fname,"--config %s" % TRANSFER_CONFIGFILE]
     cmd="%s %s" % (INJECTIONSCRIPT," ".join(chkparameters))
     result = commands.getstatusoutput(cmd)
     if result[0]==1:
@@ -88,16 +74,16 @@ def injectFile(f,renotify=False):
 #=====================================================================================
 def transferFiles():
   while True:
-    #look for NEW files in SOURCEDIR and files that need to be cleared.
+    #look for NEW files in REGISTERED_DIR and files that need to be cleared.
     newfiles,trashfiles=getFileLists() 
     
     #Making sure destination directories exist
-    if not os.path.exists(DONEDIR):
-      os.makedirs(DONEDIR)
-    if not os.path.exists(INJECTIONDIR):
-      os.makedirs(INJECTIONDIR)
-    if not os.path.exists(JUNKDIR):
-      os.makedirs(JUNKDIR)
+    if not os.path.exists(DONE_DIR):
+      os.makedirs(DONE_DIR)
+    if not os.path.exists(INJECTION_DIR):
+      os.makedirs(INJECTION_DIR)
+    if not os.path.exists(JUNK_DIR):
+      os.makedirs(JUNK_DIR)
     
     #Dealing with trash can  
     for tf in trashfiles:
@@ -105,12 +91,12 @@ def transferFiles():
         os.remove(tf)
       else:
         runnr=tf.split("_R")[-1][:9]
-        ftdir="%s/%s/%s" % (DONEDIR,runnr[:3],runnr[3:6])
+        ftdir="%s/%s/%s" % (DONE_DIR,runnr[:3],runnr[3:6])
         if not os.path.exists(ftdir):
           os.makedirs(ftdir)
         tfname="%s/%s" % (ftdir,tf.rsplit("/",1)[-1])
         if os.path.exists(tfname):
-          ftdir="%s/%s/%s" % (JUNKDIR,runnr[:3],runnr[3:6])
+          ftdir="%s/%s/%s" % (JUNK_DIR,runnr[:3],runnr[3:6])
           tfname="%s/%s" % (ftdir,tf.rsplit("/",1)[-1])
         shutil.move(tf,tfname)
         
@@ -119,7 +105,7 @@ def transferFiles():
       ver,f=newfiles[key]
       ifr=injectFile(f)
             
-    time.sleep(WAIT_TIME)
+    time.sleep(TRANSFERRER_WAIT_TIME)
 #=====================================================================================
 if __name__ == "__main__": 
   transferFiles()
