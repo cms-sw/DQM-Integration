@@ -1,7 +1,7 @@
 #! /bin/sh
 
-export WorkDir=/nfshome0/dqmpro/filecollector
-export YourEmail=lilopera@cern.ch
+WorkDir=$(dirname $0)
+YourEmail=lilopera@cern.ch
 source $WorkDir/env.sh
 
 #set ROOT environment

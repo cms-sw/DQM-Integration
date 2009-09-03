@@ -39,7 +39,7 @@ def stop_app(module,host=LOCALHOST):
     pid=stoper.read()
     stoper.close()
     if pid:
-      cmd="kill -9 %s 2>1&" % pid
+      cmd="kill -9 %s 2>&1" % pid
       stoper=os.popen(cmd)
       print stoper.read()
       stoper.close()
@@ -52,7 +52,7 @@ def stop_app(module,host=LOCALHOST):
     pid=stoper.read()
     stoper.close()
     if pid:
-      cmd="ssh %s kill -9 %s 2>1&" % (host,pid)
+      cmd="ssh %s kill -9 %s 2>&1" % (host,pid)
       stoper=os.popen(cmd)
       print stoper.read()
       stoper.close()
