@@ -33,7 +33,7 @@ def injectFile(f,renotify=False):
   run=f.split("_R")[-1][:9]
   iname="%s/%s" % (INJECTION_DIR,fname)
   shutil.move(f,iname)
-  parameters=[#"--test",
+  parameters=[TEST and "--test" or " ",
               #renotify and "--renotify" or " ",
               "--filename %s" % fname,
               "--type dqm",

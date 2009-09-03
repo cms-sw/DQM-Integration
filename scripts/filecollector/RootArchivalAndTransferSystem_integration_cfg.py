@@ -23,22 +23,23 @@ IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
 #Directories:                  # 
 ################################
 COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search reently produced files
-DONE_DIR               = '/dqmdata/dqm/done/merged' 		#sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
-DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
-FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
+DONE_DIR               = '/dqmdata/dqmintegration/done/merged' 		#sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
+DROPBOX                = '/dqmdata/dqmintegration/dropbox' # directory, to which files are stored
+FILER_MERGED_DIR       = '/dqmdata/dqmintegration/merged' # directory, to backup merged files
 IG_DESTINATION_DIR     = '/dqmdata/EventDisplay/Tier0_Test' #Directory where zipped files will be stored for transfer.
 IG_DONE_DIR            = '/dqmdata/EventDisplay/done'
 IG_FILE_DROPBOX        = '/dqmdata/EventDisplay/dropbox' #Directory to store ig Files.
 INDEX                  = '/home/dqm/idx'
-INJECTION_DIR          = '/dqmdata/dqm/Tier0Shipping/inject'   #Directory where files get placed once they have been sent.
-JUNK_DIR               = '/dqmdata/dqm/junk'
+INJECTION_DIR          = '/dqmdata/dqmintegration/Tier0Shipping/inject'   #Directory where files get placed once they have been sent.
+JUNK_DIR               = '/dqmdata/dqmintegration/junk'
 MERGED_DIR             = '/data/dqm/merged' # directory, to which merged file are stored
 OLD_IG_FILES           = '/dqmdata/EventDisplay'
-REGISTERED_DIR         = '/dqmdata/dqm/registered'     # 'Directory that stores registered files
-SOURCES_DONE_DIR       = '/dqmdata/dqm/done/sources' # directory, to which processed files are stored
+REGISTERED_DIR         = '/dqmdata/dqmintegration/registered'     # 'Directory that stores registered files
+SOURCES_DONE_DIR       = '/dqmdata/dqmintegration/done/sources' # directory, to which processed files are stored
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
-TMP_DROPBOX            = '/dqmdata/dqm/.dropbox_tmp' # stealth area on cmsmon
-VERIFY_DIR             = '/dqmdata/dqm/Tier0Shipping/verify'
+TMP_DROPBOX            = '/dqmdata/dqmintegration/.dropbox_tmp' # stealth area on cmsmon
+VERIFY_DIR             = '/dqmdata/dqmintegration/Tier0Shipping/verify'
+
 ################################
 #ratsControl parameters:       # 
 ################################
@@ -47,27 +48,27 @@ VERIFY_DIR             = '/dqmdata/dqm/Tier0Shipping/verify'
 #MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
 
 RATS={"Collector":{
-	"hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
+	"hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileCollector.sh",
 	"script":"fileCollector.py"
 	},
       "Merger":{
-	"hosts":["srv-c2d05-19"],
+	"hosts":["srv-c2d05-18"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileMerger.sh",
 	"script":"fileMerger.py"
 	},
       "Register":{
-	"hosts":["srv-c2d05-19"],
+	"hosts":["srv-c2d05-18"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileRegister.sh",
 	"script":"fileRegister.py"
 	},
       "Transfer":{
-	"hosts":["srv-c2d05-19"],
+	"hosts":["srv-c2d05-18"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransfer.sh",
 	"script":"fileTransfer.py"
 	},
       "Verify":{
-	"hosts":["srv-c2d05-19"],
+	"hosts":["srv-c2d05-18"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransferVerify.sh",
 	"script":"fileTransferVerify.py"
 	}	
@@ -99,7 +100,7 @@ MAX_ZIP_SIZE = 1610612736 # 1.5GB/70%   as max filesize.
 COMPRESSION = 1 #Compression rate for zip file 1(min) - 9(max)
 
 #Common Parameters for fileTransferVerify and fileTransfer
-TEST=False
+TEST=True
 
 #fileCleaner:
 

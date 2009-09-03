@@ -16,7 +16,7 @@ def renotifyFile(f,stage):
   if not os.path.exists(verDir):
     os.makedirs(verDir)
   shutil.move(f,verFile)
-  parameters=[#"--test",
+  parameters=[TEST and "--test" or " ",
               "--renotify",
               "--filename %s" % fname,
               "--type dqm",
