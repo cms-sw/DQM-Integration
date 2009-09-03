@@ -4,7 +4,7 @@
 
 YourEmail='lilopera@cern.ch'
 ServerMail = "dqm@srv-C2D05-19.cms"
-EXEDIR = '/nfshome0/dqmpro/filecollector' # directory to execute the relevant scripts
+EXEDIR = '/nfshome0/dqmdev/filecollector' # directory to execute the relevant scripts
 TRANSFER_HOSTNAME = "srv-C2D05-19"
 TRANSFER_CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
 INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
@@ -22,7 +22,7 @@ IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
 ################################
 #Directories:                  # 
 ################################
-COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search reently produced files
+COLLECTING_DIR         = '/home/dqmdevlocal/output'  #directory to search reently produced files
 DONE_DIR               = '/dqmdata/dqmintegration/done/merged' 		#sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
 DROPBOX                = '/dqmdata/dqmintegration/dropbox' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqmintegration/merged' # directory, to backup merged files
@@ -36,7 +36,7 @@ MERGED_DIR             = '/data/dqm/merged' # directory, to which merged file ar
 OLD_IG_FILES           = '/dqmdata/EventDisplay'
 REGISTERED_DIR         = '/dqmdata/dqmintegration/registered'     # 'Directory that stores registered files
 SOURCES_DONE_DIR       = '/dqmdata/dqmintegration/done/sources' # directory, to which processed files are stored
-T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
+T_FILE_DONE_DIR        = '/home/dqmdevlocal/done' # directory to store *_T files once they have been processed
 TMP_DROPBOX            = '/dqmdata/dqmintegration/.dropbox_tmp' # stealth area on cmsmon
 VERIFY_DIR             = '/dqmdata/dqmintegration/Tier0Shipping/verify'
 
@@ -49,27 +49,27 @@ VERIFY_DIR             = '/dqmdata/dqmintegration/Tier0Shipping/verify'
 
 RATS={"Collector":{
 	"hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileCollector.sh",
+	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileCollector.sh",
 	"script":"fileCollector.py"
 	},
       "Merger":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileMerger.sh",
+	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileMerger.sh",
 	"script":"fileMerger.py"
 	},
       "Register":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileRegister.sh",
+	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileRegister.sh",
 	"script":"fileRegister.py"
 	},
       "Transfer":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransfer.sh",
+	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileTransfer.sh",
 	"script":"fileTransfer.py"
 	},
       "Verify":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransferVerify.sh",
+	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileTransferVerify.sh",
 	"script":"fileTransferVerify.py"
 	}	
       }
