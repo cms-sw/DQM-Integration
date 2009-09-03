@@ -20,13 +20,13 @@ LOCALHOST=os.getenv("HOSTNAME")
 def start_app(module,host=LOCALHOST):
   if LOCALHOST==host:
     print "Running %s on LOCALHOST" % RATS[module]["alivechk"]
-    cmd="%s 2>&1" % RATS[module]["alivechk"]
+    cmd="%s %s 2>&1" % (RATS[module]["alivechk"],CFGFILE)
     starter=os.popen(cmd)
     print starter.read()
     starter.close()
   else:
     print "Running %s on %s" % (RATS[module]["alivechk"],host)
-    cmd="ssh %s %s 2>&1" % (host,RATS[module]["alivechk"])
+    cmd="ssh %s \"%s %s\" 2>&1" % (host,RATS[module]["alivechk"],CFGFILE)
     starter=os.popen(cmd)
     print starter.read()
     starter.close()
@@ -107,6 +107,7 @@ if len(sys.argv)==7 and sys.argv[5]!="on":
 elif len(sys.argv)==7:
   HOST=sys.argv[6]
 execfile(sys.argv[4])
+CFGFILE=sys.argv[4]
 ACTION=sys.argv[1]
 MODULE=sys.argv[2]
 

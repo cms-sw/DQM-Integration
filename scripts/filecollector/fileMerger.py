@@ -2,7 +2,10 @@
 
 import os, time, sys, shutil, glob, re
 from datetime import datetime
-from RootArchivalAndTransferSystem_cfg import *
+if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
+  print "No valid configuration file"
+  sys.exit()
+execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 while True:
   #### search new files

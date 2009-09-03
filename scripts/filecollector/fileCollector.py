@@ -1,7 +1,10 @@
 #! /usr/bin/env python
 
 import os,time,sys,glob,zipfile,re,shutil,stat
-from RootArchivalAndTransferSystem_cfg import *
+if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
+  print "No valid configuration file"
+  sys.exit()
+execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 def filecheck(rootfile):
   cmd = EXEDIR + '/filechk.sh ' + rootfile
