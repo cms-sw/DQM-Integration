@@ -57,7 +57,7 @@ hcallayout(dqmitems, "HCAL Trigger Primitives",
 hcallayout(dqmitems, "HCAL Dead Cell Check",
           [{ 'path': "Hcal/DeadCellMonitor_Hcal/ ProblemDeadCells",
              'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/DeadCellMonitor_Hcal/Problem_TotalDeadCells_HCAL_vs_LS",
+           [{ 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HCAL_vs_LS",
              'description': "Total number of dead cells found in HCAL vs luminosity section"}],
            )
 
