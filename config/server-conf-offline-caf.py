@@ -17,7 +17,8 @@ server.source('DQMUnknown', 'unknown', 8041)
 server.source('DQMArchive', 'file',
               '/data/dqm/caf/idx', '^/Global/', '--listen 8041',
               '--load ' + server.pathOfPlugin('render'))      
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/caf/upload',None)
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/caf/upload',
+               { 'CAF': '/data/dqm/caf/data'})
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-caf.py")

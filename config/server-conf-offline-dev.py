@@ -30,7 +30,7 @@ server.source('DQMArchive', 'file',
               '--load ' + server.pathOfPlugin('render'))              
 
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload',
-              { 'UploadedFiles': '/data/dqm/dev/upload'})
+              { 'Development': '/data/dqm/dev/data'})
 
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
