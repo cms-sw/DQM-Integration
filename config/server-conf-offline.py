@@ -20,13 +20,13 @@ server.title       = 'CMS data quality'
 server.serviceName = 'Offline'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.extend('DQMFileAccess', None, None,
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/data',
 	      { 'tier-0': '/data/dqm/tier-0/data/ProdSys/Pass-1',
 	        'tier-1': '/data/dqm/tier-1/data/ProdSys/Pass-1',
 	        'relval': '/data/dqm/relval/data/ProdSys/Pass-1',
 	        'ispy':   '/data/ispy-files' })
 server.source('DQMUnknown', 'unknown', 8081)
-server.source('DQMArchive', 'file', '/data/test/ix', '^/Global/', '--listen 8081',
+server.source('DQMArchive', 'file', '/data/dqm/offline/idx', '^/Global/', '--listen 8081',
               '--load ' + server.pathOfPlugin('render'))
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
