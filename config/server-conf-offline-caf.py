@@ -13,11 +13,11 @@ server.title       = 'CMS data quality'
 server.serviceName = 'CERN CAF'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.source('DQMUnknown', 'unknown', 'DQMArchive', 8041)
+server.source('DQMUnknown', 'unknown', 8041)
 server.source('DQMArchive', 'file',
-              '/data/dqm/caf/dqm.db', '--listen 8041',
-              '--load ' + server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/caf/upload')
+              '/data/dqm/caf/idx', '^/Global/', '--listen 8041',
+              '--load ' + server.pathOfPlugin('render'))      
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/caf/upload',None)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-caf.py")
