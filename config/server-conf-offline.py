@@ -22,7 +22,7 @@ server.serviceName = 'Offline'
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/data',
 	      { 'tier-0': '/data/dqm/tier-0/data/ProdSys/Pass-1',
-	        'offline': '/data/dqm/tier-1/data/ProdSys/Pass-1',
+	        'offline': '/data/dqm/offline/data/ProdSys/Pass-1',
 #	        'relval': '/data/dqm/relval/data/ProdSys/Pass-1',
 	        'ispy':   '/data/ispy-files' })
 server.source('DQMUnknown', 'unknown', 8081)
