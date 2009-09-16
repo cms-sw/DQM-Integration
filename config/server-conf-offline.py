@@ -14,7 +14,7 @@ modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8080
-server.serverDir   = '/data/test/dqm/offline/gui'
+server.serverDir   = '/data/dqm/offline/gui'
 server.baseUrl     = '/dqm/offline'
 server.title       = 'CMS data quality'
 server.serviceName = 'Offline'
