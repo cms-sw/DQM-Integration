@@ -5,7 +5,7 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
            ("eb", "ee", "csc", "rpc", "hcal", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
-
+print BASEDIR
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
@@ -19,14 +19,14 @@ server.plugin('render', BASEDIR + "/style/*.cc")
 server.source('DQMUnknown', 'unknown', 'DQMArchive', 8063)
               
 server.source('DQMLive', 'dqm', 'localhost:8061', '--listen 8063',
-	      '--load ' + server.pathOfPlugin('render'))
+	            '--load ' + server.pathOfPlugin('render'))
 	      
-server.source('DQMArchive', 'file',
-              '/data/dqm/dev/idx', '^/Global/', '--listen 8063',
+server.source('DQMArchive', 'file','/data/dqm/dev/idx', '^/Global/',
+              '--listen 8063',
               '--load ' + server.pathOfPlugin('render'))              
 
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload',
-              { 'UploadedFiles': '/data/dqm/dev/upload'})
+#server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload',
+#              { 'UploadedFiles': '/data/dqm/dev/upload'})
 
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
