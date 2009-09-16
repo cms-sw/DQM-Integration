@@ -20,10 +20,13 @@ server.source('DQMUnknown', 'unknown', 'DQMArchive', 8063)
 server.source('DQMLive', 'live',
               '--listen 8062', '--collector localhost:8061',
               '--load ' + server.pathOfPlugin('render'))
+
 server.source('DQMArchive', 'file',
-              '/data/dqm/dev/dqm.db', '--listen 8063',
-              '--load ' + server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload')
+              '/data/dqm/dev/idx', '^/Global/', '--listen 8063',
+              '--load ' + server.pathOfPlugin('render'))              
+
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload',
+              { 'UploadedFiles': '/data/dqm/dev/upload'})
 
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
