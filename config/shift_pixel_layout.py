@@ -26,3 +26,6 @@ shiftpixellayout(dqmitems, "07 - Mean cluster charge Barrel",
 shiftpixellayout(dqmitems, "08 - Mean cluster charge Endcap",
   [{ 'path': "Pixel/Endcap/SUMCLU_charge_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}]
 )
+shiftpixellayout(dqmitems, "09 - Pixel track counters",
+  [{ 'path': "Pixel/Tracks/ntracks_ctfWithMaterialTracksP5", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiPixel>Description for the Central DQM Shifter</a>"}]
+)
