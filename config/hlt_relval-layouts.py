@@ -179,15 +179,24 @@ hltlayoutW(dqmitems,"Ele10LWEleIdL1R/ delta-phi cut",
             {'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_EleId_L1RDQMWenu/efficiency_hltL1NonIsoHLTNonIsoSingleElectronLWEt10EleIdDphiFilter_vs_et_MC_matched", 'description':"per-object (MC matched) for hltL1NonIsoHLTNonIsoSingleElectronLWEt10EleIdDphiFilter in Ele10LWEleIdL1R_vs_et"}])
 
 
-def hltLayoutGammaJet(i, p, *rows): i["HLT/HLTEgammaValidation/GammaJet Preselection" + p] = DQMItem(layout=rows)
-hltLayoutGammaJet(dqmitems,"HLT_Photon10_L1R_DQMGammaJet/HLT_Photon10_L1R Efficiency vs Et",
+def hltLayoutGammaJet(i, p, *rows): i["HLT/HLTEgammaValidation/Photon Summary" + p] = DQMItem(layout=rows)
+hltLayoutGammaJet(dqmitems,"/HLT_Photon10_L1R Efficiency vs Et",
                   [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/final_eff_vs_et", 'description':"Efficiency of HLT_Photon10_L1R vs Et of generated photon"}])
-hltLayoutGammaJet(dqmitems,"HLT_Photon10_L1R_DQMGammaJet/HLT_Photon10_L1R Efficiency vs eta",
+hltLayoutGammaJet(dqmitems,"/HLT_Photon10_L1R Efficiency vs eta",
                   [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/final_eff_vs_eta", 'description':"Efficiency of HLT_Photon10_L1R vs eta of generated photon"}])
-hltLayoutGammaJet(dqmitems,"HLT_Photon10_L1R_DQMGammaJet/L1 EgammaEt5 Efficiency vs et",
+hltLayoutGammaJet(dqmitems,"/L1 EgammaEt5 Efficiency vs et",
                   [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/efficiency_hltL1sRelaxedSingleEgammaEt5_vs_et_MC_matched", 'description':"Efficiency of L1 EgammaEt5 vs et of generated photon"}])
-hltLayoutGammaJet(dqmitems,"HLT_Photon10_L1R_DQMGammaJet/L1 EgammaEt5 Efficiency vs eta",
+hltLayoutGammaJet(dqmitems,"/L1 EgammaEt5 Efficiency vs eta",
                   [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/efficiency_hltL1sRelaxedSingleEgammaEt5_vs_eta_MC_matched", 'description':"Efficiency of L1 EgammaEt5 vs eta of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_LooseEcalIso_L1R Efficiency vs Et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_LooseEcalIso_L1R_DQMGammaJet/final_eff_vs_et",'description':"Efficiency of HLT_Photon15_LooseEcalIso_L1R vs Et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_LooseEcalIso_L1R Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_LooseEcalIso_L1R_DQMGammaJet/final_eff_vs_eta",'description':"Efficiency of HLT_Photon15_LooseEcalIso_L1R vs eta of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_TrackIso_L1R Efficiency vs Et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_TrackIso_L1R_DQMGammaJet/final_eff_vs_et",'description':"Efficiency of HLT_Photon15_TrackIso_L1R vs Et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_TrackIso_L1R Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_TrackIso_L1R_DQMGammaJet/final_eff_vs_eta",'description':"Efficiency of HLT_Photon15_TrackIso_L1R vs eta of generated photon"}])
+
 
 ###---- MUON selection goes here: ----
 
