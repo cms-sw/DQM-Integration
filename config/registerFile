@@ -19,7 +19,7 @@ fi
 
 [ -e $DQM_DIR/dqm.db ] && mv $DQM_DIR/{dqm,new}.db
 
-find $DQM_DIR/data -name 'DQM_V0001*.root' |
+find $DQM_DIR/data -name 'DQM_V000*.root' |
   perl -ne '
     chomp;
     $datafile = $_;
@@ -33,8 +33,12 @@ find $DQM_DIR/data -name 'DQM_V0001*.root' |
     push(@{$files{"$dataset $pass"}}, $datafile);
 
     END {
-      foreach (keys %files) {
-        system("set -x; visDQMRegisterFile '"$DQM_DIR"'/new.db $_ @{$files{$_}}");
+      foreach (sort { $b cmp $a } keys %files) {
+	@fnames = sort { $b cmp $a } @{$files{$_}};
+	while (@fnames) {
+	  @part = splice(@fnames, 0, 5);
+          system("set -x; visDQMRegisterFile '"$DQM_DIR"'/new.db $_ @part");
+        }
       }
     }'
 
