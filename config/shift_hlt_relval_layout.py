@@ -46,7 +46,7 @@ def trigvalFVEle(i, p, *rows): i["00 Shift/HLT/FourVector/Electron/" + p] = DQMI
 trigvalFVEle(dqmitems,"Eff HLT to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Ele10_LW_L1R"}])
 
-trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+trigvalFVEle(dqmitems,"Eff HLT to MC eta-phi",
 [{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Ele10_LW_L1R"}])
 
 trigvalFVEle(dqmitems,"Eff HLT to L1",
@@ -68,7 +68,7 @@ def trigvalFVJet(i, p, *rows): i["00 Shift/HLT/FourVector/Jet/" + p] = DQMItem(l
 trigvalFVJet(dqmitems,"Eff HLT to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Jet50"}])
 
-trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+trigvalFVJet(dqmitems,"Eff HLT to MC eta-phi",
 [{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Jet50"}])
 
 trigvalFVJet(dqmitems,"Eff HLT to L1",
@@ -90,7 +90,7 @@ def trigvalFVPho(i, p, *rows): i["00 Shift/HLT/FourVector/Photon/" + p] = DQMIte
 trigvalFVPho(dqmitems,"Eff HLT to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEt_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Photon15_L1R"}])
 
-trigvalFVMuon(dqmitems,"Eff HLT to MC eta-phi",
+trigvalFVPho(dqmitems,"Eff HLT to MC eta-phi",
 [{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEtamcPhi_Eff_OnToMc", 'description':"Efficiency of HLT to MC for path HLT_Photon15_L1R"}])
 
 trigvalFVPho(dqmitems,"Eff HLT to L1",
