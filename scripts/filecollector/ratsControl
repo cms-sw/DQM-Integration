@@ -34,7 +34,7 @@ def start_app(module,host=LOCALHOST):
 def stop_app(module,host=LOCALHOST):
   if LOCALHOST==host:
     print "Stopping %s on LOCALHOST" % RATS[module]["script"]           
-    cmd="echo $(ps -eF|grep %s | grep -v grep | awk '{print($2)}')" % RATS[module]["script"]
+    cmd="echo $(ps -eF|grep \"%s  %s\"| grep -v grep | awk '{print($2)}')" % (RATS[module]["script"],CFGFILE)
     stoper=os.popen(cmd)
     pid=stoper.read()
     stoper.close()
@@ -47,7 +47,7 @@ def stop_app(module,host=LOCALHOST):
       print "ratsControl cant find %s running in LOCALHOST" % RATS[module]["script"]
   else:
     print "Stopping %s on %s" % (RATS[module]["script"],host)           
-    cmd="ssh %s \"echo \$(ps -eF|grep %s | grep -v grep | awk '{print(\$2)}')\"" % (host,RATS[module]["script"])
+    cmd="ssh %s \"echo \$(ps -eF|grep %s | grep -v grep | awk '{print(\$2)}')\"" % (host,RATS[module]["script"],CFGFILE)
     stoper=os.popen(cmd)
     pid=stoper.read()
     stoper.close()

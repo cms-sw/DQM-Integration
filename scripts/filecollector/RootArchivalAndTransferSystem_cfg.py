@@ -22,7 +22,7 @@ IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
 ################################
 #Directories:                  # 
 ################################
-COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search reently produced files
+COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recently produced files
 DONE_DIR               = '/dqmdata/dqm/done/merged' 		#sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
 DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files

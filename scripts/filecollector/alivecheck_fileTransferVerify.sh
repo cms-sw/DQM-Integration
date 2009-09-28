@@ -1,6 +1,6 @@
 #! /bin/sh
 
-WorkDir=$(dirname $0)
+export WorkDir=$(dirname $0)
 YourEmail=lilopera@cern.ch
 source /nfshome0/cmssw2/scripts/setup.sh
 
@@ -19,7 +19,7 @@ else
   CFGFILE=$1
 fi
 EXE="$WorkDir/fileTransferVerify.py $CFGFILE"
-RUN_STAT=`ps -ef | grep fileTransferVerify.py | grep -v grep | wc | awk '{print $1}'`
+RUN_STAT=`ps -ef | grep "fileTransferVerify.py $CFGFILE"| grep -v grep | wc | awk '{print $1}'`
 
 if [ $RUN_STAT -ne 0 ]
 then

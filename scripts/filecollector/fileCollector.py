@@ -67,14 +67,12 @@ while True:
         NEW.setdefault(runnr, {}).setdefault(subsystem,[]).append(f)
         NFOUND += 1  
   if len(NEW.keys()) == 0:
-    print 'waiting for new files to process...'
     time.sleep(COLLECTOR_WAIT_TIME)
     continue
       
   TAGS=sorted(glob.glob('%s/tagfile_runend_*' % COLLECTING_DIR ),reverse=True)
   if len(TAGS)==0:
     if len(NEW.keys()) <= 1:
-      print 'waiting for new files to process...'
       time.sleep(COLLECTOR_WAIT_TIME)
       continue
     print 'No tagfile_runend foud, checking for *_T files that could have been left behind'
