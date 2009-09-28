@@ -12,6 +12,7 @@ FOLDERS     = {
 SUBSYSTEMS  = {
   'CSC' :        'CSC',
   'DT' :         'DT',
+  'ES' :         'ES',
   'EcalBarrel' : 'ECAL',
   'EcalEndcap' : 'ECAL',
   'Hcal' :       'HCAL',
@@ -90,8 +91,12 @@ def getSummaryValues(file_name, shift_type, translate, filters = None):
       if not result[sub_key].has_key(folder_id):
         result[sub_key][folder_id] = {}
 
-      writeValues(folder, result[sub_key][folder_id], None, filters[2])
-      writeValues(evInfo, result[sub_key][folder_id], {FOLDERS[folder_name][1]: 'Summary'}, filters[2])
+      value_filter = None
+      if filters != None:
+        value_filter = filters[2]
+
+      writeValues(folder, result[sub_key][folder_id], None, value_filter)
+      writeValues(evInfo, result[sub_key][folder_id], {FOLDERS[folder_name][1]: 'Summary'}, value_filter)
 
   f.Close()
 
