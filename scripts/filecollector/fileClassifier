@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+import os, datetime, time,  sys, shutil, glob, re, subprocess as sp,tempfile
+from commonAnTS import *
+if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
+  print "No valid configuration file"
+  sys.exit()
+execfile(sys.argv[1])
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+#####         MAIN PROGRAM         ######
+if not os.path.exists(BASE_DIRECTORY):
+  DEBUG and debugMsg(0,"Creating directory '%s'" % DROPBOX)
+  os.makedirs(BASE_DIRECTORY)
+  
+while True:
+  NEW_FILES={}
+  for directory, subdirs, files in os.walk(DROPBOX):
+    for f in files:
+      nameItems=re.match(".*\%s"%FILE_TYPE,f)
+      if nameItems:
+        NEW_FILES.setdefault(f,directory)
+  DEBUG and debugMsg(0,"Found '%d' new files in dropbox" % len(NEW_FILES.keys()))
+  
+  for f,directory in NEW_FILES.items():
+    nameItems=re.match(FILE_NAME_STD,f)
+    d=datetime.datetime.today()
+    timeStamp=d.strftime("%Y")
+    fName="%s/%s" % (directory,f)
+    if nameItems:
+      preEra,trigger,run,serial=nameItems.groups()
+      runDir="%s/%sxxx" % (run [:4],run[4:7])
+      eraFound=False
+      for era in ERAS:
+        if era in preEra:
+          destDir="%s/%s-%s/%s/%s" % (BASE_DIRECTORY,timeStamp,era,trigger,runDir)
+          eraFound=True
+          break
+        else:
+          destDir="%s/%s-OTHER/%s/%s" % (BASE_DIRECTORY,timeStamp,trigger,runDir)
+      not eraFound and debugMsg(1,"File %s/%s doesn't have a recongizable ERA got:%s expected era to contain one of the following key words: [%s]" % (directory,f,preEra,",".join(ERAS)))
+
+    else:
+      debugMsg(1,"File %s/%s doesn't comply with name standard" % (directory,f))
+      destDir="%s/%s-OTHER" %(BASE_DIRECTORY,timeStamp)
+    
+    if not os.path.exists(destDir):
+      DEBUG and debugMsg(0,"Creating directory '%s'" % destDir)
+      os.makedirs(destDir)      
+    
+    finalFileName="%s/%s" % (destDir,f)      
+    shutil.move(fName,finalFileName)
+    DEBUG and debugMsg(0,"File'%s' moved from Dropbox to %s" % (finalFileName,destDir)) 
+  
+  DEBUG and debugMsg(0,"Finished processing list going to sleep for: '%d' seconds" % CLASSIFIER_WAIT_TIME)
+  time.sleep(CLASSIFIER_WAIT_TIME)

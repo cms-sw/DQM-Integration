@@ -1,59 +1,23 @@
 #!/usr/bin/env python
-
-import os, datetime, time,  sys, shutil, glob, re, subprocess as sp
-#if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
-#  print "No valid configuration file"
-#  sys.exit()
-#execfile(sys.argv[1])
+import os, datetime, time,  sys, shutil, glob, re, subprocess as sp,tempfile
+from commonAnTS import *
+if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
+  print "No valid configuration file"
+  sys.exit()
+execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
-###### CONFIG FILE VARIABLES        ######
-CASTOR_BASE="/castor/cern.ch/cms/store/temp/dqm"
-INSTANCE_DIR="online"
-FILE_TYPE=".ig"
-DROPBOX="/data/ispy-files/dropbox"
-TMP_DROPBOX="/data/ispy-files/.dropbox"
-REPOSITORY_DIR="/data/ispy-files/.repo"
-CASTOR_WAIT_TIME=120
-TIME_OUT=600
-DEBUG=False
-###### END OF CONFIG FILE VARIABLES ######
-#####       HELPER FUNCTIONS        ######
-def debugMsg(level,message):
-  LEVELS=["INFO","WARNING","ERROR"]
-  d=datetime.datetime.today()
-  timeStamp=d.strftime("%Y/%m/%d\t%H:%M:%S")
-  msg="%s\t%s:\t%s\n" % (timeStamp,LEVELS[level],message)
-  sys.stdout.write(msg)
-  return True
-def executeCmd(cmd):
-  cmdHdl=sp.Popen(cmd,shell=True,stdout=sp.PIPE,stderr=sp.PIPE)
-  t=0
-  cmdHdl.poll()
-  while cmdHdl.returncode == None and t<TIME_OUT:
-    t=t+1
-    cmdHdl.poll()
-    time.sleep(1)
-  if t >= TIME_OUT and not cmdHdl.returncode:
-    try:
-      os.kill(cmdHdl.pid,9)
-      debugMsg(2,"Execution timed out on Command: '%s'" % cmd)
-    except:
-      DEBUG and debugMsg(1,"Execution timed out on Command: '%s' but it ended while trying to kill it, adjust timer" % cmd)
-  cmdHdl.poll()
-  return (cmdHdl.stdout,cmdHdl.stderr,cmdHdl.returncode)
-
 #####         MAIN PROGRAM         ######
 if not os.path.exists(REPOSITORY_DIR):
-  print 
-  os.  makedirs(REPOSITORY_DIR)
+  DEBUG and debugMsg(0,"Creating directory '%s'" % REPOSITORY_DIR)
+  os.makedirs(REPOSITORY_DIR)
   
 if not os.path.exists(DROPBOX):
-  print 
-  os.  makedirs(DROPBOX)
+  DEBUG and debugMsg(0,"Creating directory '%s'" % DROPBOX)
+  os.makedirs(DROPBOX)
   
 if not os.path.exists(TMP_DROPBOX):
-  print 
-  os.  makedirs(TMP_DROPBOX)
+  DEBUG and debugMsg(0,"Creating directory '%s'" % TMP_DROPBOX)
+  os.makedirs(TMP_DROPBOX)
   
 while True:
   #get list of directories from castor
@@ -94,7 +58,7 @@ while True:
     if len(foundFiles): 
       PROCESSED_FILES_LIST.extend(foundFiles)
     f.close()
-  debugMsg(0,"Found %d new files already processed" % len(PROCESSED_FILES_LIST))
+  debugMsg(0,"Found %d files already processed" % len(PROCESSED_FILES_LIST))
   #Create list of files to copy
   NEW_FILES_DICT={}
   newFilesFound=0
@@ -142,4 +106,5 @@ while True:
       else:
         debugMsg(2,"rfcp failed wi error message: %s" % cmdOutput)
     repoFile.close()
+  DEBUG and debugMsg(0,"Finished processing list going to sleep for: '%d' seconds" % CASTOR_WAIT_TIME)
   time.sleep(CASTOR_WAIT_TIME)
