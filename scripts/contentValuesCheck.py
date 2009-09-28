@@ -75,10 +75,12 @@ if __name__ == "__main__":
             skeys[key] = []
           skeys[key].append(folder)
           
-      for folder in sfolders:
-        for key in skeys:
-          if skeys[key].count(folder) == 0:
-            messages.append("%s: missing value EventInfo/%s/%s (found in %s)" % (sub, folder, key, ','.join(skeys[key])))
+      for key in skeys:
+        nfound = []
+        for folder in sfolders:
+          if skeys[key].count(folder) == 0: nfound.append(folder)
+        if len(nfound) > 0:
+          messages.append("%s: value (%s)/%s not found in (%s)" % (sub, ','.join(skeys[key]), key, ','.join(nfound)))
 
     if not opts['silent']:
       for message in sorted(messages):  print message          
