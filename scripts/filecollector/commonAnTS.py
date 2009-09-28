@@ -1,4 +1,7 @@
-import os, datetime, time,  sys, shutil, glob, re, subprocess as sp,tempfile
+import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile
+TIME_OUT=700
+DEBUG=False
+
 def debugMsg(level,message):
   LEVELS=["INFO","WARNING","ERROR"]
   d=datetime.datetime.today()
