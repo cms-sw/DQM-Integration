@@ -13,6 +13,8 @@ while True:
   AFSnewestMTime=0
   for directory, subdirs, files in os.walk(AFS_BASE_DIR):
     for f in files:
+      if f[0] == "."
+        continue
       fullFileName="%s/%s" % (directory,f)
       fileSize=os.stat(fullFileName).st_size
       fileMTime=os.stat(fullFileName).st_mtime
