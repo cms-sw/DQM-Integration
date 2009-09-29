@@ -60,7 +60,7 @@ while True:
     if len(foundFiles): 
       PROCESSED_FILES_LIST.extend(foundFiles)
     f.close()
-  debugMsg(0,"Found %d files already processed" % len(PROCESSED_FILES_LIST))
+  DEBUG and debugMsg(0,"Found %d files already processed" % len(PROCESSED_FILES_LIST))
   #Create list of files to copy
   NEW_FILES_DICT={}
   newFilesFound=0
@@ -81,7 +81,7 @@ while True:
           newFilesFound=newFilesFound+1
           fileName="%s/%s/%s/%s" % (CASTOR_BASE,INSTANCE_DIR,directory,newFileName)
           NEW_FILES_DICT.setdefault(fileName,[long(newFileSize),repoFile])
-  debugMsg(0,"Found %d new files to copy" % newFilesFound)
+  DEBUG and debugMsg(0,"Found %d new files to copy" % newFilesFound)
   #Copy Files
   for newFile, info in NEW_FILES_DICT.items():
     cmd="rfcp %s %s" % (newFile,TMP_DROPBOX)

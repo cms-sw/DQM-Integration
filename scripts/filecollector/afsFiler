@@ -7,7 +7,6 @@ if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
 execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 #####         MAIN PROGRAM         ######
-DEBUG = True
 while True:
   AFS_FILE_LIST={}
   AFSnewestMTime=0
@@ -22,39 +21,21 @@ while True:
         AFSnewestMTime = fileMTime
       if not "latest" in f:
         AFS_FILE_LIST.setdefault(fullFileName,[fileSize,fileMTime])
-  
-  DIR_MOD_LIST={}
-  for subdir in glob.glob("%s/*" % BASE_DIRECTORY):
-    if os.path.isdir(subdir):
-      dirMTime=os.path.getmtime(subdir)
-      if dirMTime > AFSnewestMTime: 
-        DIR_MOD_LIST.setdefault(subdir)
         
   FILE_LIST={} 
-  for eraDirectory in sorted(DIR_MOD_LIST,reverse=True):
-    for directory, subdirs, files in os.walk(eraDirectory):
-      #make sure only to walk directories with newr infomation than already in AFS
-      #and sort them by last modification time
-      subDict=[s for s in subdirs if os.path.getmtime("/".join([directory,s]))>=AFSnewestMTime ]
-      for s in range(len(subdirs)):
-        del subdirs[0]
-      subdirs.extend(sorted(subDict,
-                     cmp=lambda x,y:cmp(os.path.getmtime("/".join([directory,x])),os.path.getmtime("/".join([directory,y]))),
-                     reverse=True))          
-      #Retrive files in this directory that are newer than the newst file found in AFS
-      DEBUG and debugMsg(0,"Considering the following directories %s in that order" % ",".join(subdirs))
-      filesToConsider=[f for f in files if os.path.getmtime("/".join([directory,f]))>=AFSnewestMTime ]
-      filesToConsider.sort(cmp=lambda x,y:cmp(os.path.getmtime("/".join([directory,x])),os.path.getmtime("/".join([directory,y]))),
-                     reverse=True)
-      DEBUG and debugMsg(0,"Found %d new files in directory %s" % (len(filesToConsider),directory))      
-      for f in filesToConsider:
-        fullFileName="%s/%s" % (directory,f)
-        fileSize=os.stat(fullFileName).st_size
-        fileMTime=os.stat(fullFileName).st_mtime
-        if fileMTime < AFSnewestMTime:
-          break
-        FILE_LIST.setdefault(fullFileName,[fileSize,fileMTime])
-        DEBUG and debugMsg(0,"Added file %s with timestamp %d and size %d to FILE_LIST" % (fullFileName,fileSize,fileMTime))
+  for directory, subdirs, files in os.walk(BASE_DIRECTORY):
+    filesToConsider=[f for f in files if os.path.getmtime("/".join([directory,f]))>=AFSnewestMTime ]
+    filesToConsider.sort(cmp=lambda x,y:cmp(os.path.getmtime("/".join([directory,x])),os.path.getmtime("/".join([directory,y]))),
+                    reverse=True)
+    DEBUG and debugMsg(0,"Found %d new files in directory %s" % (len(filesToConsider),directory))      
+    for f in filesToConsider:
+      fullFileName="%s/%s" % (directory,f)
+      fileSize=os.stat(fullFileName).st_size
+      fileMTime=os.stat(fullFileName).st_mtime
+      if fileMTime < AFSnewestMTime:
+        break
+      FILE_LIST.setdefault(fullFileName,[fileSize,fileMTime])
+      DEBUG and debugMsg(0,"Added file %s with timestamp %d and size %d to FILE_LIST" % (fullFileName,fileSize,fileMTime))
   #make final fie list that's going into AFS 
   FINAL_LIST={}
   quota=0
