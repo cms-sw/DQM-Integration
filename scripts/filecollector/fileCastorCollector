@@ -51,6 +51,8 @@ while True:
     repoFile="%s/%s.rep" % (REPOSITORY_DIR,directory)
     if not os.path.exists(repoFile):
       debugMsg(0,"Repository File %s does not exists, found new directory!" % repoFile)
+      f=open(repoFile,"w")
+      f.close()
       continue
     f=open(repoFile,"r")
     foundFiles=[x.strip() for x in f.readlines()]
