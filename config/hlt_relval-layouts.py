@@ -241,8 +241,45 @@ for path in ["HLT_IsoMu3", "HLT_IsoMu9"]:
 
 
 ###---- TAU selection goes here: ----
-def trigvaltau(i, p, *rows): i["HLT/HLTTAU/Preselection" + p] = DQMItem(layout=rows)
+def trigvaltau(i, p, *rows): i["HLT/TauRelVal/Summary For " + p] = DQMItem(layout=rows)
 
+for lumi in ["Default", "8E29","1E31"]:
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/Double Tau Path Performance",
+               [{'path': "HLT/TauRelVal/MC_"+lumi+ "/DoubleTau/EfficiencyRefInput",
+                 'description':"Efficiency of the Double Tau Path with ref to MC for "+lumi},
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/DoubleTau/EfficiencyRefPrevious",
+                 'description':"Efficiency of the Double Tau Path with ref to previous step( "+lumi+")"}
+
+               ])
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/Single Tau Path Performance",
+               [
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/SingleTau/EfficiencyRefInput",
+                 'description':"Efficiency of the Single Tau Path with ref to MC for "+lumi},
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/SingleTau/EfficiencyRefPrevious",
+                 'description':"Efficiency of the Single Tau Path with ref to previous step( "+lumi+")"}
+               ])
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L1 Efficency",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtEff", 'description':"L1 Tau Efficiency vs pt with  ref to MC for "+lumi},
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtaEff", 'description':"L1 Tau Efficiency vs pt with  ref to MC for "+lumi},
+               ])
+
+               
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L2 Efficency",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtEff", 'description':"L2 Tau Efficiency vs pt with  ref to MC for "+lumi},
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtaEff", 'description':"L2 Tau Efficiency vs pt with  ref to MC for "+lumi},
+               ])
+
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L1 Resolution",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtResol", 'description':"L1 Tau ET resolution with ref to MC  for "+lumi}
+               ])
+
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L2 Resolution",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtResol", 'description':"L2 Tau ET resolution with ref to MC  for "+lumi}
+               ])
 ###---- JETMET selection goes here: ----
 #def trigvaljetmet(i, p, *rows): i["HLT//Preselection" + p] = DQMItem(layout=rows)
 
