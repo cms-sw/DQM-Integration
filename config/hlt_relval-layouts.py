@@ -443,81 +443,81 @@ trigvalbphys(dqmitems,
 
 trigvalbphys(dqmitems,
   "Glob\Gen Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effGlobDigenAND_genEtaPt", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effGlobDigenAND_genEtaPt", 
   "Efficiency to find two global muons associated to two generated muons as a function of generated dimuon Rapidity and pT"
 )
 trigvalbphys(dqmitems,
   "Glob\Gen Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effGlobDigenAND_genEtaPtX", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effGlobDigenAND_genEtaPtX", 
   "Efficiency to find two global muons associated to two generated muons as a function of generated dimuon Rapidity"
 )
 trigvalbphys(dqmitems,
   "Glob\Gen Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effGlobDigenAND_genEtaPtY", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effGlobDigenAND_genEtaPtY", 
   "Efficiency to find two global muons associated to two generated muons as a function of generated dimuon pT"
 )
 
 trigvalbphys(dqmitems,
   "L1\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt1DiglobAND_recoEtaPt", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt1DiglobAND_recoEtaPt", 
   "Efficiency to find two L1 muons associated to two global+gen muons as a function of global dimuon Rapidity and pT"
 )
 trigvalbphys(dqmitems,
   "L1\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt1DiglobAND_recoEtaPtX", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt1DiglobAND_recoEtaPtX", 
   "Efficiency to find two L1 dimuon associated to two global+gen muons as a function of global dimuon Rapidity"
 )
 trigvalbphys(dqmitems,
   "L1\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt1DiglobAND_recoEtaPtY", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt1DiglobAND_recoEtaPtY", 
   "Efficiency to find two L1 muons associated to two global+gen muons as a function of global dimuon pT"
 )
 
 trigvalbphys(dqmitems,
   "L2\L1 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt2Difilt1AND_recoEtaPt", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt2Difilt1AND_recoEtaPt", 
   "Efficiency to find two L2 muons associated to two L1+global+gen muons as a function of global dimuon Rapidity and pT"
 )
 trigvalbphys(dqmitems,
   "L2\L1 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt2Difilt1AND_recoEtaPtX", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt2Difilt1AND_recoEtaPtX", 
   "Efficiency to find two L2 muons associated to two L1+global+gen muons as a function of global dimuon Rapidity"
 )
 trigvalbphys(dqmitems,
   "L2\L1 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt2Difilt1AND_recoEtaPtY", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt2Difilt1AND_recoEtaPtY", 
   "Efficiency to find two L2 muons associated to two L1+global+gen muons as a function of global dimuon pT"
 )
 
 trigvalbphys(dqmitems,
   "L3\L2 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3Difilt2AND_recoEtaPt", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3Difilt2AND_recoEtaPt", 
   "Efficiency to find two L3 muons associated to two L2+L1+global+gen muons as a function of global dimuon Rapidity and pT"
 )
 trigvalbphys(dqmitems,
   "L3\L2 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3Difilt2AND_recoEtaPtX", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3Difilt2AND_recoEtaPtX", 
   "Efficiency to find two L3 muons associated to two L2+L1+global+gen muons as a function of global dimuon Rapidity"
 )
 trigvalbphys(dqmitems,
   "L3\L2 Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3Difilt2AND_recoEtaPtY", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3Difilt2AND_recoEtaPtY", 
   "Efficiency to find two L3 muons associated to two L2+L1+global+gen muons as a function of global dimuon pT"
 )
 
 trigvalbphys(dqmitems,
   "L3\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3DiglobAND_recoEtaPt", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3DiglobAND_recoEtaPt", 
   "Efficiency to find two L3 muons associated to two global+gen muons as a function of global dimuon Rapidity and pT"
 )
 trigvalbphys(dqmitems,
   "L3\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3DiglobAND_recoEtaPtX", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3DiglobAND_recoEtaPtX", 
   "Efficiency to find two L3 muons associated to two global+gen muons as a function of global dimuon Rapidity"
 )
 trigvalbphys(dqmitems,
   "L3\Glob Dimuon Efficiency (HLT_DoubleMu0)",
-  "HLT/HeavyFlavor/HLT/HLT_Mu3/effFilt3DiglobAND_recoEtaPtY", 
+  "HLT/HeavyFlavor/HLT/HLT_DoubleMu0/effFilt3DiglobAND_recoEtaPtY", 
   "Efficiency to find two L3 muons associated to two global+gen muons as a function of global dimuon pT"
 )
 
