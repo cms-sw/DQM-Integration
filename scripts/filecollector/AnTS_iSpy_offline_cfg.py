@@ -5,7 +5,7 @@ FILE_TYPE		= ".ig"  #always include the dot "."
 ################################
 #Directories:                  # 
 ################################
-AFS_BASE_DIR		= "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/ispy-files/data/"
+AFS_BASE_DIR		= "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/ispy-files/data"
 BASE_DIRECTORY	= "/data/ispy-files/data"
 CASTOR_BASE			= "/castor/cern.ch/cms/store/temp/dqm"
 DROPBOX					= "/data/ispy-files/dropbox"

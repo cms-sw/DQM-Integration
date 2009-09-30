@@ -6,64 +6,93 @@ if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
   sys.exit()
 execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
-#####         MAIN PROGRAM         ######
+#####         MAIN PROGRAM         ########
+#DEBUG=True
 while True:
-  AFS_FILE_LIST={}
-  AFSnewestMTime=0
+  AFS_FILE_DICT={}
+  afsQuota=0
   for directory, subdirs, files in os.walk(AFS_BASE_DIR):
+    if directory.split("/")[-1] in EXCLUDED:
+      for s in range(len(subdirs)):
+        del subdirs[0]
+      continue
     for f in files:
       if f[0] == ".":
         continue
       fullFileName="%s/%s" % (directory,f)
       fileSize=os.stat(fullFileName).st_size
-      fileMTime=os.stat(fullFileName).st_mtime
-      if AFSnewestMTime < fileMTime:
-        AFSnewestMTime = fileMTime
-      if not "latest" in f:
-        AFS_FILE_LIST.setdefault(fullFileName,[fileSize,fileMTime])
-        
-  FILE_LIST={} 
+      runMayor=fullFileName.split("/")[-3]
+      runMinor=fullFileName.split("/")[-2]
+      afsQuota=afsQuota+fileSize
+      AFS_FILE_DICT.setdefault(fullFileName,[fileSize,runMayor,runMinor])
+  AFS_FILE_LIST=sorted(AFS_FILE_DICT,key=lambda x: "%s%s" % (AFS_FILE_DICT[x][1],AFS_FILE_DICT[x][2]),reverse=True)   
+  DEBUG and debugMsg(0,"Found %d files in AFS base directory: %s" % (len(AFS_FILE_LIST),AFS_BASE_DIR))
+  firstAfsRun=0
+  if len(AFS_FILE_LIST):
+    firstAfsRun=long(AFS_FILE_LIST[0][-22:-13])
+  RUN_LIST={}
+  treeLevel=0
   for directory, subdirs, files in os.walk(BASE_DIRECTORY):
-    filesToConsider=[f for f in files if os.path.getmtime("/".join([directory,f]))>=AFSnewestMTime ]
-    filesToConsider.sort(cmp=lambda x,y:cmp(os.path.getmtime("/".join([directory,x])),os.path.getmtime("/".join([directory,y]))),
-                    reverse=True)
-    DEBUG and debugMsg(0,"Found %d new files in directory %s" % (len(filesToConsider),directory))      
-    for f in filesToConsider:
-      fullFileName="%s/%s" % (directory,f)
-      fileSize=os.stat(fullFileName).st_size
-      fileMTime=os.stat(fullFileName).st_mtime
-      if fileMTime < AFSnewestMTime:
-        break
-      FILE_LIST.setdefault(fullFileName,[fileSize,fileMTime])
-      DEBUG and debugMsg(0,"Added file %s with timestamp %d and size %d to FILE_LIST" % (fullFileName,fileSize,fileMTime))
-  #make final fie list that's going into AFS 
-  FINAL_LIST={}
+    subdirs.sort(reverse=True)
+    treeLevel=len(directory.replace(BASE_DIRECTORY,"").split("/"))-1
+    if treeLevel == 4:
+      continue
+    if treeLevel == 3:
+      #era=directory.split("/")[-3]
+      #trigger=directory.split("/")[-2]
+      runMayor=directory.split("/")[-1]
+      for s in subdirs:
+        RUN_LIST.setdefault("%s%s" % (runMayor,s),[]).append("%s/%s" % (directory,s))
+  
+  DEBUG and debugMsg(0,"Found %d run ranges in file pool directory: %s" % (len(RUN_LIST),BASE_DIRECTORY))
+  FILE_DICT={}
+  FILE_LIST=[]
   quota=0
   quotaFilled=False
-  for f in sorted(FILE_LIST,key=lambda x: FILE_LIST[x][1],reverse=True):
-    if quota+FILE_LIST[f][0] > QUOTA:
-       quotaFilled=True
-       DEBUG and debugMsg(0,"Quota has been reached")
-       break
-    quota=quota+FILE_LIST[f][0]
-    destFile=f.replace(BASE_DIRECTORY,AFS_BASE_DIR)
-    FINAL_LIST.setdefault(f,destFile) 
-    DEBUG and debugMsg(0,"Added file %s with destination %s to the FINAL_LIST" % (f,destFile))
-  #see if any of the CURRENT AFS files stays
-  if not quotaFilled:
-    for f in sorted(AFS_FILE_LIST,key=lambda x: AFS_FILE_LIST[x][1],reverse=True):
-      if quota+AFS_FILE_LIST[f][0] > QUOTA:
-         quotaFilled=True
-         DEBUG and debugMsg(0,"Quota has been reached")
-         break
-      quota=quota+AFS_FILE_LIST[f][0]
-      FINAL_LIST.setdefault(f,f) 
-      DEBUG and debugMsg(0,"Added file %s from AFS to the FINAL_LIST" % f  )
-  #find files to be deleted
-  DELETE_LIST=[f for f in sorted(AFS_FILE_LIST,key=lambda x: AFS_FILE_LIST[x][1]) if f not in FINAL_LIST.keys() and len([ex for ex in EXCLUDED if ex in f])==0]
-  DEBUG and debugMsg(0,"Found %d files in AFS to delete" % len(DELETE_LIST))
-  #delete files
-  for f in DELETE_LIST:
+  for run in sorted(RUN_LIST.keys(),reverse=True):
+    for location in RUN_LIST[run]:
+      for f in sorted(glob.glob("%s/*" % location),reverse=True):
+        fileSize=os.stat(f).st_size
+        if quota + fileSize > QUOTA:
+          quotaFilled=True
+          DEBUG and debugMsg(0,"Quota has been reached with files from source pool")
+          break
+        
+        if f.replace(BASE_DIRECTORY,AFS_BASE_DIR) in AFS_FILE_LIST and afsQuota + quota > QUOTA:
+          quotaFilled=True
+          DEBUG and debugMsg(0,"File already in AFS, enough new files found")
+          break
+        fileRun=long(f[-22:-13])
+        if afsQuota > 0.9 * QUOTA and fileRun < firstAfsRun:
+          quotaFilled=True
+          DEBUG and debugMsg(0,"File is older then newest AFS run, enough new files found")
+          break
+        if f.replace(BASE_DIRECTORY,AFS_BASE_DIR) not in AFS_FILE_LIST:
+          quota += fileSize
+          runMayor=f.split("/")[-3]
+          runMinor=f.split("/")[-2]
+          FILE_DICT.setdefault(f,[fileSize,runMayor,runMinor])
+          FILE_LIST.append(f)
+      if quotaFilled: break
+    if quotaFilled: break
+  DEBUG and debugMsg(0,"Found %d possible new files in file pool directory: %s" % (len(FILE_LIST),BASE_DIRECTORY))    
+  
+  # Compiling Final lilst for deletion
+  FINAL_DICT={}
+  FINAL_DICT.update(FILE_DICT)
+  FINAL_DICT.update(AFS_FILE_DICT)
+  FINAL_LIST=[] 
+  quota=0
+  for f in sorted(FINAL_DICT,key=lambda x:"%s%s/%s" % (FINAL_DICT[x][1],FINAL_DICT[x][2],x[-22:-3]), reverse=True):
+    if quota + FINAL_DICT[f][0] > QUOTA:
+      DEBUG and debugMsg(0,"Quota has been reached in joint list")
+      break
+    quota += FINAL_DICT[f][0]
+    FINAL_LIST.append(f)
+  DEBUG and debugMsg(0,"The joint list has %d files" % len(FILE_LIST))
+  AFS_DEL_LIST=[f for f in AFS_FILE_LIST if f not in FINAL_LIST]
+  DEBUG and debugMsg(0,"Found %d files to delete from AFS" % len(AFS_DEL_LIST))
+  for f in AFS_DEL_LIST:
     os.remove(f)
     DEBUG and debugMsg(0,"File %s hass been deleted " % f)
     try:
@@ -71,15 +100,14 @@ while True:
       DEBUG and debugMsg(0,"Deleted directory %s " % os.path.dirname(f))
     except:
       pass
-  
-  #copy files
-  for orig,dest in FINAL_LIST.items():
-    if orig!=dest:
-      if not os.path.exists(os.path.dirname(dest)):
-        os.makedirs(os.path.dirname(dest))
-        DEBUG and debugMsg(0,"created directory directory %s " % os.path.dirname(dest))
-      shutil.copy2(orig,dest)
-      debugMsg(0,"Files %s succesfuly copyed to %s " % (orig,dest))
+  for f in  FINAL_LIST:
+     destFile=f.replace(BASE_DIRECTORY,AFS_BASE_DIR)
+     destDir=os.path.dirname(destFile)
+     if f != destFile:
+       if not os.path.exists(destDir):
+         os.makedirs(destDir)
+       shutil.copy2(f,destFile)
+       debugMsg(0,"File %s succesfuly copyed to %s " % (f,destFile))
   
   DEBUG and debugMsg(0,"Finished processing list going to sleep for: '%d' seconds" % AFS_FILER_WAIT_TIME)
   time.sleep(AFS_FILER_WAIT_TIME)
