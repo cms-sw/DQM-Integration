@@ -33,7 +33,7 @@ trigvalFVMuon(dqmitems,"Eff HLT to L1",
 trigvalFVMuon(dqmitems,"Eff HLT to RECO",
 [{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Mu9"}])
 
-trigvalFVMuon(dqmitems,"Eff L1 to MC"
+trigvalFVMuon(dqmitems,"Eff L1 to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Mu9"}])
 
 trigvalFVMuon(dqmitems,"Eff L1 to RECO",
@@ -55,7 +55,7 @@ trigvalFVEle(dqmitems,"Eff HLT to L1",
 trigvalFVEle(dqmitems,"Eff HLT to RECO",
 [{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Ele10_LW_L1R"}])
 
-trigvalFVEle(dqmitems,"Eff L1 to MC"
+trigvalFVEle(dqmitems,"Eff L1 to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Ele10_LW_L1R"}])
 
 trigvalFVEle(dqmitems,"Eff L1 to RECO",
@@ -77,7 +77,7 @@ trigvalFVJet(dqmitems,"Eff HLT to L1",
 trigvalFVJet(dqmitems,"Eff HLT to RECO",
 [{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet50"}])
 
-trigvalFVJet(dqmitems,"Eff L1 to MC"
+trigvalFVJet(dqmitems,"Eff L1 to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Jet50/custom-eff/HLT_Jet50_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Jet50"}])
 
 trigvalFVJet(dqmitems,"Eff L1 to RECO",
@@ -99,7 +99,7 @@ trigvalFVPho(dqmitems,"Eff HLT to L1",
 trigvalFVPho(dqmitems,"Eff HLT to RECO",
 [{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Photon15_L1R"}])
 
-trigvalFVPho(dqmitems,"Eff L1 to MC"
+trigvalFVPho(dqmitems,"Eff L1 to MC",
 [{'path': "HLT/FourVector_Val/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__mcEt_Eff_L1ToMc", 'description':"Efficiency of L1 to MC for path HLT_Photon15_L1R"}])
 
 trigvalFVPho(dqmitems,"Eff L1 to RECO",
