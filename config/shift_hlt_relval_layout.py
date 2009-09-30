@@ -130,10 +130,30 @@ trigvalegammaW(dqmitems,"Ele10LWEleIdL1R",
 
 ###---- MUON selection goes here: ----
 
-def trigvalmuon(i, p, *rows): i["00 Shift/HLT/Muon/" + p] = DQMItem(layout=rows)
-trigvalmuon(dqmitems,"Efficiency L1 vs Gen",
-  	[{'path': "HLT/Muon/Distributions/HLT_IsoMu9/genEffEta_L1Filtered", 'description': "L1 trigger efficiency for IsoMu9 versus eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/MuonHLTOfflinePerformance\">here</a>."}])
+muonPath = "HLT/Muon/Distributions/HLT_IsoMu3/"
+muonDocumentation = " (HLT_IsoMu3 path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/MuonHLTOfflinePerformance\">documentation</a>)"
 
+def trigvalmuon(i, p, *rows): i["00 Shift/HLT/Muon/" + p] = DQMItem(layout=rows)
+
+trigvalmuon(dqmitems, "Efficiency of L1",
+            [{'path': muonPath + "genEffEta_L1",
+              'description': "Efficiency to find an L1 muon associated to a generated muon vs. eta" + muonDocumentation}])
+
+trigvalmuon(dqmitems, "Efficiency of L2",
+            [{'path': muonPath + "genEffEta_L2",
+              'description': "Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + muonDocumentation}])
+
+trigvalmuon(dqmitems, "Efficiency of L2 After Isolation Step",
+            [{'path': muonPath + "genEffEta_L2Iso",
+              'description': "Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + muonDocumentation}])
+
+trigvalmuon(dqmitems, "Efficiency of L3",
+            [{'path': muonPath + "genEffEta_L3",
+              'description': "Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + muonDocumentation}])
+
+trigvalmuon(dqmitems, "Efficiency of L3 After Isolation Step",
+            [{'path': muonPath + "genEffEta_L3Iso",
+              'description': "Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + muonDocumentation}])
 
 
 ###---- TAU selection goes here: ----
