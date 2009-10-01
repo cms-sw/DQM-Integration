@@ -15,14 +15,11 @@ process.MessageLogger = cms.Service("MessageLogger",
 # Event Source
 #-----------------------------
 process.source = cms.Source("PoolSource",
-     fileNames = cms.untracked.vstring(
-#    MWGR-2009  
-#     'file:/home/dqmdevlocal/input/1A7F1227-1A60-DE11-A1E5-001D09F24934.root'
-#    MWGR-29 2009
-          'file:/nfshome0/dutta/B6C7837E-6071-DE11-8803-001D09F24763.root'
-#    CRAFT-2008 
-#     'file:/home/dqmdevlocal/input/0A92FA00-01AB-DD11-A6AF-001617DBD288.root'       
-     )    
+                                 fileNames = cms.untracked.vstring(
+    #    CRAFT-2009
+         'file:/home/dqmdevlocal/input/Run110998_001404E1-0F8A-DE11-ADB3-000423D99EEE.root',
+         'file:/home/dqmdevlocal/input/Run110998_002174A8-E989-DE11-8B4D-000423D6CA42.root'
+        )
 )
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 
