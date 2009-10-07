@@ -3,14 +3,11 @@ def detectEnviroment():
 	import sys,os
 	envVariables={"CMSSW_BASE":"","CMSSW_DATA_PATH":"","CMSSW_RELEASE_BASE":"","CMSSW_SEARCH_PATH":"",
 					"CMSSW_VERSION":CMSSW_Release,"LD_LIBRARY_PATH":"","POOL_OUTMSG_LEVEL":"","POOL_STORAGESVC_DB_AGE_LIMIT":"",
-					"PYTHONPATH":"","ROOTSYS":"","SEAL":"","SEAL_KEEP_MODULES":"","SEAL_PLUGINS":"","TNS_ADMIN":"",
+					"PYTHONPATH":"","PATH":"","ROOTSYS":"","SEAL":"","SEAL_KEEP_MODULES":"","SEAL_PLUGINS":"","TNS_ADMIN":"",
 					"XDAQ_DOCUMENT_ROOT":"","XDAQ_OS":"","XDAQ_PLATFORM":"","XDAQ_ROOT":"","XDAQ_SETUP_ROOT":"",
 					"XDAQ_ZONE":""}
-	fpd=os.popen('env | grep  -E "('+\
-					'CMSSW_BASE|CMSSW_DATA_PATH|CMSSW_RELEASE_BASE|CMSSW_SEARCH_PATH|CMSSW_VERSION|'+\
-					'LD_LIBRARY_PATH|POOL_OUTMSG_LEVEL|POOL_STORAGESVC_DB_AGE_LIMIT|PYTHONPATH|'+\
-					'ROOTSYS|SEAL|SEAL_KEEP_MODULES|SEAL_PLUGINS|TNS_ADMIN|XDAQ_DOCUMENT_ROOT|'+\
-					'XDAQ_OS|XDAQ_PLATFORM|XDAQ_ROOT|XDAQ_SETUP_ROOT|XDAQ_ZONE)=" | sort')
+	cmd='env | grep  -E "(%s)=" | sort' % "|".join(envVariables.keys())
+	fpd=os.popen(cmd)
 	line=fpd.readline()
 	while line:
 		k,v=line.split("=")
@@ -20,6 +17,7 @@ def detectEnviroment():
 	ppath=":".join(sys.path)
 	ppath=ppath.strip(":")
 	envVariables["PYTHONPATH"]=ppath
+	envVariables["PATH"]="%s:${PATH}" % envVariables["PATH"]
 	envVariables["XDAQ_SETUP_ROOT"]=envVariables["XDAQ_ROOT"]+"/share"
 	envVariables["XDAQ_ZONE"]="cdaq"
 	CMSSW_Release=envVariables["CMSSW_VERSION"]
