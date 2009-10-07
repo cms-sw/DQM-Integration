@@ -6,7 +6,8 @@ def detectEnviroment():
 					"PYTHONPATH":"","PATH":"","ROOTSYS":"","SEAL":"","SEAL_KEEP_MODULES":"","SEAL_PLUGINS":"","TNS_ADMIN":"",
 					"XDAQ_DOCUMENT_ROOT":"","XDAQ_OS":"","XDAQ_PLATFORM":"","XDAQ_ROOT":"","XDAQ_SETUP_ROOT":"",
 					"XDAQ_ZONE":""}
-	cmd='env | grep  -E "(%s)=" | sort' % "|".join(envVariables.keys())
+	cmd='env | grep  -E "(%s)" | sort' % "|".join(["^%s=" % v for v in envVariables.keys()])
+	print cmd
 	fpd=os.popen(cmd)
 	line=fpd.readline()
 	while line:
