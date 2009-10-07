@@ -18,7 +18,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
     cms.Service("IguanaService",
-    outputFileName = cms.untracked.string('/home/dqmprolocal/output/MWGR%d_%s.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
@@ -34,7 +34,7 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 
-process.load("VisReco.Analyzer.VisEventSetup_cfi")
+#process.load("VisReco.Analyzer.VisEventSetup_cfi")
 process.load("VisReco.Analyzer.VisEvent_cfi")
 process.load("VisReco.Analyzer.VisBasicCluster_cfi")
 process.load("VisReco.Analyzer.VisCSCSegment_cfi")
@@ -76,7 +76,7 @@ process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
 process.VisTrack.visTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
 process.vis = cms.Path(process.VisEvent*
-                       process.VisEventSetup*
+                       #process.VisEventSetup*
                        process.VisBasicCluster*
                        process.VisCSCSegment*
                        process.VisCSCStripDigi*

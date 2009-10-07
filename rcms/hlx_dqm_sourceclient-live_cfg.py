@@ -10,10 +10,9 @@ process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
-process.load("DQMServices.Components.DQMEnvironment_cfi")
-
-process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder    = "HLX"
+##process.load("DQMServices.Components.DQMEnvironment_cfi")
+##process.load("DQM.Integration.test.environment_cfi")
+##process.dqmEnv.subSystemFolder    = "HLX"
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
@@ -29,7 +28,8 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml')
 )
 
-process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester)
+##process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
+process.p = cms.Path(process.hlxdqmsource+process.hlxQualityTester)
 process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
 
 

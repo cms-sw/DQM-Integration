@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
-process = cms.Process("DAQ")
+process = cms.Process("test")
 
 #----------------------------
 #### Event Source

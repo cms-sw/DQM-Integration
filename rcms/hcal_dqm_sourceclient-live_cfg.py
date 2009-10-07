@@ -42,7 +42,7 @@ process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root
 #-----------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_31X_V6H::All' # or any other appropriate
+process.GlobalTag.globaltag = 'GR09_H_V2::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
@@ -57,8 +57,6 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
-
-process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
 
 # Cosmics Corrections to reconstruction
 process.hbhereco.firstSample = 1
@@ -143,7 +141,7 @@ process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = False # set false until we learn why it crashes
+process.hcalMonitor.DigiMonitor         = True # set false until we learn why it crashes
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DeadCellMonitor     = True
@@ -151,6 +149,7 @@ process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
 process.hcalMonitor.PedestalMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
+process.hcalMonitor.DetDiagTimingMonitor = True
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
 process.hcalMonitor.MTCCMonitor         = False
@@ -178,6 +177,19 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 
 process.hcalClient.SummaryClient        = True
 
+# Set expected orbit time to 6
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
+# Allow even bad-quality digis
+#process.hcalDigis.FilterDataQuality=False
+
+# ----------------------
+# Trigger Unpacker Stuff
+# ----------------------
+process.load("CondCore.DBCommon.CondDBSetup_cfi")
+process.load("L1Trigger.Configuration.L1DummyConfig_cff")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.l1GtUnpack.DaqGtInputTag = 'source'
+
 
 #-----------------------------
 # Scheduling
@@ -190,6 +202,7 @@ process.options = cms.untracked.PSet(
 
 process.p = cms.Path(process.hcalDigis
                      *process.valHcalTriggerPrimitiveDigis
+                     *process.l1GtUnpack
                      *process.horeco
                      *process.hfreco
                      *process.hbhereco

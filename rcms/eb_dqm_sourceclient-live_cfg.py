@@ -10,9 +10,9 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
 
-process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
+process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
-process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
+process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
 
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
 
@@ -76,7 +76,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V1::All"
+process.GlobalTag.globaltag = "GR09_H_V2::All"
 process.prefer("GlobalTag")
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -87,52 +87,52 @@ process.MessageLogger = cms.Service("MessageLogger",
         default = cms.untracked.PSet(
             limit = cms.untracked.int32(0)
         ),
-        EcalRawToDigiDev = cms.untracked.PSet(
+        EcalRawToDigi = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevTriggerType = cms.untracked.PSet(
+        EcalRawToDigiTriggerType = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevTpg = cms.untracked.PSet(
+        EcalRawToDigiTpg = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevNumTowerBlocks = cms.untracked.PSet(
+        EcalRawToDigiNumTowerBlocks = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevTowerId = cms.untracked.PSet(
+        EcalRawToDigiTowerId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevTowerSize = cms.untracked.PSet(
+        EcalRawToDigiTowerSize = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevChId = cms.untracked.PSet(
+        EcalRawToDigiChId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevGainZero = cms.untracked.PSet(
+        EcalRawToDigiGainZero = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevGainSwitch = cms.untracked.PSet(
+        EcalRawToDigiGainSwitch = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevDccBlockSize = cms.untracked.PSet(
+        EcalRawToDigiDccBlockSize = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevMemBlock = cms.untracked.PSet(
+        EcalRawToDigiMemBlock = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevMemTowerId = cms.untracked.PSet(
+        EcalRawToDigiMemTowerId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevMemChId = cms.untracked.PSet(
+        EcalRawToDigiMemChId = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevMemGain = cms.untracked.PSet(
+        EcalRawToDigiMemGain = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevTCC = cms.untracked.PSet(
+        EcalRawToDigiTCC = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
-        EcalRawToDigiDevSRP = cms.untracked.PSet(
+        EcalRawToDigiSRP = cms.untracked.PSet(
             limit = cms.untracked.int32(1000)
         ),
         EcalDCCHeaderRuntypeDecoder = cms.untracked.PSet(
@@ -145,22 +145,22 @@ process.MessageLogger = cms.Service("MessageLogger",
             limit = cms.untracked.int32(1000)
         )
     ),
-    categories = cms.untracked.vstring('EcalRawToDigiDev',
-                                       'EcalRawToDigiDevTriggerType',
-                                       'EcalRawToDigiDevTpg',
-                                       'EcalRawToDigiDevNumTowerBlocks',
-                                       'EcalRawToDigiDevTowerId',
-                                       'EcalRawToDigiDevTowerSize',
-                                       'EcalRawToDigiDevChId',
-                                       'EcalRawToDigiDevGainZero',
-                                       'EcalRawToDigiDevGainSwitch',
-                                       'EcalRawToDigiDevDccBlockSize',
-                                       'EcalRawToDigiDevMemBlock',
-                                       'EcalRawToDigiDevMemTowerId',
-                                       'EcalRawToDigiDevMemChId',
-                                       'EcalRawToDigiDevMemGain',
-                                       'EcalRawToDigiDevTCC',
-                                       'EcalRawToDigiDevSRP',
+    categories = cms.untracked.vstring('EcalRawToDigi',
+                                       'EcalRawToDigiTriggerType',
+                                       'EcalRawToDigiTpg',
+                                       'EcalRawToDigiNumTowerBlocks',
+                                       'EcalRawToDigiTowerId',
+                                       'EcalRawToDigiTowerSize',
+                                       'EcalRawToDigiChId',
+                                       'EcalRawToDigiGainZero',
+                                       'EcalRawToDigiGainSwitch',
+                                       'EcalRawToDigiDccBlockSize',
+                                       'EcalRawToDigiMemBlock',
+                                       'EcalRawToDigiMemTowerId',
+                                       'EcalRawToDigiMemChId',
+                                       'EcalRawToDigiMemGain',
+                                       'EcalRawToDigiTCC',
+                                       'EcalRawToDigiSRP',
                                        'EcalDCCHeaderRuntypeDecoder',
                                        'EcalBarrelMonitorModule',
                                        'EcalEndcapMonitorModule'),
@@ -184,6 +184,9 @@ process.r = cms.EndPath(process.dqmEnv*process.ecalBarrelTasksSequenceP5*process
 process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Physics','HLT_EcalCalibration')
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasEcal','HLT_L1MuOpen','HLT_EcalCalibration')
 
 process.dqmEnv.subSystemFolder = 'EcalBarrel'
 
