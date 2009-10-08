@@ -18,7 +18,7 @@ MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
 LOCALHOST=os.getenv("HOSTNAME")
 #Function for starting and stoping modules
 def start_app(module,host=LOCALHOST):
-  if LOCALHOST==host:
+  if LOCALHOST.lower()==host.lower():
     print "Running %s on LOCALHOST" % RATS[module]["alivechk"]
     cmd="%s %s 2>&1" % (RATS[module]["alivechk"],CFGFILE)
     starter=os.popen(cmd)
@@ -32,9 +32,9 @@ def start_app(module,host=LOCALHOST):
     starter.close()
   
 def stop_app(module,host=LOCALHOST):
-  if LOCALHOST==host:
+  if LOCALHOST.lower()==host.lower():
     print "Stopping %s on LOCALHOST" % RATS[module]["script"]           
-    cmd="echo $(ps -eF|grep \"%s  %s\"| grep -v grep | awk '{print($2)}')" % (RATS[module]["script"],CFGFILE)
+    cmd="echo $(ps -eF|grep -P \"%s[ ]+%s\"| grep -v grep | awk '{print($2)}')" % (RATS[module]["script"],CFGFILE)
     stoper=os.popen(cmd)
     pid=stoper.read()
     stoper.close()
@@ -47,7 +47,7 @@ def stop_app(module,host=LOCALHOST):
       print "ratsControl cant find %s running in LOCALHOST" % RATS[module]["script"]
   else:
     print "Stopping %s on %s" % (RATS[module]["script"],host)           
-    cmd="ssh %s \"echo \$(ps -eF|grep %s | grep -v grep | awk '{print(\$2)}')\"" % (host,RATS[module]["script"],CFGFILE)
+    cmd="ssh %s \"echo \$(ps -eF|grep -P \"%[ ]+%s\" | grep -v grep | awk '{print(\$2)}')\"" % (host,RATS[module]["script"],CFGFILE)
     stoper=os.popen(cmd)
     pid=stoper.read()
     stoper.close()

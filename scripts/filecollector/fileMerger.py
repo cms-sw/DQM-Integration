@@ -66,7 +66,7 @@ while True:
       if not os.path.exists(tmpdestfile):
         body = 'Failed merging files for run %s. Will try again later.' % run
         print body
-        sendmail(YourMail,run,body)
+        sendmail(YourEmail,run,body)
 	continue
     
       shutil.move(tmpdestfile, destfile)
