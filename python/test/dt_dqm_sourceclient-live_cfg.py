@@ -13,7 +13,7 @@ process.EventStreamHttpReader.consumerName = 'DT DQM Consumer'
 #### DQM Environment
 #----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-process.DQMStore.referenceFileName = '/dqmdata/dqm/dt_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference.root'
 #process.DQMStore.referenceFileName = "DT_reference.root"
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
