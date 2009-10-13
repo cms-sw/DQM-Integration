@@ -1,7 +1,27 @@
 import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile
 TIME_OUT=700
 DEBUG=False
+def getDirSize(path): 
+  import stat
+  size=os.stat(path).st_blksize
+  for directory,subdirs,files in os.walk(path):
+    dStats=os.lstat(directory)
+    size+=(dStats[stat.ST_NLINK]-1)*dStats[stat.ST_SIZE]
+    for f in files:  
+      fStats=os.lstat("%s/%s" % (directory,f))
+      fSize=fStats[stat.ST_SIZE]
+      size+=fSize
+  return size
 
+def getDiskUsage(path):
+  fsStats=os.statvfs(path)
+  size=fsStats.f_bsize*fsStats.f_blocks
+  available=fsStats.f_bavail*fsStats.f_bsize
+  used=size-available
+  usedPer=float(used)/size
+  return (size,available,used,usedPer)
+
+  
 def debugMsg(level,message):
   LEVELS=["INFO","WARNING","ERROR"]
   d=datetime.datetime.today()
@@ -38,7 +58,6 @@ def sendmail(EmailAddress,run=123456789,body=""):
   import os, smtplib
   from email.MIMEText import MIMEText
   server=os.getenv("HOSTNAME")
-  print server
   s=smtplib.SMTP("localhost")
   tolist=[EmailAddress] #[EmailAddress, "lat@cern.ch"]
   if not body: body="File copy to dropbox failed by unknown reason for run:%09d on server: %s" % (run,server)
