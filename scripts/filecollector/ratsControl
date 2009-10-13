@@ -3,7 +3,7 @@
 """
 ratsControl action module from cfgfile [on hostname]
    action      = start | stop | restart 
-   module      = Collector | Merger | Register | Transfer | Verify | All
+   module      = Collector | Merger | Register | Transfer | Verify | ProdClean | All
    cfgfile     = Configuration file from where to extract the RATS variable with
                  the correct (hosts,script,alivechk)->Module association
    on hostname = Hostname on which to perform the action. If not specifyed the 
@@ -14,7 +14,7 @@ ratsControl action module from cfgfile [on hostname]
 """
 import sys,os
 ACTIONS=["start","stop","restart"]
-MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
+MODULES=["Collector","Merger","Register","Transfer","Verify","ProdClean","All"]
 LOCALHOST=os.getenv("HOSTNAME")
 #Function for starting and stoping modules
 def start_app(module,host=LOCALHOST):
