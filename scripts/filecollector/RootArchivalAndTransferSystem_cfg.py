@@ -8,7 +8,7 @@ EXEDIR = '/nfshome0/dqmpro/filecollector' # directory to execute the relevant sc
 TRANSFER_HOSTNAME = "srv-C2D05-19"
 TRANSFER_CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
 INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
-
+DEBUG=False
 ################################
 #Waiting Times:                # 
 ################################
@@ -18,12 +18,13 @@ REGISTER_WAIT_TIME     = 120
 TRANSFERRER_WAIT_TIME  = 3600*4
 VERIFY_WAIT_TIME       = 600
 IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
+PROD_CLEANNER_WIT_TIME = 3600*4
 
 ################################
 #Directories:                  # 
 ################################
 COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recently produced files
-DONE_DIR               = '/dqmdata/dqm/done/merged' 		#sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
+DONE_DIR               = '/dqmdata/dqm/done/merged'     #sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
 DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
 IG_DESTINATION_DIR     = '/dqmdata/EventDisplay/Tier0_Test' #Directory where zipped files will be stored for transfer.
@@ -47,31 +48,36 @@ VERIFY_DIR             = '/dqmdata/dqm/Tier0Shipping/verify'
 #MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
 
 RATS={"Collector":{
-	"hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileCollector.sh",
-	"script":"fileCollector.py"
-	},
+  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileCollector.sh",
+  "script":"fileCollector.py"
+  },
       "Merger":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileMerger.sh",
-	"script":"fileMerger.py"
-	},
+  "hosts":["srv-c2d05-19"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileMerger.sh",
+  "script":"fileMerger.py"
+  },
       "Register":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileRegister.sh",
-	"script":"fileRegister.py"
-	},
+  "hosts":["srv-c2d05-19"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileRegister.sh",
+  "script":"fileRegister.py"
+  },
       "Transfer":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransfer.sh",
-	"script":"fileTransfer.py"
-	},
+  "hosts":["srv-c2d05-19"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransfer.sh",
+  "script":"fileTransfer.py"
+  },
       "Verify":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransferVerify.sh",
-	"script":"fileTransferVerify.py"
-	}	
-      }
+  "hosts":["srv-c2d05-19"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransferVerify.sh",
+  "script":"fileTransferVerify.py"
+  },  
+      "ProdClean":{
+  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_producerFileCleanner.sh",
+  "script":"producerFileCleanner.py"
+  }
+}
 
 ################################
 #App Spesific parameters:      # 
@@ -84,7 +90,7 @@ MAX_TOTAL_RUNS = 400
 MAX_RUNS = 10
 
 #fileRegister:                 
-MAX_FILES = 10	 	  		# Max number of files to process at once
+MAX_FILES = 10           # Max number of files to process at once
 
 #fileTransfer:
 EMPTY_DONEDIR = False
@@ -101,7 +107,9 @@ COMPRESSION = 1 #Compression rate for zip file 1(min) - 9(max)
 #Common Parameters for fileTransferVerify and fileTransfer
 TEST=False
 
-#fileCleaner:
+#producerFileCleaner:
+PRODUCER_DU_TOP=90.0  #0% a 100%
+PRODUCER_DU_BOT=50.0  
 
 ################################
 #Support Functions:            # 
