@@ -5,6 +5,7 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
+LAYOUTS += [CONFIGDIR + "/hltmuon_T0_layouts.py"]
 
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
