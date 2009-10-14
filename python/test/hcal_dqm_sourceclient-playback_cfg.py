@@ -68,8 +68,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
-# Set expected orbit time to 6
-process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
+# Set expected orbit time to 3563 (should be 6 for runs < 116401)
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(3563)
+process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = 3563
+
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
 
@@ -143,6 +145,8 @@ process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 # hcalMonitor configurable values
 # -------------------------------
 process.hcalMonitor.debug = 0
+process.hcalMonitor.Online = True
+
 #process.hcalMonitor.DigiOccThresh = -999999999 ##Temporary measure while DigiOcc is reworked.
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
@@ -153,8 +157,7 @@ process.hcalMonitor.dump2database = False
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
-process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = True # disabled until we find why it crashes
+process.hcalMonitor.DigiMonitor         = True 
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
@@ -164,6 +167,8 @@ process.hcalMonitor.BeamMonitor         = True
 process.hcalMonitor.PedestalMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.DetDiagTimingMonitor = True
+
+process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
 process.hcalMonitor.MTCCMonitor         = False

@@ -132,6 +132,7 @@ process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 # hcalMonitor configurable values
 # -------------------------------
 process.hcalMonitor.debug = 0
+process.hcalMonitor.Online = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
 process.hcalMonitor.dump2database = False
@@ -177,8 +178,10 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 
 process.hcalClient.SummaryClient        = True
 
-# Set expected orbit time to 6
-process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(6)
+# Set expected orbit time to 3563 (6 for runs < 116401)
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(3563)
+process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = 3563
+
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
 
