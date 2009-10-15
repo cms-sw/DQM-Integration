@@ -1,6 +1,15 @@
 import FWCore.ParameterSet.Config as cms
 import datetime as dt
 process = cms.Process("IGUANA")
+process.options=cms.untracked.PSet(
+    SkipEvent = cms.untracked.vstring(["FatalRootError",
+    		"Root_Error:  CosmicClusterProducer:cosmicBasicClusters",
+		"Root_Error: ",
+		"CosmicClusterProducer:cosmicBasicClusters",
+    		"Root_Error:  CosmicClusterProducer:cosmicBasicClusters  TUnixSystem::DispatchSignals()",
+		"TUnixSystem::DispatchSignals()",
+		"DataCorrupt"])
+  )
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
 process.load('Configuration.StandardSequences.RawToDigi_Data_cff')
@@ -8,17 +17,18 @@ process.load('Configuration.StandardSequences.ReconstructionCosmics_cff')
 process.load('Configuration.StandardSequences.VtxSmearedEarly10TeVCollision_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.GlobalTag.globaltag = 'GR09_H_V2::All'
-process.GlobalTag.connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.connect = "frontier://(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
-process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
+#process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
-    cms.Service("IguanaService",
-    outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    cms.Service("ISpyService",
+    #outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
@@ -34,79 +44,79 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 
-#process.load("VisReco.Analyzer.VisEventSetup_cfi")
-process.load("VisReco.Analyzer.VisEvent_cfi")
-process.load("VisReco.Analyzer.VisBasicCluster_cfi")
-process.load("VisReco.Analyzer.VisCSCSegment_cfi")
-process.load("VisReco.Analyzer.VisCSCStripDigi_cfi")
-process.load("VisReco.Analyzer.VisCSCWireDigi_cfi")
-process.load("VisReco.Analyzer.VisCaloTower_cfi")
-process.load('VisReco.Analyzer.VisDTDigi_cfi')
-process.load('VisReco.Analyzer.VisDTRecHit_cfi')
-process.load("VisReco.Analyzer.VisDTRecSegment4D_cfi")
-process.load("VisReco.Analyzer.VisEBRecHit_cfi")
-process.load("VisReco.Analyzer.VisEERecHit_cfi")
-process.load("VisReco.Analyzer.VisESRecHit_cfi")
-process.load("VisReco.Analyzer.VisHBRecHit_cfi")
-process.load("VisReco.Analyzer.VisHERecHit_cfi")
-process.load("VisReco.Analyzer.VisHFRecHit_cfi")
-process.load("VisReco.Analyzer.VisHORecHit_cfi")
-process.load("VisReco.Analyzer.VisJet_cfi")
-process.load("VisReco.Analyzer.VisL1GlobalTriggerReadoutRecord_cfi")
-process.load("VisReco.Analyzer.VisMET_cfi")
-process.load("VisReco.Analyzer.VisMuon_cfi")
-process.load("VisReco.Analyzer.VisPixelDigi_cfi")
-process.load('VisReco.Analyzer.VisRPCRecHit_cfi')
-process.load("VisReco.Analyzer.VisSiPixelCluster_cfi")
-process.load("VisReco.Analyzer.VisSiPixelRecHit_cfi")
-process.load("VisReco.Analyzer.VisSiStripCluster_cfi")
-process.load("VisReco.Analyzer.VisSiStripDigi_cfi")
-process.load("VisReco.Analyzer.VisTrack_cfi")
-process.load("VisReco.Analyzer.VisTrackingRecHit_cfi")
-process.load("VisReco.Analyzer.VisTriggerEvent_cfi")
+#process.load("ISpy.Analyzers.ISpyEventSetup_cfi")
+process.load("ISpy.Analyzers.ISpyEvent_cfi")
+process.load("ISpy.Analyzers.ISpyBasicCluster_cfi")
+process.load("ISpy.Analyzers.ISpyCSCSegment_cfi")
+process.load("ISpy.Analyzers.ISpyCSCStripDigi_cfi")
+process.load("ISpy.Analyzers.ISpyCSCWireDigi_cfi")
+process.load("ISpy.Analyzers.ISpyCaloTower_cfi")
+process.load('ISpy.Analyzers.ISpyDTDigi_cfi')
+process.load('ISpy.Analyzers.ISpyDTRecHit_cfi')
+process.load("ISpy.Analyzers.ISpyDTRecSegment4D_cfi")
+process.load("ISpy.Analyzers.ISpyEBRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyEERecHit_cfi")
+process.load("ISpy.Analyzers.ISpyESRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyHBRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyHERecHit_cfi")
+process.load("ISpy.Analyzers.ISpyHFRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyHORecHit_cfi")
+process.load("ISpy.Analyzers.ISpyJet_cfi")
+process.load("ISpy.Analyzers.ISpyL1GlobalTriggerReadoutRecord_cfi")
+process.load("ISpy.Analyzers.ISpyMET_cfi")
+process.load("ISpy.Analyzers.ISpyMuon_cfi")
+process.load("ISpy.Analyzers.ISpyPixelDigi_cfi")
+process.load('ISpy.Analyzers.ISpyRPCRecHit_cfi')
+process.load("ISpy.Analyzers.ISpySiPixelCluster_cfi")
+process.load("ISpy.Analyzers.ISpySiPixelRecHit_cfi")
+process.load("ISpy.Analyzers.ISpySiStripCluster_cfi")
+process.load("ISpy.Analyzers.ISpySiStripDigi_cfi")
+process.load("ISpy.Analyzers.ISpyTrack_cfi")
+process.load("ISpy.Analyzers.ISpyTrackingRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyTriggerEvent_cfi")
 
-process.VisCSCSegment.visCSCSegmentTag = cms.InputTag("cscSegments")
-process.VisCSCStripDigi.visCSCStripDigiTag = cms.InputTag("muonCSCDigis:MuonCSCStripDigi")
-process.VisCSCWireDigi.visCSCWireDigiTag = cms.InputTag("muonCSCDigis:MuonCSCWireDigi")
-process.VisDTRecHit.visDTRecHitTag = cms.InputTag("dt1DRecHits")
-process.VisRPCRecHit.visRPCRecHitTag = cms.InputTag("rpcRecHits")
-process.VisMuon.visMuonTag = cms.InputTag('muons')
-process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
-process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
-process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
-process.VisTrack.visTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
-process.vis = cms.Path(process.VisEvent*
-                       #process.VisEventSetup*
-                       process.VisBasicCluster*
-                       process.VisCSCSegment*
-                       process.VisCSCStripDigi*
-                       process.VisCSCWireDigi*
-                       process.VisCaloTower*
-                       process.VisTrack*
-                       process.VisTrackingRecHit*
-                       process.VisDTRecSegment4D*
-                       process.VisDTDigi*
-                       process.VisDTRecHit*
-                       process.VisRPCRecHit*
-                       process.VisEBRecHit*
-                       process.VisEERecHit*
-                       process.VisESRecHit*
-                       process.VisHBRecHit*
-                       process.VisHERecHit*
-                       process.VisHFRecHit*
-                       process.VisHORecHit*
-                       process.VisJet*
-                       process.VisMET*
-                       process.VisMuon*
-                       process.VisPixelDigi*
-                       process.VisSiPixelCluster*
-                       process.VisSiPixelRecHit*
-                       process.VisSiStripCluster*
-                       process.VisSiStripDigi*
-                       process.VisL1GlobalTriggerReadoutRecord*
-                       process.VisTriggerEvent)
+process.ISpyCSCSegment.iSpyCSCSegmentTag = cms.InputTag("cscSegments")
+process.ISpyCSCStripDigi.iSpyCSCStripDigiTag = cms.InputTag("muonCSCDigis:MuonCSCStripDigi")
+process.ISpyCSCWireDigi.iSpyCSCWireDigiTag = cms.InputTag("muonCSCDigis:MuonCSCWireDigi")
+process.ISpyDTRecHit.iSpyDTRecHitTag = cms.InputTag("dt1DRecHits")
+process.ISpyRPCRecHit.iSpyRPCRecHitTag = cms.InputTag("rpcRecHits")
+#process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
+process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
+process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
+process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
+process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
+process.iSpy = cms.Path(process.ISpyEvent*
+                       #process.ISpyEventSetup*
+                       process.ISpyBasicCluster*
+                       process.ISpyCSCSegment*
+                       process.ISpyCSCStripDigi*
+                       process.ISpyCSCWireDigi*
+                       process.ISpyCaloTower*
+                       process.ISpyTrack*
+                       process.ISpyTrackingRecHit*
+                       process.ISpyDTRecSegment4D*
+                       process.ISpyDTDigi*
+                       process.ISpyDTRecHit*
+                       process.ISpyRPCRecHit*
+                       process.ISpyEBRecHit*
+                       process.ISpyEERecHit*
+                       process.ISpyESRecHit*
+                       process.ISpyHBRecHit*
+                       process.ISpyHERecHit*
+                       process.ISpyHFRecHit*
+                       process.ISpyHORecHit*
+                       process.ISpyJet*
+                       process.ISpyMET*
+                       process.ISpyMuon*
+                       process.ISpyPixelDigi*
+                       process.ISpySiPixelCluster*
+                       process.ISpySiPixelRecHit*
+                       process.ISpySiStripCluster*
+                       process.ISpySiStripDigi*
+                       process.ISpyL1GlobalTriggerReadoutRecord*
+                       process.ISpyTriggerEvent)
 
 
 process.p3= cms.Path(process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
-process.schedule = cms.Schedule(process.p3,process.p4,process.vis)
+process.schedule = cms.Schedule(process.p3,process.p4,process.iSpy)
