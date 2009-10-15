@@ -18,7 +18,7 @@ REGISTER_WAIT_TIME     = 120
 TRANSFERRER_WAIT_TIME  = 3600*4
 VERIFY_WAIT_TIME       = 600
 IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
-PROD_CLEANNER_WIT_TIME = 3600*4
+PROD_CLEANNER_WAIT_TIME = 3600*4
 
 ################################
 #Directories:                  # 
@@ -40,6 +40,7 @@ SOURCES_DONE_DIR       = '/dqmdata/dqm/done/sources' # directory, to which proce
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
 TMP_DROPBOX            = '/dqmdata/dqm/.dropbox_tmp' # stealth area on cmsmon
 VERIFY_DIR             = '/dqmdata/dqm/Tier0Shipping/verify'
+
 ################################
 #ratsControl parameters:       # 
 ################################
@@ -110,21 +111,3 @@ TEST=False
 #producerFileCleaner:
 PRODUCER_DU_TOP=90.0  #0% a 100%
 PRODUCER_DU_BOT=50.0  
-
-################################
-#Support Functions:            # 
-################################
-def sendmail(EmailAddress,run=123456789,body=""):
-  import os, smtplib
-  from email.MIMEText import MIMEText
-  server=os.getenv("HOSTNAME")
-  print server
-  s=smtplib.SMTP("localhost")
-  tolist=[EmailAddress] #[EmailAddress, "lat@cern.ch"]
-  if not body: body="File copy to dropbox failed by unknown reason for run:%09d on server: %s" % (run,server)
-  msg = MIMEText(body)
-  msg['Subject'] = "File merge failed."
-  msg['From'] = ServerMail
-  msg['To'] = EmailAddress
-  s.sendmail(ServerMail,tolist,msg.as_string())
-  s.quit()

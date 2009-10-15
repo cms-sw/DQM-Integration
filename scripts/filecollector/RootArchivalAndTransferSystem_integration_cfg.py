@@ -8,7 +8,7 @@ EXEDIR = '/nfshome0/dqmdev/filecollector' # directory to execute the relevant sc
 TRANSFER_HOSTNAME = "srv-C2D05-19"
 TRANSFER_CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
 INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
-
+DEBUG=False
 ################################
 #Waiting Times:                # 
 ################################
@@ -18,6 +18,7 @@ REGISTER_WAIT_TIME     = 120
 TRANSFERRER_WAIT_TIME  = 3600*4
 VERIFY_WAIT_TIME       = 600
 IG_PACKER_WAIT_TIME    = 120       # waiting time for new files (sec)
+PROD_CLEANNER_WAIT_TIME = 3600*4
 
 ################################
 #Directories:                  # 
@@ -49,30 +50,35 @@ VERIFY_DIR             = '/dqmdata/dqmintegration/Tier0Shipping/verify'
 
 RATS={"Collector":{
 	"hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileCollector.sh",
+	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileCollector.sh",
 	"script":"fileCollector.py"
 	},
       "Merger":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileMerger.sh",
+	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileMerger.sh",
 	"script":"fileMerger.py"
 	},
       "Register":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileRegister.sh",
+	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileRegister.sh",
 	"script":"fileRegister.py"
 	},
       "Transfer":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileTransfer.sh",
+	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransfer.sh",
 	"script":"fileTransfer.py"
 	},
       "Verify":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/alivecheck_fileTransferVerify.sh",
+	"alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_fileTransferVerify.sh",
 	"script":"fileTransferVerify.py"
-	}	
-      }
+	},  
+      "ProdClean":{
+  "hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
+  "alivechk":"/nfshome0/dqmpro/filecollector/alivecheck_producerFileCleanner.sh",
+  "script":"producerFileCleanner.py"
+  }	
+}
 
 ################################
 #App Spesific parameters:      # 
@@ -102,22 +108,6 @@ COMPRESSION = 1 #Compression rate for zip file 1(min) - 9(max)
 #Common Parameters for fileTransferVerify and fileTransfer
 TEST=True
 
-#fileCleaner:
-
-################################
-#Support Functions:            # 
-################################
-def sendmail(EmailAddress,run=123456789,body=""):
-  import os, smtplib
-  from email.MIMEText import MIMEText
-  server=os.getenv("HOSTNAME")
-  print server
-  s=smtplib.SMTP("localhost")
-  tolist=[EmailAddress] #[EmailAddress, "lat@cern.ch"]
-  if not body: body="File copy to dropbox failed by unknown reason for run:%09d on server: %s" % (run,server)
-  msg = MIMEText(body)
-  msg['Subject'] = "File merge failed."
-  msg['From'] = ServerMail
-  msg['To'] = EmailAddress
-  s.sendmail(ServerMail,tolist,msg.as_string())
-  s.quit()
+#producerFileCleaner:
+PRODUCER_DU_TOP=90.0  #0% a 100%
+PRODUCER_DU_BOT=50.0

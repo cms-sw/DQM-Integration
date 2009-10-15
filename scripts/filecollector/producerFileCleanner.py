@@ -91,7 +91,7 @@ while True:
       except Exception,e:
         print e
         DEBUG and debugMsg(0,"Directory delition failed: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
-  time.sleep(PRODUCER_CLEANNER_WIT_TIME)
+  time.sleep(PROD_CLEANNER_WAIT_TIME)
          
       
     
