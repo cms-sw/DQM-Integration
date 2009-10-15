@@ -51,7 +51,7 @@ while True:
         for sdRoot,sdDirs,sdFiles in os.walk(fullSdName,topdown=False):
           for f in sdFiles:
             try:
-              #os.remove(f)
+              os.remove(f)
               DEBUG and debugMsg(0,"File %s has been removed" % f)
             except Exception,e:
               debugMsg(2,"Problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
@@ -77,7 +77,7 @@ while True:
     DIR_LIST=[]
     for f in FILE_LIST:
       try:
-        #os.remove(f)
+        os.remove(f)
         DEBUG and debugMsg(0,"File %s has been removed" % f)
       except Exception,e:
         debugMsg(2,"problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
@@ -86,7 +86,7 @@ while True:
     #remove emprty directories
     for d in DIR_LIST:
       try:
-        #os.removedirs(d)
+        os.removedirs(d)
         DEBUG and debugMsg(0,"Directory %s has been removed" % d)
       except Exception,e:
         print e
