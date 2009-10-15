@@ -8,8 +8,12 @@ execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 #####         MAIN PROGRAM         ######
 while True:
-  doneSize=getDirSize(T_FILE_DONE_DIR)
-  diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage(T_FILE_DONE_DIR)
+  try:
+    doneSize=getDirSize(T_FILE_DONE_DIR)
+    diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage(T_FILE_DONE_DIR)
+  except:
+    doneSize=0
+    diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage("/home")
   diskPUsage*=100
   if diskPUsage >= PRODUCER_DU_TOP:
     DEBUG and debugMsg(0,"Disk usage exeeds Upper boundary of %.2f%% and has reached %.2f%%" % (PRODUCER_DU_TOP,diskPUsage))
