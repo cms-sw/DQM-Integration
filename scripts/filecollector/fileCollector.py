@@ -99,9 +99,9 @@ while True:
           finalTsubdir="%s/%s" % (T_FILE_DONE_DIR,runstr[0:3])
           finalTdir="%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6])
           if not os.path.exists(finalTsubdir):
-            os.mkdir(finalTsubdir)
+            os.makedirs(finalTsubdir)
           if not os.path.exists(finalTdir):
-            os.mkdir(finalTdir)
+            os.makedirs(finalTdir)
           if os.path.exists(finalTMPfile):
             os.remove(finalTMPfile)
           if not done:

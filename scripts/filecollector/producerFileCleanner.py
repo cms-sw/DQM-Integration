@@ -19,9 +19,9 @@ while True:
     DEBUG and debugMsg(0,"Disk usage exeeds Upper boundary of %.2f%% and has reached %.2f%%" % (PRODUCER_DU_TOP,diskPUsage))
     quota=long(diskSize*PRODUCER_DU_BOT/100)
     delQuota=diskUsed-quota
-    DEBUG and debugMsg(0,"%d bytes are going to be deleted" % delQuota)
+    DEBUG and debugMsg(0,"%s are going to be deleted" %   prettyPrintUnits(delQuota,"b",2))
     if delQuota > doneSize:
-      msg="Something is filling up the disks, %s is does not have enough files to get to the Bottom Boundary of %.2f%%" % (T_FILE_DONE_DIR,PRODUCER_DU_BOT)
+      msg="Something is filling up the disks, %s does not have enough files to get to the Bottom Boundary of %.2f%%" % (T_FILE_DONE_DIR,PRODUCER_DU_BOT)
       sendmail(YourEmail,body=msg,subject="Something is filling up the disks")
       debugMsg(1,msg)
     aDelQuota=0

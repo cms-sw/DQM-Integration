@@ -47,7 +47,7 @@ def debugMsg(level,message):
   sys.stdout.write(msg)
   return True
   
-def pretyPrintUnits(value,unit,decimals=0):
+def prettyPrintUnits(value,unit,decimals=0):
   """
 Provide human readable units
   """
