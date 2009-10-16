@@ -121,8 +121,8 @@ PRODUCER_DU_BOT=50.0
 #fileCleaner:
 FILER_DU_TOP           = 90.0  #0% a 100% porcentage of disk utilization (DU) when DU > FILER_DU_TOP files will be deleted until  
 FILER_DU_BOT           = 50.0  #          DU = FILER_DU_BOT, or as close as it can get to it
-FILER_SQ_TOP           = 20*pow(1024^3)   # size in bytes. when Directory size (DS) > FILER_SQ_TOP files will be deleted until
-FILER_SQ_BOT           = 10*pow(1024^3)   # DS = FILER_SQ_BOT, or as close as it can get to it
+FILER_SQ_TOP           = 20*pow(1024,3)   # size in bytes. when Directory size (DS) > FILER_SQ_TOP files will be deleted until
+FILER_SQ_BOT           = 10*pow(1024,3)   # DS = FILER_SQ_BOT, or as close as it can get to it
 FILER_NRUNS            = 20     #keeps latest FILER_NRUNS runs also sets the minimum number of runs to keep when mode is Time
 FILER_TIME             = 24      #keeps files produced with in the last FILER_TIME hours
 MODE                   = "Time"  #possibilities: "%DiskUse","Size","NumberOfRuns","Time"

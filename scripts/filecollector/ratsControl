@@ -26,7 +26,7 @@ def start_app(module,host=LOCALHOST):
     starter.close()
   else:
     print "Running %s on %s" % (RATS[module]["alivechk"],host)
-    cmd="ssh %s \"%s %s\" 2>&1" % (host,RATS[module]["alivechk"],CFGFILE)
+    cmd="ssh %s \"%s %s %s\" 2>&1" % (host,RATS[module]["alivechk"],CFGFILE,RATS[module]["script"])
     starter=os.popen(cmd)
     print starter.read()
     starter.close()
