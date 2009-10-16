@@ -42,7 +42,7 @@ while True:
               DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
             else:
               break
-    else:
+          else:
             debugMsg(1,"No subsystem file in repository %s for file %s, skiping" % (SOURCES_DONE_DIR,fullFName))
     DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))
    #cleanning ouput directory
