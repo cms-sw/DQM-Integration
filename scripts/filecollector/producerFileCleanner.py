@@ -22,7 +22,7 @@ while True:
     DEBUG and debugMsg(0,"%d bytes are going to be deleted" % delQuota)
     if delQuota > doneSize:
       msg="Something is filling up the disks, %s is does not have enough files to get to the Bottom Boundary of %.2f%%" % (T_FILE_DONE_DIR,PRODUCER_DU_BOT)
-      sendmail(YourEmail,body=msg)
+      sendmail(YourEmail,body=msg,subject="Something is filling up the disks")
       debugMsg(1,msg)
     aDelQuota=0
     FILE_LIST=[]
@@ -34,7 +34,7 @@ while True:
           subSystem=fMatch.group(2)
           run=fMatch.group(3)
           destDir="%s/%s/%s/DQM_V0001_%s_R%s.root" % (SOURCES_DONE_DIR,run[0:3],run[3:6],subSystem,run)
-	  fullFName="%s/%s" % (directory,f)
+          fullFName="%s/%s" % (directory,f)
           if  os.path.exists(destDir):
             if os.stat(fullFName).st_size+aDelQuota <= delQuota:
               FILE_LIST.append(fullFName)
@@ -42,7 +42,7 @@ while True:
               DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
             else:
               break
-	  else:
+    else:
             debugMsg(1,"No subsystem file in repository %s for file %s, skiping" % (SOURCES_DONE_DIR,fullFName))
     DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))
    #cleanning ouput directory
