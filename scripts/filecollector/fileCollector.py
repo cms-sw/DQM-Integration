@@ -121,7 +121,7 @@ while True:
                 else:
                   body = "Problem transfering final file for run %09d\n Retrying in %d" % (run,COLLECTOR_WAIT_TIME)
                   debugMsg(2, body)
-                  if i == RETRIES-1: sendMail(YourEmail,run,body,subject="Error tranfering file to filer")
+                  if i == RETRIES-1: sendmail(YourEmail,run,body,subject="Error tranfering file to filer")
                   time.sleep(COLLECTOR_WAIT_TIME)
               done=True
             else:
