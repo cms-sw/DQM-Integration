@@ -10,8 +10,12 @@ process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 process.load("Configuration.StandardSequences.GeometryPilot2_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load( "Configuration.StandardSequences.FrontierConditions_GlobalTag_cff" )
-process.GlobalTag.globaltag = 'GR09_31X_V3P::All'
+process.GlobalTag.globaltag = 'GR09_E_V3T::All'
 process.prefer("GlobalTag")
+
+#SiStrip Local Reco
+process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
+process.TkDetMap = cms.Service("TkDetMap")
 
 process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" )
 

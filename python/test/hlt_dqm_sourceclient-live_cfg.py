@@ -13,10 +13,13 @@ process.load("DQM.Integration.test.environment_cfi")
 process.load("Configuration.StandardSequences.GeometryPilot2_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" ) # for muon hlt dqm
+#SiStrip Local Reco
+process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
+process.TkDetMap = cms.Service("TkDetMap")
 
 process.load( "Configuration.StandardSequences.FrontierConditions_GlobalTag_cff" )
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.GlobalTag.globaltag = "GR09_H_V3::All"
 
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
