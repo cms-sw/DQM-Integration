@@ -12,13 +12,13 @@ def filecheck(rootfile):
   a = os.popen(cmd).read().split()
   tag = a.pop()
   if tag == '(int)(-1)':
-    #print "File corrupted"
+    DEBUG and debugMsg(1,"File %s corrupted" % rootfile)
     return 0
   elif tag == '(int)0':
-    #print "File is incomplete"
+    DEBUG and debugMsg(1, "File %s is incomplete" % rootfile)
     return 0
   elif tag == '(int)1':
-    #print "File is OK"
+    DEBUG and debugMsg(0, "File %s is OK" % rootfile)
     return 1
   else:
     return 0
@@ -52,7 +52,7 @@ while True:
         ndestfile="%s-%03d.ig" %(destfile.split(".ig")[0],ref)
         ref+=1	
       shutil.move(igfile,ndestfile)
-      print "file %s is not a standar name file, saved in %s directory for manual handeling" % (igfile,OLD_IG_FILES)
+      debugMsg(1, "file %s is not a standar name file, saved in %s directory for manual handeling" % (igfile,OLD_IG_FILES))
   for dir, subdirs, files in os.walk(COLLECTING_DIR):
     for f in files:
       if re.match('^DQM_.*_R[0-9]*_T[0-9]*\.root$', f) or re.match('^Playback_.*_R[0-9]*_T[0-9]*\.root$', f):
@@ -62,7 +62,7 @@ while True:
         donefile = "%s/%s/%s/%s" % (T_FILE_DONE_DIR, runstr[0:3], runstr[3:6], f)
         f = "%s/%s" % (dir, f)
         if os.path.exists(donefile) and os.stat(donefile).st_size == os.stat(f).st_size:
-          print "WARNING: %s was already processed but re-appeared" % f
+          debugMsg(1, "File %s was already processed but re-appeared" % f)
           os.remove(f)
           continue
         NEW.setdefault(runnr, {}).setdefault(subsystem,[]).append(f)
@@ -76,7 +76,7 @@ while True:
     if len(NEW.keys()) <= 1:
       time.sleep(COLLECTOR_WAIT_TIME)
       continue
-    print 'No tagfile_runend foud, checking for *_T files that could have been left behind'
+    debugMsg(0, 'No tagfile_runend foud, checking for *_T files that could have been left behind')
     TAGRUNEND=long(sorted(NEW.keys(),reverse=True)[1])
   else:
     TAGRUNEND=long(TAGS[0].split("_")[2])
@@ -120,12 +120,12 @@ while True:
                   break
                 else:
                   body = "Problem transfering final file for run %09d\n Retrying in %d" % (run,COLLECTOR_WAIT_TIME)
-                  print body
-                  if i == RETRIES-1: sendMail(YourEmail,run,body)
+                  debugMsg(2, body)
+                  if i == RETRIES-1: sendMail(YourEmail,run,body,subject="Error tranfering file to filer")
                   time.sleep(COLLECTOR_WAIT_TIME)
               done=True
             else:
-              print "file %s is incomplete looking for next DQM_V*_%s_R%09d_T*.root valid file" % (Tfile,subsystem,run)
+              DEBUG and debugMsg(0, "file %s is incomplete looking for next DQM_V*_%s_R%09d_T*.root valid file" % (Tfile,subsystem,run))
               if keeper == 0:
                 keeper+=1
                 shutil.move(Tfile,finalTfile+"_d")

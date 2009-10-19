@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
 import os, time, sys, shutil, glob, smtplib, re
-from datetime import datetime
 from commonAnTS import *
 if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
   print "No valid configuration file"
@@ -47,23 +46,23 @@ while True:
           if (filerun > 1 or fileds != "") and filev > existing[filerun][0]:
             new.append((filerun, filev, fileds, path,donepath ))
           else:
-            print "File %s is older than the one already registered: descarting" % f
+            debugMsg(1, "File %s is older than the one already registered: descarting" % f)
             moveout.append((path,junkpath))
   for path, junkpath in moveout:
     shutil.move(path,junkpath)
 
   if len(new):
-    print '%s: found %d new files.' % (datetime.now(), len(new))
+    debugMsg(0, 'Found %d new files.' % len(new) )
 
     for run, version, dataset, path, donepath in sorted(new)[::-1]:
       nfiles += 1
       if nfiles > MAX_FILES:
         break
       if run in existing and version < existing[run][0]:
-	print 'File %s is older than the latest registered moving on' % path	
+	debugMsg(1, 'File %s is older than the latest registered moving on' % path	)
 	shutil.move(path,donepath)
       	continue  
-      print 'Registering %s for run %09d' % (path, run)
+      debugMsg(0, 'Registering %s for run %09d' % (path, run))
       if dataset != "":
         os.system('set -x; visDQMIndex -d add %s %s' % (INDEX, path))
       else:

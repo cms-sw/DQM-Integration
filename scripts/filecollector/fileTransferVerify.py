@@ -33,10 +33,10 @@ def renotifyFile(f,stage):
               "--appversion ANTS_1_0"]
   cmd="%s %s" % (INJECTIONSCRIPT," ".join(parameters))
   result = commands.getstatusoutput(cmd)
-  print result[1]
+  DEBUG and debugMsg(0, result[1])
   if result[0] >= 1:
     output = result[1]
-    print "Error injecting file %s to transfer system checking if it exists" % f
+    debugMsg(2, "Error injecting file %s to transfer system checking if it exists" % f )
 #=====================================================================================
 def chkFileStat(fname):   
   chkparameters=["--check","--filename %s" % fname,"--config %s" % TRANSFER_CONFIGFILE]
@@ -51,7 +51,7 @@ def saveFile(f):
     os.makedirs(ftdir)
   tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
   if os.path.exists(tfname):
-    print "file reapeared sending to junk"
+    debugMsg(1, "File reapeared, sending to junk")
     ftdir="%s" % (JUNK_DIR)
     tfname="%s/%s" % (ftdir,f.rsplit("/",1)[-1])
   shutil.move(f,tfname)
@@ -60,22 +60,21 @@ if __name__ == "__main__":
   while True: 
     for stage in STAGES[::-1][1:]:
       stageDir    = "%s/%s" % (VERIFY_DIR,stage) 
-      print "Processing %s" % stage
+      DEBUG and debugMsg(0,"Processing %s" % stage)
       for dir1, subdirs, files in os.walk(stageDir):
         for f in files:
           fileStat=chkFileStat(f)
           if "FILES_TRANS_CHECKED" in fileStat[1]:
-            print "File %s has been succesfully transfered to CASTOR" % f
+            debugMsg(0,"File %s has been succesfully transfered to CASTOR" % f)
             fullFName= "%s/%s" % (dir1,f)
             saveFile(fullFName)
           else:
-            print fileStat[1]
-            print "File %s is being renotified" % f
+            debugMsg(1,"File %s in status %s, it is being renotified" % (fileStat[1],f))
             fullFName= "%s/%s" % (dir1,f)
             renotifyFile(fullFName,STAGES.index(stage))
   
     for dir1, subdirs, files in os.walk(INJECTION_DIR):
-      print "Processing %s" % dir1
+      DEBUG and debugMsg(0, "Processing %s" % dir1)
       for f in files:
         fileStat=chkFileStat(f)
         if "FILES_TRANS_CHECKED" in fileStat[1]:

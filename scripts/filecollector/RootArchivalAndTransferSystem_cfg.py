@@ -82,7 +82,7 @@ RATS={"Collector":{
       "FilerClean":{
   "hosts":["srv-c2c05-11"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-  "script":"fileCleanner.py"
+  "script":"filerCleanner.py"
   }
 }
 
@@ -118,7 +118,7 @@ TEST=False
 PRODUCER_DU_TOP=90.0  #0% a 100%
 PRODUCER_DU_BOT=50.0  
 
-#fileCleaner:
+#filerCleaner:
 FILER_DU_TOP           = 90.0  #0% a 100% porcentage of disk utilization (DU) when DU > FILER_DU_TOP files will be deleted until  
 FILER_DU_BOT           = 50.0  #          DU = FILER_DU_BOT, or as close as it can get to it
 FILER_SQ_TOP           = 20*pow(1024,3)   # size in bytes. when Directory size (DS) > FILER_SQ_TOP files will be deleted until

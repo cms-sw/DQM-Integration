@@ -4,7 +4,7 @@
 
 YourEmail='lilopera@cern.ch'
 ServerMail = "dqm@srv-C2D05-19.cms"
-EXEDIR = '/nfshome0/dqmdev/filecollector' # directory to execute the relevant scripts
+EXEDIR = '/nfshome0/dqmdev/AnTS' # directory to execute the relevant scripts
 TRANSFER_HOSTNAME = "srv-C2D05-19"
 TRANSFER_CONFIGFILE = "/nfshome0/dqm/.transfer/myconfig.txt"
 INJECTIONSCRIPT = "/nfshome0/tier0/scripts/injectFileIntoTransferSystem.pl"
@@ -51,38 +51,38 @@ CLEAN_DIR              = '/dqmdata/dqmintegration/done'
 
 RATS={"Collector":{
 	"hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+	"alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
 	"script":"fileCollector.py"
 	},
       "Merger":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+	"alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
 	"script":"fileMerger.py"
 	},
       "Register":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+	"alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
 	"script":"fileRegister.py"
 	},
       "Transfer":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+	"alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
 	"script":"fileTransfer.py"
 	},
       "Verify":{
 	"hosts":["srv-c2d05-18"],
-	"alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+	"alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
 	"script":"fileTransferVerify.py"
 	},  
       "ProdClean":{
   "hosts":["srv-c2d05-09","srv-c2d05-10","srv-c2d05-11","srv-c2d05-15","srv-c2d05-16","srv-c2d05-17"],
-  "alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
+  "alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
   "script":"producerFileCleanner.py"
   },  
       "FilerClean":{
   "hosts":["srv-c2c05-11"],
-  "alivechk":"/nfshome0/dqmdev/filecollector/aliveCheck.sh",
-  "script":"fileCleanner.py"
+  "alivechk":"/nfshome0/dqmdev/AnTS/aliveCheck.sh",
+  "script":"filerCleanner.py"
   }	
 }
 
@@ -118,7 +118,7 @@ TEST=True
 PRODUCER_DU_TOP=90.0  #0% a 100%
 PRODUCER_DU_BOT=50.0
 
-#fileCleaner:
+#filerCleaner:
 FILER_DU_TOP           = 90.0  #0% a 100% porcentage of disk utilization (DU) when DU > FILER_DU_TOP files will be deleted until  
 FILER_DU_BOT           = 50.0  #          DU = FILER_DU_BOT, or as close as it can get to it
 FILER_SQ_TOP           = 20*pow(1024,3)   # size in bytes. when Directory size (DS) > FILER_SQ_TOP files will be deleted until

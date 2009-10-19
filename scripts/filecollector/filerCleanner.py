@@ -72,6 +72,9 @@ while True:
           #debugMsg(1,"File %s does not have a run number and should not be in here deleting" % fullFName)
           FILE_LIST.append(fullFName)
     #filling FILE_LIST
+    if len(STAY_DIR.keys())==0: 
+      time.sleep(FILER_CLEANNER_WAIT_TIME)
+      continue
     oldestRun = len(STAY_DIR.keys()) > runs and long(sorted(STAY_DIR.keys(),reverse=True)[runs-1]) or long(STAY_DIR.keys()[-1])
     for run in sorted(STAY_DIR.keys()): 
       for f in STAY_DIR[run].keys():

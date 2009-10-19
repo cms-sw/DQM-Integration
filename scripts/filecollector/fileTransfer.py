@@ -29,7 +29,7 @@ def getFileLists():
         newfiles[vlfn]=(version,"%s/%s" % (dir1,f))
       else:
         trashfiles.append("%s/%s" % (dir1,f))
-  print "Found %d new files that will be registered, and %d files that will be %s" % (len(newfiles),len(trashfiles),(EMPTY_DONEDIR and "Erased" or "Skipped and sent to done")) 
+  DEBUG and debugMsg(0, "Found %d new files that will be registered, and %d files that will be %s" % (len(newfiles),len(trashfiles),(EMPTY_DONEDIR and "Erased" or "Skipped and sent to done")))
   return (newfiles,trashfiles)
 #=====================================================================================
 def injectFile(f,renotify=False):
@@ -54,26 +54,26 @@ def injectFile(f,renotify=False):
   result = commands.getstatusoutput(cmd)
   if result[0] >= 1:
     output = result[1]
-    print "Error injecting file %s to transfer system checking if it exists" % f
+    debugMsg(2, "Error injecting file %s to transfer system checking if it exists" % f)
     chkparameters=["--check","--filename %s" % fname,"--config %s" % TRANSFER_CONFIGFILE]
     cmd="%s %s" % (INJECTIONSCRIPT," ".join(chkparameters))
     result = commands.getstatusoutput(cmd)
     if result[0]==1:
       if "File not found in database" in result[1]:
-        print "Error: file %s not found in transfer database, check configuration" % f
+        debugMsg(2, "File %s not found in transfer database, check configuration" % f)
         return 0
       else:
-        print "Warning: file %s already exists in transfer database" % f
+        debugMsg(1,"File %s already exists in transfer database" % f)
 	return 2
     else:
       if "File found in database" in result[1]:
-        print "Warning: file %s already exists in transfer database" % f
+        debugMsg(2,"File %s already exists in transfer database" % f)
 	return 2
       else:
-        print "Error: problem checking database entry for file %s\nAppError:%s" % (f,result[1])
+        debugMsg(2, "Problem checking database entry for file %s\nAppError:%s" % (f,result[1]))
         return 0
   else:
-    print "File %s injected successfully" % f
+    debugMsg(0, "File %s injected successfully" % f)
   return 1
 #=====================================================================================
 def transferFiles():

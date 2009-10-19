@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
 import os, time, sys, shutil, glob, re
-from datetime import datetime
 from commonAnTS import *
 if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
   print "No valid configuration file"
@@ -20,14 +19,14 @@ while True:
         donefile = "%s/%s/%s/%s" % (SOURCES_DONE_DIR, runnr[0:3], runnr[3:6], f)
         f = "%s/%s" % (dir, f)
 	if os.path.exists(donefile) and os.stat(donefile).st_size == os.stat(f).st_size:
-	  print "WARNING: %s was already processed but re-appeared" % f
+	  debugMsg(1,"File  %s was already processed but re-appeared" % f
 	  os.remove(f)
 	  continue
         NEW.setdefault(runnr, []).append(f)
         NFOUND += 1
   
   if NFOUND:
-    print '%s: found %d new files in %d runs.' % (datetime.now(), NFOUND, len(NEW))
+    debugMsg(0, 'Found %d new files in %d runs.' % ( NFOUND, len(NEW)))
 
     newFiles = []
     allOldFiles = []
@@ -60,13 +59,13 @@ while True:
       logfile = "%s.log" % destfile[:-5]
       tmpdestfile = "%s.tmp" % destfile
     
-      print 'Merging run %s to %s (adding %s to %s)' % (run, destfile, files, oldfiles)
+      debugMsg(0, 'Merging run %s to %s (adding %s to %s)' % (run, destfile, files, oldfiles))
       LOGFILE = open(logfile, 'a')
       LOGFILE.write(os.popen('DQMMergeFile %s %s' % (tmpdestfile, " ".join(files))).read())
       LOGFILE.close()
       if not os.path.exists(tmpdestfile):
         body = 'Failed merging files for run %s. Will try again later.' % run
-        print body
+        debugMsg(1, body)
         sendmail(YourEmail,run,body)
 	continue
     
