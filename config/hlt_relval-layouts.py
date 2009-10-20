@@ -179,55 +179,115 @@ hltlayoutW(dqmitems,"Ele10LWEleIdL1R/ delta-phi cut",
             {'path': "HLT/HLTEgammaValidation/HLT_Ele10_LW_EleId_L1RDQMWenu/efficiency_hltL1NonIsoHLTNonIsoSingleElectronLWEt10EleIdDphiFilter_vs_et_MC_matched", 'description':"per-object (MC matched) for hltL1NonIsoHLTNonIsoSingleElectronLWEt10EleIdDphiFilter in Ele10LWEleIdL1R_vs_et"}])
 
 
-
-
+def hltLayoutGammaJet(i, p, *rows): i["HLT/HLTEgammaValidation/Photon Summary" + p] = DQMItem(layout=rows)
+hltLayoutGammaJet(dqmitems,"/HLT_Photon10_L1R Efficiency vs Et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/final_eff_vs_et", 'description':"Efficiency of HLT_Photon10_L1R vs Et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon10_L1R Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/final_eff_vs_eta", 'description':"Efficiency of HLT_Photon10_L1R vs eta of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/L1 EgammaEt5 Efficiency vs et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/efficiency_hltL1sRelaxedSingleEgammaEt5_vs_et_MC_matched", 'description':"Efficiency of L1 EgammaEt5 vs et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/L1 EgammaEt5 Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon10_L1R_DQMGammaJet/efficiency_hltL1sRelaxedSingleEgammaEt5_vs_eta_MC_matched", 'description':"Efficiency of L1 EgammaEt5 vs eta of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_LooseEcalIso_L1R Efficiency vs Et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_LooseEcalIso_L1R_DQMGammaJet/final_eff_vs_et",'description':"Efficiency of HLT_Photon15_LooseEcalIso_L1R vs Et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_LooseEcalIso_L1R Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_LooseEcalIso_L1R_DQMGammaJet/final_eff_vs_eta",'description':"Efficiency of HLT_Photon15_LooseEcalIso_L1R vs eta of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_TrackIso_L1R Efficiency vs Et",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_TrackIso_L1R_DQMGammaJet/final_eff_vs_et",'description':"Efficiency of HLT_Photon15_TrackIso_L1R vs Et of generated photon"}])
+hltLayoutGammaJet(dqmitems,"/HLT_Photon15_TrackIso_L1R Efficiency vs eta",
+                  [{'path':"HLT/HLTEgammaValidation/HLT_Photon15_TrackIso_L1R_DQMGammaJet/final_eff_vs_eta",'description':"Efficiency of HLT_Photon15_TrackIso_L1R vs eta of generated photon"}])
 
 
 ###---- MUON selection goes here: ----
 
 def trigvalmuon(i, p, *rows): i["HLT/Muon/Efficiency Summary for " + p] = DQMItem(layout=rows)
 
-for path in ["HLT_IsoMu3", "HLT_IsoMu9"]:
-    trigvalmuon(dqmitems, path + "/pT Turn-On for L1",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genTurnOn_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. pT (" + path + " path)"}])
+menus = ["8E29"      , "1E31"      ]
+paths = ["HLT_IsoMu3", "HLT_IsoMu9"]
 
-    trigvalmuon(dqmitems, path + "/pT Turn-On for L2",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genTurnOn_L2", 'description':"Efficiency to find an L2 muon associated to an L1 muon vs. pT (" + path + " path)"}])
+for menuNum in range(len(menus)):
 
-    trigvalmuon(dqmitems, path + "/pT Turn-On for L2 Isolation",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genTurnOn_L2Iso", 'description':"Efficiency to find an isolated L2 muon associated to an L1 muon vs. pT (" + path + " path)"}])
+    thisMenu          = menus[menuNum]
+    thisDir           = "HLT/Muon/Distributions/" + paths[menuNum]
+    thisDocumentation = " (" + paths[menuNum] + " path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/MuonHLTOfflinePerformance\">documentation</a>)"
 
-    trigvalmuon(dqmitems, path + "/pT Turn-On for L3",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genTurnOn_L3", 'description':"Efficiency to find an L3 muon associated to an L1 muon vs. pT (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L1",
+        [{'path': thisDir + "/genTurnOn_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. pT" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/pT Turn-On for L3 Isolation",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genTurnOn_L3Iso", 'description':"Efficiency to find an isolated L3 muon associated to an L1 muon vs. pT (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L2",
+        [{'path': thisDir + "/genTurnOn_L2", 'description':"Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Efficiency of L1",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genEffEta_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. eta (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L2 Isolation",
+        [{'path': thisDir + "/genTurnOn_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Efficiency of L2",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genEffEta_L2", 'description':"Efficiency to find an L2 muon associated to an L1 muon vs. eta (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L3",
+        [{'path': thisDir + "/genTurnOn_L3", 'description':"Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Efficiency of L2 Isolation",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genEffEta_L2Iso", 'description':"Efficiency to find an isolated L2 muon associated to an L1 muon vs. eta (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L3 Isolation",
+        [{'path': thisDir + "/genTurnOn_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Efficiency of L3",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genEffEta_L3", 'description':"Efficiency to find an L3 muon associated to an L1 muon vs. eta (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L1",
+        [{'path': thisDir + "/genEffEta_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. eta" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Efficiency of L3 Isolation",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genEffEta_L3Iso", 'description':"Efficiency to find an isolated L3 muon associated to an L1 muon vs. eta (" + path + " path)"}])
+    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L2",
+        [{'path': thisDir + "/genEffEta_L2", 'description':"Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Number of Objects Per Step",
-        [{'path': "HLT/Muon/Distributions/" + path + "/numObjects", 'description':"Number of objects found in generated and reconstructed muon collections, and at each step of the " + path + " trigger path"}])
+    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L2 Isolation",
+        [{'path': thisDir + "/genEffEta_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
 
-    trigvalmuon(dqmitems, path + "/Number of Orphans per Step",
-        [{'path': "HLT/Muon/Distributions/" + path + "/genNumOrphans", 'description':"Number of objects in each step of the " + path + " trigger path which were not matched to a generated muon"}])
+    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L3",
+        [{'path': thisDir + "/genEffEta_L3", 'description':"Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
+
+    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L3 Isolation",
+        [{'path': thisDir + "/genEffEta_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
+
+##     trigvalmuon(dqmitems, thisMenu + "/Number of Objects Per Step",
+##         [{'path': thisDir + "/numObjects", 'description':"Number of objects found in generated and reconstructed muon collections, and at each step of the " + paths[menuNum] + " trigger path"}])
+
+##     trigvalmuon(dqmitems, thisMenu + "/Number of Orphans per Step",
+##         [{'path': thisDir + "/genNumOrphans", 'description':"Number of objects in each step of the " + paths[menuNum] + " trigger path which were not matched to a generated muon"}])
 
 
 ###---- TAU selection goes here: ----
-def trigvaltau(i, p, *rows): i["HLT/HLTTAU/Preselection" + p] = DQMItem(layout=rows)
+def trigvaltau(i, p, *rows): i["HLT/TauRelVal/Summary For " + p] = DQMItem(layout=rows)
 
+for lumi in ["Default", "8E29","1E31"]:
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/Double Tau Path Performance",
+               [{'path': "HLT/TauRelVal/MC_"+lumi+ "/DoubleTau/EfficiencyRefInput",
+                 'description':"Efficiency of the Double Tau Path with ref to MC for "+lumi},
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/DoubleTau/EfficiencyRefPrevious",
+                 'description':"Efficiency of the Double Tau Path with ref to previous step( "+lumi+")"}
+
+               ])
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/Single Tau Path Performance",
+               [
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/SingleTau/EfficiencyRefInput",
+                 'description':"Efficiency of the Single Tau Path with ref to MC for "+lumi},
+                {'path': "HLT/TauRelVal/MC_"+lumi+ "/SingleTau/EfficiencyRefPrevious",
+                 'description':"Efficiency of the Single Tau Path with ref to previous step( "+lumi+")"}
+               ])
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L1 Efficency",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtEff", 'description':"L1 Tau Efficiency vs pt with  ref to MC for "+lumi},
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtaEff", 'description':"L1 Tau Efficiency vs pt with  ref to MC for "+lumi},
+               ])
+
+               
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L2 Efficency",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtEff", 'description':"L2 Tau Efficiency vs pt with  ref to MC for "+lumi},
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtaEff", 'description':"L2 Tau Efficiency vs pt with  ref to MC for "+lumi},
+               ])
+
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L1 Resolution",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L1/L1TauEtResol", 'description':"L1 Tau ET resolution with ref to MC  for "+lumi}
+               ])
+
+    trigvaltau(dqmitems,"MC_"+lumi+" Menu/L2 Resolution",
+               [
+                  {'path': "HLT/TauRelVal/MC_"+lumi+ "/L2/L2TauEtResol", 'description':"L2 Tau ET resolution with ref to MC  for "+lumi}
+               ])
 ###---- JETMET selection goes here: ----
 #def trigvaljetmet(i, p, *rows): i["HLT//Preselection" + p] = DQMItem(layout=rows)
 
@@ -239,6 +299,7 @@ def trigvalalca(i, p, *rows): i["HLT/AlCaEcalPi0/Preselection" + p] = DQMItem(la
 
 ###---- TOP selection goes here: ----
 def trigvaltop(i, p, *rows): i["HLT/Top/Preselection" + p] = DQMItem(layout=rows)
+
 
 ###---- HEAVYFLAVOR selection goes here: ----
 
