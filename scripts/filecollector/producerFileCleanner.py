@@ -56,12 +56,12 @@ while True:
           for f in sdFiles:
             try:
               os.remove(f)
-              DEBUG and debugMsg(0,"File %s has been removed" % f)
+              debugMsg(0,"File %s has been removed" % f)
             except Exception,e:
               debugMsg(2,"Problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
           try:
             os.removedir(sdRoot)
-            DEBUG and debugMsg(0,"File %s has been removed" % sdRoot)
+            debugMsg(0,"File %s has been removed" % sdRoot)
           except Exception,e:
             debugMsg(2,"Problem deleting directory: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
       for f in files:
@@ -82,7 +82,7 @@ while True:
     for f in FILE_LIST:
       try:
         os.remove(f)
-        DEBUG and debugMsg(0,"File %s has been removed" % f)
+        debugMsg(0,"File %s has been removed" % f)
       except Exception,e:
         debugMsg(2,"problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
       if os.path.dirname(f) not in DIR_LIST and COLLECTING_DIR not in os.path.dirname(f):
@@ -91,10 +91,10 @@ while True:
     for d in DIR_LIST:
       try:
         os.removedirs(d)
-        DEBUG and debugMsg(0,"Directory %s has been removed" % d)
+        debugMsg(0,"Directory %s has been removed" % d)
       except Exception,e:
         print e
-        DEBUG and debugMsg(0,"Directory delition failed: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
+        debugMsg(1,"Directory delition failed: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
   time.sleep(PROD_CLEANNER_WAIT_TIME)
          
       

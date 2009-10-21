@@ -19,7 +19,7 @@ while True:
         donefile = "%s/%s/%s/%s" % (SOURCES_DONE_DIR, runnr[0:3], runnr[3:6], f)
         f = "%s/%s" % (dir, f)
 	if os.path.exists(donefile) and os.stat(donefile).st_size == os.stat(f).st_size:
-	  debugMsg(1,"File  %s was already processed but re-appeared" % f
+	  debugMsg(1,"File  %s was already processed but re-appeared" % f )
 	  os.remove(f)
 	  continue
         NEW.setdefault(runnr, []).append(f)

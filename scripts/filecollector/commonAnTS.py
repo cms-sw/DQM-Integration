@@ -1,4 +1,4 @@
-import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile
+import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile, socket
 TIME_OUT=700
 DEBUG=False
 def getDirSize(path): 
@@ -95,7 +95,7 @@ def executeCmd(cmd):
 def sendmail(EmailAddress,run=123456789,body="",subject="File merge failed."):
   import os, smtplib
   from email.MIMEText import MIMEText
-  server=os.getenv("HOSTNAME")
+  server=socket.gethostname() #os.getenv("HOSTNAME")
   user=os.getenv("USER")
   ServerMail="%s@%s" % (user,server)
   s=smtplib.SMTP("localhost")

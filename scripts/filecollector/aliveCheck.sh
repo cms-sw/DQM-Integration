@@ -3,14 +3,16 @@
 export WorkDir=$(dirname $0)
 YourEmail=lilopera@cern.ch
 #source /nfshome0/cmssw2/scripts/setup.sh
-if [ -d /data/sw/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/ ]
+if [ -d /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/ ]
 then
   XPYTHONPATH=$PYTHONPATH
-  source /data/sw/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/env.sh
+  source /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/env.sh
 else
   source $WorkDir/env.sh
 fi
 export PYTHONPATH=$XPYTHONPATH:$PYTHONPATH
+export $HOSTNAME
+
 if [[ $1 == "" ]]
 then
   echo No config file specifyed
