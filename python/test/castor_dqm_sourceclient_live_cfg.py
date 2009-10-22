@@ -77,7 +77,7 @@ process.castorMonitor.LEDMonitor = True
 
 ### the filename prefix 
 process.dqmSaver.producer = 'DQM'
-
+process.dqmSaver.dirName = '/tmp/dvolyans/'
 process.dqmSaver.convention = 'Online'
 process.dqmSaver.saveAtJobEnd = True
 
