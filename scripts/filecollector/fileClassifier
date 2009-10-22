@@ -48,7 +48,7 @@ while True:
     
     finalFileName="%s/%s" % (destDir,f)      
     shutil.move(fName,finalFileName)
-    DEBUG and debugMsg(0,"File'%s' moved from Dropbox to %s" % (finalFileName,destDir)) 
+    debugMsg(0,"File'%s' moved from Dropbox to %s" % (finalFileName,destDir)) 
   
   DEBUG and debugMsg(0,"Finished processing list going to sleep for: '%d' seconds" % CLASSIFIER_WAIT_TIME)
   time.sleep(CLASSIFIER_WAIT_TIME)

@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 #as used by wassh
-"""
+import sys,os
+ACTIONS=["start","stop","restart"]
+MODULES=["Collector","Merger","Register","Transfer","Verify","ProdClean","FilerClean","Classifier","All"]
+LOCALHOST=os.getenv("HOSTNAME")
+__doc__="""
 ratsControl action module from cfgfile [on hostname]
    action      = start | stop | restart 
-   module      = Collector | Merger | Register | Transfer | Verify | ProdClean | All
+   module      = %s
    cfgfile     = Configuration file from where to extract the RATS variable with
                  the correct (hosts,script,alivechk)->Module association
    on hostname = Hostname on which to perform the action. If not specifyed the 
@@ -11,11 +15,7 @@ ratsControl action module from cfgfile [on hostname]
                  module
                    
    
-"""
-import sys,os
-ACTIONS=["start","stop","restart"]
-MODULES=["Collector","Merger","Register","Transfer","Verify","ProdClean","FilerClean","All"]
-LOCALHOST=os.getenv("HOSTNAME")
+""" % " | ".join(MODULES)
 #Function for starting and stoping modules
 def start_app(module,host=LOCALHOST):
   if LOCALHOST.lower()==host.lower():
@@ -60,6 +60,8 @@ def stop_app(module,host=LOCALHOST):
       print "ratsControl cant find %s running in %s" % (RATS[module]["script"],host)
   
 def process_module(module):
+  if module not in RATS.keys():
+    return
   for host in RATS[module]["hosts"]:
     if not HOST or HOST == host:
       if ACTION == "start":

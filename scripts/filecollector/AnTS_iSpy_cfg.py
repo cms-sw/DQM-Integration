@@ -21,13 +21,14 @@ VERIFY_WAIT_TIME         = 600
 IG_PACKER_WAIT_TIME      = 120       # waiting time for new files (sec)
 PROD_CLEANNER_WAIT_TIME  = 3600*4
 FILER_CLEANNER_WAIT_TIME = 3600*24
+CLASSIFIER_WAIT_TIME	   = 120
 
 ################################
 #Directories:                  # 
 ################################
  
 COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recently produced files
-DONE_DIR               = '/dqmdata/EventDisplay/done/' 	
+DONE_DIR               = '/dqmdata/EventDisplay/.done' 	
 DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
 IG_FILE_DROPBOX        = '/dqmdata/EventDisplay/dropbox' #Directory to store ig Files.
@@ -35,7 +36,8 @@ INDEX                  = '/home/dqm/idx'
 INJECTION_DIR          = '/dqmdata/EventDisplay/Tier0Shipping/inject'   #Directory where files get placed once they have been sent.
 JUNK_DIR               = '/dqmdata/dqm/junk'
 MERGED_DIR             = '/data/dqm/merged' # directory, to which merged file are stored
-OLD_IG_FILES           = '/dqmdata/EventDisplay'
+OLD_IG_FILES           = '/dqmdata/EventDisplay/done'
+BASE_DIRECTORY	       = "/dqmdata/EventDisplay/done"
 REGISTERED_DIR         = '/dqmdata/EventDisplay/dropbox'     # 'Directory that stores registered files
 SOURCES_DONE_DIR       = '/dqmdata/dqm/done/sources' # directory, to which processed files are stored
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
@@ -49,22 +51,7 @@ CLEAN_DIR              = DONE_DIR
 #Notice how they are the keys for the association
 #MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
 
-RATS={"Collector":{
-	"hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-	"script":"fileCollector.py"
-	},
-      "Merger":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-	"script":"fileMerger.py"
-	},
-      "Register":{
-	"hosts":["srv-c2d05-19"],
-	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-	"script":"fileRegister.py"
-	},
-      "Transfer":{
+RATS={"Transfer":{
 	"hosts":["srv-c2d05-19"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
 	"script":"fileTransfer.py"
@@ -74,11 +61,11 @@ RATS={"Collector":{
 	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
 	"script":"fileTransferVerify.py"
 	},
-      "ProdClean":{
-  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
-  "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-  "script":"producerFileCleanner.py"
-  },  
+      "Classifier":{
+	"hosts":["srv-c2d05-11"],
+	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
+	"script":"fileClassifier.py"
+	},  
       "FilerClean":{
   "hosts":["srv-c2c05-11"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
@@ -117,6 +104,10 @@ TEST=False
 #producerFileCleaner:
 PRODUCER_DU_TOP=90.0  #0% a 100%
 PRODUCER_DU_BOT=50.0  
+
+#fileClassifier
+FILE_NAME_STD	= "iSpy_([_A-Z0-9]*)__([-_a-zA-Z0-9]*)__R([0-9]{9,9})_T([0-9]{8,8}).ig"
+ERAS					= ["CRAFT","CRUZET","MWGR","BEAM"]
 
 #filerCleaner:
 FILER_DU_TOP           = 90.0  #0% a 100% porcentage of disk utilization (DU) when DU > FILER_DU_TOP files will be deleted until  

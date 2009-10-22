@@ -11,7 +11,7 @@ else
   source $WorkDir/env.sh
 fi
 export PYTHONPATH=$XPYTHONPATH:$PYTHONPATH
-export $HOSTNAME
+export HOSTNAME=$HOSTNAME
 
 if [[ $1 == "" ]]
 then
