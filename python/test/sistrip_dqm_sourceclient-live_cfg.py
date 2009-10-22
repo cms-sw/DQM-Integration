@@ -67,7 +67,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.GlobalTag.globaltag = "GR09_H_V4::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 #-----------------------
@@ -114,7 +114,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 # Scheduling
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
-process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
+process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
