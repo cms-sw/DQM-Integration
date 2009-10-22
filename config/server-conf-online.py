@@ -21,8 +21,8 @@ server.serviceName = 'Online'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMFileAccess', None, None,
-	      { "dqm": "/dqmdata/dqm/done/merged",
-	        "ispy": "/dqmdata/EventDisplay/done/000" })
+	      { "dqm": "/dqmdata/dqm/done",
+	        "ispy": "/dqmdata/EventDisplay/done" })
 #server.extend('EVDSnapshotUpload', '/home/dqm/iguana-snapshots')
 #server.source('EVDSnapshot', 'evd', '/home/dqm/iguana-snapshots')
 server.source('DQMUnknown', 'unknown', 9091)
