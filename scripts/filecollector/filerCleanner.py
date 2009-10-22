@@ -58,7 +58,7 @@ while True:
   else: 
     runsInDTime = MODE == "Time" and getNumRunsWithinTime(CLEAN_DIR,FILER_TIME) or 0
     runs        = MODE == "Time" and (runsInDTime > FILER_NRUNS  and runsInDTime or FILER_NRUNS) or FILER_NRUNS
-    timeStamp   = MODE == "Time" and long(time.time()) - (FILER_TIME * 3600) or 0  
+    timeStamp   = MODE == "Time" and long(time.time()) - (FILER_TIME * 3600) or 0
     #filling STAY_DIR
     for directory,subdirs,files in os.walk(CLEAN_DIR):
       for f in files:
@@ -78,17 +78,18 @@ while True:
     oldestRun = len(STAY_DIR.keys()) > runs and long(sorted(STAY_DIR.keys(),reverse=True)[runs-1]) or long(STAY_DIR.keys()[-1])
     for run in sorted(STAY_DIR.keys()): 
       for f in STAY_DIR[run].keys():
-        if long(run) < oldestRun or STAY_DIR[run][f] < timeStamp:
+        if long(run) < oldestRun or (runsInDTime > 0 and STAY_DIR[run][f] < timeStamp):
           FILE_LIST.append(f)
         else:
           break
+    DEBUG and debugMsg(0,"Found %d with in %d hours, keeping %d runs, and oldest run found %d" % (runsInDTime,FILER_TIME,runs,oldestRun) )
   DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))  
   #remove files
   DIR_LIST=[]
   for f in FILE_LIST:
     try:
       os.remove(f)
-      debugMsg(1,"File %s has been removed" % f)
+      debugMsg(0,"File %s has been removed" % f)
     except Exception,e:
       debugMsg(2,"problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
     if os.path.dirname(f) not in DIR_LIST and COLLECTING_DIR not in os.path.dirname(f):

@@ -43,7 +43,7 @@ SOURCES_DONE_DIR       = '/dqmdata/dqm/done/sources' # directory, to which proce
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
 TMP_DROPBOX            = '/dqmdata/dqm/.dropbox_tmp' # stealth area on cmsmon
 VERIFY_DIR             = '/dqmdata/EventDisplay/Tier0Shipping/verify'
-CLEAN_DIR              = DONE_DIR
+CLEAN_DIR              = BASE_DIRECTORY
 ################################
 #ratsControl parameters:       # 
 ################################
@@ -64,7 +64,7 @@ RATS={"Transfer":{
       "Classifier":{
 	"hosts":["srv-c2d05-11"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
-	"script":"fileClassifier.py"
+	"script":"fileClassifier"
 	},  
       "FilerClean":{
   "hosts":["srv-c2c05-11"],
