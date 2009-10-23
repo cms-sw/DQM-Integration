@@ -68,9 +68,12 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
-# Set expected orbit time to 3563 (should be 6 for runs < 116401)
-process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(3563)
-process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = 3563
+# Set expected idle BCN time to correct value
+#(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
+#
+idle=3560
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(idle)
+process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = idle
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
