@@ -178,9 +178,12 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 
 process.hcalClient.SummaryClient        = True
 
-# Set expected orbit time to 3563 (6 for runs < 116401)
-process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(3563)
-process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = 3563
+# Set expected orbit time to correct value
+#(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
+#
+orbit=3560
+process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(orbit)
+process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = orbit
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
