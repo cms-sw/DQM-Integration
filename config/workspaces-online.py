@@ -75,7 +75,13 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  "Hcal/Layouts/02 HCAL Shifter Checklist Plots - RecHits",
                  "Hcal/Layouts/03 HCAL Shifter Checklist Plots - Summaries"
                  )
-
+		 
+server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
+                 'Castor/Layouts/CASTOR Pedestals',
+                 'Castor/Layouts/CASTOR LED Distributions',
+                 'Castor/Layouts/CASTOR RecHit Distributions'
+                )
+	  
 server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLX', '^HLX',
                  'HLX/Layouts/HF-Comparison',
                  'HLX/Layouts/HLX-Averages',

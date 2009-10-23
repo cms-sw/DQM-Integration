@@ -41,6 +41,11 @@ server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL DataFormat Problems',
                  'Hcal/Layouts/HCAL Unsuppressed Channels')
 
+server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
+                 'Castor/Layouts/CASTOR Pedestals',
+                 'Castor/Layouts/CASTOR LED Distributions',
+                 'Castor/Layouts/CASTOR RecHit Distributions'
+                )
 server.workspace('DQMContent', 31, 'Trigger/Lumi', 'L1T', '^L1T/')
 server.workspace('DQMContent', 32, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/')
 server.workspace('DQMContent', 33, 'Trigger/Lumi', 'HLT', '^HLT/')

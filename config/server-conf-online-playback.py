@@ -4,9 +4,9 @@ BASEDIR   = os.path.dirname(os.path.dirname(__file__))
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-	   ("csc", "dt", "eb", "ee", "es","hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
+	   ("castor","csc", "dt", "eb", "ee", "es","hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("csc", "dt", "eb", "ee","es", "hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
+            ("castor","csc", "dt", "eb", "ee","es", "hcal", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
 modules = ("GuiDQM", "GuiEventDisplay")
 envsetup = "export QUIET_ASSERT=a"
