@@ -261,6 +261,7 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.updateTime = 4
+process.ecalBarrelMonitorClient.dbUpdateTime = 120
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelMonitorClient.MGPAGains = [ 1, 6, 12 ]

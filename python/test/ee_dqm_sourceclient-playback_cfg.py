@@ -265,6 +265,7 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
 process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
+process.ecalEndcapMonitorClient.dbUpdateTime = 120
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
