@@ -67,9 +67,25 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+# for CMSSW_3_2_5
+#process.GlobalTag.globaltag = "GR09_H_V4::All"
+# for CMSSW_3_3_0
+process.GlobalTag.globaltag = "GR09_H_V4::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+#--------------------------------------------
+## Patch to fix RunInfo Problem (temporary)
+#
+process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
+  cms.PSet( record = cms.string("SiStripDetVOffRcd"),    tag    = cms.string("") ),
+  cms.PSet( record = cms.string("SiStripDetCablingRcd"), tag    = cms.string("") ),
+# cms.PSet( record = cms.string("RunInfoRcd"),           tag    = cms.string("") ),
+  cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
+  cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
+  cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") )
+)
+#-------------------------------------------
 
+                                                                                            
 #-----------------------
 #  Reconstruction Modules
 #-----------------------
