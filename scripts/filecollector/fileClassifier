@@ -27,7 +27,7 @@ while True:
     fName="%s/%s" % (directory,f)
     if nameItems:
       preEra,trigger,run,serial=nameItems.groups()
-      runDir="%s/%sxxx" % (run [:4],run[4:7])
+      runDir="%s/%sxx" % (run [:4],run[4:7])
       eraFound=False
       for era in ERAS:
         if era in preEra:
