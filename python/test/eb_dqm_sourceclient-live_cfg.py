@@ -1,5 +1,28 @@
 import FWCore.ParameterSet.Config as cms
 
+dbName = ''
+dbHostName = ''
+dbHostPort = 1521
+dbUserName = ''
+dbPassword = ''
+
+try:
+  file = open('/nfshome0/ecalpro/DQM/online-DQM/.cms_tstore.conf', 'r')
+  for line in file:
+    if line.find('dbName') >= 0:
+      dbName = line.split()[2]
+    if line.find('dbHostName') >= 0:
+      dbHostName = line.split()[2]
+    if line.find('dbHostPort') >= 0:
+      dbHostPort = int(line.split()[2])
+    if line.find('dbUserName') >= 0:
+      dbUserName = line.split()[2]
+    if line.find('dbPassword') >= 0:
+      dbPassword = line.split()[2]
+  file.close()
+except IOError:
+  pass
+
 process = cms.Process("ECALDQM")
 
 process.load("DQM.Integration.test.inputsource_cfi")
@@ -258,7 +281,13 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
-process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
+process.ecalBarrelMonitorClient.dbName = dbName
+process.ecalBarrelMonitorClient.dbHostName = dbHostName
+process.ecalBarrelMonitorClient.dbHostPort = dbHostPort
+process.ecalBarrelMonitorClient.dbUserName = dbUserName
+process.ecalBarrelMonitorClient.dbPassword = dbPassword
+process.ecalBarrelMonitorClient.dbTagName = 'CMSSW-online-central'
+process.ecalBarrelMonitorClient.maskFile = ''
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalBarrelMonitorClient.dbUpdateTime = 120

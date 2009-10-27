@@ -1,5 +1,28 @@
 import FWCore.ParameterSet.Config as cms
 
+dbName = ''
+dbHostName = ''
+dbHostPort = 1521
+dbUserName = ''
+dbPassword = ''
+
+try:
+  file = open('/nfshome0/ecalpro/DQM/online-DQM/.cms_tstore.conf', 'r')
+  for line in file:
+    if line.find('dbName') >= 0:
+      dbName = line.split()[2]
+    if line.find('dbHostName') >= 0:
+      dbHostName = line.split()[2]
+    if line.find('dbHostPort') >= 0:
+      dbHostPort = int(line.split()[2])
+    if line.find('dbUserName') >= 0:
+      dbUserName = line.split()[2]
+    if line.find('dbPassword') >= 0:
+      dbPassword = line.split()[2]
+  file.close()
+except IOError:
+  pass
+
 process = cms.Process("ECALDQM")
 
 process.load("DQM.Integration.test.inputsource_cfi")
@@ -262,7 +285,13 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
-process.ecalEndcapMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EE.dat'
+process.ecalEndcapMonitorClient.dbName = dbName
+process.ecalEndcapMonitorClient.dbHostName = dbHostName
+process.ecalEndcapMonitorClient.dbHostPort = dbHostPort
+process.ecalEndcapMonitorClient.dbUserName = dbUserName
+process.ecalEndcapMonitorClient.dbPassword = dbPassword
+process.ecalEndcapMonitorClient.dbTagName = 'CMSSW-online-central'
+process.ecalEndcapMonitorClient.maskFile = ''
 process.ecalEndcapMonitorClient.location = 'P5'
 process.ecalEndcapMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.dbUpdateTime = 120

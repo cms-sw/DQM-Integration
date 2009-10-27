@@ -258,7 +258,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
-process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
+process.ecalBarrelMonitorClient.maskFile = ''
 process.ecalBarrelMonitorClient.location = 'P5'
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalBarrelMonitorClient.dbUpdateTime = 120
