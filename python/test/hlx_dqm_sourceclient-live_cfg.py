@@ -10,8 +10,7 @@ process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
-##process.load("DQMServices.Components.DQMEnvironment_cfi")
-##process.load("DQM.Integration.test.environment_cfi")
+process.load("DQM.Integration.test.environment_cfi")
 ##process.dqmEnv.subSystemFolder    = "HLX"
 
 process.maxEvents = cms.untracked.PSet(
