@@ -1,4 +1,4 @@
-  <SubDetectors name="SiStrip" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/110/998/DQM_V0001_R000110998__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
+  <SubDetectors name="SiStrip" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/109/524/DQM_V0001_R000109524__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
     <!-- FED Monitoring -->
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadActiveChannelStatusBits"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadChannelStatusBits"/>
@@ -71,7 +71,7 @@
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_8/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__8"/>
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_9/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__9"/>
   </SubDetectors>
-  <SubDetectors name="Tracking" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/110/998/DQM_V0001_R000110998__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
+  <SubDetectors name="Tracking" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/109/524/DQM_V0001_R000109524__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
     <!-- Track Parameters -->
     <ReferenceEntity name="TrackParameters/NumberOfTracks_CKFTk"/>
     <ReferenceEntity name="TrackParameters/NumberOfRecHitsPerTrack_CKFTk"/>
