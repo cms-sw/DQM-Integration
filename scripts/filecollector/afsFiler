@@ -17,8 +17,8 @@ while True:
         del subdirs[0]
       continue
     for f in files:
-      if f[0] == ".":
-        continue
+     if f[0] == "." or f.startswith("latest"):
+        continue:
       fullFileName="%s/%s" % (directory,f)
       fileSize=os.stat(fullFileName).st_size
       runMayor=fullFileName.split("/")[-3]

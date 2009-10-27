@@ -69,7 +69,7 @@ while True:
           fMtime=os.stat(fullFName).st_mtime
           STAY_DIR.setdefault(run,{}).setdefault(fullFName,fMtime)
         else:
-          #debugMsg(1,"File %s does not have a run number and should not be in here deleting" % fullFName)
+          debugMsg(1,"File %s does not have a run number and should not be in here deleting" % fullFName)
           FILE_LIST.append(fullFName)
     #filling FILE_LIST
     if len(STAY_DIR.keys())==0: 
