@@ -40,7 +40,7 @@ while True:
             aDelQuota+=os.stat(fullFName).st_size
             if  os.path.exists(destDir):
               DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
-            else
+            else:
               debugMsg(1,"No subsystem file in repository %s for file %s, deleting any way" % (SOURCES_DONE_DIR,fullFName))
           else:
             break
