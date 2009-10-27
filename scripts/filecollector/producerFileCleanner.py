@@ -41,7 +41,7 @@ while True:
             if  os.path.exists(destDir):
               DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
             else
-              debugMsg(1,"No subsystem file in repository %s for file %s, skiping" % (SOURCES_DONE_DIR,fullFName))
+              debugMsg(1,"No subsystem file in repository %s for file %s, deleting any way" % (SOURCES_DONE_DIR,fullFName))
           else:
             break
     DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))
