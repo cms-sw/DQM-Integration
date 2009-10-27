@@ -65,7 +65,7 @@ hltlayout(dqmitems,"Eff HLT_L1MuOpen to its L1 vs Pt",
 hltlayout(dqmitems,"Eff HLT_L1MuOpen to its L1 vs eta-phi",
   	[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
-hltlayout(dqmitems,"Eff HLT_L1MuOpen to its L1 vs Pt",
+hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs Pt",
   	[{'path': "HLT/FourVector/client/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs eta-phi",
