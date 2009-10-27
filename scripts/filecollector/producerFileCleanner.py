@@ -35,15 +35,15 @@ while True:
           run=fMatch.group(3)
           destDir="%s/%s/%s/DQM_V0001_%s_R%s.root" % (SOURCES_DONE_DIR,run[0:3],run[3:6],subSystem,run)
           fullFName="%s/%s" % (directory,f)
-          if  os.path.exists(destDir):
-            if os.stat(fullFName).st_size+aDelQuota <= delQuota:
-              FILE_LIST.append(fullFName)
-              aDelQuota+=os.stat(fullFName).st_size
+          if os.stat(fullFName).st_size+aDelQuota <= delQuota:
+            FILE_LIST.append(fullFName)
+            aDelQuota+=os.stat(fullFName).st_size
+            if  os.path.exists(destDir):
               DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
-            else:
-              break
+            else
+              debugMsg(1,"No subsystem file in repository %s for file %s, skiping" % (SOURCES_DONE_DIR,fullFName))
           else:
-            debugMsg(1,"No subsystem file in repository %s for file %s, skiping" % (SOURCES_DONE_DIR,fullFName))
+            break
     DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))
    #cleanning ouput directory
     for directory,subdirs,files in os.walk(COLLECTING_DIR):
