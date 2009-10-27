@@ -117,6 +117,7 @@ while True:
                   os.rename(Tfile,finalTfile)
                   os.rename(finalTMPfile,finalfile)
                   os.chmod(finalfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)  
+                  debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (Tfile,DEBUG and "X:%s" % DROPBOX or "X"))
                   break
                 else:
                   body = "Problem transfering final file for run %09d\n Retrying in %d" % (run,COLLECTOR_WAIT_TIME)
