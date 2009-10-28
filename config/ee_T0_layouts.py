@@ -227,31 +227,39 @@ eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/01 TriggerPrimitiv
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - Et trigger tower summary", 'description': "Average transverse energy of L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + Et trigger tower summary", 'description': "Average transverse energy of L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/02 Trigger Most Frequent Timing",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/02 TP data matching Emulator EE -",
+  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TP matching index EE -", 'description': "Sample of the emulated TP that matches the real TP. -1 means no match. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT max TP matching index EE -", 'description': "Sample of the emulated TP that givest the largest ET. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/02 TP data matching Emulator EE +",
+  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TP matching index EE +", 'description': "Sample of the emulated TP that matches the real TP. -1 means no match. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT max TP matching index EE +", 'description': "Sample of the emulated TP that givest the largest ET. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/03 Trigger Most Frequent Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/03 Fraction of Non Single Timing",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/04 Fraction of Non Single Timing",
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - Trigger Primitives Non Single Timing summary", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty).  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + Trigger Primitives Non Single Timing summary", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/04 Timing Calo Triggers",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/05 Timing Calo Triggers",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing calo triggers Real Digis EE -", 'description': "TP sample matching with emulator divided by TCC number (in EE 4 TCC / 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_EgammaSuperClusterOnly_L1R are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing calo triggers Real Digis EE +", 'description': "TP sample matching with emulator divided by TCC number (in EE 4 TCC / 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_EgammaSuperClusterOnly_L1R are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/05 Timing Muon Triggers",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 Timing Muon Triggers",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE -", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE +", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 Trigger Quality",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 Trigger Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - emulator error quality summary", 'description': "Each L1 trigger primitive is compared with L1 emulator. Comparison includes: transverse energy. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + emulator error quality summary", 'description': "Each L1 trigger primitive is compared with L1 emulator. Comparison includes: transverse energy. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 TTF mismatch",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 TTF mismatch",
   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT TT flag mismatch EE -", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT TT flag mismatch EE +", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 Trigger Timing Occupancy EE +",
+eeecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/09 Trigger Timing Occupancy EE +",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT Et vs bx Real Digis EE +", 'description': "Average Et of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TP occupancy vs bx Real Digis EE +", 'description': "Average number of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 

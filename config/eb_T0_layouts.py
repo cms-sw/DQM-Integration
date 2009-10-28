@@ -157,43 +157,47 @@ ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/00 TP Spectra",
 ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/01 TriggerPrimitives ET",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary", 'description': "Average transverse energy of real L1 trigger primitives (4 ADC count = 1 GeV). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/02 Trigger Most Frequent Timing",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/02 TP data matching Emulator",
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TP matching index", 'description': "Sample of the emulated TP that matches the real TP. -1 means no match. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT max TP matching index", 'description': "Sample of the emulated TP that givest the largest ET. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/03 Trigger Most Frequent Timing",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Trigger Primitives Timing summary", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in non-red colors. Match with on-time primitives appear yellow (expected). No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/03 Fraction of Non Single Timing",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/04 Fraction of Non Single Timing",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Trigger Primitives Non Single Timing summary", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/04 Timing Calo Triggers",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/05 Timing Calo Triggers",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TCC timing calo triggers Real Digis", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_EgammaSuperClusterOnly_L1R are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/05 Timing Muon Triggers",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 Timing Muon Triggers",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TCC timing muon triggers Real Digis", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/06 Trigger Quality",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 Trigger Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary", 'description': "Result of the comparison of Et between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/07 TTF mismatch",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 TTF mismatch",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT TT flag mismatch", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/08 Trigger Timing Occupancy",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/09 Trigger Timing Occupancy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et vs bx Real Digis", 'description': "Average Et of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TP occupancy vs bx Real Digis", 'description': "Average number of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/09 SelectiveReadout EventSize",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/10 SelectiveReadout EventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "ECAL barrel event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/10 SelectiveReadout AverageEventSize",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/11 SelectiveReadout AverageEventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average supermodule event size (kB). Expected below 100 kB/event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/11 SelectiveReadout Payload",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/12 SelectiveReadout Payload",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Size of high interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Size of low interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/12 FullReadout SRFlags",
+ebecalshifterlayout(dqmitems, "05 Trigger + Selective Readout/13 FullReadout SRFlags",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate of full readout Selective Readout flags. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "06 Calibration/00 Laser/00 L1 Quality",
