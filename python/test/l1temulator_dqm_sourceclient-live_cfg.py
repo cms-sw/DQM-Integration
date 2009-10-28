@@ -31,8 +31,8 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
 
 ##  Available emulator masks (case insensitive):
-##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
-#process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("")
+##    "all"; "dttf", "dttpg", "csctf", "csctpg", "rpc", "gmt", "ecal", "hcal", "rct", "gct", "glt"
+process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "rct", "glt")
 
 
 #specify subsystems with qt's to be temporarily masked in summary map
