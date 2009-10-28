@@ -101,12 +101,12 @@ while True:
       repoFile.write("%s\n" % os.path.basename(newFileDest))
       DEBUG and debugMsg(0,"Calling shell command '%s'" % cmd)
     else:
-      debugMsg(3,"File '%s' failed to tranfer" % newFile)
+      debugMsg(2,"File '%s' failed to tranfer" % newFile)
       if os.path.exists(newFileTemp):
-        debugMsg(2,"File '%s' was not tranfered completly, expected %d bytes and got %d bytes, removing tmp file" % (newFile,info[0],os.stat(newFileTemp).st_size))
+        debugMsg(1,"File '%s' was not tranfered completly, expected %d bytes and got %d bytes, removing tmp file" % (newFile,info[0],os.stat(newFileTemp).st_size))
         os.remove(newFileTemp)
       else:
-        debugMsg(2,"rfcp failed wi error message: %s" % cmdOutput)
+        debugMsg(2,"rfcp failed with error message: %s" % cmdOutput)
     repoFile.close()
   DEBUG and debugMsg(0,"Finished processing list going to sleep for: '%d' seconds" % CASTOR_WAIT_TIME)
   time.sleep(CASTOR_WAIT_TIME)
