@@ -257,7 +257,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
 process.ecalEndcapMonitorClient.maskFile = ''
-process.ecalEndcapMonitorClient.location = 'P5'
+process.ecalEndcapMonitorClient.location = 'P5_Co'
 process.ecalEndcapMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.dbUpdateTime = 120
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]

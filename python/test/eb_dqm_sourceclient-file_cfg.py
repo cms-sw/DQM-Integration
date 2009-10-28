@@ -262,7 +262,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
 process.ecalBarrelMonitorClient.maskFile = ''
-process.ecalBarrelMonitorClient.location = 'P5'
+process.ecalBarrelMonitorClient.location = 'P5_Co'
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelMonitorClient.MGPAGains = [ 1, 6, 12 ]
