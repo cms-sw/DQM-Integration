@@ -72,7 +72,19 @@ process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverur
 # for CMSSW_3_3_0
 process.GlobalTag.globaltag = "GR09_H_V4::All"
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-                                                                                            
+#--------------------------------------------
+## Patch to avoid using Run Info information in reconstruction
+#
+process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
+   cms.PSet( record = cms.string("SiStripDetVOffRcd"),    tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripDetCablingRcd"), tag    = cms.string("") ),
+#  cms.PSet( record = cms.string("RunInfoRcd"),           tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") )
+   )
+#-------------------------------------------
+                                                                                           
 #-----------------------
 #  Reconstruction Modules
 #-----------------------
