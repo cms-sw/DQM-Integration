@@ -66,7 +66,7 @@ process.dqmInfoEE = cms.EDAnalyzer("DQMEventInfo",
 process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 #    reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(1),
-    qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalEndcapQualityTests.xml'),
+    qtList = cms.untracked.FileInPath('DQM/EcalEndcapMonitorModule/test/data/EcalEndcapQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 

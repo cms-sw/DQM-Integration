@@ -66,7 +66,7 @@ process.dqmInfoEB = cms.EDAnalyzer("DQMEventInfo",
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 #    reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(1),
-    qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
+    qtList = cms.untracked.FileInPath('DQM/EcalBarrelMonitorModule/test/data/EcalBarrelQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
