@@ -23,12 +23,12 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
 #process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
-
+process.load("DQM.Integration.test.environment_cfi")
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
     cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('/home/dqmprolocal/output/iSpy_CRAFT%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('%s/iSpy_CRAFT%d_%s__hltOutputDQM_.ig' % (process.dqmSaver.dirName,int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     #outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
