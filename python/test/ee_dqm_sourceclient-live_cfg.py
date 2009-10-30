@@ -1,5 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
+import os
+os.environ['TNS_ADMIN']='/etc'
+
 dbName = ''
 dbHostName = ''
 dbHostPort = 1521
