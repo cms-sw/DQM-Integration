@@ -68,9 +68,15 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
                  'Hcal/Layouts/HCAL Data Format',
-                 "Hcal/Layouts/01 HCAL Shifter Checklist Plots - Summaries",
+                 "Hcal/Layouts/01 HCAL Shifter Checklist Plots - Summaries"
                  )
-
+		 
+server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
+                 'Castor/Layouts/CASTOR Pedestals',
+                 'Castor/Layouts/CASTOR LED Distributions',
+                 'Castor/Layouts/CASTOR RecHit Distributions'
+                )
+	  
 server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLX', '^HLX',
                  'HLX/Layouts/HF-Comparison',
                  'HLX/Layouts/HLX-Averages',
