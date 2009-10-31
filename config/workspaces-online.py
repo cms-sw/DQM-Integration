@@ -68,7 +68,7 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
                  'Hcal/Layouts/HCAL Data Format',
-                 "Hcal/Layouts/01 HCAL Shifter Checklist Plots - Summaries"
+                 "Hcal/Layouts/01 HCAL Summaries"
                  )
 		 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
