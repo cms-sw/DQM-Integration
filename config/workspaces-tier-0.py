@@ -38,8 +38,9 @@ server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
                 
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
-                 'Hcal/Layouts/HCAL DataFormat Problems',
-                 'Hcal/Layouts/HCAL Unsuppressed Channels')
+                 'Hcal/Layouts/01 HCAL Summaries',
+                 'Hcal/Layouts/HCAL Dead Cell Check',
+                 'Hcal/Layouts/HCAL Hot Cell Check')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
                  'Castor/Layouts/CASTOR Pedestals',
