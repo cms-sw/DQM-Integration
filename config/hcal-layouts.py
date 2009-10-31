@@ -1,6 +1,6 @@
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
-hcallayout(dqmitems, "01 HCAL Shifter Checklist Plots - Summaries",
+hcallayout(dqmitems, "01 HCAL Summaries",
            [{ 'path':"Hcal/EventInfo/reportSummaryMap",
              'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green"}]
            )
@@ -33,8 +33,12 @@ hcallayout(dqmitems, "HCAL Hot Cell Check",
 
 hcallayout(dqmitems, "HCAL Digi Problems",
           [{ 'path': "Hcal/DigiMonitor_Hcal/ ProblemDigis",
-                   'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, if the digi's data valid/error flags are incorrect, or if there is an IDLE-BCN mismatch.  Currently, only digis with IDLE-BCN mismatches are displayed.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+             'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, if the digi's data valid/error flags are incorrect, or if there is an IDLE-BCN mismatch.  Currently, only digis with IDLE-BCN mismatches are displayed.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
            [{ 'path': "Hcal/DigiMonitor_Hcal/bad_digis/1D_digi_plots/BadDigisVsLB",
               'description': "Total number of bad digis found in HCAL vs luminosity section"}],
            )
 
+hcallayout(dqmitems, "HCAL Lumi Problems",
+           [{'path': "Hcal/BeamMonitor_Hcal/ ProblemBeamMonitor",
+             'description':"This shows problems only in the sections of HF used for luminosity monitoring.  Channels that are hot or dead are considered as problems, where the definitions of 'hot' and 'dead' are slightly different than in the normal HCAL monitors.  More details at  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+           )
