@@ -13,7 +13,7 @@ envsetup = "export QUIET_ASSERT=a"
 
 #server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'
 #server.instrument  = 'valgrind --tool=helgrind --num-callers=999 --error-limit=no'
-#server.instrument  = 'igprof -t python -pp'
+#server.instrument  = 'igprof -d -t python -pp'
 server.serverDir   = '/home/dqm/gui'
 server.baseUrl     = '/dqm/gui-test'
 server.title       = 'CMS data quality'
@@ -23,14 +23,14 @@ server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMFileAccess', None, None,
 	      { "dqm": "/dqmdata/dqm/merged",
 	        "ispy": "/dqmdata/EventDisplay/dropbox/000" })
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 #server.extend('EVDSnapshotUpload', '/home/dqm/iguana-snapshots')
 #server.source('EVDSnapshot', 'evd', '/home/dqm/iguana-snapshots')
-server.source('DQMUnknown', 'unknown', 9091)
-server.source('DQMLive', 'dqm', 'srv-c2d05-19:9090', '--listen 9091',
-	      '--load ' + server.pathOfPlugin('render'))
-server.source('DQMArchive', 'file',
-              '/home/dqm/idx', '^/Global/', '--listen 9091',
-              '--load ' + server.pathOfPlugin('render'))
+server.source('DQMUnknown', 'unknown')
+server.source('DQMOverlay', 'overlay')
+server.source('DQMStripChart', 'stripchart')
+server.source('DQMLive', 'dqm', 'localhost:9090')
+server.source('DQMArchive', 'file', '/home/dqm/idx', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
