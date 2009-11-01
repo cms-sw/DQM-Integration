@@ -27,6 +27,9 @@ def convert(infile, ofile):
   cmd = EXEDIR + '/convert.sh ' + infile + ' ' +ofile
   os.system(cmd)
 
+IG_TMP_DROPBOX="/dqmdata/EventDisplay/.dropbox"
+if not os.path.exists(IG_TMP_DROPBOX):
+  os.makedirs(IG_TMP_DROPBOX) 
 ####### ENDLESS LOOP WITH SLEEP
 while True:
   NRUNS = 0  #Number of runs found
@@ -38,12 +41,16 @@ while True:
   for igfile in ignames:
     if re.search("_R[0-9]{9}",igfile):
       runstr=igfile.split("_R")[-1][:9]
-      destdir="%s/%s/%s" % (IG_FILE_DROPBOX,runstr[:3],runstr[3:6])
+      destdir="%s" % (IG_FILE_DROPBOX)
       destfile="%s/%s" % (destdir,igfile.rsplit("/",1)[-1])
+      destTmpFile="%s/%s" % (IG_TMP_DROPBOX,igfile.rsplit("/",1)[-1])
       if not os.path.exists(destdir):
         os.makedirs(destdir)
-      shutil.move(igfile,destfile)
-      os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
+      shutil.move(igfile,destTmpFile)
+      if os.path.exists(destTmpFile) and os.stat(destTmpFile).st_size == os.stat(igfile).st_size:
+        os.rename(destTmpFile,destfile)
+        debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
+        os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
     else:
       destfile="%s/%s" % (OLD_IG_FILES,igfile.rsplit("/",1)[-1])
       ref=1
