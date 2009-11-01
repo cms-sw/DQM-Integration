@@ -46,11 +46,17 @@ while True:
       destTmpFile="%s/%s" % (IG_TMP_DROPBOX,igfile.rsplit("/",1)[-1])
       if not os.path.exists(destdir):
         os.makedirs(destdir)
-      shutil.move(igfile,destTmpFile)
-      if os.path.exists(destTmpFile) and os.stat(destTmpFile).st_size == os.stat(igfile).st_size:
+      try:
+        shutil.move(igfile,destTmpFile)
         os.rename(destTmpFile,destfile)
         debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
         os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
+      except:
+        if os.path.exists(destTmpFile) and os.path.exists(igfile):
+          os.remove(destTmpFile)
+          debugMsg(2, "file %s was not sent to the DROPBO%s retying later" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
+      
+          
     else:
       destfile="%s/%s" % (OLD_IG_FILES,igfile.rsplit("/",1)[-1])
       ref=1
