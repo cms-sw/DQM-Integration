@@ -64,11 +64,13 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
                  'EcalEndcap/Layouts/02 Cluster Summary EcalEndcap')
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
+                 "Hcal/Layouts/01 HCAL Summaries",
                  'Hcal/Layouts/HCAL Digi Problems',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
                  'Hcal/Layouts/HCAL Data Format',
-                 "Hcal/Layouts/01 HCAL Summaries"
+                 'Hcal/Layouts/HCAL Lumi Problems',
+                 'Hcal/Layouts/HCAL Trigger Primitives'
                  )
 		 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
