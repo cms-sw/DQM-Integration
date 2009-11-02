@@ -197,6 +197,7 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 # Summary Client is also unaffected
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
+process.hcalClient.BeamClient_minErrorFlag = 0.1  # Nadia asked that lumi checks must fail for > 10% of all LS to be considered bad
 process.hcalClient.SummaryClient        = True
 
 
