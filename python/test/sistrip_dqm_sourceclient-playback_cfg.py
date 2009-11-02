@@ -60,7 +60,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 # Calibration
 #--------------------------
-rocess.load("DQM.Integration.test.FrontierConditions_GT_cfi")
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.GlobalTag.globaltag = "GR09_31X_V6H::All"
 
 #-----------------------

@@ -65,7 +65,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 # Calibration
 #--------------------------
-process.load("DQM.Integration.test.FrontierConditions_GT_cfi")
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 #--------------------------------------------
 ## Patch to avoid using Run Info information in reconstruction
 #
