@@ -98,7 +98,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 
-process.load("DQM.Integration.test.FrontierConditions_GT_cfi")
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("CalibCalorimetry.EcalTrivialCondModules.EcalTrivialCondRetriever_cfi")
 
