@@ -8,7 +8,7 @@ execfile(sys.argv[1])
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 #####         MAIN PROGRAM         ######
 if not os.path.exists(BASE_DIRECTORY):
-  DEBUG and debugMsg(0,"Creating directory '%s'" % DROPBOX)
+  DEBUG and debugMsg(0,"Creating directory '%s'" % BASE_DIRECTORY)
   os.makedirs(BASE_DIRECTORY)
   
 while True:

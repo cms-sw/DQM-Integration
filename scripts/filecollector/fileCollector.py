@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import os,time,sys,glob,zipfile,re,shutil,stat
+import os,time,sys,glob,zipfile,re,shutil,stat,md5
 from commonAnTS import *
 if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
   print "No valid configuration file"
@@ -44,12 +44,26 @@ while True:
       destdir="%s" % (IG_FILE_DROPBOX)
       destfile="%s/%s" % (destdir,igfile.rsplit("/",1)[-1])
       destTmpFile="%s/%s" % (IG_TMP_DROPBOX,igfile.rsplit("/",1)[-1])
+      md5File=open(igfile,"r")
+      md5Buffer=md5File.read(2048)
+      md5Digest=md5.new(md5Buffer)
+      while md5Buffer:
+        md5Buffer=md5File.read(2048)
+        md5Digest.update(md5Buffer)
+      originStr="md5:%s %d %s" % (md5Digest.hexdigest(),os.stat(igfile).st_size,igfile)
+      md5File.close()
+      originTMPFile="%s.origin" %destTmpFile
+      originFile=open(originTMPFile,"w")
+      originFile.write(originStr)
+      originFile.close() 
+      originFileName="%s.origin" % destfile
       if not os.path.exists(destdir):
         os.makedirs(destdir)
       try:
         shutil.move(igfile,destTmpFile)
         os.rename(destTmpFile,destfile)
-        debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
+        os.rename(originTMPFile,originFileName)
+	debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
         os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
       except:
         if os.path.exists(destTmpFile) and os.path.exists(igfile):

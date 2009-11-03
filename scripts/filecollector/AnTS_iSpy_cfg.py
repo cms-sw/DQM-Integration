@@ -29,8 +29,8 @@ CLASSIFIER_WAIT_TIME	   = 120
  
 COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recently produced files
 DONE_DIR               = '/dqmdata/EventDisplay/.done' 	
-DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
-FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
+DROPBOX                = '/dqmdata/EventDisplay/.done' # directory, to which files are stored
+FILER_MERGED_DIR       = '/dqmdata/EventDisplay/merged' # directory, to backup merged files
 IG_FILE_DROPBOX        = '/dqmdata/EventDisplay/dropbox' #Directory to store ig Files.
 INDEX                  = '/home/dqm/idx'
 INJECTION_DIR          = '/dqmdata/EventDisplay/Tier0Shipping/inject'   #Directory where files get placed once they have been sent.
@@ -39,9 +39,9 @@ MERGED_DIR             = '/data/dqm/merged' # directory, to which merged file ar
 OLD_IG_FILES           = '/dqmdata/EventDisplay/done'
 BASE_DIRECTORY	       = "/dqmdata/EventDisplay/done"
 REGISTERED_DIR         = '/dqmdata/EventDisplay/dropbox'     # 'Directory that stores registered files
-SOURCES_DONE_DIR       = '/dqmdata/dqm/done/sources' # directory, to which processed files are stored
+SOURCES_DONE_DIR       = '/dqmdata/EventDisplay/done/sources' # directory, to which processed files are stored
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
-TMP_DROPBOX            = '/dqmdata/dqm/.dropbox_tmp' # stealth area on cmsmon
+TMP_DROPBOX            = '/dqmdata/EventDisplay/.dropbox_tmp' # stealth area on cmsmon
 VERIFY_DIR             = '/dqmdata/EventDisplay/Tier0Shipping/verify'
 CLEAN_DIR              = BASE_DIRECTORY
 ################################
@@ -106,6 +106,7 @@ PRODUCER_DU_TOP=90.0  #0% a 100%
 PRODUCER_DU_BOT=50.0  
 
 #fileClassifier
+FILE_TYPE       = ".ig"
 FILE_NAME_STD	= "iSpy_([_A-Z0-9]*)__([-_a-zA-Z0-9]*)__R([0-9]{9,9})_T([0-9]{8,8}).ig"
 ERAS					= ["CRAFT","CRUZET","MWGR","BEAM"]
 

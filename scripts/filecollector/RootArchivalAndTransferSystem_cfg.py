@@ -27,7 +27,7 @@ FILER_CLEANNER_WAIT_TIME = 3600*24
 ################################
 COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recently produced files
 DONE_DIR               = '/dqmdata/dqm/done/merged'     #sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
-DROPBOX                = '/dqmdata/dqm/dropbox' # directory, to which files are stored
+DROPBOX                = '/dqmdata/dqm/uploads' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
 IG_FILE_DROPBOX        = '/dqmdata/EventDisplay/dropbox' #Directory to store ig Files.
 INDEX                  = '/home/dqm/idx'
