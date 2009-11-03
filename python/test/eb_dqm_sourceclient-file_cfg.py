@@ -86,8 +86,6 @@ process.source = cms.Source("NewEventStreamFileReader",
     fileNames = cms.untracked.vstring('file:/data1/lookarea/GlobalAug07.00017220.0001.A.storageManager.0.0000.dat')
 )
 
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("CalibCalorimetry.EcalTrivialCondModules.EcalTrivialCondRetriever_cfi")

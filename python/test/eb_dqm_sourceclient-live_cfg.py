@@ -96,8 +96,6 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("CalibCalorimetry.EcalTrivialCondModules.EcalTrivialCondRetriever_cfi")
