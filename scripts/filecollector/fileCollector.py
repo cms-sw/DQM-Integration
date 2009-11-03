@@ -82,13 +82,14 @@ while True:
         NEW.setdefault(runnr, {}).setdefault(subsystem,[]).append(f)
         NFOUND += 1  
   if len(NEW.keys()) == 0:
-    DEBUG and debugMsg(0, "Going to Sleep because I have nothing to do"))
+    DEBUG and debugMsg(0, "Going to Sleep because I have nothing to do")
     time.sleep(COLLECTOR_WAIT_TIME)
     continue
   DEBUG and debugMsg(0, "found %d root files in %s" % (len(NEW.keys()),COLLECTING_DIR))
   TAGS=sorted(glob.glob('%s/tagfile_runend_*' % COLLECTING_DIR ),reverse=True)
   if len(TAGS)==0:
     if len(NEW.keys()) <= 1:
+      DEBUG and debugMsg(0, "Going to Sleep because I have nothing to do")
       time.sleep(COLLECTOR_WAIT_TIME)
       continue
     debugMsg(0, 'No tagfile_runend foud, checking for *_T files that could have been left behind')
