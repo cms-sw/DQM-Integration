@@ -21,16 +21,14 @@ server.serviceName = 'Online'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMFileAccess', None, None,
-	      { "dqm": "/dqmdata/dqm/done",
-	        "ispy": "/dqmdata/EventDisplay/done" })
-#server.extend('EVDSnapshotUpload', '/home/dqm/iguana-snapshots')
-#server.source('EVDSnapshot', 'evd', '/home/dqm/iguana-snapshots')
-server.source('DQMUnknown', 'unknown', 9091)
-server.source('DQMLive', 'dqm', 'srv-c2d05-19:9090', '--listen 9091',
-	      '--load ' + server.pathOfPlugin('render'))
-server.source('DQMArchive', 'file',
-              '/home/dqm/idx', '^/Global/', '--listen 9091',
-              '--load ' + server.pathOfPlugin('render'))
+              { "dqm": "/dqmdata/dqm/done",
+                "ispy": "/dqmdata/EventDisplay/done" })
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.source('DQMUnknown', 'unknown')
+server.source('DQMOverlay', 'overlay')
+server.source('DQMStripChart', 'stripchart')
+server.source('DQMLive', 'dqm', 'localhost:9090')
+server.source('DQMArchive', 'file', '/home/dqm/ix', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
