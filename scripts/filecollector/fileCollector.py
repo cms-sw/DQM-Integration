@@ -38,31 +38,18 @@ while True:
   TAGS= []
   #Dealing with .ig files
   ignames=sorted(glob.glob("%s/*.ig" % COLLECTING_DIR))
+  DEBUG and debugMsg(0, "found %d ig files in %s" % (len(ignames),COLLECTING_DIR))
   for igfile in ignames:
     if re.search("_R[0-9]{9}",igfile):
       runstr=igfile.split("_R")[-1][:9]
       destdir="%s" % (IG_FILE_DROPBOX)
       destfile="%s/%s" % (destdir,igfile.rsplit("/",1)[-1])
       destTmpFile="%s/%s" % (IG_TMP_DROPBOX,igfile.rsplit("/",1)[-1])
-      md5File=open(igfile,"r")
-      md5Buffer=md5File.read(2048)
-      md5Digest=md5.new(md5Buffer)
-      while md5Buffer:
-        md5Buffer=md5File.read(2048)
-        md5Digest.update(md5Buffer)
-      originStr="md5:%s %d %s" % (md5Digest.hexdigest(),os.stat(igfile).st_size,igfile)
-      md5File.close()
-      originTMPFile="%s.origin" %destTmpFile
-      originFile=open(originTMPFile,"w")
-      originFile.write(originStr)
-      originFile.close() 
-      originFileName="%s.origin" % destfile
       if not os.path.exists(destdir):
         os.makedirs(destdir)
       try:
         shutil.move(igfile,destTmpFile)
         os.rename(destTmpFile,destfile)
-        os.rename(originTMPFile,originFileName)
 	debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
         os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
       except:
@@ -95,9 +82,10 @@ while True:
         NEW.setdefault(runnr, {}).setdefault(subsystem,[]).append(f)
         NFOUND += 1  
   if len(NEW.keys()) == 0:
+    DEBUG and debugMsg(0, "Going to Sleep because I have nothing to do"))
     time.sleep(COLLECTOR_WAIT_TIME)
     continue
-      
+  DEBUG and debugMsg(0, "found %d root files in %s" % (len(NEW.keys()),COLLECTING_DIR))
   TAGS=sorted(glob.glob('%s/tagfile_runend_*' % COLLECTING_DIR ),reverse=True)
   if len(TAGS)==0:
     if len(NEW.keys()) <= 1:
@@ -139,11 +127,26 @@ while True:
                 os.rename(Tfile,finalTfile.replace('Playback','Playback_full'))
                 Tfile=dqmfile  
               for i in range(RETRIES):
+                md5File=open(Tfile,"r")
+                md5Buffer=md5File.read(2048)
+                md5Digest=md5.new(md5Buffer)
+                while md5Buffer:
+                  md5Buffer=md5File.read(2048)
+                  md5Digest.update(md5Buffer)
+                originStr="md5:%s %d %s" % (md5Digest.hexdigest(),os.stat(Tfile).st_size,Tfile)
+                md5File.close()
+                originTMPFile="%s.origin" % finalTMPfile
+                originFile=open(originTMPFile,"w")
+                originFile.write(originStr)
+                originFile.close() 
+                originFileName="%s.origin" % finalfile
                 shutil.copy(Tfile,finalTMPfile)
                 if os.path.exists(finalTMPfile) and os.stat(finalTMPfile).st_size == os.stat(Tfile).st_size:
                   os.rename(Tfile,finalTfile)
                   os.rename(finalTMPfile,finalfile)
-                  os.chmod(finalfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)  
+                  os.rename(originTMPFile,originFileName)
+                  os.chmod(finalfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
+                  os.chmod(originFileName,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)  
                   debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (Tfile,DEBUG and "X:%s" % DROPBOX or "X"))
                   break
                 else:
