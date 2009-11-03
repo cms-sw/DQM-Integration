@@ -30,7 +30,7 @@ server.source('DQMUnknown', 'unknown')
 server.source('DQMOverlay', 'overlay')
 server.source('DQMStripChart', 'stripchart')
 server.source('DQMLive', 'dqm', 'localhost:9090')
-server.source('DQMArchive', 'file', '/home/dqm/idx', '^/Global/')
+server.source('DQMArchive', 'file', '/home/dqm/ix', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
