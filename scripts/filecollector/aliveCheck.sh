@@ -3,10 +3,10 @@
 export WorkDir=$(dirname $0)
 YourEmail=lilopera@cern.ch
 #source /nfshome0/cmssw2/scripts/setup.sh
-if [ -d /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/ ]
+if [ -d /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.1.1/etc/profile.d/ ]
 then
   XPYTHONPATH=$PYTHONPATH
-  source /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.0.2/etc/profile.d/env.sh
+  source /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.1.1/etc/profile.d/env.sh
 else
   source $WorkDir/env.sh
 fi
