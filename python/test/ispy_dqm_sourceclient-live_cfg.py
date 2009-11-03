@@ -105,7 +105,7 @@ process.iSpy = cms.Path(process.ISpyEvent*
                        process.ISpyHORecHit*
                        process.ISpyJet*
                        process.ISpyMET*
-                       process.ISpyMuon*
+                       #process.ISpyMuon*
                        process.ISpyPixelDigi*
                        process.ISpySiPixelCluster*
                        process.ISpySiPixelRecHit*
