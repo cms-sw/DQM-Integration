@@ -49,6 +49,9 @@ process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cf
 
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
+
 process.load("FWCore.Modules.preScaler_cfi")
 
 process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
@@ -59,9 +62,6 @@ process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
     pedestalPrescaleFactor = cms.untracked.int32(2),
     testpulsePrescaleFactor = cms.untracked.int32(2)
 )
-
-# 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 #    reportThreshold = cms.untracked.string('red'),
