@@ -15,25 +15,26 @@ LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
+#server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'
+#server.instrument  = 'valgrind --tool=helgrind --num-callers=999 --error-limit=no'
+#server.instrument  = 'igprof -d -t python -pp'
+#server.instrument  = 'igprof -d -t python -mp'
 server.port        = 8070
 server.serverDir   = '/data/dqm/dqmtest/gui'
 server.baseUrl     = '/dqm/testing'
 server.title       = 'CMS data quality'
-server.serviceName = 'DQM Testing'
+server.serviceName = 'Test'
 
 server.plugin('render', "/data/dqm/dqmtest/style/*.cc")
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dqmtest/data',
-	      { 'Current_Offline': '/data/dqm/offline/data',
-	        'Test_1': '/data/dqm/dqmtest/datatest1',
-	        'Test_2': '/data/dqm/dqmtest/datatest2' })
-server.source('DQMUnknown', 'unknown', 8071)
-server.source('DQMArchive', 'file', '/data/dqm/dqmtest/idx', '^/Global/', '--listen 8071',
-              '--load ' + server.pathOfPlugin('render'))
-	      
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dqmtest/uploads',
+	      { 'ROOT': '/data/dqm/dqmtest/repository/data',
+	        'ZIP': '/data/dqm/dqmtest/repository/zipped' })
+server.source('DQMUnknown', 'unknown')
+server.source('DQMOverlay', 'overlay')
+server.source('DQMStripChart', 'stripchart')
+server.source('DQMArchive', 'file', '/data/dqm/dqmtest/ix', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
-#execfile(CONFIGDIR + "/workspaces-online.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")
-#execfile(CONFIGDIR + "/workspaces-dev.py")
-#execfile(CONFIGDIR + "/workspaces-caf.py")

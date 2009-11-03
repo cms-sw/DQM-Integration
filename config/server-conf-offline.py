@@ -20,12 +20,15 @@ server.title       = 'CMS data quality'
 server.serviceName = 'Offline'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/upload',
-	      { 'offline': '/data/dqm/offline/data/ProdSys/Pass-1',
-	        'ispy':   '/data/ispy-files' })
-server.source('DQMUnknown', 'unknown', 8081)
-server.source('DQMArchive', 'file', '/data/dqm/offline/idx', '^/Global/', '--listen 8081',
-              '--load ' + server.pathOfPlugin('render'))
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/uploads',
+	      { 'ROOT': '/data/dqm/offline/repository/data',
+	        'ZIP': '/data/dqm/offline/repository/zipped',
+	        'iSpy':   '/data/ispy-files' })
+server.source('DQMUnknown', 'unknown')
+server.source('DQMOverlay', 'overlay')
+server.source('DQMStripChart', 'stripchart')
+server.source('DQMArchive', 'file', '/data/dqm/offline/ix', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")

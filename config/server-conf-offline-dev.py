@@ -20,18 +20,14 @@ server.title       = 'CMS data quality'
 server.serviceName = 'CERN Development'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.source('DQMUnknown', 'unknown', 8063)
-              
-server.source('DQMLive', 'dqm', 'localhost:8061', '--listen 8063',
-	       '--load ' + server.pathOfPlugin('render'))
-	      
-server.source('DQMArchive', 'file',
-              '/data/dqm/dev/idx', '^/Global/', '--listen 8063',
-              '--load ' + server.pathOfPlugin('render'))              
-
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/upload',
-              { 'Development': '/data/dqm/dev/data'})
-
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/uploads',
+              { 'Development': '/data/dqm/dev/repository/data'})
+server.source('DQMUnknown', 'unknown')
+server.source('DQMOverlay', 'overlay')
+server.source('DQMStripChart', 'stripchart')
+server.source('DQMLive', 'dqm', 'localhost:8061')
+server.source('DQMArchive', 'file', '/data/dqm/dev/ix', '^/Global/')
 server.source('DQMLayout', 'layouts', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
