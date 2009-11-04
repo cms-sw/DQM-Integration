@@ -8,21 +8,24 @@ if [ "$1" = "live" ] ; then
     ln -sf l1t_dqm_sourceclient-live_cfg.py		dqmfu_06-3_cfg.py
     ln -sf l1temulator_dqm_sourceclient-live_cfg.py	dqmfu_06-4_cfg.py
     ln -sf hcal_dqm_sourceclient-live_cfg.py		dqmfu_06-5_cfg.py
-    ln -sf hcaltiming_dqm_sourceclient-live_cfg.py	dqmfu_06-6_cfg.py
+    ln -sf castor_dqm_sourceclient_live_cfg.py	dqmfu_06-6_cfg.py
     
-    ln -sf ee_dqm_sourceclient-live_cfg.py		dqmfu_07-1_cfg.py
-    ln -sf rpc_dqm_sourceclient-live_cfg.py		dqmfu_07-2_cfg.py
-    ln -sf csc_dqm_sourceclient-live_cfg.py		dqmfu_07-3_cfg.py
-    ln -sf es_dqm_sourceclient-live_cfg.py		dqmfu_07-4_cfg.py
-    ln -sf dt_dqm_sourceclient-live_cfg.py		dqmfu_07-5_cfg.py
+    ln -sf ee_dqm_sourceclient-live_cfg.py	  	dqmfu_07-1_cfg.py
+    ln -sf rpc_dqm_sourceclient-live_cfg.py		  dqmfu_07-2_cfg.py
+    ln -sf csc_dqm_sourceclient-live_cfg.py		  dqmfu_07-3_cfg.py
+    ln -sf es_dqm_sourceclient-live_cfg.py		  dqmfu_07-4_cfg.py
+    ln -sf dt_dqm_sourceclient-live_cfg.py		  dqmfu_07-5_cfg.py
     ln -sf ispy_dqm_sourceclient-live_cfg.py		dqmfu_07-6_cfg.py
     
-    ln -sf pixel_dqm_sourceclient-live_cfg.py		dqmfu_08-1_cfg.py
-    ln -sf sistrip_dqm_sourceclient-live_cfg.py		dqmfu_08-2_cfg.py
+    ln -sf pixel_dqm_sourceclient-live_cfg.py		        dqmfu_08-1_cfg.py
+    ln -sf sistrip_dqm_sourceclient-live_cfg.py		      dqmfu_08-2_cfg.py
+    ln -sf ispyegamma_dqm_sourceclient-live_cfg.py		  dqmfu_08-3_cfg.py
+    ln -sf ispyegammahe_dqm_sourceclient-live_cfg.py		dqmfu_08-4_cfg.py
+    ln -sf ispybptx_dqm_sourceclient-live_cfg.py		    dqmfu_08-5_cfg.py
     
-    ln -sf hlt_dqm_sourceclient-live_cfg.py		dqmfu_09-1_cfg.py
-    ln -sf hlx_dqm_sourceclient-live_cfg.py		dqmfu_09-2_cfg.py
-    ln -sf fed_dqm_sourceclient-live_cfg.py		dqmfu_09-3_cfg.py
+    ln -sf hlt_dqm_sourceclient-live_cfg.py		    dqmfu_09-1_cfg.py
+    ln -sf hlx_dqm_sourceclient-live_cfg.py		    dqmfu_09-2_cfg.py
+    ln -sf fed_dqm_sourceclient-live_cfg.py		    dqmfu_09-3_cfg.py
     ln -sf hcalcalib_dqm_sourceclient-live_cfg.py 	dqmfu_09-4_cfg.py
 
   echo "copying cfg from python test"
