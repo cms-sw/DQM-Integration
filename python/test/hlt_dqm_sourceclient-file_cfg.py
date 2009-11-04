@@ -5,6 +5,12 @@ process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
+process.load("DQM.TrigXMonitor.HLTScalers_cfi")
+process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
+process.hlts.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
+process.hlts.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
+process.hltsClient.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
+process.p = cms.EndPath(process.hlts+process.hltsClient)
 
 
 process.load("Configuration.StandardSequences.GeometryPilot2_cff")
@@ -22,31 +28,25 @@ process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeomet
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100)
+    input = cms.untracked.int32(-1)
 )
 
 process.source = cms.Source("PoolSource",
-    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051488.0001.DQM.storageManager.0.0000.dat')
-    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051437.0001.DQM.storageManager.1.0000.dat')
-    #fileNames = cms.untracked.vstring('file:/tmp/wteo/28E1D7F9-214C-DD11-B42C-000423D9880C.root')
-#    fileNames = cms.untracked.vstring('/store/data/Commissioning08/Monitor/RAW/v1/000/068/021/000BDAE4-37A6-DD11-8411-001D09F242EF.root')
-    fileNames = cms.untracked.vstring('/store/data/Commissioning09/Monitor/RAW/v1/000/082/548/A06226EF-4A30-DE11-A607-000423D94AA8.root')
-    #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051218.0001.DQM.storageManager.0.0000.dat')
-    #fileNames = cms.untracked.vstring('file:/tmp/wteo/E244612F-7751-DD11-8931-000423D94700.root')
-    #fileNames = cms.untracked.vstring('file:/tmp/wteo/001365AC-1C1C-DD11-AA0B-0030487D62E6.root')
-    #fileNames = cms.untracked.vstring('file:/tmp/wteo/1CD42767-9B60-DD11-B56E-001617DBD224.root')
-
-
+#    fileNames = cms.untracked.vstring('/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/006BA396-9378-DE11-BBC8-000423D944FC.root')
+fileNames = cms.untracked.vstring('/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/425F94EF-ACC5-DE11-841C-000423D6B5C4.root',
+'/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/604806AF-A1C5-DE11-AC49-001D09F28D54.root',
+'/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/68A2080D-A3C5-DE11-AA14-0030487C6090.root',
+'/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/7AB4D963-A2C5-DE11-926D-003048D2BE08.root',
+'/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/7CF1EA63-A2C5-DE11-BB4C-001617E30CD4.root',
+'/store/data/Commissioning09/Cosmics/RAW/v3/000/118/967/D42C1867-A2C5-DE11-98DC-003048D2C108.root')
 )
-
-
 #process.source = cms.Source("NewEventStreamFileReader",
-#    fileNames = cms.untracked.vstring('file:/nfshome0/lorenzo/305FBD08-D78F-DD11-A1D6-001617C3B65A.root')
-#   fileNames = cms.untracked.vstring(
-#        'file:/cmsdisk1/lookarea_SM/GlobalMW40.00064245.0001.HLTDEBUG.storageManager.01.0000.dat',
-#        'file:/cmsdisk1/lookarea_SM/GlobalMW40.00064210.0001.HLTDEBUG.storageManager.03.0000.dat'
-#  )
-#)
+#    fileNames = cms.untracked.vstring(
+#                                      'file:/tmp/lorenzo/RunPrep09.00119406.0026.A.storageManager.05.0000.dat'
+#				      )
+#)				      
+
+
 
 
 #process.p = cms.EndPath(process.hlts+process.hltsClient)
