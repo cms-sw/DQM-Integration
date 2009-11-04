@@ -14,11 +14,14 @@ process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
 
-import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
-process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
-
 import RecoLocalCalo.EcalRecProducers.ecalWeightUncalibRecHit_cfi
 process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalWeightUncalibRecHit_cfi.ecalWeightUncalibRecHit.clone()
+
+import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
+process.ecalUncalibHit1 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
+
+import RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi
+process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi.ecalMaxSampleUncalibRecHit.clone()
 
 process.load("RecoLocalCalo.EcalRecProducers.ecalRecHit_cfi")
 
@@ -54,13 +57,54 @@ process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 process.load("FWCore.Modules.preScaler_cfi")
 
-process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
+process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
     cosmicPrescaleFactor = cms.untracked.int32(6),
     laserPrescaleFactor = cms.untracked.int32(1),
     ledPrescaleFactor = cms.untracked.int32(1),
     pedestalPrescaleFactor = cms.untracked.int32(2),
-    testpulsePrescaleFactor = cms.untracked.int32(2)
+    testpulsePrescaleFactor = cms.untracked.int32(2),
+    pedestaloffsetPrescaleFactor = cms.untracked.int32(1)
+)
+
+process.ecalPhysicsFilter = cms.EDFilter("EcalMonitorPrescaler",
+    EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(1),
+    laserPrescaleFactor = cms.untracked.int32(0),
+    ledPrescaleFactor = cms.untracked.int32(0),
+    pedestalPrescaleFactor = cms.untracked.int32(0),
+    testpulsePrescaleFactor = cms.untracked.int32(0),
+    pedestaloffsetPrescaleFactor = cms.untracked.int32(0)
+)
+
+process.ecalLaserLedFilter = cms.EDFilter("EcalMonitorPrescaler",
+    EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(0),
+    laserPrescaleFactor = cms.untracked.int32(1),
+    ledPrescaleFactor = cms.untracked.int32(1),
+    pedestalPrescaleFactor = cms.untracked.int32(0),
+    testpulsePrescaleFactor = cms.untracked.int32(0),
+    pedestaloffsetPrescaleFactor = cms.untracked.int32(0)
+)
+
+process.ecalPedestalFilter = cms.EDFilter("EcalMonitorPrescaler",
+    EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(0),
+    laserPrescaleFactor = cms.untracked.int32(0),
+    ledPrescaleFactor = cms.untracked.int32(0),
+    pedestalPrescaleFactor = cms.untracked.int32(1),
+    testpulsePrescaleFactor = cms.untracked.int32(0),
+    pedestaloffsetPrescaleFactor = cms.untracked.int32(1)
+)
+
+process.ecalTestPulseFilter = cms.EDFilter("EcalMonitorPrescaler",
+    EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
+    cosmicPrescaleFactor = cms.untracked.int32(0),
+    laserPrescaleFactor = cms.untracked.int32(0),
+    ledPrescaleFactor = cms.untracked.int32(0),
+    pedestalPrescaleFactor = cms.untracked.int32(0),
+    testpulsePrescaleFactor = cms.untracked.int32(1),
+    pedestaloffsetPrescaleFactor = cms.untracked.int32(0)
 )
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
@@ -195,15 +239,31 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler0*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler*process.ecalUncalibHit*process.ecalUncalibHit1*process.ecalRecHit)
+
+process.ecalDataSequence.remove(process.ecalPrescaler)
 
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.ecalBarrelMonitorClient)
 
-process.ecalBarrelTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelRawDataTask*process.ecalBarrelLaserTask*process.ecalBarrelPedestalTask*process.ecalBarrelTestPulseTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask)
+process.ecalBarrelMainSequence = cms.Sequence(process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelRawDataTask)
 
-process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
-process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
-process.r = cms.EndPath(process.dqmEnv*process.ecalBarrelTasksSequenceP5*process.dqmQTestEB*process.dqmSaver)
+process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
+
+process.ecalClusterSequence = cms.Sequence(process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
+
+process.ecalMonitorPath = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
+
+process.ecalPhysicsPath = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.simEcalTriggerPrimitiveDigis*process.ecalClusterSequence*process.ecalBarrelMainSequence*process.ecalBarrelPhysicsSequence*process.ecalEndcapMainSequence*process.ecalEndcapPhysicsSequence)
+
+process.ecalLaserLedPath = cms.Path(process.ecalDataSequence*process.ecalLaserLedFilter*process.ecalUncalibHit1*process.ecalBarrelMainSequence*process.ecalBarrelLaserTask)
+
+process.ecalPedestalPath = cms.Path(process.ecalDataSequence*process.ecalPedestalFilter*process.ecalBarrelMainSequence*process.ecalBarrelPedestalTask)
+
+process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask)
+
+process.ecalMonitorEndPath = cms.EndPath(process.dqmInfoEB*process.dqmQTestEB*process.dqmSaver)
+
+process.schedule = cms.Schedule(process.ecalMonitorPath,process.ecalPhysicsPath,process.ecalLaserLedPath,process.ecalPedestalPath,process.ecalTestPulsePath,process.ecalMonitorEndPath)
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
@@ -212,20 +272,24 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = c
 
 process.dqmEnv.subSystemFolder = 'EcalBarrel'
 
-process.ecalUncalibHit2.MinAmplBarrel = 12.
-process.ecalUncalibHit2.MinAmplEndcap = 16.
-process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
-process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
-
 process.ecalUncalibHit.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
-process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+process.ecalUncalibHit1.MinAmplBarrel = 12.
+process.ecalUncalibHit1.MinAmplEndcap = 16.
+process.ecalUncalibHit1.EBdigiCollection = 'ecalEBunpacker:ebDigis'
+process.ecalUncalibHit1.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalBarrelCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
+process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+process.ecalRecHit.killDeadChannels = False
+process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
+process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+
+process.ecalBarrelCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
+
+process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
 #process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 
@@ -234,19 +298,20 @@ process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
 #process.ecalBarrelPedestalTask.MGPAGainsPN = [ 1, 16 ]
 process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
 
+process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 #process.ecalBarrelTestPulseTask.MGPAGains = [ 1, 6, 12 ]
 process.ecalBarrelTestPulseTask.MGPAGains = [ 12 ]
 #process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 1, 16 ]
 process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 16 ]
 
-process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
+
+#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
-
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
 process.ecalBarrelMonitorClient.maskFile = ''
 process.ecalBarrelMonitorClient.location = 'P5_Co'
