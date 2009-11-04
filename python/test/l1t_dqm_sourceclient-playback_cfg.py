@@ -40,6 +40,12 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
+process.load("DQM.TrigXMonitor.L1Scalers_cfi")
+process.load("DQM.TrigXMonitorClient.L1TScalersClient_cfi")
+process.l1s.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
+process.l1s.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM") 
+process.l1tsClient.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM")
+process.p3 = cms.EndPath(process.l1s+process.l1tsClient)
 #process.l1GtParameters.BstLengthBytes = 52
 
 

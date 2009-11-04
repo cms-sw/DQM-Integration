@@ -22,6 +22,13 @@ process.prefer("GlobalTag")
 
 process.load("DQM.L1TMonitor.L1TMonitor_cff")
 process.load("DQM.L1TMonitorClient.L1TMonitorClient_cff")
+process.load("DQM.TrigXMonitor.L1Scalers_cfi")
+process.load("DQM.TrigXMonitorClient.L1TScalersClient_cfi")
+process.l1s.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
+process.l1s.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM") 
+process.l1tsClient.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM")
+process.p3 = cms.EndPath(process.l1s+process.l1tsClient)
+
 
 ##  Available data masks (case insensitive):
 ##    all, gt, muons, jets, taujets, isoem, nonisoem, met
@@ -32,20 +39,27 @@ process.l1tEventInfoClient.dataMaskedSystems =cms.untracked.vstring("Jets","TauJ
 process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(3000)
 )
-process.source = cms.Source("PoolSource",
+
+#process.source = cms.Source("PoolSource",
     #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051488.0001.DQM.storageManager.0.0000.dat')
     #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051437.0001.DQM.storageManager.1.0000.dat')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/28E1D7F9-214C-DD11-B42C-000423D9880C.root')
-    fileNames = cms.untracked.vstring('/store/data/Commissioning09/Cosmics/RAW/v2/000/102/213/F4E5790F-AA67-DE11-8740-000423D94700.root')
+#    fileNames = cms.untracked.vstring('/store/data/Commissioning09/Cosmics/RAW/v3/000/119/400/18FA115E-D9C8-DE11-B7AA-001D09F24399.root')
     #fileNames = cms.untracked.vstring('file:/cms/mon/data/lookarea_SM/GlobalCruzet3.00051218.0001.DQM.storageManager.0.0000.dat')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/E244612F-7751-DD11-8931-000423D94700.root')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/001365AC-1C1C-DD11-AA0B-0030487D62E6.root')
     #fileNames = cms.untracked.vstring('file:/tmp/wteo/1CD42767-9B60-DD11-B56E-001617DBD224.root')
 
 
-)
+#)
+
+process.source = cms.Source("NewEventStreamFileReader",
+    fileNames = cms.untracked.vstring(
+                                      'file:/tmp/lorenzo/RunPrep09.00119406.0026.A.storageManager.05.0000.dat'
+				      )
+)				      
 
 process.DQMStore.verbose = 0
 process.DQM.collectorHost = "srv-c2d05-12"
