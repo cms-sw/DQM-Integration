@@ -328,7 +328,7 @@ process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
 #process.ecalEndcapPedestalTask.MGPAGainsPN = [ 1, 16 ]
 process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
 
-process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
+process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 #process.ecalEndcapTestPulseTask.MGPAGains = [ 1, 6, 12 ]
 process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
 #process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 1, 16 ]

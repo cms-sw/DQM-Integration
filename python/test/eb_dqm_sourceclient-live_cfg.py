@@ -324,7 +324,7 @@ process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
 #process.ecalBarrelPedestalTask.MGPAGainsPN = [ 1, 16 ]
 process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
 
-process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
+process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 #process.ecalBarrelTestPulseTask.MGPAGains = [ 1, 6, 12 ]
 process.ecalBarrelTestPulseTask.MGPAGains = [ 12 ]
 #process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 1, 16 ]
