@@ -144,8 +144,8 @@ process.EcalTrivialConditionRetriever.amplWeightsAftGain = cms.untracked.vdouble
 process.EcalTrivialConditionRetriever.jittWeights = cms.untracked.vdouble(0.041, 0.041, 0.041, 0.0, 1.325, -0.050, -0.504, -0.502, -0.390, 0.0)
 process.EcalTrivialConditionRetriever.jittWeightsAft = cms.untracked.vdouble(0.0, 0.0, 0.0, 0.0, 1.098, -0.046, -0.416, -0.419, -0.337, 0.0)
 
-#process.prefer("GlobalTag")
-process.prefer("EcalTrivialConditionRetriever")
+process.prefer("GlobalTag")
+#process.prefer("EcalTrivialConditionRetriever")
 
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
@@ -334,5 +334,5 @@ process.multi5x5BasicClusters.IslandEndcapSeedThr = 0.150
 
 process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 
-process.DQMStore.referenceFileName = '/home/dqmdevlocal/reference/eb_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/eb_reference.root'
 
