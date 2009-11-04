@@ -287,7 +287,7 @@ process.ecalPedestalPath = cms.Path(process.ecalDataSequence*process.ecalPedesta
 
 process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
 
-process.ecalMonitorEndPath = cms.EndPath(process.dqmInfoEE*process.dqmQTestEE*process.dqmSaver)
+process.ecalMonitorEndPath = cms.EndPath(process.dqmEnv*process.dqmQTestEE*process.dqmSaver)
 
 process.schedule = cms.Schedule(process.ecalMonitorPath,process.ecalPhysicsPath,process.ecalLaserLedPath,process.ecalPedestalPath,process.ecalTestPulsePath,process.ecalMonitorEndPath)
 
