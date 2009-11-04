@@ -44,12 +44,11 @@ l1t_rct_expert(dqmitems, "RctRegionsEtEtaPhi",
 
 # list of summary GT histograms (dqmitems, dirPath , histoName)
 l1t_gt_single(dqmitems, "L1TGT", "algo_bits")
-l1t_gt_single(dqmitems, "L1TGT", "algo_bits_corr")
-l1t_gt_single(dqmitems, "L1TGT", "event_lumi")
-l1t_gt_single(dqmitems, "L1TGT", "orbit_lumi")
-l1t_gt_single(dqmitems, "L1TGT", "evnum_trignum_lumi")
-l1t_gt_single(dqmitems, "L1TGT", "dbx_module")
-l1t_gt_single(dqmitems, "L1TGT", "event_type")
+l1t_gt_single(dqmitems, "L1TGT", "tt_bits")
+l1t_gt_single(dqmitems, "L1TGT", "gtfe_bx")
+l1t_gt_single(dqmitems, "L1TScalers_SM", "l1AlgoBits_Vs_Bx")
+l1t_gt_single(dqmitems, "L1TScalers_SM", "l1TechAlgoBits_Vs_Bx")
+l1t_gt_single(dqmitems, "BXSynch", "BxOccyGtTrigType1")
 
 # list of summary GMT histograms (dqmitems, dirPath , histoName)
 l1t_gmt_single(dqmitems, "L1TGMT", "DTTF_phi")
