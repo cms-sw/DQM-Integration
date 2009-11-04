@@ -40,10 +40,7 @@ process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V2::All' # or any other appropriate
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
