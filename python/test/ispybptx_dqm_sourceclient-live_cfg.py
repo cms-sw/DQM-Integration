@@ -44,33 +44,33 @@ process.maxEvents = cms.untracked.PSet(
 
 #process.load("ISpy.Analyzers.ISpyEventSetup_cfi")
 process.load("ISpy.Analyzers.ISpyEvent_cfi")
-process.load("ISpy.Analyzers.ISpyBasicCluster_cfi")
+#process.load("ISpy.Analyzers.ISpyBasicCluster_cfi")
 process.load("ISpy.Analyzers.ISpyCSCSegment_cfi")
 process.load("ISpy.Analyzers.ISpyCSCStripDigi_cfi")
 process.load("ISpy.Analyzers.ISpyCSCWireDigi_cfi")
-process.load("ISpy.Analyzers.ISpyCaloTower_cfi")
+#process.load("ISpy.Analyzers.ISpyCaloTower_cfi")
 process.load('ISpy.Analyzers.ISpyDTDigi_cfi')
 process.load('ISpy.Analyzers.ISpyDTRecHit_cfi')
 process.load("ISpy.Analyzers.ISpyDTRecSegment4D_cfi")
 process.load("ISpy.Analyzers.ISpyEBRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyEERecHit_cfi")
-process.load("ISpy.Analyzers.ISpyESRecHit_cfi")
+#process.load("ISpy.Analyzers.ISpyESRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHBRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHERecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHFRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHORecHit_cfi")
-process.load("ISpy.Analyzers.ISpyJet_cfi")
+#process.load("ISpy.Analyzers.ISpyJet_cfi")
 process.load("ISpy.Analyzers.ISpyL1GlobalTriggerReadoutRecord_cfi")
-process.load("ISpy.Analyzers.ISpyMET_cfi")
-process.load("ISpy.Analyzers.ISpyMuon_cfi")
-process.load("ISpy.Analyzers.ISpyPixelDigi_cfi")
+#process.load("ISpy.Analyzers.ISpyMET_cfi")
+#process.load("ISpy.Analyzers.ISpyMuon_cfi")
+#process.load("ISpy.Analyzers.ISpyPixelDigi_cfi")
 process.load('ISpy.Analyzers.ISpyRPCRecHit_cfi')
-process.load("ISpy.Analyzers.ISpySiPixelCluster_cfi")
-process.load("ISpy.Analyzers.ISpySiPixelRecHit_cfi")
-process.load("ISpy.Analyzers.ISpySiStripCluster_cfi")
-process.load("ISpy.Analyzers.ISpySiStripDigi_cfi")
-process.load("ISpy.Analyzers.ISpyTrack_cfi")
-process.load("ISpy.Analyzers.ISpyTrackingRecHit_cfi")
+#process.load("ISpy.Analyzers.ISpySiPixelCluster_cfi")
+#process.load("ISpy.Analyzers.ISpySiPixelRecHit_cfi")
+#process.load("ISpy.Analyzers.ISpySiStripCluster_cfi")
+#process.load("ISpy.Analyzers.ISpySiStripDigi_cfi")
+#process.load("ISpy.Analyzers.ISpyTrack_cfi")
+#process.load("ISpy.Analyzers.ISpyTrackingRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyTriggerEvent_cfi")
 
 process.ISpyCSCSegment.iSpyCSCSegmentTag = cms.InputTag("cscSegments")
@@ -78,42 +78,41 @@ process.ISpyCSCStripDigi.iSpyCSCStripDigiTag = cms.InputTag("muonCSCDigis:MuonCS
 process.ISpyCSCWireDigi.iSpyCSCWireDigiTag = cms.InputTag("muonCSCDigis:MuonCSCWireDigi")
 process.ISpyDTRecHit.iSpyDTRecHitTag = cms.InputTag("dt1DRecHits")
 process.ISpyRPCRecHit.iSpyRPCRecHitTag = cms.InputTag("rpcRecHits")
-process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
-process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
-process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
-process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
-process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
+#process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
+#process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
+#process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
+#process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
+#process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
 process.iSpy = cms.Path(process.ISpyEvent*
                        #process.ISpyEventSetup*
-                       process.ISpyBasicCluster*
+                       #process.ISpyBasicCluster*
                        process.ISpyCSCSegment*
                        process.ISpyCSCStripDigi*
                        process.ISpyCSCWireDigi*
-                       process.ISpyCaloTower*
-                       process.ISpyTrack*
-                       process.ISpyTrackingRecHit*
+                       #process.ISpyCaloTower*
+                       #process.ISpyTrack*
+                       #process.ISpyTrackingRecHit*
                        process.ISpyDTRecSegment4D*
                        process.ISpyDTDigi*
                        process.ISpyDTRecHit*
                        process.ISpyRPCRecHit*
                        process.ISpyEBRecHit*
                        process.ISpyEERecHit*
-                       process.ISpyESRecHit*
+                       #process.ISpyESRecHit*
                        process.ISpyHBRecHit*
                        process.ISpyHERecHit*
                        process.ISpyHFRecHit*
                        process.ISpyHORecHit*
-                       process.ISpyJet*
-                       process.ISpyMET*
+                       #process.ISpyJet*
+                       #process.ISpyMET*
                        #process.ISpyMuon*
-                       process.ISpyPixelDigi*
-                       process.ISpySiPixelCluster*
-                       process.ISpySiPixelRecHit*
-                       process.ISpySiStripCluster*
-                       process.ISpySiStripDigi*
+                       #process.ISpyPixelDigi*
+                       #process.ISpySiPixelCluster*
+                       #process.ISpySiPixelRecHit*
+                       #process.ISpySiStripCluster*
+                       #process.ISpySiStripDigi*
                        process.ISpyL1GlobalTriggerReadoutRecord*
                        process.ISpyTriggerEvent)
-
 
 process.p3= cms.Path(process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
