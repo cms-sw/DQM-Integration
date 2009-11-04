@@ -31,7 +31,7 @@ process.add_(
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
-    outputMaxEvents = cms.untracked.int32(100),
+    outputMaxEvents = cms.untracked.int32(1),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
