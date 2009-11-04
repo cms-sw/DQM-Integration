@@ -20,21 +20,76 @@ process.dqmEnv.subSystemFolder = "Castor"
 #============================================
 # Castor Conditions: from Global Conditions Tag 
 #============================================
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V2::All' # or any other appropriate
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
+
+
+process.load("CondCore.DBCommon.CondDBSetup_cfi")
+process.castor_db_producer = cms.ESProducer("CastorDbProducer") 
+
+process.es_pool = cms.ESSource(
+   "PoolDBESSource",
+   process.CondDBSetup,
+   timetype = cms.string('runnumber'),
+   connect = cms.string('frontier://cmsfrontier.cern.ch:8000/FrontierPrep/CMS_COND_30X_HCAL'),
+   authenticationMethod = cms.untracked.uint32(0),
+   toGet = cms.VPSet(
+       cms.PSet(
+           record = cms.string('CastorPedestalsRcd'),
+           tag = cms.string('castor_pedestals_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorPedestalWidthsRcd'),
+           tag = cms.string('castor_pedestalwidths_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorGainsRcd'),
+           tag = cms.string('castor_gains_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorGainWidthsRcd'),
+           tag = cms.string('castor_gainwidths_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorQIEDataRcd'),
+           tag = cms.string('castor_qie_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorChannelQualityRcd'),
+           tag = cms.string('castor_channelquality_v1.0_test')
+           ),
+       cms.PSet(
+           record = cms.string('CastorElectronicsMapRcd'),
+           tag = cms.string('castor_emap_dcc_v1.0_test')
+           )
+   )
+)
+
+
 
 #-----------------------------
 # Castor DQM Source + SimpleReconstrctor
 #-----------------------------
-#process.load("DQM.CastorMonitor.CastorMonitorModule_cfi")
-#process.load("DQM.CastorMonitor.CastorFromRootFile_cfi")
+process.load("EventFilter.CastorRawToDigi.CastorRawToDigi_cfi")
+process.load("RecoLocalCalo.CastorReco.CastorSimpleReconstructor_cfi")
+
+
+process.castorDigis = cms.EDFilter("CastorRawToDigi",
+   CastorFirstFED = cms.untracked.int32(690),
+   FilterDataQuality = cms.bool(True),
+   ExceptionEmptyData = cms.untracked.bool(True),
+   InputLabel = cms.InputTag("source"),
+   UnpackCalib = cms.untracked.bool(False),
+   FEDs = cms.untracked.vint32(690,691,692),
+   lastSample = cms.int32(9),
+   firstSample = cms.int32(0)
+) 
+
 process.castorMonitor = cms.EDFilter("CastorMonitorModule",
                            ### GLOBAL VARIABLES
-                           debug = cms.untracked.int32(1), # make debug an int so that different
+                           debug = cms.untracked.int32(0), # make debug an int so that different
                                                            # values can trigger different levels of messaging
                            # Turn on/off timing diagnostic info
                            showTiming          = cms.untracked.bool(False),
@@ -64,22 +119,12 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
                            LED_ADC_Thresh = cms.untracked.double(-1000.0)      
                            )
 
-process.load("EventFilter.CastorRawToDigi.CastorRawToDigi_cfi")
-process.load("RecoLocalCalo.CastorReco.CastorSimpleReconstructor_cfi")
-
-process.castorMonitor.PedestalsPerChannel = True
-process.castorMonitor.PedestalsInFC = False
-#process.castorMonitor.checkNevents = 250
-
-process.castorMonitor.PedestalMonitor = True
-process.castorMonitor.RecHitMonitor = True
-process.castorMonitor.LEDMonitor = True
-
 ### the filename prefix 
 process.dqmSaver.producer = 'DQM'
-process.dqmSaver.dirName = '/tmp/'
+#process.dqmSaver.dirName = '/tmp/'
 process.dqmSaver.convention = 'Online'
-process.dqmSaver.saveAtJobEnd = True
+process.dqmSaver.saveByRun = True
+
 
 #-----------------------------
 # Scheduling
