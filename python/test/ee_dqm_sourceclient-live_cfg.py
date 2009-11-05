@@ -236,7 +236,7 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler*process.ecalUncalibHit*process.ecalUncalibHit1*process.ecalRecHit)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler*process.ecalUncalibHit*process.ecalRecHit)
 
 process.ecalDataSequence.remove(process.ecalPrescaler)
 
@@ -281,10 +281,10 @@ process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
 process.ecalRecHit.killDeadChannels = False
-process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
-process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
+process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
-process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
 process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
 #process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
@@ -305,7 +305,7 @@ process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
 #process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 1, 16 ]
 process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 16 ]
 
-process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
