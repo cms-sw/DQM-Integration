@@ -82,11 +82,11 @@ process.load("FWCore.Modules.preScaler_cfi")
 
 process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
-    cosmicPrescaleFactor = cms.untracked.int32(6),
+    cosmicPrescaleFactor = cms.untracked.int32(1),
     laserPrescaleFactor = cms.untracked.int32(1),
     ledPrescaleFactor = cms.untracked.int32(1),
-    pedestalPrescaleFactor = cms.untracked.int32(2),
-    testpulsePrescaleFactor = cms.untracked.int32(2)
+    pedestalPrescaleFactor = cms.untracked.int32(1),
+    testpulsePrescaleFactor = cms.untracked.int32(1)
 )
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
