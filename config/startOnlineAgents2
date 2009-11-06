@@ -1,0 +1,23 @@
+#!/bin/zsh
+DQM_V=5.1.4
+DQM_BASE=/home/dqm
+DQM_DATA=/dqmdata/dqm
+DQM_SW=$DQM_BASE/rpms
+. $DQM_SW/cmsset_default.sh
+. $DQM_SW/slc4_ia32_gcc345/cms/dqmgui/$DQM_V/etc/profile.d/env.sh
+NOW=$(date +%Y%m%d%H%M%S)
+
+mkdir -p $DQM_DATA/{original,subsystem,merged} $DQM_BASE/agents
+(while true; do
+   for f in $(find $DQM_DATA/original -name '*.root' | sort); do
+     if [ $(find $DQM_DATA/subsystem -name $(basename $f) | wc -l) = 0 ]; then
+       v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
+       b=$DQM_DATA/uploads/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+       [ -f $b -o -f $b.bad -o -f $b.origin.bad ] && continue
+       mkdir -p $(dirname $b)
+       ln $f $b
+       echo "md5:$(md5sum < $b | awk '{print $1}') $(stat -c '%s' $b) $b" > $b.origin
+     fi
+   done
+   sleep 1200
+ done) >>& $DQM_BASE/agents/upload-$NOW.log </dev/null &
