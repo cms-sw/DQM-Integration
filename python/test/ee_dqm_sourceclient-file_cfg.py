@@ -53,16 +53,6 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("FWCore.Modules.preScaler_cfi")
 
-process.ecalPrescaler = cms.EDFilter("EcalMonitorPrescaler",
-    EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
-    cosmicPrescaleFactor = cms.untracked.int32(6),
-    laserPrescaleFactor = cms.untracked.int32(1),
-    ledPrescaleFactor = cms.untracked.int32(1),
-    pedestalPrescaleFactor = cms.untracked.int32(2),
-    testpulsePrescaleFactor = cms.untracked.int32(2),
-    pedestaloffsetPrescaleFactor = cms.untracked.int32(1)
-)
-
 process.ecalPhysicsFilter = cms.EDFilter("EcalMonitorPrescaler",
     EcalRawDataCollection = cms.InputTag("ecalEBunpacker"),
     cosmicPrescaleFactor = cms.untracked.int32(1),
@@ -226,9 +216,7 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler*process.ecalUncalibHit*process.ecalRecHit)
-
-process.ecalDataSequence.remove(process.ecalPrescaler)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalRecHit)
 
 process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule*process.ecalEndcapMonitorClient)
 
