@@ -9,10 +9,10 @@ NOW=$(date +%Y%m%d%H%M%S)
 
 mkdir -p $DQM_DATA/{original,subsystem,merged} $DQM_BASE/agents
 (while true; do
-   for f in $(find $DQM_DATA/original -name '*.root' | sort); do
-     if [ $(find $DQM_DATA/subsystem -name $(basename $f) | wc -l) = 0 ]; then
+   for f in $(find $DQM_DATA/repository{2,3}/original -name 'DQM_V????_*_R00*.root' | sort); do
+     if [ $(find $DQM_DATA/repository/original -name $(basename $f) | wc -l) = 0 ]; then
        v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
-       b=$DQM_DATA/uploads/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+       b=./uploads/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
        [ -f $b -o -f $b.bad -o -f $b.origin.bad ] && continue
        mkdir -p $(dirname $b)
        ln $f $b
