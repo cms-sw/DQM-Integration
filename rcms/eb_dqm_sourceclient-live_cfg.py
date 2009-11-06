@@ -1,5 +1,31 @@
 import FWCore.ParameterSet.Config as cms
 
+import os
+os.environ['TNS_ADMIN']='/etc'
+
+dbName = ''
+dbHostName = ''
+dbHostPort = 1521
+dbUserName = ''
+dbPassword = ''
+
+try:
+  file = open('/nfshome0/ecalpro/DQM/online-DQM/.cms_tstore.conf', 'r')
+  for line in file:
+    if line.find('dbName') >= 0:
+      dbName = line.split()[2]
+    if line.find('dbHostName') >= 0:
+      dbHostName = line.split()[2]
+    if line.find('dbHostPort') >= 0:
+      dbHostPort = int(line.split()[2])
+    if line.find('dbUserName') >= 0:
+      dbUserName = line.split()[2]
+    if line.find('dbPassword') >= 0:
+      dbPassword = line.split()[2]
+  file.close()
+except IOError:
+  pass
+
 process = cms.Process("ECALDQM")
 
 process.load("DQM.Integration.test.inputsource_cfi")
@@ -13,10 +39,6 @@ process.load("DQM.Integration.test.environment_cfi")
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
-
-process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
-
-process.load("L1TriggerConfig.L1GtConfigProducers.L1GtConfig_cff")
 
 import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
 process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
@@ -53,6 +75,9 @@ process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cf
 
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
+
 process.load("FWCore.Modules.preScaler_cfi")
 
 process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
@@ -64,20 +89,45 @@ process.ecalPrescaler0 = cms.EDFilter("EcalMonitorPrescaler",
     testpulsePrescaleFactor = cms.untracked.int32(2)
 )
 
-# 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
-
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 #    reportThreshold = cms.untracked.string('red'),
     prescaleFactor = cms.untracked.int32(4),
-    qtList = cms.untracked.FileInPath('DQM/Integration/test/EcalBarrelQualityTests.xml'),
+    qtList = cms.untracked.FileInPath('DQM/EcalBarrelMonitorModule/test/data/EcalBarrelQualityTests.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True)
 )
 
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+
+process.load("CalibCalorimetry.EcalTrivialCondModules.EcalTrivialCondRetriever_cfi")
+
+process.EcalTrivialConditionRetriever.producedChannelStatus = False
+process.EcalTrivialConditionRetriever.weightsForTB = False
+process.EcalTrivialConditionRetriever.producedEcalPedestals = False
+process.EcalTrivialConditionRetriever.getWeightsFromFile = False
+process.EcalTrivialConditionRetriever.producedEcalIntercalibConstants = False
+process.EcalTrivialConditionRetriever.producedEcalIntercalibConstantsMC = False
+process.EcalTrivialConditionRetriever.producedEcalIntercalibErrors = False
+process.EcalTrivialConditionRetriever.producedEcalTimeCalibConstants = False
+process.EcalTrivialConditionRetriever.producedEcalTimeCalibErrors = False
+process.EcalTrivialConditionRetriever.producedEcalLaserCorrection = False
+process.EcalTrivialConditionRetriever.producedEcalGainRatios = False
+process.EcalTrivialConditionRetriever.producedEcalADCToGeVConstant = True
+process.EcalTrivialConditionRetriever.producedEcalClusterCrackCorrParameters = False
+process.EcalTrivialConditionRetriever.producedEcalMappingElectronics = False
+process.EcalTrivialConditionRetriever.producedEnergyUncertaintyParameters = False
+process.EcalTrivialConditionRetriever.produceEnergyCorrectionParameters = False
+
+process.EcalTrivialConditionRetriever.adcToGeVEBConstant = cms.untracked.double(0.00875)
+process.EcalTrivialConditionRetriever.adcToGeVEEConstant = cms.untracked.double(0.060)
+process.EcalTrivialConditionRetriever.pedWeights = cms.untracked.vdouble(0.333, 0.333, 0.333, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+process.EcalTrivialConditionRetriever.pedWeightsAft = cms.untracked.vdouble(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+process.EcalTrivialConditionRetriever.amplWeights = cms.untracked.vdouble(-0.333, -0.333, -0.333, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0)
+process.EcalTrivialConditionRetriever.amplWeightsAftGain = cms.untracked.vdouble(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0)
+process.EcalTrivialConditionRetriever.jittWeights = cms.untracked.vdouble(0.041, 0.041, 0.041, 0.0, 1.325, -0.050, -0.504, -0.502, -0.390, 0.0)
+process.EcalTrivialConditionRetriever.jittWeightsAft = cms.untracked.vdouble(0.0, 0.0, 0.0, 0.0, 1.098, -0.046, -0.416, -0.419, -0.337, 0.0)
+
 process.prefer("GlobalTag")
+#process.prefer("EcalTrivialConditionRetriever")
 
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
@@ -171,7 +221,7 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler0*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalPrescaler0*process.ecalUncalibHit*process.ecalUncalibHit2*process.ecalRecHit)
 
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.ecalBarrelMonitorClient)
 
@@ -180,8 +230,6 @@ process.ecalBarrelTasksSequenceP5 = cms.Sequence(process.ecalBarrelOccupancyTask
 process.p = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence)
 process.q = cms.Path(process.ecalDataSequence*process.hltTriggerTypeFilter*process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters*process.ecalBarrelPedestalOnlineTask*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
 process.r = cms.EndPath(process.dqmEnv*process.ecalBarrelTasksSequenceP5*process.dqmQTestEB*process.dqmSaver)
-
-process.l1GtEvmUnpack.EvmGtInputTag = 'source'
 
 process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
@@ -198,7 +246,6 @@ process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 process.ecalUncalibHit.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalRecHit.killDeadChannels = False
 process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
@@ -227,9 +274,16 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 #process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_startup.txt.gz'
 process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 
-process.ecalBarrelMonitorClient.maskFile = '/nfshome0/ecalpro/MASKING-DQM/maskfile-EB.dat'
-process.ecalBarrelMonitorClient.location = 'P5'
+process.ecalBarrelMonitorClient.dbName = dbName
+process.ecalBarrelMonitorClient.dbHostName = dbHostName
+process.ecalBarrelMonitorClient.dbHostPort = dbHostPort
+process.ecalBarrelMonitorClient.dbUserName = dbUserName
+process.ecalBarrelMonitorClient.dbPassword = dbPassword
+process.ecalBarrelMonitorClient.dbTagName = 'CMSSW-online-central'
+process.ecalBarrelMonitorClient.maskFile = ''
+process.ecalBarrelMonitorClient.location = 'P5_Co'
 process.ecalBarrelMonitorClient.updateTime = 4
+process.ecalBarrelMonitorClient.dbUpdateTime = 120
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelMonitorClient.MGPAGains = [ 1, 6, 12 ]

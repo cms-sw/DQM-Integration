@@ -10,7 +10,7 @@ process.load("DQM.Integration.test.environment_cfi")
 #Please SPECIFY GLOBAL TAG for central OPERATIONS here!
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.GlobalTag.globaltag = "GR09_H_V4::All"
 #process.prefer("GlobalTag")
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
@@ -31,8 +31,8 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
 
 ##  Available emulator masks (case insensitive):
-##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
-#process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("")
+##    "all"; "dttf", "dttpg", "csctf", "csctpg", "rpc", "gmt", "ecal", "hcal", "rct", "gct", "glt"
+process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "rct", "glt")
 
 
 #specify subsystems with qt's to be temporarily masked in summary map

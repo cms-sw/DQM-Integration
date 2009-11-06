@@ -13,6 +13,7 @@ process.EventStreamHttpReader.consumerName = 'DT DQM Consumer'
 #### DQM Environment
 #----------------------------
 process.load("DQMServices.Core.DQM_cfg")
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference.root'
 #process.DQMStore.referenceFileName = "DT_reference.root"
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
@@ -31,7 +32,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("DQM.DTMonitorModule.dt_dqm_sourceclient_common_cff")
 #---- for P5 (online) DB access
 process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.GlobalTag.globaltag = "GR09_H_V4::All"
 #---- for offline DB
 #process.GlobalTag.globaltag = "GR09_H_V2::All"
 

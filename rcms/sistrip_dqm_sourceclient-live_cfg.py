@@ -65,11 +65,20 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 # Calibration
 #--------------------------
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V2::All"
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#--------------------------------------------
+## Patch to avoid using Run Info information in reconstruction
+#
+process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
+   cms.PSet( record = cms.string("SiStripDetVOffRcd"),    tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripDetCablingRcd"), tag    = cms.string("") ),
+#  cms.PSet( record = cms.string("RunInfoRcd"),           tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
+   cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") )
+   )
+#-------------------------------------------
+                                                                                           
 #-----------------------
 #  Reconstruction Modules
 #-----------------------
@@ -114,7 +123,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 # Scheduling
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
-process.SiStripClients = cms.Sequence(process.SiStripAnalyser*process.TrackEffClient)
+process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.offlineBeamSpot*process.trackerlocalreco*process.ctftracksP5)
 process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
