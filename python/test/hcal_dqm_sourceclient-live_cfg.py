@@ -175,6 +175,7 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 
 #process.hcalClient.BeamClient_minErrorFlag = 0.05
 process.hcalClient.SummaryClient        = True
+process.hcalClient.DataFormatClient   = False
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
