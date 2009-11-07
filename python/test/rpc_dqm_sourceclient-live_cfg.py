@@ -66,6 +66,7 @@ process.rpcdigidqm.DigiDQMSaveRootFile = False
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
 process.rpcdqmclient.DiagnosticPrescale = cms.untracked.int32(5)
+process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
 
 
 ################# Other Clients ############################
