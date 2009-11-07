@@ -69,7 +69,7 @@ process.rpcdigidqm.DigiDQMSaveRootFile = False
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
 process.rpcdqmclient.DiagnosticPrescale = cms.untracked.int32(5)
-
+process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
 
 ################# Other Clients ############################
 process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
@@ -93,7 +93,7 @@ process.qTesterRPC = cms.EDFilter("QualityTester",
 
 ################ Chamber Quality ##################
 process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
-                                           MinimumRPCEvents = cms.untracked.int32(1000),
+                                           MinimumRPCEvents = cms.untracked.int32(3),
                                            PrescaleFactor = cms.untracked.int32(1) 
                                            )
 
