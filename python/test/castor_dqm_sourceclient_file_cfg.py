@@ -5,8 +5,9 @@ process = cms.Process("CASTORDQM")
 # Event Source
 #================================+
 
-process.source = cms.Source("NewEventStreamFileReader",
-    fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/c/campbell/scratch0/first100M_MWGR_41.00116713.0001.A.storageManager.00.0000.dat')
+process.source = cms.Source("PoolSource",
+    #fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/c/campbell/scratch0/first100M_MWGR_41.00116713.0001.A.storageManager.00.0000.dat')
+    fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/data/BeamCommissioning09/BeamHalo/RAW/v1/000/120/013/B60078A5-D4CB-DE11-8E7F-001617E30D12.root')
 )
 
 process.maxEvents = cms.untracked.PSet(
@@ -131,7 +132,7 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
 
 ### the filename prefix 
 process.dqmSaver.producer = 'DQM'
-process.dqmSaver.dirName = '/tmp/'
+process.dqmSaver.dirName = '.'
 process.dqmSaver.convention = 'Online'
 process.dqmSaver.saveByRun = True
 
