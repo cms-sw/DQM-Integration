@@ -14,6 +14,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 
 ### global tag
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+
 ##online
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
@@ -23,10 +24,13 @@ process.GlobalTag.globaltag = "GR09_P_V2::All"
 #process.prefer("GlobalTag")
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
-
-#from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
-#newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
-#process.globalReplace("L1HardwareValidation", newHWSequence)
+#NL//this over-writting may be employed only when needed
+#  ie quick module disabling, before new tags can be corrected)
+from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
+##NL//ctp temporarily disabled (infinite time sorting too large collections)
+l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 0, 1, 1, 0, 1, 1]
+newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
+process.globalReplace("L1HardwareValidation", newHWSequence)
 
 ##  Subsystem masking in summary map (case insensitive)
 ##  l1t: all, gt, muons, jets, taujets, isoem, nonisoem, met
@@ -36,13 +40,15 @@ process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
 process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "rct", "glt")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(10)
+    input = cms.untracked.int32(100)
 )
 
 process.source = cms.Source("PoolSource",
 #process.source = cms.Source("NewEventStreamFileReader",
     fileNames = cms.untracked.vstring(
-    '/store/data/Commissioning09/Cosmics/RAW/v3/000/118/969/FEA12E2E-EEC5-DE11-8BD0-000423D98C20.root'
+#    '/store/data/Commissioning09/Cosmics/RAW/v3/000/118/969/FEA12E2E-EEC5-DE11-8BD0-000423D98C20.root'
+        '/store/data/BeamCommissioning09/Cosmics/RAW/v1/000/120/020/CE4D0EF0-47CC-DE11-BF95-0030487C6062.root'
+
     #'file:/lookarea_SM/MWGR_29.00106019.0036.A.storageManager.07.0000.dat'
     )
 )
