@@ -7,39 +7,35 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 
-#Please SPECIFY GLOBAL TAG for central OPERATIONS here!
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"   
-process.GlobalTag.globaltag = "GR09_H_V4::All"
-#process.prefer("GlobalTag")
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("Configuration.StandardSequences.Geometry_cff")
+
 process.load("DQM.L1TMonitor.L1TEmulatorMonitor_cff")    
 process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")    
 
+#NL//this over-writting may be employed only when needed
+#  ie quick module disabling, before new tags can be corrected)
 from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
+##NL//ctp temporarily disabled (infinite time sorting too large collections)
+l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 0, 1, 1, 0, 1, 1]
 newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
 process.globalReplace("L1HardwareValidation", newHWSequence)
 
+#N//needs to be removed from here
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz' 
 
-
-##  Available data masks (case insensitive):
-##    all, gt, muons, jets, taujets, isoem, nonisoem, met
+## Subsystem masking in summary map (case insensitive):
+## l1t: all, gt, muons, jets, taujets, isoem, nonisoem, met
 process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
-
-##  Available emulator masks (case insensitive):
-##    "all"; "dttf", "dttpg", "csctf", "csctpg", "rpc", "gmt", "ecal", "hcal", "rct", "gct", "glt"
+## Available emulator masks (case insensitive):
+## l1temul: "all"; "dttf", "dttpg", "csctf", "csctpg", "rpc", "gmt", "ecal", "hcal", "rct", "gct", "glt"
 process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "rct", "glt")
 
-
-#specify subsystems with qt's to be temporarily masked in summary map
-#sequence: dtf,dtp,ctf,ctp,rpc,gmt, etp,htp,rct,gct,gt
-#process.l1temuEventInfoClient.maskedSystems = [0,1,1,0,0,0, 0,1,0,0,1]
-
+##no references needed
 #replace DQMStore.referenceFileName = "L1TEMU_reference.root"
+
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring("*")
 )
