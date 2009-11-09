@@ -18,8 +18,9 @@ server.serviceName = 'Online Playback'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMFileAccess', None, None,
-              { "dqm": "/dqmdata/dqm/done",
-                "ispy": "/dqmdata/EventDisplay/done" })
+              { "Merged": "/dqmdata/dqm/repository/merged",
+                "Original": "/dqmdata/dqm/repository/original",
+                "iSpy": "/dqmdata/EventDisplay/done" })
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.source('DQMUnknown', 'unknown')
 server.source('DQMOverlay', 'overlay')

@@ -20,9 +20,10 @@ server.title       = 'CMS data quality'
 server.serviceName = 'Online'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
-server.extend('DQMFileAccess', None, None,
-              { "dqm": "/dqmdata/dqm/done",
-                "ispy": "/dqmdata/EventDisplay/done" })
+server.extend('DQMFileAccess', None, "/dqmdata/dqm/uploads",
+              { "Merged": "/dqmdata/dqm/repository/merged",
+                "Original": "/dqmdata/dqm/repository/original",
+                "iSpy": "/dqmdata/EventDisplay/done" })
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.source('DQMUnknown', 'unknown')
 server.source('DQMOverlay', 'overlay')
