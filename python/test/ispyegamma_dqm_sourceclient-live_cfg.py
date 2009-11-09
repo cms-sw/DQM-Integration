@@ -31,7 +31,7 @@ process.add_(
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
-    outputMaxEvents = cms.untracked.int32(1),
+    outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
@@ -54,7 +54,7 @@ process.load('ISpy.Analyzers.ISpyDTRecHit_cfi')
 process.load("ISpy.Analyzers.ISpyDTRecSegment4D_cfi")
 process.load("ISpy.Analyzers.ISpyEBRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyEERecHit_cfi")
-#process.load("ISpy.Analyzers.ISpyESRecHit_cfi")
+process.load("ISpy.Analyzers.ISpyESRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHBRecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHERecHit_cfi")
 process.load("ISpy.Analyzers.ISpyHFRecHit_cfi")
@@ -98,7 +98,7 @@ process.iSpy = cms.Path(process.ISpyEvent*
                        process.ISpyRPCRecHit*
                        process.ISpyEBRecHit*
                        process.ISpyEERecHit*
-                       #process.ISpyESRecHit*
+                       process.ISpyESRecHit*
                        process.ISpyHBRecHit*
                        process.ISpyHERecHit*
                        process.ISpyHFRecHit*
