@@ -11,7 +11,7 @@ subsystem="HcalCalib"
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 #process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibration'))
 
@@ -29,7 +29,10 @@ process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
+process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 

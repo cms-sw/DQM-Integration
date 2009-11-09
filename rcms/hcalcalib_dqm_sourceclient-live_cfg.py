@@ -11,7 +11,7 @@ subsystem="HcalCalib"
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 #process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibration'))
 

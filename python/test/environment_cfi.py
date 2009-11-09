@@ -15,7 +15,7 @@ dqmSaver.version = 2
 dqmSaver.runIsComplete = True
 dqmSaver.saveByTime = 1
 dqmSaver.saveByLumiSection = -1
-dqmSaver.saveByMinute = 64
+dqmSaver.saveByMinute = 4
 dqmSaver.saveByRun = -1
 dqmSaver.saveAtJobEnd = False
 
