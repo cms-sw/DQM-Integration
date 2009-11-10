@@ -22,7 +22,8 @@ if [ "$1" = "live" ] ; then
     ln -sf ispyegamma_dqm_sourceclient-live_cfg.py		  dqmfu_08-3_cfg.py
     ln -sf ispyegammahe_dqm_sourceclient-live_cfg.py		dqmfu_08-4_cfg.py
     ln -sf ispybptx_dqm_sourceclient-live_cfg.py		    dqmfu_08-5_cfg.py
-    
+    ln -sf beam_dqm_sourceclient-live_cfg.py		    dqmfu_08-6_cfg.py
+   
     ln -sf hlt_dqm_sourceclient-live_cfg.py		    dqmfu_09-1_cfg.py
     ln -sf hlx_dqm_sourceclient-live_cfg.py		    dqmfu_09-2_cfg.py
     ln -sf fed_dqm_sourceclient-live_cfg.py		    dqmfu_09-3_cfg.py
