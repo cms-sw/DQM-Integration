@@ -13,7 +13,7 @@ noisy = "RPC NoisyStrips ";
 
 
 ################### Links to TOP Summary Histograms #################################
-rpclayout(dqmitems, "RPC_Summary/Barrel_TOP_Summary",
+rpclayout(dqmitems, "RPC_Summary/Barrel/Barrel_TOP_Summary",
           [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel2", 'description': top + rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel1", 'description': top + rpclink  }],
           
@@ -23,18 +23,7 @@ rpclayout(dqmitems, "RPC_Summary/Barrel_TOP_Summary",
           )          
 
 
-rpclayout(dqmitems, "RPC_Summary/EndCap_TOP_Summary",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk3", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk2", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk1", 'description': top + rpclink  }],
-          
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-3", 'description': top + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-2", 'description': top + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-1", 'description': top + rpclink  }]
-          )          
-
-
-rpclayout(dqmitems, "RPC_Summary/TOP_Summary_Distribution",
+rpclayout(dqmitems, "RPC_Summary/Barrel/TOP_Summary_Distribution",
           [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel2", 'description': top + rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel1", 'description': top + rpclink  }],
 
@@ -44,7 +33,7 @@ rpclayout(dqmitems, "RPC_Summary/TOP_Summary_Distribution",
           )      
 
 ###---> Dead Channels Fraction 
-rpclayout(dqmitems, "RPC_Summary/RPC_DeadChanelsFraction",
+rpclayout(dqmitems, "RPC_Summary/Barrel/RPC_DeadChanelsFraction",
           [{ 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Roll_vs_Sector_Wheel2", 'description': dead + rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Roll_vs_Sector_Wheel1", 'description': dead + rpclink }],
 
@@ -54,7 +43,7 @@ rpclayout(dqmitems, "RPC_Summary/RPC_DeadChanelsFraction",
           )          
 
 ###---> ClusterSize1bin
-rpclayout(dqmitems, "RPC_Summary/RPC_ClusterSizeInFirstBin",
+rpclayout(dqmitems, "RPC_Summary/Barrel/RPC_ClusterSizeInFirstBin",
           [{ 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Roll_vs_Sector_Wheel2", 'description': onebin+rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Roll_vs_Sector_Wheel1", 'description':  onebin+rpclink }],
 
@@ -64,7 +53,7 @@ rpclayout(dqmitems, "RPC_Summary/RPC_ClusterSizeInFirstBin",
           )
           
 ###---> AsymmetryLeftRight_Roll_vs_Sector_Wheel
-rpclayout(dqmitems, "RPC_Summary/RPC_AsymmetryLeftRight",
+rpclayout(dqmitems, "RPC_Summary/Barrel/RPC_AsymmetryLeftRight",
           [{ 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Roll_vs_Sector_Wheel2", 'description': asymmetry+rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Roll_vs_Sector_Wheel1", 'description': asymmetry+rpclink   }],
 
@@ -74,7 +63,7 @@ rpclayout(dqmitems, "RPC_Summary/RPC_AsymmetryLeftRight",
           )
 
 ###---> NumberOfDigi_Roll_vs_Sector_Wheel
-rpclayout(dqmitems, "RPC_Summary/RPC_NumberOfDigi",
+rpclayout(dqmitems, "RPC_Summary/Barrel/RPC_NumberOfDigi",
           [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel2", 'description': numberofdigi+rpclink},
            { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel1", 'description': numberofdigi+rpclink }],
 
@@ -84,7 +73,7 @@ rpclayout(dqmitems, "RPC_Summary/RPC_NumberOfDigi",
           )
 
 ###---> RPCNoisyStrips_Roll_vs_Sector_Wheel
-rpclayout(dqmitems, "RPC_Summary/RPC_NoisyStrips",
+rpclayout(dqmitems, "RPC_Summary/Barrel/RPC_NoisyStrips",
           [{ 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Roll_vs_Sector_Wheel2", 'description': noisy+rpclink },
            { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Roll_vs_Sector_Wheel1", 'description': noisy+rpclink }],
 
@@ -93,6 +82,78 @@ rpclayout(dqmitems, "RPC_Summary/RPC_NoisyStrips",
            { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Roll_vs_Sector_Wheel-2", 'description': noisy+rpclink }]
           )
 
+
+###==== Links to EndCap Summary Histograms =====###
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_TOP_Summary",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk3", 'description': top + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk2", 'description': top + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk1", 'description': top + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-3", 'description': top + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-2", 'description': top + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-1", 'description': top + rpclink  }]
+          )          
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_ClusterSize",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk3", 'description': onebin + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk2", 'description': onebin + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk1", 'description': onebin + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk-3", 'description': onebin + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk-2", 'description': onebin + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk-1", 'description': onebin + rpclink  }]
+          )          
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_AsymmetryLeftRight",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk3", 'description': asymmetry + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk2", 'description': asymmetry + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk1", 'description': asymmetry + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk-3", 'description': asymmetry + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk-2", 'description': asymmetry + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/AsymmetryLeftRight_Ring_vs_Segment_Disk-1", 'description': asymmetry + rpclink  }]
+          )          
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_DeadChannelFraction",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk3", 'description': dead + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk2", 'description': dead + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk1", 'description': dead + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk-3", 'description': dead + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk-2", 'description': dead + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/DeadChannelFraction_Ring_vs_Segment_Disk-1", 'description': dead + rpclink  }]
+          )    
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_NumberOfDigis",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk3", 'description': numberofdigi + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk2", 'description': numberofdigi + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk1", 'description': numberofdigi + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk-3", 'description': numberofdigi + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk-2", 'description': numberofdigi + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk-1", 'description': numberofdigi + rpclink  }]
+          )    
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_NoisyStrips",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk3", 'description': noisy + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk2", 'description': noisy + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk1", 'description': noisy + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-3", 'description': noisy + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-2", 'description': noisy + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-1", 'description': noisy + rpclink  }]
+          )    
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_NoisyStrips",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk3", 'description': noisy + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk2", 'description': noisy + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk1", 'description': noisy + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-3", 'description': noisy + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-2", 'description': noisy + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/RPCNoisyStrips_Ring_vs_Segment_Disk-1", 'description': noisy + rpclink  }]
+          )    
 
 
 ############### Summary Collection by Wheels ######################
