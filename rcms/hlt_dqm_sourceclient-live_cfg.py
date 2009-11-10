@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
 process.load("DQM.Integration.test.inputsource_cfi")
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-06:22100/urn:xdaq-application:lid=30')
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 process.load("DQMServices.Core.DQM_cfg")

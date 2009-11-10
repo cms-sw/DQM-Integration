@@ -17,7 +17,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 # DQM Live Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = 'BeamSpot'
+process.dqmEnv.subSystemFolder = 'BeamMonitor'
 
 #----------------------------
 # BeamMonitor
