@@ -5,10 +5,17 @@ process = cms.Process("CASTORDQM")
 # Event Source
 #================================+
 
+### to use a dat file
+#process.source = cms.Source("NewEventStreamFileReader",
+#    fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/c/campbell/scratch0/first100M_MWGR_41.00116713.0001.A.storageManager.00.0000.dat')
+# )
+
+### to use a root file
 process.source = cms.Source("PoolSource",
-    #fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/c/campbell/scratch0/first100M_MWGR_41.00116713.0001.A.storageManager.00.0000.dat')
     fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/data/BeamCommissioning09/BeamHalo/RAW/v1/000/120/013/B60078A5-D4CB-DE11-8E7F-001617E30D12.root')
 )
+
+
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
@@ -25,16 +32,11 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = "Castor"
 
+process.load("FWCore.MessageLogger.MessageLogger_cfi")
+
 #============================================
 # Castor Conditions: from Global Conditions Tag 
 #============================================
-#process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-#process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-#process.GlobalTag.globaltag = 'GR09_H_V2::All' # or any other appropriate
-#process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-
-process.load("FWCore.MessageLogger.MessageLogger_cfi")
-
 
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 process.castor_db_producer = cms.ESProducer("CastorDbProducer") 
@@ -43,36 +45,37 @@ process.es_pool = cms.ESSource(
    "PoolDBESSource",
    process.CondDBSetup,
    timetype = cms.string('runnumber'),
-   connect = cms.string('frontier://cmsfrontier.cern.ch:8000/FrontierPrep/CMS_COND_30X_HCAL'),
+   # connect = cms.string('frontier://cmsfrontier.cern.ch:8000/FrontierPrep/CMS_COND_30X_HCAL'),
+   connect = cms.string('frontier://cmsfrontier.cern.ch:8000/FrontierProd/CMS_COND_31X_HCAL'),
    authenticationMethod = cms.untracked.uint32(0),
    toGet = cms.VPSet(
        cms.PSet(
            record = cms.string('CastorPedestalsRcd'),
-           tag = cms.string('castor_pedestals_v1.0_test')
+           tag = cms.string('castor_pedestals_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorPedestalWidthsRcd'),
-           tag = cms.string('castor_pedestalwidths_v1.0_test')
+           tag = cms.string('castor_pedestalwidths_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorGainsRcd'),
-           tag = cms.string('castor_gains_v1.0_test')
+           tag = cms.string('castor_gains_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorGainWidthsRcd'),
-           tag = cms.string('castor_gainwidths_v1.0_test')
+           tag = cms.string('castor_gainwidths_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorQIEDataRcd'),
-           tag = cms.string('castor_qie_v1.0_test')
+           tag = cms.string('castor_qie_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorChannelQualityRcd'),
-           tag = cms.string('castor_channelquality_v1.0_test')
+           tag = cms.string('castor_channelquality_v1.0')
            ),
        cms.PSet(
            record = cms.string('CastorElectronicsMapRcd'),
-           tag = cms.string('castor_emap_dcc_v1.0_test')
+           tag = cms.string('castor_emap_dcc_v1.0')
            )
    )
 )
