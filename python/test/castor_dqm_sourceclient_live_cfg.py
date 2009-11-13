@@ -17,42 +17,53 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = "Castor"
 
+process.load("FWCore.MessageLogger.MessageLogger_cfi")
+
 #============================================
 # Castor Conditions: from Global Conditions Tag 
 #============================================
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
-
-
-process.load("FWCore.MessageLogger.MessageLogger_cfi")
-
-
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
-#process.load("CondCore.DBCommon.CondDBCommon_cfi")
+process.load("CondCore.DBCommon.CondDBCommon_cfi")
 
 process.CastorDbProducer = cms.ESProducer("CastorDbProducer")
 
-process.es_hardcode = cms.ESSource("CastorHardcodeCalibrations",
-   toGet = cms.untracked.vstring('Gains',
-       'Pedestals',
-       'PedestalWidths',
-       'GainWidths',
-       'QIEShape',
-       'QIEData',
-       'ChannelQuality',
-       'RespCorrs',
-       'ZSThresholds')
-)
-
-process.es_ascii = cms.ESSource("CastorTextCalibrations",
-   input = cms.VPSet(cms.PSet(
-       object = cms.string('ElectronicsMap'),
-       file = cms.FileInPath('DQM/Integration/rcms/castor_cmssw_emap_3dcc_v1.txt')
-    )
+process.es_pool = cms.ESSource(
+   "PoolDBESSource",
+   process.CondDBSetup,
+   timetype = cms.string('runnumber'),
+   connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOn Prod)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_HCAL'),
+   authenticationMethod = cms.untracked.uint32(0),
+   toGet = cms.VPSet(
+       cms.PSet(
+           record = cms.string('CastorPedestalsRcd'),
+           tag = cms.string('castor_pedestals_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorPedestalWidthsRcd'),
+           tag = cms.string('castor_pedestalwidths_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorGainsRcd'),
+           tag = cms.string('castor_gains_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorGainWidthsRcd'),
+           tag = cms.string('castor_gainwidths_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorQIEDataRcd'),
+           tag = cms.string('castor_qie_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorChannelQualityRcd'),
+           tag = cms.string('castor_channelquality_v1.0')
+           ),
+       cms.PSet(
+           record = cms.string('CastorElectronicsMapRcd'),
+           tag = cms.string('castor_emap_dcc_v1.0')
+           )
    )
-) 
+)
 
 
 
