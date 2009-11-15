@@ -63,19 +63,19 @@ process.load("Geometry.EcalMapping.EcalMapping_cfi")
 
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 
-process.load("DQM.EcalBarrelMonitorModule.EcalBarrelMonitorModule_cfi")
+process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
-process.load("DQM.EcalBarrelMonitorTasks.EcalBarrelMonitorTasks_cfi")
+process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
 #process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cff")
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
 #process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
 
+process.load("DQM.EcalBarrelMonitorModule.EcalBarrelMonitorModule_cfi")
+
+process.load("DQM.EcalBarrelMonitorTasks.EcalBarrelMonitorTasks_cfi")
+
 process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
-
-process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
-
-process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
