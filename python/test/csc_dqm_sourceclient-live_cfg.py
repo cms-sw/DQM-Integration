@@ -41,7 +41,7 @@ process.EventStreamHttpReader.consumerName = 'CSC DQM Consumer'
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-process.DQMStore.referenceFileName = '/dqmdata/dqm/csc_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/csc_reference.root'
 
 #----------------------------
 # DQM Playback Environment
