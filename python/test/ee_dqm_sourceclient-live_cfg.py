@@ -67,9 +67,7 @@ process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
-#process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cff")
-process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
-#process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
+process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
 
 process.load("DQM.EcalEndcapMonitorModule.EcalEndcapMonitorModule_cfi")
 
@@ -137,7 +135,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
-process.prefer("GlobalTag")
+process.GlobalTag.globaltag = "GR09_H_V6::All"
 
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
