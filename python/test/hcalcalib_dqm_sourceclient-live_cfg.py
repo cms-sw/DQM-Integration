@@ -87,7 +87,7 @@ process.hcalMonitor.debug = 0
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-process.hcalMonitor.dump2database = False
+
 
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
@@ -98,7 +98,7 @@ process.hcalMonitor.DetDiagLaserMonitor    = True
 process.hcalMonitor.DataFormatMonitor   = False
 process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = False
-process.hcalMonitor.RecHitMonitor       = False
+process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = False
 process.hcalMonitor.DeadCellMonitor     = False
 process.hcalMonitor.HotCellMonitor      = False
@@ -115,8 +115,7 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
-process.hcalMonitor.HotCellMonitor_test_neighbor        = False
+process.RecHitMonitor_AllowedCalibTypes = [1] # only pedestal events allowed for rechit monitor
 
 #-----------------------------
 # Hcal DQM Client
