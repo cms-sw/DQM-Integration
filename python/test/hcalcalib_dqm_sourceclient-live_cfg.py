@@ -143,7 +143,11 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
-process.p = cms.Path(process.hcalDigis*process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
+process.p = cms.Path(process.hcalDigis
+                     *process.horeco
+                     *process.hfreco
+                     *process.hbhereco
+                     *process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
 
 
 #-----------------------------
