@@ -130,22 +130,22 @@ process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 # -------------------------------
 process.hcalMonitor.debug = 0
 process.hcalMonitor.Online = True
+
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = True # set false until we learn why it crashes
+process.hcalMonitor.DigiMonitor         = True 
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
-process.hcalMonitor.PedestalMonitor     = True
+process.hcalMonitor.ReferencePedestalMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.DetDiagTimingMonitor = True
 process.hcalMonitor.LEDMonitor          = False
@@ -173,7 +173,6 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 # Summary Client is also unaffected
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
-#process.hcalClient.BeamClient_minErrorFlag = 0.05
 process.hcalClient.SummaryClient        = True
 
 # Set expected idle BCN time to correct value
