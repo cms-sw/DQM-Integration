@@ -135,8 +135,6 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
-process.GlobalTag.globaltag = "GR09_H_V6::All"
-
 process.MessageLogger = cms.Service("MessageLogger",
     cout = cms.untracked.PSet(
         threshold = cms.untracked.string('WARNING'),
