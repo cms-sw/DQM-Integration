@@ -1,44 +1,49 @@
-# $Id:$
+# $Id: physics_dqm_sourceclient_live.py,v 1.1 2009/11/17 09:39:42 ameyer Exp $
 
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("QcdLowPtDQM")
+process = cms.Process("Physics")
+
+#----------------------------
+# Event Source
+#-----------------------------
+
+process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.consumerName = 'Physics DQM Consumer'
+#process.EventStreamHttpReader.sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
+
+#----------------------------
+# DQM Environment
+#-----------------------------
 
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder = 'Physics'
+
+#---- for P5 (online) DB access
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#---- for offline DB ----
+
 process.load('FWCore/MessageService/MessageLogger_cfi')
 process.load('Configuration/StandardSequences/GeometryIdeal_cff')
 process.load('Configuration/StandardSequences/MagneticField_38T_cff')
-process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
 process.load('DQM/Physics/qcdLowPtDQM_cfi')
 
-process.GlobalTag.globaltag = 'GR09_P_V5::All'
-
-process.dqmSaver.workflow = cms.untracked.string('/Physics/QCD/LowPt')
-
-process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(10)
-)
-
-process.dump = cms.EDAnalyzer('EventContentAnalyzer')
-
-process.source = cms.Source("NewEventStreamFileReader",
-    fileNames = cms.untracked.vstring(
-        'file:/opt/data/cms/CMSSW_3_3_2/Data.00120962.0057.A.storageManager.04.0001.dat'
-    )
-)				      
+#process.dump = cms.EDAnalyzer('EventContentAnalyzer')
 
 process.p = cms.Path(
 #    process.dump *
     process.myRecoSeq1  *
-    process.dump *
+#    process.dump *
     process.myRecoSeq2  *
 #    process.dump *
     process.QcdLowPtDQM +
     process.dqmSaver
 )
 
-process.DQM.collectorHost = ''
+#process.DQM.collectorHost = ''
 
 #process.DQMStore.verbose = 0
 #process.DQM.collectorHost = "srv-c2d05-12"
