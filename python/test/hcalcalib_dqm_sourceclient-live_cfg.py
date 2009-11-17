@@ -115,7 +115,7 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.RecHitMonitor_AllowedCalibTypes = [1] # only pedestal events allowed for rechit monitor
+process.hcalMonitor.RecHitMonitor_AllowedCalibTypes = [1] # only pedestal events allowed for rechit monitor
 
 #-----------------------------
 # Hcal DQM Client
