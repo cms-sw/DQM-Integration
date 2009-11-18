@@ -643,11 +643,11 @@ process.multi5x5SuperClusters.seedTransverseEnergyThreshold = 0.150
 if (globalDAQ == 1) | (liveECAL == 1) :
   process.DQMStore.referenceFileName = '/data/ecalod-disk01/dqm-data/reference/REFERENCE.root'
 
-if (liveCMS == 1) | (playCMS == 1) :
-  if (onlyEB == 1) :
-    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/eb_reference.root'
-  if (onlyEE == 1) :
-    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/ee_reference.root'
+#if (liveCMS == 1) | (playCMS == 1) :
+#  if (onlyEB == 1) :
+#    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/eb_reference.root'
+#  if (onlyEE == 1) :
+#    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/ee_reference.root'
 
 if (localDAQ == 1) | (globalDAQ == 1) :
   process.DQM.collectorHost = ''
