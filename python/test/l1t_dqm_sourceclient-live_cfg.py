@@ -53,6 +53,7 @@ process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
 
 
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+es_prefer_GlobalTag = cms.ESPrefer('GlobalTag')
 
 process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
 process.dqmEnv.subSystemFolder = 'L1T'
