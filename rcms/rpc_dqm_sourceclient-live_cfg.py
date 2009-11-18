@@ -19,10 +19,7 @@ process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
 
 
 
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V4::All"
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 
 ## process.RPCCabling = cms.ESSource("PoolDBESSource",
@@ -70,6 +67,7 @@ process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
 process.rpcdqmclient.DiagnosticPrescale = cms.untracked.int32(5)
 process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
+
 
 ################# Other Clients ############################
 process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")

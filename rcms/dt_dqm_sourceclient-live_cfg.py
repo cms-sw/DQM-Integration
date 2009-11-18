@@ -31,8 +31,7 @@ process.dqmEnv.subSystemFolder = 'DT'
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("DQM.DTMonitorModule.dt_dqm_sourceclient_common_cff")
 #---- for P5 (online) DB access
-process.GlobalTag.connect ="frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR09_H_V4::All"
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 #---- for offline DB
 #process.GlobalTag.globaltag = "GR09_H_V2::All"
 

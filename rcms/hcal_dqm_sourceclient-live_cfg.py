@@ -40,10 +40,7 @@ process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
@@ -125,6 +122,7 @@ process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
 process.load('SimCalorimetry.HcalTrigPrimProducers.hcaltpdigi_cff')
 process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clone()
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
+process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 
 
@@ -133,22 +131,22 @@ process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 # -------------------------------
 process.hcalMonitor.debug = 0
 process.hcalMonitor.Online = True
+
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-process.hcalMonitor.dump2database = False
 
 # Turn on/off individual hcalMonitor modules ------------
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
 process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
-process.hcalMonitor.DigiMonitor         = True # set false until we learn why it crashes
+process.hcalMonitor.DigiMonitor         = True 
 process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = True
 process.hcalMonitor.DeadCellMonitor     = True
 process.hcalMonitor.HotCellMonitor      = True
 process.hcalMonitor.BeamMonitor         = True
-process.hcalMonitor.PedestalMonitor     = True
+process.hcalMonitor.ReferencePedestalMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.DetDiagTimingMonitor = True
 process.hcalMonitor.LEDMonitor          = False
@@ -176,7 +174,6 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 # Summary Client is also unaffected
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
-#process.hcalClient.BeamClient_minErrorFlag = 0.05
 process.hcalClient.SummaryClient        = True
 
 # Set expected idle BCN time to correct value

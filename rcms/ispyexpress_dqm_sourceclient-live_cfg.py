@@ -1,5 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 import datetime as dt
+import socket
 process = cms.Process("IGUANA")
 process.options=cms.untracked.PSet(
     SkipEvent = cms.untracked.vstring(["FatalRootError",
@@ -18,19 +19,21 @@ process.load('Configuration.StandardSequences.VtxSmearedEarly10TeVCollision_cff'
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
+process.EventStreamHttpReader.consumerName = 'ISpy Event Display Express Stream'
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputExpress')
+process.EventStreamHttpReader.sourceURL=cms.string('http://%s:24100/urn:xdaq-application:lid=30' % socket.gethostname())
 #process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 process.load("DQM.Integration.test.environment_cfi")
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
 process.add_(
     cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('%s/iSpy_BEAM%d_%s__hltOutputDQM_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('%s/iSpy_BEAM%d_%s__hltOutputExpress_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     #outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9000),
+    outputPort = cms.untracked.uint32(9003),
     outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)

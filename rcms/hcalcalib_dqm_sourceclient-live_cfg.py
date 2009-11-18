@@ -10,10 +10,10 @@ subsystem="HcalCalib"
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-#process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
-#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibration'))
+#process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
 
 
 #----------------------------
@@ -29,10 +29,7 @@ process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
-process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
@@ -90,7 +87,7 @@ process.hcalMonitor.debug = 0
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-process.hcalMonitor.dump2database = False
+
 
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
@@ -101,12 +98,12 @@ process.hcalMonitor.DetDiagLaserMonitor    = True
 process.hcalMonitor.DataFormatMonitor   = False
 process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = False
-process.hcalMonitor.RecHitMonitor       = False
+process.hcalMonitor.RecHitMonitor       = True
 process.hcalMonitor.TrigPrimMonitor     = False
 process.hcalMonitor.DeadCellMonitor     = False
 process.hcalMonitor.HotCellMonitor      = False
 process.hcalMonitor.BeamMonitor         = False
-process.hcalMonitor.PedestalMonitor     = False
+process.hcalMonitor.ReferencePedestalMonitor     = False
 process.hcalMonitor.DetDiagNoiseMonitor = False
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
@@ -118,8 +115,7 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.hcalMonitor.HotCellMonitor_makeDiagnosticPlots  = False
-process.hcalMonitor.HotCellMonitor_test_neighbor        = False
+process.hcalMonitor.RecHitMonitor_AllowedCalibTypes = [1] # only pedestal events allowed for rechit monitor
 
 #-----------------------------
 # Hcal DQM Client
@@ -147,7 +143,11 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
-process.p = cms.Path(process.hcalDigis*process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
+process.p = cms.Path(process.hcalDigis
+                     *process.horeco
+                     *process.hfreco
+                     *process.hbhereco
+                     *process.hcalMonitor*process.hcalClient*process.dqmEnv*process.dqmSaver)
 
 
 #-----------------------------
