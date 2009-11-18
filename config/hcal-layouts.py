@@ -2,17 +2,15 @@ def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
 hcallayout(dqmitems, "01 HCAL Summaries",
            [{ 'path':"Hcal/EventInfo/reportSummaryMap",
-             'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green"}]
+             'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green.  Values should all be above 98%."}]
            )
 
 hcallayout(dqmitems, "HCAL Data Format",
            [{ 'path': "Hcal/DataFormatMonitor/ HardwareWatchCells",
-              'description': "A Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all d\epths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistogra\ms>HcalDQMHistograms</a>" }]
+              'description': "A Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
 
 hcallayout(dqmitems, "HCAL Trigger Primitives",
-           [{ 'path': "Hcal/TrigPrimMonitor/Summary",
-              'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
            [{ 'path': "Hcal/TrigPrimMonitor/Summary for ZS run",
               'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
            )
