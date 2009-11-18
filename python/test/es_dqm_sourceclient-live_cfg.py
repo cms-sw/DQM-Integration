@@ -18,6 +18,8 @@ process.ecalPreshowerRecHit.ESGain = cms.int32(2)
 process.ecalPreshowerRecHit.ESBaseline = cms.int32(0)
 process.ecalPreshowerRecHit.ESMIPADC = cms.double(50)
 
+DQMStore.referenceFileName = '/dqmdata/dqm/reference/es_reference.root'
+
 process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.preScaler.prescaleFactor = 1
 
