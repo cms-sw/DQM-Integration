@@ -10,6 +10,7 @@ top = "RPC TOP Summary Histogram <br><font color=green><b>GREEN</b> - Good Chamb
 asymmetry = "RPC AsymmetryLeftRight ";
 numberofdigi = "RPC NumberOfDigi ";
 noisy = "RPC NoisyStrips ";
+bx = "RPC BX distribution "
 
 
 ################### Links to TOP Summary Histograms #################################
@@ -22,6 +23,14 @@ rpclayout(dqmitems, "RPC_Summary/Barrel/Barrel_TOP_Summary",
            { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel-2", 'description': top + rpclink  }]
           )          
 
+rpclayout(dqmitems, "RPC_Summary/Barrel/Barrel_BX",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_2", 'description': bx + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_1", 'description': bx + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_0", 'description': bx + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_-1", 'description': bx + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_-2", 'description': bx + rpclink  }]
+          )
 
 rpclayout(dqmitems, "RPC_Summary/Barrel/TOP_Summary_Distribution",
           [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel2", 'description': top + rpclink },
@@ -94,6 +103,16 @@ rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_TOP_Summary",
            { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-2", 'description': top + rpclink  },
            { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-1", 'description': top + rpclink  }]
           )          
+
+rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_BX",
+          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_3", 'description': bx + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_2", 'description': bx + rpclink },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_1", 'description': bx + rpclink  }],
+          
+          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-3", 'description': bx + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-2", 'description': bx + rpclink  },
+           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-1", 'description': bx + rpclink  }]
+          )
 
 rpclayout(dqmitems, "RPC_Summary/EndCap/EndCap_ClusterSize",
           [{ 'path': "RPC/RecHits/SummaryHistograms/ClusterSizeIn1Bin_Ring_vs_Segment_Disk3", 'description': onebin + rpclink },
