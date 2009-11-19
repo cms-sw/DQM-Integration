@@ -128,6 +128,8 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLT', '^HLT/',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
                  'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi',
-		 'HLT/HLTScalers_SM/hltScalers',
-		 'HLT/JetMET/All/JetMET_rate_All'
+		 'HLT/HLTMonElectron/Summary/HLTRate_wrtL1',
+		 'HLT/JetMET/All/JetMET_rate_All',
+		 'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
+		 'HLT/HLTScalers_SM/hltScalers'
 		 )
