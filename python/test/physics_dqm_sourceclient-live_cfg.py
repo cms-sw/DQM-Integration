@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient_live.py,v 1.1 2009/11/17 09:39:42 ameyer Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.1 2009/11/17 09:40:25 ameyer Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -39,23 +39,9 @@ process.p = cms.Path(
 #    process.dump *
     process.myRecoSeq2  *
 #    process.dump *
-    process.QcdLowPtDQM +
+    process.QcdLowPtDQM *
+    process.dqmEnv *
     process.dqmSaver
 )
-
-#process.DQM.collectorHost = ''
-
-#process.DQMStore.verbose = 0
-#process.DQM.collectorHost = "srv-c2d05-12"
-#process.DQM.collectorPort = 9190
-#process.DQMStore.referenceFileName = "DQM_L1T_R000002467.root"
-#process.DQMStore.referenceFileName = "/nfshome0/wteo/test/rctL1tDqm.root"
-#process.DQMStore.verbose = 0
-#process.dqmSaver.convention = 'Online'
-#process.dqmSaver.dirName = '.'
-#process.dqmSaver.producer = 'DQM'
-#process.dqmEnv.subSystemFolder = 'L1T'
-#process.dqmSaver.saveByRun = 1
-#process.dqmSaver.saveAtJobEnd = True
 
 
