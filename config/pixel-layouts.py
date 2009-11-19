@@ -11,15 +11,7 @@ pixellayout(dqmitems, "00 - Pixel_Error_Summary",
      'description': "Mean number of errors per endcap module - should be empty!",
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "01 - Pixel_Digi_Occupancy",
-  [{ 'path': "Pixel/Endcap/endcapOccupancyMap",
-     'description': "Digi occupancy map for all barrel modules combined",
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Barrel/barrelOccupancyMap",
-     'description': "Digi occupancy map for all endcap modules combined",
-     'draw': { 'withref': "no" }}]
-  )
-pixellayout(dqmitems, "02 - Pixel_Noise_Summary",
+pixellayout(dqmitems, "01 - Pixel_Noise_Summary",
   [{ 'path': "Pixel/Barrel/SUMDIG_ndigisFREQ_Barrel",
      'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
      'draw': { 'withref': "yes" }},
@@ -27,7 +19,7 @@ pixellayout(dqmitems, "02 - Pixel_Noise_Summary",
      'description': "Total number of events with at least one digi per event per endcap module - spikes show noisy modules or pixels!",
      'draw': { 'withref': "yes" }}]
   )
-pixellayout(dqmitems, "03 - Pixel_Charge_Summary",
+pixellayout(dqmitems, "02 - Pixel_Charge_Summary",
   [{ 'path': "Pixel/Barrel/ALLMODS_adcCOMB_Barrel",
      'description': "Distribution of raw charge for all digis recorded in the Barrel modules - dominant peak should be around 90-100 ADC",
      'draw': { 'withref': "yes" }},
@@ -41,7 +33,7 @@ pixellayout(dqmitems, "03 - Pixel_Charge_Summary",
      'description': "Distribution of gain corrected cluster charge for all clusters in the Endcaps - dominant peak should be around 21 ke-",
      'draw': { 'withref': "yes" }}]
   )     
-pixellayout(dqmitems, "04 - Pixel_Digi_Barrel_Summary",
+pixellayout(dqmitems, "03 - Pixel_Digi_Barrel_Summary",
   [{ 'path': "Pixel/Barrel/SUMDIG_adc_Barrel",
      'description': "Mean digi charge in ADC counts per barrel module",
      'draw': { 'withref': "yes" }}],
@@ -52,7 +44,7 @@ pixellayout(dqmitems, "04 - Pixel_Digi_Barrel_Summary",
      'description': "Total number of events with at least one digi per event per barrel module",
      'draw': { 'withref': "yes" }}]
   )     
-pixellayout(dqmitems, "05 - Pixel_Digi_Endcap_Summary",
+pixellayout(dqmitems, "04 - Pixel_Digi_Endcap_Summary",
   [{ 'path': "Pixel/Endcap/SUMDIG_adc_Endcap",
      'description': "Mean digi charge in ADC counts per endcap module",
      'draw': { 'withref': "yes" }}],
@@ -63,7 +55,7 @@ pixellayout(dqmitems, "05 - Pixel_Digi_Endcap_Summary",
      'description': "Total number of events with at least one digi per event per endcap module",
      'draw': { 'withref': "yes" }}]
   )     
-pixellayout(dqmitems, "06 - Pixel_Cluster_Barrel_Summary",
+pixellayout(dqmitems, "05 - Pixel_Cluster_Barrel_Summary",
   [{ 'path': "Pixel/Barrel/SUMCLU_charge_Barrel",
      'description': "Mean cluster charge in kilo electrons per barrel module",
      'draw': { 'withref': "yes" }}],
@@ -74,7 +66,7 @@ pixellayout(dqmitems, "06 - Pixel_Cluster_Barrel_Summary",
      'description': "Mean cluster size in number of pixels per barrel module",
      'draw': { 'withref': "yes" }}]
   )     
-pixellayout(dqmitems, "07 - Pixel_Cluster_Endcap_Summary",
+pixellayout(dqmitems, "06 - Pixel_Cluster_Endcap_Summary",
   [{ 'path': "Pixel/Endcap/SUMCLU_charge_Endcap",
      'description': "Mean cluster charge in kilo electrons per endcap module",
      'draw': { 'withref': "yes" }}],
@@ -85,36 +77,11 @@ pixellayout(dqmitems, "07 - Pixel_Cluster_Endcap_Summary",
      'description': "Mean cluster size in number of pixels per barrel module",
      'draw': { 'withref': "yes" }}]
   )
-pixellayout(dqmitems, "08 - Pixel_NoisyPixels_Summary",
+pixellayout(dqmitems, "07 - Pixel_NoisyPixels_Summary",
   [{ 'path': "Pixel/Barrel/SUMDIG_ndigisFREQ_Barrel",
      'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
      'draw': { 'withref': "yes" }}],
   [{ 'path': "Pixel/Endcap/SUMDIG_ndigisFREQ_Endcap",
      'description': "Total number of events with at least one digi per event per endcap module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }}]
-  )
-pixellayout(dqmitems, "09 - Pixel_StaticTrackerMaps_Barrel",
-  [{ 'path': "Pixel/Barrel/TRKMAP_charge_Layer_1",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }}],
-  [{ 'path': "Pixel/Barrel/TRKMAP_charge_Layer_2",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }}],
-  [{ 'path': "Pixel/Barrel/TRKMAP_charge_Layer_3",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }}]
-  )
-pixellayout(dqmitems, "10 - Pixel_StaticTrackerMaps_Endcap",
-  [{ 'path': "Pixel/Endcap/TRKMAP_charge_Disc_1_M",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }},
-  { 'path': "Pixel/Endcap/TRKMAP_charge_Disc_2_M",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }}],
-  [{ 'path': "Pixel/Endcap/TRKMAP_charge_Disc_1_P",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "yes" }},
-  { 'path': "Pixel/Endcap/TRKMAP_charge_Disc_2_P",
-     'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
      'draw': { 'withref': "yes" }}]
   )
