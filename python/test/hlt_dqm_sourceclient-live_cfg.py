@@ -5,6 +5,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 process.load("DQMServices.Core.DQM_cfg")
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/hlt_reference.root"
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
