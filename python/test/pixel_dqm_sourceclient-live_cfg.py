@@ -26,7 +26,7 @@ process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-#process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
