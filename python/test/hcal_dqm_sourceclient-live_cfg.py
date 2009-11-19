@@ -159,6 +159,8 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
+process.hcalMonitor.BeamMonitor_lumiqualitydir="/home/dqmprolocal/lumi/"
+
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -175,6 +177,7 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
+process.hcalClient.databasedir = '/home/dqmprolocal/hcal/'
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
