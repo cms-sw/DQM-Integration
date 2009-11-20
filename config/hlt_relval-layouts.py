@@ -307,8 +307,16 @@ bphysPlotNumber=1
 def trigvalbphys(items, title, histogram, description):
   global bphysPlotNumber
   items["HLT/HeavyFlavor/HLTValidationReport/" + '%02d) '%bphysPlotNumber + title] = DQMItem(layout=[[{'path':"HLT/HeavyFlavor/HLT/"+histogram, 'description':description}]])
-  items["HLT/HeavyFlavor/HLT2ValidationReport/" + '%02d) '%bphysPlotNumber + title] = DQMItem(layout=[[{'path':"HLT/HeavyFlavor/HLT2/"+histogram, 'description':description}]])
+#  items["HLT/HeavyFlavor/HLT2ValidationReport/" + '%02d) '%bphysPlotNumber + title] = DQMItem(layout=[[{'path':"HLT/HeavyFlavor/HLT2/"+histogram, 'description':description}]])
   bphysPlotNumber+=1
+
+# SUMMARY PLOT
+
+trigvalbphys(dqmitems,
+  "Trigger Efficiencies in Di-global Events",
+  "effPathGlob_recoPt",
+  "Trigger path efficiencies in di-global muon events where the muons are associated to the generated muons as a function of di-muon pT"
+)
 
 # SINGLE MUON
 
