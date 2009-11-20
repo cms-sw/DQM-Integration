@@ -229,7 +229,7 @@ eeecalshifterlayout(dqmitems, "05 Timing/01 Timing Mean",
 eeecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE - timing rms 1D summary", 'description': "Timing RMS of all the channels in EE -. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing rms 1D summary", 'description': "Timing RMS of all the channels in EE +. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETMT timing mean", 'description': "Timing RMS of all the channels in each DCC of EE. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EETMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EE. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra EE -",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT Et spectrum Real Digis EE -", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -270,8 +270,8 @@ eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/06 Timing Muon Tri
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE +", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/07 Trigger Quality",
-  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - emulator error quality summary", 'description': "Each L1 trigger primitive is compared with L1 emulator. Comparison includes: transverse energy. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + emulator error quality summary", 'description': "Each L1 trigger primitive is compared with L1 emulator. Comparison includes: transverse energy. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE - emulator error quality summary", 'description': "Result of the comparison of Et and Fine Grain Veto between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EETTT EE + emulator error quality summary", 'description': "Result of the comparison of Et and Fine Grain Veto between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/08 TTF mismatch",
   [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT TT flag mismatch EE -", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -467,6 +467,23 @@ eeecalshifterlayout(dqmitems, "07 Calibration/03 TestPulse/05 PNQuality Gain01",
 eeecalshifterlayout(dqmitems, "07 Calibration/03 TestPulse/05 PNQuality Gain16",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT PN test pulse quality G16 summary", 'description': "PN diodes quality summary of test pulse events for Gain 16. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. White for DCC without MEM boxes attached (EE+/-1,4,5,6,9). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
+
+eeecalshifterlayout(dqmitems, "08 Trend/00 Crystal Digis Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs5Minutes", 'description': "Average number of endcap crystal digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs1Hour", 'description': "Average number of endcap crystal digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+   
+eeecalshifterlayout(dqmitems, "08 Trend/01 Hits Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of endcap reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of endcap reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/02 EE - FEDs Size ",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs5Minutes", 'description': "Average EE - FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs1Hour", 'description': "Average EE - FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/02 EE + FEDs Size ",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs5Minutes", 'description': "Average EE + FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs1Hour", 'description': "Average EE + FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 
 eelayout(dqmitems, "01 By Supermodule/EE-01/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],

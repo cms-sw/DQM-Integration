@@ -161,7 +161,7 @@ ebecalshifterlayout(dqmitems, "05 Timing/01 Timing Mean",
 
 ebecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Timing RMS of all the channels in EB. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Timing RMS of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et spectrum Real Digis", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -190,7 +190,7 @@ ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/06 Timing Muon Tri
   [None])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/07 Trigger Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary", 'description': "Result of the comparison of Et between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary", 'description': "Result of the comparison of Et and Fine Grain Veto between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/08 TTF mismatch",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT TT flag mismatch", 'description': "Occupancy of trigger primitives of high or medium interest which have not been fully readout. Expected empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -328,6 +328,39 @@ ebecalshifterlayout(dqmitems, "07 Calibration/02 TestPulse/05 PNQuality Gain01",
 ebecalshifterlayout(dqmitems, "07 Calibration/02 TestPulse/05 PNQuality Gain16",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTPT PN test pulse quality G16 summary", 'description': "PN diodes quality summary of test pulse events for Gain 16. Expect green where the test pulse sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
+
+ebecalshifterlayout(dqmitems, "08 Trend/00 Crystal Digis Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBDigiVs5Minutes", 'description': "Average number of barrel crystal digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBDigiVs1Hour", 'description': "Average number of barrel crystal digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+   
+ebecalshifterlayout(dqmitems, "08 Trend/01 PN Diodes Digis Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs5Minutes", 'description': "Average number of barrel PN diodes digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs1Hour", 'description': "Average number of barrel PN diodes digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/02 Hits Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of barrel reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of barrel reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/03 Basic Clusters Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/04 Super Clusters Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/05 Integrity Errors Number",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfIntegrityErrorVs5Minutes", 'description': "Average number of integrity errors (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfIntegrityErrorVs1Hour", 'description': "Average number of integrity errors (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/06 Barrel FEDs Size ",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs5Minutes", 'description': "Average barrel FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs1Hour", 'description': "Average barrel FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/06 Selective Readout Flags Size ",
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs5Minutes", 'description': "Average number of Selective Readout Flags. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs1Hour", 'description': "Average number of Selective Readout Flags. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 
 eblayout(dqmitems, "01 By Supermodule/EB-01/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-01", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
