@@ -9,9 +9,11 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
-
 process.load("DQM.Integration.test.environment_cfi")
 ##process.dqmEnv.subSystemFolder    = "HLX"
+process.dqmSaver.runIsComplete = True
+process.dqmSaver.saveByTime = 1
+
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
@@ -29,6 +31,6 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
 
 ##process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
 process.p = cms.Path(process.hlxdqmsource+process.hlxQualityTester)
-process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
+process.hlxdqmsource.outputDir = dqmSaver.dirName
 
 
