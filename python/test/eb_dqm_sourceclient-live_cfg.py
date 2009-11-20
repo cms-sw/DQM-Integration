@@ -169,7 +169,6 @@ if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
     dirName = cms.untracked.string('.'),
     convention = cms.untracked.string('Online'),
     referenceHandling = cms.untracked.string('qtests')
-    #referenceHandling = cms.untracked.string('all')
   )
 
   process.dqmEnv = cms.EDFilter("DQMEventInfo",
