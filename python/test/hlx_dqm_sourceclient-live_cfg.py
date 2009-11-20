@@ -31,6 +31,6 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
 
 ##process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
 process.p = cms.Path(process.hlxdqmsource+process.hlxQualityTester)
-process.hlxdqmsource.outputDir = dqmSaver.dirName
+process.hlxdqmsource.outputDir = process.dqmSaver.dirName
 
 
