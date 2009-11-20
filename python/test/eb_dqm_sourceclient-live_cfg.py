@@ -270,7 +270,7 @@ process.maxEvents = cms.untracked.PSet(
 
 if (localDAQ == 1) | (globalDAQ == 1) :
   process.source = cms.Source("NewEventStreamFileReader",
-    fileNames = cms.untracked.vstring('file:/nfshome0/ecalpro/DQM/ec_mon3-globalDAQ/data/daq-data/Data.00121006.0001.A.storageManager.00.0000.dat')
+    fileNames = cms.untracked.vstring('file:file.dat')
   )
 
 if (liveECAL == 1) :
