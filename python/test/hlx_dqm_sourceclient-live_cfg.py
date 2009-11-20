@@ -13,6 +13,7 @@ process.load("DQM.Integration.test.environment_cfi")
 ##process.dqmEnv.subSystemFolder    = "HLX"
 process.dqmSaver.runIsComplete = True
 process.dqmSaver.saveByTime = 1
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hlx_reference.root'
 
 
 process.maxEvents = cms.untracked.PSet(
