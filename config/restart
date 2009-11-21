@@ -1,0 +1,69 @@
+#!/bin/zsh
+
+# DQM restart command. Intended to run at server boot, for example
+# via '@reboot /home/dqm/config/restart' crontab entry, and after
+# a server upgrade. If server processes are already running, they
+# are first stopped.
+
+# Set parameters. Use the latest installed server by default.
+DQMV=${1:-latest}
+ARCH=slc4_ia32_gcc345
+HOST=$(hostname)
+
+case $HOST in
+  srv-* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
+  vocms* ) DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
+esac
+
+if [ X"$DQMV" = Xlatest ]; then
+  DQMV=$(ls -tr $DQM_SW/$ARCH/cms/dqmgui | tail -1)
+fi
+
+# Source server environment. Move to $DQM_DIR so cwd is safe.
+cd $DQM_DIR
+. $DQM_SW/cmsset_default.sh
+. $DQM_SW/$ARCH/cms/dqmgui/$DQMV/etc/profile.d/env.sh
+
+# Verify invocation came from documented (copy-and-paste) instructions.
+CHECK=$(echo -n "$2" | tr -c '[A-Za-z]' '_' | tr '[:upper:]' '[:lower:]')
+if { ps -oargs= $PPID | grep -q -e cron; } || \
+   [ X"$CHECK" = Xi_did_read_documentation ]; then :; else
+  echo "$0: cannot complete request, please check documentation."
+  exit 1
+fi
+
+# Stop any existing file handling daemons.
+for pid in $(pgrep -f 'vis.*Daemon'); do
+  psline=$(ps -o pid=,bsdstart=,args= $pid | perl -n -e 'print join(" ", (split)[0..4])')
+  echo -n "Stopping $pid ($psline):"
+  for sig in INT INT TERM KILL; do
+    echo -n " SIG$sig"
+    kill -$sig $pid
+    sleep 1
+    [ $(ps h $pid | wc -l) = 0 ] && break
+  done
+  echo
+done
+
+# Restart DQM GUI servers.
+case $HOST in
+  srv*-19)
+    $DQM_DIR/config/startOnlineAgents
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+    visDQMControl restart all from $DQM_DIR/config/server-conf-online.py ;;
+  srv*-18)
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+    visDQMControl restart all from $DQM_DIR/config/server-conf-online-playback.py ;;
+  srv*-16)
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+    visDQMControl restart all from $DQM_DIR/config/server-conf-online-test.py ;;
+  srv*-17)
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+    visDQMControl restart all from $DQM_DIR/config/server-conf-gui-test.py ;;
+  vocms34) 
+    $DQM_DIR/config/startOfflineAgents
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+    for svc in "" -caf -dev; do
+      visDQMControl restart all from $DQM_DIR/config/server-conf-offline$svc.py
+    done ;;
+esac
