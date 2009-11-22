@@ -18,7 +18,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackPointing'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
 # DQM Environment
