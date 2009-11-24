@@ -144,7 +144,6 @@ setHcalTaskValues(process.hcalMonitor)
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
 process.hcalMonitor.BeamMonitor_lumiqualitydir="/home/dqmprolocal/lumi/"
-
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -163,6 +162,9 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 process.hcalClient.SummaryClient        = True
 #process.hcalClient.databasedir = '/home/dqmprolocal/hcal/'
 process.hcalClient.databasedir = '' # suppress channel status text output for now
+# Set larger limits at startup (these are used in calculating the reportSummary)
+process.hcalClient.HotCellClient_minErrorFlag=0.25
+process.hcalClient.DeadCellClient_minErrorFlag=0.25
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
