@@ -132,25 +132,49 @@ ebecalshifterlayout(dqmitems, "03 Occupancy/08 PN Digis",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "04 Energy/00 BasicClusters Summary",
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "Calibrated energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number", 'description': "Multiplicity of reconstructed hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   None])
+ebecalshifterlayout(dqmitems, "04 Energy/00 Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy", 'description': "Calibrated energy (GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal energy", 'description': "Calibrated energy (GeV) of the crystals seeding a cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "04 Energy/01 BasicClusters Energy",
+ebecalshifterlayout(dqmitems, "04 Energy/01 Basic Clusters",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number", 'description': "Multiplicity of reconstructed hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters Multiplicity",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number map", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC number projection eta", 'description': "Eta projection of average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT BC number projection phi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/03 Basic Clusters Energy",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "Average energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection eta", 'description': "Eta projection of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection phi", 'description': "Phi projection of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "04 Energy/02 SuperClusters",
+ebecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Transverse Energy",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC ET map", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC ET projection eta", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT BC ET projection phi", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC size map", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC size projection eta", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size projection phi", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/06 SuperClusters 1D",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC number", 'description': "Multiplicity of reconstructed hybrid superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT SC size (crystal)", 'description': "Numbers of crystals contained in hybrid superclusters.  Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing", 'description': "Peak position of the pulse shape of the seed of the superclusters (in clock units = 25ns). Distribution should peak at 6 clock units. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
   None])
 
-ebecalshifterlayout(dqmitems, "04 Energy/03 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "04 Energy/07 Peaks",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/08 Cosmic Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [None])
 
 ebecalshifterlayout(dqmitems, "05 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of the crystal reconstructed hits with amplitude above 12 ADC counts. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -162,6 +186,11 @@ ebecalshifterlayout(dqmitems, "05 Timing/01 Timing Mean",
 ebecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Timing RMS of all the channels in EB. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "05 Timing/03 Cluster Seeds Timing",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing map", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing projection eta", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time vs seed eta. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing projection phi", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time vs seed phi. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et spectrum Real Digis", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -18225,7 +18254,13 @@ eblayout(dqmitems, "00 By Task/11 Cluster/08 ClusterShapes",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s1s9", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s9s25", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/11 Cluster/09 DiClusterMass",
+eblayout(dqmitems, "00 By Task/11 Cluster/09 Full Combinatorics (Selected)",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0 sel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi sel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0 sel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high sel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/11 Cluster/10 Best Pair Combinatorics (No sel)",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
