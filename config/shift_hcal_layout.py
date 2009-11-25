@@ -44,12 +44,12 @@ shifthcallayout(dqmitems, "HCAL Lumi Problems",
 
 shifthcallayout(dqmitems, "HCAL RecHit Energies",
                 [{'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HB_energy_1D",
-                  'description':"Average energy/hit for each of the 2592 channels in HB"}],
-                
-                [{'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HE_energy_1D",
+                  'description':"Average energy/hit for each of the 2592 channels in HB"},
+                 
+                 {'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HE_energy_1D",
                   'description':"Average energy/hit for each of the 2592 channels in HE"}],
                 [{'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HF_energy_1D",
-                  'description':"Average energy/hit for each of the 1728 channels in HF"}],
-                [{'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HO_energy_1D",
-                  'description':"Average energy/hit for each of the 2160 channels in HO.  (You may see fewer entries than 2160 because of ~30 known dead cells in HO.)"}],
+                  'description':"Average energy/hit for each of the 1728 channels in HF"},
+                 {'path': "Hcal/RecHitMonitor_Hcal/rechit_1D_plots/HO_energy_1D",
+                  'description':"Average energy/hit for each of the 2160 channels in HO.  (You may see fewer entries than 2160 because of ~30 known dead cells in HO.)"}]
                 )
