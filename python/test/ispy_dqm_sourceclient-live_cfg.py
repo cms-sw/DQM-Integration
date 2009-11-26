@@ -30,7 +30,7 @@ process.add_(
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9000),
+    outputPort = cms.untracked.uint32(9003),
     outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
