@@ -224,9 +224,18 @@ trigvalbphys(dqmitems,"Quakonium efficiency",
 
 ###---- TOP selection goes here: ----
 def trigvaltop(i, p, *rows): i["00 Shift/HLT/Top/" + p] = DQMItem(layout=rows)
-trigvaltop(dqmitems,"Efficiency IsoEle18 vs Eta",
-  	[{'path': "HLT/Top/EffEta_IsoEle18", 'description': "Trigger efficiency for IsoEle18 versus eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideTopHLTOfflinePerformance\">here</a>."}])
+trigvaltop(dqmitems,"HLT_Mu9 eff vs Eta",
+  	[{'path': "HLT/Top/Semileptonic_muon/EffVsEta_HLT_Mu9", 'description': "Trigger efficiency for HLT_Mu9 versus muon eta . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationTop\">here</a>."}])
 
+trigvaltop(dqmitems,"HLT_Mu9 eff vs Pt",
+  	[{'path': "HLT/Top/Semileptonic_muon/EffVsPt_HLT_Mu9", 'description': "Trigger efficiency for HLT_Mu9 versus muon pt. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationTop\">here</a>."}])
+
+
+trigvaltop(dqmitems,"HLT_Ele15SWLooseTrkIso eff vs Eta",
+  	[{'path': "HLT/Top/Semileptonic_electron/EffVsEta_HLT_Ele15_SW_LooseTrackIso_L1R", 'description': "Trigger efficiency for HLT_Ele15_SW_LooseTrackIso_L1R versus electron eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationTop\">here</a>."}])
+
+trigvaltop(dqmitems,"HLT_Ele15SWLooseTrkIso eff vs Pt",
+  	[{'path': "HLT/Top/Semileptonic_electron/EffVsPt_HLT_Ele15_SW_LooseTrackIso_L1R", 'description': "Trigger efficiency for HLT_Ele15_SW_LooseTrackIso_L1R versus electron pt. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationTop\">here</a>."}])
 
 
 ###---- SUSYEXO selection goes here: ----
@@ -238,7 +247,24 @@ trigvalsusybsm(dqmitems,"HltBits",
 
 ###---- HIGGS selection goes here: ----
 def trigvalhiggs(i, p, *rows): i["00 Shift/HLT/Higgs/" + p] = DQMItem(layout=rows)
-#trigvalhiggs(dqmitems,"", [{'path': "HLT/", 'description': ". For more information please click <a href=\"\">here</a>."}])
+
+trigvalhiggs(dqmitems,"HLTMu9 eff vs eta ",
+        [{'path': "HLT/Higgs/HWW/EffVsEta_HLT_Mu9_EM", 'description': "Trigger efficiency for HLT_Mu9  vs muon eta .For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>."}])
+
+trigvalhiggs(dqmitems,"HLTMu9 eff vs pt ",
+        [{'path': "HLT/Higgs/HWW/EffVsPt_HLT_Mu9_EM", 'description': "Trigger efficiency for HLT_Mu9 vs muon pt .For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>."}])
+
+trigvalhiggs(dqmitems,"HLTEle10LWL1R eff vs pt ",
+        [{'path': "HLT/Higgs/HWW/EffVsPt_HLT_Ele10_LW_L1R_EM", 'description': "Trigger efficiency for HLT_Ele10_LW_L1R  vs electron pt .For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>."}])
+
+trigvalhiggs(dqmitems,"HLTEle10LWL1R eff vs eta",
+        [{'path': "HLT/Higgs/HWW/EffVsEta_HLT_Ele10_LW_L1R_EM", 'description': "Trigger efficiency for HLT_Ele10_LW_L1R  vs electron eta .For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>."}])
+
+trigvalhiggs(dqmitems,"HLTDoublePhoton10L1R eff vs eta",
+        [{'path': "HLT/Higgs/Hgg/EffVsEta_HLT_DoublePhoton10_L1R", 'description': "Trigger efficiency for HLT_DoublePhoton10_L1R vs photon eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>. "}])
+trigvalhiggs(dqmitems,"HLTDoublePhoton10L1R eff vs pt",
+        [{'path': "HLT/Higgs/Hgg/EffVsPt_HLT_DoublePhoton10_L1R", 'description': "Trigger efficiency for HLT_DoublePhoton10_L1R vs photon pt .For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationHiggs\">here</a>."}])
+
 
 
 ###---- QCD selection goes here: ----
