@@ -298,7 +298,47 @@ for lumi in ["Default", "8E29","1E31"]:
 def trigvalalca(i, p, *rows): i["HLT/AlCaEcalPi0/Preselection" + p] = DQMItem(layout=rows)
 
 ###---- TOP selection goes here: ----
-def trigvaltop(i, p, *rows): i["HLT/Top/Preselection" + p] = DQMItem(layout=rows)
+def trigvaltopmuon(i, p, *rows): i["HLT/Top/TopValidationReport/Semileptonic_muon/" + p] = DQMItem(layout=rows)
+
+trigvaltopmuon(dqmitems,"HLTMu9 eff vs eta",
+        [{'path': "HLT/Top/Semileptonic_muon/EffVsEta_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9 versus eta of the highest pt reconstructed muon with pt>20, eta<2.1 "}])
+trigvaltopmuon(dqmitems,"HLTMu9 eff vs pt",
+        [{'path': "HLT/Top/Semileptonic_muon/EffVsPt_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9 versus pt of the highest pt reconstructed muon with pt>20, eta<2.1"}])
+
+trigvaltopmuon(dqmitems,"HLTMu15 eff vs eta",
+        [{'path': "HLT/Top/Semileptonic_muon/EffVsEta_HLT_Mu15", 'description': "Trigger efficiency for HLTMu15 versus eta of the highest pt reconstructed muon with pt>20, eta<2.1"}])
+trigvaltopmuon(dqmitems,"HLTMu15 eff vs pt",
+        [{'path': "HLT/Top/Semileptonic_muon/EffVsPt_HLT_Mu15", 'description': "Trigger efficiency for HLTMu15 versus pt of the highest pt reconstructed muon with pt>20, eta<2.1"}])
+
+trigvaltopmuon(dqmitems,"Muon trigger efficiencies wrt gen",
+        [{'path': "HLT/Top/Semileptonic_muon/Efficiencies_MuonTriggers_gen", 'description': "Muon trigger efficiencies wrt mc acceptance (1 muon from W decay, pt>10, eta<2.4)"}])
+
+trigvaltopmuon(dqmitems,"Muon trigger efficiencies wrt gen+reco",
+        [{'path': "HLT/Top/Semileptonic_muon/Efficiencies_MuonTriggers", 'description': "Muon trigger efficiencies wrt mc acceptance+offline  (acc: 1 muon from W, pt>10, eta<2.4; off: at least 1 rec muon, pt>20, eta<2.1 and 2 jets Et_raw>13, eta<2.4)"}])
+
+
+def trigvaltopelectron(i, p, *rows): i["HLT/Top/TopValidationReport/Semileptonic_electron/" + p] = DQMItem(layout=rows)
+
+trigvaltopelectron(dqmitems,"HLTEle15SWL1R eff vs eta",
+        [{'path': "HLT/Top/Semileptonic_electron/EffVsEta_HLT_Ele15_SW_L1R", 'description': "Trigger efficiency for HLT_Ele15_SW_L1R versus eta of the highest pt reconstructed electron with pt>20, eta<2.4"}])
+
+trigvaltopelectron(dqmitems,"HLTEle15SWL1R eff vs pt",
+        [{'path': "HLT/Top/Semileptonic_electron/EffVsPt_HLT_Ele15_SW_L1R", 'description': "Trigger efficiency for HLT_Ele15_SW_L1R versus pt of the highest pt reconstructed electron with pt>20, eta<2.4"}])
+
+
+trigvaltopelectron(dqmitems,"HLTEle15SWLooseTrackIsoL1R eff vs eta",
+        [{'path': "HLT/Top/Semileptonic_electron/EffVsEta_HLT_Ele15_SW_LooseTrackIso_L1R", 'description': "Trigger efficiency for HLT_Ele15_SW_LooseTrackIso_L1R versus eta of the highest pt reconstructed electron with pt>20, eta<2.4"}])
+
+trigvaltopelectron(dqmitems,"HLTEle15SWLooseTrackIsoL1R eff vs pt",
+        [{'path': "HLT/Top/Semileptonic_electron/EffVsPt_HLT_Ele15_SW_LooseTrackIso_L1R", 'description': "Trigger efficiency for HLTEle15_SW_LooseTrackIso_L1R versus pt of the highest pt reconstructed electron with pt>20, eta<2.4"}])
+
+trigvaltopelectron(dqmitems,"Electron trigger efficiencies wrt gen",
+        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_ElectronTriggers_gen", 'description': "Electron trigger efficiencies wrt mc acceptance  (1 electron from W decay, pt>10, eta<2.4)"}])
+
+trigvaltopelectron(dqmitems,"Electron trigger efficiencies wrt gen+reco",
+        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_ElectronTriggers", 'description': "Electron trigger efficiencies wrt mc acceptance+offline  (acc: 1 electron from W, pt>10, eta<2.4; off: at least 1 rec electron, pt>20, eta<2.4 and 2 jets Et_raw>13, eta<2.4)"}])
+
+
 
 
 ###---- HEAVYFLAVOR selection goes here: ----
@@ -658,6 +698,111 @@ trigvalbphys(dqmitems,
 def trigvalsusybsm(i, p, *rows): i["HLT/SusyExo/Preselection" + p] = DQMItem(layout=rows)
 
 ###---- HIGGS selection goes here: ----
-#def trigvalhiggs(i, p, *rows): i["HLT//Preselection" + p] = DQMItem(layout=rows)
+
+def trigvalhiggsHWW(i, p, *rows): i["HLT/Higgs/HiggsValidationReport/HWW/" + p] = DQMItem(layout=rows)
+
+trigvalhiggsHWW(dqmitems,"mumu selection: HLTMu9 eff vs eta ",
+        [{'path': "HLT/Higgs/HWW/EffVsEta_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9 in the dimuon channel vs eta of the highest pt reconstructed muon ( Event selection: at least 2 globalMuons pt>10,20, eta<2.4, opp charge)"}])
+
+trigvalhiggsHWW(dqmitems,"mumu selection : HLTMu9 eff vs pt",
+        [{'path': "HLT/Higgs/HWW/EffVsPt_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9 in the dimuon channel vs Pt of the highest pt reconstructed muon (Event selection: at least 2 globalMuons pt>10,20, eta<2.4, opp charge)"}])
+
+trigvalhiggsHWW(dqmitems,"ee selection :HLTEle10LWL1R eff vs eta ",
+        [{'path': "HLT/Higgs/HWW/EffVsEta_HLT_Ele10_LW_L1R", 'description':" Trigger efficiency for  HLTEle10LWL1R in the ee channel vs eta of the highest pt reco electron (Event selection: at least 2 electrons pt>10,20,eta<2.4,opp charge,H/E<0.05,0.6< E/p<2.5)"}])
+
+trigvalhiggsHWW(dqmitems,"ee selection: EffVsPt HLT_Ele10LWL1R ",
+        [{'path': "HLT/Higgs/HWW/EffVsPt_HLT_Ele10_LW_L1R", 'description': "Trigger efficiency for HLTEle10_LW_L1R in the ee channel vs Pt of the highest pt reco electron (Event selection: at least 2 electrons pt>10,20, eta<2.4,opp charge, H/E<0.05,0.6< E/p<2.5) "}])
+
+trigvalhiggsHWW(dqmitems,"emu selection: EffVsEta HLTMu9 ",
+        [{'path': "HLT/Higgs/HWW/EffVsEta_HLT_Mu9_EM", 'description': "Trigger efficiency for HLTMu9 in the emu channel vs muon eta ( Event selection applied: at least 2 leptons pt>10,20,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05,0.6< E/p<2.5)"}])
+
+trigvalhiggsHWW(dqmitems,"emu selection: EffVsPt HLTEle10LWL1R ",
+        [{'path': "HLT/Higgs/HWW/EffVsPt_HLT_Ele10_LW_L1R_EM", 'description': "Trigger efficiency for HLTEle10_LW_L1R in the emu channel vs electron eta ( Event selection applied: at least 2 leptons pt>10,20,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05,0.6< E/p<2.5)"}])
+
+trigvalhiggsHWW(dqmitems,"mumu selection : global Efficiencies ",
+        [{'path': "HLT/Higgs/HWW/Efficiencies_MuonTriggers", 'description': "Muon Trigger efficiencies in the dimuon channel wrt the events passing the selection (at least 2 globalMuons pt>10,20, eta<2.4, opp charge)"}])
+
+trigvalhiggsHWW(dqmitems,"ee selection: global Efficiencies ",
+        [{'path': "HLT/Higgs/HWW/Efficiencies_ElectronTriggers", 'description': "Electron Trigger efficiencies in the dielectron channel wrt the events passing the selection ( at least 2 electrons pt>10,20,eta<2.4, opp. charge, H/E<0.05,0.6< E/p<2.5)"}])
+
+trigvalhiggsHWW(dqmitems,"emu selection: global Efficiencies ",
+        [{'path': "HLT/Higgs/HWW/TriggerEfficiencies_EmuChannel", 'description': "Trigger efficiencies in the emu channel wrt the events passing the selection ( at least 2 leptons pt>10,20,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05, 0.6< E/p<2.5)"}])
+
+
+def trigvalhiggsHgg(i, p, *rows): i["HLT/Higgs/HiggsValidationReport/Hgg/" + p] = DQMItem(layout=rows)
+trigvalhiggsHgg(dqmitems,"HLTDoublePhoton10L1R eff vs eta",
+        [{'path': "HLT/Higgs/Hgg/EffVsEta_HLT_DoublePhoton10_L1R", 'description': "Trigger efficiency for HLTDoublePhoton10 versus eta of the highest pt reconstructed photon in the event passing the selection (at least 2 reconstructed photons pt>20, eta<2.4)"}])
+trigvalhiggsHgg(dqmitems,"HLTDoublePhoton10L1R vs pt",
+        [{'path': "HLT/Higgs/Hgg/EffVsPt_HLT_DoublePhoton10_L1R", 'description': "Trigger efficiency for HLTDoublePhoton10 versus pt of the highest pt reconstructed photon in the event passing the selection (at least 2 reconstructed photons pt>20, eta<2.4)"}])
+
+trigvalhiggsHgg(dqmitems,"Photon global Efficiencies ",
+        [{'path': "HLT/Higgs/Hgg/Efficiencies_PhotonTriggers", 'description': "Photon Trigger efficiencies  wrt the events passing the selection (at least 2 reco photons pt>20, eta<2.4)"}])
+
+
+
+
+def trigvalhiggsH2tau(i, p, *rows): i["HLT/Higgs/HiggsValidationReport/H2tau/" + p] = DQMItem(layout=rows)
+trigvalhiggsH2tau(dqmitems,"semimu channel: HLTMu3 eff vs eta",
+        [{'path': "HLT/Higgs/H2tau/EffVsEta_HLT_Mu3", 'description': "Trigger efficiency for HLTMu3 versus eta of the generated muon from tau decay passing the selection (1 muon from tau pt>15, eta<2.4)"}])
+
+trigvalhiggsH2tau(dqmitems,"semimu channel: HLTMu3 eff vs pt",
+        [{'path': "HLT/Higgs/H2tau/EffVsPt_HLT_Mu3", 'description': "Trigger efficiency for HLTMu3 versus pt of the generated muon from tau decay passing the selection (1 muon from tau pt>15, eta<2.4)"}])
+
+trigvalhiggsH2tau(dqmitems,"semielec channel: HLTEle10LW eff vs eta",
+        [{'path': "HLT/Higgs/H2tau/EffVsEta_HLT_Ele10_LW_L1R", 'description': "Trigger efficiency for HLTEle10LWL1R versus eta of the generated electron from tau decay passing the selection (1 electron from tau pt>15, eta<2.4)"}])
+
+trigvalhiggsH2tau(dqmitems,"semielec channel: HLTEle10LW eff vs pt",
+        [{'path': "HLT/Higgs/H2tau/EffVsPt_HLT_Ele10_LW_L1R", 'description': "Trigger efficiency for HLTEle10LWL1R versus Pt of the generated electron from tau decay passing the selection (1 electron from tau pt>15, eta<2.4)"}])
+
+trigvalhiggsH2tau(dqmitems,"semimuonic channel : global Efficiencies ",
+        [{'path': "HLT/Higgs/H2tau/Efficiencies_MuonTriggers", 'description': "Muon Trigger efficiencies  wrt the events passing the muon selection (1 muon from tau decay pt>15, eta<2.4"}])
+
+trigvalhiggsH2tau(dqmitems,"semielectronic channel: global Efficiencies ",
+        [{'path': "HLT/Higgs/H2tau/Efficiencies_ElectronTriggers", 'description': "Electron Trigger efficiencies  wrt the events passing the electron selection ( 1 electron from tau pt>15,eta<2.4)"}])
+
+
+
+def trigvalhiggsHZZ(i, p, *rows): i["HLT/Higgs/HiggsValidationReport/HZZ/" + p] = DQMItem(layout=rows)
+
+trigvalhiggsHZZ(dqmitems,"4mu selection: HLTMu9 eff vs eta ",
+        [{'path': "HLT/Higgs/HZZ/EffVsEta_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9 vs eta of the highest pt reconstructed muon in the event passing the selection (at least 4 globalMuons pt>10, eta<2.4, opp charge"}])
+
+trigvalhiggsHZZ(dqmitems,"4mu selection :HLTMu9 eff vs pt ",
+        [{'path': "HLT/Higgs/HZZ/EffVsPt_HLT_Mu9", 'description': "Trigger efficiency for HLTMu9  vs Pt of the highest pt reconstructed muon in the event passing the selection (at least 4 globalMuons pt>10, eta<2.4, opp charge"}])
+
+trigvalhiggsHZZ(dqmitems,"4e selection :HLTEle10LWL1R eff vs eta ",
+        [{'path': "HLT/Higgs/HZZ/EffVsEta_HLT_Ele10_LW_L1R", 'description': "Trigger efficiency for HLTEle10_LW_L1R  vs eta of the highest pt reconstructed electron in the event passing the selection (at least 4 gsfElectrons pt>10, eta<2.4,opp charge, H/E<0.05, 0.6< E/p<2.5) "}])
+
+trigvalhiggsHZZ(dqmitems,"4e selection: HLT_Ele10LWL1R  eff vs pt",
+        [{'path': "HLT/Higgs/HZZ/EffVsPt_HLT_Ele10_LW_L1R", 'description': "Trigger efficiency for HLTEle10_LW_L1R  vs Pt of the highest pt reconstructed electron in the event passing the selection (at least 4 gsfElectrons pt>10, eta<2.4,opp charge, H/E<0.05, 0.6< E/p<2.5) "}])
+
+trigvalhiggsHZZ(dqmitems,"2e2mu selection: HLTMu9 eff vs eta ",
+        [{'path': "HLT/Higgs/HZZ/EffVsEta_HLT_Mu9_EM", 'description': "Trigger efficiency for HLTMu9  vs eta of the highest pt reconstructed muon in the event passing the selection ( at least 2 muons and 2 electrons  pt>10,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05, 0.6< E/p<2.5)"}])
+
+trigvalhiggsHZZ(dqmitems,"2e2mu selection: HLTEle10LWL1R eff vs pt ",
+        [{'path': "HLT/Higgs/HZZ/EffVsPt_HLT_Ele10_LW_L1R_EM", 'description': "Trigger efficiency for HLTEle10_LW_L1R  vs pt of the highest pt reconstructed electron in the event passing the selection ( at least 2 muons and 2 electrons pt>10,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05,0.6< E/p<2.5)"}])
+
+trigvalhiggsHZZ(dqmitems,"4mu selection : global Efficiencies ",
+        [{'path': "HLT/Higgs/HZZ/Efficiencies_MuonTriggers", 'description': "Muon Trigger efficiencies  wrt the events passing the selection (at least 4 globalMuons pt>10, eta<2.4, opp charge"}])
+
+trigvalhiggsHZZ(dqmitems,"4e selection: global Efficiencies ",
+        [{'path': "HLT/Higgs/HZZ/Efficiencies_ElectronTriggers", 'description': "Electron Trigger efficiencies wrt the events passing the selection ( at least 4 electrons pt>10,eta<2.4, opp. charge, H/E<0.05, 0.6< E/p<2.5)"}])
+
+trigvalhiggsHZZ(dqmitems,"2e2mu selection: global Efficiencies ",
+        [{'path': "HLT/Higgs/HZZ/TriggerEfficiencies_EmuChannel", 'description': "Trigger efficiencies  wrt the events passing the selection ( at least 2 muons and 2 electrons pt>10,20,eta<2.4, opp. charge, muons:globalMuons, electrons:H/E<0.05, 0.6< E/p<2.5)"}])
+
+
+def trigvalhiggsHtaunu(i, p, *rows): i["HLT/Higgs/HiggsValidationReport/Htaunu/" + p] = DQMItem(layout=rows)
+
+trigvalhiggsHtaunu(dqmitems,"Tau global Efficiencies ",
+        [{'path': "HLT/Higgs/Htaunu/globalEfficiencies", 'description': "Tau trigger efficiencies  wrt the events passing the selection ( at least 1 gen tau pt>100,eta<2.4)"}])
+
+
+
+
+
+
+
+
 ###---- QCD selection goes here: ----
 #def trigvalqcd(i, p, *rows): i["HLT//Preselection" + p] = DQMItem(layout=rows)
