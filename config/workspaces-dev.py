@@ -14,6 +14,7 @@ server.workspace('DQMContent', 22, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/')
 server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshower')
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/')
 server.workspace('DQMContent', 25, 'Calorimeter', 'CASTOR', '^Castor/')
+server.workspace('DQMContent', 26, 'Calorimeter', 'HCALcalib', '^HcalCalib/')
 
 server.workspace('DQMContent', 31, 'Trigger/Lumi', 'L1T', '^L1T/')
 server.workspace('DQMContent', 32, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/')

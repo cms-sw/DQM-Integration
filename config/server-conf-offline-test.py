@@ -5,10 +5,10 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 #LAYOUTS = ["%s/shift_%s-layout.py" % (CONFIGDIR, x) for x in
 LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
-           ("castor","eb", "ee", "csc", "rpc", "hcal", "hlt","l1t", "l1temulator", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
+           ("castor","eb", "ee", "csc", "rpc", "hcal", "hcalcalib", "hlt","l1t", "l1temulator", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
 #LAYOUTS += ["%s/%s_-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","pixel","sistrip","hcal", "eb", "ee")]
+           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee")]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 

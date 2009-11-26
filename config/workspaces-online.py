@@ -71,6 +71,12 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Lumi Problems',
                  'Hcal/Layouts/HCAL Trigger Primitives'
                  )
+
+server.workspace('DQMContent',20,'Calorimeter','HCALcalib', '^HcalCalib/',
+                 'HcalCalib/Layouts/01 HcalCalib Summary',
+                 'HcalCalib/Layouts/HcalCalib Pedestal Check',
+                 'HcalCalib/Layouts/HcalCalib Laser Check',
+                 'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
                  'Castor/Layouts/CASTOR Pedestals',
