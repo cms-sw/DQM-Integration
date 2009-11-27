@@ -16,8 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackPointing'))
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -114,11 +113,19 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 #--------------------------
+# Filters
+#--------------------------
+# HLT Filter
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
+
+#--------------------------
 # Scheduling
 #--------------------------
 process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
 process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.p = cms.Path(process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
+process.p = cms.Path(process.hltTriggerTypeFilter*process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
 
