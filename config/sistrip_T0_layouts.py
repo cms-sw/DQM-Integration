@@ -38,7 +38,7 @@ sistriplayout(dqmitems, "03 - OffTrackCluster (Total Number)",
      'description': "Total Number of Off-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> ", 'draw': { 'withref': "yes" }},
   {  'path':"SiStrip/MechanicalView/TEC/Summary_TotalNumberOfClusters_OffTrack_in_TEC",
      'description': "TotalNumberOf Off-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> ", 'draw': { 'withref': "yes" }}])
-sistriplayout(dqmitems, "04 - Tracks - CKF",
+sistriplayout(dqmitems, "04 - Tracks ",
  [{ 'path': "Tracking/TrackParameters/NumberOfTracks_CKFTk",
     'description': "Number of Reconstructed Tracks (CKF Algorithm) - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> ", 'draw': { 'withref': "yes" }},
   { 'path': "Tracking/TrackParameters/NumberOfRecHitsPerTrack_CKFTk",
