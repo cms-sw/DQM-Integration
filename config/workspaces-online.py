@@ -3,13 +3,16 @@ server.workspace('DQMSummary', 1, 'Summaries', 'Reports')
 server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 server.workspace('DQMContent', 3, 'Summaries', 'Everything', '^')
 
+server.workspace('DQMContent', 10, 'General', 'Overview', '^Overview/',
+                 'Overview/test1',
+		 'Overview/test2')
 
-server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
+server.workspace('DQMContent', 20, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/00 - Pixel_Error_Summary',
                  'Pixel/Layouts/01 - Pixel_Noise_Summary',
                  'Pixel/Layouts/02 - Pixel_Charge_Summary')
 
-server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
+server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - ReportSummary',
                  'SiStrip/Layouts/01 - FED-Detected Errors',
                  'SiStrip/Layouts/02 - # of Digi Trend',
@@ -17,7 +20,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/04 - OffTrackCluster (Total Number)',
                  'SiStrip/Layouts/05 - Tracks')
                
-server.workspace('DQMContent', 10, 'Tracker/Muons', 'CSC', '^CSC/',
+server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
                  'CSC/Layouts/01 Station Physics Efficiency',
                  'CSC/Layouts/02 EMU Summary/EMU Test01 - DDUs in Readout',
@@ -29,7 +32,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/02 EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
                  'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
 
-server.workspace('DQMContent', 10, 'Tracker/Muons', 'DT', '^DT/',
+server.workspace('DQMContent', 20, 'Tracker/Muons', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/00-DataIntegritySummary',
                  'DT/Layouts/00-Summary/00-ROChannelSummary',
                  'DT/Layouts/00-Summary/01-OccupancySummary',
@@ -41,28 +44,28 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/07-NoiseChannelsSummary',
                  'DT/Layouts/00-Summary/08-SynchNoiseSummary')
 
-server.workspace('DQMContent', 10, 'Tracker/Muons', 'RPC', '^RPC/',
+server.workspace('DQMContent', 20, 'Tracker/Muons', 'RPC', '^RPC/',
                  'RPC/Layouts/RPC_Summary/Barrel/Barrel_TOP_Summary',
                  'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',
                  'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy',
                  'RPC/Layouts/RPC_Summary/EndCap/EndCap_TOP_Summary') 
 
-server.workspace('DQMContent', 20, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
+server.workspace('DQMContent', 30, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
                 
-server.workspace('DQMContent', 20, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
+server.workspace('DQMContent', 30, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
                  'EcalBarrel/Layouts/01 Occupancy Summary EcalBarrel',
                  'EcalBarrel/Layouts/02 Cluster Summary EcalBarrel')
 
-server.workspace('DQMContent', 20, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
+server.workspace('DQMContent', 30, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
                  'EcalEndcap/Layouts/00 Global Summary EcalEndcap',
                  'EcalEndcap/Layouts/01 Occupancy Summary EcalEndcap',
                  'EcalEndcap/Layouts/02 Cluster Summary EcalEndcap')
 
-server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
+server.workspace('DQMContent', 30, 'Calorimeter', 'HCAL', '^Hcal/',
                  "Hcal/Layouts/01 HCAL Summaries",
                  'Hcal/Layouts/HCAL Digi Problems',
                  'Hcal/Layouts/HCAL Dead Cell Check',
@@ -72,19 +75,19 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/HCAL Trigger Primitives'
                  )
 
-server.workspace('DQMContent',20,'Calorimeter','HCALcalib', '^HcalCalib/',
+server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/01 HcalCalib Summary',
                  'HcalCalib/Layouts/HcalCalib Pedestal Check',
                  'HcalCalib/Layouts/HcalCalib Laser Check',
                  'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
-server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
+server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
                  'Castor/Layouts/CASTOR Pedestals',
                  'Castor/Layouts/CASTOR LED Distributions',
                  'Castor/Layouts/CASTOR RecHit Distributions'
                 )
 	  
-server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLX', '^HLX',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
                  'HLX/Layouts/HF-Comparison',
                  'HLX/Layouts/HLX-Averages',
                  'HLX/Layouts/HLX-Luminosity',
@@ -92,7 +95,7 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLX', '^HLX',
                  'HLX/Layouts/HLX-EtSumAndLumi-History-Plots')
 
 
-server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1T', '^L1T/',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1T', '^L1T/',
                  'L1T/L1TGT/algo_bits',
                  'L1T/L1TGT/tt_bits',
                  'L1T/L1TGT/gtfe_bx',
@@ -110,7 +113,7 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1T', '^L1T/',
                  'L1T/L1TCSCTF/CSCTF_occupancies',
                  'L1T/L1TRPCTF/RPCTF_muons_eta_phi_bx0')
 
-server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
                  'L1TEMU/common/sysrates',
                  'L1TEMU/common/errorflag',
                  'L1TEMU/common/sysncandData',
@@ -127,7 +130,7 @@ server.workspace('DQMContent', 30, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
                  'L1TEMU/ECAL/ETPErrorFlag',
                  'L1TEMU/HCAL/HTPErrorFlag')
 
-server.workspace('DQMContent', 30, 'Trigger/Lumi', 'HLT', '^HLT/',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
 		 'HLT/HLTMonMuon/Summary/PassingBits_Summary_Muon',
                  'HLT/HLTMonMuon/Summary/HLTRate_Muon',
 		 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
