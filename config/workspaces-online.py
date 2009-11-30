@@ -3,10 +3,6 @@ server.workspace('DQMSummary', 1, 'Summaries', 'Reports')
 server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 server.workspace('DQMContent', 3, 'Summaries', 'Everything', '^')
 
-server.workspace('DQMContent', 10, 'General', 'Overview', '^Overview/',
-                 'Overview/test1',
-		 'Overview/test2')
-
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/00 - Pixel_Error_Summary',
                  'Pixel/Layouts/01 - Pixel_Noise_Summary',
@@ -141,7 +137,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
 		 'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
 		 'HLT/HLTScalers_SM/hltScalers'
 		 )
-server.workspace('DQMContent', 50,'PromptFeedBack', 'TrackingFeedBack', '^(TrackingFeedBack|Tracking)/',
-                 'TrackingFeedBack/00 - Track Parameters'
-                 )
 
+server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Overview|SiStrip|Tracking)/',
+                 'Overview/TrackingFeedBack/00 - Track Parameters'
+                 )
