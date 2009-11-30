@@ -7,6 +7,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 ## Input source
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'HLX DQM Consumer'
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 ## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
