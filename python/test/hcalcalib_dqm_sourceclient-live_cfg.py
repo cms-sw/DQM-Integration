@@ -43,6 +43,16 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
+# Corrections to HF timing
+process.hfreco.firstSample = 3
+process.hfreco.samplesToAdd = 4
+
+# Allow all rechits in mark&pass events
+process.hfreco.dropZSmarkedPassed=False
+process.horeco.dropZSmarkedPassed=False
+process.hbhereco.dropZSmarkedPassed=False
+
+
 # Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
                                                recordName = cms.string("HcalSeverityLevelComputerRcd"),
@@ -94,7 +104,7 @@ process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 process.hcalMonitor.DetDiagPedestalMonitor = True
 process.hcalMonitor.DetDiagLaserMonitor    = True
 
-process.hcalMonitor.DataFormatMonitor   = False
+process.hcalMonitor.DataFormatMonitor   = True
 process.hcalMonitor.DataIntegrityTask   = False
 process.hcalMonitor.DigiMonitor         = False
 process.hcalMonitor.RecHitMonitor       = True
@@ -116,6 +126,8 @@ setHcalTaskValues(process.hcalMonitor)
 
 process.hcalMonitor.RecHitMonitor_AllowedCalibTypes = [1] # only pedestal events allowed for rechit monitor
 
+process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes=[1,2,3,4,5,6] # all calib types allowed for DataFormatMonitor
+
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -132,6 +144,7 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
+process.hcalClient.DataFormatClient_minErrorFlag = 2. # ignore errors from dataformat client
 
 #-----------------------------
 # Scheduling
