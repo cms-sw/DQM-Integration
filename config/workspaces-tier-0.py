@@ -14,9 +14,7 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/01 - FED-Detected Errors',
                  'SiStrip/Layouts/02 - OnTrackCluster (StoN)',
                  'SiStrip/Layouts/03 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/04 - Tracks - CKF',
-                 'SiStrip/Layouts/05 - Tracks - Cosmic Track Finder',
-                 'SiStrip/Layouts/06 - Tracks - Rod Search')
+                 'SiStrip/Layouts/04 - Tracks - CKF')
 
 server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/')
 server.workspace('DQMContent', 13, 'Tracker/Muons', 'DT', '^DT/')

@@ -141,4 +141,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
 		 'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
 		 'HLT/HLTScalers_SM/hltScalers'
 		 )
+server.workspace('DQMContent', 50,'PromptFeedBack', 'TrackingFeedBack', '^(TrackingFeedBack|Tracking)/',
+                 'TrackingFeedBack/00 - Track Parameters'
+                 )
 
