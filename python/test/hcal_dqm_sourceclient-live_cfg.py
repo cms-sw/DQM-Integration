@@ -43,11 +43,6 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
-# Allow all cells in mark&pass events
-process.hfreco.dropZSmarkedPassed=False
-process.horeco.dropZSmarkedPassed=False
-process.hbhereco.dropZSmarkedPassed=False
-
 # Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
                                                recordName = cms.string("HcalSeverityLevelComputerRcd"),
