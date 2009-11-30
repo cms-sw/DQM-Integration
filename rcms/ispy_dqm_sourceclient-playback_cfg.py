@@ -24,6 +24,7 @@ process.add_(
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
     outputMaxEvents = cms.untracked.int32(100),
+    outputMaxTime = cms.untracked.int32(120),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
@@ -73,7 +74,7 @@ process.VisMuon.visMuonTag = cms.InputTag('muons')
 process.VisSiStripDigi.visSiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
 process.VisTrack.visTrackTag = cms.InputTag('cosmicMuons')
 process.VisTrackingRecHit.visTrackingRecHitTag = cms.InputTag('cosmicMuons')
-
+process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('generalTracks'),cms.InputTag('ctfWithMaterialTracksP5'))
 process.vis = cms.Path(process.VisEvent*
                        process.VisEventSetup*
                        process.VisBasicCluster*

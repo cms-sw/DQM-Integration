@@ -11,22 +11,6 @@ subsystem="Hcal" # specify subsystem name here
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 
-# process.maxEvents = cms.untracked.PSet(
-#     input = cms.untracked.int32(-1)
-#     )
-# 
-# process.source = cms.Source("EventStreamHttpReader",
-#                             sourceURL = cms.string('http://cmsmon:50082/urn:xdaq-application:lid=29'),
-#                             consumerPriority = cms.untracked.string('normal'),
-#                             max_event_size = cms.int32(7000000),
-#                             consumerName = cms.untracked.string('DQM Source'),
-#                             max_queue_depth = cms.int32(5),
-#                             maxEventRequestRate = cms.untracked.double(15.0),
-#                             SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*DQM')
-#                                                               ),
-#                             headerRetryInterval = cms.untracked.int32(3)
-#                             )
-
 #----------------------------
 # DQM Environment
 #-----------------------------
@@ -56,26 +40,26 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
 # Cosmics Corrections to reconstruction
-process.hbhereco.firstSample = 1
-process.hbhereco.samplesToAdd = 8
-process.hbhereco.correctForTimeslew = True
-process.hbhereco.correctForPhaseContainment = True
-process.hbhereco.correctionPhaseNS = 10.0
-process.horeco.firstSample = 1
-process.horeco.samplesToAdd = 8
-process.horeco.correctForTimeslew = True
-process.horeco.correctForPhaseContainment = True
-process.horeco.correctionPhaseNS = 10.
-process.hfreco.firstSample = 1
-process.hfreco.samplesToAdd = 8
-process.hfreco.correctForTimeslew = True
-process.hfreco.correctForPhaseContainment = True
-process.hfreco.correctionPhaseNS = 10.
-process.zdcreco.firstSample = 1
-process.zdcreco.samplesToAdd = 8
-process.zdcreco.correctForTimeslew = True
-process.zdcreco.correctForPhaseContainment = True
-process.zdcreco.correctionPhaseNS = 10.
+#process.hbhereco.firstSample = 1
+#process.hbhereco.samplesToAdd = 8
+#process.hbhereco.correctForTimeslew = True
+#process.hbhereco.correctForPhaseContainment = True
+#process.hbhereco.correctionPhaseNS = 10.0
+#process.horeco.firstSample = 1
+#process.horeco.samplesToAdd = 8
+#process.horeco.correctForTimeslew = True
+#process.horeco.correctForPhaseContainment = True
+#process.horeco.correctionPhaseNS = 10.
+#process.hfreco.firstSample = 1
+#process.hfreco.samplesToAdd = 8
+#process.hfreco.correctForTimeslew = True
+#process.hfreco.correctForPhaseContainment = True
+#process.hfreco.correctionPhaseNS = 10.
+#process.zdcreco.firstSample = 1
+#process.zdcreco.samplesToAdd = 8
+#process.zdcreco.correctForTimeslew = True
+#process.zdcreco.correctForPhaseContainment = True
+#process.zdcreco.correctionPhaseNS = 10.
 
 # Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
@@ -159,6 +143,7 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
+process.hcalMonitor.BeamMonitor_lumiqualitydir="/home/dqmprolocal/lumi/"
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -175,6 +160,11 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
+#process.hcalClient.databasedir = '/home/dqmprolocal/hcal/'
+process.hcalClient.databasedir = '' # suppress channel status text output for now
+# Set larger limits at startup (these are used in calculating the reportSummary)
+process.hcalClient.HotCellClient_minErrorFlag=0.25
+process.hcalClient.DeadCellClient_minErrorFlag=0.25
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)

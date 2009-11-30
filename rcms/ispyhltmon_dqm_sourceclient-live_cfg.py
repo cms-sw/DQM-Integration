@@ -33,7 +33,7 @@ process.add_(
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9002),
+    outputPort = cms.untracked.uint32(9001),
     outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
@@ -116,7 +116,10 @@ process.iSpy = cms.Path(process.ISpyEvent*
                        process.ISpySiStripDigi*
                        process.ISpyL1GlobalTriggerReadoutRecord*
                        process.ISpyTriggerEvent)
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
-process.p3= cms.Path(process.RawToDigi)
+process.p3= cms.Path(process.hltTriggerTypeFilter*process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
 process.schedule = cms.Schedule(process.p3,process.p4,process.iSpy)

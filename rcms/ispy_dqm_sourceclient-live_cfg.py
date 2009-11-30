@@ -19,6 +19,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_CSC*','*BSC','HLT_TrackerCosmics'))
 #process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 process.load("DQM.Integration.test.environment_cfi")
 from FWCore.MessageLogger.MessageLogger_cfi import *
@@ -81,8 +82,14 @@ process.ISpyRPCRecHit.iSpyRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
 process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
 process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
-process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
-process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
+
+process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('generalTracks')
+process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('generalTracks'))
+
+#cosmics
+#process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
+#process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
+
 process.iSpy = cms.Path(process.ISpyEvent*
                        #process.ISpyEventSetup*
                        process.ISpyBasicCluster*
@@ -114,7 +121,10 @@ process.iSpy = cms.Path(process.ISpyEvent*
                        process.ISpyL1GlobalTriggerReadoutRecord*
                        process.ISpyTriggerEvent)
 
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
-process.p3= cms.Path(process.RawToDigi)
+process.p3= cms.Path(process.hltTriggerTypeFilter*process.RawToDigi)
 process.p4= cms.Path(process.reconstructionCosmics)
 process.schedule = cms.Schedule(process.p3,process.p4,process.iSpy)

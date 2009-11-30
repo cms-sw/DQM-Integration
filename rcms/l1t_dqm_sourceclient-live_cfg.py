@@ -8,7 +8,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring("*")
 )
-process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(25.0)   
+process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(50.0)   
 #----------------------------
 # DQM Environment
 #-----------------------------
@@ -41,6 +41,11 @@ process.l1s.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM")
 process.l1tsClient.dqmFolder = cms.untracked.string("L1T/L1Scalers_SM")
 process.p3 = cms.EndPath(process.l1s+process.l1tsClient)
 
+process.load("DQM.TrigXMonitor.HLTScalers_cfi")
+process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
+process.hlts.dqmFolder = cms.untracked.string("L1T/HLTScalers_SM")
+process.hltsClient.dqmFolder = cms.untracked.string("L1T/HLTScalers_SM")
+process.p = cms.EndPath(process.hlts+process.hltsClient)
 
 #process.l1GtParameters.BstLengthBytes = 52
 ##  Available data masks (case insensitive):

@@ -31,7 +31,7 @@ process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz'
 process.l1temuEventInfoClient.dataMaskedSystems =cms.untracked.vstring("All")
 ## Available emulator masks (case insensitive):
 ## l1temul: "all"; "dttf", "dttpg", "csctf", "csctpg", "rpc", "gmt", "ecal", "hcal", "rct", "gct", "glt"
-process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "rct", "glt")
+process.l1temuEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("dttf", "dttpg", "csctf", "csctpg", "rpc", "ecal", "hcal", "glt")
 
 ##no references needed
 #replace DQMStore.referenceFileName = "L1TEMU_reference.root"

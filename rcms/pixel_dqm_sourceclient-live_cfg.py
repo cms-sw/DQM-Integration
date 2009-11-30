@@ -18,15 +18,15 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackPointing'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-#process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
@@ -108,6 +108,13 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 #--------------------------
+# Filters
+#--------------------------
+# HLT Filter
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
+#--------------------------
 # Scheduling
 #--------------------------
 #process.Reco = cms.Sequence(process.siPixelDigis)
@@ -119,5 +126,5 @@ process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 #process.trackReco = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracksP5) #*process.rstracks 
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
 
-process.p = cms.Path(process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
+process.p = cms.Path(process.hltTriggerTypeFilter*process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
 #process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)

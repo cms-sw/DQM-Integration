@@ -1,21 +1,24 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("hlxdqmlive")
-#process.load("DQMServices.Components.test.MessageLogger_cfi")
 
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
+## Input source
+process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.consumerName = 'HLX DQM Consumer'
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
+## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
 
-process.load("DQMServices.Core.DQM_cfg")
-
+## Set up env and saver
 process.load("DQM.Integration.test.environment_cfi")
-##process.dqmEnv.subSystemFolder    = "HLX"
+process.dqmEnv.subSystemFolder    = "HLX"
 
-process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
-)
+## Lumi reference file
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hlx_reference.root'
+
 process.hlxQualityTester = cms.EDFilter("QualityTester",
     # default is 1
     prescaleFactor = cms.untracked.int32(10000),
@@ -27,8 +30,9 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml')
 )
 
-##process.p = cms.Path(process.dqmEnv+process.hlxdqmsource+process.hlxQualityTester+process.dqmSaver)
-process.p = cms.Path(process.hlxdqmsource+process.hlxQualityTester)
-process.hlxdqmsource.outputDir = '/home/dqmprolocal/output'
+process.p = cms.Path(process.hlxdqmsource*process.hlxQualityTester*process.dqmEnv*process.dqmSaver)
+
+## Shouldn't need this anymore ...
+##process.hlxdqmsource.outputDir = process.dqmSaver.dirName
 
 

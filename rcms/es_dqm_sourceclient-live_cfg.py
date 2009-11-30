@@ -18,6 +18,8 @@ process.ecalPreshowerRecHit.ESGain = cms.int32(2)
 process.ecalPreshowerRecHit.ESBaseline = cms.int32(0)
 process.ecalPreshowerRecHit.ESMIPADC = cms.double(50)
 
+
+
 process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.preScaler.prescaleFactor = 1
 
@@ -29,6 +31,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'EcalPreshower'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/es_reference.root'
 
 process.load("DQM/EcalPreshowerMonitorModule/EcalPreshowerMonitorTasks_cfi")
 process.load("DQM/EcalPreshowerMonitorClient/EcalPreshowerMonitorClient_cfi")
