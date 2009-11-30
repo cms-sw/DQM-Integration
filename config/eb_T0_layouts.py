@@ -101,34 +101,39 @@ ebecalshifterlayout(dqmitems, "03 Occupancy/01 Digis",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/02 Rechits",
+ebecalshifterlayout(dqmitems, "03 Occupancy/02 RecHits (Unfiltered)",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/03 TriggerPrimitives",
+ebecalshifterlayout(dqmitems, "03 Occupancy/03 RecHits (Filtered)",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 300 MeV are considered. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 300 MeV are considered. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Only the good reconstructed hits with energy E > 300 MeV are considered. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "03 Occupancy/04 Trigger Primitives Digis (All)",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/04 TriggerPrimitives Threshold",
+ebecalshifterlayout(dqmitems, "03 Occupancy/05 Trigger Primitives (Threshold)",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy", 'description': "Map of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Darker regions mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection eta", 'description': "Eta projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT TP digi thr occupancy projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/05 TestPulseEvents",
+ebecalshifterlayout(dqmitems, "03 Occupancy/06 TestPulseEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT test pulse digi occupancy", 'description': "Occupancy of test pulse events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/06 LaserEvents",
+ebecalshifterlayout(dqmitems, "03 Occupancy/07 LaserEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT laser digi occupancy", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/07 PedestalEvents",
+ebecalshifterlayout(dqmitems, "03 Occupancy/09 PedestalEvents",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT pedestal digi occupancy", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "03 Occupancy/08 PN Digis",
+ebecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
@@ -161,10 +166,8 @@ ebecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size",
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size projection phi", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "04 Energy/06 SuperClusters 1D",
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC number", 'description': "Multiplicity of reconstructed hybrid superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBClusterTask/EBCLT SC size (crystal)", 'description': "Numbers of crystals contained in hybrid superclusters.  Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing", 'description': "Peak position of the pulse shape of the seed of the superclusters (in clock units = 25ns). Distribution should peak at 6 clock units. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-  None])
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC number", 'description': "Multiplicity of reconstructed hybrid superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC size (crystal)", 'description': "Numbers of crystals contained in hybrid superclusters.  Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "04 Energy/07 Peaks",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
@@ -180,17 +183,20 @@ ebecalshifterlayout(dqmitems, "05 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of the crystal reconstructed hits with amplitude above 12 ADC counts. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/01 Timing Mean",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Mean timing of all the channels in EB. Timing is expected within 5.5 - 6.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Mean timing of all the channels in each DCC of EB. Timing is expected within 5.5 - 6.5 clocks. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Mean timing of all the channels in EB along the run. Timing is expected within 5.5 - 6.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Mean timing of all the channels in each DCC of EB along the run. Timing is expected within 5.5 - 6.5 clocks. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Timing RMS of all the channels in EB. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Average timing RMS along the run of all the channels in EB. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Average timing RMS along the run of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "05 Timing/03 Cluster Seeds Timing",
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing map", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing projection eta", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time vs seed eta. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing projection phi", 'description': "Average timing (in clock units) of the seeds of the clusters relative to the expected time vs seed phi. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+ebecalshifterlayout(dqmitems, "05 Timing/03 Timing Map",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing map", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection eta", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection phi", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "05 Timing/04 Single Event Timing",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D summary", 'description': "Single event timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et spectrum Real Digis", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -7488,13 +7494,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-01/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-01/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-01/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-01/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-01/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-01/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -7793,13 +7803,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-02/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-02/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-02/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-02/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-02/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-02/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -8098,13 +8112,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-03/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-03/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-03/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-03/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-03/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-03/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -8403,13 +8421,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-04/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-04/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-04/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-04/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-04/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-04/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -8708,13 +8730,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-05/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-05/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-05/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-05/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-05/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-05/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9013,13 +9039,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-06/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-06/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-06/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-06/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-06/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-06/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9318,13 +9348,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-07/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-07/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-07/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-07/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-07/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-07/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9623,13 +9657,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-08/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-08/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-08/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-08/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-08/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-08/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9928,13 +9966,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-09/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-09/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-09/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-09/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-09/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-09/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -10233,13 +10275,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-10/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-10/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-10/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-10/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-10/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-10/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -10538,13 +10584,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-11/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-11/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-11/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-11/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-11/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-11/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -10843,13 +10893,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-12/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-12/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-12/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-12/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-12/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-12/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11148,13 +11202,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-13/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-13/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-13/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-13/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-13/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-13/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11453,13 +11511,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-14/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-14/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-14/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-14/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-14/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-14/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11758,13 +11820,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-15/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-15/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-15/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-15/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-15/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-15/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -12063,13 +12129,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-16/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-16/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-16/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-16/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-16/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-16/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -12368,13 +12438,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-17/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-17/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-17/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-17/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-17/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-17/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -12673,13 +12747,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB-18/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-18/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-18/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB-18/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB-18/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB-18/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -12978,13 +13056,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+01/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+01/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+01/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+01/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+01/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+01/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -13283,13 +13365,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+02/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+02/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+02/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+02/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+02/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+02/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -13588,13 +13674,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+03/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+03/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+03/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+03/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+03/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+03/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -13893,13 +13983,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+04/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+04/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+04/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+04/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+04/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+04/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -14198,13 +14292,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+05/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+05/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+05/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+05/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+05/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+05/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -14503,13 +14601,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+06/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+06/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+06/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+06/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+06/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+06/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -14808,13 +14910,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+07/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+07/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+07/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+07/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+07/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+07/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -15113,13 +15219,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+08/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+08/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+08/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+08/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+08/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+08/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -15418,13 +15528,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+09/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+09/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+09/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+09/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+09/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+09/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -15723,13 +15837,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+10/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+10/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+10/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+10/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+10/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+10/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -16028,13 +16146,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+11/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+11/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+11/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+11/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+11/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+11/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -16333,13 +16455,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+12/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+12/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+12/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+12/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+12/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+12/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -16638,13 +16764,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+13/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+13/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+13/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+13/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+13/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+13/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -16943,13 +17073,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+14/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+14/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+14/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+14/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+14/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+14/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -17248,13 +17382,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+15/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+15/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+15/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+15/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+15/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+15/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -17553,13 +17691,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+16/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+16/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+16/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+16/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+16/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+16/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -17858,13 +18000,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+17/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+17/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+17/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+17/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+17/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+17/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -18163,13 +18309,17 @@ eblayout(dqmitems, "00 By Task/05 Laser/EB+18/L4/05 PNs Gain16",
 eblayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+18/00 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+18/00 Timing Quality",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing quality EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing mean EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBTimingClient/EBTMT timing rms EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eblayout(dqmitems, "00 By Task/07 Timing/EB+18/01 Timing",
+eblayout(dqmitems, "00 By Task/07 Timing/EB+18/01 Timing Value",
   [{ 'path': "EcalBarrel/EBTimingClient/EBTMT timing EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/07 Timing/EB+18/02 Timing Maps",
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -18242,9 +18392,7 @@ eblayout(dqmitems, "00 By Task/11 Cluster/05 SuperClusters 1D",
    None])
 
 eblayout(dqmitems, "00 By Task/11 Cluster/06 SuperClusters Seeds",
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing map", 'description': "timing average for each seed of a supercluster with amplitude > 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal timing", 'description': "timing for each seed of a supercluster with amplitude > 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal energy", 'description': "energy (GeV) of the crystal seeding a supercluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC seed crystal energy", 'description': "energy (GeV) of the crystal seeding a supercluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/11 Cluster/07 SuperClusters Seeds",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC single crystal cluster seed occupancy map", 'description': "Occupancy of seeds of superclusters formed by exactly one crystal. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -18265,114 +18413,6 @@ eblayout(dqmitems, "00 By Task/11 Cluster/10 Best Pair Combinatorics (No sel)",
    { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-01",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-01", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-02",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-02", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-02. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-03",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-03", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-03. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-04",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-04", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-04. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-05",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-05", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-06",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-06", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-07",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-07", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-07. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-08",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-08", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-08. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-09",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-09", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-09. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-10",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-10", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-10. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-11",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-11", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-11. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-12",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-12", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-13",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-13", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-13. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-14",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-14", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-14. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-15",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-15", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-15. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-16",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-16", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-16. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-17",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-17", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-17. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB-/Timing EB-18",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB-18", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB-18. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+01",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+01", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+02",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+02", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+02. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+03",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+03", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+03. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+04",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+04", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+04. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+05",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+05", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+06",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+06", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+07",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+07", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+07. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+08",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+08", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+08. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+09",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+09", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+09. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+10",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+10", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+10. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+11",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+11", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+11. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+12",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+12", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+12. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+13",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+13", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+13. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+14",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+14", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+14. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+15",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+15", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+15. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+16",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+16", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+16. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+17",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+17", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+17. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/11 Cluster/10 TimingBySupermodule/EB+/Timing EB+18",
-  [{ 'path': "EcalBarrel/EBClusterTask/Timing/EBCLT timing EB+18", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for supermodule EB+18. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 eblayout(dqmitems, "00 By Task/12 Occupancy/00 Occupancy",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT digi occupancy projection eta", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },

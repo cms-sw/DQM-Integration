@@ -136,58 +136,68 @@ eeecalshifterlayout(dqmitems, "03 Occupancy/01 Digis EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/02 Digis EE +",
+eeecalshifterlayout(dqmitems, "03 Occupancy/01 Digis EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE +", 'description': "Map of the occupancy of ECAL digis. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL digis. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/03 Rechits EE -",
+eeecalshifterlayout(dqmitems, "03 Occupancy/02 Rec Hits (Unfiltered) EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE -", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/04 Rechits EE +",
+eeecalshifterlayout(dqmitems, "03 Occupancy/02 Rec Hits (Unfiltered) EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE +", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/05 TriggerPrimitives EE -",
+eeecalshifterlayout(dqmitems, "03 Occupancy/03 Rec Hits (Filtered) EE -",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE -", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE - projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eeecalshifterlayout(dqmitems, "03 Occupancy/03 Rec Hits (Filtered) EE +",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE +", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE + projection R", 'description': "R projection of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit thr occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL calibrated reconstructed hits. Only the good reconstructed hits with energy E > 500 MeV are considered. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eeecalshifterlayout(dqmitems, "03 Occupancy/04 Trigger Primitives Digis (All) EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE -", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection R", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/06 TriggerPrimitives EE +",
+eeecalshifterlayout(dqmitems, "03 Occupancy/04 Trigger Primitives Digis (Al) EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE +", 'description': "Map of the occupancy of ECAL trigger primitives. Expect uniform color. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE + projection R", 'description': "Eta projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives. Expect uniform distribution. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/07 TriggerPrimitives Threshold EE -",
+eeecalshifterlayout(dqmitems, "03 Occupancy/05 Trigger Primitives (Threshold) EE -",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE -", 'description': "Map of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Darker regions mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection R", 'description': "Eta projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE - projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/08 TriggerPrimitives Threshold EE +",
+eeecalshifterlayout(dqmitems, "03 Occupancy/05 Trigger Primitives (Threshold) EE +",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE +", 'description': "Map of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Darker regions mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection R", 'description': "Eta projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEOccupancyTask/EEOT TP digi thr occupancy EE + projection phi", 'description': "Phi projection of the occupancy of ECAL trigger primitives with an E_T > 1 GeV (4 ADC counts). Expect uniform distribution, spikes mean noisy towers. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/09 TestPulseEvents",
+eeecalshifterlayout(dqmitems, "03 Occupancy/06 TestPulseEvents",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE -", 'description': "Occupancy of test pulse events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT test pulse digi occupancy EE +", 'description': "Occupancy of test pulse events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/10 LaserEvents",
+eeecalshifterlayout(dqmitems, "03 Occupancy/07 LaserEvents",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE -", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT laser digi occupancy EE +", 'description': "Occupancy of laser events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/11 LedEvents",
+eeecalshifterlayout(dqmitems, "03 Occupancy/08 LedEvents",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE -", 'description': "Occupancy of led events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT led digi occupancy EE +", 'description': "Occupancy of led events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/12 PedestalEvents",
+eeecalshifterlayout(dqmitems, "03 Occupancy/09 PedestalEvents",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE -", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT pedestal digi occupancy EE +", 'description': "Occupancy of pedestal events only (if any in the calibration sequence). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "03 Occupancy/13 PN Digis",
+eeecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). Digis are expected only in EE+/-2,3,7,8 which have MEM box attached (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
@@ -201,49 +211,47 @@ eeecalshifterlayout(dqmitems, "04 Energy/01 Basic Clusters",
 
 eeecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters Multiplicity EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection R EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters Multiplicity EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection R EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/03 Basic Clusters Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "Average energy (in GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -", 'description': "R projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE -", 'description': "R projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "Phi projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/03 BasicClusters Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "Average energy (in GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +", 'description': "R projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE +", 'description': "R projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "Phi projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Transverse Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection R EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Transverse Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection R EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection R EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection R EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/06 SuperClusters 1D",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC number", 'description': "Multiplicity of reconstructed multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-  { 'path': "EcalEndcap/EEClusterTask/EECLT SC size (crystal)", 'description': "Numbers of crystals contained in multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing", 'description': "Peak position of the pulse shape of the seed of the superclusters (in clock units = 25ns). Distribution should peak at 6 clock units. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-  None])
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC number", 'description': "Multiplicity of reconstructed multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC size (crystal)", 'description': "Numbers of crystals contained in multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/07 Peaks",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass Pi0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
@@ -269,15 +277,20 @@ eeecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
    { 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing rms 1D summary", 'description': "Timing RMS of all the channels in EE +. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EE. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "05 Timing/03 Cluster Seeds Timing EE -",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing map EE -", 'description': "Average timing (in ns) of the seeds of the clusters relative to the expected time. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing projection R EE -", 'description': "Average timing (in ns) of the seeds of the clusters relative to the expected time vs seed eta. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing projection phi EE -", 'description': "Average timing (in ns) of the seeds of the clusters relative to the expected time vs seed phi. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eeecalshifterlayout(dqmitems, "05 Timing/03 Timing Map EE -",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "05 Timing/03 Cluster Seeds Timing EE +",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing map EE +", 'description': "Average timing (in clocks) of the seeds of the clusters relative to the expected time. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing projection R EE +", 'description': "Average timing (in clocks) of the seeds of the clusters relative to the expected time vs seed eta. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing projection phi EE +", 'description': "Average timing (in clocks) of the seeds of the clusters relative to the expected time vs seed phi. Expected 0 ns. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eeecalshifterlayout(dqmitems, "05 Timing/03 Timing Map EE +",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eeecalshifterlayout(dqmitems, "05 Timing/04 Single Event Timing",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D summary EE -", 'description': "Single event timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing 1D summary EE +", 'description': "Single event timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+ - EE-", 'description': "Event by event difference between the average timing in EE+ and EE- (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected 0. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra EE -",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT Et spectrum Real Digis EE -", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -5019,13 +5032,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-01/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-01/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-01/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-01/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-01/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -5424,13 +5441,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-02/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-02/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-02/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-02/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-02/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -5829,13 +5850,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-03/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-03/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-03/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-03/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-03/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -6234,13 +6259,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-04/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-04/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-04/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-04/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-04/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -6639,13 +6668,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-05/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-05/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-05/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-05/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-05/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -7044,13 +7077,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-06/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-06/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-06/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-06/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-06/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -7449,13 +7486,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-07/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-07/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-07/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-07/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-07/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -7854,13 +7895,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-08/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-08/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-08/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-08/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-08/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -8259,13 +8304,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-09/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-09/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE-09/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE-09/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE-09/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -8664,13 +8713,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+01/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+01/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+01/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+01/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+01/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9069,13 +9122,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+02/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+02/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+02/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+02/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+02/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9474,13 +9531,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+03/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+03/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+03/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+03/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+03/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -9879,13 +9940,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+04/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+04/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+04/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+04/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+04/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -10284,13 +10349,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+05/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+05/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+05/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+05/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+05/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -10689,13 +10758,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+06/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+06/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+06/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+06/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+06/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11094,13 +11167,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+07/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+07/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+07/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+07/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+07/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11499,13 +11576,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+08/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+08/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+08/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+08/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+08/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11904,13 +11985,17 @@ eelayout(dqmitems, "00 By Task/07 Timing/00 Timing Summary",
 eelayout(dqmitems, "00 By Task/07 Timing/01 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing quality summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+09/00 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+09/00 Timing Quality",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing quality EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing mean EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingClient/EETMT timing rms EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eelayout(dqmitems, "00 By Task/07 Timing/EE+09/01 Timing",
+eelayout(dqmitems, "00 By Task/07 Timing/EE+09/01 Timing Value",
   [{ 'path': "EcalEndcap/EETimingClient/EETMT timing EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eelayout(dqmitems, "00 By Task/07 Timing/EE+09/02 Timing vs Amplitude",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/08 Trigger/00 Trigger Summary",
@@ -11966,42 +12051,42 @@ eelayout(dqmitems, "00 By Task/11 Cluster/00 BasicClusters 1D",
 
 eelayout(dqmitems, "00 By Task/11 Cluster/01 BasicClusters Energy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/02 BasicClusters Energy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection R EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/03 BasicClusters Size",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection R EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/04 BasicClusters Size",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection R EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/05 BasicClusters TransverseEnergy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection R EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/06 BasicClusters TransverseEnergy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection R EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/07 BasicClusters Multiplicity",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection R EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/08 BasicClusters Multiplicity",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection R EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+  [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE +", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/09 SuperClusters 1D",
@@ -12009,14 +12094,6 @@ eelayout(dqmitems, "00 By Task/11 Cluster/09 SuperClusters 1D",
    { 'path': "EcalEndcap/EEClusterTask/EECLT SC size", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC number", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    None])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/10 SuperClusters Seeds",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing", 'description': "timing for each seed of a supercluster with amplitude > 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal energy", 'description': "energy (GeV) of the crystal seeding a supercluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/11 SuperClusters SeedsTiming",
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing map EE -", 'description': "timing average for each seed of a supercluster with amplitude > 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal timing map EE +", 'description': "timing average for each seed of a supercluster with amplitude > 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/11 Cluster/12 SuperClusters Seeds",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC single crystal cluster seed occupancy map EE -", 'description': "Occupancy of seeds of superclusters formed by exactly one crystal. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -12042,60 +12119,6 @@ eelayout(dqmitems, "00 By Task/11 Cluster/16 Best Pair Combinatorics (No sel)",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass Z0", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass high", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-01",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-01", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-02",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-02", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-02. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-03",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-03", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-03. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-04",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-04", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-04. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-05",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-05", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-06",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-06", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-07",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-07", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-07. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-08",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-08", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-08. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE-/Timing EE-09",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE-09", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE-09. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+01",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+01", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+01. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+02",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+02", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+02. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+03",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+03", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+03. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+04",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+04", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+04. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+05",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+05", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+06",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+06", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+06. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+07",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+07", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+07. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+08",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+08", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+08. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eelayout(dqmitems, "00 By Task/11 Cluster/12 TimingBySupermodule/EE+/Timing EE+09",
-  [{ 'path': "EcalEndcap/EEClusterTask/Timing/EECLT timing EE+09", 'description': "Timing of the pulse shape in clock units (1 clock = 25 ns) for sector EE+09. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/12 Occupancy/00 Occupancy",
   [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT digi occupancy EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
