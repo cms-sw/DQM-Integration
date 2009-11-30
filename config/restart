@@ -4,66 +4,246 @@
 # via '@reboot /home/dqm/config/restart' crontab entry, and after
 # a server upgrade. If server processes are already running, they
 # are first stopped.
+#
+# See the operations documentation on how to use this script:
+#   https://twiki.cern.ch/twiki/bin/view/CMS/DQMGuiProduction
 
+######################################################################
 # Set parameters. Use the latest installed server by default.
-DQMV=${1:-latest}
+#
+# Collect arguments and verify the invocation came from documented
+# (copy-and-paste) instructions to avoid ops mishaps, such as one
+# caused tired or insufficiently cafeinated operator.
+#
+# Note that we treat "start" and "restart" actions identically to
+# prevent operational errors of starting overlapping servers.
+EXTRA="$4"
+ACT=${1:-restart}
+DQMV=${2:-latest}
 ARCH=slc4_ia32_gcc345
-HOST=$(hostname)
-
+NOW=$(date +%Y%m%d%H%M%S)
+CHECK=$(echo "$3" | md5sum | awk '{print $1}')
+HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
 case $HOST in
-  srv-* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
-  vocms* ) DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
+  srv-c2d* ) DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
+  srv-c2c* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
+  vocms* )   DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
 esac
 
 if [ X"$DQMV" = Xlatest ]; then
   DQMV=$(ls -tr $DQM_SW/$ARCH/cms/dqmgui | tail -1)
 fi
 
+case $DQMV in [0-9]*.[0-9]*.[0-9]* ) ;; * )
+  echo "$0: unrecognised version '${DQM:-(none)}' ($1);" \
+       "please check documentation." 1>&2
+  exit 1 ;;
+esac
+
+case $ACT in stop | status | restart ) ;; start ) ACT=restart ;; * )
+  echo "$0: unrecognised action '${ACT:-(none)}' ($2);" \
+       "please check documentation." 1>&2
+  exit 1 ;;
+esac
+
+[ $ACT = status ] ||
+{ ps -oargs= $PPID | grep -q -e crond; } ||
+[ X"$CHECK" = X94e261a5a70785552d34a65068819993 ] ||
+{ echo "$0: cannot complete operation, please check documentation."; exit 1; }
+
+######################################################################
 # Source server environment. Move to $DQM_DIR so cwd is safe.
-cd $DQM_DIR
 . $DQM_SW/cmsset_default.sh
 . $DQM_SW/$ARCH/cms/dqmgui/$DQMV/etc/profile.d/env.sh
+cd $DQM_DIR
 
-# Verify invocation came from documented (copy-and-paste) instructions.
-CHECK=$(echo -n "$2" | tr -c '[A-Za-z]' '_' | tr '[:upper:]' '[:lower:]')
-if { ps -oargs= $PPID | grep -q -e cron; } || \
-   [ X"$CHECK" = Xi_did_read_documentation ]; then :; else
-  echo "$0: cannot complete request, please check documentation."
-  exit 1
+# If this is a status call, show running processes and exit now.
+if [ $ACT = status ]; then
+  echo "File handling daemons:"
+  pgrep -u $(id -u) -f 'vis.*Daemon' | xargs -r ps -o pid=,bsdstart=,args= |
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+
+  echo "Collector:"
+  pgrep -u $(id -u) -f 'DQMCollector' | xargs -r ps -o pid=,bsdstart=,args= |
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+
+  echo "GUI servers:"
+  pgrep -u $(id -u) -f 'visDQMGui' | xargs -r ps -o pid=,bsdstart=,args= |
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+
+  echo "Render servers:"
+  pgrep -u $(id -u) -f 'visDQMRender' | xargs -r ps -o pid=,bsdstart=,args= |
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; }'
+  exit 0
 fi
 
-# Stop any existing file handling daemons.
-for pid in $(pgrep -f 'vis.*Daemon'); do
-  psline=$(ps -o pid=,bsdstart=,args= $pid | perl -n -e 'print join(" ", (split)[0..4])')
+######################################################################
+# Stop any existing daemons.
+T=1
+for pid in $(pgrep -u $(id -u) -f 'vis.*Daemon') \
+           $(pgrep -u $(id -u) -f 'DQMCollector') \
+           $(pgrep -u $(id -u) -f 'visDQMGui') \
+           $(pgrep -u $(id -u) -f 'visDQMRender'); do
+  psline=$(ps -o pid=,bsdstart=,args= $pid |
+           perl -n -e 'print join(" ", (split)[0..4])')
   echo -n "Stopping $pid ($psline):"
   for sig in INT INT TERM KILL; do
     echo -n " SIG$sig"
     kill -$sig $pid
-    sleep 1
+    sleep $T
     [ $(ps h $pid | wc -l) = 0 ] && break
+    T=$(expr $T \* 2)
   done
   echo
 done
 
-# Restart DQM GUI servers.
+[ $ACT = stop ] && exit 0
+
+# Should be restart from here on.
+[ $ACT = restart ] || { echo "$0: internal error"; exit 77; }
+
+######################################################################
+# Start file handling agents.
 case $HOST in
-  srv*-19)
-    $DQM_DIR/config/startOnlineAgents
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
-    visDQMControl restart all from $DQM_DIR/config/server-conf-online.py ;;
-  srv*-18)
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
-    visDQMControl restart all from $DQM_DIR/config/server-conf-online-playback.py ;;
-  srv*-16)
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
-    visDQMControl restart all from $DQM_DIR/config/server-conf-online-test.py ;;
-  srv*-17)
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
-    visDQMControl restart all from $DQM_DIR/config/server-conf-gui-test.py ;;
-  vocms34) 
-    $DQM_DIR/config/startOfflineAgents
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x
+  # old production
+  srv-c2d05-19 )
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p $DQM_DATA/repository/{original,merged} {$DQM_DATA,$DQM_BASE}/agents
+    (set -x
+     (visDQMReceiveDaemon \
+       $DQM_DATA/uploads \
+       $DQM_DATA/repository/original \
+       $DQM_DATA/agents/register \
+       $DQM_DATA/agents/register-local \
+       $DQM_DATA/agents/register-offsite \
+       $DQM_DATA/agents/merge \
+     ) >& $DQM_BASE/agents/$NOW-$HOST-receive.log </dev/null &
+
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/register \
+       $DQM_DATA/repository/original \
+       $DQM_BASE/ix \
+     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
+
+  # dqm-prod-local
+  srv-c2d04-21 )
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p {$DQM_DATA,$DQM_BASE}/agents
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/register-local \
+       $DQM_DATA/repository/original \
+      $DQM_BASE/ix \
+     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & )
+ 
+    if [ X"$EXTRA" = Xmigration ]; then
+      echo -n "$0: really start migration agents? (y/n) "
+      read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+
+      (while true; do
+         for f in $(find $DQM_DATA/repository{2,3}/original -name 'DQM_V????_*_R00*.root' | sort); do
+           if [ $(find $DQM_DATA/repository/original -name $(basename $f) | wc -l) = 0 ]; then
+             v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
+             b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+             [ -f $b -o -f $b.bad -o -f $b.origin.bad ] && continue
+             mkdir -p $(dirname $b)
+             ln $f $b
+             echo "md5:$(md5sum < $b | awk '{print $1}') $(stat -c '%s' $b) $b" > $b.origin
+           fi
+         done
+         sleep 1200
+       done) >>& $DQM_BASE/agents/$NOW-$HOST-upload.log </dev/null &
+    fi ;;
+
+  # dqm-prod-offsite
+  srv-c2d04-22 )
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p {$DQM_DATA,$DQM_BASE}/agents
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/register-offsite \
+       $DQM_DATA/repository/original \
+       $DQM_BASE/ix \
+     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & )
+    ;;
+
+  # offline
+  vocms34 ) 
+    # standard lot of agents
+    for D in offline caf dev; do
+      DQM_DATA=/data/dqm/$D
+      mkdir -p $DQM_DATA/agents
+      (set -x
+       (visDQMReceiveDaemon \
+         $DQM_DATA/uploads \
+         $DQM_DATA/repository/data \
+         $DQM_DATA/agents/register \
+         $DQM_DATA/agents/zip \
+       ) >& $DQM_DATA/agents/$NOW-$HOST-receive.log </dev/null &
+
+       (visDQMZipDaemon \
+         $DQM_DATA/agents/zip \
+         $DQM_DATA/repository/data \
+         $DQM_DATA/repository/zipped \
+         $DQM_DATA/agents/stageout \
+       ) >& $DQM_DATA/agents/$NOW-$HOST-zip.log </dev/null &
+
+       (visDQMImportDaemon \
+         $DQM_DATA/agents/register \
+         $DQM_DATA/repository/data \
+         $DQM_DATA/ix \
+         $DQM_DATA/agents/historic \
+       ) >& $DQM_DATA/agents/$NOW-$HOST-import.log </dev/null & )
+    done
+
+    # data migration agents, started only on special request
+    if [ X"$EXTRA" = Xmigration ]; then
+      echo -n "$0: really start migration agents? (y/n) "
+      read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+
+      for D in offline caf dev; do
+        DQM_DATA=/data/dqm/$D
+        mkdir -p $DQM_DATA/agents
+        (for f in $(find $DQM_DATA/old/data -name '*.root.origin' | sort); do
+           if [ $(find $DQM_DATA/repository/data -name $(basename ${f%.origin}) | wc -l) = 0 ]; then
+             v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
+             b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+             if [ ! -f $b -a ! -f $b.bad ]; then
+               mkdir -p $(dirname $b)
+               ln $f $b
+               ln ${f%.origin} ${b%.origin}
+             fi
+           fi
+         done) >>& $DQM_DATA/agents/$NOW-$HOST-upload.log </dev/null &
+      done
+    fi ;;
+esac
+
+# If requested, start collector.
+case $HOST in
+  srv-c2d05-1[6789] | srv-c2d04-2[1234] | srv-c2d04-30 | vocms34 )
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
+esac
+
+# If requested, start web server.
+case $HOST in
+  srv-c2d05-19 | srv-c2d04-2[12] )
+    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online.py) ;;
+
+  srv-c2d05-18 | srv-c2d04-23 )
+    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-playback.py) ;;
+
+  srv-c2d05-16 | srv-c2d04-24 )
+    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-test.py) ;;
+
+  srv-c2d05-17 )
+    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-gui-test.py) ;;
+
+  srv-c2d04-30 )
+    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-milk.py) ;;
+
+  vocms34 ) 
     for svc in "" -caf -dev; do
-      visDQMControl restart all from $DQM_DIR/config/server-conf-offline$svc.py
+      (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-offline$svc.py)
     done ;;
 esac
