@@ -39,9 +39,6 @@ pixellayout(dqmitems, "03 - Pixel_Digi_Barrel_Summary",
      'draw': { 'withref': "no" }}],
   [{ 'path': "Pixel/Barrel/SUMDIG_ndigis_Barrel",
      'description': "Mean number of digis per event per barrel module",
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Barrel/SUMDIG_ndigisFREQ_Barrel",
-     'description': "Total number of events with at least one digi per event per barrel module",
      'draw': { 'withref': "no" }}]
   )     
 pixellayout(dqmitems, "04 - Pixel_Digi_Endcap_Summary",
@@ -50,9 +47,6 @@ pixellayout(dqmitems, "04 - Pixel_Digi_Endcap_Summary",
      'draw': { 'withref': "no" }}],
   [{ 'path': "Pixel/Endcap/SUMDIG_ndigis_Endcap",
      'description': "Mean number of digis per event per endcap module",
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Endcap/SUMDIG_ndigisFREQ_Endcap",
-     'description': "Total number of events with at least one digi per event per endcap module",
      'draw': { 'withref': "no" }}]
   )     
 pixellayout(dqmitems, "05 - Pixel_Cluster_Barrel_Summary",
