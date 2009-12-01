@@ -1,0 +1,68 @@
+#!/bin/zsh
+
+# DQM daily maintenance script.
+#
+# See the operations documentation on how to use this script:
+#   https://twiki.cern.ch/twiki/bin/view/CMS/DQMGuiProduction
+
+######################################################################
+# Figure out where the server is based on this script's location.
+HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
+FILER=/dqmdata
+HERE=$(dirname $(dirname $0))
+[ X"$HERE" = X ] && { echo "$0: cannot figure out server location"; exit 1; }
+[ -d "$HERE/gui" ] || { echo "$0: server location '$HERE' is wrong"; exit 1; }
+[ -d "$FILER" ] || { echo "$0: filer location '$FILER' is wrong": exit 1; }
+
+######################################################################
+# File away server logs.
+for f in $(find $HERE/gui -name '*log-20*.txt' -mtime +0 | sort); do
+  set -e
+  [ -f "$f" ] || continue
+  item=${${f#$HERE/gui/}%/*}
+  month=$(echo "$f" | perl -pe 's|.*log-||; s|^([0-9]{6}).*|$1|')
+  case $month in 20[0-9][0-9][01][0-9] ) ;; * )
+    echo "$f: could not determine month from log file name (got: $month)"
+    continue ;;
+  esac
+
+  mkdir -p $FILER/logs/$HOST/$item
+  zip -9Tmojq $FILER/logs/$HOST/$item/$month.zip $f
+  set +e
+done
+
+######################################################################
+# File away collector archives.
+COLLECTOR=$FILER/logs/$HOST/collector
+for f in $(find $HERE/collector -name '*.zip' -mtime +1 | sort); do
+  set -e
+  [ -f "$f" ] || continue
+  dest=${f#*/collector/}
+  mkdir -p $COLLECTOR
+  while [ -f $COLLECTOR/$dest ]; do
+    dest=${f:r}_.zip
+  done
+  mv $f $COLLECTOR/$dest
+  set +e
+done
+
+######################################################################
+# Compact monitoring logs.
+TIMELIMIT=$(date +%Y-%m-%d)
+for f in $FILER/status/*/$HOST/*/20[0-9][0-9][01][0-9]*.txt; do
+  set -e
+  [ -f "$f" ] || continue
+  month=$(echo "$f" | perl -pe 's|.*/||; s|^([0-9]{6}).*|$1|')
+  day=$(echo "$f" | perl -pe 's|.*/||; s|^([0-9]{8}).*|$1|')
+  case $month in 20[0-9][0-9][01][0-9] ) ;; * )
+    echo "$f: could not determine month from log file name (got: $month)"
+    continue ;;
+  esac
+  case $day in 20[0-9][0-9][01][0-9][0123][0-9] ) ;; * )
+    echo "$f: could not determine day from log file name (got: $day)"
+    continue ;;
+  esac
+
+  zip -9Tmoqj -tt $TIMELIMIT $(dirname "$f")/$day.zip $f
+  set +e
+done
