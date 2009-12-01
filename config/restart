@@ -17,7 +17,7 @@
 #
 # Note that we treat "start" and "restart" actions identically to
 # prevent operational errors of starting overlapping servers.
-EXTRA="$4"
+PS4="+ "
 ACT=${1:-restart}
 DQMV=${2:-latest}
 ARCH=slc4_ia32_gcc345
@@ -28,6 +28,15 @@ case $HOST in
   srv-c2d* ) DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
   srv-c2c* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
   vocms* )   DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
+esac
+case $HOST in
+  srv-c2d05-19 | srv-c2d04-2[12] ) CONFIGS="online" ;;
+  srv-c2d05-18 | srv-c2d04-23 )    CONFIGS="online-playback" ;;
+  srv-c2d05-16 | srv-c2d04-24 )    CONFIGS="online-test" ;;
+  srv-c2d05-17 )                   CONFIGS="gui-test" ;;
+  srv-c2d04-30 )                   CONFIGS="online-milk" ;;
+  vocms34 )                        CONFIGS="offline offline-caf offline-dev" ;;
+  * )                              CONFIGS= ;;
 esac
 
 if [ X"$DQMV" = Xlatest ]; then
@@ -40,16 +49,58 @@ case $DQMV in [0-9]*.[0-9]*.[0-9]* ) ;; * )
   exit 1 ;;
 esac
 
+EXTRA=
+case $ACT in *=* ) EXTRA=${ACT#*\=} ACT=${ACT%\=*} ;; esac
 case $ACT in stop | status | restart ) ;; start ) ACT=restart ;; * )
   echo "$0: unrecognised action '${ACT:-(none)}' ($2);" \
        "please check documentation." 1>&2
   exit 1 ;;
 esac
 
+if [ -n "$(echo "$EXTRA" | sed -e 's/,*migration,*//g' -e 's/,*agents,*//g' \
+           -e 's/,*collector,*//g' -e 's/,*webserver,*//g' \
+	   -e 's/,*renderer,*//g' -e 's/,*logger,*//g')" ]; then
+  echo "$0: unrecognised action parameter '${EXTRA:-(none)}';" \
+       "please check documentation." 1>&2
+  exit 1
+fi
+
 [ $ACT = status ] ||
 { ps -oargs= $PPID | grep -q -e crond; } ||
 [ X"$CHECK" = X94e261a5a70785552d34a65068819993 ] ||
-{ echo "$0: cannot complete operation, please check documentation."; exit 1; }
+{ echo "$0: cannot complete operation, please check documentation."; exit 2; }
+
+######################################################################
+# Utilities.
+statproc() {
+  local title="$1" pat="$2"
+  echo "${newline}${title}:"
+  pgrep -u $(id -u) -f "$pat" | xargs -r ps -o pid=,bsdstart=,args= |
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; }'
+  newline="\n"
+}
+
+killproc() {
+  local T=1 title="$1" pat="$2"
+  local nextmsg="${newline}Stopping ${title}:"
+  for pid in $(pgrep -u $(id -u) -f "$pat" | sort -rn); do
+    psline=$(ps -o pid=,bsdstart=,args= $pid |
+             perl -n -e 'print join(" ", (split)[0..4])')
+    [ -n "$nextmsg" ] && { echo "$nextmsg"; nextmsg=; }
+    echo -n "Stopping $pid ($psline):"
+    for sig in INT INT TERM KILL; do
+      echo -n " SIG$sig"
+      kill -$sig $pid
+      sleep 1
+      [ $(ps h $pid | wc -l) = 0 ] && break
+      sleep $T
+      T=$(expr $T \* 2)
+      [ $(ps h $pid | wc -l) = 0 ] && break
+    done
+    echo
+  done
+  newline="\n"
+}
 
 ######################################################################
 # Source server environment. Move to $DQM_DIR so cwd is safe.
@@ -58,55 +109,65 @@ esac
 cd $DQM_DIR
 
 # If this is a status call, show running processes and exit now.
+newline=
 if [ $ACT = status ]; then
-  echo "File handling daemons:"
-  pgrep -u $(id -u) -f 'vis.*Daemon' | xargs -r ps -o pid=,bsdstart=,args= |
-    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+  case ${EXTRA:-agents} in *agents* )
+    statproc "File agents" "vis*Daemon" ;;
+  esac
 
-  echo "Collector:"
-  pgrep -u $(id -u) -f 'DQMCollector' | xargs -r ps -o pid=,bsdstart=,args= |
-    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+  case ${EXTRA:-migration} in *migration* )
+    statproc "Migration agents" "visDQMMigration|sleep" ;;
+  esac
 
-  echo "GUI servers:"
-  pgrep -u $(id -u) -f 'visDQMGui' | xargs -r ps -o pid=,bsdstart=,args= |
-    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; print "\n" }'
+  case ${EXTRA:-collector} in *collector* )
+    statproc "Collector" "DQMCollector" ;;
+  esac
 
-  echo "Render servers:"
-  pgrep -u $(id -u) -f 'visDQMRender' | xargs -r ps -o pid=,bsdstart=,args= |
-    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; }'
+  case ${EXTRA:-logger} in *logger* )
+    statproc "Loggers" "visDQMRotateLogs" ;;
+  esac
+
+  case ${EXTRA:-webserver} in *webserver* )
+    statproc "Web servers" "visDQMGui" ;;
+  esac
+
+  case ${EXTRA:-renderer} in *renderer* )
+    statproc "Render servers" "visDQMRender" ;;
+  esac
   exit 0
 fi
 
 ######################################################################
 # Stop any existing daemons.
-T=1
-for pid in $(pgrep -u $(id -u) -f 'vis.*Daemon') \
-           $(pgrep -u $(id -u) -f 'DQMCollector') \
-           $(pgrep -u $(id -u) -f 'visDQMGui') \
-           $(pgrep -u $(id -u) -f 'visDQMRender'); do
-  psline=$(ps -o pid=,bsdstart=,args= $pid |
-           perl -n -e 'print join(" ", (split)[0..4])')
-  echo -n "Stopping $pid ($psline):"
-  for sig in INT INT TERM KILL; do
-    echo -n " SIG$sig"
-    kill -$sig $pid
-    sleep $T
-    [ $(ps h $pid | wc -l) = 0 ] && break
-    T=$(expr $T \* 2)
-  done
-  echo
-done
+newline=
+case ${EXTRA:-agents} in *agents* )
+  killproc "file agents" "vis*Daemon" ;;
+esac
+
+case ${EXTRA:-migration} in *migration* )
+  killproc "migration agents" "visDQMMigration|sleep" ;;
+esac
+
+case ${EXTRA:-collector} in *collector* )
+  killproc "collector" "DQMCollector" ;;
+esac
+
+case ${EXTRA:-webserver} in *webserver* )
+  for cfg in $CONFIGS; do
+    (set -x; visDQMControl stop all from $DQM_DIR/config/server-conf-$cfg.py)
+  done ;;
+esac
 
 [ $ACT = stop ] && exit 0
 
 # Should be restart from here on.
-[ $ACT = restart ] || { echo "$0: internal error"; exit 77; }
+[ $ACT = restart ] || { echo "$0: $LINENO: internal error"; exit 3; }
 
 ######################################################################
-# Start file handling agents.
-case $HOST in
+# Start file handling agents if requested.
+case $HOST:${EXTRA:-agents} in
   # old production
-  srv-c2d05-19 )
+  srv-c2d05-19:*agents* )
     DQM_DATA=/dqmdata/dqm
     mkdir -p $DQM_DATA/repository/{original,merged} {$DQM_DATA,$DQM_BASE}/agents
     (set -x
@@ -126,7 +187,7 @@ case $HOST in
      ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
 
   # dqm-prod-local
-  srv-c2d04-21 )
+  srv-c2d04-21:*agents* )
     DQM_DATA=/dqmdata/dqm
     mkdir -p {$DQM_DATA,$DQM_BASE}/agents
     (set -x
@@ -134,29 +195,11 @@ case $HOST in
        $DQM_DATA/agents/register-local \
        $DQM_DATA/repository/original \
       $DQM_BASE/ix \
-     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & )
+     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
  
-    if [ X"$EXTRA" = Xmigration ]; then
-      echo -n "$0: really start migration agents? (y/n) "
-      read answer; case $answer in y ) ;; * ) exit 2 ;; esac
-
-      (while true; do
-         for f in $(find $DQM_DATA/repository{2,3}/original -name 'DQM_V????_*_R00*.root' | sort); do
-           if [ $(find $DQM_DATA/repository/original -name $(basename $f) | wc -l) = 0 ]; then
-             v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
-             b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
-             [ -f $b -o -f $b.bad -o -f $b.origin.bad ] && continue
-             mkdir -p $(dirname $b)
-             ln $f $b
-             echo "md5:$(md5sum < $b | awk '{print $1}') $(stat -c '%s' $b) $b" > $b.origin
-           fi
-         done
-         sleep 1200
-       done) >>& $DQM_BASE/agents/$NOW-$HOST-upload.log </dev/null &
-    fi ;;
 
   # dqm-prod-offsite
-  srv-c2d04-22 )
+  srv-c2d04-22:*agents* )
     DQM_DATA=/dqmdata/dqm
     mkdir -p {$DQM_DATA,$DQM_BASE}/agents
     (set -x
@@ -168,7 +211,7 @@ case $HOST in
     ;;
 
   # offline
-  vocms34 ) 
+  vocms34:*agents* ) 
     # standard lot of agents
     for D in offline caf dev; do
       DQM_DATA=/data/dqm/$D
@@ -195,55 +238,61 @@ case $HOST in
          $DQM_DATA/agents/historic \
        ) >& $DQM_DATA/agents/$NOW-$HOST-import.log </dev/null & )
     done
+esac
 
+case $HOST:$EXTRA in
+  srv-c2d04-21:*migration* )
+    echo -n "$0: really start migration agents? (y/n) "
+    read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+
+    (jobs -Z "visDQMMigrationProcess";
+     while true; do
+       for f in $(find $DQM_DATA/repository{2,3}/original -name 'DQM_V????_*_R00*.root' | sort); do
+         if [ $(find $DQM_DATA/repository/original -name $(basename $f) | wc -l) = 0 ]; then
+           v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
+           b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+           [ -f $b -o -f $b.bad -o -f $b.origin.bad ] && continue
+           mkdir -p $(dirname $b)
+           ln $f $b
+           echo "md5:$(md5sum < $b | awk '{print $1}') $(stat -c '%s' $b) $b" > $b.origin
+         fi
+       done
+       sleep 1200
+     done) >>& $DQM_BASE/agents/$NOW-$HOST-upload.log </dev/null & ;;
+
+  vocms34:*migration* ) 
     # data migration agents, started only on special request
-    if [ X"$EXTRA" = Xmigration ]; then
-      echo -n "$0: really start migration agents? (y/n) "
-      read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+    echo -n "$0: really start migration agents? (y/n) "
+    read answer; case $answer in y ) ;; * ) exit 2 ;; esac
 
-      for D in offline caf dev; do
-        DQM_DATA=/data/dqm/$D
-        mkdir -p $DQM_DATA/agents
-        (for f in $(find $DQM_DATA/old/data -name '*.root.origin' | sort); do
-           if [ $(find $DQM_DATA/repository/data -name $(basename ${f%.origin}) | wc -l) = 0 ]; then
-             v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
-             b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
-             if [ ! -f $b -a ! -f $b.bad ]; then
-               mkdir -p $(dirname $b)
-               ln $f $b
-               ln ${f%.origin} ${b%.origin}
-             fi
+    for D in offline caf dev; do
+      DQM_DATA=/data/dqm/$D
+      mkdir -p $DQM_DATA/agents
+      (jobs -Z "visDQMMigrationProcess";
+       for f in $(find $DQM_DATA/old/data -name '*.root.origin' | sort); do
+         if [ $(find $DQM_DATA/repository/data -name $(basename ${f%.origin}) | wc -l) = 0 ]; then
+           v=$(basename $f | sed 's/.*_V\([0-9][0-9][0-9][0-9]\)_.*/\1/')
+           b=$DQM_DATA/uploads2/$v/$(basename $f | sed s/_V${v}_/_V0001_/)
+           if [ ! -f $b -a ! -f $b.bad ]; then
+             mkdir -p $(dirname $b)
+             ln $f $b
+             ln ${f%.origin} ${b%.origin}
            fi
-         done) >>& $DQM_DATA/agents/$NOW-$HOST-upload.log </dev/null &
-      done
-    fi ;;
-esac
-
-# If requested, start collector.
-case $HOST in
-  srv-c2d05-1[6789] | srv-c2d04-2[1234] | srv-c2d04-30 | vocms34 )
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
-esac
-
-# If requested, start web server.
-case $HOST in
-  srv-c2d05-19 | srv-c2d04-2[12] )
-    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online.py) ;;
-
-  srv-c2d05-18 | srv-c2d04-23 )
-    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-playback.py) ;;
-
-  srv-c2d05-16 | srv-c2d04-24 )
-    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-test.py) ;;
-
-  srv-c2d05-17 )
-    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-gui-test.py) ;;
-
-  srv-c2d04-30 )
-    (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-online-milk.py) ;;
-
-  vocms34 ) 
-    for svc in "" -caf -dev; do
-      (set -x; visDQMControl restart all from $DQM_DIR/config/server-conf-offline$svc.py)
+         fi
+       done) >>& $DQM_DATA/agents/$NOW-$HOST-upload.log </dev/null &
     done ;;
+esac
+
+######################################################################
+# Start collector if requested.
+case ${EXTRA:-collector} in *collector* )
+  crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
+esac
+
+######################################################################
+# Start web server if requested.
+case ${EXTRA:-webserver} in *webserver* )
+  for cfg in $CONFIGS; do
+    (set -x; visDQMControl start all from $DQM_DIR/config/server-conf-$cfg.py)
+  done ;;
 esac
