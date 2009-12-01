@@ -194,7 +194,7 @@ case $HOST:${EXTRA:-agents} in
      (visDQMImportDaemon \
        $DQM_DATA/agents/register-local \
        $DQM_DATA/repository/original \
-      $DQM_BASE/ix \
+       $DQM_BASE/ix \
      ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
  
 
@@ -240,10 +240,14 @@ case $HOST:${EXTRA:-agents} in
     done
 esac
 
+# Migration, disabled by default, and likely disabled even if requested.
 case $HOST:$EXTRA in
   srv-c2d04-21:*migration* )
+    for i in $(seq 1 $(expr 5 + $(expr $(date +%s) % 10))); do key=$RANDOM; done
     echo -n "$0: really start migration agents? (y/n) "
     read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+    echo -n "$0: that was probably a mistake! say $key if you *really* want to continue: "
+    read answer; case $answer in $key ) ;; * ) exit 2 ;; esac
 
     (jobs -Z "visDQMMigrationProcess";
      while true; do
@@ -261,9 +265,11 @@ case $HOST:$EXTRA in
      done) >>& $DQM_BASE/agents/$NOW-$HOST-upload.log </dev/null & ;;
 
   vocms34:*migration* ) 
-    # data migration agents, started only on special request
+    for i in $(seq 1 $(expr 5 + $(expr $(date +%s) % 10))); do key=$RANDOM; done
     echo -n "$0: really start migration agents? (y/n) "
     read answer; case $answer in y ) ;; * ) exit 2 ;; esac
+    echo -n "$0: that was probably a mistake! say $key if you *really* want to continue: "
+    read answer; case $answer in $key ) ;; * ) exit 2 ;; esac
 
     for D in offline caf dev; do
       DQM_DATA=/data/dqm/$D
