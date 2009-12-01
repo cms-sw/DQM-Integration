@@ -10,12 +10,9 @@ LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
 # Do not modify configuration below this line.
-import os.path, socket
-global CONFIGDIR
 HOST      = socket.gethostname().lower()
 HOSTADDR  = socket.getaddrinfo(HOST, None)[0][4][0]
 BASEDIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 HOSTALIAS = HOST
 
 # Figure out a preferred alias for this out (if any)
