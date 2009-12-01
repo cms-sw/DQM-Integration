@@ -23,7 +23,7 @@ ecaloverviewlayout(dqmitems, "04 Timing Mean EB",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Mean timing of all the channels in EB along the run. Timing is expected within 5.5 - 6.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Mean timing of all the channels in each DCC of EB along the run. Timing is expected within 5.5 - 6.5 clocks. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ecaloverviewlayout(dqmitems, "05 Timing/02 Timing RMS EE",
+ecaloverviewlayout(dqmitems, "05 Timing RMS EE",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE - timing rms 1D summary", 'description': "Timing RMS of all the channels in EE -. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EESummaryClient/EETMT EE + timing rms 1D summary", 'description': "Timing RMS of all the channels in EE +. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EE. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])

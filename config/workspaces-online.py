@@ -78,13 +78,9 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
-                 'Castor/Layouts/CASTOR RecHit Energies',
-		 'Castor/Layouts/CASTOR RecHit Energy in modules',
-		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
-		 'Castor/Layouts/CASTOR RecHit Occupancy',
-                 'Castor/Layouts/CASTOR All Pedestal Values',
-                 'Castor/Layouts/CASTOR Average Pulse Time',
-		 'Castor/Layouts/CASTOR Average Pulse Energy'
+                 'Castor/Layouts/CASTOR Pedestals',
+                 'Castor/Layouts/CASTOR LED Distributions',
+                 'Castor/Layouts/CASTOR RecHit Distributions'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
@@ -146,12 +142,12 @@ server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisio
                  'Collisions/TrackingFeedBack/00 - Track Parameters'
                  )
 server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap)/',
-                 "Collisions/EcalFeedBack/00 Occupancy EB"
+                 "Collisions/EcalFeedBack/00 Occupancy EB",
                  "Collisions/EcalFeedBack/01 Occupancy EE -",
                  "Collisions/EcalFeedBack/02 Occupancy EE +",
                  "Collisions/EcalFeedBack/03 Timing RMS EB",
                  "Collisions/EcalFeedBack/04 Timing Mean EB",
-                 "Collisions/EcalFeedBack/05 Timing/02 Timing RMS EE",
+                 "Collisions/EcalFeedBack/05 Timing RMS EE",
                  "Collisions/EcalFeedBack/06 Timing Mean EE",
                  "Collisions/EcalFeedBack/07 Single Event Timing EE"
                  )
