@@ -1,4 +1,4 @@
-def ecaloverviewlayout(i, p, *rows): i["Collisions/Ecal/" + p] = DQMItem(layout=rows)
+def ecaloverviewlayout(i, p, *rows): i["Collisions/EcalFeedBack/" + p] = DQMItem(layout=rows)
 
 ecaloverviewlayout(dqmitems, "00 Occupancy EB",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
