@@ -1,4 +1,4 @@
-def tklayout(i, p, *rows): i["Overview/TrackingFeedBack/" + p] = DQMItem(layout=rows)
+def tklayout(i, p, *rows): i["Collisions/TrackingFeedBack/" + p] = DQMItem(layout=rows)
 
 tklayout(dqmitems, "00 - Track Parameters",
  [{ 'path': "Tracking/TrackParameters/NumberOfTracks_GenTk",
