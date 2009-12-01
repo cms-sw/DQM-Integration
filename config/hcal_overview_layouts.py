@@ -1,4 +1,4 @@
-def hcaloverviewlayout(i, p, *rows): i["Collisions/Hcal/"+p] = DQMItem(layout=rows)
+def hcaloverviewlayout(i, p, *rows): i["Collisions/HcalFeedBack/"+p] = DQMItem(layout=rows)
 
 hcaloverviewlayout(dqmitems, "01 - Hcal Parameters",
            // HF plots
