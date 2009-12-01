@@ -138,14 +138,19 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
 		 'HLT/HLTScalers_SM/hltScalers'
 		 )
 
-server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|EcalBarrel|EcalEndcap)/',
+server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking)/',
                  'Collisions/TrackingFeedBack/00 - Track Parameters'
-                 "Collisions/Ecal/00 Occupancy EB"
-                 "Collisions/Ecal/01 Occupancy EE -",
-                 "Collisions/Ecal/02 Occupancy EE +",
-                 "Collisions/Ecal/03 Timing RMS EB",
-                 "Collisions/Ecal/04 Timing Mean EB",
-                 "Collisions/Ecal/05 Timing/02 Timing RMS EE",
-                 "Collisions/Ecal/06 Timing Mean EE",
-                 "Collisions/Ecal/07 Single Event Timing EE"
+                 )
+server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap)/',
+                 "Collisions/EcalFeedBack/00 Occupancy EB"
+                 "Collisions/EcalFeedBack/01 Occupancy EE -",
+                 "Collisions/EcalFeedBack/02 Occupancy EE +",
+                 "Collisions/EcalFeedBack/03 Timing RMS EB",
+                 "Collisions/EcalFeedBack/04 Timing Mean EB",
+                 "Collisions/EcalFeedBack/05 Timing/02 Timing RMS EE",
+                 "Collisions/EcalFeedBack/06 Timing Mean EE",
+                 "Collisions/EcalFeedBack/07 Single Event Timing EE"
+                 )
+server.workspace('DQMContent', 50,'Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
+                 "Collisions/HcalFeedBack/01 - Hcal Parameters"
                  )

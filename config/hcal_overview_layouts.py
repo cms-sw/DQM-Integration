@@ -22,8 +22,3 @@ hcaloverviewlayout(dqmitems, "01 - Hcal Parameters",
              'description':"Difference in average energies between HE+ and HE-"}
             ]
                    )
-
-hcaloverviewlayout( dqmitems, "TEST",
-                    [{ 'path':"Hcal/EventInfo/reportSummaryMap",
-                       'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green.  Values should all be above 98%."}]
-                    )
