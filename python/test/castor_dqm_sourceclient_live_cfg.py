@@ -118,10 +118,10 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
                            )
 
 ### the filename prefix 
-process.dqmSaver.producer = 'DQM'
+#process.dqmSaver.producer = 'DQM'
 #process.dqmSaver.dirName = '/tmp/'
-process.dqmSaver.convention = 'Online'
-process.dqmSaver.saveByRun = True
+#process.dqmSaver.convention = 'Online'
+#process.dqmSaver.saveByRun = True
 
 
 #-----------------------------
