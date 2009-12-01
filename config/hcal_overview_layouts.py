@@ -1,7 +1,6 @@
 def hcaloverviewlayout(i, p, *rows): i["Collisions/HcalFeedBack/"+p] = DQMItem(layout=rows)
 
 hcaloverviewlayout(dqmitems, "01 - Hcal Parameters",
-           // HF plots
            [{'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HFweightedtimeDifference",
              'description':"Difference in weighted times between HF+ and HF-, where times are weighted by rechit energies"},
             {'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HFtimeDifference",
@@ -11,7 +10,6 @@ hcaloverviewlayout(dqmitems, "01 - Hcal Parameters",
             {'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HFaverageenergyDifference",
              'description':"Difference in average energies between HF+ and HF-"}
             ],
-           // HE plots
            [{'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HEweightedtimeDifference",
              'description':"Difference in weighted times between HE+ and HE-, where times are weighted by rechit energies"},
             {'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HEtimeDifference",
