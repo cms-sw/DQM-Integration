@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.3 2009/11/22 22:12:47 loizides Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.4 2009/11/29 10:51:53 loizides Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -14,7 +14,7 @@ process.EventStreamHttpReader.consumerName = 'Physics DQM Consumer'
 
 #filter on specific trigger types
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_*BSC*','HLT_HFThreshold*','HLT_*SingleTrack')
+    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_*BSC','HLT_HFThreshold*','HLT_*SingleTrack')
 ) 
 
 #----------------------------
