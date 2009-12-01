@@ -13,13 +13,13 @@ l1tlayout(dqmitems,"03 Global Muon Trigger Contributions",
   	[{'path': "L1T/L1TGMT/Regional_trigger", 'description': "Regional Muon Trigger Contribution. x-axis: muon regional trigger; y-axis: number of triggers from given subsystem.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"04 Global Muon Trigger DT-CSC BX Correlation",
-  	[{'path': "L1T/L1TGMT/bx_DT_vs_CSC", 'description': "DT-CSC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMOnlineShortTermInstr\">here</a>."}])
+  	[{'path': "L1T/L1TGMT/bx_DT_vs_CSC", 'description': "DT-CSC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"05 Global Muon Trigger DT-RPC BX Correlation",
-  	[{'path': "L1T/L1TGMT/bx_DT_vs_RPC", 'description': "DT-RPC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMOnlineShortTermInstr\">here</a>."}])
+  	[{'path': "L1T/L1TGMT/bx_DT_vs_RPC", 'description': "DT-RPC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"06 Global Muon Trigger CSC-RPC BX Correlation",
-  	[{'path': "L1T/L1TGMT/bx_CSC_vs_RPC", 'description': "CSC-RPC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMOnlineShortTermInstr\">here</a>."}])
+  	[{'path': "L1T/L1TGMT/bx_CSC_vs_RPC", 'description': "CSC-RPC BX correlation. The red maximum should be in the middle of the 3x3 histograms. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
 l1tlayout(dqmitems,"07 Global Calorimeter Trigger Iso EM Occupancy",
   	[{'path': "L1T/L1TGCT/IsoEmRankEtaPhi", 'description': "(Eta, Phi) map of Isolated Electron Occupancy. x-axis: phi (0-17) y-axis: eta (0-21) z-axis: number of isolated electron candidates. Electrons are not found in HF so eta bins 0-3 and 18-21 should be empty. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
@@ -33,3 +33,8 @@ l1tlayout(dqmitems,"09 Global Calorimeter Trigger Jets Occupancy",
 l1tlayout(dqmitems,"10 Global Calorimeter Trigger Tau Jets Occupancy",
 	[{'path': "L1T/L1TGCT/TauJetsEtEtaPhi", 'description': "(Eta,Phi) map of Tau Jet Occupancy. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
+l1tlayout(dqmitems,"11 Physics Trigger Rate",
+  	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/Physics Trigger Rate", 'description': "Physics Trigger Rate. x-axis: Time(lumisection); y-axis: Rate (Hz).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+
+l1tlayout(dqmitems,"11 Random Trigger Rate",
+  	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/Random Trigger Rate", 'description': "Random Trigger Rate. x-axis: Time(lumisection); y-axis: Rate (Hz).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
