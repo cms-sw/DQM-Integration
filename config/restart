@@ -44,7 +44,7 @@ if [ X"$DQMV" = Xlatest ]; then
 fi
 
 case $DQMV in [0-9]*.[0-9]*.[0-9]* ) ;; * )
-  echo "$0: unrecognised version '${DQM:-(none)}' ($2);" \
+  echo "$0: unrecognised version '${DQM:-(none)}' (arg: $2);" \
        "please check documentation." 1>&2
   exit 1 ;;
 esac
@@ -52,7 +52,7 @@ esac
 EXTRA=
 case $ACT in *=* ) EXTRA=${ACT#*\=} ACT=${ACT%\=*} ;; esac
 case $ACT in stop | status | restart ) ;; start ) ACT=restart ;; * )
-  echo "$0: unrecognised action '${ACT:-(none)}' ($1);" \
+  echo "$0: unrecognised action '${ACT:-(none)}' (arg: $1);" \
        "please check documentation." 1>&2
   exit 1 ;;
 esac
@@ -112,7 +112,7 @@ cd $DQM_DIR
 newline=
 if [ $ACT = status ]; then
   case ${EXTRA:-agents} in *agents* )
-    statproc "File agents" "vis*Daemon" ;;
+    statproc "File agents" "visDQM.*Daemon|visDQMIndex|zip" ;;
   esac
 
   case ${EXTRA:-migration} in *migration* )
@@ -137,11 +137,16 @@ if [ $ACT = status ]; then
   exit 0
 fi
 
+# Should be stop or restart from here on.
+[ $ACT = restart ] || [ $ACT = stop ] || { echo "$0: $LINENO: internal error"; exit 3; }
+
 ######################################################################
 # Stop any existing daemons.
+
 newline=
 case ${EXTRA:-agents} in *agents* )
-  killproc "file agents" "vis*Daemon" ;;
+  # NB: leave visDQMIndex and zip processes alone
+  killproc "file agents" "visDQM.*Daemon" ;;
 esac
 
 case ${EXTRA:-migration} in *migration* )
@@ -169,45 +174,43 @@ case $HOST:${EXTRA:-agents} in
   # old production
   srv-c2d05-19:*agents* )
     DQM_DATA=/dqmdata/dqm
-    mkdir -p $DQM_DATA/repository/{original,merged} {$DQM_DATA,$DQM_BASE}/agents
+    mkdir -p $DQM_DATA/repository/original {$DQM_DATA,$DQM_DIR}/agents
     (set -x
      (visDQMReceiveDaemon \
        $DQM_DATA/uploads \
        $DQM_DATA/repository/original \
-       $DQM_DATA/agents/register \
-       $DQM_DATA/agents/register-local \
-       $DQM_DATA/agents/register-offsite \
-       $DQM_DATA/agents/merge \
-     ) >& $DQM_BASE/agents/$NOW-$HOST-receive.log </dev/null &
+       $DQM_DATA/agents/import-old \
+       $DQM_DATA/agents/import-local \
+       $DQM_DATA/agents/import-offsite \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-receive.log </dev/null &
 
      (visDQMImportDaemon \
-       $DQM_DATA/agents/register \
+       $DQM_DATA/agents/import-old \
        $DQM_DATA/repository/original \
-       $DQM_BASE/ix \
-     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & ) ;;
 
   # dqm-prod-local
   srv-c2d04-21:*agents* )
     DQM_DATA=/dqmdata/dqm
-    mkdir -p {$DQM_DATA,$DQM_BASE}/agents
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
     (set -x
      (visDQMImportDaemon \
-       $DQM_DATA/agents/register-local \
+       $DQM_DATA/agents/import-local \
        $DQM_DATA/repository/original \
-       $DQM_BASE/ix \
-     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & ) ;;
- 
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & ) ;;
 
   # dqm-prod-offsite
   srv-c2d04-22:*agents* )
     DQM_DATA=/dqmdata/dqm
-    mkdir -p {$DQM_DATA,$DQM_BASE}/agents
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
     (set -x
      (visDQMImportDaemon \
-       $DQM_DATA/agents/register-offsite \
+       $DQM_DATA/agents/import-offsite \
        $DQM_DATA/repository/original \
-       $DQM_BASE/ix \
-     ) >& $DQM_BASE/agents/$NOW-$HOST-import.log </dev/null & )
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
     ;;
 
   # offline
@@ -262,7 +265,7 @@ case $HOST:$EXTRA in
          fi
        done
        sleep 1200
-     done) >>& $DQM_BASE/agents/$NOW-$HOST-upload.log </dev/null & ;;
+     done) >>& $DQM_DIR/agents/$NOW-$HOST-upload.log </dev/null & ;;
 
   vocms34:*migration* ) 
     for i in $(seq 1 $(expr 5 + $(expr $(date +%s) % 10))); do key=$RANDOM; done
