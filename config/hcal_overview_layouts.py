@@ -1,6 +1,6 @@
-def hcallayout(i, p, *rows): i["Overview/HcalFeedBack/"+p] = DQMItem(layout=rows)
+def hcaloverviewlayout(i, p, *rows): i["Collisions/Hcal/"+p] = DQMItem(layout=rows)
 
-hcallayout(dqmitems, "01 - Hcal Parameters",
+hcaloverviewlayout(dqmitems, "01 - Hcal Parameters",
            // HF plots
            [{'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HFweightedtimeDifference",
              'description':"Difference in weighted times between HF+ and HF-, where times are weighted by rechit energies"},
@@ -21,4 +21,9 @@ hcallayout(dqmitems, "01 - Hcal Parameters",
             {'path':"Hcal/RecHitMonitor_Hcal/rechit_info/HEaverageenergyDifference",
              'description':"Difference in average energies between HE+ and HE-"}
             ]
-           )
+                   )
+
+hcaloverviewlayout( dqmitems, "TEST",
+                    [{ 'path':"Hcal/EventInfo/reportSummaryMap",
+                       'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green.  Values should all be above 98%."}]
+                    )
