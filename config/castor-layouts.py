@@ -1,37 +1,46 @@
 def castorlayout(i, p, *rows): i["Castor/Layouts/" + p] = DQMItem(layout=rows)
 
-
-castorlayout(dqmitems, "CASTOR Pedestals",
-          [{ 'path': "Castor/CastorPedestalMonitor/Castor All Pedestal Values",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-
-          { 'path': "Castor/CastorPedestalMonitor/Castor Pedestal Mean Reference Values",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>"},
-
-          { 'path': "Castor/CastorPedestalMonitor/Castor Pedestal RMS Reference Values",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]      
-          )
-
-castorlayout(dqmitems, "CASTOR LED Distributions",
-          [{ 'path': "Castor/CastorLEDMonitor/Castor Average Pulse Energy",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-
-           { 'path': "Castor/CastorLEDMonitor/Castor Average Pulse Time",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>"},
-
-          { 'path': "Castor/CastorLEDMonitor/Castor Average Pulse Shape",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]      
-          )
-
-castorlayout(dqmitems, "CASTOR RecHit Energy Distributions",
-          [{ 'path': "Castor/CastorRecHitMonitor/RecHit Channel Energy Map",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-             
-          { 'path': "Castor/CastorRecHitMonitor/Castor RecHit Energies",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
-           
-          { 'path': "Castor/CastorRecHitMonitor/Castor RecHit Times",
-                   'description': "test <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
-           )
-
+              
+castorlayout(dqmitems, "CASTOR RecHit Energies",
+           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit Energies - 1GeV cut on RecHitEnergy",
+             'description':"Energy of all Castor RecHits"}]
+           )          
+	  
+castorlayout(dqmitems, "CASTOR RecHit Energy in modules",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in modules - 1GeV cut on RecHitEnergy",
+             'description':""}]
+           )          
+	 
+castorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in sectors - 1GeV cut on RecHitEnergy",
+             'description':""}]
+           )          
+	  
+	  
+castorlayout(dqmitems, "CASTOR RecHit Occupancy",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits occupancy - sector vs module",
+             'description':""}]
+           )         
+	  
+	  	  
+castorlayout(dqmitems, "CASTOR All Pedestal Values",
+           [{ 'path': "Castor/CastorPedestalMonitor/Castor All Pedestal Values",
+             'description':""}]
+           )         
+	   
+	   
+	  	  
+castorlayout(dqmitems, "CASTOR Average Pulse Time",
+           [{ 'path': "Castor/CastorLEDMonitor/Castor Average Pulse Time",
+             'description':""}]
+           )         
+	  
+	  
+	   	  	  
+castorlayout(dqmitems, "CASTOR Average Pulse Energy",
+           [{ 'path': "Castor/CastorLEDMonitor/Castor Average Pulse Energy",
+             'description':""}]
+           )         
+	   
+	   	  
 
