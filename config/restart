@@ -25,9 +25,9 @@ NOW=$(date +%Y%m%d%H%M%S)
 CHECK=$(echo "$3" | md5sum | awk '{print $1}')
 HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
 case $HOST in
-  srv-c2d* ) DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
-  srv-c2c* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
-  vocms* )   DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
+  srv-c2d04* ) DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
+  srv-c2d05* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
+  vocms* )     DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
 esac
 case $HOST in
   srv-c2d05-19 | srv-c2d04-2[12] ) CONFIGS="online" ;;
@@ -44,7 +44,7 @@ if [ X"$DQMV" = Xlatest ]; then
 fi
 
 case $DQMV in [0-9]*.[0-9]*.[0-9]* ) ;; * )
-  echo "$0: unrecognised version '${DQM:-(none)}' ($1);" \
+  echo "$0: unrecognised version '${DQM:-(none)}' ($2);" \
        "please check documentation." 1>&2
   exit 1 ;;
 esac
@@ -52,7 +52,7 @@ esac
 EXTRA=
 case $ACT in *=* ) EXTRA=${ACT#*\=} ACT=${ACT%\=*} ;; esac
 case $ACT in stop | status | restart ) ;; start ) ACT=restart ;; * )
-  echo "$0: unrecognised action '${ACT:-(none)}' ($2);" \
+  echo "$0: unrecognised action '${ACT:-(none)}' ($1);" \
        "please check documentation." 1>&2
   exit 1 ;;
 esac
