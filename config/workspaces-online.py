@@ -78,9 +78,13 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
-                 'Castor/Layouts/CASTOR Pedestals',
-                 'Castor/Layouts/CASTOR LED Distributions',
-                 'Castor/Layouts/CASTOR RecHit Distributions'
+                 'Castor/Layouts/CASTOR RecHit Energies',
+		             'Castor/Layouts/CASTOR RecHit Energy in modules',
+		             'Castor/Layouts/CASTOR RecHit Energy in sectors',
+		             'Castor/Layouts/CASTOR RecHit Occupancy',
+                 'Castor/Layouts/CASTOR All Pedestal Values',
+                 'Castor/Layouts/CASTOR Average Pulse Time',
+		             'Castor/Layouts/CASTOR Average Pulse Energy'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
