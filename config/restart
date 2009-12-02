@@ -295,9 +295,14 @@ case $HOST:$EXTRA in
 esac
 
 ######################################################################
-# Start collector if requested.
-case ${EXTRA:-collector} in *collector* )
-  (set -x; $DQMGUI_ROOT/etc/restart-collector 9090:$DQM_DIR) ;;
+# Start collector if requested; "crontab" is not reliable at online so
+# use hard-coded command. Use "crontab" elsewhere as that configures
+# which collectors should be running on this host.
+case ${EXTRA:-collector} in
+  srv-*:*collector* )
+    (set -x; $DQMGUI_ROOT/etc/restart-collector 9090:$DQM_DIR) ;;
+  *collector* )
+    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
 esac
 
 ######################################################################
