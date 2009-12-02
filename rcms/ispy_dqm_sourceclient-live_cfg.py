@@ -19,7 +19,6 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'iSpy Event Display'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_CSC*','*BSC','HLT_TrackerCosmics'))
 #process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(0.5)
 process.load("DQM.Integration.test.environment_cfi")
 from FWCore.MessageLogger.MessageLogger_cfi import *
@@ -82,14 +81,8 @@ process.ISpyRPCRecHit.iSpyRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
 process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
 process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
-
-process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('generalTracks')
-process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('generalTracks'))
-
-#cosmics
-#process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
-#process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
-
+process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
+process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),cms.InputTag('cosmictrackfinderP5'),cms.InputTag('ctfWithMaterialTracksP5'))
 process.iSpy = cms.Path(process.ISpyEvent*
                        #process.ISpyEventSetup*
                        process.ISpyBasicCluster*

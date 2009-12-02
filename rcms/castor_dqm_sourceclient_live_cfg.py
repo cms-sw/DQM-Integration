@@ -1,15 +1,12 @@
 import FWCore.ParameterSet.Config as cms
-from resource import *
-setrlimit(RLIMIT_CORE, (0, 0))
+
 process = cms.Process("CASTORDQM")
 #=================================
 # Event Source
 #================================+
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'CASTOR DQM Consumer'
-process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
-)
+
 #================================
 # DQM Environment
 #================================

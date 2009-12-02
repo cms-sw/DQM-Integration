@@ -2,14 +2,24 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
 
+
+############## Event Source ####################
+process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_CSCBeamHaloOverlapRing2','HLT_CSCBeamHaloRing2or3', 'HLT_L1Mu*','HLT_L1Mu','HLT_TrackerCosmics'))
+
+################ HLT Filter######################
+process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
+# 0=random, 1=physics, 2=calibration, 3=technical
+process.hltTriggerTypeFilter.SelectedTriggerType = 1
+
+
 ################# Geometry  ######################
 process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 process.load("Geometry.RPCGeometry.rpcGeometry_cfi")
 process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
 
-
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
-
 
 ################# RPC Unpacker  ######################
 process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
@@ -45,9 +55,6 @@ process.load("DQMServices.Core.DQM_cfg")
 
 
 ######## DQM Enviroment ###################
-process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
-
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'RPC'
 process.load("DQMServices.Components.DQMEnvironment_cfi")
@@ -91,14 +98,14 @@ process.qTesterRPC = cms.EDFilter("QualityTester",
 
 ################ Chamber Quality ##################
 process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
-                                           MinimumRPCEvents = cms.untracked.int32(3),
+                                           MinimumRPCEvents = cms.untracked.int32(10000),
                                            PrescaleFactor = cms.untracked.int32(1) 
                                            )
 
 ################  Sequences ############################
 process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcAfterPulse)
 process.rpcClient = cms.Sequence(process.qTesterRPC*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
-process.p = cms.Path(process.rpcDigi*process.rpcClient)
+process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcDigi*process.rpcClient)
 
 
 

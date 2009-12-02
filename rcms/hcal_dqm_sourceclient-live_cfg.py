@@ -39,27 +39,9 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
-# Cosmics Corrections to reconstruction
-#process.hbhereco.firstSample = 1
-#process.hbhereco.samplesToAdd = 8
-#process.hbhereco.correctForTimeslew = True
-#process.hbhereco.correctForPhaseContainment = True
-#process.hbhereco.correctionPhaseNS = 10.0
-#process.horeco.firstSample = 1
-#process.horeco.samplesToAdd = 8
-#process.horeco.correctForTimeslew = True
-#process.horeco.correctForPhaseContainment = True
-#process.horeco.correctionPhaseNS = 10.
-#process.hfreco.firstSample = 1
-#process.hfreco.samplesToAdd = 8
-#process.hfreco.correctForTimeslew = True
-#process.hfreco.correctForPhaseContainment = True
-#process.hfreco.correctionPhaseNS = 10.
-#process.zdcreco.firstSample = 1
-#process.zdcreco.samplesToAdd = 8
-#process.zdcreco.correctForTimeslew = True
-#process.zdcreco.correctForPhaseContainment = True
-#process.zdcreco.correctionPhaseNS = 10.
+# HF Corrections to reconstruction
+process.hfreco.firstSample = 3
+process.hfreco.samplesToAdd = 4
 
 # Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
@@ -143,7 +125,11 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.hcalMonitor.BeamMonitor_lumiqualitydir="/home/dqmprolocal/lumi/"
+process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi"
+
+# Ignore calibration events in DFMon
+process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes=[0]
+
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
@@ -160,11 +146,12 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
-#process.hcalClient.databasedir = '/home/dqmprolocal/hcal/'
-process.hcalClient.databasedir = '' # suppress channel status text output for now
+process.hcalClient.databasedir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus' # set to empty to suppress channel status output
+
 # Set larger limits at startup (these are used in calculating the reportSummary)
 process.hcalClient.HotCellClient_minErrorFlag=0.25
 process.hcalClient.DeadCellClient_minErrorFlag=0.25
+process.hcalClient.BeamClient_minErrorFlag=0.20
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
