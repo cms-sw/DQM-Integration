@@ -4734,7 +4734,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-01/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-01/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-01", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4743,7 +4743,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-01/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-01/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-01", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4752,7 +4752,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-01/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-01/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-01", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5143,7 +5143,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-02/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-02/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-02", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5152,7 +5152,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-02/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-02/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-02", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5161,7 +5161,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-02/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-02/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-02", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5552,7 +5552,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-03/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-03/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-03", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5561,7 +5561,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-03/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-03/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-03", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5570,7 +5570,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-03/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-03/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-03", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5961,7 +5961,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-04/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-04/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-04", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5970,7 +5970,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-04/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-04/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-04", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5979,7 +5979,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-04/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-04/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-04", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6370,7 +6370,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-05/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-05/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-05", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6379,7 +6379,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-05/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-05/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-05", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6388,7 +6388,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-05/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-05/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-05", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6779,7 +6779,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-06/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-06/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-06", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6788,7 +6788,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-06/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-06/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-06", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6797,7 +6797,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-06/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-06/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-06", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7188,7 +7188,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-07/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-07/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-07", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7197,7 +7197,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-07/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-07/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-07", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7206,7 +7206,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-07/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-07/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-07", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7597,7 +7597,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-08/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-08/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-08", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7606,7 +7606,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-08/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-08/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-08", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7615,7 +7615,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-08/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-08/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-08", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8006,7 +8006,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE-09/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-09/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE-09", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE-09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8015,7 +8015,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-09/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-09/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE-09", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE-09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8024,7 +8024,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE-09/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE-09/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE-09", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE-09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8415,7 +8415,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+01/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+01/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+01", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8424,7 +8424,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+01/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+01/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+01", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8433,7 +8433,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+01/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+01/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+01", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+01. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8824,7 +8824,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+02/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+02/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+02", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8833,7 +8833,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+02/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+02/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+02", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -8842,7 +8842,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+02/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+02/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+02", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+02. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9233,7 +9233,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+03/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+03/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+03", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9242,7 +9242,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+03/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+03/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+03", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9251,7 +9251,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+03/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+03/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+03", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+03. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9642,7 +9642,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+04/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+04/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+04", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9651,7 +9651,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+04/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+04/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+04", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -9660,7 +9660,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+04/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+04/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+04", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+04. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10051,7 +10051,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+05/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+05/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+05", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10060,7 +10060,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+05/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+05/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+05", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10069,7 +10069,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+05/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+05/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+05", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+05. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10460,7 +10460,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+06/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+06/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+06", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10469,7 +10469,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+06/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+06/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+06", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10478,7 +10478,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+06/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+06/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+06", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+06. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10869,7 +10869,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+07/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+07/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+07", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10878,7 +10878,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+07/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+07/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+07", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -10887,7 +10887,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+07/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+07/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+07", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+07. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11278,7 +11278,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+08/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+08/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+08", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11287,7 +11287,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+08/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+08/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+08", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11296,7 +11296,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+08/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+08/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+08", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+08. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11687,7 +11687,7 @@ eelayout(dqmitems, "00 By Task/02 PedestalOnline/EE+09/Gain12",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain01",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G01 summary", 'description': "Quality summary of pedestal events for gain 01 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+09/00 Gain01",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G01 EE+09", 'description': "Quality histogram of pedestal events on crystals for Gain 01 on sector EE+09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11696,7 +11696,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+09/00 Gain01",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain06",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G06 summary", 'description': "Quality summary of pedestal events for gain 06 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+09/00 Gain06",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G06 EE+09", 'description': "Quality histogram of pedestal events on crystals for Gain 06 on sector EE+09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -11705,7 +11705,7 @@ eelayout(dqmitems, "00 By Task/03 Pedestal/EE+09/00 Gain06",
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/00 Pedestal Summary Gain12",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE -. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE + pedestal quality G12 summary", 'description': "Quality summary of pedestal events for gain 12 on EE +. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/03 Pedestal/EE+09/00 Gain12",
   [{ 'path': "EcalEndcap/EEPedestalClient/EEPT pedestal quality G12 EE+09", 'description': "Quality histogram of pedestal events on crystals for Gain 12 on sector EE+09. Expect green if the pedestal sequence fired the sector, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
