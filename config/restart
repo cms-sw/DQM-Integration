@@ -297,7 +297,7 @@ esac
 ######################################################################
 # Start collector if requested.
 case ${EXTRA:-collector} in *collector* )
-  crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
+  (set -x; $DQMGUI_ROOT/etc/restart-collector 9090:$DQM_DIR) ;;
 esac
 
 ######################################################################
