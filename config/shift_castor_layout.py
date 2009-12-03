@@ -8,17 +8,17 @@ shiftcastorlayout(dqmitems, "Castor Report Summary",
                 )
              
 shiftcastorlayout(dqmitems, "CASTOR RecHit Energies",
-           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit Energies",
+           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit Energies - 1GeV cut on RecHitEnergy",
              'description':"Energy of all Castor RecHits"}]
            )          
 	  
 shiftcastorlayout(dqmitems, "CASTOR RecHit Energy in modules",
-           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in modules",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in modules - 1GeV cut on RecHitEnergy",
              'description':""}]
            )          
 	 
 shiftcastorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
-           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in sectors",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in sectors - 1GeV cut on RecHitEnergy",
              'description':""}]
            )          
 	  
@@ -48,5 +48,3 @@ shiftcastorlayout(dqmitems, "CASTOR Average Pulse Energy",
              'description':""}]
            )         
 	   
-	   	  
-

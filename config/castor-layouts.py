@@ -2,17 +2,17 @@ def castorlayout(i, p, *rows): i["Castor/Layouts/" + p] = DQMItem(layout=rows)
 
               
 castorlayout(dqmitems, "CASTOR RecHit Energies",
-           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit Energies",
+           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit Energies - 1GeV cut on RecHitEnergy",
              'description':"Energy of all Castor RecHits"}]
            )          
 	  
 castorlayout(dqmitems, "CASTOR RecHit Energy in modules",
-           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in modules",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in modules - 1GeV cut on RecHitEnergy",
              'description':""}]
            )          
 	 
 castorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
-           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in sectors",
+           [{ 'path': "Castor/CastorRecHitsValid/CastorRecHits Energy in sectors - 1GeV cut on RecHitEnergy",
              'description':""}]
            )          
 	  
@@ -42,5 +42,3 @@ castorlayout(dqmitems, "CASTOR Average Pulse Energy",
              'description':""}]
            )         
 	   
-	   	  
-
