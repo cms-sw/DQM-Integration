@@ -82,3 +82,8 @@ pixellayout(dqmitems, "20 - Pixel_Error_Summary",
      'description': "Mean number of errors per endcap module - should be empty!",
      'draw': { 'withref': "no" }}]
   )
+pixellayout(dqmitems, "21 - Cluster y width vs. cluster eta",
+  [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelCluster_Barrel",
+     'description': "Cluster y width as function of cluster eta", 
+     'draw': { 'withref': "no" }}]
+  )
