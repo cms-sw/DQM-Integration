@@ -142,10 +142,17 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
 		 'HLT/HLTScalers_SM/hltScalers'
 		 )
 
-server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking)/',
-                 'Collisions/TrackingFeedBack/00 - Track Parameters'
-                 )
-server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
+server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|Pixel)/',
+                 'Collisions/TrackingFeedBack/00 - Number Of Tracks',
+                 'Collisions/TrackingFeedBack/01 - Track Pt',
+                 'Collisions/TrackingFeedBack/02 - Track Phi',
+                 'Collisions/TrackingFeedBack/03 - Track Eta',
+                 'Collisions/TrackingFeedBack/04 - X-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/05 - Y-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
+)
+server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap)/',
                  "Collisions/EcalFeedBack/00 Occupancy EB",
                  "Collisions/EcalFeedBack/01 Occupancy EE -",
                  "Collisions/EcalFeedBack/02 Occupancy EE +",
@@ -153,9 +160,7 @@ server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|E
                  "Collisions/EcalFeedBack/04 Timing Mean EB",
                  "Collisions/EcalFeedBack/05 Timing RMS EE",
                  "Collisions/EcalFeedBack/06 Timing Mean EE",
-                 "Collisions/EcalFeedBack/07 Single Event Timing EE",
-                 "Collisions/EcalFeedBack/08 ES Occupancy",
-                 "Collisions/EcalFeedBack/09 ES Energy Map"
+                 "Collisions/EcalFeedBack/07 Single Event Timing EE"
                  )
 server.workspace('DQMContent', 50,'Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - Hcal Parameters"
