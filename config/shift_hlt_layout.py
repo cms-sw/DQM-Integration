@@ -26,3 +26,19 @@ hltlayout(dqmitems,"07 HLT Rate w.r.t. L1 EG trigger path",
 
 hltlayout(dqmitems,"08 Counts per Tau HLT path",
   	[{'path': "HLT/TauOnline/Inclusive/SingleTau/TriggerBits", 'description': "Event triggered Tau trigger paths . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"09 HLT_Egamma_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_Egamma_Pass_Any", 'description': "Shows total number of HLT Egamma trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"10 HLT_JetMET_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_JetMET_Pass_Any", 'description': "Shows total number of HLT JetMET trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"11 HLT_Muon_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_Muon_Pass_Any", 'description': "Shows total number of HLT Muon trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"12 HLT_Rest_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_Rest_Pass_Any", 'description': "Shows total number of HLT Rest trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltlayout(dqmitems,"13 HLT_Special_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_Special_Pass_Any", 'description': "Shows total number of HLT Special trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
