@@ -50,7 +50,7 @@ process.p = cms.EndPath(process.hlts+process.hltsClient)
 #process.l1GtParameters.BstLengthBytes = 52
 ##  Available data masks (case insensitive):
 ##    all, gt, muons, jets, taujets, isoem, nonisoem, met
-process.l1tEventInfoClient.dataMaskedSystems = cms.untracked.vstring("Jets","TauJets","IsoEm","NonIsoEm","MET")
+process.l1tEventInfoClient.dataMaskedSystems = cms.untracked.vstring("Muons","Jets","TauJets","IsoEm","NonIsoEm","MET")
 
 ##  Available emulator masks (case insensitive):
 ##    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
