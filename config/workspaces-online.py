@@ -153,14 +153,18 @@ server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisio
                  'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
 )
 server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap)/',
-                 "Collisions/EcalFeedBack/00 Occupancy EB",
-                 "Collisions/EcalFeedBack/01 Occupancy EE -",
-                 "Collisions/EcalFeedBack/02 Occupancy EE +",
-                 "Collisions/EcalFeedBack/03 Timing RMS EB",
-                 "Collisions/EcalFeedBack/04 Timing Mean EB",
-                 "Collisions/EcalFeedBack/05 Timing RMS EE",
-                 "Collisions/EcalFeedBack/06 Timing Mean EE",
-                 "Collisions/EcalFeedBack/07 Single Event Timing EE"
+                 "Collisions/EcalFeedBack/00 Single Event Timing EE",
+                 "Collisions/EcalFeedBack/01 Timing Mean EE",
+                 "Collisions/EcalFeedBack/02 Timing Map EE -",
+                 "Collisions/EcalFeedBack/02 Timing Map EE +",
+                 "Collisions/EcalFeedBack/03 Occupancy EE -",
+                 "Collisions/EcalFeedBack/03 Occupancy EE +",
+                 "Collisions/EcalFeedBack/04 Single Event Timing EB",
+                 "Collisions/EcalFeedBack/05 Timing Mean EB",
+                 "Collisions/EcalFeedBack/06 Timing Map EB",
+                 "Collisions/EcalFeedBack/07 Occupancy EB",
+                 "Collisions/EcalFeedBack/08 ES Occupancy",
+                 "Collisions/EcalFeedBack/09 ES Energy Map"
                  )
 server.workspace('DQMContent', 50,'Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - Hcal Parameters"
