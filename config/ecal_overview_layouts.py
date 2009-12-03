@@ -47,5 +47,16 @@ ecaloverviewlayout(dqmitems, "07 Occupancy EB",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection eta", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit thr occupancy projection phi", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
+ecaloverviewlayout(dqmitems, "08 ES Occupancy",
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Occupancy with selected hits Z 1 P 1", 'description': "ES Occupancy with selected hits Z 1 P 1 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> " },
+   { 'path': "EcalPreshower/ESOccupancyTask/ES Occupancy with selected hits Z -1 P 1", 'description': "ES Occupancy with selected hits Z -1 P 1 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> " }],
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Occupancy with selected hits Z 1 P 2", 'description': "ES Occupancy with selected hits Z 1 P 2 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> " },
+   { 'path': "EcalPreshower/ESOccupancyTask/ES Occupancy with selected hits Z -1 P 2", 'description': "ES Occupancy with selected hits Z -1 P 2 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> " }])
+
+ecaloverviewlayout(dqmitems, "09 ES Energy Map",
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Energy Density with selected hits Z 1 P 1", 'description': "ES Energy Density with selected hits Z 1 P 1 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> "},
+   { 'path': "EcalPreshower/ESOccupancyTask/ES Energy Density with selected hits Z -1 P 1", 'description': "ES Energy Density with selected hits Z -1 P 1 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a>" }],
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Energy Density with selected hits Z 1 P 2", 'description': "ES Energy Density with selected hits Z 1 P 2 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a> "},
+   { 'path': "EcalPreshower/ESOccupancyTask/ES Energy Density with selected hits Z -1 P 2", 'description': "ES Energy Density with selected hits Z -1 P 2 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftPreshower>DQMShiftPreshower</a>" }])
 
 
