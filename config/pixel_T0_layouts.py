@@ -49,7 +49,7 @@ pixellayout(dqmitems, "03 - Pixel_Track_Summary",
    { 'path': "Pixel/Clusters/OnTrack/size_siPixelClusters", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}],
   [{ 'path': "Pixel/Clusters/OffTrack/charge_siPixelClusters", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"},
    { 'path': "Pixel/Clusters/OffTrack/size_siPixelClusters", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}],
-  [{ 'path': "Pixel/Tracks/ntracks_rsWithMaterialTracksP5", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
+  [{ 'path': "Pixel/Tracks/ntracks_generalTracks", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
 pixellayout(dqmitems, "04 - Barrel_Digi_Summary_per_Shell",
   [{ 'path': "Pixel/Barrel/Shell_mI/SUMOFF_adc_Shell_mI", 'description': "Mean digi charge in ADC counts per Barrel Shell_mI module"},
