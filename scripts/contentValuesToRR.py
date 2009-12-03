@@ -2,9 +2,6 @@
 
 from contentValuesLib import *
  
-SERVER_URL = "http://cmswbm.cms/runregistry/xmlrpc"
-ONLINE_DATASET = '/Global/Online/ALL'
-
 class OptionParser(optparse.OptionParser):
   """ Option parser class """
   def __init__(self):

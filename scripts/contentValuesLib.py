@@ -1,6 +1,10 @@
 import sys, os, optparse, re
 import ROOT, xmlrpclib
  
+SERVER_URL = "http://pccmsdqm04.cern.ch/runregistry/xmlrpc"
+
+ONLINE_DATASET = '/Global/Online/ALL'
+
 # FOLDER UNDER EvInfo        NAME    SUMMARY VALUE IN EvInfo
 FOLDERS     = { 
   'reportSummaryContents': ( 'DQM',  'reportSummary' ),
