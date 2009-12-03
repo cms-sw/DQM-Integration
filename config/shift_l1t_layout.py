@@ -36,5 +36,5 @@ l1tlayout(dqmitems,"10 Global Calorimeter Trigger Tau Jets Occupancy",
 l1tlayout(dqmitems,"11 Physics Trigger Rate",
   	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/Physics Trigger Rate", 'description': "Physics Trigger Rate. x-axis: Time(lumisection); y-axis: Rate (Hz).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
-l1tlayout(dqmitems,"11 Random Trigger Rate",
+l1tlayout(dqmitems,"12 Random Trigger Rate",
   	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/Random Trigger Rate", 'description': "Random Trigger Rate. x-axis: Time(lumisection); y-axis: Rate (Hz).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
