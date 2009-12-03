@@ -158,3 +158,6 @@ server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|E
 server.workspace('DQMContent', 50,'Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - Hcal Parameters"
                  )
+server.workspace('DQMContent', 50,'Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
+                 'Collisions/BeamMonitorFeedBack/00 - BeamMonitor Results'
+                 )
