@@ -152,9 +152,9 @@ process.p = cms.Path(process.hltTriggerTypeFilter*
                      process.DQMCommon*
                      process.SiStripClients*
                      process.SiStripSources_HVOff*
-#                    process.physicsBitSelector*
+                    process.physicsBitSelector*
                      process.SiStripSources_LocalReco*
-#                    process.hltLevel1GTSeed*
+                    process.hltLevel1GTSeed*
                      process.RecoForDQM_TrkReco*
                      process.SiStripSources_TrkReco
 )
