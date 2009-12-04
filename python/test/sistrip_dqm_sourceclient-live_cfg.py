@@ -147,13 +147,15 @@ process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
 process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.p = cms.Path(process.RecoForDQM_LocalReco*
-                                          process.DQMCommon*
-                                          process.SiStripClients*
-                                          process.SiStripSources_HVOff*
-                                          process.physicsBitSelector*
-                                          process.SiStripSources_LocalReco*
-                                          process.hltLevel1GTSeed*
-                                          process.RecoForDQM_TrkReco*
-                                          process.SiStripSources_TrkReco)
+process.p = cms.Path(process.hltTriggerTypeFilter*
+                     process.RecoForDQM_LocalReco*
+                     process.DQMCommon*
+                     process.SiStripClients*
+                     process.SiStripSources_HVOff*
+#                    process.physicsBitSelector*
+                     process.SiStripSources_LocalReco*
+#                    process.hltLevel1GTSeed*
+                     process.RecoForDQM_TrkReco*
+                     process.SiStripSources_TrkReco
+)
 
