@@ -31,7 +31,7 @@ process.source = cms.Source("EventStreamHttpReader",
    consumerPriority = cms.untracked.string('normal'),
    max_event_size = cms.int32(7000000),
    consumerName = cms.untracked.string('ISpy COW Event Display '),
-   SelectHLTOutput = cms.untracked.string('outA'),
+   SelectHLTOutput = cms.untracked.string('outDoubleCream'),
    max_queue_depth = cms.int32(5),
    maxEventRequestRate = cms.untracked.double(10.0),
    SelectEvents = cms.untracked.PSet(
@@ -68,8 +68,7 @@ process.ISpyDTRecHit.iSpyDTRecHitTag = cms.InputTag("dt1DRecHits")
 process.ISpyRPCRecHit.iSpyRPCRecHitTag = cms.InputTag("rpcRecHits")
 process.ISpyMuon.iSpyMuonTag = cms.InputTag('muons')
 process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSuppressed')
-process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('cosmicMuons')
-process.ISpyTrack.iSpyTrackTag = cms.InputTag('cosmicMuons')
+process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('generalTracks')
 process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),
                                                 cms.InputTag('cosmictrackfinderP5'),
                                                 cms.InputTag('ctfWithMaterialTracksP5'),
