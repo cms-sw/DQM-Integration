@@ -92,6 +92,12 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
+
+# Switching Off Digi/Cluster profiles temprarily
+process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = False
+process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = False
+
+process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
 process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -120,12 +126,36 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
+# Global Trigger *L1GlobalTrigger) Selection for PhysicsON
+process.physicsBitSelector = cms.EDFilter("PhysDecl",
+                                                   applyfilter = cms.untracked.bool(True),
+                                                   debugOn     = cms.untracked.bool(False)
+                                          )
+# L1 Trigger Bit Selection (bit 40 and 41 for BSC trigger)
+process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
+process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
+process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
+process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
+
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal*process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
-process.SiStripClients = cms.Sequence(process.SiStripAnalyser)
-process.DQMCommon = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
-process.RecoForDQM = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.p = cms.Path(process.hltTriggerTypeFilter*process.RecoForDQM*process.DQMCommon*process.SiStripSources*process.SiStripClients)
+process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
+process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
+process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
+process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
+process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
+process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
+process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
+process.p = cms.Path(process.hltTriggerTypeFilter*
+                     process.RecoForDQM_LocalReco*
+                     process.DQMCommon*
+                     process.SiStripClients*
+                     process.SiStripSources_HVOff*
+#                    process.physicsBitSelector*
+                     process.SiStripSources_LocalReco*
+#                    process.hltLevel1GTSeed*
+                     process.RecoForDQM_TrkReco*
+                     process.SiStripSources_TrkReco
+)
 

@@ -6,7 +6,7 @@ process = cms.Process("DQM")
 ############## Event Source ####################
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_CSCBeamHaloOverlapRing2','HLT_CSCBeamHaloRing2or3', 'HLT_L1Mu*','HLT_L1Mu','HLT_TrackerCosmics'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_CSCBeamHaloOverlapRing2','HLT_CSCBeamHaloRing2or3', 'HLT_L1Mu*','HLT_L1Mu','HLT_TrackerCosmics'))
 
 ################ HLT Filter######################
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")

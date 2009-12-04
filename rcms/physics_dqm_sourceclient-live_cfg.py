@@ -13,9 +13,9 @@ process.EventStreamHttpReader.consumerName = 'Physics DQM Consumer'
 #process.EventStreamHttpReader.sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
 
 #filter on specific trigger types
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-#    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_*BSC','HLT_HFThreshold*','HLT_*SingleTrack')
-#) 
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_*BSC','HLT_HFThreshold*','HLT_*SingleTrack')
+) 
 
 #----------------------------
 # DQM Environment
