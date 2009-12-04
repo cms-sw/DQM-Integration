@@ -37,5 +37,6 @@
                        source   CDATA #REQUIRED>
 <!ELEMENT ReferenceEntity EMPTY>
 <!ATTLIST ReferenceEntity name CDATA #REQUIRED>
-<!ENTITY SiStrips SYSTEM "SiStrips.xml">
-<!ENTITY Pixels   SYSTEM "Pixels.xml">
+<!ENTITY Generic SYSTEM "generic.xml">
+<!--<!ENTITY SiStrips SYSTEM "SiStrips.xml">-->
+<!--<!ENTITY Pixels   SYSTEM "Pixels.xml">-->
