@@ -14,3 +14,24 @@ hltoverviewlayout(dqmitems,"03 HLT_Rest_Pass_Any",
 
 hltoverviewlayout(dqmitems,"04 HLT_Special_Pass_Any",
   	[{'path': "HLT/FourVector/PathsSummary/HLT_Special_Pass_Any", 'description': "Shows total number of HLT Special trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"05 All_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/All_count_LS", 'description': "Show the number of events passing all HLT paths vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"06 Group_0_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_0_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"07 Group_1_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_1_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"08 Group_2_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_2_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"09 Group_3_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_3_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"10 Group_4_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_4_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+
+hltoverviewlayout(dqmitems,"11 Group_5_paths_count_LS",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT LS/Group_5_paths_count_LS", 'description': "Show the number of events passing HLT paths which are subdivided in groups of 20 vs. LS (2D histogram) . For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
