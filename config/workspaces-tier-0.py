@@ -54,4 +54,47 @@ server.workspace('DQMContent', 41, 'POG', 'Muons', '^Muons/')
 server.workspace('DQMContent', 42, 'POG', 'JetMet', '^JetMET/')
 server.workspace('DQMContent', 43, 'POG', 'EGamma', '^Egamma/')
 
+server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking', '^(Collisions|SiStrip|Tracking|Pixel)/',
+                 'Collisions/TrackingFeedBack/00 - Number Of Tracks',
+                 'Collisions/TrackingFeedBack/01 - Track Pt',
+                 'Collisions/TrackingFeedBack/02 - Track Phi',
+                 'Collisions/TrackingFeedBack/03 - Track Eta',
+                 'Collisions/TrackingFeedBack/04 - X-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/05 - Y-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
+                 'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
+)
+server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
+                 "Collisions/EcalFeedBack/00 Single Event Timing EE",
+                 "Collisions/EcalFeedBack/01 Timing Mean EE",
+                 "Collisions/EcalFeedBack/02 Timing Map EE -",
+                 "Collisions/EcalFeedBack/02 Timing Map EE +",
+                 "Collisions/EcalFeedBack/03 Occupancy EE -",
+                 "Collisions/EcalFeedBack/03 Occupancy EE +",
+                 "Collisions/EcalFeedBack/04 Single Event Timing EB",
+                 "Collisions/EcalFeedBack/05 Timing Mean EB",
+                 "Collisions/EcalFeedBack/06 Timing Map EB",
+                 "Collisions/EcalFeedBack/07 Occupancy EB",
+                 "Collisions/EcalFeedBack/08 ES Occupancy",
+                 "Collisions/EcalFeedBack/09 ES Energy Map"
+                 )
+server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal', '^(Collisions|Hcal)/',
+                 "Collisions/HcalFeedBack/01 - Hcal Parameters"
+                 )
 
+server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T','^(Collisions|L1T)/',
+                "Collisions/L1TFeedBack/00 Rate BSCL.BSCR",
+                "Collisions/L1TFeedBack/01 Rate BSC splash right",
+                "Collisions/L1TFeedBack/02 Rate BSC splash left",
+                "Collisions/L1TFeedBack/03 Integ BSCL*BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/04 Integ BSCL or BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/05 Integ HF Triggers vs LS"
+                )
+
+server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT','^(Collisions|HLT)/',
+                "Collisions/HLTFeedBack/00 HLT_Egamma_Pass_Any",
+                "Collisions/HLTFeedBack/01 HLT_JetMET_Pass_Any",
+                "Collisions/HLTFeedBack/02 HLT_Muon_Pass_Any",
+                "Collisions/HLTFeedBack/03 HLT_Rest_Pass_Any",
+                "Collisions/HLTFeedBack/04 HLT_Special_Pass_Any"
+                )
