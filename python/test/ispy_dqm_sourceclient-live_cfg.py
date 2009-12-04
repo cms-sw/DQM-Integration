@@ -26,6 +26,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 ####### Event Source
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'ISpy Event Display hltOutputDQM stream'
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_MinBiasPixel*'))
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")

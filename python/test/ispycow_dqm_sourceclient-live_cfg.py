@@ -31,7 +31,7 @@ process.source = cms.Source("EventStreamHttpReader",
    consumerPriority = cms.untracked.string('normal'),
    max_event_size = cms.int32(7000000),
    consumerName = cms.untracked.string('ISpy COW Event Display '),
-   SelectHLTOutput = cms.untracked.string('outEVD'),
+   SelectHLTOutput = cms.untracked.string('outA'),
    max_queue_depth = cms.int32(5),
    maxEventRequestRate = cms.untracked.double(10.0),
    SelectEvents = cms.untracked.PSet(
@@ -53,7 +53,7 @@ process.add_(
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9003),
+    outputPort = cms.untracked.uint32(9002),
     outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
