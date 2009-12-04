@@ -131,16 +131,21 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
                  'L1TEMU/HCAL/HTPErrorFlag')
 
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
-		 'HLT/HLTMonMuon/Summary/PassingBits_Summary_Muon',
-                 'HLT/HLTMonMuon/Summary/HLTRate_Muon',
-		 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
-		 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
-		 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi',
-		 'HLT/HLTMonElectron/Summary/HLTRate_Electron',
-		 'HLT/JetMET/All/JetMET_rate_All',
-		 'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
-		 'HLT/HLTScalers_SM/hltScalers'
-		 )
+                'HLT/HLTMonMuon/Summary/PassingBits_Summary_Muon',
+                'HLT/HLTMonMuon/Summary/HLTRate_Muon',
+                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
+                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
+                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi',
+                'HLT/HLTMonElectron/Summary/HLTRate_Electron',
+                'HLT/JetMET/All/JetMET_rate_All',
+                'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
+                'HLT/HLTScalers_SM/hltScalers',
+                'HLT/FourVector/PathsSummary/HLT_Egamma_Pass_Any',
+                'HLT/FourVector/PathsSummary/HLT_JetMET_Pass_Any',
+                'HLT/FourVector/PathsSummary/HLT_Muon_Pass_Any',
+                'HLT/FourVector/PathsSummary/HLT_Rest_Pass_Any',
+                'HLT/FourVector/PathsSummary/HLT_Special_Pass_Any'
+                )
 
 server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|Pixel)/',
                  'Collisions/TrackingFeedBack/00 - Number Of Tracks',
@@ -172,3 +177,19 @@ server.workspace('DQMContent', 50,'Collisions', 'Hcal FeedBack', '^(Collisions|H
 server.workspace('DQMContent', 50,'Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
                  'Collisions/BeamMonitorFeedBack/00 - BeamMonitor Results'
                  )
+server.workspace('DQMContent', 50,'Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
+                "Collisions/L1TFeedBack/00 Rate BSCL.BSCR",
+                "Collisions/L1TFeedBack/01 Rate BSC splash right",
+                "Collisions/L1TFeedBack/02 Rate BSC splash left",
+                "Collisions/L1TFeedBack/03 Integ BSCL*BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/04 Integ BSCL or BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/05 Integ HF Triggers vs LS"
+                )
+
+server.workspace('DQMContent', 50,'Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
+                "Collisions/HLTFeedBack/00 HLT_Egamma_Pass_Any",
+                "Collisions/HLTFeedBack/01 HLT_JetMET_Pass_Any",
+                "Collisions/HLTFeedBack/02 HLT_Muon_Pass_Any",
+                "Collisions/HLTFeedBack/03 HLT_Rest_Pass_Any",
+                "Collisions/HLTFeedBack/04 HLT_Special_Pass_Any"
+                )
