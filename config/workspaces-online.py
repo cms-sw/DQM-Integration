@@ -157,7 +157,7 @@ server.workspace('DQMContent', 50,'Collisions', 'Tracking FeedBack', '^(Collisio
                  'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
                  'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
 )
-server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap)/',
+server.workspace('DQMContent', 50,'Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
                  "Collisions/EcalFeedBack/00 Single Event Timing EE",
                  "Collisions/EcalFeedBack/01 Timing Mean EE",
                  "Collisions/EcalFeedBack/02 Timing Map EE -",
