@@ -147,7 +147,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
                 'HLT/FourVector/PathsSummary/HLT_Special_Pass_Any'
                 )
 
-server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking', '^(Collisions|SiStrip|Tracking|Pixel)/',
+server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|Pixel)/',
                  'Collisions/TrackingFeedBack/00 - Number Of Tracks',
                  'Collisions/TrackingFeedBack/01 - Track Pt',
                  'Collisions/TrackingFeedBack/02 - Track Phi',
@@ -157,7 +157,7 @@ server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking', '^(Coll
                  'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
                  'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
 )
-server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
+server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
                  "Collisions/EcalFeedBack/00 Single Event Timing EE",
                  "Collisions/EcalFeedBack/01 Timing Mean EE",
                  "Collisions/EcalFeedBack/02 Timing Map EE -",
@@ -171,13 +171,13 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal', '^(Collisio
                  "Collisions/EcalFeedBack/08 ES Occupancy",
                  "Collisions/EcalFeedBack/09 ES Energy Map"
                  )
-server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal', '^(Collisions|Hcal)/',
+server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - Hcal Parameters"
                  )
-server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor', '^(Collisions|BeamMonitor|Fit)/',
+server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
                  'Collisions/BeamMonitorFeedBack/00 - BeamMonitor Results'
                  )
-server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T','^(Collisions|L1T)/',
+server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
                 "Collisions/L1TFeedBack/00 Rate BSCL.BSCR",
                 "Collisions/L1TFeedBack/01 Rate BSC splash right",
                 "Collisions/L1TFeedBack/02 Rate BSC splash left",
@@ -186,7 +186,7 @@ server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T','^(Collisions
                 "Collisions/L1TFeedBack/05 Integ HF Triggers vs LS"
                 )
 
-server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT','^(Collisions|HLT)/',
+server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
                 "Collisions/HLTFeedBack/00 HLT_Egamma_Pass_Any",
                 "Collisions/HLTFeedBack/01 HLT_JetMET_Pass_Any",
                 "Collisions/HLTFeedBack/02 HLT_Muon_Pass_Any",
