@@ -190,10 +190,12 @@ server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(C
                 "Collisions/L1TFeedBack/01 Rate BSC splash right",
                 "Collisions/L1TFeedBack/02 Rate BSC splash left",
                 "Collisions/L1TFeedBack/03 Rate BSCOR and BPTX",
-                "Collisions/L1TFeedBack/04 Integ BSCL*BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/05 Integ BSCL or BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/06 Integ HF Triggers vs LS",
-                "Collisions/L1TFeedBack/07 Integ BSCOR and BPTX"
+		"Collisions/L1TFeedBack/04 Rate Ratio 33 over 32",
+		"Collisions/L1TFeedBack/05 Rate Ratio 41 over 40",
+                "Collisions/L1TFeedBack/06 Integ BSCL*BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/07 Integ BSCL or BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/08 Integ HF Triggers vs LS",
+                "Collisions/L1TFeedBack/09 Integ BSCOR and BPTX"
                 )
 
 server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
