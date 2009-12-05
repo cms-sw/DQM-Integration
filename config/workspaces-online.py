@@ -171,25 +171,29 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
                  "Collisions/EcalFeedBack/08 ES Occupancy",
                  "Collisions/EcalFeedBack/09 ES Energy Map"
                  )
+		 
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - Hcal Parameters"
                  )
+		 
 server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
                  'Collisions/BeamMonitorFeedBack/00 - d0-phi0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/01 - z0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/02 - x position of beam spot',
                  'Collisions/BeamMonitorFeedBack/03 - y position of beam spot',
                  'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot',
-                 
+                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot'
                  )
+		 
 server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
                 "Collisions/L1TFeedBack/00 Rate BSCL.BSCR",
                 "Collisions/L1TFeedBack/01 Rate BSC splash right",
                 "Collisions/L1TFeedBack/02 Rate BSC splash left",
-                "Collisions/L1TFeedBack/03 Integ BSCL*BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/04 Integ BSCL or BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/05 Integ HF Triggers vs LS"
+                "Collisions/L1TFeedBack/03 Rate BSCOR and BPTX",
+                "Collisions/L1TFeedBack/04 Integ BSCL*BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/05 Integ BSCL or BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/06 Integ HF Triggers vs LS",
+                "Collisions/L1TFeedBack/07 Integ BSCOR and BPTX"
                 )
 
 server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
