@@ -25,8 +25,11 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
 if HOST.find("-c2d04-21") > 0:
   SRVDIR   = '/home/dqmlocal'
   COLLHOST = 'localhost'
-elif HOST.find("-c2d05-") or HOST.find("-c2d04-22") > 0:
+elif HOST.find("-c2d05-") >0:
   SRVDIR   = '/home/dqm'
+  COLLHOST = 'srv-c2d04-21'
+elif HOST.find("-c2d04-22") > 0:
+  SRVDIR   = '/home/dqmlocal'
   COLLHOST = 'srv-c2d04-21'
 
 # Extension modules and environment to install.
