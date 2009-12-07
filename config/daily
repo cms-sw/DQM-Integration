@@ -17,6 +17,10 @@ mkdir $HERE/.nodaily || { echo "$0: daily cannot run"; exit 1; }
 trap "rmdir $HERE/.nodaily" 0 1 2 15
 
 ######################################################################
+# Purge old sessions.
+find "$HERE/gui/www/sessions" -type f -mmin +120 | xargs rm -f
+
+######################################################################
 # File away server logs.
 for f in $(find $HERE/gui -name '*log-20*.txt' -mtime +0 | sort); do
   set -e
@@ -34,17 +38,19 @@ for f in $(find $HERE/gui -name '*log-20*.txt' -mtime +0 | sort); do
 done
 
 ######################################################################
-# File away collector archives.
+# File away collector logs.
 COLLECTOR=$FILER/logs/$HOST/collector
-for f in $(find $HERE/collector -name '*.zip' -mtime +1 | sort); do
+for f in $(find $HERE/collector -name 'collector.out.*' | sort); do
   set -e
   [ -f "$f" ] || continue
-  dest=${f#*/collector/}
+  month=$(echo "$f" | perl -pe 's|.*collector\.out\.||; s|^([0-9]{6}).*|$1|')
+  case $month in 20[0-9][0-9][01][0-9] ) ;; * )
+    echo "$f: could not determine month from log file name (got: $month)"
+    continue ;;
+  esac
+
   mkdir -p $COLLECTOR
-  while [ -f $COLLECTOR/$dest ]; do
-    dest=${f:r}_.zip
-  done
-  mv $f $COLLECTOR/$dest
+  zip -9Trmojq $COLLECTOR/collector-$month.zip $f
   set +e
 done
 
