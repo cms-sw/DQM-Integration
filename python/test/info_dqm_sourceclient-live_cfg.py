@@ -21,6 +21,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
 #-----------------------------
+process.load("DQMServices.Components.DQMProvInfo_cfi")
 
 # message logger
 process.MessageLogger = cms.Service("MessageLogger",
@@ -41,6 +42,7 @@ process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMmodulesPath = cms.Path(
+                              process.dqmProvInfo*
                               process.dqmmodules 
 )
 process.schedule = cms.Schedule(process.evfDQMmodulesPath)
