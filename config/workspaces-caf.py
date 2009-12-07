@@ -23,3 +23,12 @@ server.workspace('DQMContent', 34, 'Trigger/Lumi', 'HLX', '^HLX')
 server.workspace('DQMContent', 41, 'POG', 'Muons', '^Muons/')
 server.workspace('DQMContent', 42, 'POG', 'JetMet', '^JetMET/')
 server.workspace('DQMContent', 43, 'POG', 'EGamma', '^Egamma/')
+
+server.workspace('DQMContent', 51, 'Alignment', 'Tracker', '^Alignment/Tracker/',
+                 'Alignment/Tracker/Layouts/00 - PIXEL absolute Residuals',
+		 'Alignment/Tracker/Layouts/01 - STRIP absolute Residuals',
+		 'Alignment/Tracker/Layouts/02 - PIXEL normalized Residuals',
+		 'Alignment/Tracker/Layouts/03 - STRIP normalized Residuals',
+		 'Alignment/Tracker/Layouts/10 - PIXEL DMRs',
+		 'Alignment/Tracker/Layouts/11 - STRIP DMRs',
+)
