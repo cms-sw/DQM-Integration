@@ -100,8 +100,8 @@ killproc() {
       [ $(ps h $pid | wc -l) = 0 ] && break
     done
     echo
+    newline="\n"
   done
-  newline="\n"
 }
 
 ######################################################################
@@ -298,7 +298,7 @@ esac
 # Start collector if requested; "crontab" is not reliable at online so
 # use hard-coded command. Use "crontab" elsewhere as that configures
 # which collectors should be running on this host.
-case ${EXTRA:-collector} in
+case $HOST:${EXTRA:-collector} in
   srv-*:*collector* )
     (set -x; $DQMGUI_ROOT/etc/restart-collector 9090:$DQM_DIR) ;;
   *collector* )
