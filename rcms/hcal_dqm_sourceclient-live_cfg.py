@@ -125,7 +125,7 @@ setHcalTaskValues(process.hcalMonitor)
 
 # Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
 
-process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi"
+process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
 
 # Ignore calibration events in DFMon
 process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes=[0]
@@ -146,7 +146,7 @@ process.hcalClient.prefixME = cms.untracked.string(subsystem)
 setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
 process.hcalClient.SummaryClient        = True
-process.hcalClient.databasedir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus' # set to empty to suppress channel status output
+process.hcalClient.databasedir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
 
 # Set larger limits at startup (these are used in calculating the reportSummary)
 process.hcalClient.HotCellClient_minErrorFlag=0.25
@@ -155,10 +155,12 @@ process.hcalClient.BeamClient_minErrorFlag=0.20
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
-#
-idle=3560
+# (3559 starting on 7 December 2009)
+
+idle=3559
 process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(idle)
 process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = idle
+process.hcalMonitor.DigiMonitor_shutOffOrbitTest=True
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
