@@ -22,10 +22,7 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
     break
 
 # Determine installation directories.
-if HOST.find("-c2d04-") > 0:
-  SRVDIR   = '/home/dqmlocal'
-elif HOST.find("-c2d05-") > 0:
-  SRVDIR   = '/home/dqm'
+SRVDIR   = '/home/dqmlocal'
 COLLHOST = 'localhost'
 
 # Extension modules and environment to install.
@@ -44,16 +41,16 @@ server.serviceName = 'Online Playback'
 
 # Contents.
 server.plugin('render', BASEDIR + "/style/*.cc")
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMFileAccess', None, None,
               { "Original": "/dqmdata/dqm/repository/original",
                 "iSpy": "/dqmdata/EventDisplay/done" })
-server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.source('DQMUnknown', 'unknown')
-server.source('DQMOverlay', 'overlay')
-server.source('DQMStripChart', 'stripchart')
-server.source('DQMLive', 'dqm', '%s:9090' % COLLHOST)
-server.source('DQMArchive', 'file', '%s/ix' % SRVDIR, '^/Global/')
-server.source('DQMLayout', 'layouts', *LAYOUTS)
+server.source('DQMUnknown')
+server.source('DQMOverlay')
+server.source('DQMStripChart')
+server.source('DQMLive', '%s:9090' % COLLHOST)
+server.source('DQMArchive', '%s/ix' % SRVDIR, '^/Global/')
+server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")

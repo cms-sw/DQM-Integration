@@ -27,11 +27,11 @@ server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/uploads',
 	      { 'ROOT': '/data/dqm/offline/repository/data',
 	        'ZIP': '/data/dqm/offline/repository/zipped',
 	        'iSpy':   '/data/ispy-files' })
-server.source('DQMUnknown', 'unknown')
-server.source('DQMOverlay', 'overlay')
-server.source('DQMStripChart', 'stripchart')
-server.source('DQMArchive', 'file', '/data/dqm/offline/ix', '^/Global/')
-server.source('DQMLayout', 'layouts', *LAYOUTS)
+server.source('DQMUnknown')
+server.source('DQMOverlay')
+server.source('DQMStripChart')
+server.source('DQMArchive', '/data/dqm/offline/ix', '^/Global/')
+server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")

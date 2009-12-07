@@ -1,6 +1,6 @@
 import os.path
 global CONFIGDIR
-BASEDIR   = os.path.dirname(os.path.dirname(__file__))
+BASEDIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
@@ -21,12 +21,12 @@ server.serviceName = 'GUI test'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.source('DQMUnknown', 'unknown')
-server.source('DQMOverlay', 'overlay')
-server.source('DQMStripChart', 'stripchart')
-server.source('DQMLive', 'dqm', 'localhost:9190')
-server.source('DQMArchive', 'file', BASEDIR + '/idx', '^/Global/')
-server.source('DQMLayout', 'layouts', *LAYOUTS)
+server.source('DQMUnknown')
+server.source('DQMOverlay')
+server.source('DQMStripChart')
+server.source('DQMLive', 'localhost:9190')
+server.source('DQMArchive', BASEDIR + '/idx', '^/Global/')
+server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")

@@ -22,10 +22,10 @@ server.title       = 'CMS data quality'
 server.serviceName = 'GUI test'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
+server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMFileAccess', None, None,
               { "Original": "/dqmdata/dqm/repository/original",
                 "iSpy": "/dqmdata/EventDisplay/done" })
-server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')

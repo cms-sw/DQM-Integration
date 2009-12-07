@@ -22,9 +22,8 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
     break
 
 # Determine installation directories.
-if HOST.find("-c2d04-") > 0:
-  SRVDIR   = '/home/dqmlocal'
-  COLLHOST = 'localhost'
+SRVDIR   = '/home/dqmlocal'
+COLLHOST = 'localhost'
 
 # Extension modules and environment to install.
 modules = ("GuiDQM",)
@@ -43,11 +42,11 @@ server.serviceName = 'Milk'
 # Contents.
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.source('DQMUnknown', 'unknown')
-server.source('DQMOverlay', 'overlay')
-server.source('DQMStripChart', 'stripchart')
-server.source('DQMLive', 'dqm', '%s:9090' % COLLHOST)
-server.source('DQMLayout', 'layouts', *LAYOUTS)
+server.source('DQMUnknown')
+server.source('DQMOverlay')
+server.source('DQMStripChart')
+server.source('DQMLive', '%s:9090' % COLLHOST)
+server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")

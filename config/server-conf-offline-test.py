@@ -32,11 +32,11 @@ server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dqmtest/uploads',
 	      { 'ROOT': '/data/dqm/dqmtest/repository/data',
 	        'ZIP': '/data/dqm/dqmtest/repository/zipped' })
-server.source('DQMUnknown', 'unknown')
-server.source('DQMOverlay', 'overlay')
-server.source('DQMStripChart', 'stripchart')
-server.source('DQMArchive', 'file', '/data/dqm/dqmtest/ix', '^/Global/')
-server.source('DQMLayout', 'layouts', *LAYOUTS)
+server.source('DQMUnknown')
+server.source('DQMOverlay')
+server.source('DQMStripChart')
+server.source('DQMArchive', '/data/dqm/dqmtest/ix', '^/Global/')
+server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")
