@@ -24,10 +24,9 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
 # Determine installation directories.
 if HOST.find("-c2d04-") > 0:
   SRVDIR   = '/home/dqmlocal'
-  COLLHOST = 'srv-c2d05-18'
 elif HOST.find("-c2d05-") > 0:
   SRVDIR   = '/home/dqm'
-  COLLHOST = 'localhost'
+COLLHOST = 'localhost'
 
 # Extension modules and environment to install.
 modules = ("GuiDQM",)
