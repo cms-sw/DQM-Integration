@@ -131,7 +131,6 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
                  'L1TEMU/HCAL/HTPErrorFlag')
 
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
-<<<<<<< workspaces-online.py
                 'HLT/HLTMonMuon/Summary/PassingBits_Summary_Muon',
                 'HLT/HLTMonMuon/Summary/HLTRate_Muon',
                 'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
@@ -180,7 +179,6 @@ server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^
                  "Collisions/HcalFeedBack/04 - Lumi Bunch Crossing Checks",
                  "Collisions/HcalFeedBack/05 - Events Per Lumi Section",
                  "Collisions/HcalFeedBack/06 - Lumi Distributions",
-                 
                  )
 		 
 server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
@@ -190,60 +188,6 @@ server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBa
                  'Collisions/BeamMonitorFeedBack/03 - y position of beam spot',
                  'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
                  'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot'
-=======
-                'HLT/HLTMonMuon/Summary/PassingBits_Summary_Muon',
-                'HLT/HLTMonMuon/Summary/HLTRate_Muon',
-                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_etaphi',
-                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_eta',
-                'HLT/HLTMonMuon/L1PassThrough/Level1/HLTMuonL1_phi',
-                'HLT/HLTMonElectron/Summary/HLTRate_Electron',
-                'HLT/JetMET/All/JetMET_rate_All',
-                'HLT/TauOnline/Inclusive/SingleTau/TriggerBits',
-                'HLT/HLTScalers_SM/hltScalers',
-                'HLT/FourVector/PathsSummary/HLT_Egamma_Pass_Any',
-                'HLT/FourVector/PathsSummary/HLT_JetMET_Pass_Any',
-                'HLT/FourVector/PathsSummary/HLT_Muon_Pass_Any',
-                'HLT/FourVector/PathsSummary/HLT_Rest_Pass_Any',
-                'HLT/FourVector/PathsSummary/HLT_Special_Pass_Any'
-                )
-
-server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|Pixel)/',
-                 'Collisions/TrackingFeedBack/00 - Number Of Tracks',
-                 'Collisions/TrackingFeedBack/01 - Track Pt',
-                 'Collisions/TrackingFeedBack/02 - Track Phi',
-                 'Collisions/TrackingFeedBack/03 - Track Eta',
-                 'Collisions/TrackingFeedBack/04 - X-Position Of Closest Approach',
-                 'Collisions/TrackingFeedBack/05 - Y-Position Of Closest Approach',
-                 'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
-                 'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
-)
-server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
-                 "Collisions/EcalFeedBack/00 Single Event Timing EE",
-                 "Collisions/EcalFeedBack/01 Timing Mean EE",
-                 "Collisions/EcalFeedBack/02 Timing Map EE -",
-                 "Collisions/EcalFeedBack/02 Timing Map EE +",
-                 "Collisions/EcalFeedBack/03 Occupancy EE -",
-                 "Collisions/EcalFeedBack/03 Occupancy EE +",
-                 "Collisions/EcalFeedBack/04 Single Event Timing EB",
-                 "Collisions/EcalFeedBack/05 Timing Mean EB",
-                 "Collisions/EcalFeedBack/06 Timing Map EB",
-                 "Collisions/EcalFeedBack/07 Occupancy EB",
-                 "Collisions/EcalFeedBack/08 ES Occupancy",
-                 "Collisions/EcalFeedBack/09 ES Energy Map"
-                 )
-		 
-server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
-                 "Collisions/HcalFeedBack/01 - Hcal Parameters"
-                 )
-		 
-server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
-                 'Collisions/BeamMonitorFeedBack/00 - d0-phi0 of selected tracks',
-                 'Collisions/BeamMonitorFeedBack/01 - z0 of selected tracks',
-                 'Collisions/BeamMonitorFeedBack/02 - x position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/03 - y position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot'
->>>>>>> 1.109
                  )
 		 
 server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',

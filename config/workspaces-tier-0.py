@@ -79,9 +79,9 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
                  "Collisions/EcalFeedBack/09 ES Energy Map"
                  )
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
-                 "Collisions/HcalFeedBack/01 - HF+,HF- coincidences (with BPTX)\\",
-                 "Collisions/HcalFeedBack/02 - HF+,HF- coincidences (without BP\\TX)",
-                 "Collisions/HcalFeedBack/03 - Digi Shapes for Total Digi Signa\\ls > N counts",
+                 "Collisions/HcalFeedBack/01 - HF+,HF- coincidences (with BPTX)",
+                 "Collisions/HcalFeedBack/02 - HF+,HF- coincidences (without BPTX)",
+                 "Collisions/HcalFeedBack/03 - Digi Shapes for Total Digi Signals > N counts",
                  "Collisions/HcalFeedBack/04 - Lumi Bunch Crossing Checks",
                  "Collisions/HcalFeedBack/05 - Events Per Lumi Section",
                  "Collisions/HcalFeedBack/06 - Lumi Distributions",
