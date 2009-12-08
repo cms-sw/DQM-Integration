@@ -201,67 +201,74 @@ eeecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). Digis are expected only in EE+/-2,3,7,8 which have MEM box attached (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eeecalshifterlayout(dqmitems, "04 Energy/00 Energy Spectrum",
+# to be put in when we will remove cosmics plots
+eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
+#  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+   [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+   [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE -", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE +", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "04 Energy/01 Clusters Energy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "Calibrated energy (GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC seed crystal energy", 'description': "Energy (GeV) of the crystal seeding a cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/01 Basic Clusters",
+eeecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number", 'description': "Multiplicity of reconstructed hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size", 'description': "Numbers of crystals contained in hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters Multiplicity EE -",
+eeecalshifterlayout(dqmitems, "04 Energy/03 Basic Clusters Occupancy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE -", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/02 Basic Clusters Multiplicity EE +",
+eeecalshifterlayout(dqmitems, "04 Energy/03 Basic Clusters Occupancy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number map EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection eta EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC number projection phi EE +", 'description': "Average number of basic cluster / event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/03 Basic Clusters Energy EE -",
+eeecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "Average energy (in GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE -", 'description': "Eta projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE -", 'description': "Phi projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/03 BasicClusters Energy EE +",
+eeecalshifterlayout(dqmitems, "04 Energy/04 BasicClusters Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "Average energy (in GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection eta EE +", 'description': "Eta projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy projection phi EE +", 'description': "Phi projection of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Transverse Energy EE -",
+eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Transverse Energy EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE -", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/04 Basic Clusters Transverse Energy EE +",
+eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Transverse Energy EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET map EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection eta EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC ET projection phi EE +", 'description': "Average transverse energy (in GeV) of hybrid basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size EE -",
+eeecalshifterlayout(dqmitems, "04 Energy/06 Basic Clusters Size EE -",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE -", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/05 Basic Clusters Size EE +",
+eeecalshifterlayout(dqmitems, "04 Energy/06 Basic Clusters Size EE +",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size map EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection eta EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC size projection phi EE +", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/06 SuperClusters 1D",
+eeecalshifterlayout(dqmitems, "04 Energy/07 SuperClusters 1D",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC number", 'description': "Multiplicity of reconstructed multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT SC size (crystal)", 'description': "Numbers of crystals contained in multi-5x5 superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-eeecalshifterlayout(dqmitems, "04 Energy/07 Peaks",
+eeecalshifterlayout(dqmitems, "04 Energy/08 Peaks",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass Pi0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass JPsi sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass Z0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EEClusterTask/EECLT dicluster invariant mass high sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
-
-eeecalshifterlayout(dqmitems, "04 Energy/08 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "05 Timing/00 Timing Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT EE - timing quality summary", 'description': "Quality summary of the crystal reconstructed hits in EE - with amplitude above 16 ADC counts. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -278,14 +285,18 @@ eeecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
   [{ 'path': "EcalEndcap/EESummaryClient/EETMT timing rms", 'description': "Timing RMS of all the channels in each DCC of EE. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "05 Timing/03 Timing Map EE -",
-  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "05 Timing/03 Timing Map EE +",
-  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing map EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing projection R EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing projection phi EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eeecalshifterlayout(dqmitems, "05 Timing/04 Timing Vs Amplitude EE",
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude summary EE +", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EETimingTask/EETMT timing vs amplitude summary EE -", 'description': "Average timing (in clock units) of the seeds of the good rechits (good shape and amplitude > 960 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "05 Timing/04 Single Event Timing",
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D summary EE -", 'description': "Single event timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
