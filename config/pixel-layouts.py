@@ -63,8 +63,8 @@ pixellayout(dqmitems, "05 - Pixel_Cluster_Barrel_Summary",
 pixellayout(dqmitems, "06 - Pixel_Cluster_Endcap_Summary",
   [{ 'path': "Pixel/Endcap/SUMCLU_charge_Endcap",
      'description': "Mean cluster charge in kilo electrons per endcap module",
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Endcap/SUMCLU_nclusters_Endcap",
+'draw': { 'withref': "no" }}],
+[{ 'path': "Pixel/Endcap/SUMCLU_nclusters_Endcap",
      'description': "Mean number of clusters per event per endcap module",
      'draw': { 'withref': "no" }}],
   [{ 'path': "Pixel/Endcap/SUMCLU_size_Endcap",
@@ -82,8 +82,9 @@ pixellayout(dqmitems, "20 - Pixel_Error_Summary",
      'description': "Mean number of errors per endcap module - should be empty!",
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "21 - Cluster y width vs. cluster eta",
-  [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelCluster_Barrel",
+pixellayout(dqmitems, "21 - Cluster_y_width_vs_cluster_eta",
+  [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelClusters_Barrel",
      'description': "Cluster y width as function of cluster eta", 
      'draw': { 'withref': "no" }}]
   )
+ 
