@@ -32,6 +32,7 @@ process.source = cms.Source("EventStreamHttpReader",
    max_event_size = cms.int32(7000000),
    consumerName = cms.untracked.string('ISpy COW Event Display '),
    SelectHLTOutput = cms.untracked.string('outDoubleCream'),
+#   SelectHLTOutput = cms.untracked.string('outWhole'),
    max_queue_depth = cms.int32(5),
    maxEventRequestRate = cms.untracked.double(10.0),
    SelectEvents = cms.untracked.PSet(
@@ -55,6 +56,7 @@ process.add_(
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9002),
     outputMaxEvents = cms.untracked.int32(100),
+    outputMaxTime = cms.untracked.int32(600),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
@@ -71,10 +73,7 @@ process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSupp
 process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('generalTracks')
 process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),
                                                 cms.InputTag('cosmictrackfinderP5'),
-                                                cms.InputTag('ctfWithMaterialTracksP5'),
-                                                cms.InputTag('generalTracks'),
-                                                cms.InputTag('ctfPixelLess'),
-                                                cms.InputTag('pixelTracks')
+                                                cms.InputTag('generalTracks')
                                                )
 ####### Path                                             
 process.p= cms.Path(process.iSpy_online_sequence)

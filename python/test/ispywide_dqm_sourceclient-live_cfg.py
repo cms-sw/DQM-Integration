@@ -13,8 +13,9 @@ process.options=cms.untracked.PSet(
 		"TUnixSystem::DispatchSignals()",
 		"DataCorrupt"])
   )
-
+  
 ####### Components
+# import of standard configurations
 process.load('Configuration/StandardSequences/Services_cff')
 process.load('FWCore/MessageService/MessageLogger_cfi')
 process.load('Configuration/StandardSequences/GeometryExtended_cff')
@@ -28,21 +29,21 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 
 ####### Event Source
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'ISpy Event Display Express Stream'
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputExpress')
-process.EventStreamHttpReader.sourceURL=cms.string('http://%s:24100/urn:xdaq-application:lid=30' % socket.gethostname())
+process.EventStreamHttpReader.consumerName = 'ISpy Event Display wide selection'
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputDQM')
+process.EventStreamHttpReader.sourceURL=cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 
 ####### ISpy Service
-process.add_(
-    cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('%s/iSpy_BEAM%d_%s__hltOutputExpress_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+process.add_(cms.Service("ISpyService",
+    outputFileName = cms.untracked.string('%s/iSpy_BEAM%d_%s__hltOutputDQMWide_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    #outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9003),
+    outputPort = cms.untracked.uint32(9001),
     outputMaxEvents = cms.untracked.int32(100),
     outputMaxTime = cms.untracked.int32(600),
     online = cms.untracked.bool(True),

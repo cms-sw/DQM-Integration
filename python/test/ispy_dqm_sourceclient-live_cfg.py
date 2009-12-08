@@ -43,6 +43,7 @@ process.add_(
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9000),
     outputMaxEvents = cms.untracked.int32(100),
+    outputMaxTime = cms.untracked.int32(600),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
@@ -59,10 +60,7 @@ process.ISpySiStripDigi.iSpySiStripDigiTag = cms.InputTag('siStripDigis:ZeroSupp
 process.ISpyTrackingRecHit.iSpyTrackingRecHitTag = cms.InputTag('generalTracks')
 process.ISpyTrack.iSpyTrackTags = cms.VInputTag(cms.InputTag('cosmicMuons'),
                                                 cms.InputTag('cosmictrackfinderP5'),
-                                                cms.InputTag('ctfWithMaterialTracksP5'),
-                                                cms.InputTag('generalTracks'),
-                                                cms.InputTag('ctfPixelLess'),
-                                                cms.InputTag('pixelTracks')
+                                                cms.InputTag('generalTracks')
                                                )
 
 #####################################################################################################
