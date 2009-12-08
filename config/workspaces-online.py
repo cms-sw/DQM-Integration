@@ -215,5 +215,5 @@ server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(C
                 "Collisions/HLTFeedBack/08 Group_2_paths_count_LS",
                 "Collisions/HLTFeedBack/09 Group_3_paths_count_LS",
                 "Collisions/HLTFeedBack/10 Group_4_paths_count_LS",
-                "Collisions/HLTFeedBack/11 Group_5_paths_count_LS"
+                "Collisions/HLTFeedBack/11 Group_-1_paths_count_LS"
                 )
