@@ -8,7 +8,7 @@ process = cms.Process("DQM")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Info DQM Consumer'
 process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1.0)
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2d05-14:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2d05-14:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
 #### DQM Environment
