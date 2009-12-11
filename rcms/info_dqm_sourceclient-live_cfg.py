@@ -8,6 +8,7 @@ process = cms.Process("DQM")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Info DQM Consumer'
 process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1.0)
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2d05-14:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
 #### DQM Environment
@@ -35,13 +36,21 @@ process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serveru
 process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+
+process.load("EventFilter.ScalersRawToDigi.ScalersRawToDigi_cfi")
 
 #-----------------------------
 #### Sub-system configuration follows
+process.dump = cms.EDAnalyzer('EventContentAnalyzer')
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMmodulesPath = cms.Path(
+                              process.l1GtUnpack*
+                              process.scalersRawToDigi*
+#			      process.dump*
+                              process.dqmProvInfo*
                               process.dqmProvInfo*
                               process.dqmmodules 
 )
