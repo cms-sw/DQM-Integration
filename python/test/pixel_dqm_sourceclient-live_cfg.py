@@ -126,5 +126,9 @@ process.Reco = cms.Sequence(process.siPixelDigis*process.siPixelClusters)
 #process.trackReco = cms.Sequence(process.trackerLocalReco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracksP5) #*process.rstracks 
 process.DQMmodules = cms.Sequence(process.dqmEnv*process.qTester*process.dqmSaver)
 
+process.SiPixelDigiSource.layOn = True
+process.SiPixelDigiSource.diskOn = True
+
+
 process.p = cms.Path(process.hltTriggerTypeFilter*process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
 #process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)
