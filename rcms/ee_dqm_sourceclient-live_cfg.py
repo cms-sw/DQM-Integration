@@ -433,11 +433,6 @@ if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
 
   process.ecalEndcapMainSequence.remove(process.ecalEndcapPedestalOnlineTask)
 
-if (localDAQ == 1) | (globalDAQ == 1) :
-  process.ecalBarrelMainSequence.remove(process.ecalBarrelTrendTask)
-
-  process.ecalEndcapMainSequence.remove(process.ecalEndcapTrendTask)
-
 process.ecalClusterSequence = cms.Sequence(process.hybridSuperClusters*process.correctedHybridSuperClusters*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 
 process.ecalMonitorPath = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
@@ -569,23 +564,23 @@ process.ecalEndcapMonitorClient.location = 'P5_Co'
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
 
 #process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
-process.ecalBarrelLaserTask.laserWavelengths = [ 1 ]
+process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
+#process.ecalBarrelLaserTask.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapLaserTask.laserWavelengths = [ 1 ]
+process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
+#process.ecalEndcapLaserTask.laserWavelengths = [ 1 ]
 
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
 #process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
-process.ecalBarrelMonitorClient.laserWavelengths = [ 1 ]
+process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
+#process.ecalBarrelMonitorClient.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
+#process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]

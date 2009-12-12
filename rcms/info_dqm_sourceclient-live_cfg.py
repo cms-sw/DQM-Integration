@@ -37,8 +37,21 @@ process.GlobalTag.globaltag = 'GR09_H_V4::All' # or any other appropriate
 process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtRecord_cfi")
+import EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi
+gtDigis = EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi.l1GtUnpack.clone()
+
+process.physicsBitSelector = cms.EDFilter("PhysDecl",
+                                                   applyfilter = cms.untracked.bool(False),
+                                                   debugOn     = cms.untracked.bool(True)
+                                          )
+
 
 process.load("EventFilter.ScalersRawToDigi.ScalersRawToDigi_cfi")
+
+## Collision Reconstruction
+process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
+#process.load("Configuration.StandardSequences.Reconstruction_cff")
 
 #-----------------------------
 #### Sub-system configuration follows
@@ -48,9 +61,11 @@ process.dump = cms.EDAnalyzer('EventContentAnalyzer')
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMmodulesPath = cms.Path(
                               process.l1GtUnpack*
+			      process.gtDigis*
+			      process.l1GtRecord*
+			      process.physicsBitSelector*
                               process.scalersRawToDigi*
-#			      process.dump*
-                              process.dqmProvInfo*
+			      process.dump*
                               process.dqmProvInfo*
                               process.dqmmodules 
 )
