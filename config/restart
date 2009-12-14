@@ -173,29 +173,18 @@ esac
 ######################################################################
 # Start file handling agents if requested.
 case $HOST:${EXTRA:-agents} in
-  # old production
-  srv-c2d05-19:*agents* )
+  # dqm-prod-local
+  srv-c2d04-21:*agents* )
     DQM_DATA=/dqmdata/dqm
-    mkdir -p $DQM_DATA/repository/original {$DQM_DATA,$DQM_DIR}/agents
+    mkdir -p $DQM_DATA/repository/original
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
     (set -x
      (visDQMReceiveDaemon \
        $DQM_DATA/uploads \
        $DQM_DATA/repository/original \
-       $DQM_DATA/agents/import-old \
        $DQM_DATA/agents/import-local \
        $DQM_DATA/agents/import-offsite \
      ) >& $DQM_DIR/agents/$NOW-$HOST-receive.log </dev/null &
-
-     (visDQMImportDaemon \
-       $DQM_DATA/agents/import-old \
-       $DQM_DATA/repository/original \
-       $DQM_DIR/ix \
-     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & ) ;;
-
-  # dqm-prod-local
-  srv-c2d04-21:*agents* )
-    DQM_DATA=/dqmdata/dqm
-    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
     (set -x
      (visDQMImportDaemon \
        $DQM_DATA/agents/import-local \
