@@ -185,6 +185,7 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-local \
        $DQM_DATA/agents/import-offsite \
      ) >& $DQM_DIR/agents/$NOW-$HOST-receive.log </dev/null &
+    )
     (set -x
      (visDQMImportDaemon \
        $DQM_DATA/agents/import-local \
