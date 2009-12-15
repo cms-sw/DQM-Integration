@@ -202,50 +202,39 @@ hltLayoutGammaJet(dqmitems,"/HLT_Photon15_TrackIso_L1R Efficiency vs eta",
 
 def trigvalmuon(i, p, *rows): i["HLT/Muon/Efficiency Summary for " + p] = DQMItem(layout=rows)
 
-menus = ["8E29"      , "1E31"      ]
-paths = ["HLT_IsoMu3", "HLT_IsoMu9"]
+menus = ["8E29"   , "1E31"      ]
+paths = ["HLT_Mu3", "HLT_IsoMu9"]
 
-for menuNum in range(len(menus)):
+for menuNum, thisMenu in enumerate(menus):
 
-    thisMenu          = menus[menuNum]
-    thisDir           = "HLT/Muon/Distributions/" + paths[menuNum]
-    thisDocumentation = " (" + paths[menuNum] + " path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/MuonHLTOfflinePerformance\">documentation</a>)"
+##     thisMenu          = menus[menuNum]
+    thisPath          = paths[menuNum]
+    thisDir           = "HLT/Muon/Distributions/" + thisPath
+    thisDocumentation = " (" + thisPath + " path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationMuon\">documentation</a>)"
 
+    trigvalmuon(dqmitems, thisMenu + "/1: Trigger Path Efficiency Summary",
+        [{'path': "HLT/Muon/Summary/Efficiency_Summary", 'description':"Percentage of total events in the sample which pass each muon trigger"}])
     trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L1",
-        [{'path': thisDir + "/genTurnOn_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. pT" + thisDocumentation}])
-
+        [{'path': thisDir + "/genTurnOn1_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. pT" + thisDocumentation}])
     trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L2",
-        [{'path': thisDir + "/genTurnOn_L2", 'description':"Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
-
-    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L2 Isolation",
-        [{'path': thisDir + "/genTurnOn_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
-
+        [{'path': thisDir + "/genTurnOn1_L2", 'description':"Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
     trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L3",
-        [{'path': thisDir + "/genTurnOn_L3", 'description':"Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
-
-    trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L3 Isolation",
-        [{'path': thisDir + "/genTurnOn_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
-
+        [{'path': thisDir + "/genTurnOn1_L3", 'description':"Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
     trigvalmuon(dqmitems, thisMenu + "/Efficiency of L1",
         [{'path': thisDir + "/genEffEta_L1", 'description':"Efficiency to find an L1 muon associated to a generated muon vs. eta" + thisDocumentation}])
-
     trigvalmuon(dqmitems, thisMenu + "/Efficiency of L2",
         [{'path': thisDir + "/genEffEta_L2", 'description':"Efficiency to find a gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
-
-    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L2 Isolation",
-        [{'path': thisDir + "/genEffEta_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
-
     trigvalmuon(dqmitems, thisMenu + "/Efficiency of L3",
         [{'path': thisDir + "/genEffEta_L3", 'description':"Efficiency to find a gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
-
-    trigvalmuon(dqmitems, thisMenu + "/Efficiency of L3 Isolation",
-        [{'path': thisDir + "/genEffEta_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
-
-##     trigvalmuon(dqmitems, thisMenu + "/Number of Objects Per Step",
-##         [{'path': thisDir + "/numObjects", 'description':"Number of objects found in generated and reconstructed muon collections, and at each step of the " + paths[menuNum] + " trigger path"}])
-
-##     trigvalmuon(dqmitems, thisMenu + "/Number of Orphans per Step",
-##         [{'path': thisDir + "/genNumOrphans", 'description':"Number of objects in each step of the " + paths[menuNum] + " trigger path which were not matched to a generated muon"}])
+    if "Iso" in thisPath:
+        trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L2 Isolation",
+            [{'path': thisDir + "/genTurnOn1_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
+        trigvalmuon(dqmitems, thisMenu + "/pT Turn-On for L3 Isolation",
+            [{'path': thisDir + "/genTurnOn1_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. pT" + thisDocumentation}])
+        trigvalmuon(dqmitems, thisMenu + "/Efficiency of L2 Isolation",
+            [{'path': thisDir + "/genEffEta_L2Iso", 'description':"Efficiency to find an isolated gen-matched L2 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
+        trigvalmuon(dqmitems, thisMenu + "/Efficiency of L3 Isolation",
+            [{'path': thisDir + "/genEffEta_L3Iso", 'description':"Efficiency to find an isolated gen-matched L3 muon associated to a gen-matched L1 muon vs. eta" + thisDocumentation}])
 
 
 ###---- TAU selection goes here: ----
