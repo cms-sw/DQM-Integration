@@ -131,7 +131,7 @@ trigvalegammaW(dqmitems,"Ele10LWEleIdL1R",
 ###---- MUON selection goes here: ----
 
 muonPath = "HLT/Muon/Distributions/HLT_IsoMu3/"
-muonDocumentation = " (HLT_IsoMu3 path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/MuonHLTOfflinePerformance\">documentation</a>)"
+muonDocumentation = " (HLT_IsoMu3 path) (<a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerValidationMuon\">documentation</a>)"
 
 def trigvalmuon(i, p, *rows): i["00 Shift/HLT/Muon/" + p] = DQMItem(layout=rows)
 
