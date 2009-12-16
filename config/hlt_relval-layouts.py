@@ -322,10 +322,10 @@ trigvaltopelectron(dqmitems,"HLTEle15SWLooseTrackIsoL1R eff vs pt",
         [{'path': "HLT/Top/Semileptonic_electron/EffVsPt_HLT_Ele15_SW_LooseTrackIso_L1R", 'description': "Trigger efficiency for HLTEle15_SW_LooseTrackIso_L1R versus pt of the highest pt reconstructed electron with pt>20, eta<2.4"}])
 
 trigvaltopelectron(dqmitems,"Electron trigger efficiencies wrt gen",
-        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_ElectronTriggers_gen", 'description': "Electron trigger efficiencies wrt mc acceptance  (1 electron from W decay, pt>10, eta<2.4)"}])
+        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_Electrontriggers_gen", 'description': "Electron trigger efficiencies wrt mc acceptance  (1 electron from W decay, pt>10, eta<2.4)"}])
 
 trigvaltopelectron(dqmitems,"Electron trigger efficiencies wrt gen+reco",
-        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_ElectronTriggers", 'description': "Electron trigger efficiencies wrt mc acceptance+offline  (acc: 1 electron from W, pt>10, eta<2.4; off: at least 1 rec electron, pt>20, eta<2.4 and 2 jets Et_raw>13, eta<2.4)"}])
+        [{'path': "HLT/Top/Semileptonic_electron/Efficiencies_Electrontriggers", 'description': "Electron trigger efficiencies wrt mc acceptance+offline  (acc: 1 electron from W, pt>10, eta<2.4; off: at least 1 rec electron, pt>20, eta<2.4 and 2 jets Et_raw>13, eta<2.4)"}])
 
 
 
