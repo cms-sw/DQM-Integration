@@ -19,6 +19,7 @@ process.load("DQMServices.Core.DQM_cfg")
 #----------------------------
 #### DQM Environment
 #----------------------------
+process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
 #-----------------------------
@@ -65,7 +66,7 @@ process.evfDQMmodulesPath = cms.Path(
 			      process.l1GtRecord*
 			      process.physicsBitSelector*
                               process.scalersRawToDigi*
-			      process.dump*
+#			      process.dump*
                               process.dqmProvInfo*
                               process.dqmmodules 
 )

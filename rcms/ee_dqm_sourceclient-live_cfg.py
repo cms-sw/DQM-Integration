@@ -539,7 +539,7 @@ process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:
 
 process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
 
-process.ecalBarrelTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
+process.ecalBarrelTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEB'
 
 process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
@@ -549,7 +549,7 @@ process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:Ec
 
 process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
 
-process.ecalEndcapTimingTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
+process.ecalEndcapTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEE'
 
 process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
