@@ -57,3 +57,40 @@ csclayout(dqmitems,"03 Shifter/Chambers without Data (Statistically Significant)
   	 {'path': "CSC/Summary/CSC_STATS_wo_clct", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_clct\">here</a>."}],
   	[{'path': "CSC/Summary/CSC_STATS_wo_cfeb", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_cfeb\">here</a>."},
   	 {'path': "CSC/Summary/CSC_STATS_cfeb_bwords", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_cfeb_bwords\">here</a>."}])
+
+csclayout(dqmitems,"04 Timing/00 ALCT Timing",
+        [{'path': "CSC/Summary/CSC_ALCT0_BXN_mean", 'description': "ALCT0 BXN Mean"},
+         {'path': "CSC/Summary/Plus_endcap_ALCT0_dTime", 'description': "Plus Endcap ALCT0 BXN - ALCT_L1A BXN Difference"}],
+        [{'path': "CSC/Summary/CSC_ALCT0_BXN_mean", 'description': "ALCT0 BXN RMS"},
+         {'path': "CSC/Summary/Minus_endcap_ALCT0_dTime", 'description': "Minus Endcap ALCT0 BXN - ALCT_L1A BXN Difference"}])
+
+csclayout(dqmitems,"04 Timing/01 CLCT Timing",
+        [{'path': "CSC/Summary/CSC_CLCT0_BXN_mean", 'description': "CLCT0 BXN Mean"},
+         {'path': "CSC/Summary/Plus_endcap_CLCT0_dTime", 'description': "Plus Endcap CLCT0 BXN - CLCT_L1A BXN Difference"}],
+        [{'path': "CSC/Summary/CSC_CLCT0_BXN_mean", 'description': "CLCT0 BXN RMS"},
+         {'path': "CSC/Summary/Minus_endcap_CLCT0_dTime", 'description': "Minus Endcap CLCT0 BXN - CLCT_L1A BXN Difference"}])
+  
+csclayout(dqmitems,"04 Timing/02 AFEB RawHits Timing",
+        [{'path': "CSC/Summary/CSC_AFEB_RawHits_Time_mean", 'description': "AFEB RawHits Time Mean"},
+         {'path': "CSC/Summary/Plus_endcap_AFEB_RawHits_Time", 'description': "Plus Endcap AFEB RawHits Time Bins Distribution"}],
+        [{'path': "CSC/Summary/CSC_AFEB_RawHits_Time_rms", 'description': "AFEB RawHits Time RMS"},
+         {'path': "CSC/Summary/Minus_endcap_AFEB_RawHits_Time", 'description': "Minus Endcap AFEB RawHits Time Bins Distribution"}])
+  
+csclayout(dqmitems,"04 Timing/03 CFEB Comparator Hits Timing",
+        [{'path': "CSC/Summary/CSC_CFEB_Comparators_Time_mean", 'description': "CFEB Comparator Hits Time Mean"},
+         {'path': "CSC/Summary/Plus_endcap_CFEB_Comparators_Time", 'description': "Plus Endcap CFEB Comparator Hits Time Bin Distribution"}],
+        [{'path': "CSC/Summary/CSC_CFEB_Comparators_Time_rms", 'description': "CFEB Comparator Hits Time RMS"},
+         {'path': "CSC/Summary/Minus_endcap_CFEB_Comparators_Time", 'description': "Minus Endcap CFEB Comparator Hits Time Bin Distribution"}])
+  
+csclayout(dqmitems,"04 Timing/04 CFEB SCA Cell Peak Timing",
+        [{'path': "CSC/Summary/CSC_CFEB_SCA_CellPeak_Time_mean", 'description': "CFEB SCA Cell Peak Time Mean"},
+         {'path': "CSC/Summary/Plus_endcap_CFEB_SCA_CellPeak_Time", 'description': "Plus Endcap CFEB SCA Cell Peak Time Bin Distribution"}],
+        [{'path': "CSC/Summary/CSC_CFEB_SCA_CellPeak_Time_rms", 'description': "CFEB SCA Cell Peak Time RMS"},
+         {'path': "CSC/Summary/Minus_endcap_CFEB_SCA_CellPeak_Time", 'description': "Minus Endcap CFEB SCA Cell Peak Time Bin Distribution"}])
+  
+csclayout(dqmitems,"04 Timing/05 ALCT-CLCT Match Timing",
+        [{'path': "CSC/Summary/CSC_ALCT_CLCT_Match_mean", 'description': "ALCT-CLCT Match Timing Mean"},
+         {'path': "CSC/Summary/Plus_endcap_CFEB_SCA_CellPeak_Time", 'description': "Plus Endcap ALCT-CLCT Match Time Bin Distribution"}],
+        [{'path': "CSC/Summary/CSC_ALCT_CLCT_Match_rms", 'description': "ALCT-CLCT Match Timing RMS"},
+         {'path': "CSC/Summary/Minus_endcap_ALCT_CLCT_Match_Time", 'description': "Minus Endcap ALCT-CLCT Match Time Bin Distribution"}])
+                                                                                                                                                                                                                     

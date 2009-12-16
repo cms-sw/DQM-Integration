@@ -208,3 +208,9 @@ server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(C
                 "Collisions/HLTFeedBack/10 Group_4_paths_count_LS",
                 "Collisions/HLTFeedBack/11 Group_-1_paths_count_LS"
                 )
+
+server.workspace('DQMContent', 56, 'FeedBack for Collisions', 'CSC FeedBack', '^(Collisions|CSC)/',
+                'CSC/Layouts/04 Timing/00 ALCT Timing',
+                'CSC/Layouts/04 Timing/01 CLCT Timing'
+                )
+
