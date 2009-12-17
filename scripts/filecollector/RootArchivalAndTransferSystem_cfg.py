@@ -50,7 +50,7 @@ CLEAN_DIR              = '/dqmdata/dqm/done'
 #MODULES=["Collector","Merger","Register","Transfer","Verify","All"]
 
 RATS={"Collector":{
-  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
+  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09","srv-c2c05-10"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
   "script":"fileCollector.py"
   },
@@ -75,7 +75,7 @@ RATS={"Collector":{
   "script":"fileTransferVerify.py"
   },  
       "ProdClean":{
-  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09"],
+  "hosts":["srv-c2c05-06","srv-c2c05-07","srv-c2c05-08","srv-c2c05-09","srv-c2c05-10"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
   "script":"producerFileCleanner.py"
   },  

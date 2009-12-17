@@ -41,7 +41,7 @@ BASE_DIRECTORY	       = "/dqmdata/EventDisplay/done"
 REGISTERED_DIR         = '/dqmdata/EventDisplay/dropbox'     # 'Directory that stores registered files
 SOURCES_DONE_DIR       = '/dqmdata/EventDisplay/done/sources' # directory, to which processed files are stored
 T_FILE_DONE_DIR        = '/home/dqmprolocal/done' # directory to store *_T files once they have been processed
-TMP_DROPBOX            = '/dqmdata/EventDisplay/.dropbox_tmp' # stealth area on cmsmon
+TMP_DROPBOX            = '/dqmdata/dqm/.dropbox_tmp' # stealth area on cmsmon
 VERIFY_DIR             = '/dqmdata/EventDisplay/Tier0Shipping/verify'
 CLEAN_DIR              = BASE_DIRECTORY
 ################################
@@ -62,7 +62,7 @@ RATS={"Transfer":{
 	"script":"fileTransferVerify.py"
 	},
       "Classifier":{
-	"hosts":["srv-c2d05-11"],
+	"hosts":["srv-c2c05-11"],
 	"alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
 	"script":"fileClassifier"
 	},  

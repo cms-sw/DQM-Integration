@@ -69,7 +69,7 @@ if __name__ == "__main__":
             fullFName= "%s/%s" % (dir1,f)
             saveFile(fullFName)
           else:
-            debugMsg(1,"File %s in status %s, it is being renotified" % (fileStat[1],f))
+            debugMsg(1,"File %s in status %s, it is being renotified" % (f,fileStat[1]))
             fullFName= "%s/%s" % (dir1,f)
             renotifyFile(fullFName,STAGES.index(stage))
   
