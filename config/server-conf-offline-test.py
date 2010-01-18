@@ -11,6 +11,8 @@ LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
 #LAYOUTS += ["%s/%s_-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
            ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "rpc")]
+LAYOUTS += ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
+           ("tkal",)]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
@@ -39,4 +41,4 @@ server.source('DQMArchive', '/data/dqm/dqmtest/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
-execfile(CONFIGDIR + "/workspaces-tier-0.py")
+execfile(CONFIGDIR + "/workspaces-caf.py")
