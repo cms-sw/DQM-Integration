@@ -73,6 +73,14 @@ fi
 
 ######################################################################
 # Utilities.
+refuseproc() {
+  local title="$1" pat="$2" reason="$3"
+  if [ $(pgrep -u $(id -u) -f "$pat" | wc -l) != 0 ]; then
+    echo "$title: $reason because processes matching '$pat' are still running" 1>&2
+    exit 4
+  fi
+}
+
 statproc() {
   local title="$1" pat="$2"
   echo "${newline}${title}:"
@@ -175,6 +183,8 @@ esac
 case $HOST:${EXTRA:-agents} in
   # dqm-prod-local
   srv-c2d04-21:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
+
     DQM_DATA=/dqmdata/dqm
     mkdir -p $DQM_DATA/repository/original
     mkdir -p {$DQM_DATA,$DQM_DIR}/agents
@@ -195,6 +205,8 @@ case $HOST:${EXTRA:-agents} in
 
   # dqm-prod-offsite
   srv-c2d04-22:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
+
     DQM_DATA=/dqmdata/dqm
     mkdir -p {$DQM_DATA,$DQM_DIR}/agents
     (set -x
@@ -207,6 +219,8 @@ case $HOST:${EXTRA:-agents} in
 
   # offline
   vocms34:*agents* ) 
+    refuseproc "file agents" "visDQMIndex|zip" "refusing to restart"
+
     # standard lot of agents
     for D in offline caf dev; do
       DQM_DATA=/data/dqm/$D
@@ -238,6 +252,8 @@ esac
 # Migration, disabled by default, and likely disabled even if requested.
 case $HOST:$EXTRA in
   srv-c2d04-21:*migration* )
+    refuseproc "migration agents" "visDQMMigrationProcess" "refusing to restart"
+
     for i in $(seq 1 $(expr 5 + $(expr $(date +%s) % 10))); do key=$RANDOM; done
     echo -n "$0: really start migration agents? (y/n) "
     read answer; case $answer in y ) ;; * ) exit 2 ;; esac
@@ -260,6 +276,8 @@ case $HOST:$EXTRA in
      done) >>& $DQM_DIR/agents/$NOW-$HOST-upload.log </dev/null & ;;
 
   vocms34:*migration* ) 
+    refuseproc "migration agents" "visDQMMigrationProcess" "refusing to restart"
+
     for i in $(seq 1 $(expr 5 + $(expr $(date +%s) % 10))); do key=$RANDOM; done
     echo -n "$0: really start migration agents? (y/n) "
     read answer; case $answer in y ) ;; * ) exit 2 ;; esac
