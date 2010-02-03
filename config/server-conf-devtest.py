@@ -6,13 +6,16 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 	   ("castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip")]
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
-            ("sistrip","ecal","hcal","beammonitor")]
+            ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
 modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
+#server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'
+#server.instrument  = 'valgrind --tool=helgrind --num-callers=999 --error-limit=no'
+#server.instrument  = 'igprof -t python -pp'
 server.port        = 8888
 server.serverDir   = BASEDIR + "/gui"
 server.baseUrl     = '/dqm/devtest'
