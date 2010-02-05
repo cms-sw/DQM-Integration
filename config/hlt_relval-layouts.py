@@ -684,7 +684,3857 @@ trigvalbphys(dqmitems,
 )
 
 ###---- SUSYEXO selection goes here: ----
-def trigvalsusybsm(i, p, *rows): i["HLT/SusyExo/Preselection" + p] = DQMItem(layout=rows)
+def trigvalsusybsm(i, p, *rows): i["HLT/SusyExo/00 SusyExoValidationReport/00 Global Efficiencies/" + p] = DQMItem(layout=rows)
+
+############# Mc Selections ################
+
+### RA1
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA1/L1_RA1_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/00 RA1/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA1/Hlt_RA1_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+### RA2
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA2/L1_RA2_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/01 RA2/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA2/Hlt_RA2_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA3
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA3/L1_RA3_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/02 RA3/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA3/Hlt_RA3_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+### RA4_e
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/L1_RA4_e_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/03 RA4_e/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA4_e/Hlt_RA4_e_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA4_m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/L1_RA4_m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/04 RA4_m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA4_m/Hlt_RA4_m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA5RA6_2e
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/L1_RA5RA6_2e_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/05 RA5RA6_2e/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2e/Hlt_RA5RA6_2e_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA5RA6_1e1m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/L1_RA5RA6_1e1m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/06 RA5RA6_1e1m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_1e1m/Hlt_RA5RA6_1e1m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA5RA6_2m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/L1_RA5RA6_2m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/07 RA5RA6_2m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA5RA6_2m/Hlt_RA5RA6_2m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA7_3e
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/L1_RA7_3e_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/08 RA7_3e/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3e/Hlt_RA7_3e_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA7_2e1m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/L1_RA7_2e1m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/09 RA7_2e1m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_2e1m/Hlt_RA7_2e1m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA7_1e2m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/L1_RA7_1e2m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/10 RA7_1e2m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_1e2m/Hlt_RA7_1e2m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### RA7_3m
+
+# L1
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/L1_RA7_3m_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"01 McSelection/11 RA7_3m/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/McSelection/RA7_3m/Hlt_RA7_3m_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+############# Reco Distributions
+def trigvalsusybsm(i, p, *rows): i["HLT/SusyExo/00 SusyExoValidationReport/01 Reco Distributions/" + p] = DQMItem(layout=rows)
+
+########General
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "00 General/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/General/ElecMult",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/General/Elec1Pt",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/General/Elec2Pt",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/General/Elec1Eta",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/General/Elec2Eta",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/General/Elec1Phi",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/General/Elec2Phi",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "00 General/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/General/MuonMult",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/General/Muon1Pt",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/General/Muon2Pt",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/General/Muon1Eta",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/General/Muon2Eta",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/General/Muon1Phi",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/General/Muon2Phi",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "00 General/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/General/JetMult",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/General/Jet1Pt",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/General/Jet2Pt",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/General/Jet1Eta",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/General/Jet2Eta",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/General/Jet1Phi",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/General/Jet2Phi",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "00 General/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/General/PhotonMult",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/General/Photon1Pt",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/General/Photon2Pt",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/General/Photon1Eta",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/General/Photon2Eta",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/General/Photon1Phi",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/General/Photon2Phi",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "00 General/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/General/MET",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/General/METphi",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/General/METx",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/General/METy",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/General/METSignificance",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "00 General/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/General/SumEt",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_Jet110
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Jet110",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Jet110",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Jet110",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Jet110",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Jet110",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Jet110",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Jet110",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Jet110",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Jet110",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Jet110",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Jet110",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Jet110",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "01 HLT_Jet110/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Jet110",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_Jet140
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Jet140",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Jet140",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Jet140",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Jet140",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Jet140",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Jet140",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Jet140",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Jet140",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Jet140",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Jet140",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Jet140",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Jet140",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "02 HLT_Jet140/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Jet140",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_MET60
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_MET60",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_MET60",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_MET60",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_MET60",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_MET60",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_MET60",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_MET60",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_MET60",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_MET60",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_MET60",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_MET60",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_MET60",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_MET60",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_MET60",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_MET60",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_MET60",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_MET60",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_MET60",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_MET60",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_MET60",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_MET60",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_MET60",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_MET60",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_MET60",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_MET60",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_MET60",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_MET60",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_MET60",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_MET60",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_MET60",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_MET60",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_MET60",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_MET60",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "03 HLT_MET60/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_MET60",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_MET100
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_MET100",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_MET100",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_MET100",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_MET100",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_MET100",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_MET100",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_MET100",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_MET100",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_MET100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_MET100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_MET100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_MET100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_MET100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_MET100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_MET100",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_MET100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_MET100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_MET100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_MET100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_MET100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_MET100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_MET100",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_MET100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_MET100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_MET100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_MET100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_MET100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_MET100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_MET100",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_MET100",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_MET100",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_MET100",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_MET100",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "04 HLT_MET100/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_MET100",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_HT200
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_HT200",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_HT200",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_HT200",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_HT200",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_HT200",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_HT200",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_HT200",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_HT200",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_HT200",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_HT200",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_HT200",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_HT200",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_HT200",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_HT200",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_HT200",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_HT200",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_HT200",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_HT200",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_HT200",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_HT200",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_HT200",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_HT200",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_HT200",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_HT200",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_HT200",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_HT200",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_HT200",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_HT200",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_HT200",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_HT200",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_HT200",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_HT200",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_HT200",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "05 HLT_HT200/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_HT200",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_HT240
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_HT240",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_HT240",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_HT240",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_HT240",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_HT240",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_HT240",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_HT240",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_HT240",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_HT240",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_HT240",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_HT240",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_HT240",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_HT240",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_HT240",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_HT240",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_HT240",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_HT240",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_HT240",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_HT240",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_HT240",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_HT240",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_HT240",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_HT240",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_HT240",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_HT240",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_HT240",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_HT240",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_HT240",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_HT240",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_HT240",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_HT240",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_HT240",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_HT240",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "06 HLT_HT240/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_HT240",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_HT300_MHT100
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_HT300_MHT100",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_HT300_MHT100",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_HT300_MHT100",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_HT300_MHT100",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_HT300_MHT100",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_HT300_MHT100",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_HT300_MHT100",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_HT300_MHT100",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_HT300_MHT100",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_HT300_MHT100",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_HT300_MHT100",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_HT300_MHT100",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "07 HLT_HT300_MHT100/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_HT300_MHT100",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_Mu9
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Mu9",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Mu9",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Mu9",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Mu9",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Mu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Mu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Mu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Mu9",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Mu9",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Mu9",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Mu9",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Mu9",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "08 HLT_Mu9/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Mu9",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_Mu11
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Mu11",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Mu11",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Mu11",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Mu11",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Mu11",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Mu11",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Mu11",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Mu11",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Mu11",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Mu11",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Mu11",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Mu11",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "09 HLT_Mu11/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Mu11",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_IsoMu9
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_IsoMu9",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_IsoMu9",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_IsoMu9",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_IsoMu9",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_IsoMu9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_IsoMu9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_IsoMu9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_IsoMu9",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_IsoMu9",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_IsoMu9",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_IsoMu9",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_IsoMu9",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "10 HLT_IsoMu9/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_IsoMu9",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_DoubleMu3
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_DoubleMu3",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_DoubleMu3",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_DoubleMu3",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_DoubleMu3",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_DoubleMu3",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_DoubleMu3",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_DoubleMu3",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_DoubleMu3",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_DoubleMu3",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_DoubleMu3",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_DoubleMu3",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_DoubleMu3",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "11 HLT_DoubleMu3/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_DoubleMu3",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_Ele15_SW_LooseTrackIso_L1R
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "12 HLT_Ele15_SW_LooseTrackIso_L1R/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Ele15_SW_LooseTrackIso_L1R",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_Ele20_SW_L1R
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Ele20_SW_L1R",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Ele20_SW_L1R",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Ele20_SW_L1R",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Ele20_SW_L1R",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Ele20_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Ele20_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Ele20_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Ele20_SW_L1R",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Ele20_SW_L1R",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Ele20_SW_L1R",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Ele20_SW_L1R",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Ele20_SW_L1R",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "13 HLT_Ele20_SW_L1R/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Ele20_SW_L1R",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_DoubleEle10_SW_L1R
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_DoubleEle10_SW_L1R",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_DoubleEle10_SW_L1R",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_DoubleEle10_SW_L1R",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_DoubleEle10_SW_L1R",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_DoubleEle10_SW_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_DoubleEle10_SW_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_DoubleEle10_SW_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_DoubleEle10_SW_L1R",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_DoubleEle10_SW_L1R",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_DoubleEle10_SW_L1R",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_DoubleEle10_SW_L1R",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_DoubleEle10_SW_L1R",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "14 HLT_DoubleEle10_SW_L1R/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_DoubleEle10_SW_L1R",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_Photon25_L1R
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Photon25_L1R",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Photon25_L1R",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Photon25_L1R",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Photon25_L1R",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Photon25_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Photon25_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Photon25_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Photon25_L1R",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Photon25_L1R",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Photon25_L1R",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Photon25_L1R",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Photon25_L1R",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "15 HLT_Photon25_L1R/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Photon25_L1R",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_Photon30_L1R_1E31
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Photon30_L1R_1E31",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Photon30_L1R_1E31",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Photon30_L1R_1E31",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Photon30_L1R_1E31",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Photon30_L1R_1E31",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Photon30_L1R_1E31",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Photon30_L1R_1E31",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Photon30_L1R_1E31",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Photon30_L1R_1E31",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Photon30_L1R_1E31",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Photon30_L1R_1E31",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Photon30_L1R_1E31",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "16 HLT_Photon30_L1R_1E31/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Photon30_L1R_1E31",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_DoublePhoton15_L1R
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_DoublePhoton15_L1R",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_DoublePhoton15_L1R",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_DoublePhoton15_L1R",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_DoublePhoton15_L1R",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_DoublePhoton15_L1R",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_DoublePhoton15_L1R",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_DoublePhoton15_L1R",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_DoublePhoton15_L1R",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_DoublePhoton15_L1R",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_DoublePhoton15_L1R",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_DoublePhoton15_L1R",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_DoublePhoton15_L1R",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "17 HLT_DoublePhoton15_L1R/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_DoublePhoton15_L1R",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+######## HLT_BTagIP_Jet80
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_BTagIP_Jet80",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_BTagIP_Jet80",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_BTagIP_Jet80",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_BTagIP_Jet80",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_BTagIP_Jet80",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_BTagIP_Jet80",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_BTagIP_Jet80",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_BTagIP_Jet80",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_BTagIP_Jet80",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_BTagIP_Jet80",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_BTagIP_Jet80",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_BTagIP_Jet80",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "18 HLT_BTagIP_Jet80/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_BTagIP_Jet80",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_BTagIP_Jet120
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_BTagIP_Jet120",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_BTagIP_Jet120",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_BTagIP_Jet120",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_BTagIP_Jet120",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_BTagIP_Jet120",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_BTagIP_Jet120",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_BTagIP_Jet120",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_BTagIP_Jet120",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_BTagIP_Jet120",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_BTagIP_Jet120",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_BTagIP_Jet120",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_BTagIP_Jet120",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "19 HLT_BTagIP_Jet120/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_BTagIP_Jet120",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_L2Mu5_Photon9
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_L2Mu5_Photon9",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_L2Mu5_Photon9",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_L2Mu5_Photon9",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_L2Mu5_Photon9",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_L2Mu5_Photon9",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_L2Mu5_Photon9",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_L2Mu5_Photon9",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_L2Mu5_Photon9",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_L2Mu5_Photon9",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_L2Mu5_Photon9",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_L2Mu5_Photon9",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_L2Mu5_Photon9",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "20 HLT_L2Mu5_Photon9/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_L2Mu5_Photon9",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_L2Mu8_HT50
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_L2Mu8_HT50",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_L2Mu8_HT50",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_L2Mu8_HT50",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_L2Mu8_HT50",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_L2Mu8_HT50",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_L2Mu8_HT50",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_L2Mu8_HT50",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_L2Mu8_HT50",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_L2Mu8_HT50",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_L2Mu8_HT50",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_L2Mu8_HT50",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_L2Mu8_HT50",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "21 HLT_L2Mu8_HT50/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_L2Mu8_HT50",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+######## HLT_Ele10_LW_L1R_HT180
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Ele10_LW_L1R_HT180",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Ele10_LW_L1R_HT180",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Ele10_LW_L1R_HT180",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Ele10_LW_L1R_HT180",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Ele10_LW_L1R_HT180",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "22 HLT_Ele10_LW_L1R_HT180/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Ele10_LW_L1R_HT180",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+
+
+######## HLT_Ele10_SW_L1R_TripleJet30
+
+### Reco Electrons
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/00 Elec Mult",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/ElecMult_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Electron Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/01 Elec Pt",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/02 Elec Eta",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/03 Elec Phi",
+               [{'path': "HLT/SusyExo/RecoElectrons/HLT/Elec1Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the leading electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoElectrons/HLT/Elec2Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the second electron. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Muons
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/04 Muon Mult",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/MuonMult_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Muon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/05 Muon Pt",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/06 Muon Eta",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/07 Muon Phi",
+               [{'path': "HLT/SusyExo/RecoMuons/HLT/Muon1Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMuons/HLT/Muon2Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Jets
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/08 Jet Mult",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/JetMult_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Jet Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/09 Jet Pt",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/10 Jet Eta",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/11 Jet Phi",
+               [{'path': "HLT/SusyExo/RecoJets/HLT/Jet1Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoJets/HLT/Jet2Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco Photons
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/12 Photon Mult",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/PhotonMult_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Photon Multiplicity. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/13 Photon Pt",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Pt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Pt Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/14 Photon Eta",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Eta_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Eta Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/15 Photon Phi",
+               [{'path': "HLT/SusyExo/RecoPhotons/HLT/Photon1Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the leading muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoPhotons/HLT/Photon2Phi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "Phi Distribution of the second muon. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+### Reco MET
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/16 MET",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/MET_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "MET distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/17 MET x-y-phi",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METPhi_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "MET phi distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}],
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METx_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "MET x distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."},
+                {'path': "HLT/SusyExo/RecoMET/HLT/METy_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "MET y distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/18 METSignificance",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/METSignificance_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "MET Significance distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,
+               "23 HLT_Ele10_SW_L1R_TripleJet30/19 SumEt",
+               [{'path': "HLT/SusyExo/RecoMET/HLT/SumEt_HLT_Ele10_SW_L1R_TripleJet30",
+                 'description': "SumEt distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
 
 ###---- HIGGS selection goes here: ----
 

@@ -240,8 +240,55 @@ trigvaltop(dqmitems,"HLT_Ele15SWLooseTrkIso eff vs Pt",
 
 ###---- SUSYEXO selection goes here: ----
 def trigvalsusybsm(i, p, *rows): i["00 Shift/HLT/SusyExo/" + p] = DQMItem(layout=rows)
-trigvalsusybsm(dqmitems,"HltBits",
-               [{'path': "HLT/SusyExo/TriggerBits/HltBits", 'description': "HLT trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+############# No Selections ################
+
+# L1
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/00 L1_EG",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_EG", 'description': "Efficiency for L1 e-gamma bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/01 L1_Mu",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_Mu", 'description': "Efficiency for L1 muon bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/02 L1_Jet",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_Jet", 'description': "Efficiency for L1 jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/03 L1_ETM_ETT_HTT",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_ETM_ETT_HTT", 'description': "Efficiency for L1 ETM, ETT  and HTT bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/04 L1_TauJet",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_TauJet", 'description': "Efficiency for L1 tau jet bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/05 L1_XTrigger",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_XTrigger", 'description': "Efficiency for L1 cross trigger bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/00 L1/06 L1_Others",
+               [{'path': "HLT/SusyExo/TriggerBits/L1_Overflow", 'description': "Efficiency for other L1 bits. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+# HLT
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/00 Hlt_Ele",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Ele", 'description': "Efficiency for HLT electron paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/01 Hlt_Photon",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Photon", 'description': "Efficiency for HLT photon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/02 Hlt_Mu",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Mu", 'description': "Efficiency for HLT muon paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/03 Hlt_Jet",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Jet", 'description': "Efficiency for HLT jet paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/04 Hlt_MET_HT",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_MET_HT", 'description': "Efficiency for HLT MET and HT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/05 Hlt_Tau_BTag",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Tau_BTag", 'description': "Efficiency for HLT tau and b-tag paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/06 Hlt_XTrigger",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_XTrigger", 'description': "Efficiency for HLT cross trigger paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
+
+trigvalsusybsm(dqmitems,"00 NoSelection/01 HLT/07 Hlt_Others",
+               [{'path': "HLT/SusyExo/TriggerBits/Hlt_Overflow", 'description': "Efficiency for other HLT paths. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideSUSYBSMHLTOfflinePerformance\">here</a>."}])
 
 
 
