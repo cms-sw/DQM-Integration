@@ -94,10 +94,10 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 
 # Switching Off Digi/Cluster profiles temprarily
-process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = False
-process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = False
+process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = True
+process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = True
 
-process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
+#process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
 process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -152,7 +152,7 @@ process.p = cms.Path(
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
-                     process.SiStripSources_HVOff*
+##                     process.SiStripSources_HVOff*
 #                     process.physicsBitSelector*
                      process.SiStripSources_LocalReco*
 #                     process.hltLevel1GTSeed*
