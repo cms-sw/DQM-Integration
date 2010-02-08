@@ -140,7 +140,7 @@ process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
+#process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
 process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
 process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
