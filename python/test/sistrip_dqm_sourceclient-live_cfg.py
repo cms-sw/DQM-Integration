@@ -119,6 +119,16 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 #--------------------------
+# Producers
+#--------------------------
+# Event History Producer
+process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
+
+# APV Phase Producer
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1abc_GR09_cfi")
+
+
+#--------------------------
 # Filters
 #--------------------------
 # HLT Filter
@@ -147,7 +157,9 @@ process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
 process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.p = cms.Path(
+process.p = cms.Path(process.scalersRawToDigi*
+                     process.APVPhases*
+                     process.consecutiveHEs*
 #                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
