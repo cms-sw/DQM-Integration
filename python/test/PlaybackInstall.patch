@@ -11,7 +11,7 @@ diff -u -r1.7 -r1.6
  from DQMServices.Core.DQM_cfg import *
  
 -DQM.collectorHost = 'dqm-prod-local.cms'
-+DQM.collectorHost = 'srv-c2d05-18.cms'
++DQM.collectorHost = 'dqm-integration.cms'
  DQM.collectorPort = 9090
  
  from DQMServices.Components.DQMEnvironment_cfi import *
@@ -55,10 +55,10 @@ diff -u -r1.20 -r1.19
 -    
 -    #Storage Manager
 -    #sourceURL = cms.string('http://srv-c2c06-13.cms:11100/urn:xdaq-application:lid=50'),
-+    sourceURL = cms.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),
++    sourceURL = cms.string('http://srv-c2d05-30.cms:22100/urn:xdaq-application:lid=30'),
 +    #sourceURL = cms.string('http://localhost:50082/urn:xdaq-application:lid=29'),
 +    #sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
-+    #sourceURL = cms.string('http://srv-c2d05-05:50082/urn:xdaq-application:lid=29'),
++    #sourceURL = cms.string('http://srv-c2d05-30:50082/urn:xdaq-application:lid=29'),
      consumerPriority = cms.untracked.string('normal'),
      max_event_size = cms.int32(7000000),
      consumerName = cms.untracked.string('DQM Source'),
