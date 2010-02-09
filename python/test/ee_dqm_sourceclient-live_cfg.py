@@ -205,7 +205,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
   prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath('DQM/EcalBarrelMonitorModule/test/data/EcalBarrelQualityTests.xml'),
   getQualityTestsFromFile = cms.untracked.bool(True),
-  qtestOnEndLumi = cms.untracked.bool(True),
+  qtestOnEndLumi = cms.untracked.bool(False),
   qtestOnEndRun = cms.untracked.bool(True)
 )
 
@@ -214,7 +214,7 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
   prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath('DQM/EcalEndcapMonitorModule/test/data/EcalEndcapQualityTests.xml'),
   getQualityTestsFromFile = cms.untracked.bool(True),
-  qtestOnEndLumi = cms.untracked.bool(True),
+  qtestOnEndLumi = cms.untracked.bool(False),
   qtestOnEndRun = cms.untracked.bool(True)
 )
 
@@ -401,7 +401,9 @@ process.preScaler.prescaleFactor = 1
 
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   process.dqmQTestEB.prescaleFactor = 4
+  process.dqmQTestEB.qtestOnEndLumi = True
   process.dqmQTestEE.prescaleFactor = 4
+  process.dqmQTestEE.qtestOnEndLumi = True
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalDetIdToBeRecovered*process.ecalRecHit)
 
