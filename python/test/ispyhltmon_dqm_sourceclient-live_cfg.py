@@ -168,15 +168,15 @@ process.hfreco.firstSample  = 3
 process.hfreco.samplesToAdd = 4
 
 ## Beamspot temporary fix
-from CondCore.DBCommon.CondDBSetup_cfi import *
-process.firstCollBeamspot = cms.ESSource(
-    "PoolDBESSource",CondDBSetup,
-    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
-    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
-                               tag = cms.string("firstcollisions"))
-                      )
-    )
-process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
+#from CondCore.DBCommon.CondDBSetup_cfi import *
+#process.firstCollBeamspot = cms.ESSource(
+#    "PoolDBESSource",CondDBSetup,
+#    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
+#    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
+#                               tag = cms.string("firstcollisions"))
+#                      )
+#    )
+#process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
 
 ###
 ###  end of top level replacements

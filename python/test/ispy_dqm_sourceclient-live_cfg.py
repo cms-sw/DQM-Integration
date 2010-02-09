@@ -29,7 +29,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 ####### Event Source
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'ISpy Event Display hltOutputDQM stream'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_MinBiasPixel*'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_MinBiasPixel*'))
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
@@ -164,15 +164,15 @@ process.hfreco.firstSample  = 3
 process.hfreco.samplesToAdd = 4
 
 ## Beamspot temporary fix
-from CondCore.DBCommon.CondDBSetup_cfi import *
-process.firstCollBeamspot = cms.ESSource(
-    "PoolDBESSource",CondDBSetup,
-    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
-    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
-                               tag = cms.string("firstcollisions"))
-                      )
-    )
-process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
+#from CondCore.DBCommon.CondDBSetup_cfi import *
+#process.firstCollBeamspot = cms.ESSource(
+#    "PoolDBESSource",CondDBSetup,
+#    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
+#    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
+#                               tag = cms.string("firstcollisions"))
+#                      )
+#    )
+#process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
 
 ###
 ###  end of top level replacements
