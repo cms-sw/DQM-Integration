@@ -108,7 +108,9 @@ process.SiStripAnalyser.ShiftReportFrequency = -1
 process.qTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(1),                               
-    getQualityTestsFromFile = cms.untracked.bool(True)
+    getQualityTestsFromFile = cms.untracked.bool(True),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 
 #--------------------------
