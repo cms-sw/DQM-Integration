@@ -44,7 +44,7 @@ process.p = cms.Path(
     process.myRecoSeq1  *
     process.myRecoSeq2  *
 #    process.dump *
-    process.QcdLowPtDQM *
+    process.qcdLowPtDQM *
     process.dqmEnv *
     process.dqmSaver
 )

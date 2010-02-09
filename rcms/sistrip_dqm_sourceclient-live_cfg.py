@@ -16,7 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -94,10 +94,10 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 
 # Switching Off Digi/Cluster profiles temprarily
-process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = False
-process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = False
+process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = True
+process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = True
 
-process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
+#process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
 process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -117,6 +117,16 @@ process.qTester = cms.EDFilter("QualityTester",
 process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.AdaptorConfig = cms.Service("AdaptorConfig")
+
+#--------------------------
+# Producers
+#--------------------------
+# Event History Producer
+process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
+
+# APV Phase Producer
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1abc_GR09_cfi")
+
 
 #--------------------------
 # Filters
@@ -140,21 +150,24 @@ process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
+#process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
 process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
 process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
 process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.p = cms.Path(process.hltTriggerTypeFilter*
+process.p = cms.Path(process.scalersRawToDigi*
+                     process.APVPhases*
+                     process.consecutiveHEs*
+#                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
-                     process.SiStripSources_HVOff*
-                    process.physicsBitSelector*
+##                     process.SiStripSources_HVOff*
+#                     process.physicsBitSelector*
                      process.SiStripSources_LocalReco*
-                    process.hltLevel1GTSeed*
+#                     process.hltLevel1GTSeed*
                      process.RecoForDQM_TrkReco*
                      process.SiStripSources_TrkReco
 )

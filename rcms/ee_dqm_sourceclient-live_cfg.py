@@ -149,6 +149,7 @@ process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
+process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTrigPrimESProducer_cff")
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
 
 process.load("DQM.EcalBarrelMonitorModule.EcalBarrelMonitorModule_cfi")
@@ -275,7 +276,7 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 
 if (liveECAL == 1) :
   process.source = cms.Source("EventStreamHttpReader",
-    sourceURL = cms.string('http://srv-c2d05-14.cms:22100/urn:xdaq-application:lid=30'),
+    sourceURL = cms.string('http://srv-c2d04-30.cms:22100/urn:xdaq-application:lid=30'),
     consumerPriority = cms.untracked.string('normal'),
     max_event_size = cms.int32(7000000),
     consumerName = cms.untracked.string('Ecal DQM Consumer'),
@@ -295,7 +296,7 @@ if (playCMS == 1) :
 if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
   process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
   process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-  process.GlobalTag.globaltag = "GR09_H_V7::All"
+  process.GlobalTag.globaltag = "GR10_H_V2::All"
   process.prefer("GlobalTag")
 
 if (liveCMS == 1) | (playCMS == 1) :

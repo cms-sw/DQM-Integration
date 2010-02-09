@@ -33,6 +33,8 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 # Hcal DQM Source, including SimpleReconstrctor
 #-----------------------------
 process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
+process.load("DQM.HcalMonitorModule.ZDCMonitorModule_cfi")
+
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
@@ -127,13 +129,15 @@ setHcalTaskValues(process.hcalMonitor)
 
 process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
 
-# Ignore calibration events in DFMon
-process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes=[0]
+# Ignore calibration events in DFMon and DigiMon
+process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes = [0]
+process.hcalMonitor.DigiMonitor_AllowedCalibTypes       = [0]
 
 #-----------------------------
 # Hcal DQM Client
 #-----------------------------
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
+process.load("DQM.HcalMonitorClient.ZDCMonitorClient_cfi")
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
@@ -192,6 +196,7 @@ process.p = cms.Path(process.hcalDigis
                      *process.zdcreco
                      *process.hcalMonitor
                      *process.hcalClient
+                     *process.zdcMonitor*process.zdcClient
                      *process.dqmEnv
                      *process.dqmSaver)
 

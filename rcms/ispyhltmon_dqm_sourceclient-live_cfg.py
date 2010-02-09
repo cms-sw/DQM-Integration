@@ -38,12 +38,12 @@ process.load("DQM.Integration.test.environment_cfi")
 
 ####### ISpy Service
 process.add_(cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('%s/iSpy_BEAM%d_%s__hltOutputHLTMON_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('%s/iSpy_MWGR%d_%s__hltOutputHLTMON_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     #outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
     outputHost = cms.untracked.string('localhost'),
-    outputPort = cms.untracked.uint32(9004),
+    outputPort = cms.untracked.uint32(9001),
     outputMaxEvents = cms.untracked.int32(100),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
@@ -168,15 +168,15 @@ process.hfreco.firstSample  = 3
 process.hfreco.samplesToAdd = 4
 
 ## Beamspot temporary fix
-from CondCore.DBCommon.CondDBSetup_cfi import *
-process.firstCollBeamspot = cms.ESSource(
-    "PoolDBESSource",CondDBSetup,
-    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
-    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
-                               tag = cms.string("firstcollisions"))
-                      )
-    )
-process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
+#from CondCore.DBCommon.CondDBSetup_cfi import *
+#process.firstCollBeamspot = cms.ESSource(
+#    "PoolDBESSource",CondDBSetup,
+#    connect = cms.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_BEAMSPOT"),
+#    toGet = cms.VPSet(cms.PSet(record = cms.string("BeamSpotObjectsRcd"),
+#                               tag = cms.string("firstcollisions"))
+#                      )
+#    )
+#process.es_prefer_firstCollBeamspot = cms.ESPrefer("PoolDBESSource","firstCollBeamspot")
 
 ###
 ###  end of top level replacements

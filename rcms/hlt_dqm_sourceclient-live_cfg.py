@@ -28,10 +28,10 @@ process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
 process.hlts.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
 process.hlts.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
 process.hltsClient.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
-process.p = cms.EndPath(process.hlts+process.hltsClient)
+process.p = cms.EndPath(process.hlts+process.hltsClient+process.dqmEnv+process.dqmSaver)
 
 
-process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
+#process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'
 process.dqmEnv.subSystemFolder = 'HLT'
 #process.hltResults.plotAll = True
