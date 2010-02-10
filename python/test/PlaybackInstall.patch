@@ -40,11 +40,11 @@ Index: inputsource_cfi.py
  )
  source = cms.Source("EventStreamHttpReader",
      #General porpouse SMProxy Server
--    #sourceURL = cms.string('http://srv-c2d05-30.cms:22100/urn:xdaq-application:lid=30'),
-+    sourceURL = cms.string('http://srv-c2d05-30.cms:22100/urn:xdaq-application:lid=30'),
+-    #sourceURL = cms.string('http://srv-c2d04-30.cms:22100/urn:xdaq-application:lid=30'),
++    sourceURL = cms.string('http://srv-c2d04-30.cms:22100/urn:xdaq-application:lid=30'),
      
      #SMPlayback Server
-     #sourceURL = cms.string('http://srv-c2d05-30:50082/urn:xdaq-application:lid=29'),
+     #sourceURL = cms.string('http://srv-c2d04-30:50082/urn:xdaq-application:lid=29'),
      
      #local SMProxy Serve
 -    sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
