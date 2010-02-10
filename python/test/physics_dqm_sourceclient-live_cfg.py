@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.5 2009/12/06 18:57:41 ameyer Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.7 2010/02/09 11:03:55 lilopera Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -44,7 +44,7 @@ process.p = cms.Path(
     process.myRecoSeq1  *
     process.myRecoSeq2  *
 #    process.dump *
-    process.QcdLowPtDQM *
+    process.qcdLowPtDQM *
     process.dqmEnv *
     process.dqmSaver
 )
