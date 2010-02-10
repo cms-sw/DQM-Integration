@@ -34,33 +34,25 @@ diff -u -r1.7 -r1.6
  
 Index: inputsource_cfi.py
 ===================================================================
-RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/inputsource_cfi.py,v
-retrieving revision 1.20
-retrieving revision 1.19
-diff -u -r1.20 -r1.19
---- inputsource_cfi.py	9 Feb 2010 14:52:53 -0000	1.20
-+++ inputsource_cfi.py	22 Nov 2009 18:37:43 -0000	1.19
-@@ -4,23 +4,16 @@
-     input = cms.untracked.int32(-1)
+--- inputsource_cfi.py	9 Feb 2010 14:52:53 -0000
++++ inputsource_cfi.py	22 Nov 2009 18:37:43 -0000
+@@ -5,13 +5,13 @@
  )
  source = cms.Source("EventStreamHttpReader",
--    #General porpouse SMProxy Server
+     #General porpouse SMProxy Server
 -    #sourceURL = cms.string('http://srv-c2d05-30.cms:22100/urn:xdaq-application:lid=30'),
--    
--    #SMPlayback Server
--    #sourceURL = cms.string('http://srv-c2d05-30:50082/urn:xdaq-application:lid=29'),
--    
--    #local SMProxy Serve
--    sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
--    
--    #Storage Manager
--    #sourceURL = cms.string('http://srv-c2c06-13.cms:11100/urn:xdaq-application:lid=50'),
 +    sourceURL = cms.string('http://srv-c2d05-30.cms:22100/urn:xdaq-application:lid=30'),
-+    #sourceURL = cms.string('http://localhost:50082/urn:xdaq-application:lid=29'),
+     
+     #SMPlayback Server
+     #sourceURL = cms.string('http://srv-c2d05-30:50082/urn:xdaq-application:lid=29'),
+     
+     #local SMProxy Serve
+-    sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
 +    #sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
-+    #sourceURL = cms.string('http://srv-c2d05-30:50082/urn:xdaq-application:lid=29'),
-     consumerPriority = cms.untracked.string('normal'),
-     max_event_size = cms.int32(7000000),
+     
+     #Storage Manager
+     #sourceURL = cms.string('http://srv-c2c06-13.cms:11100/urn:xdaq-application:lid=50'),
+@@ -20,7 +20,7 @@
      consumerName = cms.untracked.string('DQM Source'),
      SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
      max_queue_depth = cms.int32(5),
