@@ -36,7 +36,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 ####### Event Source
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'ISpy Event Display HLTMON Stream'
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTMON')
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 
 ####### DQM Default File Location
@@ -49,7 +49,7 @@ else:
   process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2d04-28:22100/urn:xdaq-application:lid=30')
 ####### ISpy Service
 process.add_(cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('%s/iSpy_MWGR%d_%s__hltOutputHLTMON_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
+    outputFileName = cms.untracked.string('%s/iSpy_MWGR%d_%s__hltOutputHLTDQM_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     #outputFileName = cms.untracked.string('/home/lilopera/CMSSW/output/iSpy_MWGR%d_%s__hltOutputDQM_.ig' % (int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
     outputESFileName=cms.untracked.string('/tmp/iSpy_ES.ig'),
     bufferSize = cms.untracked.uint32(1),
