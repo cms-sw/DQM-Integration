@@ -15,12 +15,18 @@ process.options=cms.untracked.PSet(
   )
   
 ####### Components
+Cosmics=True
+if Cosmics:
+  process.load('Configuration/StandardSequences/ReconstructionCosmics_cff') 
+  BaseName="MWGR" 
+else:
+  process.load('Configuration/StandardSequences/Reconstruction_cff')
+  BaseName="BEAM"
 # import of standard configurations
 process.load('Configuration/StandardSequences/Services_cff')
 process.load('FWCore/MessageService/MessageLogger_cfi')
 process.load('Configuration/StandardSequences/GeometryExtended_cff')
 process.load("Configuration/StandardSequences/MagneticField_AutoFromDBCurrent_cff")
-process.load('Configuration/StandardSequences/Reconstruction_cff')
 process.load("Configuration/StandardSequences/RawToDigi_Data_cff")
 process.load('Configuration/StandardSequences/L1Reco_cff')
 process.load("DQM/Integration/test/FrontierCondition_GT_cfi")
@@ -35,7 +41,10 @@ process.EventStreamHttpReader.sourceURL=cms.string('http://%s:23100/urn:xdaq-app
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
-
+if process.dqmSaver.producer == "DQM":
+  igFileOutput=False
+else:
+  igFileOutput=False
 ####### ISpy Service
 process.add_(cms.Service("ISpyService",
     outputFileName = cms.untracked.string('%s/iSpy_MWGR%d_%s__hltOutputHLTMON_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
@@ -45,6 +54,7 @@ process.add_(cms.Service("ISpyService",
     outputHost = cms.untracked.string('localhost'),
     outputPort = cms.untracked.uint32(9001),
     outputMaxEvents = cms.untracked.int32(100),
+    outputIg = cms.untracked.bool(igFileOutput),
     online = cms.untracked.bool(True),
     debug = cms.untracked.bool(False)
     )
@@ -150,7 +160,7 @@ process.offlinePrimaryVertices.TkClusParameters.zSeparation = 10
 
 ## ECAL temporary fixes
 process.load('RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi')
-process.ecalLocalRecoSequence.replace(process.ecalGlobalUncalibRecHit,process.ecalFixedAlphaBetaFitUncalibRecHit)
+#process.ecalLocalRecoSequence.replace(process.ecalGlobalUncalibRecHit,process.ecalFixedAlphaBetaFitUncalibRecHit)
 process.ecalFixedAlphaBetaFitUncalibRecHit.alphaEB = 1.138
 process.ecalFixedAlphaBetaFitUncalibRecHit.betaEB = 1.655
 process.ecalFixedAlphaBetaFitUncalibRecHit.alphaEE = 1.890
@@ -189,7 +199,14 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 ####### Path
-process.p= cms.Path(process.hltTriggerTypeFilter*
+if Cosmics:
+  process.p= cms.Path(process.hltTriggerTypeFilter*
+                     process.RawToDigi*
+                     process.reconstructionCosmics*
+                     process.iSpy_online_sequence
+                    )
+else:
+  process.p= cms.Path(process.hltTriggerTypeFilter*
                      process.RawToDigi*
                      process.reconstruction_withPixellessTk*
                      process.iSpy_online_sequence
