@@ -41,7 +41,7 @@ process.EventStreamHttpReader.sourceURL=cms.string('http://%s:23100/urn:xdaq-app
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
-if process.dqmSaver.producer == "DQM":
+if process.dqmSaver.producer.value() == "DQM":
   igFileOutput=True
   igDebug=False
 else:
