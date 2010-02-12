@@ -198,9 +198,43 @@ trigvaltau(dqmitems,"L2 Resolution",
 
 
 
-
 ###---- JETMET selection goes here: ----
 def trigvaljetmet(i, p, *rows): i["00 Shift/HLT/JetMET/" + p] = DQMItem(layout=rows)
+
+trigvaljetmet(dqmitems,"HLTMET35 eff vs recMet Data",
+        [{'path': "HLT/HLTJETMET/SingleMET35/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET35 versus recMET wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTMET45 eff vs recMet Data",
+        [{'path': "HLT/HLTJETMET/SingleMET45/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET45 versus recMET wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTMET60 eff vs recMet Data",
+        [{'path': "HLT/HLTJETMET/SingleMET60/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET60 versus recMET wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTMET100 eff vs recMet Data",
+        [{'path': "HLT/HLTJETMET/SingleMET100/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET100 versus recMET wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTHT300MHT100 eff vs recHT Data",
+        [{'path': "HLT/HLTJETMET/HT300MHT100/Reco HT Turn-On Data", 'description': "Trigger efficiency for HLTHT300MHT100 versus recHT wrt lower threshold trigger"}])
 
 ###---- BJET selection goes here: ----
 def trigvalbjet(i, p, *rows): i["00 Shift/HLT/BJet/" + p] = DQMItem(layout=rows)
