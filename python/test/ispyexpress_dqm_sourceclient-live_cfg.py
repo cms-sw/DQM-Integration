@@ -42,9 +42,11 @@ process.EventStreamHttpReader.sourceURL=cms.string('http://%s:24100/urn:xdaq-app
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer == "DQM":
-  igFileOutput=False
+  igFileOutput=True
+  igDebug=False
 else:
   igFileOutput=False
+  igDebug=True
 ####### ISpy Service
 process.add_(
     cms.Service("ISpyService",

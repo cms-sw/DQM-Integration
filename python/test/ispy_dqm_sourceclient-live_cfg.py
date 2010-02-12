@@ -39,9 +39,11 @@ process.EventStreamHttpReader.consumerName = 'ISpy Event Display hltOutputDQM st
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer == "DQM":
-  igFileOutput=False
+  igFileOutput=True
+  igDebug=False
 else:
   igFileOutput=False
+  igDebug=True
   
 ####### ISpy Service
 process.add_(
@@ -55,7 +57,7 @@ process.add_(
     outputMaxTime = cms.untracked.int32(600),
     outputIg = cms.untracked.bool(igFileOutput),
     online = cms.untracked.bool(True),
-    debug = cms.untracked.bool(False)
+    debug = cms.untracked.bool(igDebug)
     )
 )
 

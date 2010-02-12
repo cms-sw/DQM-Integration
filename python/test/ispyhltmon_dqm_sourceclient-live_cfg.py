@@ -42,11 +42,14 @@ process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputH
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer == "DQM":
-  igFileOutput=False
+  igFileOutput=True
+  igDebug=False
   process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2c05-09:22100/urn:xdaq-application:lid=30')
 else:
   igFileOutput=False
+  igDebug=True
   process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2d04-28:22100/urn:xdaq-application:lid=30')
+  
 ####### ISpy Service
 process.add_(cms.Service("ISpyService",
     outputFileName = cms.untracked.string('%s/iSpy_MWGR%d_%s__hltOutputHLTDQM_.ig' % (process.dqmSaver.dirName.value(),int(dt.date.today().strftime("%W"))+1,dt.date.today().strftime("%Y%m%d"))),
