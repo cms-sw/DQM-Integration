@@ -286,7 +286,7 @@ if (liveECAL == 1) :
     consumerName = cms.untracked.string('Ecal DQM Consumer'),
     SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
     max_queue_depth = cms.int32(5),
-    maxEventRequestRate = cms.untracked.double(25.0),
+    maxEventRequestRate = cms.untracked.double(100.0),
     SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('*') ),
     headerRetryInterval = cms.untracked.int32(3)
   )
