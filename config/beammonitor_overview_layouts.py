@@ -18,3 +18,9 @@ bmoverviewlayout(dqmitems, "04 - z position of beam spot",
 bmoverviewlayout(dqmitems, "05 - sigma z of beam spot",
                  [{ 'path': "BeamMonitor/Fit/sigmaZ0",
                     'description': "sigma z of fitted beam spot"}])
+bmoverviewlayout(dqmitems, "06 - fit results beam spot",
+                 [{ 'path': "BeamMonitor/Fit/fitResults",
+                    'description': "d_{0}-#phi correlation fit results of beam spot"}])
+bmoverviewlayout(dqmitems, "07 - fit results primary vertex",
+                 [{ 'path': "BeamMonitor/PrimaryVertex/pvResults",
+                    'description': "Gaussian fit results of primary vertex"}])
