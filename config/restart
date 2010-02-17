@@ -21,7 +21,7 @@ setopt sh_word_split
 PS4="+ "
 ACT=${1:-restart}
 DQMV=${2:-latest}
-ARCH=slc5_ia32_gcc434
+ARCH=slc5_amd64_gcc434
 NOW=$(date +%Y%m%d%H%M%S)
 CHECK=$(echo "$3" | md5sum | awk '{print $1}')
 HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
