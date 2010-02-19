@@ -117,6 +117,8 @@ process.hcalMonitor.BeamMonitor         = True
 process.hcalMonitor.ReferencePedestalMonitor     = True
 process.hcalMonitor.DetDiagNoiseMonitor = True
 process.hcalMonitor.DetDiagTimingMonitor = True
+process.hcalMonitor.NZSMonitor                    = True
+
 process.hcalMonitor.LEDMonitor          = False
 process.hcalMonitor.CaloTowerMonitor    = False
 process.hcalMonitor.MTCCMonitor         = False
@@ -132,6 +134,10 @@ process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lum
 # Ignore calibration events in DFMon and DigiMon
 process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes = [0]
 process.hcalMonitor.DigiMonitor_AllowedCalibTypes       = [0]
+process.hcalMonitor.RecHitMonitor_AllowedCalibTypes     = [0]
+process.hcalMonitor.HotCellMonitor_AllowedCalibTypes=[0] # ignore calibration (laser, raddam) events
+process.hcalMonitor.DeadCellMonitor_LBprescale=4 # set to 4 for online running; dead cell histogram checks updated every 4 lumi blocks
+
 
 #-----------------------------
 # Hcal DQM Client
@@ -196,7 +202,8 @@ process.p = cms.Path(process.hcalDigis
                      *process.zdcreco
                      *process.hcalMonitor
                      *process.hcalClient
-                     *process.zdcMonitor*process.zdcClient
+                     *process.zdcMonitor
+                     *process.zdcClient
                      *process.dqmEnv
                      *process.dqmSaver)
 
