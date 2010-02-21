@@ -96,7 +96,7 @@ process.hcalMonitor.debug = 0
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-
+process.hcalMonitor.Online = True
 
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
