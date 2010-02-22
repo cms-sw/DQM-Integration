@@ -146,6 +146,16 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 process.hcalClient.SummaryClient        = True
 process.hcalClient.DataFormatClient_minErrorFlag = 2. # ignore errors from dataformat client
 
+
+# ----------------------
+# Trigger Unpacker Stuff
+# ----------------------
+print "Trigger"
+process.load("CondCore.DBCommon.CondDBSetup_cfi")
+process.load("L1Trigger.Configuration.L1DummyConfig_cff")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.l1GtUnpack.DaqGtInputTag = 'source'
+
 #-----------------------------
 # Scheduling
 #-----------------------------
@@ -156,6 +166,7 @@ process.options = cms.untracked.PSet(
 )
 
 process.p = cms.Path(process.hcalDigis
+                     *process.l1GtUnpack
                      *process.horeco
                      *process.hfreco
                      *process.hbhereco
