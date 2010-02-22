@@ -150,7 +150,6 @@ process.hcalClient.DataFormatClient_minErrorFlag = 2. # ignore errors from dataf
 # ----------------------
 # Trigger Unpacker Stuff
 # ----------------------
-print "Trigger"
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 process.load("L1Trigger.Configuration.L1DummyConfig_cff")
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
