@@ -2,14 +2,15 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("SiStrpDQMLive")
 
-process.MessageLogger = cms.Service("MessageLogger",
-    debugModules = cms.untracked.vstring('siStripDigis', 
-                                         'siStripClusters', 
-                                         'siStripZeroSuppression', 
-                                         'SiStripClusterizer'),
-    cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
-    destinations = cms.untracked.vstring('cout')
-)
+process.load('FWCore.MessageService.MessageLogger_cfi')
+#process.MessageLogger = cms.Service("MessageLogger",
+#    debugModules = cms.untracked.vstring('siStripDigis', 
+#                                         'siStripClusters', 
+#                                         'siStripZeroSuppression', 
+#                                         'SiStripClusterizer'),
+#    cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
+#    destinations = cms.untracked.vstring('cout')
+#)
 
 #----------------------------
 # Event Source
