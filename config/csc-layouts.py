@@ -94,3 +94,12 @@ csclayout(dqmitems,"04 Timing/05 ALCT-CLCT Match Timing",
         [{'path': "CSC/Summary/CSC_ALCT_CLCT_Match_rms", 'description': "ALCT-CLCT Match Timing RMS"},
          {'path': "CSC/Summary/Minus_endcap_ALCT_CLCT_Match_Time", 'description': "Minus Endcap ALCT-CLCT Match Time Bin Distribution"}])
                                                                                                                                                                                                                      
+csclayout(dqmitems,"05 EventDisplay/01 Event Display in Z-R projection",
+        [{'path': "CSC/Summary/Event_Display_Anode", 'description': "Event Display in Z-R projection (wiregroups and half-strips)"}])
+
+csclayout(dqmitems,"05 EventDisplay/02 Event Display in Z-Phi projection",
+        [{'path': "CSC/Summary/Event_Display_Cathode", 'description': "Event Display in Z-Phi projection (strips)"}])
+
+csclayout(dqmitems,"05 EventDisplay/03 Event Display in X-Y projection",
+        [{'path': "CSC/Summary/Event_Display_XY", 'description': "Event Display in X-Y projection (wiregroups and half-strips)"}])
+
