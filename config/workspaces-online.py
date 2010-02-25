@@ -49,7 +49,8 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'RPC', '^RPC/',
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
-                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
+                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower',
+                'EcalPreshower/Layouts/04-ESTimingTaskSummary-EcalPreshower') 
                 
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
