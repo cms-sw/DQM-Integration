@@ -249,11 +249,11 @@ rpclayout(dqmitems, "Occupancy_Summary/Wheels/RPC_Wheel_Occupancy",
 
 WheelOcup = "Normalized Occupancy summary view for Wheel";
 rpclayout(dqmitems, "Occupancy_Summary/Wheels/Normalized_Occupancy",
-          [{'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndRPCEvents_Wheel2",  'description': WheelOcup+"+2"+rpclink},
-           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndRPCEvents_Wheel1",  'description': WheelOcup+"+1"+rpclink}],
-          [{'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndRPCEvents_Wheel0",  'description': WheelOcup+" 0"+rpclink},
-           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndRPCEvents_Wheel-1",  'description': WheelOcup+"-1"+rpclink},
-           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndRPCEvents_Wheel-2",  'description': WheelOcup+"-2"+rpclink}]
+          [{'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndEvents_Wheel2",  'description': WheelOcup+"+2"+rpclink},
+           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndEvents_Wheel1",  'description': WheelOcup+"+1"+rpclink}],
+          [{'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndEvents_Wheel0",  'description': WheelOcup+" 0"+rpclink},
+           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndEvents_Wheel-1",  'description': WheelOcup+"-1"+rpclink},
+           {'path': "RPC/RecHits/SummaryHistograms/OccupancyNormByGeoAndEvents_Wheel-2",  'description': WheelOcup+"-2"+rpclink}]
 )
 
 
