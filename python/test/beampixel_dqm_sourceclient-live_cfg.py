@@ -49,7 +49,8 @@ process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
 process.load('Configuration/EventContent/EventContent_cff')
 
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
-  vertexCollection = cms.InputTag("pixelVertices")
+                                        vertexCollection = cms.InputTag("pixelVertices"),
+                                        nLumiReset = cms.uint32(0))
 )
 
 process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
