@@ -96,7 +96,7 @@ process.hcalMonitor.debug = 0
 process.hcalMonitor.pedestalsInFC = True
 process.hcalMonitor.showTiming = False
 process.hcalMonitor.checkNevents=1000
-
+process.hcalMonitor.Online = True
 
 process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
 
@@ -146,6 +146,15 @@ setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=Fal
 process.hcalClient.SummaryClient        = True
 process.hcalClient.DataFormatClient_minErrorFlag = 2. # ignore errors from dataformat client
 
+
+# ----------------------
+# Trigger Unpacker Stuff
+# ----------------------
+process.load("CondCore.DBCommon.CondDBSetup_cfi")
+process.load("L1Trigger.Configuration.L1DummyConfig_cff")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.l1GtUnpack.DaqGtInputTag = 'source'
+
 #-----------------------------
 # Scheduling
 #-----------------------------
@@ -156,6 +165,7 @@ process.options = cms.untracked.PSet(
 )
 
 process.p = cms.Path(process.hcalDigis
+                     *process.l1GtUnpack
                      *process.horeco
                      *process.hfreco
                      *process.hbhereco
@@ -169,6 +179,8 @@ process.p = cms.Path(process.hcalDigis
 process.qTester = cms.EDFilter("QualityTester",
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
-    getQualityTestsFromFile = cms.untracked.bool(True)
+    getQualityTestsFromFile = cms.untracked.bool(True),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 

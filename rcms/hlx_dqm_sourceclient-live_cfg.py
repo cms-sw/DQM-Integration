@@ -24,10 +24,9 @@ process.hlxQualityTester = cms.EDFilter("QualityTester",
     prescaleFactor = cms.untracked.int32(10000),
     # use eventloop for testing only ! default is false
     # untracked bool testInEventloop = false
-    # use qtest on endRun or endJob
-    # untracked bool qtestOnEndRun = false
-    # untracked bool qtestOnEndJob = false
-    qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml')
+    qtList = cms.untracked.FileInPath('DQM/HLXMonitor/test/HLXQualityTests.xml'),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 
 process.p = cms.Path(process.hlxdqmsource*process.hlxQualityTester*process.dqmEnv*process.dqmSaver)

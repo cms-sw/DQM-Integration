@@ -15,8 +15,8 @@ ecalHostEE    = 'srv-s2f19-27'.lower()
 cmsLiveHostEB = 'srv-c2c05-06'.lower()
 cmsLiveHostEE = 'srv-c2c05-07'.lower()
 
-cmsPlayHostEB = 'srv-c2d05-15'.lower()
-cmsPlayHostEE = 'srv-c2d05-11'.lower()
+cmsPlayHostEB = 'srv-c2d04-25'.lower()
+cmsPlayHostEE = 'srv-c2d04-26'.lower()
 
 host = socket.gethostname().split('.')[0].lower()
 
@@ -204,14 +204,18 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string('red'),
   prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath('DQM/EcalBarrelMonitorModule/test/data/EcalBarrelQualityTests.xml'),
-  getQualityTestsFromFile = cms.untracked.bool(True)
+  getQualityTestsFromFile = cms.untracked.bool(True),
+  qtestOnEndLumi = cms.untracked.bool(False),
+  qtestOnEndRun = cms.untracked.bool(True)
 )
 
 process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string('red'),
   prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath('DQM/EcalEndcapMonitorModule/test/data/EcalEndcapQualityTests.xml'),
-  getQualityTestsFromFile = cms.untracked.bool(True)
+  getQualityTestsFromFile = cms.untracked.bool(True),
+  qtestOnEndLumi = cms.untracked.bool(False),
+  qtestOnEndRun = cms.untracked.bool(True)
 )
 
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
@@ -282,7 +286,7 @@ if (liveECAL == 1) :
     consumerName = cms.untracked.string('Ecal DQM Consumer'),
     SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
     max_queue_depth = cms.int32(5),
-    maxEventRequestRate = cms.untracked.double(25.0),
+    maxEventRequestRate = cms.untracked.double(100.0),
     SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('*') ),
     headerRetryInterval = cms.untracked.int32(3)
   )
@@ -396,8 +400,10 @@ process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.preScaler.prescaleFactor = 1
 
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-  process.dqmQTestEB.prescaleFactor = 4
-  process.dqmQTestEE.prescaleFactor = 4
+  process.dqmQTestEB.prescaleFactor = 16
+  process.dqmQTestEB.qtestOnEndLumi = True
+  process.dqmQTestEE.prescaleFactor = 16
+  process.dqmQTestEE.qtestOnEndLumi = True
 
 process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalDetIdToBeRecovered*process.ecalRecHit)
 

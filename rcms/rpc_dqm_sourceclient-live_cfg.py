@@ -93,7 +93,9 @@ process.rpcEventSummary.PrescaleFactor = 5
 ################# Quality Tests #########################
 process.qTesterRPC = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/RPCMonitorClient/test/RPCQualityTests.xml'),
-    prescaleFactor = cms.untracked.int32(5)
+    prescaleFactor = cms.untracked.int32(5),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 
 ################ Chamber Quality ##################

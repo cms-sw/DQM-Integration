@@ -6,8 +6,8 @@ process = cms.Process("BeamMonitor")
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_L1_BSC'))
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Physics'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_L1_BSC'))
+
 #--------------------------
 # Filters
 #--------------------------

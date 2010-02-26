@@ -96,9 +96,11 @@ process.load("DQM.SiPixelCommon.SiPixelP5DQM_client_cff")
 
 process.qTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'),
-    QualityTestPrescaler = cms.untracked.int32(1),
+    prescaleFactor = cms.untracked.int32(1),
     getQualityTestsFromFile = cms.untracked.bool(True),
-    verboseQT = cms.untracked.bool(False)
+    verboseQT = cms.untracked.bool(False),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 
 #--------------------------

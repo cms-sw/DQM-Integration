@@ -25,13 +25,20 @@ process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
 process.load("DQM.TrigXMonitor.HLTScalers_cfi")
 process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
+# added for hlt scalars
+process.load("DQM.TrigXMonitor.HLTSeedL1LogicScalers_cfi")
 process.hlts.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
 process.hlts.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
 process.hltsClient.dqmFolder = cms.untracked.string("HLT/HLTScalers_SM")
-process.p = cms.EndPath(process.hlts+process.hltsClient+process.dqmEnv+process.dqmSaver)
+# added for hlt scalars
+process.hltSeedL1Logic.l1GtData = cms.InputTag("l1GtUnpack","","DQM")
+process.hltSeedL1Logic.dqmFolder =    cms.untracked.string("HLT/HLTSeedL1LogicScalers_SM")
+
+#process.p = cms.EndPath(process.hlts+process.hltsClient)
+process.p = cms.EndPath(process.hlts+process.hltsClient + process.hltSeedL1Logic)
 
 
-#process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
+process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'
 process.dqmEnv.subSystemFolder = 'HLT'
 #process.hltResults.plotAll = True

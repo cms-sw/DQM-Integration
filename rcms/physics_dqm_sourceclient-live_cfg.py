@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.7 2009/12/06 18:59:05 ameyer Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.8 2010/02/10 11:13:54 lilopera Exp $
 
 import FWCore.ParameterSet.Config as cms
 
