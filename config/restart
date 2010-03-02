@@ -306,11 +306,18 @@ esac
 # Start collector if requested; "crontab" is not reliable at online so
 # use hard-coded command. Use "crontab" elsewhere as that configures
 # which collectors should be running on this host.
+restart_collector() {
+  local indir=$1/collector port=${2:-9090}
+  [ ! -d $indir ] || mkdir -p $indir
+  [ ! -f $indir/collector.out ] ||
+    mv -f $indir/collector.out $indir/collector.out.$(date +%Y%m%d%H%M%S)
+  (cd $indir && DQMCollector --listen $port) < /dev/null > $indir/collector.out 2>&1 &
+}
 case $HOST:${EXTRA:-collector} in
   srv-*:*collector* )
-    (set -x; $DQMGUI_ROOT/etc/restart-collector 9090:$DQM_DIR) ;;
+    restart_collector $DQM_DIR 9090 ;;
   *collector* )
-    crontab -l | grep restart-collector | sed 's|^[*0-9 ]*||' | sh -x ;;
+    restart_collector /data/dqm/dev 8061 ;;
 esac
 
 ######################################################################
