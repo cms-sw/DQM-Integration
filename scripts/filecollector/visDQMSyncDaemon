@@ -136,37 +136,37 @@ except (GetoptError, KeyError , ValueError ) ,e:
 # Process files forever.
 while True:  
   try: 
+    currentFileList=[]
+    currentFileList = getFileList(DESTDIR)
+    newFileList=[]
+    removeFileList=[]
+    addFileList=[]
     for dir1 in dirsQuotaDic.keys():
-      currentFileList=[]
-      newFileList=[]
-      removeFileList=[]
-      addFileList=[]
       quota=dirsQuotaDic[dir1]
-      destDir=dir1.replace(REPODIR,DESTDIR,1)
-      currentFileList = getFileList(destDir)
-      newFileList     = getFileList(dir1,quota)  
-      removeFileList  = [ f for f in currentFileList if f.replace(DESTDIR,REPODIR,1) not in newFileList]
-      addFileList     = [ f for f in newFileList if f.replace(REPODIR,DESTDIR,1) not in currentFileList]
-      for f in  removeFileList:
-        os.remove(f)
+      newFileList     += getFileList(dir1,quota)  
+    
+    removeFileList  = [ f for f in currentFileList if f.replace(DESTDIR,REPODIR,1) not in newFileList]
+    addFileList     = [ f for f in newFileList if f.replace(REPODIR,DESTDIR,1) not in currentFileList]
+    for f in  removeFileList:
+      os.remove(f)
+    
+    for f in  addFileList:
+      destFileName = f.replace(REPODIR,DESTDIR,1)
+      destFileDir  = os.path.dirname(destFileName)
+      if not os.path.exists(destFileDir):
+        os.makedirs(destFileDir)
+      if os.path.islink(f):
+        os.symlink(f,destFileName)
+      else:
+        shutil.copy2(f,destFileName)
       
-      for f in  addFileList:
-        destFileName = f.replace(REPODIR,DESTDIR,1)
-        destFileDir  = os.path.dirname(destFileName)
-        if not os.path.exists(destFileDir):
-          os.makedirs(destFileDir)
-        if os.path.islink(f):
-          os.symlink(f,destFileName)
-        else:
-          shutil.copy2(f,destFileName)
-        
-      for dirPath,subDirs,files in os.walk(DESTDIR,topdown=False):
-        if not len(subDirs) and not len(files):
-          try: 
-            os.rmdir(dirPath)
-          except:
-            pass
-            
+    for dirPath,subDirs,files in os.walk(DESTDIR,topdown=False):
+      if not len(subDirs) and not len(files):
+        try: 
+          os.rmdir(dirPath)
+        except:
+          pass
+          
   except KeyboardInterrupt, e:
     sys.exit(0)
 
