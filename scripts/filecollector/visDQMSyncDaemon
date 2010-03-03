@@ -85,7 +85,6 @@ def getFileList(path, quota = -1):
         fileList.append(f)
         aQuota=aQuota+fileDict[f][1]
         continue
-      print aQuota
       break
   else:
     fileList=fileDict.keys()
@@ -95,12 +94,10 @@ def getFileList(path, quota = -1):
 try:
   opts, args = getopt(sys.argv[1:], "h", ["help", "dirs=","dirs_quotas="])
   for opt,val in opts:
-    print opt
     if opt in ("-h" , "--help"):
       print __doc__
       sys.exit(0)
     elif opt == "--dirs":
-      print val
       WATCHDIRS=val.split(",")
     elif "--dirs_quotas" == opt:
       INDEPQUEUES=[ long(i[:-1])*pow(1024,unitsDic[i[-1]]) for i in val.split(",") if i!='' and len(i)>1]
@@ -131,15 +128,14 @@ try:
     if dirsQuotaDic[key]==0:
       dirsQuotaDic[key]=quota
 except (GetoptError, KeyError , ValueError ) ,e:
-  #print __doc__
+  print __doc__
   logme('error: %s - Revise MAX_QUOTA , and additional options ', e)	
   print_exc()
   sys.exit(0)
 # --------------------------------------------------------------------
 # Process files forever.
 while True:  
-  try:
-    print dirsQuotaDic    
+  try: 
     for dir1 in dirsQuotaDic.keys():
       currentFileList=[]
       newFileList=[]
@@ -151,11 +147,6 @@ while True:
       newFileList     = getFileList(dir1,quota)  
       removeFileList  = [ f for f in currentFileList if f.replace(DESTDIR,REPODIR,1) not in newFileList]
       addFileList     = [ f for f in newFileList if f.replace(REPODIR,DESTDIR,1) not in currentFileList]
-      print len(currentFileList)
-      print len(newFileList)
-      print len(removeFileList)
-      print len(addFileList)
-      ##print addFileList
       for f in  removeFileList:
         os.remove(f)
       
@@ -182,5 +173,5 @@ while True:
   except Exception, e:
     logme('error: %s', e)
     print_exc()
-  sys.exit(0)
+    
   time.sleep(WAITTIME)
