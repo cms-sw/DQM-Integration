@@ -4,11 +4,11 @@ BASEDIR   = os.path.dirname(os.path.dirname(__file__))
 CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
-           ("castor","eb", "ee", "csc", "rpc", "hcal", "hcalcalib", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
+           ("castor","eb", "ee", "es", "csc", "rpc", "hcal", "hcalcalib", "l1t", "l1temulator", "hlt", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "hltmuon", "rpc")]
+           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "es", "hltmuon", "rpc")]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
