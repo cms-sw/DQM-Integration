@@ -5,12 +5,12 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 #LAYOUTS = ["%s/shift_%s-layout.py" % (CONFIGDIR, x) for x in
 LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
-           ("castor","eb", "ee", "csc", "rpc", "hcal", "hcalcalib", "hlt","l1t", "l1temulator", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
+           ("castor","eb", "ee","es", "csc", "rpc", "hcal", "hcalcalib", "hlt","l1t", "l1temulator", "pixel", "sistrip", "dt", "muons", "jetmet", "egamma")]
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 #LAYOUTS += ["%s/%s_-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "rpc")]
+           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee","es", "rpc")]
 LAYOUTS += ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
            ("tkal",)]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
@@ -41,4 +41,4 @@ server.source('DQMArchive', '/data/dqm/dqmtest/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
-execfile(CONFIGDIR + "/workspaces-caf.py")
+execfile(CONFIGDIR + "/workspaces-tier-0.py")
