@@ -58,12 +58,7 @@ process.load('Configuration/EventContent/EventContent_cff')
 
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
-<<<<<<< beampixel_dqm_sourceclient-live_cfg.py
                                         nLumiReset = cms.uint32(3))
-=======
-                                        nLumiReset = cms.uint32(0)
-)
->>>>>>> 1.3
 
 
 ###### Vertexin Configuration ######
