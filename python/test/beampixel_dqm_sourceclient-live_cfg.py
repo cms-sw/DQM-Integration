@@ -58,13 +58,14 @@ process.load('Configuration/EventContent/EventContent_cff')
 
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
-                                        nLumiReset = cms.uint32(3),
-                                        xRange = cms.double(4.0),
-                                        xStep = cms.double(0.001),
-                                        yRange = cms.double(4.0),
-                                        yStep = cms.double(0.001),
-                                        zRange = cms.double(40.0),
-                                        zStep = cms.double(0.05))
+                                        nLumiReset       = cms.uint32(3),
+                                        xRange           = cms.double(4.0),
+                                        xStep            = cms.double(0.001),
+                                        yRange           = cms.double(4.0),
+                                        yStep            = cms.double(0.001),
+                                        zRange           = cms.double(40.0),
+                                        zStep            = cms.double(0.05),
+                                        fileName         = cms.string("BeamSpot_3DVxPixels.txt"))
 
 
 ###### Vertexin Configuration ######
