@@ -27,7 +27,7 @@ ebshifterlayout(dqmitems, "03 PedestalOnline RMS",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal G12 RMS map", 'description': "RMS of the pedestals in ADC counts. Pedestal is evaluated using the first 3/10 samples of the pulse shape for all the events (calibration and physics). Expected RMS for ECAL barrel is 1.1 ADC counts (43 MeV): almost blue color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebshifterlayout(dqmitems, "04 Timing Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of the crystal reconstructed hits with amplitude above 12 ADC counts. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of the good crystals reconstructed hits with energy > 400 MeV. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebshifterlayout(dqmitems, "05 Occupancy Rechits",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit occupancy", 'description': "Map of the occupancy of ECAL calibrated reconstructed hits. Expect uniform color. Legend: the darkness of the blue scale is proportional to the average occupancy of the crystal. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
@@ -44,8 +44,11 @@ ebshifterlayout(dqmitems, "07 Clusters Energy",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection eta", 'description': "Eta projection of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy projection phi", 'description': "Phi projection of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebshifterlayout(dqmitems, "08 LaserL1 Quality",
+ebshifterlayout(dqmitems, "08 Blue Laser (L1) Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of blue laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Supermodules are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green half-supermodule by half-supermodule (i.e. 1 light module). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+
+ebshifterlayout(dqmitems, "08 Infrared Laser (L4) Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L4", 'description': "Quality summary of infrared laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Supermodules are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green half-supermodule by half-supermodule (i.e. 1 light module). Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebshifterlayout(dqmitems, "10 Pedestal Gain12 Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPT pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Pedestals are evaluated using all the 10 samples. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. upermodules are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green supermodule by supermodule. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
@@ -56,7 +59,7 @@ ebshifterlayout(dqmitems, "11 TestPulse Gain12 Quality",
 ebshifterlayout(dqmitems, "12 DCC EventSize",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC calculated only on physics events. Expected about 2 kB/DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }])
 
-ebshifterlayout(dqmitems, "12 Selective Readout High Interest TTs",
+ebshifterlayout(dqmitems, "13 Selective Readout High Interest TTs",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Rate of high interest (E_T of Trigger Tower over threshold) flags of selective readout. Expected higher occupancy at lower |eta| (the threshold is on transverse energy). Calibration events are excluded. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 
@@ -171,38 +174,42 @@ ebecalshifterlayout(dqmitems, "04 Energy/06 Basic Clusters Size",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC size projection eta", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT BC size projection phi", 'description': "Number of crystals constituent the basic cluster. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "04 Energy/07 SuperClusters 1D",
+ebecalshifterlayout(dqmitems, "04 Energy/07 Basic Cluster Shape",
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s1s9", 'description': "Ratio of E(max)/E(3x3) of all basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBClusterTask/EBCLT s1s9 thr", 'description': "Ratio of E(max)/E(3x3) of basic clusters with a seed crystal with E>3.0 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "04 Energy/08 SuperClusters 1D",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC number", 'description': "Multiplicity of reconstructed hybrid superclusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT SC size (crystal)", 'description': "Numbers of crystals contained in hybrid superclusters.  Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
-ebecalshifterlayout(dqmitems, "04 Energy/08 Peaks",
+ebecalshifterlayout(dqmitems, "04 Energy/09 Peaks",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Pi0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass JPsi sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass Z0 sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalBarrel/EBClusterTask/EBCLT dicluster invariant mass high sel", 'description': "Invariant mass of 2 ECAL supercluster. Complete combinatorics is shown of clusters with ET>1.0 GeV, low sigmaIEtaIEta, and Pt(candidate)>1.5 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/00 Timing Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of the crystal reconstructed hits with amplitude above 12 ADC counts. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing quality summary", 'description': "Quality summary of good calibrated reconstructed hits. Hardware timing is adjusted with readout tower granularity, but finer setting can be reached. Expected all green color. Legend: green = good;  red = bad;  yellow = no sufficient statistics.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/01 Timing Mean",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Mean timing of all the channels in EB along the run. Timing is expected within 5.5 - 6.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Mean timing of all the channels in each DCC of EB along the run. Timing is expected within 5.5 - 6.5 clocks. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Mean timing of all the channels in EB along the run. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. Timing is expected centered 0 ns. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean", 'description': "Mean timing of all the channels in each DCC of EB along the run. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. Timing is expected centered 0 ns. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/02 Timing RMS",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Average timing RMS along the run of all the channels in EB. Timing RMS is expected < 0.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Average timing RMS along the run of all the channels in each DCC of EB. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms 1D summary", 'description': "Average timing RMS along the run of all the channels in EB. Timing RMS is expected < 10 ns. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing rms", 'description': "Average timing RMS along the run of all the channels in each DCC of EB. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. The error bar represents the spreads among the crystal of each DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/03 Timing Map",
-  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing map", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 300 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection eta", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 300 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection phi", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 300 MeV). Expected about 5.5 clocks. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing map", 'description': "Average timing of the good calibrated rechits. Expected about 0 ns. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection eta", 'description': "Average timing of the good rechits. Expected about 0 ns. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
+   { 'path': "EcalBarrel/EBTimingTask/EBTMT timing projection phi", 'description': "Average timing of the good rechits. Expected about 0 ns. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. Readout tower binning (5x5 crystals) is used. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 ebecalshifterlayout(dqmitems, "05 Timing/04 Timing Vs Amplitude",
-  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude summary", 'description': "Average timing (in clock units) of the good rechits (good shape and amplitude > 300 MeV) vs. amplitude (ADC counts). Expected about 5.5 clocks timing for amplitudes above 12 ADC counts. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing vs amplitude summary", 'description': "Average timing of the good rechits vs. amplitude. Expected about 0 ns timing for amplitudes above 480 MeV. Calibrated rechits are used with good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
 ebecalshifterlayout(dqmitems, "05 Timing/04 Single Event Timing",
-  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D summary", 'description': "Single event timing (in clock units) of the good rechits (good shape and amplitude > 500 MeV). Expected about 5.5 clocks. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBTimingTask/EBTMT timing 1D summary", 'description': "Single event timing of the good rechits. Expected centered around 0 ns. Calibrated rechits are used with energy > 480 MeV, good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra",
@@ -256,76 +263,76 @@ ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/12 SelectiveReadou
 ebecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/13 FullReadout SRFlags",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate of full readout Selective Readout flags. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 L1 Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of laser L1 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 Blue Laser (L1) Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L1", 'description': "Quality summary of Blue laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 L1 Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L1", 'description': "Errors occupancy for laser L1 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 Blue Laser (L1) Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L1", 'description': "Errors occupancy for Blue laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 L1 Amplitude",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude summary", 'description': "Laser L1 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN summary", 'description': "Laser L1 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 Blue Laser (L1) Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude summary", 'description': "Blue laser average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 amplitude over PN summary", 'description': "Blue laser APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 L1 Timing",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 timing summary", 'description': "Laser L1 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 Blue Laser (L1) Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L1 timing summary", 'description': "Blue laser average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 L1 PNQuality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L1", 'description': "Quality summary of laser L1 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 Blue Laser (L1) PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L1", 'description': "Quality summary of Blue laser events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L1", 'description': "Error occupancy for laser L1 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 L2 Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L2", 'description': "Quality summary of laser L2 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 Green Laser (L2) Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L2", 'description': "Quality summary of Green laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 L2 Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L2", 'description': "Errors occupancy for laser L2 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 Green Laser (L2) Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L2", 'description': "Errors occupancy for Green laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 L2 Amplitude",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 amplitude summary", 'description': "Laser L2 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 amplitude over PN summary", 'description': "Laser L2 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 Green Laser (L2) Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 amplitude summary", 'description': "Green laser average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 amplitude over PN summary", 'description': "Green laser APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 L2 Timing",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 timing summary", 'description': "Laser L2 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 Green Laser (L2) Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L2 timing summary", 'description': "Green laser average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 L2 PNQuality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L2", 'description': "Quality summary of laser L2 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 Green Laser (L2) PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L2", 'description': "Quality summary of Green laser events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L2", 'description': "Error occupancy for laser L2 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 L3 Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of laser L3 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 Red Laser (L3) Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L3", 'description': "Quality summary of Red laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 L3 Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L3", 'description': "Errors occupancy for laser L3 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 Red Laser (L3) Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L3", 'description': "Errors occupancy for Red laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 L3 Amplitude",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude summary", 'description': "Laser L3 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude over PN summary", 'description': "Laser L3 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 Red Laser (L3) Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude summary", 'description': "Red laser average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 amplitude over PN summary", 'description': "Red laser APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 L3 Timing",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 timing summary", 'description': "Laser L3 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 Red Laser (L3) Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L3 timing summary", 'description': "Red laser average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 L3 PNQuality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L3", 'description': "Quality summary of laser L3 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 Red Laser (L3) PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L3", 'description': "Quality summary of Red laser events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L3", 'description': "Error occupancy for laser L3 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 L4 Quality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L4", 'description': "Quality summary of laser L4 events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/00 Infrared Laser (L4) Quality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality summary L4", 'description': "Quality summary of Infrared laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 L4 Errors",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L4", 'description': "Errors occupancy for laser L4 events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/01 Infrared Laser (L4) Errors",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser quality errors summary L4", 'description': "Errors occupancy for Infrared laser events for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 L4 Amplitude",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 amplitude summary", 'description': "Laser L4 average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 amplitude over PN summary", 'description': "Laser L4 APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/02 Infrared Laser (L4) Amplitude",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 amplitude summary", 'description': "Infrared laser average amplitude for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 amplitude over PN summary", 'description': "Infrared laser APD/PN ratio for fired light modules. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 L4 Timing",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 timing summary", 'description': "Laser L4 average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/03 Infrared Laser (L4) Timing",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT laser L4 timing summary", 'description': "Infrared laser average timing (in pulse shape samples) for fired light modules. Expect value around 6.5. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 L4 PNQuality",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L4", 'description': "Quality summary of laser L4 events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+ebecalshifterlayout(dqmitems, "07 Calibration/00 Laser/04 Infrared Laser (L4) PNQuality",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality summary L4", 'description': "Quality summary of Infrared laser events on PN diodes. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed PNs. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBSummaryClient/EBLT PN laser quality errors summary L4", 'description': "Error occupancy for laser L4 events on PN diodes for every supermodule. Expect 0 entries if no errors or no laser events in a given supermodule. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "07 Calibration/01 Pedestal/00 Quality Gain01",
@@ -383,13 +390,33 @@ ebecalshifterlayout(dqmitems, "08 Trend/02 Hits Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of barrel reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of barrel reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
+#ebecalshifterlayout(dqmitems, "08 Trend/03 Hit with Threshold Occupancy",
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 5Minutes", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 1Hour", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+#ebecalshifterlayout(dqmitems, "08 Trend/04 TP Digis Occupancy",
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi occupancy Vs 5Minutes", 'description': "Average occupancy of TP digis without any cut in amplitude. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi occupancy Vs 1Hour", 'description': "Average occupancy of TP digis without any cut in amplitude. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 ebecalshifterlayout(dqmitems, "08 Trend/03 Basic Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
+#ebecalshifterlayout(dqmitems, "08 Trend/06 Basic Cluster Energy",
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 ebecalshifterlayout(dqmitems, "08 Trend/04 Super Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+#ebecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 1Hour", 'description': "Average pedestal mean in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+#ebecalshifterlayout(dqmitems, "08 Trend/09 Pedestal RMS",
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "08 Trend/05 Integrity Errors Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfIntegrityErrorVs5Minutes", 'description': "Average number of integrity errors (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -399,7 +426,7 @@ ebecalshifterlayout(dqmitems, "08 Trend/06 Barrel FEDs Size ",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs5Minutes", 'description': "Average barrel FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs1Hour", 'description': "Average barrel FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/06 Selective Readout Flags Size ",
+ebecalshifterlayout(dqmitems, "08 Trend/07 Selective Readout Flags Size ",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs5Minutes", 'description': "Average number of Selective Readout Flags. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs1Hour", 'description': "Average number of Selective Readout Flags. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
