@@ -37,7 +37,7 @@ def getDatasetName(file_name):
     d = None
   return d
 
-def getSummaryValues(file_name, shift_type, translate, filters = None):
+def getSummaryValues(file_name, translate, filters = None):
   """ Method to extract keys from root file and return dict """
   ROOT.gROOT.Reset()
 
@@ -85,8 +85,6 @@ def getSummaryValues(file_name, shift_type, translate, filters = None):
       folder_id = folder_name
       if translate:
         folder_id = FOLDERS[folder_name][0]
-        if folder_id == 'DQM' and shift_type != None:
-          folder_id = 'DQM ' + shift_type.upper()
       
       if filters != None:
         if not re.match(filters[1], folder_id):

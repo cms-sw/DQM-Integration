@@ -53,7 +53,7 @@ if __name__ == "__main__":
   # defined XML-RPC url 
   for rfile in args:
 
-    (run_number, values) = getSummaryValues(file_name = rfile, shift_type = opts['shift'], translate = True, filters = filter)
+    (run_number, values) = getSummaryValues(file_name = rfile, translate = True, filters = filter)
 
     if default_dataset == None:
       dataset = getDatasetName(rfile)
