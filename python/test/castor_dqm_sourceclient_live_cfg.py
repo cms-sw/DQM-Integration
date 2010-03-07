@@ -93,19 +93,22 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
                            showTiming          = cms.untracked.bool(False),
                            dump2database       = cms.untracked.bool(False),
                            pedestalsInFC = cms.untracked.bool(False),
-                           DigiMonitor = cms.untracked.bool(True),
                            digiLabel = cms.InputTag("castorDigis"),
                            CastorRecHitLabel = cms.InputTag("castorreco"),
                           
-                           PedestalMonitor                  = cms.untracked.bool(True),
-                           PedestalsPerChannel              = cms.untracked.bool(True), 
-                           PedestalsInFC                    = cms.untracked.bool(False),
+                           DigiMonitor = cms.untracked.bool(True),
+                           DigiPerChannel = cms.untracked.bool(True), 
+                           DigiInFC = cms.untracked.bool(False),
                           
                            RecHitMonitor = cms.untracked.bool(True), 
-			   RecHitMonitorValid = cms.untracked.bool(True),     
-                           DigisPerChannel = cms.untracked.bool(False),
-                           RecHitsPerChannel = cms.untracked.bool(True),
-                             
+			   RecHitsPerChannel = cms.untracked.bool(True),
+
+                           ChannelQualityMonitor= cms.untracked.bool(True),
+                           nThreshold = cms.untracked.double(70),
+                           dThreshold = cms.untracked.double(0.05),
+
+                           PSMonitor= cms.untracked.bool(True),
+      
                            diagnosticPrescaleTime = cms.untracked.int32(-1),
                            diagnosticPrescaleUpdate = cms.untracked.int32(-1),
                            diagnosticPrescaleLS = cms.untracked.int32(-1),
