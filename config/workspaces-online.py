@@ -80,8 +80,8 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
-                 'Castor/Layouts/CASTOR Channel Status'
-                 'Castor/Layouts/CASTOR event products'
+                 'Castor/Layouts/CASTOR Channel Status',
+                 'Castor/Layouts/CASTOR event products',
                  'Castor/Layouts/CASTOR RecHit Energies',
 		 'Castor/Layouts/CASTOR RecHit Energy in modules',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
