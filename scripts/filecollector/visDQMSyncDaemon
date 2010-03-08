@@ -74,15 +74,28 @@ def getFileList(path, quota = -1,all = True):
   aQuota=0
   for dirPath,subDirs,files in os.walk(path):
     for f in files:
-      fMatch=re.match(r"DQM_V(?P<ver>[0-9]{4})(_.*)?_R(?P<run>[0-9]{9}).*\.root$",f)
+      fMatch=re.match(r"DQM_V(?P<ver>[0-9]{4})(?P<subs>_.*)?_R(?P<run>[0-9]{9})(?P<dats>__.*)?\.root$",f)
       if fMatch:
         fName=os.path.join(dirPath,f)
-        
         if not all and fMatch.group('run') in fileDict.keys():
-          if int(fMatch.group('ver')) >  fileDict[fMatch.group('run')][0][0]:
-            fileDict[fMatch.group('run')][0]= [int(fMatch.group('ver')),fName]
+          j=None
+          for i in range(len(fileDict[fMatch.group('run')])):
+            if ((fMatch.group('subs') is not None and fMatch.group('subs') == fileDict[fMatch.group('run')][i][2])or \
+                (fMatch.group('dats') is not None and fMatch.group('dats') == fileDict[fMatch.group('run')][i][3])):
+              if int(fMatch.group('ver')) > fileDict[fMatch.group('run')][i][0]:
+                j=i
+              else:
+                j=-1
+          
+          if j is not None and j > -1 : 
+            fileDict[fMatch.group('run')].pop(j)
+            fileDict[fMatch.group('run')].append([int(fMatch.group('ver')),fName,fMatch.group('subs'),fMatch.group('dats')])
+          elif j==-1:
+            continue
+          else:
+            fileDict[fMatch.group('run')].append([int(fMatch.group('ver')),fName,fMatch.group('subs'),fMatch.group('dats')])
         else:
-            fileDict.setdefault(fMatch.group('run'),[]).append([int(fMatch.group('ver')),fName])
+          fileDict.setdefault(fMatch.group('run'),[]).append([int(fMatch.group('ver')),fName,fMatch.group('subs'),fMatch.group('dats')])
            
   for run in fileDict.keys():
     for f in fileDict[run]:
