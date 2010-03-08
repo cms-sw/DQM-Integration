@@ -14,9 +14,9 @@ shiftsistriplayout(dqmitems, "01 OnTrackCluster",
      'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TID  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
    { 'path': "SiStrip/MechanicalView/TEC/Summary_ClusterStoNCorr_OnTrack_in_TEC",
      'description': "Signal-to-Noise (corrected for the angle) for On-Track clusters in TEC  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
-shiftsistriplayout(dqmitems, "02 Tracks - CKF ",
-  [{ 'path': "Tracking/TrackParameters/NumberOfTracks_CKFTk",
-     'description': "Number of Reconstructed Tracks by CKF - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
-  [{ 'path': "Tracking/TrackParameters/NumberOfRecHitsPerTrack_CKFTk",
-'description': "Number of RecHits per Track by CKF  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
+shiftsistriplayout(dqmitems, "02 Tracks ",
+  [{ 'path': "Tracking/TrackParameters/GeneralProperties/NumberOfTracks_GenTk",
+     'description': "Number of Reconstructed Tracks - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
+  [{ 'path': "Tracking/TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk",
+'description': "Number of RecHits per Track  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
 
