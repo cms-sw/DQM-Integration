@@ -80,13 +80,30 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
+                 'Castor/Layouts/CASTOR Channel Status'
+                 'Castor/Layouts/CASTOR event products'
                  'Castor/Layouts/CASTOR RecHit Energies',
 		 'Castor/Layouts/CASTOR RecHit Energy in modules',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
-		 'Castor/Layouts/CASTOR RecHit Occupancy',
-                 'Castor/Layouts/CASTOR All Pedestal Values',
-                 'Castor/Layouts/CASTOR Average Pulse Time',
-		 'Castor/Layouts/CASTOR Average Pulse Energy'
+		 'Castor/Layouts/CASTOR RecHitEnergy 2D Map',
+                 'Castor/Layouts/CASTOR All Digi Values',
+                 'Castor/Layouts/CASTOR average pulse in bunch crossings',
+		 'Castor/Layouts/Castor Pulse Shape for sector=0 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=1 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=2 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=3 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=4 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=5 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=6 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=7 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=8 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=9 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=10 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=11 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=12 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=13 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=14 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
