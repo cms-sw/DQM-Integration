@@ -47,7 +47,6 @@ process.load("Configuration.StandardSequences.Reconstruction_cff")
 process.load("Configuration.StandardSequences.EndOfProcess_cff")
 process.load("Configuration.EventContent.EventContent_cff")
 process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
-process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegionFromBeamSpot_cfi")
 
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
@@ -58,7 +57,7 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegionFromBeamSpot_cfi
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
-#process.dqmSaver.dirName = cms.untracked.string( "/tmp/dinardo" )
+#process.dqmSaver.dirName = cms.untracked.string("/tmp/dinardo")
 #process.dqmSaver.saveByRun = cms.untracked.int32( 1 )
 ###### Output file ######
 #process.Output = cms.OutputModule( "PoolOutputModule",
@@ -113,6 +112,8 @@ process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalR
 process.pixelTracks.FilterPSet.ptMin = 0.9
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
+#process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originRadius = 0.2
+#process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originHalfLength = 15.9
 
 
 ### Define Sequence ###
@@ -122,6 +123,7 @@ process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*
                                    process.gtDigis*
                                    process.hltLevel1GTSeed)
 
+### @@@@@@ Comment when running locally @@@@@@ ###
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
     process.offlineBeamSpot*
@@ -130,7 +132,12 @@ process.reconstruction_step = cms.Sequence(
     process.pixelTracks*
     process.pixelVertices*
     process.pixelVertexDQM)
-
+### @@@@@@ Un-comment when running locally @@@@@@ ###
+#process.reconstruction_step = cms.Sequence(
+#    process.siPixelRecHits*
+#    process.pixelTracks*
+#    process.pixelVertices*
+#    process.pixelVertexDQM)
 
 ### Define Path ###
 ### Uncomment to add a filter on data ###
