@@ -41,7 +41,7 @@ from traceback import print_exc
 from datetime import datetime
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 # --------------------------------------------------------------------
-WAITTIME    = 120
+WAITTIME    = 3600 * 4
 WATCHDIRS   = []
 INDEPQUEUES = []
 REPODIR     = ""
@@ -67,27 +67,37 @@ def orderFiles(a, b):
   if diff: return diff
   return cmp(b['dataset'], a['dataset'])  
   
-def getFileList(path, quota = -1):
+def getFileList(path, quota = -1,all = True):
   fileDict={}
+  finalFileDict={}
   fileList=[]
   aQuota=0
   for dirPath,subDirs,files in os.walk(path):
     for f in files:
-      fMatch=re.match(r".*\.root$",f)
+      fMatch=re.match(r"DQM_V(?P<ver>[0-9]{4})(_.*)?_R(?P<run>[0-9]{9}).*\.root$",f)
       if fMatch:
         fName=os.path.join(dirPath,f)
-        fileStats=os.lstat(fName)
-        fileDict.setdefault(fName,[fileStats.st_mtime,long(fileStats.st_size)])
-  
+        
+        if not all and fMatch.group('run') in fileDict.keys():
+          if int(fMatch.group('ver')) >  fileDict[fMatch.group('run')][0][0]:
+            fileDict[fMatch.group('run')][0]= [int(fMatch.group('ver')),fName]
+        else:
+            fileDict.setdefault(fMatch.group('run'),[]).append([int(fMatch.group('ver')),fName])
+           
+  for run in fileDict.keys():
+    for f in fileDict[run]:
+      fileStats=os.lstat(f[1])
+      finalFileDict.setdefault(f[1],[fileStats.st_mtime,fileStats.st_size])
+      
   if quota > -1:
-    for f in sorted(fileDict.keys(),key=lambda x:fileDict[x][0] , reverse=True):
-      if aQuota+fileDict[f][1] <= quota:
+    for f in sorted(finalFileDict.keys(),key=lambda x:finalFileDict[x][0], reverse=True):
+      if aQuota+long(finalFileDict[f][1]) <= quota:
         fileList.append(f)
-        aQuota=aQuota+fileDict[f][1]
+        aQuota=aQuota+long(finalFileDict[f][1])
         continue
       break
   else:
-    fileList=fileDict.keys()
+    fileList=finalFileDict.keys()
   return fileList
 # --------------------------------------------------------------------
 # command line Argument parsing
@@ -143,10 +153,10 @@ while True:
     addFileList=[]
     for dir1 in dirsQuotaDic.keys():
       quota=dirsQuotaDic[dir1]
-      newFileList     += getFileList(dir1,quota)  
-    
+      newFileList     += getFileList(dir1,quota,False)  
     removeFileList  = [ f for f in currentFileList if f.replace(DESTDIR,REPODIR,1) not in newFileList]
     addFileList     = [ f for f in newFileList if f.replace(REPODIR,DESTDIR,1) not in currentFileList]
+    
     for f in  removeFileList:
       os.remove(f)
     
