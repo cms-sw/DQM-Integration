@@ -54,6 +54,7 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 # RECO data taking february 18th 2010
 #process.GlobalTag.globaltag = "GR09_R_35X_V2::All"
 ###### Which data ######
+#process.load("DataDec09_RecoMinBias_Feb18th_Skim_GoodRuns_cff")
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
@@ -70,8 +71,11 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 ###### pixelVertexDQM Configuration ######
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
-                                        nLumiReset       = cms.uint32(3),
+                                        nLumiReset       = cms.uint32(5),
                                         dataFromFit      = cms.bool(False),
+                                        minNentries      = cms.int32(100),
+                                        # If the histogram has at least "minNentries" then extract Mean and RMS,
+                                        # otherwise it waits for other nLumiReset
                                         xRange           = cms.double(4.0),
                                         xStep            = cms.double(0.001),
                                         yRange           = cms.double(4.0),
@@ -114,6 +118,12 @@ process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 #process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originRadius = 0.2
 #process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originHalfLength = 15.9
+
+
+### @@@@@@ Un-comment when running locally @@@@@@ ###
+### Select the Lumisection ###
+#process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:59")
+### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
 ### Define Sequence ###
