@@ -7,7 +7,7 @@ castorlayout(dqmitems, "CASTOR Channel Status",
            )
 
 castorlayout(dqmitems, "CASTOR event products",
-           [{ 'path': "Castor/EventInfo/CastorEventProduct",
+           [{ 'path': "Castor/CastorEventProducts/CastorEventProduct",
              'description':"check whether CASTOR objects are present in the events"}]
            )
               
