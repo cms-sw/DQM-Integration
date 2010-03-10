@@ -3,7 +3,7 @@ def shiftcastorlayout(i, p, *rows): i["00 Shift/Castor/" + p] = DQMItem(layout=r
 
 
 shiftcastorlayout(dqmitems, "CASTOR Channel Status",
-           [{ 'path': "Castor/EventInfo/reportSummaryMap - CASTOR Channel Status",
+           [{ 'path': "Castor/EventInfo/reportSummaryMap",
              'description':"1 - OK, 0 - dead, -1 - noisy"}]
            )
 
