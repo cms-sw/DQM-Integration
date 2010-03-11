@@ -56,13 +56,22 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 ###### Which data ######
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_GoodRuns_cff")
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
+#readFiles = cms.untracked.vstring()
+#secFiles = cms.untracked.vstring()
+#process.source = cms.Source ("PoolSource",fileNames = readFiles, secondaryFileNames = secFiles)
+#readFiles.extend([
+#        "file:/tmp/jengbou/AC4043E8-A5ED-DE11-91FB-001A92971B32.root",
+#        "file:/tmp/jengbou/461F7E44-AAED-DE11-B5A4-002618943932.root",
+#        "file:/tmp/jengbou/D2F80F5F-ACED-DE11-B3B6-0018F3D09630.root"])
+#secFiles.extend([])
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
-#process.dqmSaver.dirName = cms.untracked.string("/tmp/dinardo")
-#process.dqmSaver.saveByRun = cms.untracked.int32( 1 )
+#process.dqmSaver.dirName = cms.untracked.string("/tmp/dinardo/")
+#process.dqmSaver.dirName = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
+#process.dqmSaver.saveByRun = cms.untracked.int32(1)
 ###### Output file ######
 #process.Output = cms.OutputModule( "PoolOutputModule",
-#                                   fileName = cms.untracked.string( "/tmp/dinardo/BeamSpot_3DVxPixels.root" ),
+#                                   fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
 #                                   outputCommands = cms.untracked.vstring( "drop *",
 #                                                                           "keep *_*_*_BeamPixel"))
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
@@ -71,18 +80,21 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 ###### pixelVertexDQM Configuration ######
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
-                                        nLumiReset       = cms.uint32(5),
-                                        dataFromFit      = cms.bool(False),
+                                        debugMode        = cms.bool(True),
+                                        nLumiReset       = cms.uint32(3),
+                                        dataFromFit      = cms.bool(True),
                                         minNentries      = cms.int32(100),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
-                                        # otherwise it waits for other nLumiReset
+                                        # or, if we are performing the fit, the number of vertices must be greater
+                                        # than minNentries otherwise it waits for other nLumiReset
                                         xRange           = cms.double(4.0),
                                         xStep            = cms.double(0.001),
                                         yRange           = cms.double(4.0),
                                         yStep            = cms.double(0.001),
                                         zRange           = cms.double(40.0),
                                         zStep            = cms.double(0.05),
-                                        fileName         = cms.string("/tmp/dinardo/BeamSpot_3DVxPixels.txt"))
+#                                        fileName         = cms.string("/tmp/dinardo/BeamPixelResults.txt"))
+                                        fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 
 
 ###### Vertexin Configuration ######
