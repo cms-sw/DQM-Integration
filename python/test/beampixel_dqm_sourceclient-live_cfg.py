@@ -30,6 +30,9 @@ process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("(40 OR 41) AND NO
 #### DQM Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
+### @@@@@@ Un-comment when running locally @@@@@@ ###
+#process.DQM.collectorHost = ''
+### @@@@@@ Un-comment when running locally @@@@@@ ###
 process.dqmEnv.subSystemFolder = "BeamPixel"
 #-----------------------------
 
@@ -64,15 +67,22 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 #        "file:/tmp/jengbou/461F7E44-AAED-DE11-B5A4-002618943932.root",
 #        "file:/tmp/jengbou/D2F80F5F-ACED-DE11-B3B6-0018F3D09630.root"])
 #secFiles.extend([])
+#readFiles = cms.untracked.vstring()
+#secFiles = cms.untracked.vstring()
+#process.source = cms.Source ("PoolSource",fileNames = readFiles, secondaryFileNames = secFiles)
+#readFiles.extend([
+#        "file:/tmp/dinardo/BEF77CC5-C71D-DF11-A707-00237DA15C7C.root",
+#        "file:/tmp/dinardo/B6B3BCD7-C61D-DF11-9201-00237DA1CD92.root"])
+#secFiles.extend([])
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
 #process.dqmSaver.dirName = cms.untracked.string("/tmp/dinardo/")
 #process.dqmSaver.dirName = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
 #process.dqmSaver.saveByRun = cms.untracked.int32(1)
 ###### Output file ######
-#process.Output = cms.OutputModule( "PoolOutputModule",
-#                                   fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
-#                                   outputCommands = cms.untracked.vstring( "drop *",
+#process.Output = cms.OutputModule("PoolOutputModule",
+#                                  fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
+#                                  outputCommands = cms.untracked.vstring( "drop *",
 #                                                                           "keep *_*_*_BeamPixel"))
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
@@ -81,9 +91,9 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
-                                        nLumiReset       = cms.uint32(3),
+                                        nLumiReset       = cms.uint32(5),
                                         dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.int32(100),
+                                        minNentries      = cms.int32(80),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
                                         # or, if we are performing the fit, the number of vertices must be greater
                                         # than minNentries otherwise it waits for other nLumiReset
