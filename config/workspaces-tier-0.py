@@ -46,10 +46,15 @@ server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  )
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
-                 'Castor/Layouts/CASTOR Pedestals',
-                 'Castor/Layouts/CASTOR LED Distributions',
-                 'Castor/Layouts/CASTOR RecHit Distributions'
+                 'Castor/Layouts/CASTOR Channel Status',
+                 'Castor/Layouts/CASTOR RecHit Energies',
+		 'Castor/Layouts/CASTOR RecHit Energy in modules',
+		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
+		 'Castor/Layouts/CASTOR RecHitEnergy 2D Map',
+                 'Castor/Layouts/CASTOR All Digi Values',
+                 'Castor/Layouts/CASTOR average pulse in bunch crossings'
                 )
+
 server.workspace('DQMContent', 31, 'Trigger/Lumi', 'L1T', '^L1T/')
 server.workspace('DQMContent', 32, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/')
 server.workspace('DQMContent', 33, 'Trigger/Lumi', 'HLT', '^HLT/')
