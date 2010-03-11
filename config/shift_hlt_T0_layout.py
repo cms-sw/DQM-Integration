@@ -86,23 +86,23 @@ trigvalFVPho(dqmitems,"HLT_Photon15_L1R: Et of RECO Photon objects",
 
 def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows)
   
-hltlayout(dqmitems,"N of HLT_L1MuOpen muons" ,
-  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__NOn", 'description': "Multiplicity of HLT muons passing HLT_L1Mu path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"N of HLT_L1MuOpen_NoBPTX muons" ,
+  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen_NoBPTX/HLT_L1MuOpen_NoBPTX_wrt__NOn", 'description': "Multiplicity of HLT muons passing HLT_L1Mu path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"RECO muons Et",
-  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__offEtOnOff", 'description': "Et of the RECO muons matched (eta-phi) with the triggering HLT_L1MuOpen muons.   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen_NoBPTX/HLT_L1MuOpen_NoBPTX_wrt__offEtOnOff", 'description': "Et of the RECO muons matched (eta-phi) with the triggering HLT_L1MuOpen_NoBPTX muons.   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"RECO muons eta-phi",
-  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__offEtaoffPhiOff", 'description': "X=eta and Y=phi for RECO muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen_NoBPTX/HLT_L1MuOpen_NoBPTX_wrt__offEtaoffPhiOff", 'description': "X=eta and Y=phi for RECO muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"HLT_L1MuOpen & L1 muons eta-phi",
-  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen/HLT_L1MuOpen_wrt__l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"HLT_L1MuOpen_NoBPTX & L1 muons eta-phi",
+  	[{'path': "HLT/FourVector/source/HLT_L1MuOpen_NoBPTX/HLT_L1MuOpen_NoBPTX_wrt__l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"Eff HLT_L1MuOpen to its L1 vs Pt",
-  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"Eff HLT_L1MuOpen_NoBPTX to its L1 vs Pt",
+  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"Eff HLT_L1MuOpen to its L1 vs eta-phi",
-  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"Eff HLT_L1MuOpen_NoBPTX to its L1 vs eta-phi",
+  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs Pt",
   	[{'path': "HLT/FourVector/client/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
