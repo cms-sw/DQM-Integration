@@ -76,19 +76,10 @@ process.SiPixelHLTSource.slowDown = False
 process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
 
 # Hcal DQM sequences
-process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
+
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
-# Turn on/off individual hcalMonitor modules ------------
-process.hcalMonitor.DataIntegrityTask   = True
-process.hcalMonitor.DataFormatMonitor   = False
-process.hcalMonitor.DigiMonitor         = False
-process.hcalMonitor.RecHitMonitor       = False
-process.hcalMonitor.TrigPrimMonitor     = False
-#process.hcalMonitor.PedestalMonitor     = False
-process.hcalMonitor.DeadCellMonitor     = False
-process.hcalMonitor.HotCellMonitor      = False
-process.hcalMonitor.LEDMonitor          = False
-process.hcalMonitor.BeamMonitor         = False
+process.load("DQM.HcalMonitorTasks.HcalDataIntegrityTask_cfi")
+process.hcalDataIntegrityMonitor.TaskFolder="FEDIntegrity"
 
 # RPC
 #process.RPCCabling = cms.ESSource("PoolDBESSource",
@@ -129,8 +120,8 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 #-----------------------------
 ### Define the path
 process.evfDQMHcalPath = cms.Path(
-			      process.hcalDigis + 
-			      process.hcalMonitor 
+                     process.hcalDigis +
+                     process.hcalDataIntegrityMonitor
 )
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               #process.dqmmodules +
