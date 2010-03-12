@@ -14,8 +14,7 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/02 - # of Digi Trend',
                  'SiStrip/Layouts/03 - # of Cluster Trend',
                  'SiStrip/Layouts/04 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/05 - Tracks',
-                 'SiStrip/Layouts/06 - OnTrackCluster (StoN)')
+                 'SiStrip/Layouts/05 - Tracks')
                
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
@@ -50,8 +49,7 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'RPC', '^RPC/',
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
-                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower',
-                'EcalPreshower/Layouts/04-ESTimingTaskSummary-EcalPreshower') 
+                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
                 
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
@@ -65,45 +63,30 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'EcalEndcap', '^EcalEndcap/',
 
 server.workspace('DQMContent', 30, 'Calorimeter', 'HCAL', '^Hcal/',
                  "Hcal/Layouts/01 HCAL Summaries",
-                 'Hcal/Layouts/HCAL Digi Problems',
-                 'Hcal/Layouts/HCAL Dead Cell Check',
-                 'Hcal/Layouts/HCAL Hot Cell Check',
-                 'Hcal/Layouts/HCAL Data Format',
-                 'Hcal/Layouts/HCAL Lumi Problems',
-                 'Hcal/Layouts/HCAL Trigger Primitives'
+                 'Hcal/Layouts/02 HCAL Digi Problems',
+                 'Hcal/Layouts/03 HCAL Dead Cell Check',
+                 'Hcal/Layouts/04 HCAL Hot Cell Check',
+                 'Hcal/Layouts/05 HCAL Raw Data',
+                 'Hcal/Layouts/06 HCAL Trigger Primitives',
+                 'Hcal/Layouts/07 HCAL Lumi Problems',
+                 'Hcal/Layouts/08 HCAL Calibration Type'
                  )
 
 server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/01 HcalCalib Summary',
-                 'HcalCalib/Layouts/HcalCalib Pedestal Check',
-                 'HcalCalib/Layouts/HcalCalib Laser Check',
-                 'HcalCalib/Layouts/HcalCalib RecHit Energies')
+                 'HcalCalib/Layouts/02 HcalCalib Problem Pedestals',
+                 'HcalCalib/Layouts/03 HcalCalib Problem Laser',
+                 'HcalCalib/Layouts/04 HcalCalib Pedestal Check',
+                 'HcalCalib/Layouts/08 HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
-                 'Castor/Layouts/CASTOR Channel Status',
-                 'Castor/Layouts/CASTOR event products',
                  'Castor/Layouts/CASTOR RecHit Energies',
 		 'Castor/Layouts/CASTOR RecHit Energy in modules',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
-		 'Castor/Layouts/CASTOR RecHitEnergy 2D Map',
-                 'Castor/Layouts/CASTOR All Digi Values',
-                 'Castor/Layouts/CASTOR average pulse in bunch crossings',
-		 'Castor/Layouts/Castor Pulse Shape for sector=0 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=1 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=2 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=3 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=4 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=5 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=6 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=7 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=8 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=9 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=10 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=11 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=12 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=13 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=14 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)'
+		 'Castor/Layouts/CASTOR RecHit Occupancy',
+                 'Castor/Layouts/CASTOR All Pedestal Values',
+                 'Castor/Layouts/CASTOR Average Pulse Time',
+		 'Castor/Layouts/CASTOR Average Pulse Energy'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
@@ -183,23 +166,27 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
                  )
 		 
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
-                 "Collisions/HcalFeedBack/01 - HF+,HF- coincidences (with BPTX)",
-                 "Collisions/HcalFeedBack/02 - HF+,HF- coincidences (without BPTX)",
-                 "Collisions/HcalFeedBack/03 - Digi Shapes for Total Digi Signals > N counts",
-                 "Collisions/HcalFeedBack/04 - Lumi Bunch Crossing Checks",
-                 "Collisions/HcalFeedBack/05 - Events Per Lumi Section",
-                 "Collisions/HcalFeedBack/06 - Lumi Distributions",
+                 
+                 "Collisions/HcalFeedBack/01 - HF+,HF- distributions (with BPTX)",
+                 "Collisions/HcalFeedBack/02 - HF+,HF- distributions (without BPTX)",
+                 "Collisions/HcalFeedBack/03 - HE+,HE- distributions (with BPTX)",
+                 
+                 "Collisions/HcalFeedBack/04 - Digi Shapes for Total Digi Signals > N counts",
+                 "Collisions/HcalFeedBack/05 - Lumi Bunch Crossing Checks",
+                 "Collisions/HcalFeedBack/06 - Events Per Lumi Section",
+                 "Collisions/HcalFeedBack/07 - Lumi Distributions",
+                 "Collisions/HcalFeedBack/08 - RecHit Average Occupancy",
+                 "Collisions/HcalFeedBack/09 - RecHit Average Energy",
+                 "Collisions/HcalFeedBack/10 - RecHit Average Time",
                  )
 		 
-server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor)/',
+server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
                  'Collisions/BeamMonitorFeedBack/00 - d0-phi0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/01 - z0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/02 - x position of beam spot',
                  'Collisions/BeamMonitorFeedBack/03 - y position of beam spot',
                  'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot',
-                 'Collisions/BeamMonitorFeedBack/06 - fit results beam spot',
-                 'Collisions/BeamMonitorFeedBack/07 - fit results primary vertex'
+                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot'
                  )
 		 
 server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
@@ -229,9 +216,3 @@ server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(C
                 "Collisions/HLTFeedBack/10 Group_4_paths_count_LS",
                 "Collisions/HLTFeedBack/11 Group_-1_paths_count_LS"
                 )
-
-server.workspace('DQMContent', 56, 'FeedBack for Collisions', 'CSC FeedBack', '^(Collisions|CSC)/',
-                'CSC/Layouts/04 Timing/00 ALCT Timing',
-                'CSC/Layouts/04 Timing/01 CLCT Timing'
-                )
-
