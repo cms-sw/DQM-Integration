@@ -75,8 +75,8 @@ process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 
 process.hcalDetDiagLaserMonitor.LaserReferenceData       = '/dqmdata/dqm/reference/hcalcalib_laser_reference.root'
 process.hcalDetDiagPedestalMonitor.PedestalReferenceData = '/dqmdata/dqm/reference/hcalcalib_pedestal_reference.root'
-process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets/'
-process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets/'
+process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
+process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
 
 # Set all directories to HcalCalib/
 if not subsystem.endswith("/"):
