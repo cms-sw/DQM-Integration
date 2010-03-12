@@ -1,3 +1,12 @@
+# Dummy check of python syntax within file when run stand-alone
+if __name__=="__main__":
+    class DQMItem:
+        def __init__(self,layout):
+            print layout
+
+    dqmitems={}
+
+
 def shifthcalcaliblayout(i, p, *rows): i["00 Shift/HcalCalib/" + p] = DQMItem(layout=rows)
 
 shifthcalcaliblayout(dqmitems, "01 HcalCalib Summary",
@@ -5,38 +14,36 @@ shifthcalcaliblayout(dqmitems, "01 HcalCalib Summary",
              'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green.  Values should all be above 98%."}]
            )
 
-shifthcalcaliblayout(dqmitems, "HcalCalib Pedestal Check",
-                     [{ 'path': "HcalCalib/HcalDetDiagPedestalMonitor/Summary Plots/HBHEHF pedestal mean map",
-                        'description': "Pedestal mean values calculated from orbit gap events for HB, HE, and HF"},
-                      { 'path': "HcalCalib/HcalDetDiagPedestalMonitor/Summary Plots/HBHEHF pedestal rms map",
-                        'description': "Pedestal RMS values calculated from orbit gap events for HB, HE, and HF"}],  
-                     [{ 'path': "HcalCalib/HcalDetDiagPedestalMonitor/Summary Plots/HO pedestal mean map",
-                        'description': "Pedestal mean values calculated from orbit gap events for HO"},
-                      { 'path': "HcalCalib/HcalDetDiagPedestalMonitor/Summary Plots/HO pedestal rms map",
-                        'description': "Pedestal RMS values calculated from orbit gap events for HO"}]  
-           )
 
-shifthcalcaliblayout(dqmitems, "HcalCalib Laser Check",
-                [{ 'path':"HcalCalib/HcalDetDiagLaserMonitor/Summary Plots/Laser Energy HBHEHF",
-                   'description':"Laser Average energy in HBHEHF"},
-                 { 'path':"HcalCalib/HcalDetDiagLaserMonitor/Summary Plots/Laser Energy HO",
-                   'description':"Laser Average timing in HO"}],
-                
-                [{ 'path':"HcalCalib/HcalDetDiagLaserMonitor/Summary Plots/Laser Timing HBHEHF",
-                   'description':"Laser Average energy in HBHEHF"},
-                 { 'path':"HcalCalib/HcalDetDiagLaserMonitor/Summary Plots/Laser Timing HO",
-                   'description':"Laser Average timing in HO"}]
+shifthcalcaliblayout(dqmitems, "02 HcalCalib Problem Pedestals",
+                [{ 'path':"HcalCalib/DetDiagPedestalMonitor_Hcal/ ProblemDetDiagPedestal",
+                   'description': "Channels with pedestals that have some kind of problem (bad mean or RMS, unstable, or missing).  This histogram should normally be empty."}]
                 )
 
+shifthcalcaliblayout(dqmitems, "03 HcalCalib Problem Laser",
+                [{ 'path':"HcalCalib/DetDiagLaserMonitor_Hcal/ ProblemDetDiagLaser",
+                   'description': "Channels that are outside reference bounds in either time or energy.  This histogram should normally be empty."}]
+)
 
-shifthcalcaliblayout(dqmitems, "HcalCalib RecHit Energies",
-                [{'path': "HcalCalib/RecHitMonitor_Hcal/rechit_1D_plots/HB_energy_1D",
-                  'description':"Average energy/hit for each of the 2592 channels in HB"},
+shifthcalcaliblayout(dqmitems, "04 HcalCalib Pedestal Reference Comparison",
+                [{'path':"HcalCalib/DetDiagPedestalMonitor_Hcal/Summary Plots/HB Pedestal-Reference Distribution (average over 4 caps)",
+                  'description':"Distribution of calculated pedestals - reference values in the Hcal Barrel detector."},
+                 {'path':"HcalCalib/DetDiagPedestalMonitor_Hcal/Summary Plots/HE Pedestal-Reference Distribution (average over 4 caps)",
+                  'description':"Distribution of calculated pedestals - reference values in the Hcal Endcap detector."}],
+                [{'path':"HcalCalib/DetDiagPedestalMonitor_Hcal/Summary Plots/HF Pedestal-Reference Distribution (average over 4 caps)",
+                'description':"Distribution of calculated pedestals - reference values in the Hcal Forward detector."},
+                 {'path':"HcalCalib/DetDiagPedestalMonitor_Hcal/Summary Plots/HO Pedestal-Reference Distribution (average over 4 caps)",
+                 'description':"Distribution of calculated pedestals - reference values in the Hcal Outer detector."} ]
+                )
 
-                 {'path': "HcalCalib/RecHitMonitor_Hcal/rechit_1D_plots/HE_energy_1D",
-                  'description':"Average energy/hit for each of the 2592 channels in HE"}],
-                [{'path': "HcalCalib/RecHitMonitor_Hcal/rechit_1D_plots/HF_energy_1D",
-                  'description':"Average energy/hit for each of the 1728 channels in HF"},
-                 {'path': "HcalCalib/RecHitMonitor_Hcal/rechit_1D_plots/HO_energy_1D",
-                  'description':"Average energy/hit for each of the 2160 channels in HO.  (You may see fewer entries than 2160 because of ~30 known dead cells in HO.)"}]
+shifthcalcaliblayout(dqmitems, "05 HcalCalib Laser RBX Plots",
+                [{ 'path':"HcalCalib/DetDiagLaserMonitor_Hcal/Summary Plots/HB RBX average Time-Ref",
+                   'description':"1D Laser RBX energy - reference in HB"},
+                 { 'path':"HcalCalib/DetDiagLaserMonitor_Hcal/Summary Plots/HE RBX average Time-Ref",
+                   'description':"1D Laser RBX energy - reference in HE"}],
+                [{ 'path':"HcalCalib/DetDiagLaserMonitor_Hcal/Summary Plots/HF RoBox average Time-Ref",
+                   'description':"1D Laser RBX energy - reference in HF"},
+                 { 'path':"HcalCalib/DetDiagLaserMonitor_Hcal/Summary Plots/HO RBX average Time-Ref",
+                   'description':"1D Laser RBX energy - reference in HO"}]
+
                 )
