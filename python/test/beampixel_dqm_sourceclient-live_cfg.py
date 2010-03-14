@@ -76,9 +76,14 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 #secFiles.extend([])
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
-#process.dqmSaver.dirName = cms.untracked.string("/tmp/dinardo/")
-#process.dqmSaver.dirName = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
-#process.dqmSaver.saveByRun = cms.untracked.int32(1)
+#process.dqmSaver.dirName           = cms.untracked.string("/tmp/dinardo/")
+#process.dqmSaver.dirName           = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
+#process.dqmSaver.saveAtJobEnd      = cms.untracked.bool(False)
+#process.dqmSaver.saveByTime        = cms.untracked.int32(-1)
+#process.dqmSaver.saveByRun         = cms.untracked.int32(-1)
+#process.dqmSaver.forceRunNumber    = cms.untracked.int32(-1)
+#process.dqmSaver.saveByLumiSection = cms.untracked.int32(-1)
+#process.dqmSaver.saveByMinute      = cms.untracked.int32(-1)
 ###### Output file ######
 #process.Output = cms.OutputModule("PoolOutputModule",
 #                                  fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
@@ -144,7 +149,7 @@ process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 ### Select the Lumisection ###
-#process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:59")
+#process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:51")
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
