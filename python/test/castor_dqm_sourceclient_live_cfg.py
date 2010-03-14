@@ -105,7 +105,7 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
 
                            ChannelQualityMonitor= cms.untracked.bool(True),
                            nThreshold = cms.untracked.double(70),
-                           dThreshold = cms.untracked.double(0.1),
+                           dThreshold = cms.untracked.double(0.07),
                            OfflineMode = cms.untracked.bool(False),
                                      
                            PSMonitor= cms.untracked.bool(True),
