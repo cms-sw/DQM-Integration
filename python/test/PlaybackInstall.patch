@@ -20,7 +20,7 @@ diff -u -r1.7 -r1.6
  dqmSaver.referenceHandling = 'all'
 -dqmSaver.dirName = '/home/dqmprolocal/output'
 -dqmSaver.producer = 'DQM'
--dqmSaver.saveByTime = 4
+-dqmSaver.saveByTime = 1
 +dqmSaver.dirName = '/home/dqmdevlocal/output'
 +dqmSaver.producer = 'Playback'
 +dqmSaver.version = 2
