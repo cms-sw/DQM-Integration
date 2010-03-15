@@ -53,8 +53,8 @@ shifteelayout(dqmitems, "08 Blue Laser (L1) Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EELT EE + laser quality summary L1", 'description': "Quality summary of blue laser events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteelayout(dqmitems, "09 Lambda 1 Led Quality", 
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
-  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led quality summary L1", 'description': "Quality summary of led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE - led quality summary L1", 'description': "Quality summary of lambda_1 led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }], 
+  [{ 'path': "EcalEndcap/EESummaryClient/EELDT EE + led quality summary L1", 'description': "Quality summary of lambda_1 led events. Expect green where the laser sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 shifteelayout(dqmitems, "10 Pedestal Gain12 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPT EE - pedestal quality G12 summary", 'description': "Quality summary of pedestal events for Gain 12. Expect green where the pedestal sequence fired, yellow elsewhere. Red spots are failed channels. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }],
