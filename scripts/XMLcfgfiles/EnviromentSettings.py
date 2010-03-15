@@ -63,4 +63,4 @@ pathsToExecutive={	"dqmpro":"/opt/xdaq/bin/xdaq.sh -e /nfshome0/dqmpro/xml/profi
 					"dqmdev":"/opt/xdaq/bin/xdaq.sh -e /nfshome0/dqmdev/xml/profile.xml -u xml://cmsrc-dqmdev:42010"}
 logURLs= {	"dqmpro":"xml://cmsrc-dqm:22010",
 			"dqmdev":"xml://cmsrc-dqmdev:42010"}
-knownlogLevels=["DEBUG","INFO"]
+knownlogLevels=["DEBUG","INFO","ERROR"]

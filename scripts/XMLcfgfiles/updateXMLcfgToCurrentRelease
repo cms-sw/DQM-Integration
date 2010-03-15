@@ -21,19 +21,27 @@ def detectCMSSWVersion(fileName):
 	version=""
 	fp=open(fileName)
 	line=fp.readline()
+	total=0
 	while line:
 		if "CMSSW_VERSION=" in line:
 			version=line[line.find("CMSSW_VERSION="):line.find(" ",line.find("CMSSW_VERSION="))]
-			break 
+			total+=1
+		if "CMSSW_BASE=" in line:
+			base=line[line.find("CMSSW_BASE="):line.find(" ",line.find("CMSSW_BASE="))]
+			total+=1
+		if total == 2:
+			break
 		line=fp.readline()
 	fp.close()
 	version=version.split("=")[1]
-	return version
+	base=base.split("=")[1]
+	return (version,base)
 ################################################################################
 def updateFile(fileName,newFileName):
 	import EnviromentSettings as es
-	oldVersion=detectCMSSWVersion(fileName)
+	oldVersion,oldBase=detectCMSSWVersion(fileName)
 	oldVersionNumber=oldVersion.split("_",1)[1]
+	newBase=es.environmentString[es.environmentString.find("CMSSW_BASE="):es.environmentString.find(" ",es.environmentString.find("CMSSW_BASE="))].split("=")[1]
 	fp=open(fileName)
 	nfp=open(newFileName,"w")
 	line=fp.readline()
@@ -50,8 +58,8 @@ def updateFile(fileName,newFileName):
 			quote=line[envStart+5:envStart+6]
 			newline+="path=\""+line[envStart+6:line.rfind("/",envStart+6,line.find(quote,envStart+6))+1]+newFileName.rstrip(".xml")
 			newline+=line[line.find(quote,envStart+6):]
-		elif oldVersionNumber in line:
-			newline=line.replace(oldVersionNumber,es.CMSSW_Release_Number)
+		elif oldBase in line:
+			newline=line.replace(oldBase,newBase)
 		else:
 			newline=line
 		nfp.write(newline)
