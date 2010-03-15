@@ -83,9 +83,11 @@ process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQua
 
 # Change Beam Monitor variables
 process.dqmBeamMonitor.BeamFitter.WriteAscii = True
-process.dqmBeamMonitor.BeamFitter.AsciiFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.txt'
-process.dqmBeamMonitor.BeamFitter.SaveFitResults = True
-process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
+process.dqmBeamMonitor.BeamFitter.AsciiFileName = '/nfshome0/dqmpro/BeamMonitorDQM/BeamFitResults.txt'
+process.dqmBeamMonitor.BeamFitter.BackupAscii = True
+process.dqmBeamMonitor.BeamFitter.BackupFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.txt'
+#process.dqmBeamMonitor.BeamFitter.SaveFitResults = False
+#process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
 
 #--------------------------
 # Scheduling
