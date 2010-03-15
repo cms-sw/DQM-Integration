@@ -14,7 +14,8 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/02 - # of Digi Trend',
                  'SiStrip/Layouts/03 - # of Cluster Trend',
                  'SiStrip/Layouts/04 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/05 - Tracks')
+                 'SiStrip/Layouts/05 - Tracks',
+                 'SiStrip/Layouts/06 - OnTrackCluster (StoN)')
                
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
@@ -49,7 +50,8 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'RPC', '^RPC/',
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
-                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower') 
+                'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower',
+                'EcalPreshower/Layouts/04-ESTimingTaskSummary-EcalPreshower') 
                 
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalBarrel', '^EcalBarrel/',
                  'EcalBarrel/Layouts/00 Global Summary EcalBarrel',
@@ -80,13 +82,30 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/08 HcalCalib RecHit Energies')
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
+                 'Castor/Layouts/CASTOR Channel Status',
+                 'Castor/Layouts/CASTOR event products',
                  'Castor/Layouts/CASTOR RecHit Energies',
 		 'Castor/Layouts/CASTOR RecHit Energy in modules',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
-		 'Castor/Layouts/CASTOR RecHit Occupancy',
-                 'Castor/Layouts/CASTOR All Pedestal Values',
-                 'Castor/Layouts/CASTOR Average Pulse Time',
-		 'Castor/Layouts/CASTOR Average Pulse Energy'
+		 'Castor/Layouts/CASTOR RecHitEnergy 2D Map',
+                 'Castor/Layouts/CASTOR All Digi Values',
+                 'Castor/Layouts/CASTOR average pulse in bunch crossings',
+		 'Castor/Layouts/Castor Pulse Shape for sector=0 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=1 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=2 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=3 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=4 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=5 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=6 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=7 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=8 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=9 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=10 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=11 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=12 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=13 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=14 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
@@ -180,13 +199,15 @@ server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^
                  "Collisions/HcalFeedBack/10 - RecHit Average Time",
                  )
 		 
-server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|Fit)/',
+server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor)/',
                  'Collisions/BeamMonitorFeedBack/00 - d0-phi0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/01 - z0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/02 - x position of beam spot',
                  'Collisions/BeamMonitorFeedBack/03 - y position of beam spot',
                  'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
-                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot'
+                 'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot',
+                 'Collisions/BeamMonitorFeedBack/06 - fit results beam spot',
+                 'Collisions/BeamMonitorFeedBack/07 - fit results primary vertex'
                  )
 		 
 server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
@@ -216,3 +237,9 @@ server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(C
                 "Collisions/HLTFeedBack/10 Group_4_paths_count_LS",
                 "Collisions/HLTFeedBack/11 Group_-1_paths_count_LS"
                 )
+
+server.workspace('DQMContent', 56, 'FeedBack for Collisions', 'CSC FeedBack', '^(Collisions|CSC)/',
+                'CSC/Layouts/04 Timing/00 ALCT Timing',
+                'CSC/Layouts/04 Timing/01 CLCT Timing'
+                )
+
