@@ -110,7 +110,10 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         zStep            = cms.double(0.05),
 #                                        fileName         = cms.string("/tmp/dinardo/BeamPixelResults.txt"))
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
-
+if process.dqmSaver.producer.value() is "Playback":
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
+else:
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 ###### Vertexin Configuration ######
 process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
