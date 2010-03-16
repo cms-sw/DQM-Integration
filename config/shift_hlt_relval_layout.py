@@ -158,7 +158,7 @@ trigvalmuon(dqmitems, "Efficiency of L3 After Isolation Step",
 
 ###---- TAU selection goes here: ----
 def trigvaltau(i, p, *rows): i["00 Shift/HLT/Tau/" + p] = DQMItem(layout=rows)
-hltTAUlumi='Default'
+hltTAUlumi='8E29'
 
 trigvaltau(dqmitems,"Double Tau Path Performance",
            [{'path': "HLT/TauRelVal/MC_"+hltTAUlumi+ "/DoubleTau/EfficiencyRefInput",

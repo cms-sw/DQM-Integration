@@ -240,7 +240,7 @@ for menuNum, thisMenu in enumerate(menus):
 ###---- TAU selection goes here: ----
 def trigvaltau(i, p, *rows): i["HLT/TauRelVal/Summary For " + p] = DQMItem(layout=rows)
 
-for lumi in ["Default", "8E29","1E31"]:
+for lumi in ["8E29","1E31"]:
     trigvaltau(dqmitems,"MC_"+lumi+" Menu/Double Tau Path Performance",
                [{'path': "HLT/TauRelVal/MC_"+lumi+ "/DoubleTau/EfficiencyRefInput",
                  'description':"Efficiency of the Double Tau Path with ref to MC for "+lumi},
