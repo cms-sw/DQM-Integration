@@ -82,10 +82,16 @@ process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQua
 #### END OF TRACKING RECONSTRUCTION ####
 
 # Change Beam Monitor variables
-process.dqmBeamMonitor.BeamFitter.WriteAscii = True
-process.dqmBeamMonitor.BeamFitter.AsciiFileName = '/nfshome0/dqmpro/BeamMonitorDQM/BeamFitResults.txt'
-process.dqmBeamMonitor.BeamFitter.BackupAscii = True
-process.dqmBeamMonitor.BeamFitter.BackupFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.txt'
+if process.dqmSaver.producer.value() is "Playback":
+  process.dqmBeamMonitor.BeamFitter.WriteAscii = True
+  process.dqmBeamMonitor.BeamFitter.AsciiFileName = '/nfshome0/dqmdev/BeamMonitorDQM/BeamFitResults.txt'
+  process.dqmBeamMonitor.BeamFitter.BackupAscii = False
+  process.dqmBeamMonitor.BeamFitter.BackupFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.txt'
+else:
+  process.dqmBeamMonitor.BeamFitter.WriteAscii = True
+  process.dqmBeamMonitor.BeamFitter.AsciiFileName = '/nfshome0/dqmpro/BeamMonitorDQM/BeamFitResults.txt'
+  process.dqmBeamMonitor.BeamFitter.BackupAscii = True
+  process.dqmBeamMonitor.BeamFitter.BackupFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.txt'
 #process.dqmBeamMonitor.BeamFitter.SaveFitResults = False
 #process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
 
