@@ -80,6 +80,30 @@ for fed in range(770, 780):
        name = "04-ROSEventSize/FED" + str(fed) + "_ROS" + str(ros)
        histoname = "DT/00-DataIntegrity/FED" + str(fed) + "/ROS" + str(ros) + "/FED" + str(fed) + "_ROS" + str(ros) + "_ROSEventLenght"
        dtlayout(dqmitems, name,[{ 'path': histoname}])
+
+#### TRIGGER SYNCH ##############################################################################
+
+for wheel in range(-2, 3):
+    for sector in range (1, 15):
+        for station in range (1, 5):
+            if station != 4 and (sector == 13 or sector == 14):
+                continue
+            name = "05-TriggerSynch/CorrectBX_Wh" + str(wheel) + "_DDU"
+            histoname = "DT/04-LocalTrigger-DDU/Wheel" + str(wheel) + "/DDU_CorrectBXPhi_W" + str(wheel)
+            dtlayout(dqmitems, name,[{ 'path': histoname}])
+            name = "05-TriggerSynch/CorrectBX_Wh" + str(wheel) + "_DCC"
+            histoname = "DT/03-LocalTrigger-DCC/Wheel" + str(wheel) + "/DCC_CorrectBXPhi_W" + str(wheel)
+            dtlayout(dqmitems, name,[{ 'path': histoname}])
+            name = "05-TriggerSynch/DDU-DCC_BXDifference_Wh" + str(wheel)
+            histoname = "DT/04-LocalTrigger-DDU/Wheel" + str(wheel) + "/COM_BXDiff_W" + str(wheel)
+            dtlayout(dqmitems, name,[{ 'path': histoname}])
+            name = "05-TriggerSynch/Peak-Mean/Peak-Mean_Wh" + str(wheel) + "_DDU"
+            histoname = "DT/04-LocalTrigger-DDU/Wheel" + str(wheel) + "/DDU_ResidualBXPhi_W" + str(wheel)
+            dtlayout(dqmitems, name,[{ 'path': histoname}])
+            name = "05-TriggerSynch/Peak-Mean/Peak-Mean_Wh" + str(wheel) + "_DCC"
+            histoname = "DT/03-LocalTrigger-DCC/Wheel" + str(wheel) + "/DCC_ResidualBXPhi_W" + str(wheel)
+            dtlayout(dqmitems, name,[{ 'path': histoname}])
+
 #    
 #         
 #         
