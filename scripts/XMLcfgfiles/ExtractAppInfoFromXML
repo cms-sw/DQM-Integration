@@ -20,7 +20,7 @@ Notes:
 	OUTPUT is always unique in a per row bases
 """
 ################################################################################
-import sys, os.path
+import sys, os.path,re
 from xml.dom import minidom
 ################################################################################
 # Some module's global variables.
@@ -87,11 +87,14 @@ def getAppNameFromCfg(filename):
 		while consumer :
 			consumer=consumer.strip()
 			if "consumerName" in consumer:
-				name=consumer[consumer.index("'")+1:consumer.index("'",consumer.index("'")+1)] 
+				name=re.search(r"(\"|\').*(\"|\')",consumer).group(0)
+				name=name.strip("\"")
+				name=name.strip("\'")
+				#consumer[consumer.index("'")+1:consumer.index("'",consumer.index("'")+1)] 
 				break
 			consumer = f.readline()
 		f.close()
-	except:
+	except IOError:
 		sys.stderr.write("WARNING: Unable to open file: " + filename + " from <configFile> section of XML\n")
 		name = "CONFIG FILE IS M.I.A"        
 	return name
