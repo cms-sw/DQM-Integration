@@ -44,7 +44,10 @@ process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
 
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
-
+process.dtunpacker.inputLabel = cms.InputTag('source')
+process.dtunpacker.fedbyType = cms.bool(False)
+process.dtunpacker.useStandardFEDid = cms.bool(True)
+process.dtunpacker.dqmOnly = cms.bool(True)
 # ECAL DQM sequences
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
