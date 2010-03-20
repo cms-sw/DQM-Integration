@@ -71,7 +71,8 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/05 HCAL Raw Data',
                  'Hcal/Layouts/06 HCAL Trigger Primitives',
                  'Hcal/Layouts/07 HCAL Lumi Problems',
-                 'Hcal/Layouts/08 HCAL Calibration Type'
+                 'Hcal/Layouts/08 HCAL Calibration Type',
+                 'Hcal/Layouts/09 HCAL Error Thresholds',
                  )
 
 server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
@@ -186,9 +187,9 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
 		 
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  
-                 "Collisions/HcalFeedBack/01 - HF+,HF- distributions (with BPTX)",
-                 "Collisions/HcalFeedBack/02 - HF+,HF- distributions (without BPTX)",
-                 "Collisions/HcalFeedBack/03 - HE+,HE- distributions (with BPTX)",
+                 "Collisions/HcalFeedBack/01 - HF+,HF- distributions for MinBias",
+                 "Collisions/HcalFeedBack/02 - HF+,HF- distributions for Hcal HLT",
+                 "Collisions/HcalFeedBack/03 - HE+,HE- distributions for MinBias",
                  
                  "Collisions/HcalFeedBack/04 - Digi Shapes for Total Digi Signals > N counts",
                  "Collisions/HcalFeedBack/05 - Lumi Bunch Crossing Checks",
