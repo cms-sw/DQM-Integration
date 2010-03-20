@@ -52,3 +52,8 @@ hcallayout(dqmitems, "07 HCAL Lumi Problems",
 hcallayout(dqmitems, "08 HCAL Calibration Type",
            [{'path':"Hcal/HcalInfo/CalibrationType",
              'description':"This shows the distribution of HCAL event types received by DQM.  Calibration events (pedestal, laser, etc.) are used for additional monitoring and diagnostics."}])
+
+hcallayout(dqmitems, "09 HCAL Error Thresholds",
+           [{'path':"Hcal/HcalInfo/SummaryClientPlots/MinErrorRate",
+             'description':"This shows the fraction of events that must be bad in each task to be counted as a problem by reportSummary."}
+            ])
