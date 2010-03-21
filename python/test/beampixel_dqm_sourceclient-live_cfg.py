@@ -98,7 +98,7 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(5),
                                         dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.int32(80),
+                                        minNentries      = cms.int32(35),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
                                         # or, if we are performing the fit, the number of vertices must be greater
                                         # than minNentries otherwise it waits for other nLumiReset
