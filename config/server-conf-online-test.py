@@ -23,7 +23,7 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
 
 # Determine installation directories.
 SRVDIR   = '/home/dqmlocal'
-COLLHOST = 'localhost'
+COLLHOST = 'dqm-c2d07-01'
 
 # Extension modules and environment to install.
 modules = ("GuiDQM",)

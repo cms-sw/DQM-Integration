@@ -22,12 +22,8 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
     break
 
 # Determine installation directories.
-if HOST.find("-c2d07-01") > 0:
-  SRVDIR   = '/home/dqmlocal'
-  COLLHOST = 'localhost'
-elif:
-  SRVDIR   = '/home/dqmlocal'
-  COLLHOST = 'dqm-c2d07-01'
+SRVDIR   = '/home/dqmlocal'
+COLLHOST = 'localhost'
 
 # Extension modules and environment to install.
 modules = ("GuiDQM",)
@@ -39,21 +35,17 @@ envsetup = "export QUIET_ASSERT=a"
 #server.instrument  = 'igprof -t python -pp'
 server.localBase   = HOSTALIAS
 server.serverDir   = '%s/gui' % SRVDIR
-server.baseUrl     = '/dqm/online'
-server.title       = 'CMS data quality'
-server.serviceName = 'Online'
+server.baseUrl     = '/dqm/dev'
+server.title       = 'DQM Infrastructure Development'
+server.serviceName = 'Development'
 
 # Contents.
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', None, "/dqmdata/dqm/uploads",
-              { "Original": "/dqmdata/dqm/repository/original",
-                "iSpy": "/dqmdata/EventDisplay/done" })
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
 server.source('DQMLive', '%s:9090' % COLLHOST)
-server.source('DQMArchive', '%s/ix' % SRVDIR, '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")

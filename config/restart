@@ -26,16 +26,15 @@ NOW=$(date +%Y%m%d%H%M%S)
 CHECK=$(echo "$3" | md5sum | awk '{print $1}')
 HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
 case $HOST in
-  srv-c2d04* ) DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
-  srv-c2d05* ) DQM_DIR=/home/dqm DQM_SW=/home/dqm/rpms ;;
-  vocms* )     DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
+  srv-c2d04* | dqm* ) SCRAM_ARCH=slc5_amd64_gcc434 DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
+  vocms* ) ARCH=slc4_ia32_gcc345 DQM_DIR=/data/dqm DQM_SW=/data/sw ;;
 esac
 case $HOST in
-  srv-c2d05-19 | srv-c2d04-2[12] ) CONFIGS="online" ;;
-  srv-c2d05-18 | srv-c2d04-23 )    CONFIGS="online-playback" ;;
-  srv-c2d05-16 | srv-c2d04-24 )    CONFIGS="online-test" ;;
-  srv-c2d05-17 )                   CONFIGS="gui-test" ;;
-  srv-c2d04-30 )                   CONFIGS="online-milk" ;;
+  dqm-c2d07-0[12] | srv-c2d04-2[12] ) CONFIGS="online" ;;
+  dqm-c2d07-11 | srv-c2d04-23 )    CONFIGS="online-playback" ;;
+  dqm-c2d07-12 | srv-c2d04-24 )    CONFIGS="online-test" ;;
+  dqm-c2d07-21 )                   CONFIGS="gui-test" ;;
+  dqm-c2d07-22 )                   CONFIGS="online-dev" ;;
   vocms34 )                        CONFIGS="offline offline-caf offline-dev" ;;
   * )                              CONFIGS= ;;
 esac
@@ -182,7 +181,7 @@ esac
 # Start file handling agents if requested.
 case $HOST:${EXTRA:-agents} in
   # dqm-prod-local
-  srv-c2d04-21:*agents* )
+  dqm-c2d07-01:*agents* )
     refuseproc "file agents" "visDQMIndex" "refusing to restart"
 
     DQM_DATA=/dqmdata/dqm
@@ -194,6 +193,9 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/repository/original \
        $DQM_DATA/agents/import-local \
        $DQM_DATA/agents/import-offsite \
+       $DQM_DATA/agents/import-test \
+       $DQM_DATA/agents/import-d04-21 \
+       $DQM_DATA/agents/import-d04-22 \
      ) >& $DQM_DIR/agents/$NOW-$HOST-receive.log </dev/null &
     )
     (set -x
@@ -204,7 +206,7 @@ case $HOST:${EXTRA:-agents} in
      ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & ) ;;
 
   # dqm-prod-offsite
-  srv-c2d04-22:*agents* )
+  dqm-c2d07-02:*agents* )
     refuseproc "file agents" "visDQMIndex" "refusing to restart"
 
     DQM_DATA=/dqmdata/dqm
@@ -216,7 +218,42 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DIR/ix \
      ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
     ;;
+  dqm-c2d07-12:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
 
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/import-test \
+       $DQM_DATA/repository/original \
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
+    ;;  
+  srv-c2d04-21:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
+
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/import-d04-21 \
+       $DQM_DATA/repository/original \
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
+    ;;
+  srv-c2d04-22:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
+
+    DQM_DATA=/dqmdata/dqm
+    mkdir -p {$DQM_DATA,$DQM_DIR}/agents
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/import-d04-22 \
+       $DQM_DATA/repository/original \
+       $DQM_DIR/ix \
+     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
+    ;;
   # offline
   vocms34:*agents* ) 
     refuseproc "file agents" "visDQMIndex|zip" "refusing to restart"
@@ -314,9 +351,9 @@ restart_collector() {
   (cd $indir && DQMCollector --listen $port) < /dev/null > $indir/collector.out 2>&1 &
 }
 case $HOST:${EXTRA:-collector} in
-  srv-*:*collector* )
+  dqm-c2d07-(01|11|2[12]):*collector* )
     restart_collector $DQM_DIR 9090 ;;
-  *collector* )
+  vocms*:*collector* )
     restart_collector /data/dqm/dev 8061 ;;
 esac
 
