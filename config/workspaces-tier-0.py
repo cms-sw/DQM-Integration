@@ -86,7 +86,8 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
                  "Collisions/EcalFeedBack/06 Timing Map EB",
                  "Collisions/EcalFeedBack/07 Occupancy EB",
                  "Collisions/EcalFeedBack/08 ES Occupancy",
-                 "Collisions/EcalFeedBack/09 ES Energy Map"
+                 "Collisions/EcalFeedBack/09 ES Energy Map",
+                 "Collisions/EcalFeedBack/10 ES Timing Plot"
                  )
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - HF+,HF- coincidences (with BPTX)",
