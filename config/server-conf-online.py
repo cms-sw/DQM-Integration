@@ -25,7 +25,7 @@ for alias in ["dqm-prod-local", "dqm-prod-offsite", "dqm-integration", "dqm-test
 if HOST.find("-c2d07-01") > 0:
   SRVDIR   = '/home/dqmlocal'
   COLLHOST = 'localhost'
-elif:
+else:
   SRVDIR   = '/home/dqmlocal'
   COLLHOST = 'dqm-c2d07-01'
 
