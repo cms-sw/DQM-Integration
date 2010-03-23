@@ -76,8 +76,10 @@ process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 
 process.hcalDetDiagLaserMonitor.LaserReferenceData       = '/dqmdata/dqm/reference/hcalcalib_laser_reference.root'
 process.hcalDetDiagPedestalMonitor.PedestalReferenceData = '/dqmdata/dqm/reference/hcalcalib_pedestal_reference.root'
-process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
-process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
+
+# As of 23 March 2010, cannot write extra root/html files from online DQM!
+#process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
+#process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
 
 # Set all directories to HcalCalib/
 if not subsystem.endswith("/"):
@@ -92,9 +94,11 @@ process.hcalClient.subSystemFolder=subsystem
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
-process.hcalClient.baseHtmlDir = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiag_HTML/'  # set to '' to prevent html output
-process.hcalClient.htmlUpdateTime=120  # update every two hours
-process.hcalClient.htmlFirstUpdate=20  # start after 20 minutes
+
+# As of 23 March 2010, cannot write extra html output files from online DQM!
+process.hcalClient.baseHtmlDir = '' #'/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiag_HTML/'  # set to '' to prevent html output
+#process.hcalClient.htmlUpdateTime=120  # update every two hours
+#process.hcalClient.htmlFirstUpdate=20  # start after 20 minutes
 
 process.hcalClient.RawData_minerrorrate = cms.untracked.double(2.) # ignore errors from dataformat client
 
