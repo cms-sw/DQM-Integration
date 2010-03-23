@@ -1,4 +1,5 @@
 import FWCore.ParameterSet.Config as cms
+import socket
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
 process = cms.Process("HCALDQM")
@@ -11,7 +12,7 @@ subsystem="HcalCalib"
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibration'))
-process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-09.cms:23100/urn:xdaq-application:lid=30')
+process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 
 
 #----------------------------
