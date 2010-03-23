@@ -39,7 +39,7 @@ process.EventStreamHttpReader.consumerName = 'ISpy Event Display hltOutputDQM st
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer.value() == "DQM":
-  igFileOutput=True
+  igFileOutput=False
   igDebug=False
 else:
   igFileOutput=False

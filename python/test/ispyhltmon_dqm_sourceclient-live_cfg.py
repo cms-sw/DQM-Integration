@@ -42,7 +42,7 @@ process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputH
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer.value() == "DQM":
-  igFileOutput=True
+  igFileOutput=False
   igDebug=False
   process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2c05-09:22100/urn:xdaq-application:lid=30')
 else:
