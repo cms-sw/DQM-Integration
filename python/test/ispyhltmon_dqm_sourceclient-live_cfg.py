@@ -37,18 +37,17 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'ISpy Event Display HLTMON Stream'
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
-
+process.EventStreamHttpReader.sourceURL=cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
 if process.dqmSaver.producer.value() == "DQM":
   igFileOutput=False
   igDebug=False
-  process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2c05-09:22100/urn:xdaq-application:lid=30')
 else:
   igFileOutput=False
   igDebug=True
-  process.EventStreamHttpReader.sourceURL=cms.string('http://srv-c2d04-28:22100/urn:xdaq-application:lid=30')
+  
   
 ####### ISpy Service
 process.add_(cms.Service("ISpyService",

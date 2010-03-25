@@ -37,7 +37,7 @@ from FWCore.MessageLogger.MessageLogger_cfi import *
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'ISpy Event Display wide selection'
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputDQM')
-process.EventStreamHttpReader.sourceURL=cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
+process.EventStreamHttpReader.sourceURL=cms.string('http://dqm-c2d07-30:22100/urn:xdaq-application:lid=30')
 
 ####### DQM Default File Location
 process.load("DQM.Integration.test.environment_cfi")
