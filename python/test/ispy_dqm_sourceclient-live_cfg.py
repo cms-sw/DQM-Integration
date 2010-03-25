@@ -13,7 +13,7 @@ process.options=cms.untracked.PSet(
   )
 
 ####### Components
-Cosmics=True
+Cosmics=False
 if Cosmics:
   process.load('Configuration/StandardSequences/ReconstructionCosmics_cff') 
   BaseName="MWGR" 
