@@ -41,13 +41,14 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 # CSC DQM sequence
 process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
+process.cscDQMEvF.FOLDER_EMU = cms.untracked.string('CSC/FEDIntegrity_SM/')
 
 # DT DQM sequence
-process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
-process.dtunpacker.inputLabel = cms.InputTag('source')
-process.dtunpacker.fedbyType = cms.bool(False)
-process.dtunpacker.useStandardFEDid = cms.bool(True)
-process.dtunpacker.dqmOnly = cms.bool(True)
+#process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
+#process.dtunpacker.inputLabel = cms.InputTag('source')
+#process.dtunpacker.fedbyType = cms.bool(False)
+#process.dtunpacker.useStandardFEDid = cms.bool(True)
+#process.dtunpacker.dqmOnly = cms.bool(True)
 # ECAL DQM sequences
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
@@ -74,15 +75,17 @@ process.siPixelDigis.IncludeErrors = True
 process.load("DQM.SiPixelMonitorRawData.SiPixelMonitorHLT_cfi")
 process.SiPixelHLTSource.saveFile = False
 process.SiPixelHLTSource.slowDown = False
+process.SiPixelHLTSource.DirName = cms.untracked.string('Pixel/FEDIntegrity_SM/')
 
 # SiStrip DQM sequences
 process.load("DQM.SiStripMonitorHardware.siStripFEDCheck_cfi")
+process.siStripFEDCheck.DirName = cms.untracked.string('SiStrip/FEDIntegrity_SM/')
+
 
 # Hcal DQM sequences
-
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("DQM.HcalMonitorTasks.HcalDataIntegrityTask_cfi")
-process.hcalDataIntegrityMonitor.TaskFolder="FEDIntegrity"
+process.hcalDataIntegrityMonitor.TaskFolder="FEDIntegrity_SM"
 
 # RPC
 #process.RPCCabling = cms.ESSource("PoolDBESSource",
@@ -113,6 +116,7 @@ process.load("DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi")
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 process.dqmFEDIntegrity.moduleName = "FEDTest"
+process.dqmFEDIntegrity.fedFolderName = "FEDIntegrity_SM"
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
@@ -121,25 +125,20 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 #                                  SelectedTriggerType = cms.int32(1)
 #                                  ) 
 #-----------------------------
-### Define the path
-process.evfDQMHcalPath = cms.Path(
-                     process.hcalDigis +
-                     process.hcalDataIntegrityMonitor
-)
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
-                              #process.dqmmodules +
                               process.cscDQMEvF +
- 			      process.dtDQMEvF +
- 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
- 			      process.l1tfed +
+ 			      #process.dtDQMEvF +
+ 			      #process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
+			      #process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
+ 			      #process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
-			      #process.hcalDigis + process.hcalMonitor +
-			      process.rpcunpacker + process.rpcFEDIntegrity +
-                              process.dqmFEDIntegrityClient 
+			      process.hcalDigis + process.hcalDataIntegrityMonitor +
+			      #process.rpcunpacker + process.rpcFEDIntegrity +
+			      process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
+			      process.dqmFEDIntegrityClient 
 )
 process.evfDQMmodulesPath = cms.Path(
                               process.dqmmodules 
 )
-process.schedule = cms.Schedule(process.evfDQMHcalPath,process.evfDQMPath,process.evfDQMmodulesPath)
+process.schedule = cms.Schedule(process.evfDQMPath,process.evfDQMmodulesPath)
