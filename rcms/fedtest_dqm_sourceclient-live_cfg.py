@@ -56,8 +56,10 @@ process.load("Geometry.EcalMapping.EcalMapping_cfi")
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 import DQM.EcalBarrelMonitorTasks.EBHltTask_cfi
 process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.clone()
+process.ebDQMEvF.folderName = cms.untracked.string('FEDIntegrity_SM')
 import DQM.EcalEndcapMonitorTasks.EEHltTask_cfi
 process.eeDQMEvF = DQM.EcalEndcapMonitorTasks.EEHltTask_cfi.ecalEndcapHltTask.clone()
+process.eeDQMEvF.folderName = cms.untracked.string('FEDIntegrity_SM')
 
 # L1T DQM sequences 
 process.load("DQM.L1TMonitor.L1TFED_cfi")
@@ -104,6 +106,7 @@ process.hcalDataIntegrityMonitor.TaskFolder="FEDIntegrity_SM"
 #)
 process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
 process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
+#process.rpcFEDIntegrity.RPCPrefixDir = cms.untracked.string('RPC/FEDIntegrity_SM')
 
 # ES raw2digi
 import EventFilter.ESRawToDigi.esRawToDigi_cfi
@@ -116,7 +119,7 @@ process.load("DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi")
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 process.dqmFEDIntegrity.moduleName = "FEDTest"
-process.dqmFEDIntegrity.fedFolderName = "FEDIntegrity_SM"
+process.dqmFEDIntegrity.fedFolderName = cms.untracked.string("FEDIntegrity_SM")
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
@@ -128,9 +131,8 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.cscDQMEvF +
  			      #process.dtDQMEvF +
- 			      #process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      #process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
- 			      #process.l1tfed +
+ 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
+			      #process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
 			      process.hcalDigis + process.hcalDataIntegrityMonitor +
