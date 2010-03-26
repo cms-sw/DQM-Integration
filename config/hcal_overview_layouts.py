@@ -3,6 +3,7 @@ if __name__=="__main__":
     class DQMItem:
         def __init__(self,layout):
             print layout
+            print
 
     dqmitems={}
 
@@ -132,3 +133,17 @@ hcaloverviewlayout(dqmitems,"10 - RecHit Average Time",
                    'description':"occupancy for rechits > threshold in BPTX events"},
                    ],
                    )
+
+hcaloverviewlayout(dqmitems,"1729 - Temporary HF Timing Study Plots",
+                   [{'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFTimingStudy_Average_Time",
+                    'description':"HF Timing study average time plot"},
+                    {'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFTiming_etaProfile",
+                     'description':"HF Timing Average time vs. eta"},
+                    ],
+                   [{'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFP_signal_shape",
+                     'description':"Normalized HFP Signal Shape passing timing study requirements (pass minbias trigger, 20<maxenergy<100, 2<=maxtime<=5)"},
+                    {'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFM_signal_shape",
+                     'description':"Normalized HFM Signal Shape passing timing study requirements (pass minbias trigger, 20<maxenergy<100, 2<=maxtime<=5)"}],
+                   )
+    
+    
