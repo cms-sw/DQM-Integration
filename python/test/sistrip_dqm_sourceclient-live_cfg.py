@@ -17,7 +17,8 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
-#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-06.cms:22100/urn:xdaq-application:lid=30')
+
 
 #----------------------------
 # DQM Environment
@@ -85,13 +86,16 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.Reconstruction_cff")
 #============================================================================
-## TRACKING: ## Skip events with HV off
+## TRACKING:
+## Skip events with HV off
 process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
 process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
-process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=1000
-process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 5000
+process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
+process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 10000
 process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
 ###### FIXES TRIPLETS FOR LARGE BS DISPLACEMENT ######
+### pixelTracks
+process.pixelTracks.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
 ### 0th step of iterative tracking
 #---- replaces ----
 process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
@@ -104,19 +108,20 @@ process.secTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromB
 #---- new parameters ----
 process.secTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.47) # was originHalfLength = 17.5; translated assuming sigmaZ ~ 3.8
 process.secTriplets.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
+
 ## Primary Vertex
 process.offlinePrimaryVerticesWithBS.PVSelParameters.maxDistanceToBeam = 2
 process.offlinePrimaryVerticesWithBS.TkFilterParameters.maxNormalizedChi2 = 20
 process.offlinePrimaryVerticesWithBS.TkFilterParameters.minSiliconHits = 6
 process.offlinePrimaryVerticesWithBS.TkFilterParameters.maxD0Significance = 100
 process.offlinePrimaryVerticesWithBS.TkFilterParameters.minPixelHits = 1
-process.offlinePrimaryVerticesWithBS.TkClusParameters.zSeparation = 10
+process.offlinePrimaryVerticesWithBS.TkClusParameters.zSeparation = 1
 process.offlinePrimaryVertices.PVSelParameters.maxDistanceToBeam = 2
 process.offlinePrimaryVertices.TkFilterParameters.maxNormalizedChi2 = 20
 process.offlinePrimaryVertices.TkFilterParameters.minSiliconHits = 6
 process.offlinePrimaryVertices.TkFilterParameters.maxD0Significance = 100
 process.offlinePrimaryVertices.TkFilterParameters.minPixelHits = 1
-process.offlinePrimaryVertices.TkClusParameters.zSeparation = 10
+process.offlinePrimaryVertices.TkClusParameters.zSeparation = 1
 ##============================================================================
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
@@ -207,7 +212,6 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.DQMCommon*
                      process.SiStripClients*
                      process.SiStripSources_HVOff*
-                     process.physicsBitSelector*
                      process.SiStripSources_LocalReco*
                      process.hltLevel1GTSeed*
                      process.RecoForDQM_TrkReco*
