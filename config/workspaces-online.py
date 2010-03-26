@@ -199,6 +199,7 @@ server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^
                  "Collisions/HcalFeedBack/08 - RecHit Average Occupancy",
                  "Collisions/HcalFeedBack/09 - RecHit Average Energy",
                  "Collisions/HcalFeedBack/10 - RecHit Average Time",
+                 "Collisions/HcalFeedBack/1729 - Temporary HF Timing Study Plots",
                  )
 		 
 server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor)/',
