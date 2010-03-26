@@ -116,7 +116,7 @@ process.load("DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi")
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
 process.dqmFEDIntegrity.moduleName = "FEDTest"
-process.dqmFEDIntegrity.fedFolderName = "FEDIntegrity_SM"
+process.dqmFEDIntegrity.fedFolderName = cms.untracked.string("FEDIntegrity_SM")
 
 # DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
