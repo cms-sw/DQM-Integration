@@ -386,29 +386,29 @@ ebecalshifterlayout(dqmitems, "08 Trend/01 PN Diodes Digis Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs5Minutes", 'description': "Average number of barrel PN diodes digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs1Hour", 'description': "Average number of barrel PN diodes digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/02 Hits Number",
-  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of barrel reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of barrel reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-ebecalshifterlayout(dqmitems, "08 Trend/03 Hit with Threshold Occupancy",
+ebecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy",
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 5Minutes", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 1Hour", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/04 TP Digis Occupancy",
+ebecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy",
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi thr occupancy Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi thr occupancy Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/05 Basic Clusters Number",
+ebecalshifterlayout(dqmitems, "08 Trend/04 Basic Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/06 Basic Cluster Energy",
+ebecalshifterlayout(dqmitems, "08 Trend/05 Basic Cluster Energy",
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/07 Super Clusters Number",
+ebecalshifterlayout(dqmitems, "08 Trend/06 Super Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/07 Super Cluster Energy",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT SC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT SC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
   [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],

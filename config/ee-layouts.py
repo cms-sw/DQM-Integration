@@ -91,7 +91,7 @@ eeshifterlayout(dqmitems, "11 TestPulse Gain12 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the calibration sequence fired, yellow elsewhere. Red spots are failed channels. Sectors are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green sector by sector. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeshifterlayout(dqmitems, "12 DCC EventSize",
-  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC calculated only on physics events. Expected about 2 kB/DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average event size per ecah ECAL endcap DCC calculated only on physics events. Expected about 2 kB/DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
 eeshifterlayout(dqmitems, "13 Selective Readout High Interest TTs",
@@ -556,30 +556,42 @@ eeecalshifterlayout(dqmitems, "07 Calibration/03 TestPulse/05 PNQuality Gain16",
 eeecalshifterlayout(dqmitems, "08 Trend/00 Crystal Digis Number",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs5Minutes", 'description': "Average number of endcap crystal digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs1Hour", 'description': "Average number of endcap crystal digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-   
-eeecalshifterlayout(dqmitems, "08 Trend/02 Hits Number",
-  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of endcap reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of endcap reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/03 Hit with Threshold Occupancy EE -",
+eeecalshifterlayout(dqmitems, "08 Trend/01 PN Diodes Digis Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalPnDiodeDigiVs5Minutes", 'description': "Average number of endcap PN diodes digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalPnDiodeDigiVs1Hour", 'description': "Average number of endcap PN diodes digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+   
+eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE -",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/03 Hit with Threshold Occupancy EE +",
+eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE +",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/04 TP Digis Occupancy EE -",
+eeecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy EE -",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE - Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE - Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/04 TP Digis Occupancy EE +",
+eeecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy EE +",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE + Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE + Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/06 Basic Cluster Energy",
-  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/04 Basic Clusters Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/05 Basic Cluster Energy",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed endcap basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed endcap basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/06 Super Clusters Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/07 Super Cluster Energy",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT SC energy Vs 5Minutes", 'description': "Average energy of reconstructed endcap basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT SC energy Vs 1Hour", 'description': "Average energy of reconstructed endcap basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -589,6 +601,10 @@ eeecalshifterlayout(dqmitems, "08 Trend/09 Pedestal RMS",
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in endcap crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
+eeecalshifterlayout(dqmitems, "08 Trend/10 Integrity Errors Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfIntegrityErrorVs5Minutes", 'description': "Average number of integrity errors (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfIntegrityErrorVs1Hour", 'description': "Average number of integrity errors (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 eeecalshifterlayout(dqmitems, "08 Trend/11 EE - FEDs Size ",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs5Minutes", 'description': "Average EE - FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs1Hour", 'description': "Average EE - FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -596,6 +612,11 @@ eeecalshifterlayout(dqmitems, "08 Trend/11 EE - FEDs Size ",
 eeecalshifterlayout(dqmitems, "08 Trend/11 EE + FEDs Size ",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs5Minutes", 'description': "Average EE + FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs1Hour", 'description': "Average EE + FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/12 Selective Readout Flags Size ",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEESRFlagVs5Minutes", 'description': "Average number of Selective Readout Flags. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEESRFlagVs1Hour", 'description': "Average number of Selective Readout Flags. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 
 
 eelayout(dqmitems, "01 By Supermodule/EE-01/00 Integrity (Channel Global)",
