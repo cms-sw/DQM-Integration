@@ -202,7 +202,7 @@ server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^
                  "Collisions/HcalFeedBack/1729 - Temporary HF Timing Study Plots",
                  )
 		 
-server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor)/',
+server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBack', '^(Collisions|BeamMonitor|BeamPixel)/',
                  'Collisions/BeamMonitorFeedBack/00 - d0-phi0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/01 - z0 of selected tracks',
                  'Collisions/BeamMonitorFeedBack/02 - x position of beam spot',
