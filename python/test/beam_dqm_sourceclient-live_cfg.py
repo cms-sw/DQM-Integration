@@ -6,6 +6,7 @@ process = cms.Process("BeamMonitor")
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_L1_BSC'))
 
 #--------------------------
@@ -105,7 +106,7 @@ process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDi
 process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
-process.p = cms.Path(process.gtDigis*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
+process.p = cms.Path(process.gtDigis*process.scalersRawToDigi*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.gtDigis*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.phystrigger*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.phystrigger*process.tracking_pixelless*process.offlinePrimaryVertices*process.monitor_pixelless*process.dqmSaver)
