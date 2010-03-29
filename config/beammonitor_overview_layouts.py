@@ -24,8 +24,8 @@ bmoverviewlayout(dqmitems, "06 - fit results beam spot",
 bmoverviewlayout(dqmitems, "07 - fit results primary vertex",
                  [{ 'path': "BeamMonitor/PrimaryVertex/pvResults",
                     'description': "Gaussian fit results of primary vertex"}])
-bmoverviewlayout(dqmitems, "08 - Pixel-Vertices: results of beam fit",
-                 [{ 'path': "BeamPixel/fitResults",
+bmoverviewlayout(dqmitems, "08 - Pixel-Vertices: Results of Beam Spot Fit",
+                 [{ 'path': "BeamPixel/fit results",
                     'description': "Beam spot parameters from pixel-vertices"}])
 bmoverviewlayout(dqmitems, "09 - Pixel-Vertices: X0 vs. Lumisection",
                  [{ 'path': "BeamPixel/muX vs lumi",
