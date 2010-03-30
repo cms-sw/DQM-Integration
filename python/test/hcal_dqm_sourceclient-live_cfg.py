@@ -102,7 +102,7 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 
 # Update once per hour, starting after 10 minutes
 process.hcalClient.databaseDir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
-print "PLAYBACK = ",playbackHCAL
+
 if (playbackHCAL==True):
     process.hcalClient.databaseDir = ''
 process.hcalClient.databaseFirstUpdate=10
