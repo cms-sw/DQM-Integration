@@ -87,4 +87,11 @@ pixellayout(dqmitems, "21 - Cluster_y_width_vs_cluster_eta",
      'description': "Cluster y width as function of cluster eta", 
      'draw': { 'withref': "no" }}]
   )
- 
+pixellayout(dqmitems, "30 - PKAM event rates",
+  [{ 'path': "Pixel/bigEventRate",
+     'description': "Rate of events with at least 2600 digis in the entire Pixel detector", 
+     'draw': { 'withref': "no" }},
+   { 'path': "Pixel/bigFpixClusterEventRate",
+     'description': "Rate of events with at least 180 clusters in the FPIX detector", 
+     'draw': { 'withref': "no" }}]
+  ) 
