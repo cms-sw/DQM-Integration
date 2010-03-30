@@ -41,7 +41,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 # CSC DQM sequence
 process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
-process.cscDQMEvF.FOLDER_EMU = cms.untracked.string('CSC/FEDIntegrity_SM/')
+process.cscDQMEvF.EventProcessor.FOLDER_EMU = cms.untracked.string('CSC/FEDIntegrity_SM/')
 
 # DT DQM sequence
 #process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
