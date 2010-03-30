@@ -1,6 +1,17 @@
 import FWCore.ParameterSet.Config as cms
+
+import os, sys, socket
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
+# Get Host information
+host = socket.gethostname().split('.')[0].lower()
+HcalPlaybackHost='dqm-c2d07-13.cms'.lower()
+HcalCalibPlaybackHost='dqm-c2d07-16.cms'.lower()
+
+playbackHCAL=False
+if (host==HcalPlaybackHost):
+    playbackHCAL=True
+    
 process = cms.Process("HCALDQM")
 subsystem="Hcal" # specify subsystem name here
 
@@ -91,6 +102,8 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 
 # Update once per hour, starting after 10 minutes
 process.hcalClient.databaseDir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
+if (playbackHCAL==True):
+    process.hcalClient.databaseDir = ''
 process.hcalClient.databaseFirstUpdate=10
 process.hcalClient.databaseUpdateTime=60
 

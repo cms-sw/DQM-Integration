@@ -1,6 +1,16 @@
 import FWCore.ParameterSet.Config as cms
-import socket
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
+
+import os, sys, socket
+# Get Host information
+host = socket.gethostname().split('.')[0].lower()
+HcalPlaybackHost='dqm-c2d07-13.cms'.lower()
+HcalCalibPlaybackHost='dqm-c2d07-16.cms'.lower()
+
+playbackHCALCALIB=False
+if (host==HcalCalibPlaybackHost):
+    playbackHCALCALIB=True
+    
 
 process = cms.Process("HCALDQM")
 
@@ -80,6 +90,11 @@ process.hcalDetDiagPedestalMonitor.PedestalReferenceData = '/dqmdata/dqm/referen
 # As of 23 March 2010, cannot write extra root/html files from online DQM!
 process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
 process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
+
+# disable output from playback server
+if playbackHCALCALIB==True:
+    process.hcalDetDiagLaserMonitor.OutputFilePath=''
+    process.hcalDetDiagPedestalMonitor.OutputFilePath =''
 
 # Set all directories to HcalCalib/
 if not subsystem.endswith("/"):
