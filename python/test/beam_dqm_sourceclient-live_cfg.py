@@ -39,7 +39,8 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
-
+process.dqmBeamMonitor.resetEveryNLumi = 40
+process.dqmBeamMonitor.resetPVEveryNLumi = 20
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
@@ -79,6 +80,19 @@ process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimary
 #process.offlinePrimaryVertices.TrackLabel = cms.InputTag("ctfPixelLess")
 process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
+ 
+## Skip events with HV off/beam gas scraping events
+process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
+process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
+process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
+process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 10000
+process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
+### 0th step of iterative tracking
+#---- replaces ----
+process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
+#---- new parameters ----
+process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
+process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
 
 #### END OF TRACKING RECONSTRUCTION ####
 
