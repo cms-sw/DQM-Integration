@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 ### @@@@@@ Comment when running locally @@@@@@ ###
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_MinBiasBSC","HLT_L1_BSC")) # Uncomment to add a filter on data
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_MinBiasBSC","HLT_L1_BSC")) # Uncomment to add a filter on data
 
 
 #--------------------------
@@ -96,7 +96,7 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
-                                        nLumiReset       = cms.uint32(5),
+                                        nLumiReset       = cms.uint32(2),
                                         dataFromFit      = cms.bool(True),
                                         minNentries      = cms.int32(35),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
@@ -181,11 +181,11 @@ process.reconstruction_step = cms.Sequence(
 
 ### Define Path ###
 ### Uncomment to add a filter on data ###
-#process.schedule = cms.Path(
-#    process.phystrigger*
-#    process.reconstruction_step*
-#    process.dqmmodules)
+process.schedule = cms.Path(
+    process.phystrigger*
+    process.reconstruction_step*
+    process.dqmmodules)
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.p = cms.Path(process.reconstruction_step * process.dqmmodules)
+#process.p = cms.Path(process.reconstruction_step * process.dqmmodules)
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 #process.p = cms.Path(process.reconstruction_step * process.dqmmodules * process.Output)
