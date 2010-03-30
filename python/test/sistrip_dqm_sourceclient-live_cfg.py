@@ -213,7 +213,7 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.SiStripClients*
                      process.SiStripSources_HVOff*
                      process.SiStripSources_LocalReco*
-#                     process.hltLevel1GTSeed*
+                     process.hltLevel1GTSeed*
                      process.RecoForDQM_TrkReco*
                      process.SiStripSources_TrkReco
 )
