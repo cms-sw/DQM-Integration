@@ -39,8 +39,8 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
-process.dqmBeamMonitor.resetEveryNLumi = 40
-process.dqmBeamMonitor.resetPVEveryNLumi = 20
+#process.dqmBeamMonitor.resetEveryNLumi = 40
+process.dqmBeamMonitor.resetPVEveryNLumi = 10
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
