@@ -41,14 +41,16 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 # CSC DQM sequence
 process.load("DQM.CSCMonitorModule.csc_hlt_dqm_sourceclient_cfi")
-process.cscDQMEvF.FOLDER_EMU = cms.untracked.string('CSC/FEDIntegrity_SM/')
+process.cscDQMEvF.EventProcessor.FOLDER_EMU = cms.untracked.string('CSC/FEDIntegrity_SM/')
 
 # DT DQM sequence
-#process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
-#process.dtunpacker.inputLabel = cms.InputTag('source')
-#process.dtunpacker.fedbyType = cms.bool(False)
-#process.dtunpacker.useStandardFEDid = cms.bool(True)
-#process.dtunpacker.dqmOnly = cms.bool(True)
+process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
+process.DTDataIntegrityTask.hltMode = False
+process.dtunpacker.inputLabel = cms.InputTag('source')
+process.dtunpacker.fedbyType = cms.bool(True)
+process.dtunpacker.useStandardFEDid = cms.bool(True)
+process.dtunpacker.dqmOnly = cms.bool(True)
+
 # ECAL DQM sequences
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
 process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")

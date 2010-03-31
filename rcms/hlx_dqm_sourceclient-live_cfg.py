@@ -11,6 +11,9 @@ process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputH
 
 ## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
+process.hlxdqmsource.PrimaryHLXDAQIP = 'vmepcs2f17-22'
+process.hlxdqmsource.SecondaryHLXDAQIP = 'vmepcs2f17-18'
+process.hlxdqmsource.SourcePort = 51007
 
 ## Set up env and saver
 process.load("DQM.Integration.test.environment_cfi")
