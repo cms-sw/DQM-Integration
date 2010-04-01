@@ -57,6 +57,11 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
+# ZDC Corrections to reco
+process.zdcreco.firstSample  = 4
+process.zdcreco.samplesToAdd = 3
+process.zdcreco.recoMethod   = 2
+
 # Allow all rechits in mark&pass events
 process.hfreco.dropZSmarkedPassed=False
 process.horeco.dropZSmarkedPassed=False

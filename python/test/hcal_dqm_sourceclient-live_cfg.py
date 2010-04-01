@@ -53,8 +53,9 @@ process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
 # ZDC Corrections to reco
-#process.zdcreco.firstSample=4
-#process.zdcreco.samplesToAdd=3
+process.zdcreco.firstSample  = 4
+process.zdcreco.samplesToAdd = 3
+process.zdcreco.recoMethod   = 2
 
 # Turn off default blocking of dead channels from rechit collection
 process.essourceSev =  cms.ESSource("EmptyESSource",
