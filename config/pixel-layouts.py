@@ -1,12 +1,16 @@
 def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
 
-pixellayout(dqmitems, "00 - Pixel_Error_Summary",
+pixellayout(dqmitems, "00a - Pixel_Error_Summary",
   [{ 'path': "Pixel/AdditionalPixelErrors/FedChLErrArray",
      'description': "Error type of last error in a map of FED channels (y-axis) vs. FED (x-axis). Channel 0 is assigned for errors where the channel number is not known.", 
-     'draw': { 'withref': "no" }}],
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "00b - Pixel_Error_Summary",
   [{ 'path': "Pixel/AdditionalPixelErrors/FedChNErrArray",
      'description': "Total number of errors in a map of FED channels (y-axis) vs. FED (x-axis). Channel 0 is assigned for errors where the channel number is not known.",
-     'draw': { 'withref': "no" }}],
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "00c - Pixel_Error_Summary",
   [{ 'path': "Pixel/AdditionalPixelErrors/FedETypeNErrArray",
      'description': "Total number of errors per error type in a map of error type (y-axis) vs. FED (x-axis)",
      'draw': { 'withref': "no" }}]
@@ -71,27 +75,68 @@ pixellayout(dqmitems, "06 - Pixel_Cluster_Endcap_Summary",
      'description': "Mean cluster size in number of pixels per barrel module",
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "20 - Pixel_Error_Summary",
-  [{ 'path': "Pixel/AdditionalPixelErrors/SUMRAW_NErrors_FEDErrors",
-     'description': "Mean number of errors per FED crate (not associated with a specific module ID - should be empty!", 
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Barrel/SUMRAW_NErrors_Barrel",
-     'description': "Mean number of errors per barrel module - should be empty!",
-     'draw': { 'withref': "no" }}],
-  [{ 'path': "Pixel/Endcap/SUMRAW_NErrors_Endcap",
-     'description': "Mean number of errors per endcap module - should be empty!",
+pixellayout(dqmitems, "20a - Cluster occupancy Barrel Layer 1",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_Layer_1",
+     'description': "Cluster occupancy of Barrel Layer 1",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20b - Cluster occupancy Barrel Layer 2",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_Layer_2",
+     'description': "Cluster occupancy of Barrel Layer 2",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20c - Cluster occupancy Barrel Layer 3",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_Layer_3",
+     'description': "Cluster occupancy of Barrel Layer 3",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20d - Cluster occupancy Endcap -z Disk 1",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_mz_Disk_1",
+     'description': "Cluster occupancy of Endcap -z Disk 1",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20e - Cluster occupancy Endcap -z Disk 2",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_mz_Disk_2",
+     'description': "Cluster occupancy of Endcap -z Disk 2",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20f - Cluster occupancy Endcap +z Disk 1",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_pz_Disk_1",
+     'description': "Cluster occupancy of Endcap +z Disk 1",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "20g - Cluster occupancy Endcap +z Disk 2",
+  [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_pz_Disk_2",
+     'description': "Cluster occupancy of Endcap +z Disk 2",
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "30a - PKAM event rates",
+  [{ 'path': "Pixel/bigEventRate",
+     'description': "Rate of events with at least 2600 digis in the entire Pixel detector", 
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "21 - Cluster_y_width_vs_cluster_eta",
+pixellayout(dqmitems, "30b - PKAM event rates",
+  [{ 'path': "Pixel/bigFpixClusterEventRate",
+     'description': "Rate of events with at least 180 clusters in the FPIX detector", 
+     'draw': { 'withref': "no" }}]
+  ) 
+pixellayout(dqmitems, "31 - Cluster_y_width_vs_cluster_eta",
   [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelClusters_Barrel",
      'description': "Cluster y width as function of cluster eta", 
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "30 - PKAM event rates",
-  [{ 'path': "Pixel/bigEventRate",
-     'description': "Rate of events with at least 2600 digis in the entire Pixel detector", 
-     'draw': { 'withref': "no" }},
-   { 'path': "Pixel/bigFpixClusterEventRate",
-     'description': "Rate of events with at least 180 clusters in the FPIX detector", 
+pixellayout(dqmitems, "40a - Pixel_Error_Summary",
+  [{ 'path': "Pixel/AdditionalPixelErrors/SUMRAW_NErrors_FEDErrors",
+     'description': "Mean number of errors per FED crate (not associated with a specific module ID - should be empty!", 
      'draw': { 'withref': "no" }}]
-  ) 
+  )
+pixellayout(dqmitems, "40b - Pixel_Error_Summary",
+  [{ 'path': "Pixel/Barrel/SUMRAW_NErrors_Barrel",
+     'description': "Mean number of errors per barrel module - should be empty!",
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "40c - Pixel_Error_Summary",
+  [{ 'path': "Pixel/Endcap/SUMRAW_NErrors_Endcap",
+     'description': "Mean number of errors per endcap module - should be empty!",
+     'draw': { 'withref': "no" }}]
+  )
