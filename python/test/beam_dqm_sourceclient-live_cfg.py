@@ -121,7 +121,8 @@ process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDi
 process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
-process.p = cms.Path(process.scalersRawToDigi*process.phystrigger*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+process.p = cms.Path(process.scalersRawToDigi*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+#process.p = cms.Path(process.scalersRawToDigi*process.phystrigger*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
 #process.p = cms.Path(process.gtDigis*process.scalersRawToDigi*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.gtDigis*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.phystrigger*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
