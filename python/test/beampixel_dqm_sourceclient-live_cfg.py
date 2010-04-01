@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_MinBiasBSC","HLT_L1_BSC")) # Uncomment to add a filter on data
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*')) # Uncomment to add a filter on data
 
 
 #--------------------------
@@ -20,6 +20,9 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = c
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
+process.physicsBitSelector = cms.EDFilter("PhysDecl",
+                                          applyfilter = cms.untracked.bool(True),
+                                          debugOn     = cms.untracked.bool(False))
 # L1 Filter
 process.load("L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff")
 process.load("HLTrigger.HLTfilters.hltLevel1GTSeed_cfi")
