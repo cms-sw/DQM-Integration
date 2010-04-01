@@ -122,6 +122,9 @@ process.offlinePrimaryVertices.TkFilterParameters.minSiliconHits = 6
 process.offlinePrimaryVertices.TkFilterParameters.maxD0Significance = 100
 process.offlinePrimaryVertices.TkFilterParameters.minPixelHits = 1
 process.offlinePrimaryVertices.TkClusParameters.zSeparation = 1
+
+## Pixel Vertex
+process.pixelVertices.useBeamConstraint = False
 ##============================================================================
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
