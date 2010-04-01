@@ -86,7 +86,9 @@ process.load("DQM.HcalMonitorTasks.HcalMonitorTasks_cfi")
 # Set individual parameters for the tasks
 process.load("DQM.HcalMonitorTasks.HcalTasksOnline_cff")
 process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
-
+if playbackHCAL==True:
+    process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi_playback/"
+    
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 process.load("DQM.HcalMonitorClient.ZDCMonitorClient_cfi")
 
