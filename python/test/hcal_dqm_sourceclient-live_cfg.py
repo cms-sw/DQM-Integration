@@ -52,6 +52,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
+# ZDC Corrections to reco
+process.zdcreco.firstSample=4
+process.zdcreco.samplesToAdd=3
+
 # Turn off default blocking of dead channels from rechit collection
 process.essourceSev =  cms.ESSource("EmptyESSource",
                                     recordName = cms.string("HcalSeverityLevelComputerRcd"),
@@ -124,7 +128,7 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      #"DetDiagPedestalMonitor",
                                      #"DetDiagLaserMonitor",
                                      #"DetDiagLEDMonitor",
-                                     "DetDiagNoiseMonitor",
+                                     #"DetDiagNoiseMonitor",
                                      "DetDiagTimingMonitor",
                                      "Summary"
                                      ]
