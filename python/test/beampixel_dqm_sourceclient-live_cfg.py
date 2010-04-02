@@ -189,12 +189,4 @@ process.reconstruction_step = cms.Sequence(
 #    process.pixelVertexDQM)
 
 ### Define Path ###
-### Uncomment to add a filter on data ###
-process.schedule = cms.Path(
-    process.phystrigger*
-    process.reconstruction_step*
-    process.dqmmodules)
-### @@@@@@ Comment when running locally @@@@@@ ###
-#process.p = cms.Path(process.reconstruction_step * process.dqmmodules)
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.p = cms.Path(process.reconstruction_step * process.dqmmodules * process.Output)
+process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
