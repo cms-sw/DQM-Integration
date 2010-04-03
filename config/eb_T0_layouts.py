@@ -3,6 +3,7 @@ def ebshifterlayout(i, p, *rows): i["EcalBarrel/Layouts/00 Shift/" + p] = DQMIte
 def ebecalshifterlayout(i, p, *rows): i["EcalBarrel/Layouts/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eblayout(i, p, *rows): i["EcalBarrel/Layouts/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
 
+
 # Quick Collections
 ecalbarrellayout(dqmitems, "00 Global Summary EcalBarrel",
   [{ 'path': "EcalBarrel/EBSummaryClient/EB global summary", 'description': "EcalBarrel: overall status of crystals.  Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
@@ -12,6 +13,7 @@ ecalbarrellayout(dqmitems, "01 Occupancy Summary EcalBarrel",
 
 ecalbarrellayout(dqmitems, "02 Cluster Summary EcalBarrel",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "EcalBarrel: average energy of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
 
 # ALL shifters
 ebshifterlayout(dqmitems, "00 Event Type",
@@ -140,10 +142,8 @@ ebecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-# to be put back in when we will remove cosmics summary
 ebecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#   [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit spectrum", 'description': "Average energy (in GeV) of good hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "04 Energy/01 Clusters Energy",
@@ -386,47 +386,47 @@ ebecalshifterlayout(dqmitems, "08 Trend/01 PN Diodes Digis Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs5Minutes", 'description': "Average number of barrel PN diodes digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalPnDiodeDigiVs1Hour", 'description': "Average number of barrel PN diodes digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/02 Hits Number",
-  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of barrel reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of barrel reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 5Minutes", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 1Hour", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#ebecalshifterlayout(dqmitems, "08 Trend/03 Hit with Threshold Occupancy",
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 5Minutes", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT rec hit thr occupancy Vs 1Hour", 'description': "Average occupancy for barrel reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi thr occupancy Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi thr occupancy Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#ebecalshifterlayout(dqmitems, "08 Trend/04 TP Digis Occupancy",
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi occupancy Vs 5Minutes", 'description': "Average occupancy of TP digis without any cut in amplitude. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBOT TP digi occupancy Vs 1Hour", 'description': "Average occupancy of TP digis without any cut in amplitude. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-ebecalshifterlayout(dqmitems, "08 Trend/03 Basic Clusters Number",
+ebecalshifterlayout(dqmitems, "08 Trend/04 Basic Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#ebecalshifterlayout(dqmitems, "08 Trend/06 Basic Cluster Energy",
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "08 Trend/05 Basic Cluster Energy",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/04 Super Clusters Number",
+ebecalshifterlayout(dqmitems, "08 Trend/06 Super Clusters Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#ebecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 1Hour", 'description': "Average pedestal mean in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "08 Trend/07 Super Cluster Energy",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT SC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBCLT SC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#ebecalshifterlayout(dqmitems, "08 Trend/09 Pedestal RMS",
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 mean Vs 1Hour", 'description': "Average pedestal mean in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/05 Integrity Errors Number",
+ebecalshifterlayout(dqmitems, "08 Trend/09 Pedestal RMS",
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in barrel crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTrendClient/Average of EBPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in barrel crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "08 Trend/10 Integrity Errors Number",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfIntegrityErrorVs5Minutes", 'description': "Average number of integrity errors (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfIntegrityErrorVs1Hour", 'description': "Average number of integrity errors (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/06 Barrel FEDs Size ",
+ebecalshifterlayout(dqmitems, "08 Trend/11 Barrel FEDs Size ",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs5Minutes", 'description': "Average barrel FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfFEDEBRawDataVs1Hour", 'description': "Average barrel FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "08 Trend/07 Selective Readout Flags Size ",
+ebecalshifterlayout(dqmitems, "08 Trend/12 Selective Readout Flags Size ",
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs5Minutes", 'description': "Average number of Selective Readout Flags. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTrendTask/AverageNumberOfEBSRFlagVs1Hour", 'description': "Average number of Selective Readout Flags. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -457,10 +457,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-01/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-01", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-01/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-01", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-01", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-01/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-01/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-01", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -612,13 +611,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-02/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-02", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -646,10 +643,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-02/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-02", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-02/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-02", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-02", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-02", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-02/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-02/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-02", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -801,13 +797,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-03/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-03", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -835,10 +829,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-03/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-03", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-03/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-03", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-03", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-03", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-03/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-03/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-03", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -990,13 +983,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-04/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-04", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1024,10 +1015,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-04/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-04", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-04/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-04", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-04", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-04", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-04/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-04/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-04", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1179,13 +1169,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-05/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-05", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1213,10 +1201,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-05/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-05", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-05/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-05", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-05", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-05", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-05/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-05/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-05", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1368,13 +1355,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-06/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-06", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1402,10 +1387,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-06/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-06", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-06/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-06", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-06", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-06", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-06/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-06/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-06", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1557,13 +1541,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-07/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-07", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1591,10 +1573,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-07/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-07", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-07/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-07", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-07", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-07", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-07/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-07/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-07", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1746,13 +1727,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-08/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-08", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1780,10 +1759,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-08/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-08", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-08/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-08", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-08", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-08", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-08/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-08/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-08", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1935,13 +1913,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-09/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-09", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1969,10 +1945,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-09/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-09", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-09/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-09", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-09", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-09", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-09/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-09/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-09", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2124,13 +2099,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-10/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-10", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2158,10 +2131,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-10/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-10", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-10", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-10/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-10", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-10", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-10", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-10/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-10/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-10", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2313,13 +2285,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-10", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-10", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-10", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-11/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-11", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2347,10 +2317,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-11/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-11", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-11", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-11/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-11", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-11", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-11", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-11/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-11/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-11", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2502,13 +2471,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-11", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-11", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-11", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-12/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-12", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2536,10 +2503,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-12/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-12", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-12", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-12/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-12", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-12", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-12", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-12/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-12/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-12", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2691,13 +2657,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-12", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-12", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-12", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-13/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-13", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2725,10 +2689,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-13/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-13", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-13", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-13/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-13", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-13", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-13", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-13/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-13/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-13", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2880,13 +2843,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-13", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-13", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-13", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-14/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-14", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2914,10 +2875,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-14/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-14", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-14", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-14/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-14", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-14", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-14", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-14/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-14/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-14", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3069,13 +3029,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-14", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-14", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-14", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-15/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-15", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3103,10 +3061,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-15/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-15", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-15", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-15/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-15", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-15", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-15", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-15/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-15/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-15", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3258,13 +3215,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-15", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-15", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-15", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-16/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-16", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3292,10 +3247,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-16/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-16", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-16", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-16/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-16", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-16", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-16", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-16/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-16/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-16", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3447,13 +3401,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-16", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-16", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-16", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-17/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-17", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3481,10 +3433,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-17/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-17", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-17", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-17/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-17", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-17", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-17", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-17/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-17/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-17", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3636,13 +3587,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-17", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-17", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-17", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-18/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB-18", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3670,10 +3619,9 @@ eblayout(dqmitems, "01 By Supermodule/EB-18/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB-18", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB-18", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-18/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-18", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-18", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-18", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-18/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB-18/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB-18", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3825,13 +3773,11 @@ eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-18", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-18", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-18", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+01/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+01", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3859,10 +3805,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+01/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+01", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+01/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+01", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+01", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+01", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+01/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+01/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+01", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4014,13 +3959,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+02/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+02", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4048,10 +3991,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+02/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+02", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+02/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+02", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+02", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+02", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+02/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+02/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+02", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4203,13 +4145,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+03/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+03", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4237,10 +4177,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+03/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+03", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+03/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+03", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+03", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+03", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+03/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+03/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+03", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4392,13 +4331,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+04/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+04", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4426,10 +4363,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+04/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+04", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+04/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+04", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+04", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+04", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+04/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+04/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+04", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4581,13 +4517,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+05/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+05", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4615,10 +4549,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+05/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+05", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+05/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+05", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+05", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+05", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+05/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+05/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+05", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4770,13 +4703,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+06/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+06", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4804,10 +4735,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+06/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+06", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+06/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+06", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+06", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+06", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+06/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+06/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+06", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4959,13 +4889,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+07/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+07", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4993,10 +4921,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+07/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+07", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+07/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+07", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+07", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+07", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+07/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+07/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+07", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5148,13 +5075,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+08/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+08", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5182,10 +5107,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+08/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+08", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+08/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+08", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+08", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+08", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+08/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+08/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+08", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5337,13 +5261,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+09/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+09", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5371,10 +5293,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+09/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+09", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+09/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+09", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+09", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+09", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+09/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+09/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+09", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5526,13 +5447,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+10/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+10", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5560,10 +5479,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+10/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+10", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+10", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+10/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+10", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+10", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+10", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+10/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+10/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+10", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5715,13 +5633,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+10", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+10", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+10", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+11/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+11", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5749,10 +5665,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+11/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+11", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+11", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+11/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+11", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+11", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+11", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+11/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+11/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+11", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5904,13 +5819,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+11", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+11", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+11", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+12/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+12", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5938,10 +5851,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+12/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+12", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+12", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+12/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+12", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+12", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+12", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+12/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+12/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+12", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6093,13 +6005,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+12", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+12", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+12", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+13/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+13", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6127,10 +6037,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+13/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+13", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+13", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+13/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+13", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+13", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+13", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+13/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+13/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+13", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6282,13 +6191,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+13", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+13", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+13", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+14/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+14", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6316,10 +6223,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+14/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+14", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+14", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+14/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+14", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+14", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+14", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+14/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+14/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+14", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6471,13 +6377,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+14", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+14", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+14", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+15/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+15", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6505,10 +6409,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+15/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+15", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+15", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+15/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+15", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+15", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+15", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+15/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+15/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+15", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6660,13 +6563,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+15", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+15", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+15", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+16/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+16", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6694,10 +6595,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+16/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+16", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+16", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+16/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+16", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+16", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+16", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+16/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+16/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+16", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6849,13 +6749,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+16", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+16", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+16", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+17/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+17", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -6883,10 +6781,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+17/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+17", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+17", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+17/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+17", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+17", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+17", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+17/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+17/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+17", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7038,13 +6935,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+17", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+17", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+17", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+18/00 Integrity (Channel Global)",
   [{ 'path': "EcalBarrel/EBIntegrityClient/EBIT data integrity quality EB+18", 'description': "uality summary checking that data for each crystal follows all the formatting rules and all the constraints which are dictated by the design of the electronics. Expected all green color. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7072,10 +6967,9 @@ eblayout(dqmitems, "01 By Supermodule/EB+18/05 Trigger",
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Trigger Primitives Timing EB+18", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerClient/EBTTT Non Single Timing EB+18", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+18/06 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+18", 'description': "Average energy of the rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+18", 'description': "Calibrated energy spectrum of the reconstructed rechits selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+18", 'description': "Calibrated energy spectrum of the reconstructed 3x3 matrices rechits around a seed selected with a simple cosmic analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+18/06 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "01 By Supermodule/EB+18/07 StatusFlags",
   [{ 'path': "EcalBarrel/EBStatusFlagsTask/FEStatus/EBSFT front-end status EB+18", 'description': "Occupancy of DCC front-end status errors. Status ACTIVE (i.e. full-readout) or SUPPRESSED (i.e. zero-suppression applied) are not considered as errors and do not create entries in this plot. Expected all empty.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -7227,13 +7121,11 @@ eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/05 Trigger/00 FineGrainVeto 
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+18", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+18", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+18", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/06 Energy/Rechits Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/07 Cosmic/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/06 Energy/Rechits Energy Spectrum",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/00 Summary/00 Global Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EB global summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7244,8 +7136,8 @@ eblayout(dqmitems, "00 By Task/00 Summary/01 Integrity Summary",
 eblayout(dqmitems, "00 By Task/00 Summary/02 Occupancy Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT digi occupancy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/00 Summary/03 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/00 Summary/03 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eblayout(dqmitems, "00 By Task/00 Summary/04 PedestalOnline Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBPOT pedestal quality summary G12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7556,16 +7448,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-01/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-01/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-01/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-01/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-01/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7865,16 +7755,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-02/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-02/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-02/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-02/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-02/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -8174,16 +8062,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-03/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-03/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-03/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-03/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-03/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -8483,16 +8369,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-04/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-04/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-04/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-04/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-04/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -8792,16 +8676,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-05/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-05/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-05/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-05/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-05/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -9101,16 +8983,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-06/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-06/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-06/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-06/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-06/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -9410,16 +9290,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-07/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-07/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-07/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-07/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-07/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -9719,16 +9597,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-08/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-08/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-08/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-08/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-08/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10028,16 +9904,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-09/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-09/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-09/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-09/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-09/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10337,16 +10211,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-10/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-10", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-10/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-10", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-10", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-10/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-10/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-10/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10646,16 +10518,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-11/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-11", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-11/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-11", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-11", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-11/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-11/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-11/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10955,16 +10825,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-12/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-12", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-12/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-12", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-12", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-12/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-12/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-12/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -11264,16 +11132,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-13/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-13", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-13/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-13", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-13", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-13/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-13/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-13/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -11573,16 +11439,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-14/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-14", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-14/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-14", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-14", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-14/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-14/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-14/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -11882,16 +11746,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-15/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-15", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-15/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-15", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-15", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-15/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-15/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-15/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -12191,16 +12053,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-16/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-16", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-16/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-16", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-16", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-16/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-16/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-16/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -12500,16 +12360,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-17/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-17", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-17/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-17", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-17", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-17/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-17/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-17/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -12809,16 +12667,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB-18/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB-18", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-18/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB-18", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-18", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-18/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB-18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB-18/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB-18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB-18/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB-18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -13118,16 +12974,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+01/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+01/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+01/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+01/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+01/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -13427,16 +13281,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+02/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+02/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+02/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+02/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+02/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -13736,16 +13588,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+03/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+03/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+03/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+03/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+03/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -14045,16 +13895,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+04/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+04/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+04/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+04/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+04/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -14354,16 +14202,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+05/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+05/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+05/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+05/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+05/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -14663,16 +14509,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+06/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+06/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+06/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+06/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+06/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -14972,16 +14816,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+07/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+07/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+07/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+07/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+07/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -15281,16 +15123,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+08/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+08/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+08/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+08/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+08/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -15590,16 +15430,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+09/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+09/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+09/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+09/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+09/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -15899,16 +15737,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+10/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+10", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+10/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+10", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+10", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+10/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+10", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+10/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+10", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+10/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+10", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -16208,16 +16044,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+11/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+11", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+11/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+11", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+11", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+11/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+11", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+11/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+11", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+11/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+11", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -16517,16 +16351,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+12/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+12", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+12/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+12", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+12", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+12/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+12", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+12/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+12/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+12", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -16826,16 +16658,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+13/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+13", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+13/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+13", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+13", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+13/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+13", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+13/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+13", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+13/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+13", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -17135,16 +16965,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+14/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+14", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+14/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+14", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+14", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+14/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+14", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+14/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+14", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+14/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+14", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -17444,16 +17272,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+15/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+15", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+15/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+15", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+15", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+15/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+15", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+15/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+15", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+15/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+15", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -17753,16 +17579,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+16/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+16", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+16/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+16", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+16", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+16/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+16", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+16/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+16", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+16/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+16", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -18062,16 +17886,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+17/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+17", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+17/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+17", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+17", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+17/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+17", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+17/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+17", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+17/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+17", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -18371,16 +18193,14 @@ eblayout(dqmitems, "00 By Task/08 Trigger/EB+18/02 FineGrainVeto Errors",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT EmulFineGrainVetoError EB+18", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBCT cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good reconstructed hits (good rechit flag and channel status required). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+18/00 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Sel/EBCT energy sel EB+18", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+18", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+18/00 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit energy EB+18", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/09 Cosmic/EB+18/01 Cosmic",
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 1x1 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBCosmicTask/Spectrum/EBCT 3x3 energy spectrum EB+18", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/09 Energy/EB+18/01 Energy",
+  [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT energy spectrum EB+18", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eblayout(dqmitems, "00 By Task/10 StatusFlags/00 StatusFlags Summary",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBSFT front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])

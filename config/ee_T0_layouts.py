@@ -3,6 +3,7 @@ def eeshifterlayout(i, p, *rows): i["EcalEndcap/Layouts/00 Shift/" + p] = DQMIte
 def eeecalshifterlayout(i, p, *rows): i["EcalEndcap/Layouts/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eelayout(i, p, *rows): i["EcalEndcap/Layouts/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
 
+
 # Quick Collections
 ecalendcaplayout(dqmitems, "00 Global Summary EcalEndcap",
   [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "EcalEndcap (z<0): overall status of crystals.  Legend: green = good;  red = bad;  yellow = no entries.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
@@ -15,6 +16,7 @@ ecalendcaplayout(dqmitems, "01 Occupancy Summary EcalEndcap",
 ecalendcaplayout(dqmitems, "02 Cluster Summary EcalEndcap",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0): average energy of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "EcalEndcap (z>0): average energy of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
 
 # ALL shifters
 eeshifterlayout(dqmitems, "00 Event Type",
@@ -91,7 +93,7 @@ eeshifterlayout(dqmitems, "11 TestPulse Gain12 Quality",
   [{ 'path': "EcalEndcap/EESummaryClient/EETPT EE + test pulse quality G12 summary", 'description': "Quality summary of test pulse events for Gain 12. Expect green where the calibration sequence fired, yellow elsewhere. Red spots are failed channels. Sectors are filled as the calibration sequence reach them: expected all yellow at beginning of run, then becoming green sector by sector. Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>" }])
 
 eeshifterlayout(dqmitems, "12 DCC EventSize",
-  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC calculated only on physics events. Expected about 2 kB/DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EESelectiveReadoutTask/EESRT DCC event size", 'description': "Average event size per ecah ECAL endcap DCC calculated only on physics events. Expected about 2 kB/DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcal>DQMShiftEcal</a>", 'draw': { 'withref': "yes" } }],
   [None])
 
 eeshifterlayout(dqmitems, "13 Selective Readout High Interest TTs",
@@ -209,16 +211,13 @@ eeecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). Digis are expected only in EE+/-2,3,7,8 which have MEM box attached (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-# to be put in when we will remove cosmics plots
 eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-#   [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#   [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy Spectrum",
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE -", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE +", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE -", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE +", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/01 Clusters Energy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "Calibrated energy (GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -314,7 +313,7 @@ eeecalshifterlayout(dqmitems, "05 Timing/04 Single Event Timing",
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing 1D summary EE -", 'description': "Single event timing of the good calibrated rechits. Expected around 0 ns. Calibrated rechits are used with E_T > 600 MeV, good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
    { 'path': "EcalEndcap/EETimingTask/EETMT timing 1D summary EE +", 'description': "Single event timing of the good calibrated rechits. Expected around 0 ns. Calibrated rechits are used with E_T > 600 MeV, good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalEndcap/EETimingTask/EETMT timing EE+ - EE-", 'description': "Event by event difference between the average timing in EE+ and EE- of the good rechits. Expected 0. Required in each endcap one crystal with E_T > 300 MeV and one crystal with E_T > 600 MeV, good DB status and rechit flag = kGood OR KOutOfTime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EETimingTask/EETMT timing min vs Et min", 'description': "x-axis: Minimum of sum(E_T) of good rechits with E_T>300 MeV between EE- and EE+. Expect small E_T in one of the two endcaps in case of no collisions. y-axis: Minimum of the weighted (with weight = E_T of rechit) time average of good rechits with E_T>300 MeV. Expect one endcap earlier respect the other one in case of no collisions. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+   { 'path': "EcalEndcap/EETimingTask/EETMT timing EE+ vs EE-", 'description': "Average timing in EE- vs average timing in EE+. Only rechits with ET>600 MeV and kGood or kOutOfTime considered here. Expect one spot centered in (0,0) for collisions, two spots in (0,-20), (-20,0) for beam-halos. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "06 Trigger + Selective Readout/00 TP Spectra EE -",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT Et spectrum Real Digis EE -", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
@@ -556,42 +555,67 @@ eeecalshifterlayout(dqmitems, "07 Calibration/03 TestPulse/05 PNQuality Gain16",
 eeecalshifterlayout(dqmitems, "08 Trend/00 Crystal Digis Number",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs5Minutes", 'description': "Average number of endcap crystal digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEEDigiVs1Hour", 'description': "Average number of endcap crystal digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/01 PN Diodes Digis Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalPnDiodeDigiVs5Minutes", 'description': "Average number of endcap PN diodes digis (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalPnDiodeDigiVs1Hour", 'description': "Average number of endcap PN diodes digis (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
    
-eeecalshifterlayout(dqmitems, "08 Trend/01 Hits Number",
-  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs5Minutes", 'description': "Average number of endcap reconstructed hits (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEcalRecHitVs1Hour", 'description': "Average number of endcap reconstructed hits (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE -",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE -",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE - Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE +",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/02 Hit with Threshold Occupancy EE +",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 5Minutes", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT rec hit thr occupancy EE + Vs 1Hour", 'description': "Average occupancy for endcap reconstructed hits with energy > 1 GeV and good quality, i.e. noisy channels removed. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy EE -",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE - Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE - Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi occupancy Vs 5Minutes", 'description': "Average occupancy of TP digis without any cut in amplitude. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi occupancy Vs 1Hour", 'description': "Average occupancy of TP digis without any cut in amplitude. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/03 TP Digis Occupancy EE +",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE + Vs 5Minutes", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEOT TP digi thr occupancy EE + Vs 1Hour", 'description': "Average occupancy of TP digis with ET >~ 1 GeV. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/04 Basic Cluster Energy",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed barrel basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed barrel basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/04 Basic Clusters Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfBasicClusterSizeVs5Minutes", 'description': "Average number of basic clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfBasicClusterSizeVs1Hour", 'description': "Average number of basic clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/05 Pedestal Mean",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 mean Vs 1Hour", 'description': "Average pedestal mean in endcap crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/05 Basic Cluster Energy",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 5Minutes", 'description': "Average energy of reconstructed endcap basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT BC energy Vs 1Hour", 'description': "Average energy of reconstructed endcap basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-#eeecalshifterlayout(dqmitems, "08 Trend/06 Pedestal RMS",
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-#  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in endcap crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eeecalshifterlayout(dqmitems, "08 Trend/06 Super Clusters Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfSuperClusterSizeVs5Minutes", 'description': "Average number of super clusters (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfSuperClusterSizeVs1Hour", 'description': "Average number of super clusters (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/02 EE - FEDs Size ",
+eeecalshifterlayout(dqmitems, "08 Trend/07 Super Cluster Energy",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT SC energy Vs 5Minutes", 'description': "Average energy of reconstructed endcap basic clusters. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EECLT SC energy Vs 1Hour", 'description': "Average energy of reconstructed endcap basic clusters. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/08 Pedestal Mean",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 mean Vs 5Minutes", 'description': "Average pedestal mean in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 mean Vs 1Hour", 'description': "Average pedestal mean in endcap crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/09 Pedestal RMS",
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 5Minutes", 'description': "Average pedestal rms in endcap crystals (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendClient/Average of EEPOT pedestal G12 rms Vs 1Hour", 'description': "Average pedestal rms in endcap crystals (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/10 Integrity Errors Number",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfIntegrityErrorVs5Minutes", 'description': "Average number of integrity errors (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfIntegrityErrorVs1Hour", 'description': "Average number of integrity errors (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/11 EE - FEDs Size ",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs5Minutes", 'description': "Average EE - FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEminusRawDataVs1Hour", 'description': "Average EE - FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eeecalshifterlayout(dqmitems, "08 Trend/02 EE + FEDs Size ",
+eeecalshifterlayout(dqmitems, "08 Trend/11 EE + FEDs Size ",
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs5Minutes", 'description': "Average EE + FED size, in kBytes. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfFEDEEplusRawDataVs1Hour", 'description': "Average EE + FED size, in kBytes. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eeecalshifterlayout(dqmitems, "08 Trend/12 Selective Readout Flags Size ",
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEESRFlagVs5Minutes", 'description': "Average number of Selective Readout Flags. (5 minutes range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETrendTask/AverageNumberOfEESRFlagVs1Hour", 'description': "Average number of Selective Readout Flags. (1 hour range). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
 
 
 eelayout(dqmitems, "01 By Supermodule/EE-01/00 Integrity (Channel Global)",
@@ -620,10 +644,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-01/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-01", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-01/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-01/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-01/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -813,13 +836,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-01/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-02/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -847,10 +868,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-02/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-02", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-02/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-02/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-02/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1040,13 +1060,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-02/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-03/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1074,10 +1092,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-03/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-03", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-03/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-03/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-03/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1267,13 +1284,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-03/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-04/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1301,10 +1316,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-04/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-04", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-04/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-04/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-04/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1494,13 +1508,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-04/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-05/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1528,10 +1540,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-05/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-05", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-05/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-05/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-05/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1721,13 +1732,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-05/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-06/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1755,10 +1764,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-06/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-06", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-06/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-06/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-06/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1948,13 +1956,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-06/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-07/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -1982,10 +1988,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-07/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-07", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-07/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-07/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-07/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2175,13 +2180,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-07/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-08/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2209,10 +2212,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-08/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-08", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-08/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-08/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-08/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2402,13 +2404,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-08/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-09/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2436,10 +2436,9 @@ eelayout(dqmitems, "01 By Supermodule/EE-09/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE-09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE-09", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-09/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-09/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE-09/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2629,13 +2628,11 @@ eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE-09/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+01/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2663,10 +2660,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+01/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+01", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+01", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+01/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+01/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+01/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2856,13 +2852,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+01/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+02/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -2890,10 +2884,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+02/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+02", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+02", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+02/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+02/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+02/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3083,13 +3076,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+02/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+03/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3117,10 +3108,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+03/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+03", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+03", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+03/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+03/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+03/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3310,13 +3300,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+03/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+04/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3344,10 +3332,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+04/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+04", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+04", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+04/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+04/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+04/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3537,13 +3524,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+04/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+05/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3571,10 +3556,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+05/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+05", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+05", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+05/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+05/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+05/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3764,13 +3748,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+05/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+06/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3798,10 +3780,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+06/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+06", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+06", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+06/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+06/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+06/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -3991,13 +3972,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+06/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+07/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4025,10 +4004,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+07/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+07", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+07", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+07/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+07/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+07/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4218,13 +4196,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+07/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+08/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4252,10 +4228,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+08/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+08", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+08", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+08/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+08/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+08/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4445,13 +4420,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+08/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+09/00 Integrity (Channel Global)",
   [{ 'path': "EcalEndcap/EEIntegrityClient/EEIT data integrity quality EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4479,10 +4452,9 @@ eelayout(dqmitems, "01 By Supermodule/EE+09/05 Trigger",
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Trigger Primitives Timing EE+09", 'description': "Sample of the emulated TP that more often matches the real TP. Matched sample appear in magenta. No match at all appears red. No events appear white. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerClient/EETTT Non Single Timing EE+09", 'description': "Fraction of events where the TP has a matching with emulator different by the most probable (expected empty). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+09/06 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } },
-   { 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+09/06 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "01 By Supermodule/EE+09/07 StatusFlags",
   [{ 'path': "EcalEndcap/EEStatusFlagsTask/FEStatus/EESFT front-end status EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4672,13 +4644,11 @@ eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/05 Timing/00 Timing",
 eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/05 Trigger/00 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/06 Cosmic/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/06 Cosmic/Rechits Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed rechits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/06 Cosmic/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "01 By Supermodule/EE+09/Experts/06 Cosmic/Rechits Energy Spectrum",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/00 Summary/00 Global Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -4692,9 +4662,9 @@ eelayout(dqmitems, "00 By Task/00 Summary/02 Occupancy Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - digi occupancy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + digi occupancy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/00 Summary/03 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/00 Summary/03 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eelayout(dqmitems, "00 By Task/00 Summary/04 PedestalOnline Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EEPOT EE - pedestal quality summary G12", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
@@ -5111,19 +5081,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-01/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-01/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-01/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-01/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-01/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -5520,19 +5488,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-02/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-02/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-02/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-02/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-02/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -5929,19 +5895,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-03/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-03/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-03/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-03/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-03/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -6338,19 +6302,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-04/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-04/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-04/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-04/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-04/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -6747,19 +6709,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-05/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-05/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-05/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-05/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-05/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7156,19 +7116,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-06/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-06/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-06/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-06/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-06/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7565,19 +7523,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-07/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-07/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-07/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-07/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-07/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -7974,19 +7930,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-08/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-08/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-08/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-08/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-08/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -8383,19 +8337,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE-09/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE-09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-09/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE-09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-09/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE-09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE-09/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE-09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE-09/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE-09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -8792,19 +8744,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+01/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+01", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+01/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+01", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+01", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+01/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+01", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+01/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+01", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+01/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+01", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -9201,19 +9151,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+02/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+02", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+02/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+02", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+02", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+02/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+02", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+02/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+02", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+02/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+02", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -9610,19 +9558,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+03/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+03", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+03/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+03", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+03", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+03/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+03", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+03/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+03", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+03/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+03", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10019,19 +9965,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+04/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+04", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+04/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+04", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+04", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+04/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+04", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+04/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+04", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+04/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+04", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10428,19 +10372,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+05/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+05", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+05/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+05", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+05", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+05/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+05", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+05/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+05", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+05/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+05", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -10837,19 +10779,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+06/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+06", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+06/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+06", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+06", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+06/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+06", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+06/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+06", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+06/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+06", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -11246,19 +11186,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+07/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+07", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+07/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+07", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+07", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+07/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+07", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+07/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+07", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+07/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+07", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -11655,19 +11593,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+08/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+08", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+08/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+08", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+08", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+08/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+08", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+08/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+08", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+08/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+08", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -12064,19 +12000,17 @@ eelayout(dqmitems, "00 By Task/08 Trigger/EE+09/02 FineGrainVeto Errors",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT EmulFineGrainVetoError EE+09", 'description': "Occupancy of mismatches between real Trigger Primitive and emulated one on the fine grain veto. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/00 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE - cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/00 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/01 Cosmic Summary",
-  [{ 'path': "EcalEndcap/EESummaryClient/EECT EE + cosmic summary", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/01 Energy Summary",
+  [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy (in GeV) of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+09/00 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Sel/EECT energy sel EE+09", 'description': "Average energy (in GeV) of hits selected with cosmics analysis. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+09", 'description': "Average energy (in GeV) of hits over threshold (150 MeV). Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+09/00 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit energy EE+09", 'description': "Average energy of the rechits selected among good (rechit quality flag and channel status) reconstructed hits. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eelayout(dqmitems, "00 By Task/09 Cosmic/EE+09/01 Cosmic",
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 1x1 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalEndcap/EECosmicTask/Spectrum/EECT 3x3 energy spectrum EE+09", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eelayout(dqmitems, "00 By Task/09 Energy/EE+09/01 Energy",
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT energy spectrum EE+09", 'description': "Calibrated energy spectrum of the good reconstructed hits (rechit quality flag and channel status). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eelayout(dqmitems, "00 By Task/10 StatusFlags/00 FrontEnd Summary",
   [{ 'path': "EcalEndcap/EESummaryClient/EESFT EE - front-end status summary", 'description': "DCC front-end status quality summary. Expected all green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])

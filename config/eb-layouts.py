@@ -3,6 +3,7 @@ def ebshifterlayout(i, p, *rows): i["EcalBarrel/Layouts/00 Shift/" + p] = DQMIte
 def ebecalshifterlayout(i, p, *rows): i["EcalBarrel/Layouts/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eblayout(i, p, *rows): i["EcalBarrel/Layouts/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
 
+
 # Quick Collections
 ecalbarrellayout(dqmitems, "00 Global Summary EcalBarrel",
   [{ 'path': "EcalBarrel/EBSummaryClient/EB global summary", 'description': "EcalBarrel: overall status of crystals.  Legend: green = good;  red = bad;  yellow = no entries. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
@@ -12,6 +13,7 @@ ecalbarrellayout(dqmitems, "01 Occupancy Summary EcalBarrel",
 
 ecalbarrellayout(dqmitems, "02 Cluster Summary EcalBarrel",
   [{ 'path': "EcalBarrel/EBClusterTask/EBCLT BC energy map", 'description': "EcalBarrel: average energy of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
 
 # ALL shifters
 ebshifterlayout(dqmitems, "00 Event Type",
@@ -140,7 +142,6 @@ ebecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-# to be put back in when we will remove cosmics summary
 ebecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBOT energy summary", 'description': "Average energy (in GeV) of good hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit spectrum", 'description': "Average energy (in GeV) of good hits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])

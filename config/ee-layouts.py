@@ -3,6 +3,7 @@ def eeshifterlayout(i, p, *rows): i["EcalEndcap/Layouts/00 Shift/" + p] = DQMIte
 def eeecalshifterlayout(i, p, *rows): i["EcalEndcap/Layouts/01 ECAL Shift/" + p] = DQMItem(layout=rows)
 def eelayout(i, p, *rows): i["EcalEndcap/Layouts/02 ECAL Expert Shift/" + p] = DQMItem(layout=rows)
 
+
 # Quick Collections
 ecalendcaplayout(dqmitems, "00 Global Summary EcalEndcap",
   [{ 'path': "EcalEndcap/EESummaryClient/EE global summary EE -", 'description': "EcalEndcap (z<0): overall status of crystals.  Legend: green = good;  red = bad;  yellow = no entries.  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
@@ -15,6 +16,7 @@ ecalendcaplayout(dqmitems, "01 Occupancy Summary EcalEndcap",
 ecalendcaplayout(dqmitems, "02 Cluster Summary EcalEndcap",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE -", 'description': "EcalEndcap (z<0): average energy of 5x5 basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" },
    { 'path': "EcalEndcap/EEClusterTask/EECLT BC energy map EE +", 'description': "EcalEndcap (z>0): average energy of hybrid basic clusters. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/EcalDQM>EcalDQM</a>" }])
+
 
 # ALL shifters
 eeshifterlayout(dqmitems, "00 Event Type",
@@ -209,7 +211,6 @@ eeecalshifterlayout(dqmitems, "03 Occupancy/10 PN Digis",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT PN digi occupancy summary", 'description': "Occupancy of PN diodes (expect entries only for calibration events). Digis are expected only in EE+/-2,3,7,8 which have MEM box attached (by the readout point of view). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [None])
 
-# to be put in when we will remove cosmics plots
 eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE - energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
