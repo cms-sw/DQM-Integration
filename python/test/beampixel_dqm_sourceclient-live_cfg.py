@@ -111,11 +111,11 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
                                         # or, if we are performing the fit, the number of vertices must be greater
                                         # than minNentries otherwise it waits for other nLumiReset
-                                        xRange           = cms.double(4.0),
+                                        xRange           = cms.double(2.0),
                                         xStep            = cms.double(0.001),
-                                        yRange           = cms.double(4.0),
+                                        yRange           = cms.double(2.0),
                                         yStep            = cms.double(0.001),
-                                        zRange           = cms.double(40.0),
+                                        zRange           = cms.double(30.0),
                                         zStep            = cms.double(0.05),
 #                                        fileName         = cms.string("/tmp/dinardo/BeamPixelResults.txt"))
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
