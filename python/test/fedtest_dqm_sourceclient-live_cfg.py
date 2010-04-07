@@ -97,12 +97,9 @@ process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
 process.rpcFEDIntegrity.RPCPrefixDir = cms.untracked.string('RPC/FEDIntegrity_SM')
 
 # ES raw2digi
-import EventFilter.ESRawToDigi.esRawToDigi_cfi
-process.ecalPreshowerDigis = EventFilter.ESRawToDigi.esRawToDigi_cfi.esRawToDigi.clone()
-process.ecalPreshowerDigis.sourceTag = 'source'
-process.ecalPreshowerDigis.debugMode = False
-from DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi import *
+process.load("EventFilter.ESRawToDigi.esRawToDigi_cfi")
 process.load("DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi")
+process.ecalPreshowerFEDIntegrityTask.FEDDirName=cms.untracked.string("FEDIntegrity_SM")
 
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
@@ -125,7 +122,7 @@ process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.siStripFEDCheck + 
 			      process.hcalDigis + process.hcalDataIntegrityMonitor +
 			      process.rpcunpacker + process.rpcFEDIntegrity +
-			      #process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
+			      process.esRawToDigi + process.ecalPreshowerFEDIntegrityTask +
 			      process.dqmFEDIntegrityClient 
 )
 process.evfDQMmodulesPath = cms.Path(
