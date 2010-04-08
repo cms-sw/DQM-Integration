@@ -24,7 +24,8 @@ source = cms.Source("EventStreamHttpReader",
     SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('*')
     ),
-    headerRetryInterval = cms.untracked.int32(3)
+    headerRetryInterval = cms.untracked.int32(3),
+    dropOldLumisectionEvents = cms.untracked.bool(True)
 )
 
 
