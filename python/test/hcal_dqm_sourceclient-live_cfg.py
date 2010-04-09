@@ -74,6 +74,7 @@ process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clon
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
 process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
+process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(12)
 
 # -------------------------------
 # Hcal DQM Modules
