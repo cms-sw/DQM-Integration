@@ -65,6 +65,7 @@ process.eeDQMEvF.folderName = cms.untracked.string('FEDIntegrity_SM')
 
 # L1T DQM sequences 
 process.load("DQM.L1TMonitor.L1TFED_cfi")
+process.l1tfed.FEDDirName=cms.untracked.string("L1T/FEDIntegrity_SM")
 
 # Pixel DQM sequences
 process.load("Geometry.TrackerSimData.trackerSimGeometryXML_cfi")
@@ -117,7 +118,7 @@ process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.cscDQMEvF +
  			      #process.dtDQMEvF +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      #process.l1tfed +
+			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
 			      process.hcalDigis + process.hcalDataIntegrityMonitor +
