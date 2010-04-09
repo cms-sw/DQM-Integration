@@ -5,8 +5,11 @@ from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
-HcalPlaybackHost='dqm-c2d07-13.cms'.lower()
-HcalCalibPlaybackHost='dqm-c2d07-16.cms'.lower()
+# These are playback servers, not hosts...
+#HcalPlaybackHost='dqm-c2d07-13.cms'.lower()
+#HcalCalibPlaybackHost='dqm-c2d07-16.cms'.lower()
+HcalPlaybackHost='srv-c2d04-25.cms'.lower()
+HcalCalibPlaybackHost='srv-c2d04-28.cms'.lower()
 
 playbackHCAL=False
 if (host==HcalPlaybackHost):
