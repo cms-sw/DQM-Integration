@@ -210,11 +210,10 @@ server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBa
                  'Collisions/BeamMonitorFeedBack/04 - z position of beam spot',
                  'Collisions/BeamMonitorFeedBack/05 - sigma z of beam spot',
                  'Collisions/BeamMonitorFeedBack/06 - fit results beam spot',
-                 'Collisions/BeamMonitorFeedBack/07 - fit results primary vertex',
-                 'Collisions/BeamMonitorFeedBack/08 - Pixel-Vertices: Results of Beam Spot Fit',
-                 'Collisions/BeamMonitorFeedBack/09 - Pixel-Vertices: X0 vs. Lumisection',
-                 'Collisions/BeamMonitorFeedBack/10 - Pixel-Vertices: Y0 vs. Lumisection',
-                 'Collisions/BeamMonitorFeedBack/11 - Pixel-Vertices: Z0 vs. Lumisection'
+                 'Collisions/BeamMonitorFeedBack/07 - Pixel-Vertices: Results of Beam Spot Fit',
+                 'Collisions/BeamMonitorFeedBack/08 - Pixel-Vertices: X0 vs. Lumisection',
+                 'Collisions/BeamMonitorFeedBack/09 - Pixel-Vertices: Y0 vs. Lumisection',
+                 'Collisions/BeamMonitorFeedBack/10 - Pixel-Vertices: Z0 vs. Lumisection'
                  )
 		 
 server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
