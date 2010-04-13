@@ -135,7 +135,7 @@ process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
         maxNormalizedChi2 = cms.double(100.0), # Default 5 @@@@@@
         minSiliconHits = cms.int32(2), # Default 7
         maxD0Significance = cms.double(100.0), # Default 5 with respect to beam spot axes @@@@@@
-        minPt = cms.double(0.1), # Default 0 @@@@@@
+        minPt = cms.double(1.0), # Default 0 @@@@@@
         minPixelHits = cms.int32(2)), # Default 2
                                             beamSpotLabel = cms.InputTag("offlineBeamSpot"),
                                             TrackLabel = cms.InputTag("pixelTracks"), # Default "generalTracks" @@@@@@
@@ -152,7 +152,7 @@ process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
 
 ### pixelTracks ###
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.pixelTracks.FilterPSet.ptMin = 0.1
+process.pixelTracks.FilterPSet.ptMin = 1.0
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 #process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originRadius = 0.2
