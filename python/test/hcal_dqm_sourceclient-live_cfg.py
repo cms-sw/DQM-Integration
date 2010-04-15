@@ -120,8 +120,8 @@ process.hcalClient.databaseFirstUpdate=10
 process.hcalClient.databaseUpdateTime=60
 
 # Set values higher at startup
-process.hcalClient.DeadCell_minerrorrate=0.25
-process.hcalClient.HotCell_minerrrorate =0.25
+process.hcalClient.DeadCell_minerrorrate=0.05
+process.hcalClient.HotCell_minerrrorate =0.05
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
