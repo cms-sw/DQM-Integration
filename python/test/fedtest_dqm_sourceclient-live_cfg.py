@@ -45,7 +45,7 @@ process.cscDQMEvF.EventProcessor.FOLDER_EMU = cms.untracked.string('CSC/FEDInteg
 
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
-process.DTDataIntegrityTask.hltMode = False
+process.DTDataIntegrityTask.processingMode = "SM"
 process.dtunpacker.inputLabel = cms.InputTag('source')
 process.dtunpacker.fedbyType = cms.bool(True)
 process.dtunpacker.useStandardFEDid = cms.bool(True)
@@ -116,7 +116,7 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 #-----------------------------
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.cscDQMEvF +
- 			      #process.dtDQMEvF +
+ 			      process.dtunpacker +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
 			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
