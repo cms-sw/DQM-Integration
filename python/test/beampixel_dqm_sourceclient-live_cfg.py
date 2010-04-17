@@ -4,7 +4,7 @@ process = cms.Process("BeamPixel")
 
 
 #----------------------------
-#### Event Source
+# Event Source
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
@@ -13,9 +13,9 @@ process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*')) # Uncomment to add a filter on data
 
 
-#--------------------------
+#----------------------------
 # Filters
-#--------------------------
+#----------------------------
 # HLT Filter
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
@@ -30,17 +30,19 @@ process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
 process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("(40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
 
 
-#### DQM Environment
+#----------------------------
+# DQM Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 #process.DQM.collectorHost = ''
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 process.dqmEnv.subSystemFolder = "BeamPixel"
-#-----------------------------
 
 
-#### Sub-system configuration follows ###
+#----------------------------
+# Sub-system configuration follows
+#----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 ###########################################
@@ -101,7 +103,7 @@ process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
-###### pixelVertexDQM Configuration ######
+### pixelVertexDQM Configuration ###
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
@@ -117,14 +119,14 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         yStep            = cms.double(0.001),
                                         zRange           = cms.double(30.0),
                                         zStep            = cms.double(0.05),
-#                                        fileName         = cms.string("/tmp/dinardo/BeamPixelResults.txt"))
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
 else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
-###### Vertexin Configuration ######
+
+### Vertices Configuration ###
 process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
                                             PVSelParameters = cms.PSet(
         maxDistanceToBeam = cms.double(2.0), # Default 0.05 with respect to beam spot axes @@@@@@
@@ -150,13 +152,11 @@ process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
                                          # Very important: it's the distance between tracks in order to merge them into a cluster
 
 
-### pixelTracks ###
+### Tracks Configuration ###
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
 process.pixelTracks.FilterPSet.ptMin = 0.1
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
-#process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originRadius = 0.2
-#process.GlobalTrackingRegion.RregionPSetBlock.RegionPSet.originHalfLength = 15.9
 
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
@@ -172,7 +172,6 @@ process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*
                                    process.gtDigis*
                                    process.hltLevel1GTSeed)
 
-### @@@@@@ Comment when running locally @@@@@@ ###
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
     process.offlineBeamSpot*
@@ -181,12 +180,6 @@ process.reconstruction_step = cms.Sequence(
     process.pixelTracks*
     process.pixelVertices*
     process.pixelVertexDQM)
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.reconstruction_step = cms.Sequence(
-#    process.siPixelRecHits*
-#    process.pixelTracks*
-#    process.pixelVertices*
-#    process.pixelVertexDQM)
 
 ### Define Path ###
 process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
