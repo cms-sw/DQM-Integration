@@ -56,7 +56,7 @@ l1t_gt_single(dqmitems, "L1TGT", "algo_bits")
 l1t_gt_single(dqmitems, "L1TGT", "tt_bits")
 l1t_gt_single(dqmitems, "L1TGT", "gtfe_bx")
 l1t_gt_single(dqmitems, "L1Scalers_SM", "l1AlgoBits_Vs_Bx")
-l1t_gt_single(dqmitems, "L1Scalers_SM", "l1TechAlgoBits_Vs_Bx")
+l1t_gt_single(dqmitems, "L1Scalers_SM", "l1TechBits_Vs_Bx")
 l1t_gt_single(dqmitems, "BXSynch", "BxOccyGtTrigType1")
 
 # list of summary GMT histograms (dqmitems, dirPath , histoName)
