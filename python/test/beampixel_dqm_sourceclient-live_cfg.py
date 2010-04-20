@@ -109,7 +109,7 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(4),
                                         dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.int32(35),
+                                        minNentries      = cms.uint32(35),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
                                         # or, if we are performing the fit, the number of vertices must be greater
                                         # than minNentries otherwise it waits for other nLumiReset
@@ -126,7 +126,7 @@ else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 
-### Vertices Configuration ###
+### Pixel-Vertices Configuration ###
 process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
                                             PVSelParameters = cms.PSet(
         maxDistanceToBeam = cms.double(2.0), # Default 0.05 with respect to beam spot axes @@@@@@
@@ -152,9 +152,9 @@ process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
                                          # Very important: it's the distance between tracks in order to merge them into a cluster
 
 
-### Tracks Configuration ###
+### Pixel-Tracks Configuration ###
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.pixelTracks.FilterPSet.ptMin = 0.1
+process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin = 0.1
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 
