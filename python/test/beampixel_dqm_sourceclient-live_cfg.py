@@ -154,7 +154,7 @@ process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
 
 ### Pixel-Tracks Configuration ###
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin = 0.1
+process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin = 0.9
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 
