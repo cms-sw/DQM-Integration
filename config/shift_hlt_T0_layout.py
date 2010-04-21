@@ -8,10 +8,10 @@ def trigvalFVMuon(i, p, *rows): i["00 Shift/HLT/FourVector/Muon/" + p] = DQMItem
   
 
 trigvalFVMuon(dqmitems,"Muon Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Mu9"}])
+[{'path': "HLT/FourVector/paths/HLT_Mu9/custom-eff/HLT_Mu9_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Mu9"}])
 
 trigvalFVMuon(dqmitems,"Muon Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Mu9/custom-eff/HLT_Mu9_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Mu9"}])
+[{'path': "HLT/FourVector/paths/HLT_Mu9/custom-eff/HLT_Mu9_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Mu9"}])
 
 trigvalFVMuon(dqmitems,"HLT_Mu9: Et of L1 Muon Objects",
 [{'path': "HLT/FourVector/source/HLT_Mu9/HLT_Mu9_wrt__l1EtL1", 'description':"Et of L1 Muon object for path HLT_Mu9"}])
@@ -29,10 +29,10 @@ def trigvalFVEle(i, p, *rows): i["00 Shift/HLT/FourVector/Electron/" + p] = DQMI
   
 
 trigvalFVEle(dqmitems,"Electron Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R"}])
+[{'path': "HLT/FourVector/paths/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R"}])
 
 trigvalFVEle(dqmitems,"Electron Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Ele10_LW_L1R"}])
+[{'path': "HLT/FourVector/paths/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Ele10_LW_L1R"}])
 
 trigvalFVEle(dqmitems,"HLT_Ele10_LW_L1R: Et of L1 Electron Objects",
      [{'path': "HLT/FourVector/source/HLT_Ele10_LW_L1R/HLT_Ele10_LW_L1R_wrt__l1EtL1", 'description':"Et of L1 Electron object for path HLT_Ele10_LW_L1R"}])
@@ -50,10 +50,10 @@ def trigvalFVJet(i, p, *rows): i["00 Shift/HLT/FourVector/Jet/" + p] = DQMItem(l
   
 
 trigvalFVJet(dqmitems,"Jet Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
 trigvalFVJet(dqmitems,"Jet Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet30U"}])
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Jet30U"}])
 
 trigvalFVJet(dqmitems,"HLT_Jet30U: Et of L1 Jet Objects",
 [{'path': "HLT/FourVector/source/HLT_Jet30U/HLT_Jet30U_wrt__l1EtL1", 'description':"Et of L1 Jet object for path HLT_Jet30U"}])
@@ -69,10 +69,10 @@ def trigvalFVPho(i, p, *rows): i["00 Shift/HLT/FourVector/Photon/" + p] = DQMIte
   
 
 trigvalFVPho(dqmitems,"Photon Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Photon15_L1R"}])
+[{'path': "HLT/FourVector/paths/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Photon15_L1R"}])
 
 trigvalFVPho(dqmitems,"Photon Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Photon15_L1R"}])
+[{'path': "HLT/FourVector/paths/HLT_Photon15_L1R/custom-eff/HLT_Photon15_L1R_wrt__offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Photon15_L1R"}])
 
 trigvalFVPho(dqmitems,"HLT_Photon15_L1R: Et of L1 Photon Objects",
 [{'path': "HLT/FourVector/source/HLT_Photon15_L1R/HLT_Photon15_L1R_wrt__l1EtL1", 'description':"Et of L1 Photon object for path HLT_Photon15_L1R"}])
@@ -86,43 +86,43 @@ trigvalFVPho(dqmitems,"HLT_Photon15_L1R: Et of RECO Photon objects",
 def hltCollLayout(i, p, *rows): i["00 Shift/HLT/Collisions/" + p] = DQMItem(layout=rows)
 
 hltCollLayout(dqmitems,"Eff of HLT_Photon10_L1R to its L1",
-[{'path': "HLT/FourVector/client/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Photon10_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Photon10_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Photon10_L1R to its L1 vs eta-phi",
-[{'path': "HLT/FourVector/client/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 photons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 photons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Photon10_L1R to its RECO",
-[{'path': "HLT/FourVector/client/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Photon10_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Photon10_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
 hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its L1",
-[{'path': "HLT/FourVector/client/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its L1 vs eta-phi",
-[{'path': "HLT/FourVector/client/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Jets (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Jets (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its RECO",
-[{'path': "HLT/FourVector/client/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
 hltCollLayout(dqmitems,"Eff of HLT_L1MuOpen to its L1",
-[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_L1MuOpen to its L1 vs eta-phi",
-[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Muons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Muons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_L1MuOpen to its RECO",
-[{'path': "HLT/FourVector/client/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_L1MuOpen/custom-eff/HLT_L1MuOpen_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_L1MuOpen. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
 hltCollLayout(dqmitems,"Eff of HLT_Ele10_LW_L1R to its L1",
-[{'path': "HLT/FourVector/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Ele10_LW_L1R to its L1 vs eta-phi",
-[{'path': "HLT/FourVector/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Electrons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_l1Etal1Phi_Eff_OnToL1_UM", 'description':"Et of the L1 Electrons (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Ele10_LW_L1R to its RECO",
-[{'path': "HLT/FourVector/client/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+[{'path': "HLT/FourVector/paths/HLT_Ele10_LW_L1R/custom-eff/HLT_Ele10_LW_L1R_wrt_HLT_MinBiasBSC_offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Ele10_LW_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows)
   
@@ -139,20 +139,20 @@ hltlayout(dqmitems,"HLT_L1MuOpen_NoBPTX & L1 muons eta-phi",
   	[{'path': "HLT/FourVector/source/HLT_L1MuOpen_NoBPTX/HLT_L1MuOpen_NoBPTX_wrt__l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"Eff HLT_L1MuOpen_NoBPTX to its L1 vs Pt",
-  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"Eff HLT_L1MuOpen_NoBPTX to its L1 vs eta-phi",
-  	[{'path': "HLT/FourVector/client/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_NoBPTX/custom-eff/HLT_L1MuOpen_NoBPTX_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs Pt",
-  	[{'path': "HLT/FourVector/client/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/paths/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
 hltlayout(dqmitems,"Eff HLT_L2Mu9 to its L1 vs eta-phi",
-  	[{'path': "HLT/FourVector/client/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+  	[{'path': "HLT/FourVector/paths/HLT_L2Mu9/custom-eff/HLT_L2Mu9_wrt__l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT paht as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltlayout(dqmitems,"Jet Eff HLT to L1",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
 hltlayout(dqmitems,"Jet Eff HLT to RECO",
-[{'path': "HLT/FourVector/client/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Etal1Phi_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Etal1Phi_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
