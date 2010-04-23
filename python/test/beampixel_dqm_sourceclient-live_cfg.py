@@ -61,6 +61,7 @@ process.load("Configuration.StandardSequences.Reconstruction_cff")
 process.load("Configuration.StandardSequences.EndOfProcess_cff")
 process.load("Configuration.EventContent.EventContent_cff")
 process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
+process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
 
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
@@ -127,34 +128,22 @@ else:
 
 
 ### Pixel-Vertices Configuration ###
-process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
-                                            PVSelParameters = cms.PSet(
-        maxDistanceToBeam = cms.double(2.0), # Default 0.05 with respect to beam spot axes @@@@@@
-        minVertexFitProb = cms.double(0.01)), # Default 0.01 = vertex fit probability
-                                            verbose = cms.untracked.bool(False),
-                                            algorithm = cms.string("AdaptiveVertexFitter"),
-                                            TkFilterParameters = cms.PSet(
-        maxNormalizedChi2 = cms.double(100.0), # Default 5 @@@@@@
-        minSiliconHits = cms.int32(2), # Default 7
-        maxD0Significance = cms.double(100.0), # Default 5 with respect to beam spot axes @@@@@@
-        minPt = cms.double(0.9), # Default 0 @@@@@@
-        minPixelHits = cms.int32(2)), # Default 2
-                                            beamSpotLabel = cms.InputTag("offlineBeamSpot"),
-                                            TrackLabel = cms.InputTag("pixelTracks"), # Default "generalTracks" @@@@@@
-                                            useBeamConstraint = cms.bool(False),
-                                            VtxFinderParameters = cms.PSet(
-        ptCut = cms.double(0.0), # Default 0 @@@@@@
-        vtxFitProbCut = cms.double(0.01), # Default 0.01 = vertex fit probability
-        trackCompatibilityToSVcut = cms.double(0.01), # Default 0.01
-        trackCompatibilityToPVcut = cms.double(0.05), # Default 0.05
-        maxNbOfVertices = cms.int32(1)), # Default 0 = search all vertices in each cluster @@@@@@
-                                            TkClusParameters = cms.PSet(zSeparation = cms.double(1.0))) # Default 0.1 = max separation betw. clusters @@@@@@
-                                         # Very important: it's the distance between tracks in order to merge them into a cluster
+print process.pixelVertices.useBeamConstraint
+process.pixelVertices.useBeamConstraint = False
+print process.pixelVertices.useBeamConstraint
+print process.pixelVertices.TkFilterParameters.minPt
+process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
+print process.pixelVertices.TkFilterParameters.minPt
+print process.pixelVertices.VtxFinderParameters.maxNbOfVertices
+process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
+print process.pixelVertices.VtxFinderParameters.maxNbOfVertices
+print process.pixelVertices.TkClusParameters.zSeparation
+process.pixelVertices.TkClusParameters.zSeparation = 1.0
+print process.pixelVertices.TkClusParameters.zSeparation
 
 
 ### Pixel-Tracks Configuration ###
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin = 0.9
 process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
 process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 
