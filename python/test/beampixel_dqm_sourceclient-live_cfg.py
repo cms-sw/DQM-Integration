@@ -128,18 +128,10 @@ else:
 
 
 ### Pixel-Vertices Configuration ###
-print process.pixelVertices.useBeamConstraint
 process.pixelVertices.useBeamConstraint = False
-print process.pixelVertices.useBeamConstraint
-print process.pixelVertices.TkFilterParameters.minPt
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
-print process.pixelVertices.TkFilterParameters.minPt
-print process.pixelVertices.VtxFinderParameters.maxNbOfVertices
 process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
-print process.pixelVertices.VtxFinderParameters.maxNbOfVertices
-print process.pixelVertices.TkClusParameters.zSeparation
 process.pixelVertices.TkClusParameters.zSeparation = 1.0
-print process.pixelVertices.TkClusParameters.zSeparation
 
 
 ### Pixel-Tracks Configuration ###
