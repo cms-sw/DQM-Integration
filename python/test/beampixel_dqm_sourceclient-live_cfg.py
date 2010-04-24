@@ -108,7 +108,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
-                                        nLumiReset       = cms.uint32(2),
+                                        nLumiReset       = cms.uint32(1),
                                         dataFromFit      = cms.bool(True),
                                         minNentries      = cms.uint32(35),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
