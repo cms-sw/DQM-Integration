@@ -120,6 +120,7 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         yStep            = cms.double(0.001),
                                         zRange           = cms.double(30.0),
                                         zStep            = cms.double(0.05),
+                                        VxErrCorr        = cms.double(1.58),
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
