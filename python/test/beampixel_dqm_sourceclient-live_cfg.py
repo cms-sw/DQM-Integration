@@ -69,23 +69,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 # RECO data taking february 18th 2010
 #process.GlobalTag.globaltag = "GR09_R_35X_V2::All"
 ###### Which data ######
-#process.load("DataDec09_RecoMinBias_Feb18th_Skim_GoodRuns_cff")
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
-#readFiles = cms.untracked.vstring()
-#secFiles = cms.untracked.vstring()
-#process.source = cms.Source ("PoolSource",fileNames = readFiles, secondaryFileNames = secFiles)
-#readFiles.extend([
-#        "file:/tmp/jengbou/AC4043E8-A5ED-DE11-91FB-001A92971B32.root",
-#        "file:/tmp/jengbou/461F7E44-AAED-DE11-B5A4-002618943932.root",
-#        "file:/tmp/jengbou/D2F80F5F-ACED-DE11-B3B6-0018F3D09630.root"])
-#secFiles.extend([])
-#readFiles = cms.untracked.vstring()
-#secFiles = cms.untracked.vstring()
-#process.source = cms.Source ("PoolSource",fileNames = readFiles, secondaryFileNames = secFiles)
-#readFiles.extend([
-#        "file:/tmp/dinardo/BEF77CC5-C71D-DF11-A707-00237DA15C7C.root",
-#        "file:/tmp/dinardo/B6B3BCD7-C61D-DF11-9201-00237DA1CD92.root"])
-#secFiles.extend([])
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
 #process.dqmSaver.dirName           = cms.untracked.string("/tmp/dinardo/")
@@ -120,7 +104,7 @@ process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         yStep            = cms.double(0.001),
                                         zRange           = cms.double(30.0),
                                         zStep            = cms.double(0.05),
-                                        VxErrCorr        = cms.double(1.58),
+                                        VxErrCorr        = cms.double(1.5),
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
@@ -142,7 +126,6 @@ process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
 
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
-### Select the Lumisection ###
 #process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:51")
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
