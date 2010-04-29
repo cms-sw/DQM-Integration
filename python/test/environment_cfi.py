@@ -2,20 +2,18 @@ import FWCore.ParameterSet.Config as cms
 
 from DQMServices.Core.DQM_cfg import *
 
-DQM.collectorHost = 'dqm-integration.cms'
+DQM.collectorHost = 'dqm-prod-local.cms'
 DQM.collectorPort = 9090
 
 from DQMServices.Components.DQMEnvironment_cfi import *
 
 dqmSaver.convention = 'Online'
 dqmSaver.referenceHandling = 'all'
-dqmSaver.dirName = '/home/dqmdevlocal/output'
-dqmSaver.producer = 'Playback'
-dqmSaver.version = 2
-dqmSaver.runIsComplete = True
+dqmSaver.dirName = '/home/dqmprolocal/output'
+dqmSaver.producer = 'DQM'
 dqmSaver.saveByTime = 1
 dqmSaver.saveByLumiSection = -1
-dqmSaver.saveByMinute = 4
+dqmSaver.saveByMinute = 8
 dqmSaver.saveByRun = -1
 dqmSaver.saveAtJobEnd = False
 
