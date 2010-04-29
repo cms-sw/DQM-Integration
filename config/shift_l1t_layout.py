@@ -1,5 +1,7 @@
 def l1tlayout(i, p, *rows): i["00 Shift/L1T/" + p] = DQMItem(layout=rows)
-  
+
+def l1tlayout_coll(i, p, *rows): i["00 Shift/L1T/Collisions/" + p] = DQMItem(layout=rows)
+
 l1tlayout(dqmitems,"00 Global Trigger Algorithm Bits",
   	[{'path': "L1T/L1TGT/algo_bits", 'description': "Global Trigger bits. x-axis: GT algorithm number; y-axis: number of events with given bit on.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
 
@@ -38,3 +40,10 @@ l1tlayout(dqmitems,"11 Physics Trigger Rate",
 
 l1tlayout(dqmitems,"12 Random Trigger Rate",
   	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/Random Trigger Rate", 'description': "Random Trigger Rate. x-axis: Time(lumisection); y-axis: Rate (Hz).  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftTrigger\">here</a>."}])
+
+
+l1tlayout_coll(dqmitems,"00 Rate BSC MinBias (Tech Bit 41)",
+  	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/TechnicalRates/Rate_TechBit_041", 'description': "Rate of Minbias BSC trigger"}])
+
+l1tlayout_coll(dqmitems,"01 Rate BPTX AND  (Tech Bit 4)",
+  	[{'path': "L1T/L1TScalersSCAL/Level1TriggerRates/TechnicalRates/Rate_TechBit_004", 'description': "Rate of BPTX trigger"}])
