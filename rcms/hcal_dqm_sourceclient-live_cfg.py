@@ -1,6 +1,20 @@
 import FWCore.ParameterSet.Config as cms
+
+import os, sys, socket
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
+# Get Host information
+host = socket.gethostname().split('.')[0].lower()
+# These are playback servers, not hosts...
+#HcalPlaybackHost='dqm-c2d07-13.cms'.lower()
+#HcalCalibPlaybackHost='dqm-c2d07-16.cms'.lower()
+HcalPlaybackHost='srv-c2d04-25.cms'.lower()
+HcalCalibPlaybackHost='srv-c2d04-28.cms'.lower()
+
+playbackHCAL=False
+if (host==HcalPlaybackHost):
+    playbackHCAL=True
+    
 process = cms.Process("HCALDQM")
 subsystem="Hcal" # specify subsystem name here
 
@@ -41,6 +55,11 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
+# ZDC Corrections to reco
+process.zdcreco.firstSample  = 4
+process.zdcreco.samplesToAdd = 3
+process.zdcreco.recoMethod   = 2
+
 # Turn off default blocking of dead channels from rechit collection
 process.essourceSev =  cms.ESSource("EmptyESSource",
                                     recordName = cms.string("HcalSeverityLevelComputerRcd"),
@@ -58,6 +77,7 @@ process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clon
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
 process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
+process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
 
 # -------------------------------
 # Hcal DQM Modules
@@ -70,7 +90,9 @@ process.load("DQM.HcalMonitorTasks.HcalMonitorTasks_cfi")
 # Set individual parameters for the tasks
 process.load("DQM.HcalMonitorTasks.HcalTasksOnline_cff")
 process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
-
+if playbackHCAL==True:
+    process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi_playback/"
+    
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 process.load("DQM.HcalMonitorClient.ZDCMonitorClient_cfi")
 
@@ -91,12 +113,15 @@ process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
 
 # Update once per hour, starting after 10 minutes
 process.hcalClient.databaseDir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
+
+if (playbackHCAL==True):
+    process.hcalClient.databaseDir = ''
 process.hcalClient.databaseFirstUpdate=10
 process.hcalClient.databaseUpdateTime=60
 
 # Set values higher at startup
-process.hcalClient.DeadCell_minerrorrate=0.25
-process.hcalClient.HotCell_minerrrorate =0.25
+process.hcalClient.DeadCell_minerrorrate=0.05
+process.hcalClient.HotCell_minerrrorate =0.05
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
@@ -110,7 +135,7 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      #"DetDiagPedestalMonitor",
                                      #"DetDiagLaserMonitor",
                                      #"DetDiagLEDMonitor",
-                                     "DetDiagNoiseMonitor",
+                                     #"DetDiagNoiseMonitor",
                                      "DetDiagTimingMonitor",
                                      "Summary"
                                      ]

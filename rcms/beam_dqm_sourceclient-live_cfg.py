@@ -39,8 +39,8 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
-process.dqmBeamMonitor.resetEveryNLumi = 40
-process.dqmBeamMonitor.resetPVEveryNLumi = 20
+process.dqmBeamMonitor.resetEveryNLumi = 5
+process.dqmBeamMonitor.resetPVEveryNLumi = 5
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
@@ -58,6 +58,12 @@ process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cf
 # Calibration
 #--------------------------
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+
+# Using offline alignments
+process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
+
+process.GlobalTag.globaltag = "GR10_E_V5::All"
+process.GlobalTag.pfnPrefix=cms.untracked.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/')
 
 #-----------------------
 #  Reconstruction Modules
@@ -110,6 +116,15 @@ else:
 #process.dqmBeamMonitor.BeamFitter.SaveFitResults = False
 #process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
 
+#process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
+
+## TKStatus
+process.dqmTKStatus = cms.EDFilter("TKStatus",
+        BeamFitter = cms.PSet(
+        DIPFileName = process.dqmBeamMonitor.BeamFitter.DIPFileName
+        )
+)
+
 #--------------------------
 # Scheduling
 #--------------------------
@@ -121,7 +136,8 @@ process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDi
 process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
-process.p = cms.Path(process.scalersRawToDigi*process.phystrigger*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+#process.p = cms.Path(process.scalersRawToDigi*process.phystrigger*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
 #process.p = cms.Path(process.gtDigis*process.scalersRawToDigi*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.gtDigis*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
 #process.p = cms.Path(process.phystrigger*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)

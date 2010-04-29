@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo removin all soflinks
+  rm -v dqmfu_*.py
 if [ "$1" = "live" ] ; then
     echo live
     echo "creating softlinks"
@@ -16,7 +17,7 @@ if [ "$1" = "live" ] ; then
      ln -sfv csc_dqm_sourceclient-live_cfg.py                   dqmfu_04-3_cfg.py
      ln -sfv es_dqm_sourceclient-live_cfg.py                    dqmfu_04-4_cfg.py
      ln -sfv dt_dqm_sourceclient-live_cfg.py                    dqmfu_04-5_cfg.py
-     ln -sfv castor_dqm_sourceclient_live_cfg.py                dqmfu_04-6_cfg.py
+     ln -sfv castor_dqm_sourceclient-live_cfg.py                dqmfu_04-6_cfg.py
      
      ln -sfv pixel_dqm_sourceclient-live_cfg.py                 dqmfu_05-1_cfg.py
      ln -sfv sistrip_dqm_sourceclient-live_cfg.py               dqmfu_05-2_cfg.py
@@ -49,7 +50,7 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv csc_dqm_sourceclient-live_cfg.py                   dqmfu_14-3_cfg.py
      ln -sfv es_dqm_sourceclient-live_cfg.py                    dqmfu_14-4_cfg.py
      ln -sfv dt_dqm_sourceclient-live_cfg.py                    dqmfu_14-5_cfg.py
-     ln -sfv castor_dqm_sourceclient_live_cfg.py                dqmfu_14-6_cfg.py
+     ln -sfv castor_dqm_sourceclient-live_cfg.py                dqmfu_14-6_cfg.py
      
      ln -sfv pixel_dqm_sourceclient-live_cfg.py                 dqmfu_15-1_cfg.py
      ln -sfv sistrip_dqm_sourceclient-live_cfg.py               dqmfu_15-2_cfg.py

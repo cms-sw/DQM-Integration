@@ -305,7 +305,7 @@ if (playCMS == 1) :
 if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
   process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
   process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-  process.GlobalTag.globaltag = "GR10_H_V4::All"
+  process.GlobalTag.globaltag = "GR10_H_V5::All"
   process.prefer("GlobalTag")
 
 if (liveCMS == 1) | (playCMS == 1) :
@@ -690,5 +690,5 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 
 if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01'
-  process.dqmSaver.dirName = '/data/ecalod-disk01/TestRuns/DQM-SM/root'
+  process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 

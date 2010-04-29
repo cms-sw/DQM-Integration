@@ -45,7 +45,7 @@ process.cscDQMEvF.EventProcessor.FOLDER_EMU = cms.untracked.string('CSC/FEDInteg
 
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
-process.DTDataIntegrityTask.hltMode = False
+process.DTDataIntegrityTask.processingMode = "SM"
 process.dtunpacker.inputLabel = cms.InputTag('source')
 process.dtunpacker.fedbyType = cms.bool(True)
 process.dtunpacker.useStandardFEDid = cms.bool(True)
@@ -65,6 +65,7 @@ process.eeDQMEvF.folderName = cms.untracked.string('FEDIntegrity_SM')
 
 # L1T DQM sequences 
 process.load("DQM.L1TMonitor.L1TFED_cfi")
+process.l1tfed.FEDDirName=cms.untracked.string("L1T/FEDIntegrity_SM")
 
 # Pixel DQM sequences
 process.load("Geometry.TrackerSimData.trackerSimGeometryXML_cfi")
@@ -92,31 +93,14 @@ process.load("DQM.HcalMonitorTasks.HcalDataIntegrityTask_cfi")
 process.hcalDataIntegrityMonitor.TaskFolder="FEDIntegrity_SM"
 
 # RPC
-#process.RPCCabling = cms.ESSource("PoolDBESSource",
-#    DBParameters = cms.PSet(
-#        messageLevel = cms.untracked.int32(0),
-#        authenticationPath = cms.untracked.string('/nfshome0/hltpro/cmssw/cfg/')
-#    ),
-#    timetype = cms.string('runnumber'),
-#    toGet = cms.VPSet(cms.PSet(
-#        record = cms.string('RPCEMapRcd'),
-#        tag = cms.string('RPCEMap_v2')
-#    )),
-##    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG'),
-#    connect = cms.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_RPC'),
-#    siteLocalConfig = cms.untracked.bool(False)
-#)
 process.load("EventFilter.RPCRawToDigi.rpcUnpacker_cfi")
 process.load("DQM.RPCMonitorClient.RPCFEDIntegrity_cfi")
-#process.rpcFEDIntegrity.RPCPrefixDir = cms.untracked.string('RPC/FEDIntegrity_SM')
+process.rpcFEDIntegrity.RPCPrefixDir = cms.untracked.string('RPC/FEDIntegrity_SM')
 
 # ES raw2digi
-import EventFilter.ESRawToDigi.esRawToDigi_cfi
-process.ecalPreshowerDigis = EventFilter.ESRawToDigi.esRawToDigi_cfi.esRawToDigi.clone()
-process.ecalPreshowerDigis.sourceTag = 'source'
-process.ecalPreshowerDigis.debugMode = False
-from DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi import *
+process.load("EventFilter.ESRawToDigi.esRawToDigi_cfi")
 process.load("DQM.EcalPreshowerMonitorModule.ESFEDIntegrityTask_cfi")
+process.ecalPreshowerFEDIntegrityTask.FEDDirName=cms.untracked.string("FEDIntegrity_SM")
 
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
@@ -132,14 +116,14 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 #-----------------------------
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.cscDQMEvF +
- 			      #process.dtDQMEvF +
+ 			      process.dtunpacker +
  			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
-			      #process.l1tfed +
+			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
 			      process.hcalDigis + process.hcalDataIntegrityMonitor +
-			      #process.rpcunpacker + process.rpcFEDIntegrity +
-			      process.ecalPreshowerDigis + process.ecalPreshowerFEDIntegrityTask +
+			      process.rpcunpacker + process.rpcFEDIntegrity +
+			      process.esRawToDigi + process.ecalPreshowerFEDIntegrityTask +
 			      process.dqmFEDIntegrityClient 
 )
 process.evfDQMmodulesPath = cms.Path(
