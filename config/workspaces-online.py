@@ -106,7 +106,9 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
                  'Castor/Layouts/Castor Pulse Shape for sector=12 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=13 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=14 (in all 14 modules)',
-                 'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)'
+                 'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)',
+                 'Castor/Layouts/CASTOR hits 3D- cumulative',
+                 'Castor/Layouts/CASTOR hits 3D- event with the largest deposited E'
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
