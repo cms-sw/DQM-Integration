@@ -53,7 +53,9 @@ server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
 		 'Castor/Layouts/CASTOR RecHitEnergy 2D Map',
                  'Castor/Layouts/CASTOR All Digi Values',
-                 'Castor/Layouts/CASTOR average pulse in bunch crossings'
+                 'Castor/Layouts/CASTOR average pulse in bunch crossings',
+                 'Castor/Layouts/CASTOR hits 3D- cumulative',
+                 'Castor/Layouts/CASTOR hits 3D- event with the largest deposited E'
                 )
 
 server.workspace('DQMContent', 31, 'Trigger/Lumi', 'L1T', '^L1T/')
