@@ -39,7 +39,17 @@ castorlayout(dqmitems, "CASTOR All Digi Values",
 castorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
            [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
              'description':"average pulse in bunch crossings"}]
-           ) 
+           )
+
+castorlayout(dqmitems, "CASTOR hits 3D- cumulative",
+           [{ 'path': "Castor/CastorEventDisplay/CASTOR 3D hits- cumulative",
+             'description':"cumulative event display"}]
+           )
+
+castorlayout(dqmitems, "CASTOR hits 3D- event with the largest deposited E",
+           [{ 'path': "Castor/CastorEventDisplay/CASTOR 3D hits- event with the largest deposited E",
+             'description':"display of the event with largest deposited energy"}]
+           )
 
 castorlayout(dqmitems, "Castor Pulse Shape for sector=0 (in all 14 modules)",
            [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=0 (in all 14 modules)",
