@@ -14,6 +14,8 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 #process.DQMStore.referenceFileName = 'castor_reference.root'
 
+process.load("Configuration.StandardSequences.Geometry_cff")
+
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = "Castor"
 
@@ -110,7 +112,8 @@ process.castorMonitor = cms.EDFilter("CastorMonitorModule",
                            averageEnergyMethod = cms.untracked.bool(True),          
 
                            PSMonitor= cms.untracked.bool(True),
-      
+                           EDMonitor= cms.untracked.bool(True),
+                                     
                            diagnosticPrescaleTime = cms.untracked.int32(-1),
                            diagnosticPrescaleUpdate = cms.untracked.int32(-1),
                            diagnosticPrescaleLS = cms.untracked.int32(-1),
