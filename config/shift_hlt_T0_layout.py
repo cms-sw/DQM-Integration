@@ -231,19 +231,19 @@ tpgOfflineLayout(dqmitems,"15 - HLT Ele",
 
 
 tpgOfflineLayout(dqmitems,"16 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_eb", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_eb", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"17 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_ee", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_ee", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"18 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_eb", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_eb", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"19 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_ee", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_ee", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"20 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_eb", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_eb", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"21 - HLT Ele",
-[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_ee", 'description':""}])
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronLWEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_ee", 'description':""}])
