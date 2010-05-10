@@ -156,3 +156,94 @@ hltlayout(dqmitems,"Jet Eff HLT to L1",
 hltlayout(dqmitems,"Jet Eff HLT to RECO",
 [{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Etal1Phi_Eff_OnToL1", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U"}])
 
+
+
+
+
+##########################################
+#
+#    TPG Layouts
+#
+##########################################
+
+
+
+def tpgOfflineLayout(i, p, *rows): i["HLT/Layouts/TPG-Summary-HLTOffline/" + p] = DQMItem(layout=rows)
+
+
+################  Muons ###########################
+
+tpgOfflineLayout(dqmitems,"00 - HLT Muon Pt",
+[{'path': "HLT/Muon/Distributions/HLT_Mu3/allMuons/recEffPt_L3Filtered", 'description':"HLT_Mu3 Pt"}])
+
+tpgOfflineLayout(dqmitems,"01 - HLT Muon Eta vs Phi",
+[{'path': "HLT/Muon/Distributions/HLT_Mu3/allMuons/recPhiVsRecEta_L3Filtered", 'description':"HLT_Mu3 EtaVsPhi"}])
+
+tpgOfflineLayout(dqmitems,"02 - HLT Muon Passthru Pt",
+[{'path': "HLT/Muon/Distributions/HLT_L1MuOpen/allMuons/recEffPt_L1Filtered", 'description':"HLT_L1MuOpen PT"}])
+
+tpgOfflineLayout(dqmitems,"03 - HLT Muon Passthru Eta Phi ",
+[{'path': "HLT/Muon/Distributions/HLT_L1MuOpen/allMuons/recPhiVsRecEta_L1Filtered", 'description':"HLT_L1MuOpen EtaVsPhi"}])
+
+
+################ JETMET  ###########################
+
+
+tpgOfflineLayout(dqmitems,"04 - HLT JetMet ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Eta", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"05 - ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Phi", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"06 - ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Pt", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"07 - ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_L1Jet6U/ME_Eff_Eta", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"08 - ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_L1Jet6U/ME_Eff_Phi", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"09 - ",
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_L1Jet6U/ME_Eff_Pt", 'description':""}])
+
+
+################ ELECTRONS ###########################
+
+tpgOfflineLayout(dqmitems,"10 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_et_eb", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"11 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_et_ee", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"12 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_eta_eb", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"13 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_eta_ee", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"14 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_phi_eb", 'description':""}])
+
+
+tpgOfflineLayout(dqmitems,"15 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_trigEffTo_hltPreL1SingleEG5_pho_trigCuts_vs_phi_ee", 'description':""}])
+
+
+tpgOfflineLayout(dqmitems,"16 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_eb", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"17 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_et_ee", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"18 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_eb", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"19 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_eta_ee", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"20 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_eb", 'description':""}])
+
+tpgOfflineLayout(dqmitems,"21 - HLT Ele",
+[{'path': "HLT/EgOffline/hltL1NonIsoHLTNonIsoSingleElectronEt10PixelMatchFilter_trigEffTo_hltL1NonIsoHLTNonIsoSinglePhotonEt10HcalIsolFilter_gsfEle_trigCuts_vs_phi_ee", 'description':""}])
