@@ -117,6 +117,7 @@ else:
 #process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
+process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
 
 ## TKStatus
 process.dqmTKStatus = cms.EDFilter("TKStatus",
