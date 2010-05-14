@@ -214,8 +214,8 @@ eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy",
   [{ 'path': "EcalEndcap/EESummaryClient/EEOT EE + energy summary", 'description': "Average energy of calibrated rechit with a cosmic selection. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/00 RecHit Energy Spectrum",
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE -", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE +", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE -", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalEndcap/EEOccupancyTask/EEOT rec hit spectrum EE +", 'description': "Average energy of good (rechit quality flag and channel status) calibrated rechits. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
 eeecalshifterlayout(dqmitems, "04 Energy/01 Clusters Energy",
   [{ 'path': "EcalEndcap/EEClusterTask/EECLT BC energy", 'description': "Calibrated energy (GeV) of 5x5 basic clusters. Physics events only. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
