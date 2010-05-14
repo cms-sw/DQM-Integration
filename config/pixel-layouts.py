@@ -15,11 +15,13 @@ pixellayout(dqmitems, "00c - Pixel_Error_Summary",
      'description': "Total number of errors per error type in a map of error type (y-axis) vs. FED (x-axis)",
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "01 - Pixel_Noise_Summary",
+pixellayout(dqmitems, "01a - Pixel_Noise_Summary",
   [{ 'path': "Pixel/Barrel/SUMDIG_ndigisFREQ_Barrel",
      'description': "Total number of events with at least one digi per event per barrel module - spikes show noisy modules or pixels!",
-     'draw': { 'withref': "no" }},
-   { 'path': "Pixel/Endcap/SUMDIG_ndigisFREQ_Endcap",
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "01b - Pixel_Noise_Summary",
+  [{ 'path': "Pixel/Endcap/SUMDIG_ndigisFREQ_Endcap",
      'description': "Total number of events with at least one digi per event per endcap module - spikes show noisy modules or pixels!",
      'draw': { 'withref': "no" }}]
   )
