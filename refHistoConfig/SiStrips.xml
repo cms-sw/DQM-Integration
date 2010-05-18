@@ -1,5 +1,4 @@
-  <SubDetectors name="SiStrip" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/109/524/DQM_V0001_R000109524__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
-    <!-- FED Monitoring -->
+<SubDetectors name="SiStrip" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0002_R000135445__MinimumBias__Commissioning10-PromptReco-v9__RECO.root">
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadActiveChannelStatusBits"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadChannelStatusBits"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/AnyFEDErrors"/>
@@ -9,7 +8,7 @@
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/AnyDAQProblems"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/AnyFEProblems"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/FEOverflows"/>
-    <ReferenceEntity name="ReadoutView/FedMonitoringSummary/FEMissing"/> 
+    <ReferenceEntity name="ReadoutView/FedMonitoringSummary/FEMissing"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/DataMissing"/>
     <!-- Cluster Properties -->
     <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack_in_TIB"/>
@@ -71,24 +70,12 @@
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_8/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__8"/>
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_9/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__9"/>
   </SubDetectors>
-  <SubDetectors name="Tracking" category="Run summary" source="/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data/PromptReco/109/524/DQM_V0001_R000109524__Cosmics__CRAFT09-PromptReco-v1__RECO.root">
+<SubDetectors name="Tracking" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0002_R000135445__MinimumBias__Commissioning10-PromptReco-v9__RECO.root">
     <!-- Track Parameters -->
-    <ReferenceEntity name="TrackParameters/NumberOfTracks_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/NumberOfRecHitsPerTrack_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPt_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/Chi2overDoF_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPhi_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/TrackEta_CKFTk"/>
-    <ReferenceEntity name="TrackParameters/NumberOfTracks_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/NumberOfRecHitsPerTrack_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPt_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/Chi2overDoF_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPhi_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/TrackEta_CosmicTk"/>
-    <ReferenceEntity name="TrackParameters/NumberOfTracks_RSTk"/>
-    <ReferenceEntity name="TrackParameters/NumberOfRecHitsPerTrack_RSTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPt_RSTk"/>
-    <ReferenceEntity name="TrackParameters/Chi2overDoF_RSTk"/>
-    <ReferenceEntity name="TrackParameters/TrackPhi_RSTk"/>
-    <ReferenceEntity name="TrackParameters/TrackEta_RSTk"/>
+    <ReferenceEntity name="TrackParameters/GeneralProperties/NumberOfTracks_GenTk"/>
+    <ReferenceEntity name="TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk"/>
+    <ReferenceEntity name="TrackParameters/GeneralProperties/TrackPt_ImpactPoint_GenTk"/>
+    <ReferenceEntity name="TrackParameters/GeneralProperties/Chi2oNDF_GenTk"/>
+    <ReferenceEntity name="TrackParameters/GeneralProperties/TrackPhi_ImpactPoint_GenTk"/>
+    <ReferenceEntity name="TrackParameters/GeneralProperties/TrackEta_ImpactPoint_GenTk"/>
   </SubDetectors>
