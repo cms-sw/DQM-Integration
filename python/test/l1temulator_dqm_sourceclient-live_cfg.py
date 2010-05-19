@@ -8,6 +8,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
 process.load("Configuration.StandardSequences.Geometry_cff")
 
