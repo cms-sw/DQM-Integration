@@ -1,4 +1,4 @@
-<SubDetectors name="SiStrip" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0002_R000135445__MinimumBias__Commissioning10-PromptReco-v9__RECO.root">
+<SubDetectors name="SiStrip" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0001_R000132601__Global__CMSSW_X_Y_Z__preprod361.root">
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadActiveChannelStatusBits"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/BadChannelStatusBits"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/AnyFEDErrors"/>
@@ -11,30 +11,42 @@
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/FEMissing"/>
     <ReferenceEntity name="ReadoutView/FedMonitoringSummary/DataMissing"/>
     <!-- Cluster Properties -->
-    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterStoNCorr_OnTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_ClusterStoNCorr_OnTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_ClusterStoNCorr_OnTrack_in_TEC"/>
-    <ReferenceEntity name="MechanicalView/TIB/Summary_TotalNumberOfClusters_OffTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_TotalNumberOfClusters_OffTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_TotalNumberOfClusters_OffTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_TotalNumberOfClusters_OffTrack_in_TEC"/>
-    <ReferenceEntity name="MechanicalView/TIB/Summary_TotalNumberOfClusters_OnTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_TotalNumberOfClusters_OnTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_TotalNumberOfClusters_OnTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_TotalNumberOfClusters_OnTrack_in_TEC"/>
-    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterCharge_OffTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterCharge_OffTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_ClusterCharge_OffTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_ClusterCharge_OffTrack_in_TEC"/>
-    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterNoise_OnTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterNoise_OnTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_ClusterNoise_OnTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_ClusterNoise_OnTrack_in_TEC"/>
-    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterNoise_OffTrack_in_TIB"/>
-    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterNoise_OffTrack_in_TOB"/>
-    <ReferenceEntity name="MechanicalView/TID/Summary_ClusterNoise_OffTrack_in_TID"/>
-    <ReferenceEntity name="MechanicalView/TEC/Summary_ClusterNoise_OffTrack_in_TEC"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterStoNCorr_OnTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterStoNCorr_OnTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_ClusterStoNCorr_OnTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_ClusterStoNCorr_OnTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_ClusterStoNCorr_OnTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_ClusterStoNCorr_OnTrack__TEC__side__2"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_TotalNumberOfClusters_OffTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_TotalNumberOfClusters_OffTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_TotalNumberOfClusters_OffTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_TotalNumberOfClusters_OffTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_TotalNumberOfClusters_OffTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_TotalNumberOfClusters_OffTrack__TEC__side__2"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_TotalNumberOfClusters_OnTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_TotalNumberOfClusters_OnTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_TotalNumberOfClusters_OnTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_TotalNumberOfClusters_OnTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_TotalNumberOfClusters_OnTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_TotalNumberOfClusters_OnTrack__TEC__side__2"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterCharge_OffTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterCharge_OffTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_ClusterCharge_OffTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_ClusterCharge_OffTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_ClusterCharge_OffTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_ClusterCharge_OffTrack__TEC__side__2"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterNoise_OnTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterNoise_OnTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_ClusterNoise_OnTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_ClusterNoise_OnTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_ClusterNoise_OnTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_ClusterNoise_OnTrack__TEC__side__2"/>
+    <ReferenceEntity name="MechanicalView/TIB/Summary_ClusterNoise_OffTrack__TIB"/>
+    <ReferenceEntity name="MechanicalView/TOB/Summary_ClusterNoise_OffTrack__TOB"/>
+    <ReferenceEntity name="MechanicalView/TID/side_1/Summary_ClusterNoise_OffTrack__TID__side__1"/>
+    <ReferenceEntity name="MechanicalView/TID/side_2/Summary_ClusterNoise_OffTrack__TID__side__2"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_1/Summary_ClusterNoise_OffTrack__TEC__side__1"/>
+    <ReferenceEntity name="MechanicalView/TEC/side_2/Summary_ClusterNoise_OffTrack__TEC__side__2"/>
     <ReferenceEntity name="MechanicalView/TIB/layer_1/Summary_ClusterStoNCorr__OnTrack__TIB__layer__1"/>
     <ReferenceEntity name="MechanicalView/TIB/layer_2/Summary_ClusterStoNCorr__OnTrack__TIB__layer__2"/>
     <ReferenceEntity name="MechanicalView/TIB/layer_3/Summary_ClusterStoNCorr__OnTrack__TIB__layer__3"/>
@@ -70,7 +82,7 @@
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_8/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__8"/>
     <ReferenceEntity name="MechanicalView/TEC/side_1/wheel_9/Summary_ClusterStoNCorr__OnTrack__TEC__side__1__wheel__9"/>
   </SubDetectors>
-<SubDetectors name="Tracking" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0002_R000135445__MinimumBias__Commissioning10-PromptReco-v9__RECO.root">
+<SubDetectors name="Tracking" category="Run summary" source="rfio:/castor/cern.ch/cms/testbeam/TAC/DQMoutput/Reference/DQM_V0001_R000132601__Global__CMSSW_X_Y_Z__preprod361.root">
     <!-- Track Parameters -->
     <ReferenceEntity name="TrackParameters/GeneralProperties/NumberOfTracks_GenTk"/>
     <ReferenceEntity name="TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk"/>
