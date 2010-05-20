@@ -9,6 +9,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Info DQM Consumer'
 process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(10.0)
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:50082/urn:xdaq-application:lid=29')
 
 #----------------------------
 #### DQM Environment
@@ -21,6 +22,8 @@ process.load("DQMServices.Core.DQM_cfg")
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
+process.dqmSaver.saveByRun = 1
+process.dqmSaver.saveByMinute = 1
 #-----------------------------
 process.load("DQMServices.Components.DQMProvInfo_cfi")
 
