@@ -122,23 +122,18 @@ pixellayout(dqmitems, "30b - PKAM event rates",
      'description': "Rate of events with at least 180 clusters in the FPIX detector", 
      'draw': { 'withref': "no" }}]
   ) 
+pixellayout(dqmitems, "30c - Pixel event rates",
+  [{ 'path': "Pixel/pixEventRate",
+     'description': "Rate of events with Pixel activity above noise level (at least 4 modules with digis)", 
+     'draw': { 'withref': "no" }}]
+  )
+pixellayout(dqmitems, "30d - Pixel event BX distribution",
+  [{ 'path': "Pixel/pixEvtsPerBX",
+     'description': "Distribution of Pixel events (at least 4 modules with digis) versus bucket number", 
+     'draw': { 'withref': "no" }}]
+  ) 
 pixellayout(dqmitems, "31 - Cluster_y_width_vs_cluster_eta",
   [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelClusters_Barrel",
      'description': "Cluster y width as function of cluster eta", 
-     'draw': { 'withref': "no" }}]
-  )
-pixellayout(dqmitems, "40a - Pixel_Error_Summary",
-  [{ 'path': "Pixel/AdditionalPixelErrors/SUMRAW_NErrors_FEDErrors",
-     'description': "Mean number of errors per FED crate (not associated with a specific module ID - should be empty!", 
-     'draw': { 'withref': "no" }}]
-  )
-pixellayout(dqmitems, "40b - Pixel_Error_Summary",
-  [{ 'path': "Pixel/Barrel/SUMRAW_NErrors_Barrel",
-     'description': "Mean number of errors per barrel module - should be empty!",
-     'draw': { 'withref': "no" }}]
-  )
-pixellayout(dqmitems, "40c - Pixel_Error_Summary",
-  [{ 'path': "Pixel/Endcap/SUMRAW_NErrors_Endcap",
-     'description': "Mean number of errors per endcap module - should be empty!",
      'draw': { 'withref': "no" }}]
   )
