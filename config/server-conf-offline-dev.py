@@ -14,20 +14,20 @@ modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8060
-server.serverDir   = '/data/dqm/dev/gui'
+server.serverDir   = '/dqmdata/dev/gui'
 server.baseUrl     = '/dqm/dev'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN Development'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dev/uploads',
-              { 'Development': '/data/dqm/dev/repository/data'})
+server.extend('DQMFileAccess', '/dev/null', '/dqmdata/dev/uploads',
+              { 'Development': '/dqmdata/dev/repository/data'})
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
 server.source('DQMLive', 'localhost:8061')
-server.source('DQMArchive', '/data/dqm/dev/ix', '^/Global/')
+server.source('DQMArchive', '/dqmdata/dev/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")

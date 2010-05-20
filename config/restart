@@ -114,6 +114,7 @@ killproc() {
 
 ######################################################################
 # Source server environment. Move to $DQM_DIR so cwd is safe.
+export SCRAM_ARCH=$ARCH
 . $DQM_SW/cmsset_default.sh
 . $DQM_SW/$ARCH/cms/dqmgui/$DQMV/etc/profile.d/env.sh
 cd $DQM_DIR

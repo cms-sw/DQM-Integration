@@ -24,20 +24,20 @@ envsetup = "export QUIET_ASSERT=a"
 #server.instrument  = 'igprof -d -t python -pp'
 #server.instrument  = 'igprof -d -t python -mp'
 server.port        = 8070
-server.serverDir   = '/data/dqm/dqmtest/gui'
+server.serverDir   = '/dqmdata/dqmtest/gui'
 server.baseUrl     = '/dqm/testing'
 server.title       = 'CMS data quality'
 server.serviceName = 'Test'
 
-server.plugin('render', "/data/dqm/dqmtest/style/*.cc")
+server.plugin('render', "/dqmdata/dqmtest/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/dqmtest/uploads',
-	      { 'ROOT': '/data/dqm/dqmtest/repository/data',
-	        'ZIP': '/data/dqm/dqmtest/repository/zipped' })
+server.extend('DQMFileAccess', '/dev/null', '/dqmdata/dqmtest/uploads',
+	      { 'ROOT': '/dqmdata/dqmtest/repository/data',
+	        'ZIP': '/dqmdata/dqmtest/repository/zipped' })
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
-server.source('DQMArchive', '/data/dqm/dqmtest/ix', '^/Global/')
+server.source('DQMArchive', '/dqmdata/dqmtest/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")

@@ -16,21 +16,21 @@ modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8080
-server.serverDir   = '/data/dqm/offline/gui'
+server.serverDir   = '/dqmdata/offline/gui'
 server.baseUrl     = '/dqm/offline'
 server.title       = 'CMS data quality'
 server.serviceName = 'Offline'
 
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
-server.extend('DQMFileAccess', '/dev/null', '/data/dqm/offline/uploads',
-	      { 'ROOT': '/data/dqm/offline/repository/data',
-	        'ZIP': '/data/dqm/offline/repository/zipped',
+server.extend('DQMFileAccess', '/dev/null', '/dqmdata/offline/uploads',
+	      { 'ROOT': '/dqmdata/offline/repository/data',
+	        'ZIP': '/dqmdata/offline/repository/zipped',
 	        'iSpy':   '/data/ispy-files' })
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
-server.source('DQMArchive', '/data/dqm/offline/ix', '^/Global/')
+server.source('DQMArchive', '/dqmdata/offline/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")
