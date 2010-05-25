@@ -41,7 +41,7 @@ process.dqmEnv.subSystemFolder = "BeamPixel"
 
 
 #----------------------------
-# Sub-system configuration follows
+# Sub-system Configuration
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
