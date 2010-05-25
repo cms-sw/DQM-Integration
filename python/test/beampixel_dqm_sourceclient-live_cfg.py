@@ -88,7 +88,9 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
-### pixelVertexDQM Configuration ###
+#----------------------------
+# pixelVertexDQM Configuration
+#----------------------------
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
@@ -112,25 +114,24 @@ else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 
-### Pixel-Vertices Configuration ###
+#----------------------------
+# Pixel-Tracks Configuration
+#----------------------------
+process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
+
+
+#----------------------------
+# Pixel-Vertices Configuration
+#----------------------------
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
 process.pixelVertices.TkClusParameters.zSeparation = 1.0
 
 
-### Pixel-Tracks Configuration ###
-process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
-process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
-
-
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:51")
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-
-
-### Define Sequence ###
+#----------------------------
+# Define Sequence
+#----------------------------
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*
@@ -146,5 +147,8 @@ process.reconstruction_step = cms.Sequence(
     process.pixelVertices*
     process.pixelVertexDQM)
 
-### Define Path ###
+
+#----------------------------
+# Define Path
+#----------------------------
 process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
