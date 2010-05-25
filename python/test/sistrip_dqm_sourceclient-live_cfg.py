@@ -136,12 +136,9 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
+process.TrackMon_gentk.doLumiAnalysis = False
+process.TrackMon_ckf.doLumiAnalysis = False
 
-# Switching Off Digi/Cluster profiles temprarily
-process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = False
-process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = False
-
-process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
 process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -197,7 +194,6 @@ process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('41 AND NOT (36 OR
 #--------------------------
 # Scheduling
 #--------------------------
-process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
 process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
 process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
@@ -214,7 +210,6 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
-                     process.SiStripSources_HVOff*
                      process.SiStripSources_LocalReco*
                      process.hltLevel1GTSeed*
                      process.RecoForDQM_TrkReco*
