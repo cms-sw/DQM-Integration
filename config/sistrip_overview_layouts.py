@@ -25,5 +25,8 @@ tklayout(dqmitems, "07 - Cluster y width vs. cluster eta",
  [{ 'path': "Pixel/Barrel/sizeYvsEta_siPixelClusters_Barrel",
     'description': "Cluster y width as function of cluster eta",
     'draw': { 'withref': "no" }}])
-
+tklayout(dqmitems, "08 - Pixel event BX distribution",
+  [{ 'path': "Pixel/pixEvtsPerBX",
+     'description': "Distribution of Pixel events (at least 4 modules with digis) versus bucket number. The main contributions of Pixel events should come from the colliding bunches. Filled, but non-colliding bunches should be at least 2 orders of magnitudelower. Empty bunches should be close to zero.", 
+     'draw': { 'withref': "no" }}]) 
 
