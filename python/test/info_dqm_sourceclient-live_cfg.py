@@ -74,7 +74,7 @@ process.evfDQMmodulesPath = cms.Path(
 			      process.l1GtRecord*
 			      process.physicsBitSelector*
                               process.scalersRawToDigi*
-			      process.dump*
+			      #process.dump*
                               process.dqmProvInfo*
                               process.dqmmodules 
 )
