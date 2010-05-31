@@ -62,7 +62,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 # Using offline alignments
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
 
-process.GlobalTag.globaltag = "GR10_E_V5::All"
+process.GlobalTag.globaltag = "GR10_E_V6::All"
 process.GlobalTag.pfnPrefix=cms.untracked.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/')
 
 #-----------------------
