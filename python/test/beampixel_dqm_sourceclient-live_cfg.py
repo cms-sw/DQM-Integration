@@ -49,7 +49,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 ### TEMPORARY: using offline alignments ###
 ###########################################
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR10_E_V5::All"
+process.GlobalTag.globaltag = "GR10_E_V6::All"
 process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("FWCore/MessageService/MessageLogger_cfi")
@@ -126,7 +126,7 @@ process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalR
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
-process.pixelVertices.TkClusParameters.zSeparation = 1.0
+#process.pixelVertices.TkClusParameters.zSeparation = 1.0
 
 
 #----------------------------
