@@ -59,7 +59,7 @@ process.dqmEnv.subSystemFolder    = "CSC"
 # Magnetic Field
 #-----------------------------
 
-process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
+#process.load("Configuration.GlobalRuns.ForceZeroTeslaField_cff")
 
 #-------------------------------------------------
 # GEOMETRY
