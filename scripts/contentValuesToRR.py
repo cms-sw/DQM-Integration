@@ -73,13 +73,12 @@ if __name__ == "__main__":
       continue
 
     try:
-      json = dict2json(values)
       if opts['debug']:
         print "Run number: %d" % run_number
         print "Dataset: %s" % dataset
         print "Data: ", values
       else:
-        result = server.SummaryValuesWriter.write(run_number, dataset, json)
+        result = server.SummaryValuesWriter.write(run_number, dataset, json.dumps(values))
         print "RR: %d rows modified for run# %d dataset %s" % (result, run_number, dataset)
     except xmlrpclib.Error, errstring:
       print "ERROR", errstring

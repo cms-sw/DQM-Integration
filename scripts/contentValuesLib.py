@@ -1,4 +1,4 @@
-import sys, os, optparse, re
+import sys, os, optparse, re, json
 import ROOT, xmlrpclib
  
 SERVER_URL = "http://pccmsdqm04.cern.ch/runregistry/xmlrpc"
@@ -118,24 +118,6 @@ def writeValues(folder, map, keymap = None, filter = None):
         if filter == None or re.match(filter, value_name):
           if not map.has_key(value_name):
             map[value_name] = value_numb
-
-def dict2json(d):
-  """ Convert dictionary (embedded) to json string """
-  s = '{'
-  i = 0
-  for k in d.keys():
-    i = i + 1
-    s = s + '"%s"=' % re.sub('"', '\\"', k)
-    if type(d[k]) == type({}):
-      s = s + dict2json(d[k])
-    elif type(d[k]) == type(1.0) or type(d[k]) == type(1):
-      s = s + str(d[k])
-    else:
-      s = s + '"%s"' % re.sub('"', '\\"', d[k])
-    if i < len(d): s = s + ','  
-
-  s = s + '}'
-  return s
 
 def checkFilter(raw_filter):
   """ Check if filter is OK """
