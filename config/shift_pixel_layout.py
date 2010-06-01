@@ -69,7 +69,7 @@ shiftpixellayout(dqmitems, "14 - Cluster occupancy Endcap +z Disk 1",
      'description': "Cluster occupancy of Endcap +z Disk 1. Look for new holes compared to the example plot.",
      'draw': { 'withref': "no" }}]
   ) 
-shiftpixellayout(dqmitems, 15 - Cluster occupancy Endcap +z Disk 2",
+shiftpixellayout(dqmitems, "15 - Cluster occupancy Endcap +z Disk 2",
   [{ 'path': "Pixel/Clusters/OffTrack/position_siPixelClusters_pz_Disk_2",
      'description': "Cluster occupancy of Endcap +z Disk 2. Look for new holes compared to the example plot.",
      'draw': { 'withref': "no" }}]
