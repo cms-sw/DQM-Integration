@@ -37,6 +37,7 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 # BeamMonitor
 #-----------------------------
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
+process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
@@ -84,6 +85,7 @@ process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimary
 ## Input track for PrimaryVertex reconstruction, uncomment the following line to use pixelLess tracks
 #process.offlinePrimaryVertices.TrackLabel = cms.InputTag("ctfPixelLess")
 process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
+process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
  
 ## Skip events with HV off/beam gas scraping events
@@ -114,6 +116,8 @@ else:
   process.dqmBeamMonitor.BeamFitter.DIPFileName = '/nfshome0/dqmpro/BeamMonitorDQM/BeamFitResults.txt'
 #process.dqmBeamMonitor.BeamFitter.SaveFitResults = False
 #process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
+  process.dqmBeamMonitorBx.BeamFitter.WriteAscii = True
+  process.dqmBeamMonitorBx.BeamFitter.AsciiFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults_Bx.txt'
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
 process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
@@ -131,7 +135,7 @@ process.dqmTKStatus = cms.EDFilter("TKStatus",
 process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
 process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
 process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.monitor = cms.Sequence(process.dqmBeamMonitor)
+process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
 process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
 process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
