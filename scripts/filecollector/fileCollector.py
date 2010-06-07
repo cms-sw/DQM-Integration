@@ -10,7 +10,7 @@ sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 def filecheck(rootfile):
   cmd = EXEDIR + '/filechk.sh ' + rootfile
   a = os.popen(cmd).read().split()
-  tag = a.pop()
+  tag=a.pop()
   if tag == '(int)(-1)':
     DEBUG and debugMsg(1,"File %s corrupted" % rootfile)
     return 0
@@ -27,46 +27,12 @@ def convert(infile, ofile):
   cmd = EXEDIR + '/convert.sh ' + infile + ' ' +ofile
   os.system(cmd)
 
-IG_TMP_DROPBOX="/dqmdata/EventDisplay/.dropbox"
-if not os.path.exists(IG_TMP_DROPBOX):
-  os.makedirs(IG_TMP_DROPBOX) 
 ####### ENDLESS LOOP WITH SLEEP
 while True:
   NRUNS = 0  #Number of runs found
   NFOUND = 0  #Number of files found
   NEW = {}
   TAGS= []
-  #Dealing with .ig files
-  ignames=sorted(glob.glob("%s/*.ig" % COLLECTING_DIR))
-  DEBUG and debugMsg(0, "found %d ig files in %s" % (len(ignames),COLLECTING_DIR))
-  for igfile in ignames:
-    if re.search("_R[0-9]{9}",igfile):
-      runstr=igfile.split("_R")[-1][:9]
-      destdir="%s" % (IG_FILE_DROPBOX)
-      destfile="%s/%s" % (destdir,igfile.rsplit("/",1)[-1])
-      destTmpFile="%s/%s" % (IG_TMP_DROPBOX,igfile.rsplit("/",1)[-1])
-      if not os.path.exists(destdir):
-        os.makedirs(destdir)
-      try:
-        shutil.move(igfile,destTmpFile)
-        os.rename(destTmpFile,destfile)
-	debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
-        os.chmod(destfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
-      except:
-        if os.path.exists(destTmpFile) and os.path.exists(igfile):
-          os.remove(destTmpFile)
-          debugMsg(2, "file %s was not sent to the DROPBO%s retying later" % (igfile,DEBUG and "X:%s" % IG_FILE_DROPBOX or "X"))
-      
-          
-    else:
-      destfile="%s/%s" % (OLD_IG_FILES,igfile.rsplit("/",1)[-1])
-      ref=1
-      ndestfile=destfile
-      while os.path.exists(ndestfile):
-        ndestfile="%s-%03d.ig" %(destfile.split(".ig")[0],ref)
-        ref+=1	
-      shutil.move(igfile,ndestfile)
-      debugMsg(1, "file %s is not a standar name file, saved in %s directory for manual handeling" % (igfile,OLD_IG_FILES))
   for dir, subdirs, files in os.walk(COLLECTING_DIR):
     for f in files:
       if re.match('^DQM_.*_R[0-9]*_T[0-9]*\.root$', f) or re.match('^Playback_.*_R[0-9]*_T[0-9]*\.root$', f):
@@ -125,6 +91,10 @@ while True:
               if "Playback" in Tfile:
                 dqmfile = Tfile.replace('Playback','DQM')
                 convert(Tfile,dqmfile)
+                if not os.path.exists(dqmfile):
+                  debugMsg(1, "Problem converting %s skiping" % Tfile)
+                  shutil.move(Tfile,finalTfile+"_d")
+                  continue
                 os.rename(Tfile,finalTfile.replace('Playback','Playback_full'))
                 Tfile=dqmfile  
               for i in range(RETRIES):
