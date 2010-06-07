@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
-import os,time,sys,glob,zipfile,re,shutil,stat,md5
+import os,time,sys,glob,zipfile,re,shutil,stat
+from hashlib import md5
 from commonAnTS import *
 if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
   print "No valid configuration file"
@@ -35,9 +36,12 @@ while True:
   TAGS= []
   for dir, subdirs, files in os.walk(COLLECTING_DIR):
     for f in files:
-      if re.match('^DQM_.*_R[0-9]*_T[0-9]*\.root$', f) or re.match('^Playback_.*_R[0-9]*_T[0-9]*\.root$', f):
-        runnr = long(f[f.rfind("_R")+2:f.rfind("_T")])
-        subsystem=f.split("_")[2]
+      fMatch=re.match('^DQM_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$',f)
+      if not fMatch:
+        fMatch=re.match('^Playback_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$', f)
+      if fMatch:
+        runnr = int(fMatch.group("runnr"))
+        subsystem=fMatch.group("subsys")
         runstr="%09d" % runnr
         donefile = "%s/%s/%s/%s" % (T_FILE_DONE_DIR, runstr[0:3], runstr[3:6], f)
         f = "%s/%s" % (dir, f)
@@ -51,7 +55,7 @@ while True:
     DEBUG and debugMsg(0, "Going to Sleep because I have nothing to do")
     time.sleep(COLLECTOR_WAIT_TIME)
     continue
-  DEBUG and debugMsg(0, "found %d root files in %s" % (len(NEW.keys()),COLLECTING_DIR))
+  DEBUG and debugMsg(0, "found %d RUNS in %s" % (len(NEW.keys()),COLLECTING_DIR))
   TAGS=sorted(glob.glob('%s/tagfile_runend_*' % COLLECTING_DIR ),reverse=True)
   if len(TAGS)==0:
     if len(NEW.keys()) <= 1:
@@ -71,24 +75,21 @@ while True:
       for subsystem,files in  subsystems.items():
         done=False
         keeper=0
-        Tfiles=sorted(files,reverse=True)
+        Tfiles=sorted(files,cmp=lambda x,y: "_T" not in x and x != y and 1  or cmp(x,y))[::-1]
         for Tfile in Tfiles:
           version=len(glob.glob("%s/DQM_V*_%s_R%09d.root" % (DROPBOX,subsystem,run)))+1
           finalTMPfile="%s/DQM_V%04d_%s_R%09d.root" % (TMP_DROPBOX,version,subsystem,run)
           finalfile="%s/DQM_V%04d_%s_R%09d.root" %   (DROPBOX,version,subsystem,run) 
           runstr="%09d" % run
           finalTfile="%s/%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6],Tfile.split("/")[-1])
-          finalTsubdir="%s/%s" % (T_FILE_DONE_DIR,runstr[0:3])
           finalTdir="%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6])
-          if not os.path.exists(finalTsubdir):
-            os.makedirs(finalTsubdir)
           if not os.path.exists(finalTdir):
             os.makedirs(finalTdir)
           if os.path.exists(finalTMPfile):
             os.remove(finalTMPfile)
           if not done:
             if filecheck(Tfile) == 1:
-              if "Playback" in Tfile:
+              if "Playback" in Tfile and "SiStrip" in Tfile:
                 dqmfile = Tfile.replace('Playback','DQM')
                 convert(Tfile,dqmfile)
                 if not os.path.exists(dqmfile):
@@ -98,14 +99,8 @@ while True:
                 os.rename(Tfile,finalTfile.replace('Playback','Playback_full'))
                 Tfile=dqmfile  
               for i in range(RETRIES):
-                md5File=open(Tfile,"r")
-                md5Buffer=md5File.read(2048)
-                md5Digest=md5.new(md5Buffer)
-                while md5Buffer:
-                  md5Buffer=md5File.read(2048)
-                  md5Digest.update(md5Buffer)
+                md5Digest=md5(file(Tfile).read())
                 originStr="md5:%s %d %s" % (md5Digest.hexdigest(),os.stat(Tfile).st_size,Tfile)
-                md5File.close()
                 originTMPFile="%s.origin" % finalTMPfile
                 originFile=open(originTMPFile,"w")
                 originFile.write(originStr)
@@ -133,7 +128,6 @@ while True:
                 shutil.move(Tfile,finalTfile+"_d")
               else:
                 os.remove(Tfile) #
-                
           else:
             if keeper == 0:
               keeper+=1
