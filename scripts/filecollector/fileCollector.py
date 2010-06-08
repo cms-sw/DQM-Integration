@@ -36,9 +36,9 @@ while True:
   TAGS= []
   for dir, subdirs, files in os.walk(COLLECTING_DIR):
     for f in files:
-      fMatch=re.match('^DQM_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$',f)
+      fMatch=re.match('^DQM_V[0-9]{4}_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$',f)
       if not fMatch:
-        fMatch=re.match('^Playback_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$', f)
+        fMatch=re.match('^Playback_V[0-9]{4}_(?P<subsys>.*)_R(?P<runnr>[0-9]{9})(|_T[0-9]*)\.root$', f)
       if fMatch:
         runnr = int(fMatch.group("runnr"))
         subsystem=fMatch.group("subsys")
