@@ -47,8 +47,8 @@ server.serviceName = 'Online'
 server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMFileAccess', None, "/dqmdata/dqm/uploads",
-              { "Original": "/dqmdata/dqm/repository/original",
-                "iSpy": "/dqmdata/EventDisplay/done" })
+              { "Original": "/dqmdata/dqm/repository/original/OnlineData",
+                "Merged": "/dqmdata/dqm/repository/merged/OnlineData" })
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
