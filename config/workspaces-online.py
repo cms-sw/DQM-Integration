@@ -10,13 +10,15 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/02 - Pixel_Charge_Summary')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
-                 'SiStrip/Layouts/00 - ReportSummary',
-                 'SiStrip/Layouts/01 - FED-Detected Errors',
-                 'SiStrip/Layouts/02 - # of Digi Trend',
-                 'SiStrip/Layouts/03 - # of Cluster Trend',
-                 'SiStrip/Layouts/04 - OnTrackCluster (StoN)',
-                 'SiStrip/Layouts/05 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/06 - Tracks')
+                 'SiStrip/Layouts/00 - SiStrip ReportSummary',
+                 'SiStrip/Layouts/01 - FED-Detected Errors Summary',
+                 'SiStrip/Layouts/02 - FED-Detected Errors Trend',
+                 'SiStrip/Layouts/03 - # of Digi Trend',
+                 'SiStrip/Layouts/04 - # of Cluster Trend',
+                 'SiStrip/Layouts/05 - OnTrackCluster (StoN)',
+                 'SiStrip/Layouts/06 - OffTrackCluster (Total Number)',
+                 'SiStrip/Layouts/07 - Tracking ReportSummary',
+                 'SiStrip/Layouts/08 - Tracks')                 
                
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',

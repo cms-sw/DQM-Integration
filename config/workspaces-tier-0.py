@@ -12,12 +12,14 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
 		 'Pixel/Layouts/07 - Endcap OnTrack cluster positions')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
-                 'SiStrip/Layouts/00 - ReportSummary',
-                 'SiStrip/Layouts/01 - FED-Detected Errors',
-                 'SiStrip/Layouts/02 - # of Cluster Trend',
-                 'SiStrip/Layouts/03 - OnTrackCluster (StoN)',
-                 'SiStrip/Layouts/04 - OffTrackCluster (Total Number)',
-                 'SiStrip/Layouts/05 - Tracks ')
+                 'SiStrip/Layouts/00 - SiStrip ReportSummary',
+                 'SiStrip/Layouts/01 - FED-Detected Errors Summary',
+                 'SiStrip/Layouts/02 - FED-Detected Errors',
+                 'SiStrip/Layouts/03 - # of Cluster Trend',
+                 'SiStrip/Layouts/04 - OnTrackCluster (StoN)',
+                 'SiStrip/Layouts/05 - OffTrackCluster (Total Number)',                 
+                 'SiStrip/Layouts/06 - Tracking ReportSummary',
+                 'SiStrip/Layouts/07 - Tracks')
 
 server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/')
 server.workspace('DQMContent', 13, 'Tracker/Muons', 'DT', '^DT/')
