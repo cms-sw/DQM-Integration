@@ -1,9 +1,19 @@
 def castorlayout(i, p, *rows): i["Castor/Layouts/" + p] = DQMItem(layout=rows)
 
 
-castorlayout(dqmitems, "CASTOR Channel Status",
+castorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
            [{ 'path': "Castor/EventInfo/reportSummaryMap",
-             'description':"1 - OK, 0 - dead, -1 - noisy"}]
+             'description':"Green - OK:signal, Cyan - OK:pedestal, Red - dead, Yellow - noisy"}]
+           )
+
+castorlayout(dqmitems, "CASTOR Digi Occupancy Map",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi Occupancy Map",
+             'description':"dynamic scale"}]
+           )
+
+castorlayout(dqmitems, "CASTOR RecHit Energy based Channel Status",
+           [{ 'path': "Castor/CastorChannelQuality/RecHitEnergyBasedSummaryMap",
+             'description':"Green - OK, Red - dead, Yellow - noisy"}]
            )
 
 castorlayout(dqmitems, "CASTOR event products",
@@ -26,30 +36,30 @@ castorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
              'description':"RecHitEnergy in each of 16 CASTOR sectors"}]
            )         
 	  
-castorlayout(dqmitems, "CASTOR RecHitEnergy 2D Map",
+castorlayout(dqmitems, "CASTOR RecHit Energy 2D Map",
            [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit 2D Energy Map- above threshold",
              'description':"2D Energy Map"}]
            )
 	  	  
 castorlayout(dqmitems, "CASTOR All Digi Values",
            [{ 'path': "Castor/CastorDigiMonitor/Castor All Digi Values",
-             'description':""}]
-           )         
-
-castorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
-           [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
-             'description':"average pulse in bunch crossings"}]
+             'description':"all CASTOR ADC values"}]
            )
 
 castorlayout(dqmitems, "CASTOR hits 3D- cumulative",
            [{ 'path': "Castor/CastorEventDisplay/CASTOR 3D hits- cumulative",
              'description':"cumulative event display"}]
-           )
+           )         
 
 castorlayout(dqmitems, "CASTOR hits 3D- event with the largest deposited E",
            [{ 'path': "Castor/CastorEventDisplay/CASTOR 3D hits- event with the largest deposited E",
              'description':"display of the event with largest deposited energy"}]
-           )
+           )         
+
+castorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
+             'description':"average pulse in bunch crossings"}]
+           ) 
 
 castorlayout(dqmitems, "Castor Pulse Shape for sector=0 (in all 14 modules)",
            [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=0 (in all 14 modules)",

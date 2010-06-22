@@ -1,10 +1,18 @@
 def shiftcastorlayout(i, p, *rows): i["00 Shift/Castor/" + p] = DQMItem(layout=rows)
 
-
-
-shiftcastorlayout(dqmitems, "CASTOR Channel Status",
+shiftcastorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
            [{ 'path': "Castor/EventInfo/reportSummaryMap",
-             'description':"1 - OK, 0 - dead, -1 - noisy"}]
+             'description':"Green - OK:signal, Cyan - OK:pedestal, Red - dead, Yellow - noisy"}]
+           )
+
+shiftcastorlayout(dqmitems, "CASTOR Digi Occupancy Map",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi Occupancy Map",
+             'description':"dynamic scale"}]
+           )
+
+shiftcastorlayout(dqmitems, "CASTOR RecHit Energy based Channel Status",
+           [{ 'path': "Castor/CastorChannelQuality/RecHitEnergyBasedSummaryMap",
+             'description':"Green - OK, Red - dead, Yellow - noisy"}]
            )
 
 shiftcastorlayout(dqmitems, "CASTOR event products",
@@ -27,15 +35,15 @@ shiftcastorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
              'description':"RecHitEnergy in each of 16 CASTOR sectors"}]
            )         
 	  
-shiftcastorlayout(dqmitems, "CASTOR RecHitEnergy 2D Map",
+shiftcastorlayout(dqmitems, "CASTOR RecHit Energy 2D Map",
            [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit 2D Energy Map- above threshold",
              'description':"2D Energy Map"}]
            )
 	  	  
 shiftcastorlayout(dqmitems, "CASTOR All Digi Values",
            [{ 'path': "Castor/CastorDigiMonitor/Castor All Digi Values",
-             'description':""}]
-           )         
+             'description':"all CASTOR ADC values"}]
+           )
 
 shiftcastorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
            [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
