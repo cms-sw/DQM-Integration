@@ -23,7 +23,7 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
 process.dqmSaver.saveByRun = 1
-process.dqmSaver.saveByMinute = 1
+process.dqmSaver.saveByMinute = 4
 #-----------------------------
 process.load("DQMServices.Components.DQMProvInfo_cfi")
 
