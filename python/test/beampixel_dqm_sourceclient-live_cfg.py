@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*')) # Uncomment to add a filter on data
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*'))
 
 
 #----------------------------
@@ -27,7 +27,7 @@ process.physicsBitSelector = cms.EDFilter("PhysDecl",
 process.load("L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff")
 process.load("HLTrigger.HLTfilters.hltLevel1GTSeed_cfi")
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("(40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
+process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("0 AND (40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
 
 
 #----------------------------
@@ -125,8 +125,6 @@ process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalR
 #----------------------------
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
-process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
-#process.pixelVertices.TkClusParameters.zSeparation = 1.0
 
 
 #----------------------------
