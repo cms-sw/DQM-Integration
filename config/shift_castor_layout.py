@@ -5,14 +5,9 @@ shiftcastorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
              'description':"Green - OK:signal, Cyan - OK:pedestal, Red - dead, Yellow - noisy"}]
            )
 
-shiftcastorlayout(dqmitems, "CASTOR Digi Occupancy Map",
-           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi Occupancy Map",
-             'description':"dynamic scale"}]
-           )
-
-shiftcastorlayout(dqmitems, "CASTOR RecHit Energy based Channel Status",
-           [{ 'path': "Castor/CastorChannelQuality/RecHitEnergyBasedSummaryMap",
-             'description':"Green - OK, Red - dead, Yellow - noisy"}]
+shiftcastorlayout(dqmitems, "CASTOR All Digi Values",
+           [{ 'path': "Castor/CastorDigiMonitor/Castor All Digi Values",
+             'description':"all CASTOR ADC values"}]
            )
 
 shiftcastorlayout(dqmitems, "CASTOR event products",
@@ -39,12 +34,7 @@ shiftcastorlayout(dqmitems, "CASTOR RecHit Energy 2D Map",
            [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit 2D Energy Map- above threshold",
              'description':"2D Energy Map"}]
            )
-	  	  
-shiftcastorlayout(dqmitems, "CASTOR All Digi Values",
-           [{ 'path': "Castor/CastorDigiMonitor/Castor All Digi Values",
-             'description':"all CASTOR ADC values"}]
-           )
-
+	  
 shiftcastorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
            [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
              'description':"average pulse in bunch crossings"}]
