@@ -32,8 +32,8 @@ for i in offline caf dev; do
       continue ;;
     esac
 
-    mkdir -p $FILER/old-logs/$HOST/$item
-    zip -9Tmojq $FILER/old-logs/$HOST/$item/$month.zip $f
+    mkdir -p $FILER/old-logs/$HOST/$i/$item
+    zip -9Tmojq $FILER/old-logs/$HOST/$i/$item/$month.zip $f
     set +e
   done
 
