@@ -1,18 +1,18 @@
 def shiftcastorlayout(i, p, *rows): i["00 Shift/Castor/" + p] = DQMItem(layout=rows)
 
-shiftcastorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
+shiftcastorlayout(dqmitems, "CASTOR reportSummaryMap",
            [{ 'path': "Castor/EventInfo/reportSummaryMap",
-             'description':"Green - OK:signal, Cyan - OK:pedestal, Red - dead, Yellow - noisy"}]
+             'description':""}]
+           )
+
+shiftcastorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi ChannelSummaryMap",
+             'description':""}]
            )
 
 shiftcastorlayout(dqmitems, "CASTOR All Digi Values",
            [{ 'path': "Castor/CastorDigiMonitor/Castor All Digi Values",
              'description':"all CASTOR ADC values"}]
-           )
-
-shiftcastorlayout(dqmitems, "CASTOR event products",
-           [{ 'path': "Castor/CastorEventProducts/CastorEventProduct",
-             'description':"check whether CASTOR objects are present in the events"}]
            )
               
 shiftcastorlayout(dqmitems, "CASTOR RecHit Energies",
