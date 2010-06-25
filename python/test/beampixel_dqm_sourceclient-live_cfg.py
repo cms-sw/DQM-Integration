@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*')
 
 
 #----------------------------
@@ -132,9 +132,11 @@ process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFacto
 #----------------------------
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
-process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*
-                                   process.gtDigis*
-                                   process.hltLevel1GTSeed)
+process.phystrigger = cms.Sequence(
+  process.hltTriggerTypeFilter
+#  process.gtDigis*
+#  process.hltLevel1GTSeed
+  )
 
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
