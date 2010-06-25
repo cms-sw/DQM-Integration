@@ -17,11 +17,11 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
-# L1 Trigger Bit Selection (bit 40 and 41 for BSC trigger)
+# L1 Trigger Bit Selection
 process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
 process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
+process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 38 OR 39)')
 
 #----------------------------
 # DQM Live Environment
