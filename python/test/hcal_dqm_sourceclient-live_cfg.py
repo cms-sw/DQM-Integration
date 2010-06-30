@@ -109,6 +109,10 @@ process.hcalClient.subSystemFolder=subsystem
 #print "BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF_coincidence_PM",
                                        "HLT_L1Tech_HCAL_HF"]
+
+process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasBSC",
+                                          "HLT_L1Tech_BSC_minBias"
+                                          ]
 #print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
 # hcalClient configurable values ------------------------
