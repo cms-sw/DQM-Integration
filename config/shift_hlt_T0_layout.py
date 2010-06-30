@@ -95,14 +95,14 @@ hltCollLayout(dqmitems,"Eff of HLT_Photon10_L1R to its RECO",
 [{'path': "HLT/FourVector/paths/HLT_Photon10_L1R/custom-eff/HLT_Photon10_L1R_wrt__offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Photon10_L1R. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
-hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its L1",
-[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt__l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltCollLayout(dqmitems,"Eff of HLT_Jet30U to its L1",
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Et_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
-hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its L1 vs eta-phi",
-[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt__l1Etal1Phi_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltCollLayout(dqmitems,"Eff of HLT_Jet30U to its L1 vs eta-phi",
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__l1Etal1Phi_Eff_OnToL1_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
-hltCollLayout(dqmitems,"Eff of HLT_Jet15U to its RECO",
-[{'path': "HLT/FourVector/paths/HLT_Jet15U/custom-eff/HLT_Jet15U_wrt__offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet15U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltCollLayout(dqmitems,"Eff of HLT_Jet30U to its RECO",
+[{'path': "HLT/FourVector/paths/HLT_Jet30U/custom-eff/HLT_Jet30U_wrt__offEt_Eff_OnToOff_UM", 'description':"Efficiency of HLT to L1 for path HLT_Jet30U. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
 hltCollLayout(dqmitems,"Eff of HLT_L1MuOpen to its L1",
@@ -190,13 +190,13 @@ tpgOfflineLayout(dqmitems,"03 - HLT Muon Passthru Eta Phi ",
 
 
 tpgOfflineLayout(dqmitems,"04 - HLT JetMet ",
-[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Eta", 'description':""}])
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet30U/ME_Eff_Eta", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"05 - ",
-[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Phi", 'description':""}])
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet30U/ME_Eff_Phi", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"06 - ",
-[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet15U/ME_Eff_Pt", 'description':""}])
+[{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_Jet30U/ME_Eff_Pt", 'description':""}])
 
 tpgOfflineLayout(dqmitems,"07 - ",
 [{'path': "HLT/JetMET/EffWrtMBTrigger/HLT_L1Jet6U/ME_Eff_Eta", 'description':""}])
