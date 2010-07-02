@@ -7,8 +7,9 @@ process = cms.Process("DQM")
 #----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Info DQM Consumer'
-process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1.0)
-#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2d05-14:22100/urn:xdaq-application:lid=30')
+process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(10.0)
+#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30:22100/urn:xdaq-application:lid=30')
+#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:50082/urn:xdaq-application:lid=29')
 
 #----------------------------
 #### DQM Environment
@@ -21,6 +22,8 @@ process.load("DQMServices.Core.DQM_cfg")
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
+process.dqmSaver.saveByRun = 1
+process.dqmSaver.saveByMinute = 4
 #-----------------------------
 process.load("DQMServices.Components.DQMProvInfo_cfi")
 
@@ -37,9 +40,13 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 #process.es_prefer_GlobalTag = cms.ESPrefer('PoolDBESSource','GlobalTag')
 
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtRecord_cfi")
+
 import EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi
 gtDigis = EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi.l1GtUnpack.clone()
+import EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi
+gtEvmDigis = EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi.l1GtEvmUnpack.clone()
 
 process.physicsBitSelector = cms.EDFilter("PhysDecl",
                                                    applyfilter = cms.untracked.bool(False),
@@ -63,10 +70,11 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMmodulesPath = cms.Path(
                               process.l1GtUnpack*
 			      process.gtDigis*
+			      process.gtEvmDigis*
 			      process.l1GtRecord*
 			      process.physicsBitSelector*
                               process.scalersRawToDigi*
-			      process.dump*
+			      #process.dump*
                               process.dqmProvInfo*
                               process.dqmmodules 
 )

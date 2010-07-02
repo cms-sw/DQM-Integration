@@ -6,8 +6,7 @@ process = cms.Process("BeamMonitor")
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*'))
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBiasBSC','HLT_L1_BSC'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
 
 #--------------------------
 # Filters
@@ -17,11 +16,11 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
-# L1 Trigger Bit Selection (bit 40 and 41 for BSC trigger)
-process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
-process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
-process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
+# L1 Trigger Bit Selection
+#process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
+#process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
+#process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
+#process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 38 OR 39)')
 
 #----------------------------
 # DQM Live Environment
@@ -37,6 +36,7 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 # BeamMonitor
 #-----------------------------
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
+process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
@@ -61,8 +61,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 # Using offline alignments
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-
-process.GlobalTag.globaltag = "GR10_E_V5::All"
+process.GlobalTag.globaltag = "GR10_E_V6::All"
 process.GlobalTag.pfnPrefix=cms.untracked.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/')
 
 #-----------------------
@@ -85,6 +84,7 @@ process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimary
 ## Input track for PrimaryVertex reconstruction, uncomment the following line to use pixelLess tracks
 #process.offlinePrimaryVertices.TrackLabel = cms.InputTag("ctfPixelLess")
 process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
+process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
  
 ## Skip events with HV off/beam gas scraping events
@@ -115,8 +115,11 @@ else:
   process.dqmBeamMonitor.BeamFitter.DIPFileName = '/nfshome0/dqmpro/BeamMonitorDQM/BeamFitResults.txt'
 #process.dqmBeamMonitor.BeamFitter.SaveFitResults = False
 #process.dqmBeamMonitor.BeamFitter.OutputFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults.root'
+  process.dqmBeamMonitorBx.BeamFitter.WriteAscii = True
+  process.dqmBeamMonitorBx.BeamFitter.AsciiFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults_Bx.txt'
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
+process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
 
 ## TKStatus
 process.dqmTKStatus = cms.EDFilter("TKStatus",
@@ -128,18 +131,17 @@ process.dqmTKStatus = cms.EDFilter("TKStatus",
 #--------------------------
 # Scheduling
 #--------------------------
-process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
+#process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
 process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
 process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.monitor = cms.Sequence(process.dqmBeamMonitor)
-process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
-process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
+process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
+#process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
+#process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
-process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
-#process.p = cms.Path(process.scalersRawToDigi*process.phystrigger*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
-#process.p = cms.Path(process.gtDigis*process.scalersRawToDigi*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
-#process.p = cms.Path(process.gtDigis*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
-#process.p = cms.Path(process.phystrigger*process.tracking*process.offlinePrimaryVertices*process.monitor*process.dqmSaver)
-#process.p = cms.Path(process.phystrigger*process.tracking_pixelless*process.offlinePrimaryVertices*process.monitor_pixelless*process.dqmSaver)
+#--------------------------
+# Path
+#--------------------------
+process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+#process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
 

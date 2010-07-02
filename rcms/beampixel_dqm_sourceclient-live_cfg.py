@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*')) # Uncomment to add a filter on data
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
 
 
 #----------------------------
@@ -27,7 +27,7 @@ process.physicsBitSelector = cms.EDFilter("PhysDecl",
 process.load("L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff")
 process.load("HLTrigger.HLTfilters.hltLevel1GTSeed_cfi")
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("(40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
+process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("0 AND (40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
 
 
 #----------------------------
@@ -41,7 +41,7 @@ process.dqmEnv.subSystemFolder = "BeamPixel"
 
 
 #----------------------------
-# Sub-system configuration follows
+# Sub-system Configuration
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
@@ -49,7 +49,7 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 ### TEMPORARY: using offline alignments ###
 ###########################################
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR10_E_V5::All"
+process.GlobalTag.globaltag = "GR10_E_V6::All"
 process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("FWCore/MessageService/MessageLogger_cfi")
@@ -88,7 +88,9 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
-### pixelVertexDQM Configuration ###
+#----------------------------
+# pixelVertexDQM Configuration
+#----------------------------
 process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
@@ -112,30 +114,29 @@ else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 
-### Pixel-Vertices Configuration ###
+#----------------------------
+# Pixel-Tracks Configuration
+#----------------------------
+process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
+
+
+#----------------------------
+# Pixel-Vertices Configuration
+#----------------------------
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
-process.pixelVertices.VtxFinderParameters.maxNbOfVertices = 1
-process.pixelVertices.TkClusParameters.zSeparation = 1.0
 
 
-### Pixel-Tracks Configuration ###
-process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-process.PixelTripletHLTGenerator.extraHitRPhitolerance = 0.06
-process.PixelTripletHLTGenerator.extraHitRZtolerance = 0.06
-
-
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange("124120:1-124120:51")
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-
-
-### Define Sequence ###
+#----------------------------
+# Define Sequence
+#----------------------------
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
-process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*
-                                   process.gtDigis*
-                                   process.hltLevel1GTSeed)
+process.phystrigger = cms.Sequence(
+  process.hltTriggerTypeFilter
+#  process.gtDigis*
+#  process.hltLevel1GTSeed
+  )
 
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
@@ -146,5 +147,8 @@ process.reconstruction_step = cms.Sequence(
     process.pixelVertices*
     process.pixelVertexDQM)
 
-### Define Path ###
+
+#----------------------------
+# Define Path
+#----------------------------
 process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
