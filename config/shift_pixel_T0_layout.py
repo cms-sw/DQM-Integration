@@ -1,13 +1,4 @@
 def shiftpixellayout(i, p, *rows): i["00 Shift/Pixel/" + p] = DQMItem(layout=rows)
-shiftpixellayout(dqmitems, "00 - Mean number of FED errors per FED",
-  [{ 'path': "Pixel/AdditionalPixelErrors/SUMOFF_NErrors_FEDErrors", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
-)
-shiftpixellayout(dqmitems, "01 - Mean number of FED errors Barrel",
-  [{ 'path': "Pixel/Barrel/SUMOFF_NErrors_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
-)
-shiftpixellayout(dqmitems, "02 - Mean number of FED errors Endcap",
-  [{ 'path': "Pixel/Endcap/SUMOFF_NErrors_Endcap", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
-)
 shiftpixellayout(dqmitems, "03 - Mean digi charge Barrel",
   [{ 'path': "Pixel/Barrel/SUMOFF_adc_Barrel", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
