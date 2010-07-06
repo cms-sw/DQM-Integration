@@ -41,6 +41,8 @@ process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
+process.dqmBeamMonitorBx.fitEveryNLumi = 15
+process.dqmBeamMonitorBx.resetEveryNLumi = 15
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
