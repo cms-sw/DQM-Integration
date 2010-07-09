@@ -5,11 +5,14 @@ hcallayout(dqmitems, "01 HCAL Summaries",
              'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green"}]
            )
 
-hcallayout(dqmitems, "HCAL Dead Cell Check",
-          [{ 'path': "Hcal/DeadCellMonitor_Hcal/ ProblemDeadCells",
-             'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HCAL_vs_LS",
-             'description': "Total number of dead cells found in HCAL vs luminosity section"}],
+hcallayout(dqmitems, "HCAL Events Processed",
+          [{ 'path': "Hcal/HcalInfo/EventsInHcalMonitorModule",
+             'description': "This histogram counts the total events seen by this process." }]
+           )
+
+hcallayout(dqmitems, "HCAL Sufficient Events",
+          [{ 'path': "Hcal/HcalInfo/SummaryClientPlots/MinEvents",
+             'description': "This histogram gived the minimum number of events required for certain quality determinatiions to be sensible." }]
            )
 
 hcallayout(dqmitems, "HCAL Hot Cell Check",
@@ -17,6 +20,13 @@ hcallayout(dqmitems, "HCAL Hot Cell Check",
                    'description': "A cell is considered potentially hot if it is above some threshold energy, or if it is persistently below some (lower) threshold enery for a number of consecutive events. Seriously hot if hot for >5% of a full run. All depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
            [{ 'path': "Hcal/HotCellMonitor_Hcal/TotalHotCells_HCAL_vs_LS",
               'description': "Total number of hot cells found in HCAL vs luminosity section"}],
+           )
+
+hcallayout(dqmitems, "HCAL Dead Cell Check",
+          [{ 'path': "Hcal/DeadCellMonitor_Hcal/ ProblemDeadCells",
+             'description': "Potential dead cell candidates in all depths. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
+           [{ 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HCAL_vs_LS",
+             'description': "Total number of dead cells found in HCAL vs luminosity section"}],
            )
 
 hcallayout(dqmitems, "HCAL Digi Problems",

@@ -43,10 +43,11 @@ server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/01 HCAL Summaries',
+                 'Hcal/Layouts/HCAL Events Processed',
+                 'Hcal/Layouts/HCAL Sufficient Events',
                  'Hcal/Layouts/HCAL Dead Cell Check',
                  'Hcal/Layouts/HCAL Hot Cell Check',
-                 'Hcal/Layouts/HCAL Data Format',
-                 'Hcal/Layouts/HCAL Lumi Problems',
+                 'Hcal/Layouts/HCAL Raw Data',
                  'Hcal/Layouts/HCAL Digi Problems',
                  )
 
