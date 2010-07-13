@@ -158,6 +158,9 @@ process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(idle)
 process.hcalDigiMonitor.ExpectedOrbitMessageTime = idle
 process.hcalDigiMonitor.shutOffOrbitTest=False
 
+# Turn off dead cell checks in HO ring 2
+process.hcalDeadCellMonitor.excludeHORing2 = True
+
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
 
