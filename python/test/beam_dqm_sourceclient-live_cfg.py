@@ -2,6 +2,13 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("BeamMonitor")
 
+process.MessageLogger = cms.Service("MessageLogger",
+        categories = cms.untracked.vstring(
+  'BeamMonitor',
+  'BeamMonitorBx'
+        )
+)
+
 #----------------------------
 # Event Source
 #-----------------------------
