@@ -1,12 +1,44 @@
 import FWCore.ParameterSet.Config as cms
+import datetime
 
 process = cms.Process("BeamMonitor")
 
+## Debugging
+now = datetime.datetime.now()
+appendix = now.strftime("%Y%m%dT%H%M%S")
+outdebugtxt = "/nfshome0/jengbou/DQMTEST/debug_"+appendix
 process.MessageLogger = cms.Service("MessageLogger",
-        categories = cms.untracked.vstring(
-  'BeamMonitor',
-  'BeamMonitorBx'
-        )
+  categories = cms.untracked.vstring(
+      'BeamMonitor','BeamMonitorBx','BeamFitter','PVFitter','BSFitter'
+      ),
+  debugModules  = cms.untracked.vstring('*'),
+  debug_infos = cms.untracked.PSet(
+      threshold = cms.untracked.string('DEBUG'),
+      INFO = cms.untracked.PSet(
+           limit = cms.untracked.int32(0)
+           ),
+      DEBUG = cms.untracked.PSet(
+           limit = cms.untracked.int32(0)
+           ),
+      BeamMonitor = cms.untracked.PSet(
+           limit = cms.untracked.int32(10000000)
+           ),
+      BeamMonitorBx = cms.untracked.PSet(
+           limit = cms.untracked.int32(10000000)
+           ),
+      BeamFitter = cms.untracked.PSet(
+           limit = cms.untracked.int32(10000000)
+           ),
+      PVFitter = cms.untracked.PSet(
+           limit = cms.untracked.int32(10000000)
+           ),
+      BSFitter = cms.untracked.PSet(
+           limit = cms.untracked.int32(10000000)
+           ),
+      extension = cms.untracked.string("txt"),
+      filename = cms.untracked.string(outdebugtxt)
+      ),
+  destinations = cms.untracked.vstring('debug_infos')
 )
 
 #----------------------------
