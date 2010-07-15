@@ -7,7 +7,7 @@ LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx","info", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
+            ("castor","csc", "dt", "eb", "ee", "es","hcal", "hlt", "info", "l1t", "rpc", "pixel", "sistrip" , "fed" )]
 
 # Do not modify configuration below this line.
 HOST      = socket.gethostname().lower()
