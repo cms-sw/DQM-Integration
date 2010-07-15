@@ -25,7 +25,7 @@ envsetup = "export QUIET_ASSERT=a"
 #server.instrument  = 'igprof -d -t python -mp'
 server.port        = 8070
 server.serverDir   = '/dqmdata/dqmtest/gui'
-server.baseUrl     = '/dqm/testing'
+server.baseUrl     = '/dqm/offline-test'
 server.title       = 'CMS data quality'
 server.serviceName = 'Test'
 
@@ -37,7 +37,8 @@ server.extend('DQMFileAccess', '/dev/null', '/dqmdata/dqmtest/uploads',
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
-server.source('DQMArchive', '/dqmdata/dqmtest/ix', '^/Global/')
+server.source('DQMArchive', '/dqmdata/offline/ix', '^/Global/Online/')
+#server.source('DQMArchive', '/dqmdata/dqmtest/ix2', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 execfile(CONFIGDIR + "/dqm-services.py")

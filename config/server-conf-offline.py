@@ -25,8 +25,7 @@ server.plugin('render', BASEDIR + "/style/*.cc")
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMFileAccess', '/dev/null', '/dqmdata/offline/uploads',
 	      { 'ROOT': '/dqmdata/offline/repository/data',
-	        'ZIP': '/dqmdata/offline/repository/zipped',
-	        'iSpy':   '/data/ispy-files' })
+	        'ZIP': '/dqmdata/offline/repository/zipped'})
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
