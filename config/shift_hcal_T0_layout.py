@@ -5,7 +5,7 @@ shifthcallayout(dqmitems, "01 Hcal Report Summary",
                 )
 
 shifthcallayout(dqmitems, "02 HCAL Raw Data",
-                [{ 'path': "Hcal/RawDataFormatMonitor_Hcal/ HardwareWatchCells",
+                [{ 'path': "Hcal/RawDataFormatMonitor_Hcal/ ProblemRawData",
                    'description': "A Raw Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
