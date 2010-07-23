@@ -24,11 +24,11 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.load("DQM.HLTEvF.TrigResRateMon_cfi")
 
 #process.p = cms.EndPath(process.hlts+process.hltsClient)
-process.p = cms.EndPath(process.hltSeedL1Logic)
+process.p = cms.EndPath(process.trRateMon)
 
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
 process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'
-process.dqmEnv.subSystemFolder = 'HLT_Rate'
+process.dqmEnv.subSystemFolder = 'HLT'
 #process.hltResults.plotAll = True
 
