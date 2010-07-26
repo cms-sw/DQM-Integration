@@ -30,6 +30,7 @@ if [ "$1" = "live" ] ; then
      ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_06-3_cfg.py
      ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_06-4_cfg.py
 
+     ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_07-1_cfg.py
   echo "copying cfg from python test"
   cp ../python/test/*live_cfg.py .
   echo "done"
@@ -61,6 +62,8 @@ elif [ "$1" = "playback" ] ; then
      #ln -sfv hlx_dqm_sourceclient-live_cfg.py                   dqmfu_16-2_cfg.py
      ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_16-3_cfg.py
      ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_16-4_cfg.py
+     
+     ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_17-1_cfg.py
      
   echo "copying cfg from python test"
   cp ../python/test/*live_cfg.py .
