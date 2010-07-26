@@ -1,3 +1,11 @@
+# Dummy check of python syntax within file when run stand-alone
+if __name__=="__main__":
+    class DQMItem:
+        def __init__(self,layout):
+            print layout
+    dqmitems={}
+
+
 def shifthcallayout(i, p, *rows): i["00 Shift/Hcal/" + p] = DQMItem(layout=rows)
 shifthcallayout(dqmitems, "01 Hcal Report Summary",
                 [{'path':"Hcal/EventInfo/reportSummaryMap",
@@ -5,7 +13,7 @@ shifthcallayout(dqmitems, "01 Hcal Report Summary",
                 )
 
 shifthcallayout(dqmitems, "02 HCAL Raw Data",
-                [{ 'path': "Hcal/RawDataFormatMonitor_Hcal/ ProblemRawData",
+                [{ 'path': "Hcal/RawDataMonitor_Hcal/ ProblemRawData",
                    'description': "A Raw Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
@@ -36,6 +44,6 @@ shifthcallayout(dqmitems, "06 HCAL Digi Problems",
                 )
 
 shifthcallayout(dqmitems, "07 HCAL Lumi Problems",
-                [{'path': "Hcal/BeamMonitor_Hcal/ ProblemBeamMonitor",
+                [{'path': "Hcal/BeamMonitor_Hcal/ Problem BeamMonitor",
                   'description':"This shows problems only in the sections of HF used for luminosity monitoring.  Channels that are hot or dead are considered as problems, where the definitions of 'hot' and 'dead' are slightly different than in the normal HCAL monitors.  More details at  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
