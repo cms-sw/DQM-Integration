@@ -1,0 +1,66 @@
+#! /usr/bin/env python
+import os,re,hashlib,time
+from datetime import datetime
+import sys
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+BASE_DIR="/dqmdata/offline/repository/data/OnlineData"
+FILE_PAT=re.compile(r"DQM_V(?P<version>[0-9]{4})_(?P<subSys>[a-zA-Z0-9]+)_R(?P<runnr>[0-9]{9}).root$")
+FILE_M_PAT=re.compile(r"DQM_V(?P<version>[0-9]{4})_R(?P<runnr>[0-9]{9}).root$")
+while True:
+  print "[%s] INFO: Entire Base Directory Sweep" % str(datetime.now())
+  for cDir,sDirs,files in os.walk(BASE_DIR):
+    for f in files:
+      fMatch=FILE_PAT.match(f)
+      fMMatch=FILE_M_PAT.match(f)
+      if fMatch:
+        subSystem = fMatch.group("subSys")
+        runNr     = int(fMatch.group("runnr"))
+        version   = int(fMatch.group("version"))
+        fileName  = "%s/%s" % (cDir,f)
+        if not os.path.exists("%s.dqminfo" % fileName):
+          fDict={'subsystem': subSystem,
+                 'origin': '/dqmdata/dqm/uploads/%s.origin' % f,
+                 'zippat': 'OnlineData/original/%05dxxxx/DQM_Online_R%07dxx_S%%04d.zip' % (runNr/10000,runNr/100), 
+                 'dataset': '/Global/Online/ALL', 
+                 'import': '/dqmdata/dqm/uploads/%s' %f, 
+                 'path': 'OnlineData/original/%05dxxxx/%07dxx/%s' %(runNr/10000,runNr/100,f), 
+                 'check': 'VERIFY: Good to go', 
+                 'size': os.stat(fileName).st_size, 
+                 'runnr': runNr, 
+                 'filepat': 'OnlineData/original/%05dxxxx/%07dxx/DQM_V%%04d_%s_R%09d.root' % (runNr/10000,runNr/100,subSystem,runNr), 
+                 'md5sum': '%s' %  hashlib.md5(file(fileName).read()).hexdigest(), 
+                 'class': 'online_data', 
+                 'version': version, 
+                 'time': int(os.stat(fileName).st_mtime), 
+                 'xpath': '/home/dqmprolocal/output/DQM_V%04d_%s_R%09d_Txxxxxxxx.root'}
+          a=str(fDict)
+          print "[%s] INFO: Creating File %s.dqminfo" % (str(datetime.now()),fileName)
+          infoFile=open("%s.dqminfo" % fileName , "w")
+          infoFile.write("%s\n" % a)
+          infoFile.close()
+      if fMMatch:
+        runNr     = int(fMMatch.group("runnr"))
+        version   = int(fMMatch.group("version"))
+        fileName  = "%s/%s" % (cDir,f)
+        if not os.path.exists("%s.dqminfo" % fileName):
+          fDict={'subsystem': subSystem,
+                 'origin': '/dqmdata/dqm/uploads/%s.origin' % f,
+                 'zippat': 'OnlineData/merged/%05dxxxx/DQM_Online-Merged_R%07dxx_S%%04d.zip' % (runNr/10000,runNr/100),
+                 'dataset': '/Global/Online/ALL',
+                 'import': '/dqmdata/dqm/uploads/%s' %f,
+                 'path': 'OnlineData/merged/%05dxxxx/%s' %(runNr/10000,f),
+                 'check': 'VERIFY: Good to go',
+                 'size': os.stat(fileName).st_size,
+                 'runnr': runNr,
+                 'filepat': 'OnlineData/merged/%05dxxxx/DQM_V%%04d_R%09d.root' % (runNr/10000,runNr),
+                 'md5sum': '%s' %  hashlib.md5(file(fileName).read()).hexdigest(),
+                 'class': 'online_data',
+                 'version': version,
+                 'time': int(os.stat(fileName).st_mtime),
+                 'xpath': '/home/dqmprolocal/output/DQM_V%04d_%s_R%09d_Txxxxxxxx.root'}
+          a=str(fDict)
+          print "[%s] INFO: Creating File %s.dqminfo" % (str(datetime.now()),fileName)
+          infoFile=open("%s.dqminfo" % fileName , "w")
+          infoFile.write("%s\n" % a)
+          infoFile.close()
+  time.sleep(4*3600)

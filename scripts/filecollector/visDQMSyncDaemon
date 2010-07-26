@@ -14,7 +14,7 @@ Usage: visDQMSyncDaemon [-fd][--dirs=..,..][--dirs_quotas=..,..] MAX_QUOTA ROOT_
  --dirs          Comma (,)  separated  Subdirectories  to be synchronized. If  we 
                  where  in  using  sh  it  would be equivalent to the expression 
                  $root_repo/{$dirs} 
-   
+
  --dirs_quotas   Comma (,) separated sizes of quotas for specific  subdirector-
                  ies, they have to be  in  the same  order as the --dirs option. 
                  For ease of use, if fewer  quotas  than dirs are specified  the 
@@ -34,23 +34,44 @@ visDQMSyncDaemon --dirs=Express,Online 150G /data/dqm/repository /MyAfsDir/rootr
 visDQMSyncDaemon --dirs=Express,Online 150G /data/dqm/repository /MyAfsDir/rootrepo
 #Action /MyAfsDir/rootrepo will have directories Express and  Online  each  with 
 #75G"""
+
+
 import os, time,  sys, shutil, re, subprocess as sp,tempfile
 from glob   import glob
 from getopt import getopt,GetoptError
 from traceback import print_exc
 from datetime import datetime
+from subprocess import call
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+
 # --------------------------------------------------------------------
-WAITTIME    = 3600 * 4
-WATCHDIRS   = []
-INDEPQUEUES = []
+WAITTIME      = 3600 * 4
+RENEWLIFETIME = 3600 * 24 * 365 
+WATCHDIRS     = []
+INDEPQUEUES   = []
+
 REPODIR     = ""
 DESTDIR     = ""
 MAXQUOTA    = long(0)
 SAFEFACTOR  = 0.01
-
+currTime    = time.time()
 unitsDic    = {"B":0,"K":1,"M":2,"G":3,"T":4}
 dirsQuotaDic= {}
+
+# Creating temporary file so that it doesn't get erased under our feet and we can renew 
+# credentials as long as theprocess is running
+
+tFile=tempfile.NamedTemporaryFile(prefix="krb5cc_%s_%s_" % (os.getuid(),os.getpid()))
+os.putenv('KRB5CCNAME',"FILE:%s" % tFile.name)
+
+# Getting a new set of credentials to be sure we have renewable credentials
+rc=os.system("kinit -r %d" % RENEWLIFETIME)
+if rc != 0:
+  sys.exit(rc)
+rc=os.system("aklog")
+if rc != 0:
+  sys.exit(rc)
+
 # --------------------------------------------------------------------
 def logme(msg, *args):
   procid = "[%s/%d]" % (__file__.rsplit("/", 1)[-1], os.getpid())
@@ -113,6 +134,20 @@ def getFileList(path, quota = -1,all = True):
     fileList=finalFileDict.keys()
   return fileList
 # --------------------------------------------------------------------
+# Creating temporary file so that it doesn't get erased under our feet and we can renew
+# credentials as long as the process is running
+
+tFile=tempfile.NamedTemporaryFile(prefix="krb5cc_%s_%s_" % (os.getuid(),os.getpid()))
+os.putenv('KRB5CCNAME',"FILE:%s" % tFile.name)
+
+# Getting a new set of credentials to be sure we have renewable credentials and pick the right 
+# Cache file
+
+rc=os.system("kinit -r %d" % RENEWLIFETIME)
+if rc != 0:
+  logme('ERROR: Could not obtain a new Kerberos ticket')
+  sys.exit(rc)
+
 # command line Argument parsing
 try:
   opts, args = getopt(sys.argv[1:], "h", ["help", "dirs=","dirs_quotas="])
@@ -197,5 +232,14 @@ while True:
   except Exception, e:
     logme('ERROR: %s', e)
     print_exc()
-    
+    call(["klist"])
+  
+  if (currTime + 7 * 3600) < time.time():
+    currTime = time.time()
+    rValue = call(["kinit","-R"])
+    rValue += call(["aklog"])
+    if rValue != 0:
+      call(["klist"])
+      logme('ERROR: Could not renew kerberos or afs ticket')
+      sys.exit(1)
   time.sleep(WAITTIME)
