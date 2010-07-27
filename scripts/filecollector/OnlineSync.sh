@@ -89,8 +89,8 @@ do
   cd $BASE_DIR/original
   latestLocalDir=$(find $BASE_DIR/original -maxdepth 1 -type d -exec basename {} \; | sort -n | tail -n 1)
   latestDir=$(curl -A "OnlineSyncDev/0.1" \
-    --capath $X509_CERT_DIR --key ~/.globus/x509up_u44417 \
-    --cert ~/.globus/x509up_u44417 \
+    --capath $X509_CERT_DIR --key $X509_USER_PROXY \
+    --cert $X509_USER_PROXY \
     https://cmsweb.cern.ch/dqm/online/data/browse/Original/ 2>&1 \
     | egrep -oe "<tr><td><a.*</a>" | egrep -o "'>.*<" | egrep -o "[0-9]{5}xxxx" |sort -r | head -n 1)
   dirs=({${latestLocalDir/xxxx/}..${latestDir/xxxx/}}xxxx)
@@ -105,8 +105,8 @@ do
   cd $BASE_DIR/merged
   latestLocalDir=$(find $BASE_DIR/merged -maxdepth 1 -type d -exec basename {} \; | sort -n | tail -n 1)
   latestDir=$(curl -A "OnlineSyncDev/0.1" \
-    --capath $X509_CERT_DIR --key ~/.globus/x509up_u44417 \
-    --cert ~/.globus/x509up_u44417 \
+    --capath $X509_CERT_DIR --key $X509_USER_PROXY \
+    --cert $X509_USER_PROXY \
     https://cmsweb.cern.ch/dqm/online/data/browse/Merged/ 2>&1|
     egrep -oe "<tr><td><a.*</a>" | egrep -o "'>.*<" | egrep -o "[0-9]{5}xxxx" |sort -r | head -n 1)
   dirs=({${latestLocalDir/xxxx/}..${latestDir/xxxx/}}xxxx)
