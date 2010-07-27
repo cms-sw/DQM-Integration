@@ -55,8 +55,8 @@ rcurl(){
          --capath $X509_CERT_DIR/ \
          --key $X509_USER_PROXY \
          --cert $X509_USER_PROXY \
-         $host/$f && log "INFO: Successfully downloaded "$BASE_DIR/$rootDir/$(basename $f) || \
-         log "ERROR: Unable to download "$BASE_DIR/$rootDir/$(basename $f)
+         $host/$f && log "INFO: Successfully downloaded "$PWD/$rootDir/$(basename $f) || \
+         log "ERROR: Unable to download "$PWD/$rootDir/$(basename $f)
     fi
     
   done
