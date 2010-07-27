@@ -20,8 +20,6 @@ rcurl(){
   else
     [[ ${(w)#${(SI:$removeTree:)1/\// }} -gt 1 ]] && rootDir=${${(s: :SI:$removeTree:)1/\// }[2]} || rootDir=""
     [[ ${(w)#${(SI:$removeTree:)1/\// }} -gt 1 ]] && remoteDirBase="dqm/online/data/browse"/${${(s: :SI:$removeTree:)1/\// }[1]} || remoteDirBase="dqm/online/data/browse"/$1
-    echo $rootDir
-    echo $remoteDirBase
   fi
   host="https://cmsweb.cern.ch"
   [[ -e $rootDir/index.html ]] && dirTimeStamp=$(date -d "$(curl -A "OnlineSyncDev/0.1" -s -I \
@@ -42,7 +40,7 @@ rcurl(){
   files=($(<$rootDir/index.html | egrep -oe "<tr><td><a.*</a>" | egrep -o "href='([^']*)'" | egrep  "\.root" |  sed -re "s/(href='\/|'$)//g" | sort -r ))
   for d in $dirs
   do
-    rcurl ${d/$remoteDirBase\//}
+    rcurl ${d/dqm\/online\/data\/browse\//} $removeTree
   done
   for f in $files
   do
