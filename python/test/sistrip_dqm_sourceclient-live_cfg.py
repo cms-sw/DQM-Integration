@@ -177,7 +177,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1abc_GR09_cfi")
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
 
 
 #--------------------------
