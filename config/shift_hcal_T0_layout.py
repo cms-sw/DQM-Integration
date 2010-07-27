@@ -17,9 +17,17 @@ shifthcallayout(dqmitems, "02 HCAL Raw Data",
                    'description': "A Raw Data Format error indicates that the data received from this channel was somehow corrupted or compromised.  This plot is the sum of bad digis over all depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
-shifthcallayout(dqmitems, "03 HCAL Trigger Primitives",
-                [{ 'path': "Hcal/TrigPrimMonitor/Summary for ZS run",
-                   'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+# HCAL Trigger Primitives are no lot available in offline
+#shifthcallayout(dqmitems, "03 HCAL Trigger Primitives",
+#                [{ 'path': "Hcal/TrigPrimMonitor/Summary for ZS run",
+#                   'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+#                )
+
+shifthcallayout(dqmitems, "03 HCAL Events Processed",
+                [{ 'path': "Hcal/HcalInfo/EventsInHcalMonitorModule",
+                   'description': "This histogram counts the total events seen by this process." }],
+                [{ 'path': "Hcal/HcalInfo/SummaryClientPlots/EnoughEvents",
+                   'description': "This histogram indicates whether the individual tasks have produced enough events to make a proper evaluation of reportSummary values.  All individual tasks should have 'true' values (1).  HcalMonitorModule may be either 1 or 0. " }],
                 )
 
 shifthcallayout(dqmitems, "04 HCAL Dead Cell Check",
