@@ -77,24 +77,16 @@ while True:
         keeper=0
         Tfiles=sorted(files,cmp=lambda x,y: "_T" not in x and x != y and 1  or cmp(x,y))[::-1]
         for Tfile in Tfiles:
-          version=1
-          for vdir,vsubdir,vfiles in os.walk(DROPBOX):
-            if 'DQM_V0001_%s_R%09d.root' % (subsystem,run) not in vfiles:
-              break
-            version += 1
-
-          if not os.path.exists("%s/V%04d" % (DROPBOX,version)):
-            os.makedirs("%s/V%04d" % (DROPBOX,version))
-
-          finalTMPfile="%s/DQM_V%04d_%s_R%09d.root" % (TMP_DROPBOX,version,subsystem,run)
-          finalfile="%s/V%04d/DQM_V0001_%s_R%09d.root" %   (DROPBOX,version,subsystem,run) 
+          finalTMPfile="%s/DQM_V0001_%s_R%09d.root.$s" % (TMP_DROPBOX,subsystem,run,os.getenv("HOSTNAME").replace("-","t")[-6:])
           runstr="%09d" % run
           finalTfile="%s/%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6],Tfile.split("/")[-1])
           finalTdir="%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6])
           if not os.path.exists(finalTdir):
             os.makedirs(finalTdir)
+            
           if os.path.exists(finalTMPfile):
             os.remove(finalTMPfile)
+            
           if not done:
             if filecheck(Tfile) == 1:
               if "Playback" in Tfile and "SiStrip" in Tfile:
@@ -104,8 +96,10 @@ while True:
                   debugMsg(1, "Problem converting %s skiping" % Tfile)
                   shutil.move(Tfile,finalTfile+"_d")
                   continue
+                  
                 os.rename(Tfile,finalTfile.replace('Playback','Playback_full'))
                 Tfile=dqmfile  
+                
               for i in range(RETRIES):
                 md5Digest=md5(file(Tfile).read())
                 originStr="md5:%s %d %s" % (md5Digest.hexdigest(),os.stat(Tfile).st_size,Tfile)
@@ -113,8 +107,18 @@ while True:
                 originFile=open(originTMPFile,"w")
                 originFile.write(originStr)
                 originFile.close() 
-                originFileName="%s.origin" % finalfile
                 shutil.copy(Tfile,finalTMPfile)
+                version=1
+                for vdir,vsubdir,vfiles in os.walk(DROPBOX):
+                  if 'DQM_V0001_%s_R%09d.root' % (subsystem,run) not in vfiles:
+                    break
+                  version += 1
+
+                if not os.path.exists("%s/V%04d" % (DROPBOX,version)):
+                  os.makedirs("%s/V%04d" % (DROPBOX,version))
+                  
+                finalfile="%s/V%04d/DQM_V0001_%s_R%09d.root" %   (DROPBOX,version,subsystem,run)        
+                originFileName="%s.origin" % finalfile     
                 if os.path.exists(finalTMPfile) and os.stat(finalTMPfile).st_size == os.stat(Tfile).st_size:
                   os.rename(Tfile,finalTfile)
                   os.rename(finalTMPfile,finalfile)
@@ -128,6 +132,7 @@ while True:
                   debugMsg(2, body)
                   if i == RETRIES-1: sendmail(YourEmail,run,body,subject="Error tranfering file to filer")
                   time.sleep(COLLECTOR_WAIT_TIME)
+                  
               done=True
             else:
               DEBUG and debugMsg(0, "file %s is incomplete looking for next DQM_V*_%s_R%09d_T*.root valid file" % (Tfile,subsystem,run))
