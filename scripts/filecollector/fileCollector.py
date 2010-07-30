@@ -77,9 +77,17 @@ while True:
         keeper=0
         Tfiles=sorted(files,cmp=lambda x,y: "_T" not in x and x != y and 1  or cmp(x,y))[::-1]
         for Tfile in Tfiles:
-          version=len(glob.glob("%s/DQM_V*_%s_R%09d.root" % (DROPBOX,subsystem,run)))+1
+          version=1
+          for vdir,vsubdir,vfiles in os.walk(DROPBOX):
+            if 'DQM_V0001_%s_R%09d.root' % (subsystem,run) not in vfiles:
+              break
+            version += 1
+
+          if not os.path.exists("%s/V%04d" % (DROPBOX,version)):
+            os.makedirs("%s/V%04d" % (DROPBOX,version))
+
           finalTMPfile="%s/DQM_V%04d_%s_R%09d.root" % (TMP_DROPBOX,version,subsystem,run)
-          finalfile="%s/DQM_V%04d_%s_R%09d.root" %   (DROPBOX,version,subsystem,run) 
+          finalfile="%s/V%04d/DQM_V0001_%s_R%09d.root" %   (DROPBOX,version,subsystem,run) 
           runstr="%09d" % run
           finalTfile="%s/%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6],Tfile.split("/")[-1])
           finalTdir="%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6])
