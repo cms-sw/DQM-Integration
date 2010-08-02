@@ -57,21 +57,7 @@ SAFEFACTOR  = 0.01
 currTime    = time.time()
 unitsDic    = {"B":0,"K":1,"M":2,"G":3,"T":4}
 dirsQuotaDic= {}
-
-# Creating temporary file so that it doesn't get erased under our feet and we can renew 
-# credentials as long as theprocess is running
-
-tFile=tempfile.NamedTemporaryFile(prefix="krb5cc_%s_%s_" % (os.getuid(),os.getpid()))
-os.putenv('KRB5CCNAME',"FILE:%s" % tFile.name)
-
-# Getting a new set of credentials to be sure we have renewable credentials
-rc=os.system("kinit -r %d" % RENEWLIFETIME)
-if rc != 0:
-  sys.exit(rc)
-rc=os.system("aklog")
-if rc != 0:
-  sys.exit(rc)
-
+  
 # --------------------------------------------------------------------
 def logme(msg, *args):
   procid = "[%s/%d]" % (__file__.rsplit("/", 1)[-1], os.getpid())
@@ -134,20 +120,24 @@ def getFileList(path, quota = -1,all = True):
     fileList=finalFileDict.keys()
   return fileList
 # --------------------------------------------------------------------
-# Creating temporary file so that it doesn't get erased under our feet and we can renew
-# credentials as long as the process is running
+# Creating temporary file so that it doesn't get erased under our feet and we can renew 
+# credentials as long as theprocess is running
 
-tFile=tempfile.NamedTemporaryFile(prefix="krb5cc_%s_%s_" % (os.getuid(),os.getpid()))
-os.putenv('KRB5CCNAME',"FILE:%s" % tFile.name)
+os.putenv('KRB5CCNAME',"FILE:/tmp/krb5cc_visDQMSync")
 
-# Getting a new set of credentials to be sure we have renewable credentials and pick the right 
-# Cache file
-
-rc=os.system("kinit -r %d" % RENEWLIFETIME)
+# Getting a new set of credentials to be sure we have renewable credentials
+rc=os.system("klist -s")
 if rc != 0:
-  logme('ERROR: Could not obtain a new Kerberos ticket')
+  logme("Please run: kinit -c /tmp/krb5cc_visDQMSync -r 365 before running me!" % )
   sys.exit(rc)
 
+rValue = call(["kinit","-R"])
+rValue += call(["aklog"])
+if rValue != 0:
+ call(["klist"])
+ logme('ERROR: Could not renew kerberos or afs ticket')
+ sys.exit(1)
+ 
 # command line Argument parsing
 try:
   opts, args = getopt(sys.argv[1:], "h", ["help", "dirs=","dirs_quotas="])
