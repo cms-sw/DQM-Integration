@@ -128,7 +128,7 @@ os.putenv('KRB5CCNAME',"FILE:/tmp/krb5cc_visDQMSync")
 # Getting a new set of credentials to be sure we have renewable credentials
 rc=os.system("klist -s")
 if rc != 0:
-  logme("Please run: kinit -c /tmp/krb5cc_visDQMSync -r 365 before running me!" % )
+  logme("Please run: kinit -c /tmp/krb5cc_visDQMSync -r 365 before running me!" )
   sys.exit(rc)
 
 rValue = call(["kinit","-R"])
