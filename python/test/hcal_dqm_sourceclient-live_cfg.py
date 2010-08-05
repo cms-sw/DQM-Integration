@@ -129,7 +129,7 @@ process.hcalClient.databaseUpdateTime=60
 
 # Set values higher at startup  (set back from 0.25 to 0.05 on 15 April 2010)
 process.hcalClient.DeadCell_minerrorrate=0.05
-#process.hcalClient.HotCell_minerrrorate =0.05
+process.hcalClient.HotCell_minerrrorate =0.10
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
@@ -144,6 +144,7 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      #"DetDiagLaserMonitor",
                                      #"DetDiagLEDMonitor",
                                      #"DetDiagNoiseMonitor",
+                                     "CoarsePedestalMonitor",
                                      "DetDiagTimingMonitor",
                                      "Summary"
                                      ]
@@ -160,6 +161,11 @@ process.hcalDigiMonitor.shutOffOrbitTest=False
 
 # Turn off dead cell checks in HO ring 2
 process.hcalDeadCellMonitor.excludeHORing2 = True
+
+# Ignore ped-ref differences
+process.hcalCoarsePedestalMonitor.ADCDiffThresh = 999999
+# block both hot and dead channels from CoarsePedestal Monitor
+process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.int32((1<<5) | (1<<6))
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
