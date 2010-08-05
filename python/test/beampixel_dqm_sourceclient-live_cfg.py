@@ -9,8 +9,8 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-### @@@@@@ Comment when running locally @@@@@@ ###
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
+### @@@@@@ Comment when running locally @@@@@@ ###
 
 
 #----------------------------
@@ -52,7 +52,7 @@ process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serveru
 process.GlobalTag.globaltag = "GR10_E_V6::All"
 process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
 ### @@@@@@ Comment when running locally @@@@@@ ###
-process.load("FWCore/MessageService/MessageLogger_cfi")
+process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("Configuration.StandardSequences.Services_cff")
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff")
@@ -72,7 +72,6 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
 #process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 ###### DQM Saver ######
-#process.dqmSaver.dirName           = cms.untracked.string("/tmp/dinardo/")
 #process.dqmSaver.dirName           = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
 #process.dqmSaver.saveAtJobEnd      = cms.untracked.bool(False)
 #process.dqmSaver.saveByTime        = cms.untracked.int32(-1)
@@ -84,7 +83,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #process.Output = cms.OutputModule("PoolOutputModule",
 #                                  fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
 #                                  outputCommands = cms.untracked.vstring( "drop *",
-#                                                                           "keep *_*_*_BeamPixel"))
+#                                                                          "keep *_*_*_BeamPixel"))
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
 
