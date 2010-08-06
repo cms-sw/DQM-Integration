@@ -142,7 +142,7 @@ pixellayout(dqmitems, "31 - Cluster_y_width_vs_cluster_eta",
      'draw': { 'withref': "no" }}]
   )
 pixellayout(dqmitems, "32 - Digi Occupancy of FED per 15 Lumi Sections",
-            [{ 'path': "Pixel/FEDvsLumi/DigiOcc_FEDvsVsLumiSections",
+            [{ 'path': "Pixel/avgfedDigiOccvsLumi",
                'description': "Digi Occupancy of FED per 15 Lumi Sections",
                'draw': { 'withref': "no" }}]
               )
