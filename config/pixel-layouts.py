@@ -1,5 +1,9 @@
 def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
-
+pixellayout(dqmitems, "000 - Pixel FED Occupancy",
+            [{ 'path': "Pixel/averageDigiOccupancy",
+               'description': "Relative digi occupancy per FED compared to average FED occupancy. Expected value for healthy FEDs is around 1.",
+               'draw': { 'withref': "no" }}]
+              )
 pixellayout(dqmitems, "00a - Pixel_Error_Summary",
   [{ 'path': "Pixel/AdditionalPixelErrors/FedChLErrArray",
      'description': "Error type of last error in a map of FED channels (y-axis) vs. FED (x-axis). Channel 0 is assigned for errors where the channel number is not known.", 
@@ -137,3 +141,8 @@ pixellayout(dqmitems, "31 - Cluster_y_width_vs_cluster_eta",
      'description': "Cluster y width as function of cluster eta", 
      'draw': { 'withref': "no" }}]
   )
+pixellayout(dqmitems, "32 - Digi Occupancy of FED per 15 Lumi Sections",
+            [{ 'path': "Pixel/FEDvsLumi/DigiOcc_FEDvsVsLumiSections",
+               'description': "Digi Occupancy of FED per 15 Lumi Sections",
+               'draw': { 'withref': "no" }}]
+              )
