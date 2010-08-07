@@ -165,7 +165,7 @@ process.hcalDeadCellMonitor.excludeHORing2 = True
 # Ignore ped-ref differences
 process.hcalCoarsePedestalMonitor.ADCDiffThresh = 999999
 # block both hot and dead channels from CoarsePedestal Monitor
-process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.int32((1<<5) | (1<<6))
+process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.untracked.int32((1<<5) | (1<<6))
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
