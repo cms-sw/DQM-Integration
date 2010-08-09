@@ -567,8 +567,14 @@ process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
+if ( globalDAQ == 1 ) :
+  process.ecalBarrelMonitorClient.maskFile = 'DQM/EcalBarrelMonitorModule/test/data/maskfile-EB.dat'
+
 process.ecalBarrelMonitorClient.location = 'P5_Co'
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
+
+if ( globalDAQ == 1 ) :
+  process.ecalEndcapMonitorClient.maskFile = 'DQM/EcalEndcapMonitorModule/test/data/maskfile-EE.dat'
 
 process.ecalEndcapMonitorClient.location = 'P5_Co'
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
