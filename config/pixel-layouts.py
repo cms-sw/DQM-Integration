@@ -1,7 +1,7 @@
 def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
 pixellayout(dqmitems, "000 - Pixel FED Occupancy",
-            [{ 'path': "Pixel/averageDigiOccupancy",
-               'description': "Relative digi occupancy per FED compared to average FED occupancy. Expected value for healthy FEDs is around 1.",
+            [{ 'path': "Pixel/avgfedDigiOccvsLumi",
+               'description': "Relative digi occupancy per FED compared to average FED occupancy, plotted versus lumi section and updated every 15 lumi sections. Expected value for healthy FEDs is around 1.",
                'draw': { 'withref': "no" }}]
               )
 pixellayout(dqmitems, "00a - Pixel_Error_Summary",
