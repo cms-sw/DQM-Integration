@@ -46,12 +46,17 @@ shifthcallayout(dqmitems, "06 HCAL Trigger Primitives",
                    'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
-shifthcallayout(dqmitems, "07 HCAL Lumi Problems",
+shifthcallayout(dqmitems, "07 HCAL Pedestal Problems",
+                [{ 'path':"Hcal/CoarsePedestalMonitor_Hcal/ ProblemCoarsePedestals",
+                   'description': "See details at: <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
+                )
+
+shifthcallayout(dqmitems, "08 HCAL Lumi Problems",
                 [{'path': "Hcal/BeamMonitor_Hcal/ Problem BeamMonitor",
                   'description':"This shows problems only in the sections of HF used for luminosity monitoring.  Channels that are hot or dead are considered as problems, where the definitions of 'hot' and 'dead' are slightly different than in the normal HCAL monitors.  More details at  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
 
-shifthcallayout(dqmitems, "08 HCAL RecHit Energies",
+shifthcallayout(dqmitems, "09 HCAL RecHit Energies",
                 [{'path': "Hcal/RecHitMonitor_Hcal/Distributions_AllRecHits/rechit_1D_plots/HB_energy_1D",
                   'description':"Average energy/hit for each of the 2592 channels in HB"},
                  

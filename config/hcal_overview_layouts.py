@@ -134,6 +134,21 @@ hcaloverviewlayout(dqmitems,"10 - RecHit Average Time",
                    ],
                    )
 
+hcaloverviewlayout(dqmitems,"11 - Coarse Pedestal Monitor",
+                   [
+                   {'path':"Hcal/CoarsePedestalMonitor_Hcal/HB HE HF Depth 1 Coarse Pedestal Map",
+                   'description':""},
+                   {'path':"Hcal/CoarsePedestalMonitor_Hcal/HB HE HF Depth 2 Coarse Pedestal Map",
+                   'description':""},
+                   ],
+                   [
+                   {'path':"Hcal/CoarsePedestalMonitor_Hcal/HE Depth 3 Coarse Pedestal Map",
+                   'description':""},
+                   {'path':"Hcal/CoarsePedestalMonitor_Hcal/HO Depth 4 Coarse Pedestal Map",
+                   'description':""},
+                   ],
+                   )
+
 hcaloverviewlayout(dqmitems,"1729 - Temporary HF Timing Study Plots",
                    [{'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFTimingStudy_Average_Time",
                     'description':"HF Timing study average time plot, for events passing HLT MinBias trigger, 20<maxenergy<100, 2<=maxtime<=5"},

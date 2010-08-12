@@ -51,7 +51,13 @@ hcallayout(dqmitems, "07 HCAL Hot Cell Check",
               'description': "Total number of hot cells found in HCAL vs luminosity section"}],
            )
 
-hcallayout(dqmitems, "08 HCAL HF Luminosity Check",
+hcallayout(dqmitems, "08 HCAL Pedestal Problems",
+           [{ 'path':"Hcal/CoarsePedestalMonitor_Hcal/ ProblemCoarsePedestals",
+              'description':  "This makes a coarse check to see if pedestals for a given channel have drifted from the reference.  If too any channel is found to be far from the reference value, those channels are counted as bad for that section."}]
+           )
+
+hcallayout(dqmitems, "09 HCAL HF Luminosity Check",
            [{ 'path':"Hcal/BeamMonitor_Hcal/ Problem BeamMonitor",
               'description':  "This makes specific hot and dead cell checks to the HF channels used in the luminosity measurement.  If too many channels are found to be outside a given energy range in a luminosity section, those channels are counted as bad for that section."}],
            )
+
