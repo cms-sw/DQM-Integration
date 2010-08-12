@@ -692,6 +692,6 @@ if (localDAQ == 1) | (globalDAQ == 1) :
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/tmp'
 
 if (liveECAL == 1) :
-  process.DQM.collectorHost = 'ecalod-web01'
+  process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 
