@@ -248,27 +248,52 @@ ebecalshifterlayout(dqmitems, "06 L1 Trigger/09 Trigger Timing Occupancy",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et vs bx Real Digis", 'description': "Average Et of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TP occupancy vs bx Real Digis", 'description': "Average number of trigger primitives with Et>0 vs the bunch crossing number. Finer binning is used around the abort gap and at the beginning of the physics gap, larger in the middle of the orbit. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Selective Readout/00 EventSize",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "Event size for the readout crystals in the ECAL barrel.  The averaged event size must be below 100kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT tower event size", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }] )
+ebecalshifterlayout(dqmitems, "07 Selective Readout/00 Full Readout, ZS Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate at which a readout unit is selected for a full readout (Full readout selective readout flags). It must be less than 0.05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT zero suppression 1 SR Flags", 'description': "Rate at which a readout unit is selected to have zero suppression applied on its channels. It must be larger than 0.95. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-ebecalshifterlayout(dqmitems, "07 Selective Readout/01 DCC EventSize",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "ECAL event fragment size per DCC. Here size is computed from the list of channels that were read out. The size must be less or equal to 2kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+ebecalshifterlayout(dqmitems, "07 Selective Readout/01 Number of Full Readout Requests",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags Number", 'description': "Number of barrel readout units requested to be fully-readout (Full readout selective readout flag). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/02 Trigger Primitives Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Rate of high-interest flag for each trigger tower. A high-interest flag triggers the readout of a 3x3 trigger tower region (which in the endcap is extended to a larger region made of complete readout unit). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT medium interest TT Flags", 'description': "Rate of mid-interest flag for each trigger tower. A mid-interest flag triggers the readout of a 1x1 trigger tower region. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/03 Trigger Primitives Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest TT Flags", 'description': "Rate of low-interest flag for each trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT readout unit with SR forced", 'description': "Rate at which a trigger tower flag was forced either by configuration or following to an error. In current online configuration, the flag is forced to low interest. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/04 Trigger Primitives ET",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary", 'description': "Averaged trigger primitive value (transverse energy) for each trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et spectrum Real Digis", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/05 Trigger Primitive Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT TT Flags", 'description': "Distribution of trigger tower flag (TTF) values. 0: low interest; 1: mid interest; 2: forbidden; 3: high interest. 4 is added to the flag value if flag was forced by configuration or because of an error. With current configuration: There should be no flags 5, 6 or 7; Tower is flagged mid-interest between 1 and 2 GeV; Flag is flagged high-interest above 2 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/06 ZS1-Flagged Fully Readout Units",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT ZS Flagged Fully Readout", 'description': "Rate at which a readout unit saw all is channels read out while a zero-suppression was requested. This rate must be negligle when selective readout decision is correctly applied. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT ZS Flagged Fully Readout Number", 'description': "Number of readout unit whose every channel was read out while a zero-suppression was requested. A non-zero value is very improbable when selective readout decision is correctly applied. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/07 Fully-Readout Dropped Units",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout", 'description': "Rate at which a readout unit had none of its channel read out, while a full readout was requested. Only masked tower are expected to have a non-null rate, in occurence a 100% rate. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout Number", 'description': "Number of readout units whose none of the channels was read out, while a full readout was requested. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/08 Barrel Payload",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "Size of data from barrel within the ECAL event. The averaged event size must be below 100kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/09 HI, LI Barrel Payload",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Size of barrel crystal-channel data in high interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Size of barrel crystal-channel data in low interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+ebecalshifterlayout(dqmitems, "07 Selective Readout/10 DCC Event Size",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "ECAL event fragment size per DCC. Here the size of event fragment in the raw data (FEDRawData) is used. The size must be less or equal to 2kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size vs DCC", 'description': "Event size distribution per each ECAL barrel DCC. Finer binning is used in the zero-suppressed region (0-0.608 kB), while granularity of one fully readout tower (0.608 kB) has been used for higher sizes. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>"}])
 
-ebecalshifterlayout(dqmitems, "07 Selective Readout/02 SRFlags",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT readout unit with SR forced", 'description': "Trigger tower flag forced bit. Rate at which a trigger tower flag was forced either by configuration or following to an error. In current online configuration, the flag is forced to low interest. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate of full readout Selective Readout flags. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+ebecalshifterlayout(dqmitems, "07 Selective Readout/11 Tower Size",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT tower event size", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [None])
 
-ebecalshifterlayout(dqmitems, "07 Selective Readout/03 TTFlags",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "High Interest Trigger Tower Flag. Rate of high-interest flag for each trigger tower. A high-interest flag triggers the readout of a 3x3 trigger tower region (which in the endcap is extended to a larger region made of complete readout unit). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest TT Flags", 'description': "Low Interest Trigger Tower Flag. Rate of low-interest flag for each trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-ebecalshifterlayout(dqmitems, "07 Selective Readout/04 Payload",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Barrel HI payload. Size of barrel crystal-channel data in high interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Barrel LI payload. Size of barrel crystal-channel data in high interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
-
-ebecalshifterlayout(dqmitems, "07 Selective Readout/05 ZSFilterOutput",
+ebecalshifterlayout(dqmitems, "07 Selective Readout/11 ZS Filter Output",
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest ZS filter output", 'description': "Barrel High Interest ZS emulation. Signal of channels from barrel high interest regions as reconstructed by the ZS emulator. Notes: These plots rely on the match of the ZS configuration with the online setting. Little excess in bin ADC_count = 0 is expected. It is due to the rounding done in the ZS filter. Positive values are round down, while negative values are round up. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest ZS filter output", 'description': "Barrel Low Interest ZS emulation. Signal of channels from barrel low interest regions as reconstructed by the ZS emulator. A sharp cut at zero suppression threshold is expected, with all bins below this threshold empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
@@ -18346,27 +18371,52 @@ eblayout(dqmitems, "00 By Task/13 RawData/07 RawData",
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT L1A SRP errors", 'description': "Number of level 1 event mismatches between the ECAL DCC header and its SRP block. It should be empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBRawDataTask/EBRDT bunch crossing SRP errors", 'description': "Number of bunch-crossing mismatches between the ECAL DCC header and its SRP block. It should be empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/00 EventSize",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "Event size for the readout crystals in the ECAL barrel. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT tower event size", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }] )
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/00 Full Readout, ZS Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate at which a readout unit is selected for a full readout (Full readout selective readout flags). It must be less than 0.05. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT zero suppression 1 SR Flags", 'description': "Rate at which a readout unit is selected to have zero suppression applied on its channels. It must be larger than 0.95. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/01 DCC EventSize",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "Average event size per ecah ECAL barrel DCC. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/01 Number of Full Readout Requests",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags Number", 'description': "Number of barrel readout units requested to be fully-readout (Full readout selective readout flag). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/02 Trigger Primitives Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Rate of high-interest flag for each trigger tower. A high-interest flag triggers the readout of a 3x3 trigger tower region (which in the endcap is extended to a larger region made of complete readout unit). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT medium interest TT Flags", 'description': "Rate of mid-interest flag for each trigger tower. A mid-interest flag triggers the readout of a 1x1 trigger tower region. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/03 Trigger Primitives Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest TT Flags", 'description': "Rate of low-interest flag for each trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT readout unit with SR forced", 'description': "Rate at which a trigger tower flag was forced either by configuration or following to an error. In current online configuration, the flag is forced to low interest. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/04 Trigger Primitives ET",
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT Et trigger tower summary", 'description': "Averaged trigger primitive value (transverse energy) for each trigger tower. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT Et spectrum Real Digis", 'description': "Average transverse energy (4 ADC count = 1 GeV) of real L1 trigger primitives. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/05 Trigger Primitive Flags",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT TT Flags", 'description': "Distribution of trigger tower flag (TTF) values. 0: low interest; 1: mid interest; 2: forbidden; 3: high interest. 4 is added to the flag value if flag was forced by configuration or because of an error. With current configuration: There should be no flags 5, 6 or 7; Tower is flagged mid-interest between 1 and 2 GeV; Flag is flagged high-interest above 2 GeV. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/06 ZS1-Flagged Fully Readout Units",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT ZS Flagged Fully Readout", 'description': "Rate at which a readout unit saw all is channels read out while a zero-suppression was requested. This rate must be negligle when selective readout decision is correctly applied. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT ZS Flagged Fully Readout Number", 'description': "Number of readout unit whose every channel was read out while a zero-suppression was requested. A non-zero value is very improbable when selective readout decision is correctly applied. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/07 Fully-Readout Dropped Units",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout", 'description': "Rate at which a readout unit had none of its channel read out, while a full readout was requested. Only masked tower are expected to have a non-null rate, in occurence a 100% rate. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout Number", 'description': "Number of readout units whose none of the channels was read out, while a full readout was requested. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/08 Barrel Payload",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size", 'description': "Size of data from barrel within the ECAL event. The averaged event size must be below 100kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/09 HI, LI Barrel Payload",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Size of barrel crystal-channel data in high interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Size of barrel crystal-channel data in low interest region within the ECAL event. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/10 DCC Event Size",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT DCC event size", 'description': "ECAL event fragment size per DCC. Here the size of event fragment in the raw data (FEDRawData) is used. The size must be less or equal to 2kB. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT event size vs DCC", 'description': "Event size distribution per each ECAL barrel DCC. Finer binning is used in the zero-suppressed region (0-0.608 kB), while granularity of one fully readout tower (0.608 kB) has been used for higher sizes. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>"}])
 
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/02 SRFlags",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT readout unit with SR forced", 'description': "Rate of readout units with Selective Readout Forced. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT full readout SR Flags", 'description': "Rate of full readout Selective Readout flags. The selective readout of the ECAL was designed to reduce the ECAL data size by a factor 20. If any tower is fully read out more than 5% of the times, this tower will increase the payload and introduce deadtime. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/11 Tower Size",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT tower event size", 'description': "Event size distribution per tower. This plot allows to verify the correctness of the ZS thresholds applied. The average of the plot has to be ~ 2kB / 68 ~ 30 bytes.<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [None])
 
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/03 TTFlags",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest TT Flags", 'description': "Rate of high interest Trigger Tower flags. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest TT Flags", 'description': "Rate of low interest Trigger Tower flags. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
-
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/04 Payload",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest payload", 'description': "Payload of the high interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest payload", 'description': "Payload of the low interest trigger towers (kB). <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
-
-eblayout(dqmitems, "00 By Task/14 SelectiveReadout/05 ZSFilterOutput",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest ZS filter output", 'description': "crystal amplitude as reconstructed in DCC. This is useful for the emulation of the zero suppression filter. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest ZS filter output", 'description': "crystal amplitude as reconstructed in DCC. This is useful for the emulation of the zero suppression filter. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
+eblayout(dqmitems, "00 By Task/14 SelectiveReadout/11 ZS Filter Output",
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT high interest ZS filter output", 'description': "Barrel High Interest ZS emulation. Signal of channels from barrel high interest regions as reconstructed by the ZS emulator. Notes: These plots rely on the match of the ZS configuration with the online setting. Little excess in bin ADC_count = 0 is expected. It is due to the rounding done in the ZS filter. Positive values are round down, while negative values are round up. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT low interest ZS filter output", 'description': "Barrel Low Interest ZS emulation. Signal of channels from barrel low interest regions as reconstructed by the ZS emulator. A sharp cut at zero suppression threshold is expected, with all bins below this threshold empty. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>", 'draw': { 'withref': "yes" } }])
 
