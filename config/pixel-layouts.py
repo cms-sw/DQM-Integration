@@ -1,5 +1,5 @@
 def pixellayout(i, p, *rows): i["Pixel/Layouts/" + p] = DQMItem(layout=rows)
-pixellayout(dqmitems, "000 - Pixel FED Occupancy",
+pixellayout(dqmitems, "000 - Pixel FED Occupancy vs Lumi Sections",
             [{ 'path': "Pixel/avgfedDigiOccvsLumi",
                'description': "Relative digi occupancy per FED compared to average FED occupancy, plotted versus lumi section and updated every 15 lumi sections. Expected value for healthy FEDs is around 1.",
                'draw': { 'withref': "no" }}]
@@ -141,8 +141,3 @@ pixellayout(dqmitems, "31 - Cluster_y_width_vs_cluster_eta",
      'description': "Cluster y width as function of cluster eta", 
      'draw': { 'withref': "no" }}]
   )
-pixellayout(dqmitems, "32 - Digi Occupancy of FED per 15 Lumi Sections",
-            [{ 'path': "Pixel/avgfedDigiOccvsLumi",
-               'description': "Digi Occupancy of FED per 15 Lumi Sections",
-               'draw': { 'withref': "no" }}]
-              )
