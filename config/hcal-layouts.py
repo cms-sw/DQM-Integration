@@ -62,4 +62,3 @@ hcallayout(dqmitems, "10 HCAL Error Thresholds",
            [{'path':"Hcal/HcalInfo/SummaryClientPlots/MinErrorRate",
              'description':"This shows the fraction of events that must be bad in each task to be counted as a problem by reportSummary."}
             ])
-

@@ -35,12 +35,7 @@ shifthcallayout(dqmitems, "06 HCAL Digi Problems",
                    'description': "Total number of bad digis found in HCAL vs luminosity section"}],
                 )
 
-shifthcallayout(dqmitems, "07 HCAL Pedestal Problems",
-                [{ 'path':"Hcal/CoarsePedestalMonitor_Hcal/ ProblemCoarsePedestals",
-                   'description':  "This makes a coarse check to see if pedestals for a given channel have drifted from the reference.  If too any channel is found to be far from the reference value, those channels are counted as bad for that section."}],
-                )
-
-shifthcallayout(dqmitems, "08 HCAL Lumi Problems",
+shifthcallayout(dqmitems, "07 HCAL Lumi Problems",
                 [{'path': "Hcal/BeamMonitor_Hcal/ ProblemBeamMonitor",
                   'description':"This shows problems only in the sections of HF used for luminosity monitoring.  Channels that are hot or dead are considered as problems, where the definitions of 'hot' and 'dead' are slightly different than in the normal HCAL monitors.  More details at  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }]
                 )
