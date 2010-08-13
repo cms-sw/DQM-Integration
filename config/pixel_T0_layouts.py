@@ -55,36 +55,23 @@ pixellayout(dqmitems, "03 - Pixel_Track_Summary",
    { 'path': "Pixel/Clusters/OffTrack/size_siPixelClusters", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}],
   [{ 'path': "Pixel/Tracks/ntracks_generalTracks", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiPixel>Description for the Central DQM Shifter</a>"}]
 )
-pixellayout(dqmitems, "04a - Barrel_DigiCharge_Summary_per_Shell",
-  [{ 'path': "Pixel/Barrel/Shell_mI/SUMOFF_adc_Shell_mI", 'description': "Mean digi charge in ADC counts per Barrel Shell_mI Ladder"},
-   { 'path': "Pixel/Barrel/Shell_mO/SUMOFF_adc_Shell_mO", 'description': "Mean digi charge in ADC counts per Barrel Shell_mO Ladder"}],
-  [{ 'path': "Pixel/Barrel/Shell_pI/SUMOFF_adc_Shell_pI", 'description': "Mean digi charge in ADC counts per Barrel Shell_pI Ladder"},
-   { 'path': "Pixel/Barrel/Shell_pO/SUMOFF_adc_Shell_pO", 'description': "Mean digi charge in ADC counts per Barrel Shell_pO Ladder"}]
-)     
-pixellayout(dqmitems, "04b - Endcap_DigiCharge_Summary_per_HalfCylinder",
-  [{ 'path': "Pixel/Endcap/HalfCylinder_mI/SUMOFF_adc_HalfCylinder_mI", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_mI Blade"},
-   { 'path': "Pixel/Endcap/HalfCylinder_mO/SUMOFF_adc_HalfCylinder_mO", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_mO Blade"}],
-  [{ 'path': "Pixel/Endcap/HalfCylinder_pI/SUMOFF_adc_HalfCylinder_pI", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_pI Blade"},
-   { 'path': "Pixel/Endcap/HalfCylinder_pO/SUMOFF_adc_HalfCylinder_pO", 'description': "Mean digi charge in ADC counts per Endcap HalfCylinder_pO Blade"}]
+pixellayout(dqmitems, "04a - HitEfficiency_perBarrelLayer",
+  [{ 'path': "Pixel/Barrel/HitEfficiency_L1",             'description': "Barrel Layer 1 Hit Efficiency"},
+   { 'path': "Pixel/Barrel/HitEfficiency_L2",             'description': "Barrel Layer 2 Hit Efficiency"}],
+  [{ 'path': "Pixel/Barrel/HitEfficiency_L3",             'description': "Barrel Layer 3 Hit Efficiency"}]
 )
-pixellayout(dqmitems, "05a - Barrel_NDigis_Summary_per_Shell",
-  [{ 'path': "Pixel/Barrel/Shell_mI/SUMOFF_ndigis_Shell_mI", 'description': "Mean ndigis per event per Barrel Shell_mI Ladder"},
-   { 'path': "Pixel/Barrel/Shell_mO/SUMOFF_ndigis_Shell_mO", 'description': "Mean ndigis per event per Barrel Shell_mO Ladder"}],
-  [{ 'path': "Pixel/Barrel/Shell_pI/SUMOFF_ndigis_Shell_pI", 'description': "Mean ndigis per event per Barrel Shell_pI Ladder"},
-   { 'path': "Pixel/Barrel/Shell_pO/SUMOFF_ndigis_Shell_pO", 'description': "Mean ndigis per event per Barrel Shell_pO Ladder"}]
+pixellayout(dqmitems, "04b - HitEfficiency_perEndcapDisk",
+  [{ 'path': "Pixel/Endcap/HitEfficiency_Dm1",             'description': "Endcap 1m Disk Hit Efficiency"},
+   { 'path': "Pixel/Endcap/HitEfficiency_Dm2",             'description': "Endcap 2m Disk Hit Efficiency"}],
+  [{ 'path': "Pixel/Endcap/HitEfficiency_Dp1",             'description': "Endcap 1p Disk Hit Efficiency"},
+   { 'path': "Pixel/Endcap/HitEfficiency_Dp2",             'description': "Endcap 2p Disk Hit Efficiency"}]
 )     
-pixellayout(dqmitems, "05b - Endcap_NDigis_Summary_per_HalfCylinder",
-  [{ 'path': "Pixel/Endcap/HalfCylinder_mI/SUMOFF_ndigis_HalfCylinder_mI", 'description': "Mean ndigis per event per Endcap HalfCylinder_mI Blade"},
-   { 'path': "Pixel/Endcap/HalfCylinder_mO/SUMOFF_ndigis_HalfCylinder_mO", 'description': "Mean ndigis per event per Endcap HalfCylinder_mO Blade"}],
-  [{ 'path': "Pixel/Endcap/HalfCylinder_pI/SUMOFF_ndigis_HalfCylinder_pI", 'description': "Mean ndigis per event per Endcap HalfCylinder_pI Blade"},
-   { 'path': "Pixel/Endcap/HalfCylinder_pO/SUMOFF_ndigis_HalfCylinder_pO", 'description': "Mean ndigis per event per Endcap HalfCylinder_pO Blade"}]
-)
-pixellayout(dqmitems, "06 - Barrel OnTrack cluster positions",
+pixellayout(dqmitems, "05 - Barrel OnTrack cluster positions",
   [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_1", 'description': "Global position of OnTrack clusters in Barrel/Layer_1"}],
   [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_2", 'description': "Global position of OnTrack clusters in Barrel/Layer_2"}],
   [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_Layer_3", 'description': "Global position of OnTrack clusters in Barrel/Layer_3"}]
 )
-pixellayout(dqmitems, "07 - Endcap OnTrack cluster positions",
+pixellayout(dqmitems, "06 - Endcap OnTrack cluster positions",
   [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_1", 'description': "Global position of OnTrack clusters in Endcap -z Disk_1"},
    { 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_mz_Disk_2", 'description': "Global position of OnTrack clusters in Endcap -z Disk_2"}],
   [{ 'path': "Pixel/Clusters/OnTrack/position_siPixelClusters_pz_Disk_1", 'description': "Global position of OnTrack clusters in Endcap +z Disk_1"},
