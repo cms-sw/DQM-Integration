@@ -8,8 +8,8 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/01 - Pixel_Digi_Summary',
                  'Pixel/Layouts/02 - Pixel_Cluster_Summary',
                  'Pixel/Layouts/03 - Pixel_Track_Summary',
-		 'Pixel/Layouts/06 - Barrel OnTrack cluster positions',
-		 'Pixel/Layouts/07 - Endcap OnTrack cluster positions')
+		 'Pixel/Layouts/05 - Barrel OnTrack cluster positions',
+		 'Pixel/Layouts/06 - Endcap OnTrack cluster positions')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - SiStrip ReportSummary',
