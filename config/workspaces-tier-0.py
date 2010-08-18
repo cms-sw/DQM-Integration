@@ -8,8 +8,8 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/01 - Pixel_Digi_Summary',
                  'Pixel/Layouts/02 - Pixel_Cluster_Summary',
                  'Pixel/Layouts/03 - Pixel_Track_Summary',
-		 'Pixel/Layouts/05 - Barrel OnTrack cluster positions',
-		 'Pixel/Layouts/06 - Endcap OnTrack cluster positions')
+                 'Pixel/Layouts/05 - Barrel OnTrack cluster positions',
+                 'Pixel/Layouts/06 - Endcap OnTrack cluster positions')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - SiStrip ReportSummary',
@@ -43,11 +43,13 @@ server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/01 HCAL Summaries',
-                 'Hcal/Layouts/02 HCAL Dead Cell Check',
-                 'Hcal/Layouts/03 HCAL Hot Cell Check',
-                 'Hcal/Layouts/04 HCAL Data Format',
-                 'Hcal/Layouts/05 HCAL Lumi Problems',
-                 'Hcal/Layouts/06 HCAL Digi Problems',
+                 'Hcal/Layouts/02 HCAL Events Processed',
+                 'Hcal/Layouts/03 HCAL Sufficient Events',
+                 'Hcal/Layouts/04 HCAL Raw Data',
+                 'Hcal/Layouts/05 HCAL Digi Problems',
+                 'Hcal/Layouts/06 HCAL Dead Cell Check',
+                 'Hcal/Layouts/07 HCAL Hot Cell Check',
+                 'Hcal/Layouts/08 HCAL HF Luminosity Check' 
                  )
 
 server.workspace('DQMContent', 20, 'Calorimeter', 'CASTOR', '^Castor/',
