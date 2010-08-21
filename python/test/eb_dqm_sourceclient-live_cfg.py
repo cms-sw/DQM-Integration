@@ -310,6 +310,18 @@ if (liveCMS == 1) | (playCMS == 1) :
   process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
   process.prefer("GlobalTag")
 
+if (globalDAQ == 1) | (liveECAL == 1) :
+  process.GlobalTag.toGet = cms.VPSet(
+    cms.PSet(record = cms.string("EcalDQMChannelStatusRcd"),
+             tag = cms.string("EcalDQMChannelStatus_v01_online"),
+             connect = cms.untracked.string("sqlite_file:/nfshome0/ecalpro/MASKING-DQM/mask-ECAL.db")
+            ),
+    cms.PSet(record = cms.string("EcalDQMTowerStatusRcd"),
+             tag = cms.string("EcalDQMTowerStatus_v01_online"),
+             connect = cms.untracked.string("sqlite_file:/nfshome0/ecalpro/MASKING-DQM/mask-ECAL.db")
+            )
+  )
+
 process.MessageLogger = cms.Service("MessageLogger",
   cout = cms.untracked.PSet(
     threshold = cms.untracked.string('WARNING'),
