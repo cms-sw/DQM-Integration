@@ -4,10 +4,19 @@ server.workspace('DQMShift',   2, 'Summaries', 'Shift')
 server.workspace('DQMContent', 3, 'Summaries', 'Everything', '^')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'Pixel', '^Pixel/',
+                 'Pixel/Layouts/000 - Pixel FED Occupancy vs Lumi Sections',
+                 'Pixel/Layouts/00a - Pixel_Error_Summary',
+                 'Pixel/Layouts/00b - Pixel_Error_Summary',
                  'Pixel/Layouts/00c - Pixel_Error_Summary',
-                 'Pixel/Layouts/01a - Pixel_Noise_Summary',
-                 'Pixel/Layouts/01b - Pixel_Noise_Summary',
-                 'Pixel/Layouts/02 - Pixel_Charge_Summary')
+                 'Pixel/Layouts/20a - Cluster occupancy Barrel Layer 1',
+                 'Pixel/Layouts/20b - Cluster occupancy Barrel Layer 2',
+                 'Pixel/Layouts/20c - Cluster occupancy Barrel Layer 3',
+                 'Pixel/Layouts/20d - Cluster occupancy Endcap -z Disk 1',
+                 'Pixel/Layouts/20e - Cluster occupancy Endcap -z Disk 2',
+                 'Pixel/Layouts/20f - Cluster occupancy Endcap +z Disk 1',
+                 'Pixel/Layouts/20g - Cluster occupancy Endcap +z Disk 2',
+                 'Pixel/Layouts/30b - PKAM event rates',
+                 'Pixel/Layouts/30c - Pixel event rates')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - SiStrip ReportSummary',
