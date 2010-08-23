@@ -69,6 +69,10 @@ process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
 
+################# DCS Info ######################
+process.load("DQM.RPCMonitorDigi.RPCDcsInfo_cfi")
+
+
 ################# DQM Client Modules ####################
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
@@ -77,7 +81,7 @@ process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
 
 
 ################# Other Clients ############################
-process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
+#process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
 
 
 ################### FED ##################################
@@ -105,7 +109,7 @@ process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
                                            )
 
 ################  Sequences ############################
-process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcAfterPulse)
+process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo)
 process.rpcClient = cms.Sequence(process.qTesterRPC*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcDigi*process.rpcClient)
 
