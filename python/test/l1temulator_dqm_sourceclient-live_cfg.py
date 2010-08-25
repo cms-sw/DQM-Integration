@@ -18,8 +18,7 @@ process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")
 #NL//this over-writting may be employed only when needed
 #  ie quick module disabling, before new tags can be corrected)
 from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
-##NL//ctp temporarily disabled (infinite time sorting too large collections)
-l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 0, 1, 1, 0, 1, 1]
+l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 1, 1, 1, 0, 1, 1]
 newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
 process.globalReplace("L1HardwareValidation", newHWSequence)
 
