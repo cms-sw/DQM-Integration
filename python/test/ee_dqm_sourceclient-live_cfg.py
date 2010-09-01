@@ -165,12 +165,12 @@ process.load("DQM.EcalBarrelMonitorTasks.EcalBarrelMonitorTasks_cfi")
 
 process.load("DQM.EcalEndcapMonitorTasks.EcalEndcapMonitorTasks_cfi")
 
-if (localDAQ == 1) | (liveCMS == 1) | (playCMS == 1) :
+if (localDAQ == 1) :
   process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
 
   process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
 
-if (globalDAQ == 1) | (liveECAL == 1) :
+if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   import DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi
   process.ecalBarrelMonitorClient = DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi.ecalBarrelMonitorDbClient.clone()
 
@@ -318,7 +318,7 @@ if (liveCMS == 1) | (playCMS == 1) :
   process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
   process.prefer("GlobalTag")
 
-if (globalDAQ == 1) | (liveECAL == 1) :
+if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   process.GlobalTag.toGet = cms.VPSet(
     cms.PSet(record = cms.string("EcalDQMChannelStatusRcd"),
              tag = cms.string("EcalDQMChannelStatus_v1_hlt"),
