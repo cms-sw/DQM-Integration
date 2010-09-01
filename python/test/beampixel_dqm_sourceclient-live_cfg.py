@@ -90,7 +90,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #----------------------------
 # pixelVertexDQM Configuration
 #----------------------------
-process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
+process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(1),

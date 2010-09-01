@@ -22,7 +22,7 @@ process.dqmEnv.subSystemFolder    = "HLX"
 ## Lumi reference file
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hlx_reference.root'
 
-process.hlxQualityTester = cms.EDFilter("QualityTester",
+process.hlxQualityTester = cms.EDAnalyzer("QualityTester",
     # default is 1
     prescaleFactor = cms.untracked.int32(10000),
     # use eventloop for testing only ! default is false

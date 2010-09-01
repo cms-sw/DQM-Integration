@@ -208,7 +208,7 @@ process.p = cms.Path(process.hcalDigis
 # Quality Tester 
 # will add switch to select histograms to be saved soon
 #-----------------------------
-process.qTester = cms.EDFilter("QualityTester",
+process.qTester = cms.EDAnalyzer("QualityTester",
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True),

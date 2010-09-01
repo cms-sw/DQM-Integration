@@ -124,7 +124,7 @@ else:
 process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
 
 ## TKStatus
-process.dqmTKStatus = cms.EDFilter("TKStatus",
+process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
         BeamFitter = cms.PSet(
         DIPFileName = process.dqmBeamMonitor.BeamFitter.DIPFileName
         )
