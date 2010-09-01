@@ -186,7 +186,7 @@ if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
     convention = cms.untracked.string('Online')
   )
 
-  process.dqmEnv = cms.EDFilter("DQMEventInfo",
+  process.dqmEnv = cms.EDAnalyzer("DQMEventInfo",
     subSystemFolder = cms.untracked.string('Ecal')
   )
 
