@@ -50,7 +50,7 @@ gtEvmDigis = EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi.l1GtEvmUnpac
 
 process.physicsBitSelector = cms.EDFilter("PhysDecl",
                                                    applyfilter = cms.untracked.bool(False),
-                                                   debugOn     = cms.untracked.bool(True),
+                                                   debugOn     = cms.untracked.bool(False),
                                                    HLTriggerResults = cms.InputTag("TriggerResults","","HLT")
                                           )
 
@@ -72,7 +72,7 @@ process.evfDQMmodulesPath = cms.Path(
 			      process.gtDigis*
 			      process.gtEvmDigis*
 			      process.l1GtRecord*
-			      process.physicsBitSelector*
+			      #process.physicsBitSelector*
                               process.scalersRawToDigi*
 			      #process.dump*
                               process.dqmProvInfo*

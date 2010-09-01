@@ -129,8 +129,8 @@ process.hcalClient.databaseUpdateTime=60
 
 # Set values higher at startup  (set back from 0.25 to 0.05 on 15 April 2010)
 process.hcalClient.DeadCell_minerrorrate=0.05
-#process.hcalClient.HotCell_minerrrorate =0.05
-
+process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
+                   
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      "HotCellMonitor",
@@ -144,6 +144,7 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      #"DetDiagLaserMonitor",
                                      #"DetDiagLEDMonitor",
                                      #"DetDiagNoiseMonitor",
+                                     "CoarsePedestalMonitor",
                                      "DetDiagTimingMonitor",
                                      "Summary"
                                      ]
@@ -157,6 +158,14 @@ idle=3559
 process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(idle)
 process.hcalDigiMonitor.ExpectedOrbitMessageTime = idle
 process.hcalDigiMonitor.shutOffOrbitTest=False
+
+# Turn off dead cell checks in HO ring 2
+process.hcalDeadCellMonitor.excludeHORing2 = True
+
+# Ignore ped-ref differences
+process.hcalCoarsePedestalMonitor.ADCDiffThresh = 2
+# block both hot and dead channels from CoarsePedestal Monitor
+process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.untracked.int32((1<<5) | (1<<6))
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
@@ -199,7 +208,7 @@ process.p = cms.Path(process.hcalDigis
 # Quality Tester 
 # will add switch to select histograms to be saved soon
 #-----------------------------
-process.qTester = cms.EDFilter("QualityTester",
+process.qTester = cms.EDAnalyzer("QualityTester",
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True),

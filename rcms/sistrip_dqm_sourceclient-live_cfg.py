@@ -16,7 +16,8 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring(
+                 'HLT_MinBia*','HLT_Jet*','HLT_DiJet*','HLT_HT100U','HLT_MultiVertex*','HLT_Pixel*'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 
@@ -38,7 +39,7 @@ process.dqmSaver.producer = "Playback"
 process.dqmSaver.saveByTime = 16
 process.dqmSaver.saveByMinute = 16
 
-process.dqmEnvTr = cms.EDFilter("DQMEventInfo",
+process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
                  subSystemFolder = cms.untracked.string('Tracking'),
                  eventRateWindow = cms.untracked.double(0.5),
                  eventInfoFolder = cms.untracked.string('EventInfo')
@@ -85,55 +86,8 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.Reconstruction_cff")
-#============================================================================
-## TRACKING:
-## Skip events with HV off
-process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=20000
-process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 20000
-process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters= 20000
-process.thTripletsA.ClusterCheckPSet.MaxNumberOfPixelClusters = 5000
-process.thTripletsB.ClusterCheckPSet.MaxNumberOfPixelClusters = 5000
+process.load("Configuration.GlobalRuns.reco_TLR_38X")
 
-## local tracker strip reconstruction
-process.OutOfTime.TOBlateBP=0.071
-process.OutOfTime.TIBlateBP=0.036
-
-###### FIXES TRIPLETS FOR LARGE BS DISPLACEMENT ######
-
-### prevent bias in pixel vertex
-process.pixelVertices.useBeamConstraint = False
-
-### pixelTracks
-#---- new parameters ----
-process.pixelTracks.RegionFactoryPSet.RegionPSet.nSigmaZ  = cms.double(4.06)
-process.pixelTracks.RegionFactoryPSet.RegionPSet.originHalfLength = cms.double(40.6)
-
-### 0th step of iterative tracking
-#---- new parameters ----
-process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ   = cms.double(4.06)
-process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.originHalfLength = 40.6
-
-### 2nd step of iterative tracking
-#---- new parameters ----
-process.secTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ  = cms.double(4.47)
-process.secTriplets.RegionFactoryPSet.RegionPSet.originHalfLength = 44.7
-
-## Primary Vertex
-process.offlinePrimaryVerticesWithBS.PVSelParameters.maxDistanceToBeam = 2
-process.offlinePrimaryVerticesWithBS.TkFilterParameters.maxNormalizedChi2 = 20
-process.offlinePrimaryVerticesWithBS.TkFilterParameters.maxD0Significance = 100
-process.offlinePrimaryVerticesWithBS.TkFilterParameters.minPixelLayersWithHits = 2
-process.offlinePrimaryVerticesWithBS.TkFilterParameters.minSiliconLayersWithHits = 5
-process.offlinePrimaryVerticesWithBS.TkClusParameters.TkGapClusParameters.zSeparation = 1
-process.offlinePrimaryVertices.PVSelParameters.maxDistanceToBeam = 2
-process.offlinePrimaryVertices.TkFilterParameters.maxNormalizedChi2 = 20
-process.offlinePrimaryVertices.TkFilterParameters.maxD0Significance = 100
-process.offlinePrimaryVertices.TkFilterParameters.minPixelLayersWithHits = 2
-process.offlinePrimaryVertices.TkFilterParameters.minSiliconLayersWithHits = 5
-process.offlinePrimaryVertices.TkClusParameters.TkGapClusParameters.zSeparation = 1
-##============================================================================
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
@@ -155,7 +109,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 #--------------------------
 # Quality Test
 #--------------------------
-process.qTester = cms.EDFilter("QualityTester",
+process.qTester = cms.EDAnalyzer("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(5),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
@@ -177,7 +131,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1abc_GR09_cfi")
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
 
 
 #--------------------------

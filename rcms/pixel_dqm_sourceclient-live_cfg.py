@@ -19,6 +19,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
@@ -94,7 +95,7 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 process.load("DQM.SiPixelCommon.SiPixelP5DQM_source_cff")
 process.load("DQM.SiPixelCommon.SiPixelP5DQM_client_cff")
 
-process.qTester = cms.EDFilter("QualityTester",
+process.qTester = cms.EDAnalyzer("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(1),
     getQualityTestsFromFile = cms.untracked.bool(True),
@@ -132,5 +133,6 @@ process.SiPixelDigiSource.layOn = True
 process.SiPixelDigiSource.diskOn = True
 
 
-process.p = cms.Path(process.hltTriggerTypeFilter*process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
+process.p = cms.Path(process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
+####process.p = cms.Path(process.hltTriggerTypeFilter*process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
 #process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)

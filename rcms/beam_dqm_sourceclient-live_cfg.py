@@ -41,6 +41,8 @@ process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
+process.dqmBeamMonitorBx.fitEveryNLumi = 60
+process.dqmBeamMonitorBx.resetEveryNLumi = 60
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
@@ -122,7 +124,7 @@ else:
 process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
 
 ## TKStatus
-process.dqmTKStatus = cms.EDFilter("TKStatus",
+process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
         BeamFitter = cms.PSet(
         DIPFileName = process.dqmBeamMonitor.BeamFitter.DIPFileName
         )
