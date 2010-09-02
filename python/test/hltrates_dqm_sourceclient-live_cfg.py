@@ -24,6 +24,8 @@ process.dqmSaver.version = 2
 
 process.load("DQM.HLTEvF.TrigResRateMon_cfi")
 
+# run on 1 out of 8 SM, LSSize 23 -> 23/8 = 2.875
+process.trRateMon.LuminositySegmentSize = cms.untracked.double(2.875)
 #process.p = cms.EndPath(process.hlts+process.hltsClient)
 process.p = cms.EndPath(process.trRateMon)
 
