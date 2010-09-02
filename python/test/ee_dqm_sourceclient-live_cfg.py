@@ -315,7 +315,10 @@ if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
 if (localDAQ == 1) :
   process.GlobalTag.globaltag = "GR10_H_V0::All"
 
-if (globalDAQ == 1) | (liveECAL == 1) :
+if (globalDAQ == 1) :
+  process.GlobalTag.globaltag = "GR10_H_V6A::All"
+
+if (liveECAL == 1) :
   process.GlobalTag.globaltag = "GR10_H_V8::All"
 
 if (liveCMS == 1) | (playCMS == 1) :
