@@ -8,6 +8,7 @@ process.load("FWCore.Modules.preScaler_cfi")
 
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = cms.untracked.string('Ecal PreShower')
+process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("EventFilter.ESRawToDigi.esRawToDigi_cfi")
 #process.ecalPreshowerDigis = EventFilter.ESRawToDigi.esRawToDigi_cfi.esRawToDigi.clone()
