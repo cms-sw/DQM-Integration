@@ -209,30 +209,36 @@ trigvaljetmet(dqmitems,"HLTMET60 eff vs recMet Data",
         [{'path': "HLT/HLTJETMET/SingleMET60/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET60 versus recMET wrt lower threshold trigger"}])
 trigvaljetmet(dqmitems,"HLTMET100 eff vs recMet Data",
         [{'path': "HLT/HLTJETMET/SingleMET100/Reco Missing ET Turn-On Data", 'description': "Trigger efficiency for HLTMET100 versus recMET wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Pt Data",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Pt wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Pt Data",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Pt wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Pt Data",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Pt wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Pt Data",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Pt wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Eta Data",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Eta Data",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Eta wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Eta Data",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Eta wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Eta Data",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Eta wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Phi Data",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Phi Data",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Phi wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Phi Data",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Phi wrt lower threshold trigger"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Phi Data",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet180 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet50U versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet50U versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet50U versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet70U versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Pt Data",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Pt Turn-On Data", 'description': "Trigger efficiency for HLTJet100U versus recJet Pt wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Eta Data",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Eta Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Eta wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet80 versus recJet Phi wrt lower threshold trigger"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Phi Data",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Phi Turn-On Data", 'description': "Trigger efficiency for HLTJet110 versus recJet Phi wrt lower threshold trigger"}])
 trigvaljetmet(dqmitems,"HLTHT300MHT100 eff vs recHT Data",
         [{'path': "HLT/HLTJETMET/HT300MHT100/Reco HT Turn-On Data", 'description': "Trigger efficiency for HLTHT300MHT100 versus recHT wrt lower threshold trigger"}])
 
