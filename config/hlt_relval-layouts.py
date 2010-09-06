@@ -297,54 +297,66 @@ trigvaljetmet(dqmitems,"HLTMET60 eff vs recMet RelVal",
         [{'path': "HLT/HLTJETMET/SingleMET60/Reco Missing ET Turn-On RelVal", 'description': "Trigger efficiency for HLTMET60 versus recMET wrt full sample"}])
 trigvaljetmet(dqmitems,"HLTMET100 eff vs recMet RelVal",
         [{'path': "HLT/HLTJETMET/SingleMET100/Reco Missing ET Turn-On RelVal", 'description': "Trigger efficiency for HLTMET100 versus recMET wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs genJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus genJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs genJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus genJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs genJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus genJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs genJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus genJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus recJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus recJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus recJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Pt RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus recJet Pt wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs genJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus genJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs genJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus genJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs genJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus genJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs genJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus genJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus recJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus recJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus recJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Eta RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus recJet Eta wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs genJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus genJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs genJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus genJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs genJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus genJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs genJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus genJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet50 eff vs recJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet50/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50 versus recJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet80 eff vs recJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet80/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet80 versus recJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet110 eff vs recJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet110/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet110 versus recJet Phi wrt full sample"}])
-trigvaljetmet(dqmitems,"HLTJet180 eff vs recJet Phi RelVal",
-        [{'path': "HLT/HLTJETMET/SingleJet180/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet180 versus recJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs genJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus genJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs genJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus genJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs genJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus genJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs genJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus genJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs genJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Gen Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus genJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus recJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus recJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus recJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus recJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Pt RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Pt Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus recJet Pt wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs genJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus genJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs genJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus genJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs genJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus genJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs genJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus genJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs genJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Gen Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus genJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus recJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus recJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus recJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus recJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Eta RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Eta Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus recJet Eta wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs genJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus genJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs genJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus genJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs genJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus genJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs genJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus genJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs genJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Gen Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus genJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet15U eff vs recJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet15U/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet15U versus recJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet30U eff vs recJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet30U/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet30U versus recJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet50U eff vs recJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet50U/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet50U versus recJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet70U eff vs recJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet70U/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet70U versus recJet Phi wrt full sample"}])
+trigvaljetmet(dqmitems,"HLTJet100U eff vs recJet Phi RelVal",
+        [{'path': "HLT/HLTJETMET/SingleJet100U/Reco Jet Phi Turn-On RelVal", 'description': "Trigger efficiency for HLTJet100U versus recJet Phi wrt full sample"}])
 trigvaljetmet(dqmitems,"HLTHT300MHT100 eff vs genHT RelVal",
         [{'path': "HLT/HLTJETMET/HT300MHT100/Gen HT Turn-On RelVal", 'description': "Trigger efficiency for HLTHT300MHT100 versus genHT wrt full sample"}])
 trigvaljetmet(dqmitems,"HLTHT300MHT100 eff vs recHT RelVal",
