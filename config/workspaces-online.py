@@ -170,7 +170,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1TEMU', '^L1TEMU/',
 
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLT', '^HLT/',
                 'HLT/FourVector/PathsSummary/HLT_Egamma_Pass_Any',
-                'HLT/FourVector/PathsSummary/HLT_JetMET_Pass_Any',
+                'HLT/FourVector/PathsSummary/HLT_JetMet_Pass_Any',
                 'HLT/FourVector/PathsSummary/HLT_Muon_Pass_Any',
                 'HLT/FourVector/PathsSummary/HLT_Rest_Pass_Any',
                 'HLT/FourVector/PathsSummary/HLT_Special_Pass_Any'
@@ -247,7 +247,7 @@ server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(C
 
 server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
                 "Collisions/HLTFeedBack/00 HLT_Egamma_Pass_Any",
-                "Collisions/HLTFeedBack/01 HLT_JetMET_Pass_Any",
+                "Collisions/HLTFeedBack/01 HLT_JetMet_Pass_Any",
                 "Collisions/HLTFeedBack/02 HLT_Muon_Pass_Any",
                 "Collisions/HLTFeedBack/03 HLT_Rest_Pass_Any",
                 "Collisions/HLTFeedBack/04 HLT_Special_Pass_Any",

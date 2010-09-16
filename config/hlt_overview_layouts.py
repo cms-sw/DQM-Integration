@@ -3,8 +3,8 @@ def hltoverviewlayout(i, p, *rows): i["Collisions/HLTFeedBack/" + p] = DQMItem(l
 hltoverviewlayout(dqmitems,"00 HLT_Egamma_Pass_Any",
   	[{'path': "HLT/FourVector/PathsSummary/HLT_Egamma_Pass_Any", 'description': "Shows total number of HLT Egamma trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltoverviewlayout(dqmitems,"01 HLT_JetMET_Pass_Any",
-  	[{'path': "HLT/FourVector/PathsSummary/HLT_JetMET_Pass_Any", 'description': "Shows total number of HLT JetMET trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltoverviewlayout(dqmitems,"01 HLT_JetMet_Pass_Any",
+  	[{'path': "HLT/FourVector/PathsSummary/HLT_JetMet_Pass_Any", 'description': "Shows total number of HLT JetMET trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltoverviewlayout(dqmitems,"02 HLT_Muon_Pass_Any",
   	[{'path': "HLT/FourVector/PathsSummary/HLT_Muon_Pass_Any", 'description': "Shows total number of HLT Muon trigger accepts and the total number of any HLT accepts. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
