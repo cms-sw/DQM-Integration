@@ -36,9 +36,6 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 # Global tag
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-# passing the GT selection to the provInfo module
-if "GlobalTag" in process.__dict__ and "globaltag" in process.GlobalTag.__dict__:
-  process.dqmProvInfo.globaltag=process.GlobalTag.globaltag
 
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
