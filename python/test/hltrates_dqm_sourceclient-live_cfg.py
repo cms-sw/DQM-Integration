@@ -12,6 +12,10 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmSaver.version = 2
+process.dqmSaver.saveByRun = 1
+process.dqmSaver.saveByMinute = -1
+process.dqmSaver.saveByLumiSection = -1
+process.dqmSaver.saveByTime = -1
 #process.load("Configuration.StandardSequences.GeometryPilot2_cff")
 #process.load("Configuration.StandardSequences.MagneticField_cff")
 #process.GlobalTrackingGeometryESProducer = cms.ESProducer( "GlobalTrackingGeometryESProducer" ) # for muon hlt dqm
