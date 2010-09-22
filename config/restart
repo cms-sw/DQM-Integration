@@ -269,10 +269,10 @@ case $HOST:${EXTRA:-agents} in
        ) |& visDQMRotateLogs $DQM_DATA/agents/syncdn-%Y%m%d%H%M.txt 2592000 </dev/null & 
        
        (/dqmdata/fm-scripts/OnlineSync.sh \
-       ) |& visDQMRotateLogs /dqmdata/fm-scripts/log/onsync-%Y%m%d%H%M.txt 86400 & 
+       ) |& visDQMRotateLogs $DQM_DATA/agents/onsync-%Y%m%d%H%M.txt 86400 & 
        
        (/dqmdata/fm-scripts/createOnlineInfo \
-       ) |& visDQMRotateLogs /dqmdata/fm-scripts/log/coinfo-%Y%m%d%H%M.txt 86400 &
+       ) |& visDQMRotateLogs $DQM_DATA/agents/log/coinfo-%Y%m%d%H%M.txt 86400 &
       )
        
     done
