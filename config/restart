@@ -261,18 +261,20 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/agents/historic \
        ) |& visDQMRotateLogs $DQM_DATA/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & 
        
-       (/dqmdata/fm-scripts/visDQMSyncDaemon   \
-         --dirs OnlineData,OfflineData/Run2010/StreamExpress,RelVal,OfflineData/Run2010/Cosmics,OfflineData/Run2010/MinimumBias \
-         --dirs_quotas=30G,20G,15G,15G,50G 130G \
-         $DQM_DATA/repository/data \
-         /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
-       ) |& visDQMRotateLogs $DQM_DATA/agents/syncdn-%Y%m%d%H%M.txt 2592000 </dev/null & 
+       if [[ $D == offline ]]; then
+         (/dqmdata/fm-scripts/visDQMSyncDaemon   \
+           --dirs OnlineData,OfflineData/Run2010/StreamExpress,RelVal,OfflineData/Run2010/Cosmics,OfflineData/Run2010/MinimumBias \
+           --dirs_quotas=30G,20G,15G,15G,50G 130G \
+           $DQM_DATA/repository/data \
+           /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
+         ) |& visDQMRotateLogs $DQM_DATA/agents/syncdn-%Y%m%d%H%M.txt 2592000 </dev/null & 
        
-       (/dqmdata/fm-scripts/OnlineSync.sh \
-       ) |& visDQMRotateLogs $DQM_DATA/agents/onsync-%Y%m%d%H%M.txt 86400 & 
-       
-       (/dqmdata/fm-scripts/createOnlineInfo \
-       ) |& visDQMRotateLogs $DQM_DATA/agents/coinfo-%Y%m%d%H%M.txt 86400 &
+         (/dqmdata/fm-scripts/OnlineSync.sh \
+         ) |& visDQMRotateLogs $DQM_DATA/agents/onsync-%Y%m%d%H%M.txt 86400 & 
+         
+         (/dqmdata/fm-scripts/createOnlineInfo \
+         ) |& visDQMRotateLogs $DQM_DATA/agents/coinfo-%Y%m%d%H%M.txt 86400 &
+       fi
       )
        
     done
