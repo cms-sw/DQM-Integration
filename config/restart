@@ -197,14 +197,14 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-local \
        $DQM_DATA/agents/import-offsite \
        $DQM_DATA/agents/import-test \
-     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-receive-%Y%m%d%H%M.txt </dev/null &
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-receive-%Y%m%d%H%M.txt 86400 </dev/null &
     )
     (set -x
      (visDQMImportDaemon \
        $DQM_DATA/agents/import-local \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & ) ;;
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt 86400 </dev/null & ) ;;
 
   # dqm-prod-offsite
   dqm-c2d07-02:*agents* )
@@ -217,7 +217,7 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-offsite \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & )
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt 86400 </dev/null & )
     ;;
   dqm-c2d07-12:*agents* )
     refuseproc "file agents" "visDQMIndex" "refusing to restart"
@@ -229,7 +229,7 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-test \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & )
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt 86400 </dev/null & )
     ;;  
   # offline
   vocms116:*agents* ) 
