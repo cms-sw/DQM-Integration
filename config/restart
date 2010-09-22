@@ -123,7 +123,7 @@ cd $DQM_DIR
 newline=
 if [ $ACT = status ]; then
   case ${EXTRA:-agents} in *agents* )
-    statproc "File agents" "visDQM.*Daemon|visDQMIndex|zip" ;;
+    statproc "File agents" "visDQM.*Daemon|visDQMIndex|zip|OnlineSync|createOnlineInfo" ;;
   esac
 
   case ${EXTRA:-migration} in *migration* )
@@ -145,6 +145,7 @@ if [ $ACT = status ]; then
   case ${EXTRA:-renderer} in *renderer* )
     statproc "Render servers" "visDQMRender" ;;
   esac
+
   exit 0
 fi
 
@@ -157,7 +158,7 @@ fi
 newline=
 case ${EXTRA:-agents} in *agents* )
   # NB: leave visDQMIndex and zip processes alone
-  killproc "file agents" "visDQM.*Daemon" ;;
+  killproc "file agents" "visDQM.*Daemon|OnlineSync|createOnlineInfo" ;;
 esac
 
 case ${EXTRA:-migration} in *migration* )
@@ -196,14 +197,14 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-local \
        $DQM_DATA/agents/import-offsite \
        $DQM_DATA/agents/import-test \
-     ) >& $DQM_DIR/agents/$NOW-$HOST-receive.log </dev/null &
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-receive-%Y%m%d%H%M.txt </dev/null &
     )
     (set -x
      (visDQMImportDaemon \
        $DQM_DATA/agents/import-local \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & ) ;;
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & ) ;;
 
   # dqm-prod-offsite
   dqm-c2d07-02:*agents* )
@@ -216,7 +217,7 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-offsite \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & )
     ;;
   dqm-c2d07-12:*agents* )
     refuseproc "file agents" "visDQMIndex" "refusing to restart"
@@ -228,11 +229,11 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-test \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-     ) >& $DQM_DIR/agents/$NOW-$HOST-import.log </dev/null & )
+     ) |& visDQMRotateLogs $DQM_DIR/agents/$HOST-import-%Y%m%d%H%M.txt </dev/null & )
     ;;  
   # offline
-  vocms116:*agents* | vocms34:*agents* ) 
-    refuseproc "file agents" "visDQMIndex|zip" "refusing to restart"
+  vocms116:*agents* ) 
+    refuseproc "file agents" "visDQMIndex|zip|OnlineSync|createOnlineInfo" "refusing to restart"
 
     # standard lot of agents
     for D in offline caf dev; do
@@ -244,21 +245,36 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/repository/data \
          $DQM_DATA/agents/register \
          $DQM_DATA/agents/zip \
-       ) >& $DQM_DATA/agents/$NOW-$HOST-receive.log </dev/null &
+       ) |& visDQMRotateLogs $DQM_DATA/agents/receive-%Y%m%d%H%M.txt 86400 </dev/null &
 
        (visDQMZipDaemon \
          $DQM_DATA/agents/zip \
          $DQM_DATA/repository/data \
          $DQM_DATA/repository/zipped \
          $DQM_DATA/agents/stageout \
-       ) >& $DQM_DATA/agents/$NOW-$HOST-zip.log </dev/null &
+       ) |& visDQMRotateLogs $DQM_DATA/agents/zip-%Y%m%d%H%M.txt 86400 </dev/null &
 
        (visDQMImportDaemon \
          $DQM_DATA/agents/register \
          $DQM_DATA/repository/data \
          $DQM_DATA/ix \
          $DQM_DATA/agents/historic \
-       ) >& $DQM_DATA/agents/$NOW-$HOST-import.log </dev/null & )
+       ) |& visDQMRotateLogs $DQM_DATA/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & 
+       
+       (/dqmdata/fm-scripts/visDQMSyncDaemon   \
+         --dirs OnlineData,OfflineData/Run2010/StreamExpress,RelVal,OfflineData/Run2010/Cosmics,OfflineData/Run2010/MinimumBias \
+         --dirs_quotas=30G,20G,15G,15G,50G 130G \
+         $DQM_DATA/repository/data \
+         /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
+       ) |& visDQMRotateLogs $DQM_DATA/agents/visDQMSyncDaemon.txt 2592000 </dev/null & 
+       
+       (/dqmdata/fm-scripts/OnlineSync.sh \
+       ) |& visDQMRotateLogs /dqmdata/fm-scripts/log/onsync-%Y%m%d%H%M.txt 86400 & 
+       
+       (/dqmdata/fm-scripts/createOnlineInfo \
+       ) |& visDQMRotateLogs /dqmdata/fm-scripts/log/coinfo-%Y%m%d%H%M.txt 86400 &
+      )
+       
     done
     ;;
 esac
