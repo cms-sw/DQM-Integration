@@ -45,9 +45,10 @@ process.dqmEnv.subSystemFolder = "BeamPixel"
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-###########################################
-### TEMPORARY: using offline alignments ###
-###########################################
+
+#################################
+### To use offline alignments ###
+#################################
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
 
 # Query the DB to get the current Global Tag
@@ -57,6 +58,7 @@ dasinfo = commands.getoutput("wget 'http://vocms115.cern.ch:8304/tier0/express_c
 process.GlobalTag.globaltag = re.search("'global_tag':\s*'(.*?)'", dasinfo).group(1)
 
 process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
+
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("Configuration.StandardSequences.Services_cff")
