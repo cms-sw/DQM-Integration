@@ -62,9 +62,14 @@ process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cf
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 # Using offline alignments
+import commands
+from os import environ
+environ["http_proxy"]="http://cmsproxy.cms:3128"
 process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR10_E_V9::All"
+dasinfo = eval(commands.getoutput("wget -qO- 'http://vocms115.cern.ch:8304/tier0/express_config?run=&stream=Express'"))
+process.GlobalTag.globaltag=dasinfo[0]['global_tag']
 process.GlobalTag.pfnPrefix=cms.untracked.string('frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/')
+del environ["http_proxy"]
 
 #-----------------------
 #  Reconstruction Modules
