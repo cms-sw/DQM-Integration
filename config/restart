@@ -238,7 +238,7 @@ case $HOST:${EXTRA:-agents} in
      ;;  
   # offline
   vocms116:*agents* ) 
-    refuseproc "file agents" "visDQMIndex|zip|OnlineSync|createOnlineInfo" "refusing to restart"
+    refuseproc "file agents" "visDQMIndex|zip[ ]+|OnlineSync|createOnlineInfo" "refusing to restart"
 
     # standard lot of agents
     for D in offline caf dev; do
@@ -260,16 +260,16 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/agents/freezer \
        ) |& visDQMRotateLogs $DQM_DATA/agents/zip-%Y%m%d%H%M.txt 86400 </dev/null &
        
-       (visDQMZipFreezeDaemon \  
-         $DQM_DATA/agents/freezer \ 
+       (visDQMZipFreezeDaemon \
+         $DQM_DATA/agents/freezer \
          $DQM_DATA/repository/zipped \
          30 \
          $DQM_DATA/agents/stageout \
        ) |& visDQMRotateLogs $DQM_DATA/agents/zfreeze-%Y%m%d%H%M.txt 86400 </dev/null &
       
        (visDQMZipCastorStager \
-         $DQM_DATA/agents/stageout \ 
-         $DQM_DATA/repository/zipped \ 
+         $DQM_DATA/agents/stageout \
+         $DQM_DATA/repository/zipped \
          $CASTORDIR \
          $DQM_DATA/agents/verify \
        ) |& visDQMRotateLogs $DQM_DATA/agents/zstager-%Y%m%d%H%M.txt 86400 </dev/null &
@@ -279,7 +279,7 @@ case $HOST:${EXTRA:-agents} in
          lilopera@cern.ch  \
          $DQM_DATA/repository/zipped \
          $CASTORDIR \
-         0 \
+         5 \
          $DQM_DATA/agents/clean 
        ) |& visDQMRotateLogs $DQM_DATA/agents/zverifier-%Y%m%d%H%M.txt 86400 </dev/null &
       
