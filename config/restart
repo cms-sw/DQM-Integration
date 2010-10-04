@@ -288,7 +288,13 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/repository/data \
          $DQM_DATA/ix \
          $DQM_DATA/agents/historic \
+         $DQM_DATA/agents/vcontrol \
        ) |& visDQMRotateLogs $DQM_DATA/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & 
+       
+       (visDQMVerControlDaemon \
+         $DQM_DATA/agents/vcontrol \
+         $DQM_DATA/repository/data         
+       ) |& visDQMRotateLogs $DQM_DATA/agents/vcontrol-%Y%m%d%H%M.txt 86400 </dev/null &
        
        if [[ $D == offline ]]; then
          (/dqmdata/fm-scripts/visDQMSyncDaemon   \
