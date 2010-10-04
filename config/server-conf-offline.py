@@ -21,16 +21,23 @@ server.baseUrl     = '/dqm/offline'
 server.title       = 'CMS data quality'
 server.serviceName = 'Offline'
 
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions.
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', '/dev/null', '/dqmdata/offline/uploads',
 	      { 'ROOT': '/dqmdata/offline/repository/data',
 	        'ZIP': '/dqmdata/offline/repository/zipped'})
+	        
+# Sources.
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
 server.source('DQMArchive', '/dqmdata/offline/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and workspaces
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")

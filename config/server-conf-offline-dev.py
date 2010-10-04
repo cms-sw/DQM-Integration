@@ -19,10 +19,16 @@ server.baseUrl     = '/dqm/dev'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN Development'
 
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions.
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', '/dev/null', '/dqmdata/dev/uploads',
               { 'Development': '/dqmdata/dev/repository/data'})
+	        
+# Sources.
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
@@ -30,5 +36,6 @@ server.source('DQMLive', 'localhost:8061')
 server.source('DQMArchive', '/dqmdata/dev/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and workspaces
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-dev.py")

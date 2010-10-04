@@ -15,15 +15,22 @@ server.baseUrl     = '/dqm/caf'
 server.title       = 'CMS data quality'
 server.serviceName = 'CERN CAF'
 
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions.
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', '/dev/null', '/dqmdata/caf/uploads',
               { 'CAF': '/dqmdata/caf/repository/data'})
+	        
+# Sources.
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
 server.source('DQMArchive', '/dqmdata/caf/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and workspaces
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-caf.py")
