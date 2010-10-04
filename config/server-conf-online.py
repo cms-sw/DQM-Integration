@@ -43,12 +43,17 @@ server.baseUrl     = '/dqm/online'
 server.title       = 'CMS data quality'
 server.serviceName = 'Online'
 
-# Contents.
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions.
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', None, "/dqmdata/dqm/uploads",
               { "Original": "/dqmdata/dqm/repository/original/OnlineData",
                 "Merged": "/dqmdata/dqm/repository/merged/OnlineData" })
+
+# Sources.
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
@@ -56,5 +61,6 @@ server.source('DQMLive', '%s:9090' % COLLHOST)
 server.source('DQMArchive', '%s/ix' % SRVDIR, '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and Workspaces.
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")

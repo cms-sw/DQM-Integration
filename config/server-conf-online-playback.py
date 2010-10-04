@@ -39,12 +39,16 @@ server.baseUrl     = '/dqm/online-playback'
 server.title       = 'CMS data quality'
 server.serviceName = 'Online Playback'
 
-# Contents.
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions.
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', None, None,
-              { "Original": "/dqmdata/dqm/repository/original",
-                "iSpy": "/dqmdata/EventDisplay/done" })
+              { "Original": "/dqmdata/dqm/repository/original" })
+
+# Sources.
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
@@ -52,5 +56,6 @@ server.source('DQMLive', '%s:9090' % COLLHOST)
 server.source('DQMArchive', '%s/ix' % SRVDIR, '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and workspaces.
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")
