@@ -25,6 +25,7 @@ ARCH=slc5_amd64_gcc434
 NOW=$(date +%Y%m%d%H%M%S)
 CHECK=$(echo "$3" | md5sum | awk '{print $1}')
 HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
+
 case $HOST in
   srv-c2d04* | dqm* ) SCRAM_ARCH=slc5_amd64_gcc434 DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
   vocms116 ) ARCH=slc5_amd64_gcc434 DQM_DIR=/dqmdata DQM_SW=/data/sw ;;
@@ -85,7 +86,8 @@ statproc() {
   local title="$1" pat="$2"
   echo "${newline}${title}:"
   pgrep -u $(id -u) -f "$pat" | xargs -r ps -o pid=,bsdstart=,args= |
-    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; }'
+    perl -p -e 's/^/  /; END { $. || print "  (none running)\n"; }' |
+    sort -k 4
   newline="\n"
 }
 
@@ -158,7 +160,7 @@ fi
 newline=
 case ${EXTRA:-agents} in *agents* )
   # NB: leave visDQMIndex and zip processes alone
-  killproc "file agents" "visDQM.*Daemon|OnlineSync|createOnlineInfo" ;;
+  killproc "file agents" "visDQM.*Daemon|visDQMZip|OnlineSync|createOnlineInfo" ;;
 esac
 
 case ${EXTRA:-migration} in *migration* )
