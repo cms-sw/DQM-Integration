@@ -240,7 +240,7 @@ case $HOST:${EXTRA:-agents} in
      ;;  
   # offline
   vocms116:*agents* ) 
-    refuseproc "file agents" "visDQMIndex|zip[ ]+|OnlineSync|createOnlineInfo" "refusing to restart"
+    refuseproc "file agents" "visDQMIndex|[^/]zip +|OnlineSync|createOnlineInfo" "refusing to restart"
 
     # standard lot of agents
     for D in offline caf dev; do
