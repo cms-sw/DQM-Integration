@@ -281,7 +281,7 @@ case $HOST:${EXTRA:-agents} in
          lilopera@cern.ch  \
          $DQM_DATA/repository/zipped \
          $CASTORDIR \
-         5 \
+         7 \
          $DQM_DATA/agents/clean 
        ) |& visDQMRotateLogs $DQM_DATA/agents/zverifier-%Y%m%d%H%M.txt 86400 </dev/null &
       
