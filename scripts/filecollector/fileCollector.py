@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 import os,time,sys,glob,zipfile,re,shutil,stat
+from fcntl import lockf, LOCK_EX, LOCK_UN
 from hashlib import md5
 from commonAnTS import *
 if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
@@ -76,8 +77,12 @@ while True:
         done=False
         keeper=0
         Tfiles=sorted(files,cmp=lambda x,y: "_T" not in x and x != y and 1  or cmp(x,y))[::-1]
+        hname=os.getenv("HOSTNAME")
+        if "dqm-c2d07-07" in hname.lower(): 
+          time.sleep(30)  
         for Tfile in Tfiles:
-          finalTMPfile="%s/DQM_V0001_%s_R%09d.root.$s" % (TMP_DROPBOX,subsystem,run,os.getenv("HOSTNAME").replace("-","t")[-6:])
+          seed=hname.replace("-","t")[-6:]
+          finalTMPfile="%s/DQM_V0001_%s_R%09d.root.%s" % (TMP_DROPBOX,subsystem,run,seed)
           runstr="%09d" % run
           finalTfile="%s/%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6],Tfile.split("/")[-1])
           finalTdir="%s/%s/%s" % (T_FILE_DONE_DIR,runstr[0:3],runstr[3:6])
@@ -109,9 +114,11 @@ while True:
                 originFile.close() 
                 shutil.copy(Tfile,finalTMPfile)
                 version=1
+                lFile=open("%s/lock" % TMP_DROPBOX ,"a")
+                lockf(lFile,LOCK_EX)
                 for vdir,vsubdir,vfiles in os.walk(DROPBOX):
                   if 'DQM_V0001_%s_R%09d.root' % (subsystem,run) not in vfiles:
-                    break
+                    continue
                   version += 1
 
                 if not os.path.exists("%s/V%04d" % (DROPBOX,version)):
@@ -126,13 +133,16 @@ while True:
                   os.chmod(finalfile,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)
                   os.chmod(originFileName,stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH| stat.S_IWRITE|stat.S_IWGRP|stat.S_IWOTH)  
                   debugMsg(0, "file %s has been successfully sent to the DROPBO%s" % (Tfile,DEBUG and "X:%s" % DROPBOX or "X"))
+                  lockf(lFile,LOCK_UN)
+                  lFile.close()
                   break
                 else:
                   body = "Problem transfering final file for run %09d\n Retrying in %d" % (run,COLLECTOR_WAIT_TIME)
                   debugMsg(2, body)
                   if i == RETRIES-1: sendmail(YourEmail,run,body,subject="Error tranfering file to filer")
                   time.sleep(COLLECTOR_WAIT_TIME)
-                  
+                lockf(lFile,LOCK_UN)
+                lFile.close()
               done=True
             else:
               DEBUG and debugMsg(0, "file %s is incomplete looking for next DQM_V*_%s_R%09d_T*.root valid file" % (Tfile,subsystem,run))
