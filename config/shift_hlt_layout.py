@@ -33,7 +33,7 @@ hltlayout(dqmitems,"05 HLT_Electron_Pass_Any", [{'path': "HLT/FourVector/PathsSu
 
 hltlayout(dqmitems,"06 HLT_HcalHPDNoise_Pass_Any", [{'path': "HLT/FourVector/PathsSummary/HLT_HcalHPDNoise_Pass_Any", 'description': "Shows total number of HLT HcalHPDNoise trigger accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"07 HLT_HcalHZS_Pass_Any", [{'path': "HLT/FourVector/PathsSummary/HLT_HcalHZS_Pass_Any", 'description': "Shows total number of HLT HcalHZS trigger accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"07 HLT_HcalNZS_Pass_Any", [{'path': "HLT/FourVector/PathsSummary/HLT_HcalNZS_Pass_Any", 'description': "Shows total number of HLT HcalNZS trigger accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltlayout(dqmitems,"08 HLT_Jet_Pass_Any", [{'path': "HLT/FourVector/PathsSummary/HLT_Jet_Pass_Any", 'description': "Shows total number of HLT Jet trigger accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
