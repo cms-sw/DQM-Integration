@@ -1,4 +1,4 @@
-def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics" + p] = DQMItem(layout=rows)
+def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows)
   
 
 hltlayout(dqmitems,"01 HLT_Egamma_Pass_Any",
@@ -18,7 +18,7 @@ hltlayout(dqmitems,"05 HLT_Special_Pass_Any",
 
 
 
-def hltlayout(i, p, *rows): i["00 Shift/HLT/Collisions" + p] = DQMItem(layout=rows)
+def hltlayout(i, p, *rows): i["00 Shift/HLT/Collisions/" + p] = DQMItem(layout=rows)
   
 
 hltlayout(dqmitems,"01 HLT_BTau_Pass_Any", [{'path': "HLT/FourVector/PathsSummary/HLT_BTau_Pass_Any", 'description': "Shows total number of HLT Egamma trigger accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
