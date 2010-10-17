@@ -265,7 +265,7 @@ case $HOST:${EXTRA:-agents} in
        (visDQMZipFreezeDaemon \
          $DQM_DATA/agents/freezer \
          $DQM_DATA/repository/zipped \
-         30 \
+         7 \
          $DQM_DATA/agents/stageout \
        ) |& visDQMRotateLogs $DQM_DATA/agents/zfreeze-%Y%m%d%H%M.txt 86400 </dev/null &
       
