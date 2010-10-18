@@ -361,7 +361,7 @@ eeecalshifterlayout(dqmitems, "06 L1 Trigger/06 Timing Calo Triggers",
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing calo triggers Real Digis EE +", 'description': "TP sample matching with emulator divided by TCC number (in EE 4 TCC / 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_EgammaSuperClusterOnly_L1R are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 L1 Trigger/07 Timing Muon Triggers",
-  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE -", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen_v2 are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE -", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalEndcap/EETriggerTowerTask/EETTT TCC timing muon triggers Real Digis EE +", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen_v2 are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eeecalshifterlayout(dqmitems, "06 L1 Trigger/08 Trigger Quality",

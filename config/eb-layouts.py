@@ -237,7 +237,7 @@ ebecalshifterlayout(dqmitems, "06 L1 Trigger/05 Fraction of Non Single Timing",
 
 ebecalshifterlayout(dqmitems, "06 L1 Trigger/06 TP Match index Calo or Muon Triggers",
   [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TCC timing calo triggers Real Digis", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_EgammaSuperClusterOnly_L1R are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TCC timing muon triggers Real Digis", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen_v2 are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalBarrel/EBTriggerTowerTask/EBTTT TCC timing muon triggers Real Digis", 'description': "TP sample matching with emulator divided by TCC number (in EB 1 TCC = 1 DCC). Expect all TCCs at sample = 3. Only events with HLT bit = HLT_L1MuOpen are considered. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ebecalshifterlayout(dqmitems, "06 L1 Trigger/07 Trigger Quality",
   [{ 'path': "EcalBarrel/EBSummaryClient/EBTTT emulator error quality summary", 'description': "Result of the comparison of Et and Fine Grain Veto between real and emulated trigger primitives. Non matched trigger primitives appear red. Expect green color. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
