@@ -9,7 +9,7 @@
 # Cosmic runs that lasted less than 25 lumisections from the last month
 # Test runs from the last month
 # By default things stay in the GUI for a year
-QUOTAS = {'online_data':{'.*':[
+{'online_data':{'.*':[
   [COLLISIONS_RUN,365*2,0],
   [COSMICS_RUN,6 * 30,50],
   [COSMICS_RUN,3 * 30,25],
