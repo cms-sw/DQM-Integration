@@ -123,30 +123,104 @@ l1t_rpctf_single(dqmitems, "L1TRPCTF", "RPCDigi_bx")
 ## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "2nd Track Summary")
 ## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Fractional High Quality Summary")
 
-l1t_dttf_single(dqmitems, "Occupancy Summary",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Summary", 'description' :  "DTTF occupancy plot (divided by the total number of events with a DTTF track) for each sector of each logical wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Occupancy Phi vs Eta",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Occupancy Phi vs Eta", 'description' : "Integrated occupancy (proportionate to total number of events with a DTTF track) - phi vs eta.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated Packed Phi",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Phi", 'description' : "Integrated Paced Phi. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated Packed Eta",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Eta", 'description' : "Integrated Packed Eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated Packed Pt",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Pt", 'description' : "Integrated Packed Pt.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated Packed Charge",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Charge", 'description' : "Integrated Packed Charge. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated Packed Quality",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated Packed Quality", 'description' : "Integrated Packed Quality. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-l1t_dttf_single(dqmitems, "Integrated BX",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Integrated BX", 'description' : "Integrated BX plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-l1t_dttf_single(dqmitems, "Num Tracks Per Event",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Num Tracks Per Event", 'description' : "Integrated number of tracks per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-l1t_dttf_single(dqmitems, "BX Summary",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/BX Summary", 'description' : "Summary of BX's for each wheel (proportionate to total number of events with a DTTF track). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-l1t_dttf_single(dqmitems, "2nd Track Summary",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/2nd Track Summary", 'description' : "Number of 2nd tracks (proportionate to total number of events that have a DTTF track) - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-l1t_dttf_single(dqmitems, "Fractional High Quality Summary",
-               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INTEG/Fractional High Quality Summary", 'description' : "Fractional high quality (qual>3) (proportional to total bin occupancy) summary - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\" target=\"_blank\">here</a>"}])
+
+
+
+#l1t_dttf_single(dqmitems, "DTTF Occupancy Summary",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_03_tracks_distr_summary", 'description' :  "DTTF occupancy plot (divided by the total number of events with a DTTF track) for each sector of each logical wheel. The N0 boards get less than 10% tracks than the corresponding P0: the blue color is normal there. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Occupancy Phi vs Eta",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_phi_eta_fine_summary", 'description' : "Integrated occupancy (proportionate to total number of events with a DTTF track) - phi vs eta.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated Packed Phi",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_phi_integ", 'description' : "Integrated Paced Phi. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated Packed Eta",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_eta_integ", 'description' : "Integrated Packed Eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated Packed Pt",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_pt_integ", 'description' : "Integrated Packed Pt.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated Packed Charge",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_q_integ", 'description' : "Integrated Packed Charge. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated Packed Quality",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_qual_integ", 'description' : "Integrated Packed Quality. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+#l1t_dttf_single(dqmitems, "Integrated BX",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_bx_integ", 'description' : "Integrated BX plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+#l1t_dttf_single(dqmitems, "Num Tracks Per Event",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_nTracksPerEvent_integ", 'description' : "Integrated number of tracks per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+#l1t_dttf_single(dqmitems, "BX Summary",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_bx_summary", 'description' : "Summary of BX's for each wheel (proportionate to total number of events with a DTTF track). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+#l1t_dttf_single(dqmitems, "2nd Track Summary",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_2ndtrack_occupancy_summary", 'description' : "Number of 2nd tracks (proportionate to total number of events that have a DTTF track) - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
+#l1t_dttf_single(dqmitems, "Fractional High Quality Summary",
+#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_highQual_summary", 'description' : "Fractional high quality (qual>3) (proportional to total bin occupancy) summary - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\" target=\"_blank\">here</a>"}])
+
+
+l1t_dttf_single(dqmitems,  "01 - Number of Tracks per Event",
+           [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_01_nTracksPerEvent_integ", 'description' : "Number of DTTF Tracks Per Event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "02 - Fraction of tracks per wheel",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_02_nTracks", 'description' : "DTTF Tracks per Wheel distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "03 - DTTF Occupancy Summary",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_03_tracks_distr_summary", 'description' : "DTTF Tracks distribution by Sector and Wheel (blue in P0 normal: it has <10%% of P0 tracks). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "04 - Tracks BX Distribution by Wheel",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_05_bx_distr", 'description' : "DTTF Tracks BX Distribution by Wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+  
+l1t_dttf_single(dqmitems,  "05 - Fraction of Tracks BX w.r.t. Tracks with BX=0",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_06_bx", 'description' : "Fraction of DTTF Tracks BX w.r.t. Tracks with BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "06 - Tracks Quality distribution",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_07_quality", 'description' : "DTTF Tracks Quality distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "07 - Quality distribution by wheel",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_08_quality_distr", 'description' : "DTTF Tracks Quality distribution by wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "08 - High Quality Tracks fraction",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_09_highQualTracks_distr", 'description' : "Fraction of DTTF Tracks with Quality>2 by Sector and Wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "09 - Tracks Quality vs Eta",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_10_qual_eta_distr", 'description' : "DTTF Tracks Quality vs Eta Distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "10 - Occupancy Phi vs Eta-Coarse",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_11_phi_eta_coarse_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks with coarse #eta assignment (packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "11 - Occupancy Phi vs Eta-Fine",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_12_phi_etaFine_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks with fine #eta assignment (packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "12 - Occupancy Phi vs Eta",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_13_phi_eta_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "13 - Fraction of tracks with Eta fine assigment",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_14_eta_fine_fraction", 'description' : "Fraction of DTTF Tracks with Fine #eta Assignment. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "14 - Integrated Packed Eta",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_15_eta", 'description' : "DTTF Tracks #eta distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "15 - Integrated Packed Phi",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_16_phi", 'description' : "DTTF Tracks Phi distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "16 - Integrated Packed pT",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_17_pt", 'description' : "DTTF Tracks p_{T} distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "17 - Integrated Packed Charge",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_18_q", 'description' : "DTTF Tracks Charge distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "18 - 2nd Track Summary",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_19_2ndTrack_distr_summary", 'description' : "DTTF 2nd Tracks Only Distribution by Sector and Wheel w.r.t. the total Number of tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "19 - DTTF to GMT match ratio",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_gmt_fract_matching", 'description' : "Fraction of DTTF tracks matching with GMT tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "20 - DTTF tracks not matching with GMT",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_tracks_without_gmt_match", 'description' : "DTTF Tracks Without a Match in GMT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "21 - DTTF tracks matching with GMT",
+                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_tracks_with_gmt_match", 'description' : "DTTF Tracks With a Match in GMT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "22 - GMT Tracks Without DTTF Track",
+                  [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_missing_tracks_in_gmt", 'description' : "GMT Tracks Without a Corresponding Track in DTTF. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+  
+
+
+
 
 
 # list of summary SCAL histograms (dqmitems, dirPath , histoName)
