@@ -21,7 +21,16 @@ server.workspace('DQMContent', 10, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/06 - Tracking ReportSummary',
                  'SiStrip/Layouts/07 - Tracks')
 
-server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/')
+server.workspace('DQMContent', 12, 'Tracker/Muons', 'CSC', '^CSC/',
+	         'CSC/Layouts/00 Data Integrity/Physics Efficiency 01',
+		 'CSC/Layouts/00 Data Integrity/Physics Efficiency 02',
+	         'CSC/Layouts/00 Data Integrity/Physics Efficiency 04 - CSCs Reporting Data and Unpacked',
+		 'CSC/Layouts/00 Data Integrity/Physics Efficiency 08 - CSCs Occupancy Overal',
+	         'CSC/Layouts/00 Data Integrity/Physics Efficiency 07 - CSCs Occupancy 2D',
+	         'CSC/Layouts/00 Data Integrity/Physics Efficiency 09 - RecHits Minus',
+		 'CSC/Layouts/00 Data Integrity/Physics Efficiency 10 - RecHits Plus'
+	         )
+
 server.workspace('DQMContent', 13, 'Tracker/Muons', 'DT', '^DT/')
 server.workspace('DQMContent', 14, 'Tracker/Muons', 'RPC', '^RPC/') 
 
