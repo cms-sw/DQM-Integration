@@ -232,17 +232,20 @@ server.workspace('DQMContent', 50,'FeedBack for Collisions', 'BeamMonitor FeedBa
                  'Collisions/BeamMonitorFeedBack/10 - Pixel-Vertices: Z0 vs. Lumisection'
                  )
 		 
-server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T)/',
-                "Collisions/L1TFeedBack/00 Rate BSCL.BSCR",
-                "Collisions/L1TFeedBack/01 Rate BSC splash right",
-                "Collisions/L1TFeedBack/02 Rate BSC splash left",
-                "Collisions/L1TFeedBack/03 Rate BSCOR and BPTX",
-		"Collisions/L1TFeedBack/04 Rate Ratio 33 over 32",
-		"Collisions/L1TFeedBack/05 Rate Ratio 41 over 40",
-                "Collisions/L1TFeedBack/06 Integ BSCL*BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/07 Integ BSCL or BSCR Triggers vs LS",
-                "Collisions/L1TFeedBack/08 Integ HF Triggers vs LS",
-                "Collisions/L1TFeedBack/09 Integ BSCOR and BPTX"
+server.workspace('DQMContent', 54,'FeedBack for Collisions', 'L1T FeedBack','^(Collisions|L1T|EcalBarrel|EcalEndcap)/',
+                "Collisions/L1TFeedBack/00 ECAL TP Spectra",
+                "Collisions/L1TFeedBack/01 ECAL TP Occupancy",
+                "Collisions/L1TFeedBack/02 ECAL TP Emulator Comparison",
+                "Collisions/L1TFeedBack/03 Rate BSCL.BSCR",
+                "Collisions/L1TFeedBack/04 Rate BSC splash right",
+                "Collisions/L1TFeedBack/05 Rate BSC splash left",
+                "Collisions/L1TFeedBack/06 Rate BSCOR and BPTX",
+		"Collisions/L1TFeedBack/07 Rate Ratio 33 over 32",
+		"Collisions/L1TFeedBack/08 Rate Ratio 41 over 40",
+                "Collisions/L1TFeedBack/09 Integ BSCL*BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/10 Integ BSCL or BSCR Triggers vs LS",
+                "Collisions/L1TFeedBack/11 Integ HF Triggers vs LS",
+                "Collisions/L1TFeedBack/12 Integ BSCOR and BPTX"
                 )
 
 server.workspace('DQMContent', 55,'FeedBack for Collisions', 'HLT FeedBack','^(Collisions|HLT)/',
