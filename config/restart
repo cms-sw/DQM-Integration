@@ -209,6 +209,14 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DIR/ix \
        |& visDQMRotateLogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & \
      ) >& /dev/null </dev/null & )
+     
+    (set -x 
+     (visDQMDeleteDaemon \
+       http://localhost:8030/dqm/online/ \
+       $DQM_DIR/ix \
+       $DQM_DIR/config/OnlineQuotas.py \
+       |& visDQMRotateLogs $DQM_DIR/agents/delete-%Y%m%d%H%M.txt 86400 </dev/null & \
+     ) >& /dev/null </dev/null & )
     ;;
 
   # dqm-prod-offsite
@@ -222,7 +230,15 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-offsite \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-       |& visDQMRotateLogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null \
+       |& visDQMRotateLogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & \
+     ) >& /dev/null </dev/null & )
+      
+    (set -x 
+     (visDQMDeleteDaemon \
+       http://localhost:8030/dqm/online/ \
+       $DQM_DIR/ix \
+       $DQM_DIR/config/OnlineQuotas.py \
+       |& visDQMRotateLogs $DQM_DIR/agents/delete-%Y%m%d%H%M.txt 86400 </dev/null & \
      ) >& /dev/null </dev/null & )
     ;;
   dqm-c2d07-12:*agents* )
@@ -235,8 +251,16 @@ case $HOST:${EXTRA:-agents} in
        $DQM_DATA/agents/import-test \
        $DQM_DATA/repository/original \
        $DQM_DIR/ix \
-       |& visDQMRotateLogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null \
+       |& visDQMRotateLogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & \
      ) >& /dev/null </dev/null & ) 
+     
+     (set -x 
+     (visDQMDeleteDaemon \
+       http://localhost:8030/dqm/online-test/ \
+       $DQM_DIR/ix \
+       $DQM_DIR/config/OnlineQuotas.py \
+       |& visDQMRotateLogs $DQM_DIR/agents/delete-%Y%m%d%H%M.txt 86400 </dev/null & \
+     ) >& /dev/null </dev/null & )
      ;;  
   # offline
   vocms116:*agents* ) 
