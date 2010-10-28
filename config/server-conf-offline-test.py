@@ -10,7 +10,7 @@ LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 #LAYOUTS += ["%s/%s_-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee","es", "rpc")]
+           ("castor","csc","pixel","sistrip","hcal", "hcalcalib", "eb", "ee","es", "rpc")]
 LAYOUTS += ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
            ("tkal",)]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
@@ -27,7 +27,7 @@ server.port        = 8070
 server.serverDir   = '/dqmdata/dqmtest/gui'
 server.baseUrl     = '/dqm/offline-test'
 server.title       = 'CMS data quality'
-server.serviceName = 'Test'
+server.serviceName = 'Offline Test'
 
 # Plugins.
 server.plugin('render', "/dqmdata/dqmtest/style/*.cc")
@@ -43,9 +43,11 @@ server.extend('DQMFileAccess', '/dev/null', '/dqmdata/dqmtest/uploads',
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
-server.source('DQMArchive', '/dqmdata/dqmtest/ix2', '^/Global/Online')
+
+# Read from the production index to test that the layouts work.
+server.source('DQMArchive', '/dqmdata/offline/ix', '^/Global/Online')
 server.source('DQMLayout', *LAYOUTS)
 
-# Services and workspaces
+# Services and workspaces.
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")

@@ -8,7 +8,7 @@ LAYOUTS = ["%s/shift_%s_T0_layout.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "es", "hltmuon", "rpc")]
+           ("castor","csc","pixel","sistrip","hcal", "hcalcalib", "eb", "ee", "es", "hltmuon", "rpc")]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
@@ -38,6 +38,6 @@ server.source('DQMStripChart')
 server.source('DQMArchive', '/dqmdata/offline/ix', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
-# Services and workspaces
+# Services and workspaces.
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-tier-0.py")
