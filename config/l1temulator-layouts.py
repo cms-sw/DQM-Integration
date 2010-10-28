@@ -34,10 +34,10 @@ l1t_rct_expert(dqmitems, "rctRegOvereff2D",
   [{ 'path': "L1TEMU/L1TdeRCT/RegionData/rctRegOvereff2D", 'description': "Regional overefficiency, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
 
 l1t_rct_expert(dqmitems, "RctEmIsoEmOccEtaPhi",
-  [{ 'path': "L1T/L1TRCT/RctEmIsoEmOccEtaPhi", 'description': "EmIsoOcc, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+  [{ 'path': "L1TEMU/L1TdeRCT/IsoEm/ServiceData/rctIsoEmDataOcc", 'description': "EmIsoOcc, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
 
 l1t_rct_expert(dqmitems, "RctEmNonIsoEmOccEtaPhi",
-  [{ 'path': "L1T/L1TRCT/RctEmNonIsoEmOccEtaPhi", 'description': "RctEmNonIsoEmOccEtaPhi, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+  [{ 'path': "L1TEMU/L1TdeRCT/NisoEm/ServiceData/rctNisoEmDataOcc", 'description': "RctEmNonIsoEmOccEtaPhi, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
 
 l1t_rct_expert(dqmitems, "RctRegionsOccEtaPhi",
-  [{ 'path': "L1T/L1TRCT/RctRegionsOccEtaPhi", 'description': "RctRegionsOccEtaPhi, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
+  [{ 'path': "L1TEMU/L1TdeRCT/RegionData/ServiceData/rctRegDataOcc2D", 'description': "RctRegionsOccEtaPhi, For details see - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/RCTDataQualityMonitoring>RCTDQM</a> CAL/RCT/GCT mapping is here <a href=https://twiki.cern.ch/twiki/pub/CMS/RCTDataQualityMonitoring/RCTGCTCAL.jpeg> mapping </a>" }])
