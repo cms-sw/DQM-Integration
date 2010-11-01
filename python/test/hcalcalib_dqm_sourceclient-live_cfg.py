@@ -56,6 +56,10 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
+# Only use this correction in CMSSW_3_9_1 and above, after hbhereco was renamed!
+#print process.hbheprereco
+process.hbhereco = process.hbheprereco.clone()
+
 # Corrections to HF timing
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
