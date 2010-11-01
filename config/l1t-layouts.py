@@ -22,7 +22,8 @@ def l1t_csctf_single(i, dir, name):
 
 #def l1t_dttf_single(i, dir, name):
 #  i["L1T/Layouts/05-DTTF-Summary/%s" % name] = DQMItem(layout=[["L1T/%s/%s" % (dir, name)]]) 
-def l1t_dttf_single(i, p, *rows): i["L1T/Layouts/05-DTTF-Summary/" + p] = DQMItem(layout=rows)
+def l1t_dttf_single(i, p, *rows):
+  i["L1T/Layouts/05-DTTF-Summary/" + p] = DQMItem(layout=rows)
 
 def l1t_rpctf_single(i, dir, name):
   i["L1T/Layouts/06-RPCTF-Summary/%s" % name] = \
@@ -124,102 +125,61 @@ l1t_rpctf_single(dqmitems, "L1TRPCTF", "RPCDigi_bx")
 ## l1t_dttf_single(dqmitems, "L1TDTTF/DTTF_TRACKS/INTEG", "Fractional High Quality Summary")
 
 
-
-
-#l1t_dttf_single(dqmitems, "DTTF Occupancy Summary",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_03_tracks_distr_summary", 'description' :  "DTTF occupancy plot (divided by the total number of events with a DTTF track) for each sector of each logical wheel. The N0 boards get less than 10% tracks than the corresponding P0: the blue color is normal there. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Occupancy Phi vs Eta",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_phi_eta_fine_summary", 'description' : "Integrated occupancy (proportionate to total number of events with a DTTF track) - phi vs eta.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated Packed Phi",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_phi_integ", 'description' : "Integrated Paced Phi. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated Packed Eta",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_eta_integ", 'description' : "Integrated Packed Eta. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated Packed Pt",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_pt_integ", 'description' : "Integrated Packed Pt.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated Packed Charge",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_q_integ", 'description' : "Integrated Packed Charge. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated Packed Quality",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_qual_integ", 'description' : "Integrated Packed Quality. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-#l1t_dttf_single(dqmitems, "Integrated BX",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_bx_integ", 'description' : "Integrated BX plot. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-#l1t_dttf_single(dqmitems, "Num Tracks Per Event",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_nTracksPerEvent_integ", 'description' : "Integrated number of tracks per event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-#l1t_dttf_single(dqmitems, "BX Summary",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_bx_summary", 'description' : "Summary of BX's for each wheel (proportionate to total number of events with a DTTF track). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-#l1t_dttf_single(dqmitems, "2nd Track Summary",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_2ndtrack_occupancy_summary", 'description' : "Number of 2nd tracks (proportionate to total number of events that have a DTTF track) - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>"}])
-#l1t_dttf_single(dqmitems, "Fractional High Quality Summary",
-#               [{'path':"L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_highQual_summary", 'description' : "Fractional high quality (qual>3) (proportional to total bin occupancy) summary - Sector vs Logical Wheel.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\" target=\"_blank\">here</a>"}])
-
+#dqmitems["dttf_03_tracks_distr_summary"]['description'] = "DTTF Tracks distribution by Sector and Wheel. N0 contains usually 5-10% tracks w.r.t. P0: the violet band is normal. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#\"  target=\"_blank\">here</a>."
 
 l1t_dttf_single(dqmitems,  "01 - Number of Tracks per Event",
-           [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_01_nTracksPerEvent_integ", 'description' : "Number of DTTF Tracks Per Event. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+           [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_01_nTracksPerEvent_integ", 'description' : "Number of DTTF Tracks Per Event. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#01_Number_of_Tracks_per_Event\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "02 - Fraction of tracks per wheel",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_02_nTracks", 'description' : "DTTF Tracks per Wheel distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_02_nTracks", 'description' : "Distribution of DTTF Tracks per Wheel. N0 contains usually 5-10% tracks w.r.t. P0. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#02_Fraction_of_tracks_per_wheel\"  target=\"_blank\">here</a>."}])
 
-l1t_dttf_single(dqmitems,  "03 - DTTF Occupancy Summary",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_03_tracks_distr_summary", 'description' : "DTTF Tracks distribution by Sector and Wheel (blue in P0 normal: it has <10%% of P0 tracks). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "03 - DTTF Tracks Occupancy",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_03_tracks_occupancy_summary", 'description' : "DTTF Tracks distribution by Sector and Wheel. N0 contains usually 5-10% tracks w.r.t. P0: the violet band is normal. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#03_DTTF_Tracks_Occupancy\"  target=\"_blank\">here</a>."}])
 
-l1t_dttf_single(dqmitems,  "04 - Tracks BX Distribution by Wheel",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_05_bx_distr", 'description' : "DTTF Tracks BX Distribution by Wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "04 - DTTF Tracks Occupancy In the Last LumiSections",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_04_tracks_occupancy_by_lumi", 'description' : "DTTF Tracks distribution by Sector and Wheel in the last Luminosity Sections. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#04_Tracks_Occupancy_In_the_Last\"  target=\"_blank\">here</a>."}])
+
+l1t_dttf_single(dqmitems,  "05 - Tracks BX Distribution by Wheel",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_05_bx_occupancy", 'description' : "DTTF Tracks BX Distribution by Wheel. Normalized to total DTTF tracks number. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#05_Tracks_BX_Distribution_by_Whe\"  target=\"_blank\">here</a>."}])
   
-l1t_dttf_single(dqmitems,  "05 - Fraction of Tracks BX w.r.t. Tracks with BX=0",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_06_bx", 'description' : "Fraction of DTTF Tracks BX w.r.t. Tracks with BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "06 - Fraction of Tracks BX w.r.t. Tracks with BX=0",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_06_bx", 'description' : "Fraction of DTTF Tracks BX w.r.t. Tracks with BX=0. By definition, Bx=0 bin is 1. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#06_Fraction_of_Tracks_BX_w_r_t_T\"  target=\"_blank\">here</a>."}])
 
-l1t_dttf_single(dqmitems,  "06 - Tracks Quality distribution",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_07_quality", 'description' : "DTTF Tracks Quality distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "07 - Tracks Quality distribution",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_07_quality", 'description' : "DTTF Tracks Quality distribution. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#07_Tracks_Quality_distribution\"  target=\"_blank\">here</a>."}])
 
-l1t_dttf_single(dqmitems,  "07 - Quality distribution by wheel",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_08_quality_distr", 'description' : "DTTF Tracks Quality distribution by wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "08 - Quality distribution by wheel",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_08_quality_occupancy", 'description' : "DTTF Tracks Quality distribution by wheel. Normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#08_Tracks_Quality_distribution_b\"  target=\"_blank\">here</a>."}])
 
-l1t_dttf_single(dqmitems,  "08 - High Quality Tracks fraction",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_09_highQualTracks_distr", 'description' : "Fraction of DTTF Tracks with Quality>2 by Sector and Wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-
-l1t_dttf_single(dqmitems,  "09 - Tracks Quality vs Eta",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_10_qual_eta_distr", 'description' : "DTTF Tracks Quality vs Eta Distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+l1t_dttf_single(dqmitems,  "09 - High Quality Tracks Occupancy",
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_09_highQuality_Tracks", 'description' : "Fraction of DTTF Tracks with Quality>3 by Sector and Wheel. Relatively lower occupancy foreseen in chimney: S3 N0 (no tracks going to N1) and S4 P0 (no tracks going to P1). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#09_High_Quality_Tracks_Occupancy\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "10 - Occupancy Phi vs Eta-Coarse",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_11_phi_eta_coarse_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks with coarse #eta assignment (packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_10_phi_vs_etaCoarse", 'description' : "#eta-#phi distribution of DTTF Tracks with coarse #eta assignment (packed values) normalized to total DTTF tracks number at BX=0. A sector roughly covers 12 #eta bins, starting from -6. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#10_Occupancy_Phi_vs_Eta_Coarse\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "11 - Occupancy Phi vs Eta-Fine",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_12_phi_etaFine_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks with fine #eta assignment (packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_11_phi_vs_etaFine", 'description' : "#eta-#phi Distribution of DTTF Tracks with fine #eta assignment (packed values) normalized to total DTTF tracks number at BX=0. A sector roughly covers 12 #eta bins, starting from -6. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#11_Occupancy_Phi_vs_Eta_Fine\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "12 - Occupancy Phi vs Eta",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_13_phi_eta_distr", 'description' : "#eta-#phi Distribution of DTTF Tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_12_phi_vs_eta", 'description' : "#eta-#phi Distribution of DTTF Tracks normalized to total DTTF tracks number at BX=0. A sector roughly covers 30deg #eta bins, starting from -15. Wheel separation are at #eta about +/-0.3 and +/-0.74. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#12_Occupancy_Phi_vs_Eta\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "13 - Fraction of tracks with Eta fine assigment",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_14_eta_fine_fraction", 'description' : "Fraction of DTTF Tracks with Fine #eta Assignment. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_13_eta_fine_fraction", 'description' : "Fraction of DTTF Tracks with Fine #eta Assignment per Wheel. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#13_Fraction_of_tracks_with_Eta_f\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "14 - Integrated Packed Eta",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_15_eta", 'description' : "DTTF Tracks #eta distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_14_eta", 'description' : "#eta distribution (Packed values) of DTTF Tracks normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#14_Integrated_Packed_Eta\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "15 - Integrated Packed Phi",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_16_phi", 'description' : "DTTF Tracks Phi distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_15_phi", 'description' : "Phi distribution (Packed values) of DTTF Tracks normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#15_Integrated_Packed_Phi\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "16 - Integrated Packed pT",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_17_pt", 'description' : "DTTF Tracks p_{T} distribution (Packed values). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_16_pt", 'description' : "p_{T} distribution (Packed values) of DTTF Tracks normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#16_Integrated_Packed_pT\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "17 - Integrated Packed Charge",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_18_q", 'description' : "DTTF Tracks Charge distribution. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_17_charge", 'description' : "Charge distribution of DTTF Tracks normalized to total DTTF tracks number at BX=0. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#17_Integrated_Packed_Charge\"  target=\"_blank\">here</a>."}])
 
 l1t_dttf_single(dqmitems,  "18 - 2nd Track Summary",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_19_2ndTrack_distr_summary", 'description' : "DTTF 2nd Tracks Only Distribution by Sector and Wheel w.r.t. the total Number of tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-
-l1t_dttf_single(dqmitems,  "19 - DTTF to GMT match ratio",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_gmt_fract_matching", 'description' : "Fraction of DTTF tracks matching with GMT tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-
-l1t_dttf_single(dqmitems,  "20 - DTTF tracks not matching with GMT",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_tracks_without_gmt_match", 'description' : "DTTF Tracks Without a Match in GMT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-
-l1t_dttf_single(dqmitems,  "21 - DTTF tracks matching with GMT",
-                [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_tracks_with_gmt_match", 'description' : "DTTF Tracks With a Match in GMT. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-
-l1t_dttf_single(dqmitems,  "22 - GMT Tracks Without DTTF Track",
-                  [{'path' : "L1T/L1TDTTF/DTTF_TRACKS/GMT_MATCH/dttf_missing_tracks_in_gmt", 'description' : "GMT Tracks Without a Corresponding Track in DTTF. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/L1DQM#DT_TF_monitor\"  target=\"_blank\">here</a>."}])
-  
-
-
+                [{'path' : "L1T/L1TDTTF/01-INCLUSIVE/dttf_18_2ndTrack_occupancy_summary", 'description' : "DTTF 2nd Tracks Only Distribution by Sector and Wheel normalized to the total Number of tracks. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DTTFDataQualityMonitoring#18_2nd_Track_Summary\"  target=\"_blank\">here</a>."}])
 
 
 

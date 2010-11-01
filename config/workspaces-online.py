@@ -146,7 +146,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1T', '^L1T/',
                  'L1T/Layouts/03-RCT-Summary/RctEmNonIsoEmEtEtaPhi',
                  'L1T/Layouts/03-RCT-Summary/RctEmIsoEmEtEtaPhi',
                  'L1T/Layouts/03-RCT-Summary/RctRegionsEtEtaPhi',
-                 'L1T/L1TDTTF/DTTF_TRACKS/INCLUSIVE/dttf_03_tracks_distr_summary',
+                 'L1T/Layouts/05-DTTF-Summary/03 - DTTF Tracks Occupancy',
                  'L1T/L1TCSCTF/CSCTF_Chamber_Occupancies',
                  'L1T/L1TCSCTF/CSCTF_occupancies',
                  'L1T/L1TRPCTF/RPCTF_muons_eta_phi_bx0')
