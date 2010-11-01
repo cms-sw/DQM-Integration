@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
-import os, sys, socket
+import os, sys, socket, string
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
 HcalPlaybackHost='dqm-c2d07-13'.lower()
@@ -58,7 +58,15 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
 # Only use this correction in CMSSW_3_9_1 and above, after hbhereco was renamed!
 #print process.hbheprereco
-process.hbhereco = process.hbheprereco.clone()
+
+version=os.getenv("CMSSW_VERSION").split("_")
+version1=string.atoi(version[1])
+version2=string.atoi(version[2])
+
+if version1>=3 and version2>=9:
+        process.hbhereco = process.hbheprereco.clone()
+        
+
 
 # Corrections to HF timing
 process.hfreco.firstSample = 3
