@@ -2,6 +2,13 @@ import FWCore.ParameterSet.Config as cms
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
 import os, sys, socket, string
+
+
+# Set this to True is running in Heavy Ion mode
+HEAVYION=True
+
+
+
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
 HcalPlaybackHost='dqm-c2d07-13'.lower()
@@ -171,16 +178,62 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
-process.p = cms.Path(process.hcalDigis
-                     *process.l1GtUnpack
-                     *process.horeco
-                     *process.hfreco
-                     *process.hbhereco
-                     *process.hcalMonitor
-                     *process.hcalMonitorTasksCalibrationSequence 
-                     *process.hcalClient
-                     *process.dqmEnv
-                     *process.dqmSaver)
+
+#################################################################
+#                                                               #
+#  THE FOLLOWING CHANGES ARE NEEDED FOR HEAVY ION RUNNING       #
+#                                                               #
+#################################################################
+
+if (HEAVYION):
+    # Define new Heavy Ion labels
+    process.hcalDigis.InputLabel                    = cms.InputTag("hltHcalCalibrationRaw")
+    process.hcalDetDiagNoiseMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    process.hcalDetDiagLaserMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    process.hcalMonitor.FEDRawDataCollection        = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    process.hcalRawDataMonitor.digiLabel            = cms.untracked.InputTag("hltHcalCalibrationRaw")
+
+    process.hltHighLevel = cms.EDFilter("HLTHighLevel",
+                                        TriggerResultsTag = cms.InputTag("TriggerResults","","HLT"),  
+                                        HLTPaths = cms.vstring('HLT_HcalCalibration_HI'),        # provide list of HLT paths (or patterns) you want
+                                        eventSetupPathsKey = cms.string(''),             # not empty => use read paths from AlCaRecoTriggerBitsRcd via this key
+                                        andOr = cms.bool(True),                          # how to deal with multiple triggers: True (OR) accept if ANY is true, False (AND) accept if ALL are true
+                                        throw = cms.bool(True)                           # throw exception on unknown path names
+                                        )
+
+    process.filterSequence = cms.Sequence(
+        process.hltHighLevel
+        )
+
+    process.p = cms.Path(process.hltHighLevel
+                         *process.hcalDigis
+                         *process.l1GtUnpack
+                         *process.horeco
+                         *process.hfreco
+                         *process.hbhereco
+                         *process.hcalMonitor
+                         *process.hcalMonitorTasksCalibrationSequence 
+                         *process.hcalClient
+                         *process.dqmEnv
+                         *process.dqmSaver)
+
+#################################################################
+
+
+
+else:
+    process.p = cms.Path(process.hcalDigis
+                         *process.l1GtUnpack
+                         *process.horeco
+                         *process.hfreco
+                         *process.hbhereco
+                         *process.hcalMonitor
+                         *process.hcalMonitorTasksCalibrationSequence 
+                         *process.hcalClient
+                         *process.dqmEnv
+                         *process.dqmSaver)
 
 
 #-----------------------------
