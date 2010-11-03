@@ -194,7 +194,7 @@ process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDi
 #--------------------------
 # Path
 #--------------------------
-process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+#process.pp = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
 process.hi = cms.Path(
     process.scalersRawToDigi
     *process.dqmTKStatus
