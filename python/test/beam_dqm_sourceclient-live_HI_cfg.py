@@ -184,7 +184,7 @@ process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
 # Scheduling
 #--------------------------
 #process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
-#process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
+process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
 process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
 process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
 #process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
