@@ -6,7 +6,16 @@ process = cms.Process("BeamMonitor")
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HICentralityVeto'))
+process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
+    SelectEvents = cms.vstring(
+        'HLT_HICentralityVeto',
+        'HLT_HICentralityVeto',
+        'HLT_HIJet35U_Core',
+        'HLT_HIL1DoubleMuOpen_Core',
+        'HLT_HIMinBiasBSC_Core',
+        'HLT_HIPhoton15_Core',
+    )
+)
 
 #--------------------------
 # Filters
@@ -37,13 +46,11 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 #-----------------------------
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
-process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
 process.dqmBeamMonitorBx.fitEveryNLumi = 60
 process.dqmBeamMonitorBx.resetEveryNLumi = 60
-####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
 # GEOMETRY
@@ -53,7 +60,6 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #-----------------------------
 # Magnetic Field
 #-----------------------------
-#process.load('Configuration/StandardSequences/MagneticField_38T_cff')
 process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
 
 #--------------------------
@@ -76,7 +82,6 @@ del environ["http_proxy"]
 #-----------------------
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.Reconstruction_cff")
 
 ## Heavy ION
 process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff") ## HI sequences
@@ -121,39 +126,6 @@ process.hiPixelAdaptiveVertex.TkFilterParameters.maxD0Significance = 100
 process.hiPixelAdaptiveVertex.useBeamConstraint = False
 process.hiPixelAdaptiveVertex.PVSelParameters.maxDistanceToBeam = 1.0
 
-
-## Pixelless Tracking
-process.load('RecoTracker/Configuration/RecoTrackerNotStandard_cff')
-process.MeasurementTracker.pixelClusterProducer = cms.string("")
-
-# Offline Beam Spot
-process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
-
-## Offline PrimaryVertices
-import RecoVertex.PrimaryVertexProducer.OfflinePrimaryVertices_cfi
-process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimaryVertices_cfi.offlinePrimaryVertices.clone()
-## Input track for PrimaryVertex reconstruction, uncomment the following line to use pixelLess tracks
-#process.offlinePrimaryVertices.TrackLabel = cms.InputTag("ctfPixelLess")
-# EK commented out for Heavy Ion
-#process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
-#process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
-#process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
-
-## Skip events with HV off/beam gas scraping events
-process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
-process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 10000
-process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
-### 0th step of iterative tracking
-#---- replaces ----
-process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
-#---- new parameters ----
-process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
-process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
-
-#### END OF TRACKING RECONSTRUCTION ####
-
 # Change Beam Monitor variables
 if process.dqmSaver.producer.value() is "Playback":
   process.dqmBeamMonitor.BeamFitter.WriteAscii = False
@@ -187,8 +159,6 @@ process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
 process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
 process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
 process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
-#process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
-#process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
 #--------------------------
@@ -205,6 +175,3 @@ process.hi = cms.Path(
     #*process.tracking_FirstStep
     #*process.offlinePrimaryVertices
     *process.monitor)
-
-#process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
-
