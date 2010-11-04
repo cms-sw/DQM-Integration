@@ -1,9 +1,9 @@
 def shiftsistriplayout(i, p, *rows): i["00 Shift/SiStrip/" + p] = DQMItem(layout=rows)
 
 shiftsistriplayout(dqmitems, "00 - SiStrip ReportSummary",
- [{ 'path': "SiStrip/MechanicalView/detFractionReportMap",
+ [{ 'path': "SiStrip/EventInfo/detFractionReportMap",
     'description': "Fraction of Good Detector Modules plotted in different parts of the Tracker - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "no" }},
-  { 'path': "SiStrip/MechanicalView/sToNReportMap",
+  { 'path': "SiStrip/EventInfo/sToNReportMap",
     'description': "Accepted S/N Ratios in different parts of the Tracker. The values are 1 if the ratio is within the accepted range otherwise it is 0  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
  [{ 'path': "SiStrip/EventInfo/reportSummaryMap",
     'description': "Overall Report Summary where detector fraction and S/N flags are combined together -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "no" }}])
@@ -24,16 +24,16 @@ shiftsistriplayout(dqmitems, "02 - Tracking ReportSummary",
  [{ 'path': "Tracking/EventInfo/reportSummaryMap",
     'description': " Quality Test results plotted for Tracking parameters : Chi2, TrackRate, #of Hits in Track - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "no" }}])
 shiftsistriplayout(dqmitems, "03 - Tracks",
- [{ 'path': "Tracking/TrackParameters/GeneralProperties/NumberOfTracks_GenTk",
+ [{ 'path': "Tracking/TrackParameters/GeneralProperties/NumberOfTracks_HeavyIonTk",
     'description': "Number of Reconstructed Tracks  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk",
+  { 'path': "Tracking/TrackParameters/HitProperties/NumberOfRecHitsPerTrack_HeavyIonTk",
     'description': "Number of RecHits per Track  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPt_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPt_ImpactPoint_HeavyIonTk",
     'description': "Pt of Reconstructed Track  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
- [{ 'path': "Tracking/TrackParameters/GeneralProperties/Chi2oNDF_GenTk",
+ [{ 'path': "Tracking/TrackParameters/GeneralProperties/Chi2oNDF_HeavyIonTk",
     'description': "Chi Sqare per DoF  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPhi_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPhi_ImpactPoint_HeavyIonTk",
     'description': "Phi distribution of Reconstructed Tracks  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackEta_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackEta_ImpactPoint_HeavyIonTk",
     'description': " Eta distribution of Reconstructed Tracks - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineSiStrip>DQMShiftOfflineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
 
