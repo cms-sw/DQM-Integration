@@ -1,12 +1,17 @@
 def shiftcastorlayout(i, p, *rows): i["00 Shift/Castor/" + p] = DQMItem(layout=rows)
 
-shiftcastorlayout(dqmitems, "CASTOR reportSummaryMap",
+shiftcastorlayout(dqmitems, "CASTOR Absolute reportSummaryMap",
            [{ 'path': "Castor/EventInfo/reportSummaryMap",
              'description':""}]
            )
 
 shiftcastorlayout(dqmitems, "CASTOR Digi ChannelSummaryMap",
            [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi ChannelSummaryMap",
+             'description':""}]
+           )
+
+shiftcastorlayout(dqmitems, "CASTOR Digi SaturationSummaryMap",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi SaturationSummaryMap",
              'description':""}]
            )
 
@@ -30,21 +35,6 @@ shiftcastorlayout(dqmitems, "CASTOR RecHit Energy in sectors",
              'description':"RecHitEnergy in each of 16 CASTOR sectors"}]
            )         
 	  
-shiftcastorlayout(dqmitems, "CASTOR RecHit Energy 2D Map",
-           [{ 'path': "Castor/CastorRecHitMonitor/CastorRecHit 2D Energy Map- above threshold",
-             'description':"2D Energy Map"}]
-           )
-	  
-shiftcastorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
-           [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
-             'description':"average pulse in bunch crossings"}]
-           ) 
-
-shiftcastorlayout(dqmitems, "Castor Pulse Shape for sector=0 (in all 14 modules)",
-           [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=0 (in all 14 modules)",
-             'description':"pulse shape in this particular sector"}]
-           ) 
-
 shiftcastorlayout(dqmitems, "Castor Pulse Shape for sector=1 (in all 14 modules)",
            [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=1 (in all 14 modules)",
              'description':"pulse shape in this particular sector"}]
@@ -120,4 +110,7 @@ shiftcastorlayout(dqmitems, "Castor Pulse Shape for sector=15 (in all 14 modules
              'description':"pulse shape in this particular sector"}]
            ) 
 
-
+shiftcastorlayout(dqmitems, "Castor Pulse Shape for sector=16 (in all 14 modules)",
+           [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=16 (in all 14 modules)",
+             'description':"pulse shape in this particular sector"}]
+           ) 
