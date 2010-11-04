@@ -26,10 +26,9 @@ if [ "$1" = "live" ] ; then
      
      
      ln -sfv hlt_dqm_sourceclient-live_cfg.py                   dqmfu_06-1_cfg.py
-     #ln -sfv hlx_dqm_sourceclient-live_cfg.py                   dqmfu_06-2_cfg.py
-     ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_06-3_cfg.py
-     ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_06-4_cfg.py
-
+     ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_06-2_cfg.py
+     ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_06-3_cfg.py
+     
      ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_07-1_cfg.py
   echo "copying cfg from python test"
   cp ../python/test/*live_cfg.py .
@@ -59,9 +58,8 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv beampixel_dqm_sourceclient-live_cfg.py             dqmfu_15-4_cfg.py
      
      ln -sfv hlt_dqm_sourceclient-live_cfg.py                   dqmfu_16-1_cfg.py
-     #ln -sfv hlx_dqm_sourceclient-live_cfg.py                   dqmfu_16-2_cfg.py
-     ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_16-3_cfg.py
-     ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_16-4_cfg.py
+     ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_16-2_cfg.py
+     ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_16-3_cfg.py
      
      ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_17-1_cfg.py
      
