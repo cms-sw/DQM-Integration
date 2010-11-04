@@ -157,9 +157,9 @@ process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
 #--------------------------
 #process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
 process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
-process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
+#process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
 process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
-process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
+#process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
 
 #--------------------------
 # Path
