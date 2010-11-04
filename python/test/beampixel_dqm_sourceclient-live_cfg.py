@@ -108,7 +108,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 # pixelVertexDQM Configuration
 #----------------------------
 process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
-                                        vertexCollection = cms.InputTag("hiPixelVertices"),
+                                        vertexCollection = cms.InputTag("hiSelectedVertex"),
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(1),
                                         dataFromFit      = cms.bool(True),
@@ -133,8 +133,12 @@ else:
 #----------------------------
 # Pixel-Tracks Configuration
 #----------------------------
-#process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-
+process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.originRadius = 0.2
+process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.fixedError = 0.5
+process.hiSelectedProtoTracks.maxD0Significance = 100
+process.hiPixelAdaptiveVertex.TkFilterParameters.maxD0Significance = 100
+process.hiPixelAdaptiveVertex.useBeamConstraint = False
+process.hiPixelAdaptiveVertex.PVSelParameters.maxDistanceToBeam = 1.0
 
 #----------------------------
 # Pixel-Vertices Configuration
