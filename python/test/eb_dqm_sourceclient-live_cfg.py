@@ -7,7 +7,7 @@ liveECAL  = 0
 localDAQ  = 0
 globalDAQ = 0
 
-ecalHostEC    = 'vmepcS2F19-25'.lower()
+ecalHostEC    = 'srv-s2f19-29'.lower()
 
 ecalHostEB    = 'srv-s2f19-26'.lower()
 ecalHostEE    = 'srv-s2f19-27'.lower()
