@@ -49,8 +49,9 @@ process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
-process.dqmBeamMonitorBx.fitEveryNLumi = 60
-process.dqmBeamMonitorBx.resetEveryNLumi = 60
+# HI only has one bunch
+process.dqmBeamMonitorBx.fitEveryNLumi = 10
+process.dqmBeamMonitorBx.resetEveryNLumi = 10
 
 #-------------------------------------------------
 # GEOMETRY
@@ -110,6 +111,7 @@ process.HIRecoForDQM = cms.Sequence(
 
 # use HI pixel tracking and vertexing
 process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('hiPixel3PrimTracks')
+process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('hiPixel3PrimTracks')
 process.dqmBeamMonitor.primaryVertex = cms.untracked.InputTag('hiSelectedVertex')
 process.dqmBeamMonitor.PVFitter.VertexCollection = cms.untracked.InputTag('hiSelectedVertex')
 # Beamspot DQM options
@@ -141,6 +143,7 @@ else:
   process.dqmBeamMonitorBx.BeamFitter.AsciiFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults_Bx.txt'
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
+# Lower for HI
 process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 30
 
 ## TKStatus
