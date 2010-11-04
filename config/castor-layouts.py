@@ -11,6 +11,11 @@ castorlayout(dqmitems, "CASTOR Digi Occupancy Map",
              'description':"dynamic scale"}]
            )
 
+castorlayout(dqmitems, "CASTOR Digi SaturationSummaryMap",
+           [{ 'path': "Castor/CastorPSMonitor/CASTOR Digi SaturationSummaryMap",
+             'description':""}]
+           )
+
 castorlayout(dqmitems, "CASTOR RecHit Energy based Channel Status",
            [{ 'path': "Castor/CastorChannelQuality/RecHitEnergyBasedSummaryMap",
              'description':"Green - OK, Red - dead, Yellow - noisy"}]
@@ -54,16 +59,37 @@ castorlayout(dqmitems, "CASTOR hits 3D- cumulative",
 castorlayout(dqmitems, "CASTOR hits 3D- event with the largest deposited E",
            [{ 'path': "Castor/CastorEventDisplay/CASTOR 3D hits- event with the largest deposited E",
              'description':"display of the event with largest deposited energy"}]
-           )         
+           )
+
+
+castorlayout(dqmitems, "CASTOR RecHit Energy per event",
+           [{ 'path': "Castor/CastorHIMonitor/EnergyUnits/CASTOR Absolute RecHit Energy per event",
+             'description':"total energy in CASTOR per event - sum over all 224 channels"}]
+           )
+
+castorlayout(dqmitems, "CASTOR Total RecHit Energy in phi-sectors per run",
+           [{ 'path': "Castor/CastorHIMonitor/EnergyUnits/CASTOR Total RecHit Energy in phi-sectors per run",
+             'description':" total energy in each CASTOR phi-sector: energy vs phi-sector"}]
+           )
+
+castorlayout(dqmitems, "CASTOR Total EM RecHit Energy per event",
+           [{ 'path': "Castor/CastorHIMonitor/EnergyUnits/CASTOR Total EM RecHit Energy per event",
+             'description':"total EM energy per event"}]
+           )
+
+castorlayout(dqmitems, "CASTOR Total HAD RecHit Energy per event",
+           [{ 'path': "Castor/CastorHIMonitor/EnergyUnits/CASTOR Total HAD RecHit Energy per event",
+             'description':"total HAD energy per event"}]
+           )
+
+castorlayout(dqmitems, "CASTOR Total Energy ratio EM to HAD per event",
+           [{ 'path': "Castor/CastorHIMonitor/EnergyUnits/CASTOR Total Energy ratio EM to HAD per event",
+             'description':"total energy ratio EM to HAD per event"}]
+           )
 
 castorlayout(dqmitems, "CASTOR average pulse in bunch crossings",
            [{ 'path': "Castor/CastorPSMonitor/CASTOR average pulse in bunch crossings",
              'description':"average pulse in bunch crossings"}]
-           ) 
-
-castorlayout(dqmitems, "Castor Pulse Shape for sector=0 (in all 14 modules)",
-           [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=0 (in all 14 modules)",
-             'description':"pulse shape in this particular sector"}]
            ) 
 
 castorlayout(dqmitems, "Castor Pulse Shape for sector=1 (in all 14 modules)",
@@ -138,5 +164,10 @@ castorlayout(dqmitems, "Castor Pulse Shape for sector=14 (in all 14 modules)",
 
 castorlayout(dqmitems, "Castor Pulse Shape for sector=15 (in all 14 modules)",
            [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=15 (in all 14 modules)",
+             'description':"pulse shape in this particular sector"}]
+           ) 
+
+castorlayout(dqmitems, "Castor Pulse Shape for sector=16 (in all 14 modules)",
+           [{ 'path': "Castor/CastorPSMonitor/Castor Pulse Shape for sector=16 (in all 14 modules)",
              'description':"pulse shape in this particular sector"}]
            ) 

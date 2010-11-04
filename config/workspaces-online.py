@@ -93,19 +93,21 @@ server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/03 HcalCalib Problem Laser',
                  'HcalCalib/Layouts/04 HcalCalib Pedestal Check',
                  'HcalCalib/Layouts/08 HcalCalib RecHit Energies')
+
+
 		 
 server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
                  'Castor/Layouts/CASTOR Digi ChannelSummaryMap',
-                 'Castor/Layouts/CASTOR RecHit Energy based Channel Status',
                  'Castor/Layouts/CASTOR Digi Occupancy Map',
+                 'Castor/Layouts/CASTOR Digi SaturationSummaryMap',
                  'Castor/Layouts/CASTOR event products',
+                 'Castor/Layouts/CASTOR RecHit Energy based Channel Status',
                  'Castor/Layouts/CASTOR RecHit Energies',
 		 'Castor/Layouts/CASTOR RecHit Energy in modules',
 		 'Castor/Layouts/CASTOR RecHit Energy in sectors',
 		 'Castor/Layouts/CASTOR RecHit Energy 2D Map',
                  'Castor/Layouts/CASTOR All Digi Values',
                  'Castor/Layouts/CASTOR average pulse in bunch crossings',
-		 'Castor/Layouts/Castor Pulse Shape for sector=0 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=1 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=2 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=3 (in all 14 modules)',
@@ -121,8 +123,15 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
                  'Castor/Layouts/Castor Pulse Shape for sector=13 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=14 (in all 14 modules)',
                  'Castor/Layouts/Castor Pulse Shape for sector=15 (in all 14 modules)',
+                 'Castor/Layouts/Castor Pulse Shape for sector=16 (in all 14 modules)',
                  'Castor/Layouts/CASTOR hits 3D- cumulative',
-                 'Castor/Layouts/CASTOR hits 3D- event with the largest deposited E'
+                 'Castor/Layouts/CASTOR hits 3D- event with the largest deposited E',
+                 'Castor/Layouts/CASTOR RecHit Energy per event',
+                 'Castor/Layouts/CASTOR Total RecHit Energy in phi-sectors per run',
+                 'Castor/Layouts/CASTOR Total EM RecHit Energy per event',
+                 'Castor/Layouts/CASTOR Total HAD RecHit Energy per event',
+                 'Castor/Layouts/CASTOR RecHit Energy per event',
+                 'Castor/Layouts/CASTOR Total Energy ratio EM to HAD per event' 
                 )
 	  
 server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
