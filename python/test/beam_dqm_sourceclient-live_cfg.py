@@ -115,8 +115,6 @@ process.dqmBeamMonitor.PVFitter.VertexCollection = cms.untracked.InputTag('hiSel
 # Beamspot DQM options
 process.dqmBeamMonitor.OnlineMode = True                  ## in MC the LS are not ordered??
 process.dqmBeamMonitor.BeamFitter.MinimumTotalLayers = 3   ## using pixel triplets
-process.dqmBeamMonitor.resetEveryNLumi = 10                ## default is 20
-process.dqmBeamMonitor.resetPVEveryNLumi = 5               ## default is 5
 
 # make pixel vertexing less sensitive to incorrect beamspot
 process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.originRadius = 0.2
