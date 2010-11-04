@@ -193,7 +193,7 @@ if (HEAVYION):
     process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
     process.hcalMonitor.FEDRawDataCollection        = cms.untracked.InputTag("hltHcalCalibrationRaw")
     process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalRawDataMonitor.digiLabel            = cms.untracked.InputTag("hltHcalCalibrationRaw")
+    #process.hcalRawDataMonitor.digiLabel            = cms.untracked.InputTag("hltHcalCalibrationRaw")
 
     process.hltHighLevel = cms.EDFilter("HLTHighLevel",
                                         TriggerResultsTag = cms.InputTag("TriggerResults","","HLT"),  
