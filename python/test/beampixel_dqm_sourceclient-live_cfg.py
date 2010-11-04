@@ -107,27 +107,29 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #----------------------------
 # pixelVertexDQM Configuration
 #----------------------------
-process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
-                                        vertexCollection = cms.InputTag("hiSelectedVertex"),
-                                        debugMode        = cms.bool(True),
-                                        nLumiReset       = cms.uint32(1),
-                                        dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.uint32(35),
-                                        # If the histogram has at least "minNentries" then extract Mean and RMS,
-                                        # or, if we are performing the fit, the number of vertices must be greater
-                                        # than minNentries otherwise it waits for other nLumiReset
-                                        xRange           = cms.double(2.0),
-                                        xStep            = cms.double(0.001),
-                                        yRange           = cms.double(2.0),
-                                        yStep            = cms.double(0.001),
-                                        zRange           = cms.double(30.0),
-                                        zStep            = cms.double(0.05),
-                                        VxErrCorr        = cms.double(1.5),
-                                        fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
+process.pixelVertexDQM = cms.EDAnalyzer(
+    "Vx3DHLTAnalyzer",
+    vertexCollection = cms.InputTag("hiSelectedVertex"),
+    debugMode        = cms.bool(True),
+    nLumiReset       = cms.uint32(1),
+    dataFromFit      = cms.bool(True),
+    minNentries      = cms.uint32(35),
+    # If the histogram has at least "minNentries" then extract Mean and RMS,
+    # or, if we are performing the fit, the number of vertices must be greater
+    # than minNentries otherwise it waits for other nLumiReset
+    xRange           = cms.double(2.0),
+    xStep            = cms.double(0.001),
+    yRange           = cms.double(2.0),
+    yStep            = cms.double(0.001),
+    zRange           = cms.double(30.0),
+    zStep            = cms.double(0.05),
+    VxErrCorr        = cms.double(1.5),
+    fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
+
 if process.dqmSaver.producer.value() is "Playback":
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt")
+    process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt")
 else:
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
+    process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 
 #----------------------------
@@ -153,10 +155,10 @@ process.hiPixelAdaptiveVertex.PVSelParameters.maxDistanceToBeam = 1.0
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 process.phystrigger = cms.Sequence(
-  process.hltTriggerTypeFilter
-#  process.gtDigis*
-#  process.hltLevel1GTSeed
-  )
+    process.hltTriggerTypeFilter
+    #  process.gtDigis*
+    #  process.hltLevel1GTSeed
+)
 
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
