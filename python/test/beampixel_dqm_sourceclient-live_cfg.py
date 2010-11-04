@@ -9,7 +9,16 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
+process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
+    SelectEvents = cms.vstring(
+        'HLT_HICentralityVeto',
+        'HLT_HICentralityVeto',
+        'HLT_HIJet35U_Core',
+        'HLT_HIL1DoubleMuOpen_Core',
+        'HLT_HIMinBiasBSC_Core',
+        'HLT_HIPhoton15_Core',
+    )
+)
 ### @@@@@@ Comment when running locally @@@@@@ ###
 
 
@@ -65,7 +74,7 @@ process.load("Configuration.StandardSequences.Services_cff")
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff")
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.Reconstruction_cff")
+process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff") ## HI sequences
 process.load("Configuration.StandardSequences.EndOfProcess_cff")
 process.load("Configuration.EventContent.EventContent_cff")
 process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
@@ -99,7 +108,7 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 # pixelVertexDQM Configuration
 #----------------------------
 process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
-                                        vertexCollection = cms.InputTag("pixelVertices"),
+                                        vertexCollection = cms.InputTag("hiPixelVertices"),
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(1),
                                         dataFromFit      = cms.bool(True),
@@ -116,7 +125,7 @@ process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                         VxErrCorr        = cms.double(1.5),
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt")
 else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
@@ -124,14 +133,14 @@ else:
 #----------------------------
 # Pixel-Tracks Configuration
 #----------------------------
-process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
+#process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
 
 
 #----------------------------
 # Pixel-Vertices Configuration
 #----------------------------
-process.pixelVertices.useBeamConstraint = False
-process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
+#process.pixelVertices.useBeamConstraint = False
+#process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 
 
 #----------------------------
@@ -150,8 +159,10 @@ process.reconstruction_step = cms.Sequence(
     process.offlineBeamSpot*
     process.siPixelClusters*
     process.siPixelRecHits*
-    process.pixelTracks*
-    process.pixelVertices*
+    process.offlineBeamSpot*
+    process.hiPixelVertices*
+    #process.pixelTracks*
+    #process.pixelVertices*
     process.pixelVertexDQM)
 
 
