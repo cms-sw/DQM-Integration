@@ -37,7 +37,7 @@ def detectCMSSWVersion(fileName):
 	        	pathToExecutive=line[line.find("pathToExecutive="):line.find(" ",line.find("pathToExecutive="))]
 			total+=0x8
 	        if "SCRAM_ARCH=" in line:
-	        	arch=line[line.find("SCRAM_ARCH="):line.find(" ",line.find("SCRAM_ARCH="))]
+	        	arch=re.search(r"slc\d_(ia32|amd64)_gcc\d+",line[line.find("SCRAM_ARCH="):line.find(" ",line.find("SCRAM_ARCH="))]).group(0)
 	        	total+=0x10 
 	        elif "environmentString" in line:
 	        	arch=re.search(r"slc\d_(ia32|amd64)_gcc\d+",line).group(0)
