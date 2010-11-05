@@ -164,7 +164,7 @@ process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process
 process.p = cms.Path(process.scalersRawToDigi*
                      process.APVPhases*
                      process.consecutiveHEs*
-                     process.hltTriggerTypeFilter*
+#                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
