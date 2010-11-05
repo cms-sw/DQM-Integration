@@ -3,10 +3,6 @@ import FWCore.ParameterSet.Config as cms
 import os, sys, socket, string
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
-# Set this to True is running in Heavy Ion mode
-HEAVYION=True
-
-
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
 HcalPlaybackHost='dqm-c2d07-13'.lower()
@@ -56,6 +52,7 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hf_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 
 # Only use this correction in CMSSW_3_9_1 and above, after hbhereco was renamed!
+#print process.hbheprereco
 
 version=os.getenv("CMSSW_VERSION").split("_")
 version1=string.atoi(version[1])
@@ -123,14 +120,14 @@ if not subsystem.endswith("/"):
 process.hcalMonitor.subSystemFolder=subsystem
 SetTaskParams(process,"subSystemFolder",subsystem)
 process.hcalClient.subSystemFolder=subsystem
+#print "BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
+process.hcalRecHitMonitor.HcalHLTBits=["HLT_HIActivityHF_Coincidence3",
+                                       "HLT_HIL1Tech_HCAL_HF"]
 
-process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF_coincidence_PM",
-                                       "HLT_L1Tech_HCAL_HF"]
-
-process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasBSC",
-                                          "HLT_L1Tech_BSC_minBias"
+process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_HIMinBiasBSC",
+                                          "HLT_HIL1Tech_BSC_minBias"
                                           ]
-
+#print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
@@ -165,28 +162,6 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      "DetDiagTimingMonitor",
                                      "Summary"
                                      ]
-
-
-#################################################################
-#                                                               #
-#  THE FOLLOWING CHANGES ARE NEEDED FOR HEAVY ION RUNNING       #
-#                                                               #
-#################################################################
-
-if (HEAVYION):
-    # Define new Heavy Ion labels
-    process.hcalDigis.InputLabel                    = cms.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagNoiseMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagLaserMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalMonitor.FEDRawDataCollection        = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    #process.hcalRawDataMonitor.digiLabel            = cms.untracked.InputTag("hltHcalCalibrationRaw")
-
-#################################################################
-
-
-
 
 
 # Set expected idle BCN time to correct value
@@ -227,53 +202,20 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
-
-# DEFINE HEAVY ION PATH
-if HEAVYION:
-    process.hltHighLevel = cms.EDFilter("HLTHighLevel",
-                                        TriggerResultsTag = cms.InputTag("TriggerResults","","HLT"),
-                                        HLTPaths = cms.vstring('HLT_HcalCalibration_HI'),        # provide list of HLT paths (or patterns) you want
-                                        eventSetupPathsKey = cms.string(''),             # not empty => use read paths from AlCaRecoTriggerBitsRcd via this key
-                                        andOr = cms.bool(True),                          # how to deal with multiple triggers: True (OR) accept if ANY is true, False (AND) accept if ALL are true
-                                        throw = cms.bool(True)                           # throw exception on unknown path names
-                                        )
-
-    process.filterSequence = cms.Sequence(
-        process.hltHighLevel
-        )
-    
-    process.p = cms.Path(process.hltHighLevel
-                         *process.hcalDigis
-                         *process.valHcalTriggerPrimitiveDigis
-                         *process.l1GtUnpack
-                         *process.filterSequence
-                         *process.horeco
-                         *process.hfreco
-                         *process.hbhereco
-                         *process.zdcreco
-                         *process.hcalMonitor
-                         *process.hcalMonitorTasksOnlineSequence
-                         *process.hcalClient
-                         *process.zdcMonitor
-                         *process.zdcClient
-                         *process.dqmEnv
-                         *process.dqmSaver)
-    
-else:  # Non-Heavy Ion path
-    process.p = cms.Path(process.hcalDigis
-                         *process.valHcalTriggerPrimitiveDigis
-                         *process.l1GtUnpack
-                         *process.horeco
-                         *process.hfreco
-                         *process.hbhereco
-                         *process.zdcreco
-                         *process.hcalMonitor
-                         *process.hcalMonitorTasksOnlineSequence 
-                         *process.hcalClient
-                         *process.zdcMonitor
-                         *process.zdcClient
-                         *process.dqmEnv
-                         *process.dqmSaver)
+process.p = cms.Path(process.hcalDigis
+                     *process.valHcalTriggerPrimitiveDigis
+                     *process.l1GtUnpack
+                     *process.horeco
+                     *process.hfreco
+                     *process.hbhereco
+                     *process.zdcreco
+                     *process.hcalMonitor
+                     *process.hcalMonitorTasksOnlineSequence 
+                     *process.hcalClient
+                     *process.zdcMonitor
+                     *process.zdcClient
+                     *process.dqmEnv
+                     *process.dqmSaver)
 
 
 #-----------------------------
@@ -287,4 +229,3 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
 )
-
