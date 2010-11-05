@@ -117,6 +117,7 @@ process.dqmBeamMonitor.PVFitter.VertexCollection = cms.untracked.InputTag('hiSel
 # Beamspot DQM options
 process.dqmBeamMonitor.OnlineMode = True                  ## in MC the LS are not ordered??
 process.dqmBeamMonitor.BeamFitter.MinimumTotalLayers = 3   ## using pixel triplets
+process.dqmBeamMonitorBx.BeamFitter.MinimumTotalLayers = 3   ## using pixel triplets
 
 # make pixel vertexing less sensitive to incorrect beamspot
 process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.originRadius = 0.2
@@ -144,7 +145,8 @@ else:
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
 # Lower for HI
-process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 30
+process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
+process.dqmBeamMonitorBx.PVFitter.minNrVerticesForFit = 20
 
 ## TKStatus
 process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
