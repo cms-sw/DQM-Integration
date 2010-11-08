@@ -96,8 +96,8 @@ process.multFilter = HLTrigger.special.hltPixelActivityFilter_cfi.hltPixelActivi
 
 process.filter_step = cms.Sequence(
     process.siPixelDigis*
-    process.siPixelClusters*
-    process.multFilter
+    process.siPixelClusters
+    #process.multFilter
 )
 
 process.HIRecoForDQM = cms.Sequence(
