@@ -8,11 +8,12 @@ process = cms.Process("BeamMonitor")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
     SelectEvents = cms.vstring(
-        'HLT_HICentralityVeto',
-        'HLT_HIJet35U_Core',
-        'HLT_HIL1DoubleMuOpen_Core',
-        'HLT_HIMinBiasBSC_Core',
-        'HLT_HIPhoton15_Core',
+        'HLT_HI*',
+        #'HLT_HICentralityVeto',
+        #'HLT_HIJet35U_Core',
+        #'HLT_HIL1DoubleMuOpen_Core',
+        #'HLT_HIMinBiasBSC_Core',
+        #'HLT_HIPhoton15_Core',
     )
 )
 
