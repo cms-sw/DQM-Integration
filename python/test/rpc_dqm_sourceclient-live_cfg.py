@@ -69,7 +69,7 @@ process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
-process.rpcdigidqm.DigiLabel = cms.InputTag("hltMuonRPCDigis")
+process.rpcdigidqm.DigiLabel = cms.InputTag("rpcunpacker")
 
 ################# DCS Info ######################
 process.load("DQM.RPCMonitorDigi.RPCDcsInfo_cfi")
