@@ -324,7 +324,7 @@ case $HOST:${EXTRA:-agents} in
        
        if [[ $D == offline ]]; then
          (/dqmdata/fm-scripts/visDQMSyncDaemon   \
-           --dirs OnlineData,OfflineData/HIRun2010/StreamExpress,RelVal,OfflineData/HIRun2010/Cosmics,OfflineData/HIRun2010/MinimumBias \
+           --dirs OnlineData,OfflineData/HIRun2010/StreamExpress,RelVal,OfflineData/HIRun2010/HICorePhysics,OfflineData/HIRun2010/HIAllPhysics/ \
            --dirs_quotas=30G,20G,15G,15G,50G 130G \
            $DQM_DATA/repository/data \
            /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
