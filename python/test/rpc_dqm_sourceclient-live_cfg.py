@@ -1,3 +1,4 @@
+
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
@@ -68,6 +69,7 @@ process.rpcdigidqm.dqmshifter = True
 process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
+process.rpcdigidqm.DigiLabel = cms.InputTag("hltMuonRPCDigis")
 
 ################# DCS Info ######################
 process.load("DQM.RPCMonitorDigi.RPCDcsInfo_cfi")
