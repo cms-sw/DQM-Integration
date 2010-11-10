@@ -12,8 +12,8 @@ ecalHostEC    = 'srv-s2f19-29'.lower()
 ecalHostEB    = 'srv-s2f19-26'.lower()
 ecalHostEE    = 'srv-s2f19-27'.lower()
 
-cmsLiveHostEB = 'dqm-c2d07-03'.lower()
-cmsLiveHostEE = 'dqm-c2d07-04'.lower()
+cmsLiveHostEB = 'dqm-c2d07-07'.lower()
+cmsLiveHostEE = 'dqm-c2d07-07'.lower()
 
 cmsPlayHostEB = 'dqm-c2d07-13'.lower()
 cmsPlayHostEE = 'dqm-c2d07-14'.lower()
@@ -689,9 +689,11 @@ if (localDAQ == 1) | (liveCMS == 1) :
 if (liveECAL == 1) :
   process.ecalBarrelMonitorClient.updateTime = 4
   process.ecalBarrelMonitorClient.dbUpdateTime = 120
+  process.ecalBarrelMonitorClient.resetFile = '/data/ecalod-disk01/dqm-data/reset/EB'
 
   process.ecalEndcapMonitorClient.updateTime = 4
   process.ecalEndcapMonitorClient.dbUpdateTime = 120
+  process.ecalEndcapMonitorClient.resetFile = '/data/ecalod-disk01/dqm-data/reset/EE'
 
 if (liveCMS == 1) :
   process.ecalBarrelMonitorClient.updateTime = 4
