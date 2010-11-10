@@ -47,8 +47,8 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
-process.dqmBeamMonitor.resetEveryNLumi = 5
-process.dqmBeamMonitor.resetPVEveryNLumi = 5
+process.dqmBeamMonitor.resetEveryNLumi = 15
+process.dqmBeamMonitor.resetPVEveryNLumi = 15
 # HI only has one bunch
 process.dqmBeamMonitorBx.fitEveryNLumi = 50
 process.dqmBeamMonitorBx.resetEveryNLumi = 50
