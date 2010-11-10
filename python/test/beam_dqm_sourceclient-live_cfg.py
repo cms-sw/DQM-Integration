@@ -50,8 +50,8 @@ process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
 # HI only has one bunch
-process.dqmBeamMonitorBx.fitEveryNLumi = 10
-process.dqmBeamMonitorBx.resetEveryNLumi = 10
+process.dqmBeamMonitorBx.fitEveryNLumi = 50
+process.dqmBeamMonitorBx.resetEveryNLumi = 50
 
 #-------------------------------------------------
 # GEOMETRY
