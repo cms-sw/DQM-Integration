@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-import os, sys, socket, inspect
+import os, sys, socket
 
 liveECAL  = 0
 
@@ -67,7 +67,7 @@ if (host == cmsPlayHostEB) | (host == cmsPlayHostEE) :
 onlyEB = 0
 onlyEE = 0
 
-fNamePrefix = os.path.basename(inspect.currentframe().f_code.co_filename).split("_")[0]
+fNamePrefix = os.path.basename(sys._getframe(0).f_code.co_filename).split("_")[0]
 
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   if (fNamePrefix == 'eb') & ((host == ecalHostEB) | (host == cmsLiveHostEB) | (host == cmsPlayHostEB)) :
