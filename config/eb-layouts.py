@@ -18366,7 +18366,7 @@ eblayout(dqmitems, "00 By Task/14 SelectiveReadout/06 ZS1-Flagged Fully Readout 
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT ZS Flagged Fully Readout Number", 'description': "Number of readout unit whose every channel was read out while a zero-suppression was requested. A non-zero value is very improbable when selective readout decision is correctly applied. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eblayout(dqmitems, "00 By Task/14 SelectiveReadout/07 Fully-Readout Dropped Units",
-  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout", 'description': "Rate at which a readout unit had none of its channel read out, while a full readout was requested. Only masked tower are expected to have a non-null rate, in occurence a 100% rate. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout", 'description': "Rate at which a readout unit had none of its channel read out, while a full readout was requested. Masked towers are not considered here. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBSelectiveReadoutTask/EBSRT FR Flagged Dropped Readout Number", 'description': "Number of readout units whose none of the channels was read out, while a full readout was requested. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 eblayout(dqmitems, "00 By Task/14 SelectiveReadout/08 Barrel Payload",
