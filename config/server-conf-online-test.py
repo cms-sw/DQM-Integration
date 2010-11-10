@@ -7,7 +7,7 @@ LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("beam","castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx", "info", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
+            ("beam","castor","csc", "dt", "eb", "ee", "error", "es","hcal", "hcalcalib", "hlt", "hlx", "info", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
 # Do not modify configuration below this line.
 HOST      = socket.gethostname().lower()
@@ -39,12 +39,16 @@ server.baseUrl     = '/dqm/online-test'
 server.title       = 'CMS data quality'
 server.serviceName = 'Online test'
 
-# Contents.
+# Plugins.
 server.plugin('render', BASEDIR + "/style/*.cc")
+
+# Extensions
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
+server.extend('DQMToJSON')
 server.extend('DQMFileAccess', None, None,
-              { "Original": "/dqmdata/dqm/repository/original",
-                "iSpy": "/dqmdata/EventDisplay/done" })
+              { "Original": "/dqmdata/dqm/repository/original"})
+
+# Sources
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
@@ -52,5 +56,6 @@ server.source('DQMLive', '%s:9090' % COLLHOST)
 server.source('DQMArchive', '%s/ix' % SRVDIR, '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
+# Services and Workspaces
 execfile(CONFIGDIR + "/dqm-services.py")
 execfile(CONFIGDIR + "/workspaces-online.py")
