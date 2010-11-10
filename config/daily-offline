@@ -55,3 +55,18 @@ for i in offline caf dev; do
     done
   fi
 done
+
+######################################################################
+for i in offline caf dev; do
+  ZIPREPO=$HERE/$i/repository/zipped
+  CLEANDIR=$HERE/$i/agents/clean
+  
+  # Delete transfered zip files
+  for cf in $(find $CLEANDIR -name \*.zinfo); do 
+    set -e
+    ZIPPATH=$ZIPREPO/$(python -c "a=eval(file('$cf').read());print a['zpath']")
+    rm $ZIPPATH
+    rm $cf
+    set +e
+  done
+done  
