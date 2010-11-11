@@ -127,6 +127,9 @@ process.hcalRecHitMonitor.HcalHLTBits=["HLT_HIActivityHF_Coincidence3",
 process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_HIMinBiasBSC",
                                           "HLT_HIL1Tech_BSC_minBias"
                                           ]
+
+process.hcalDeadCellMonitor.minDeadEventCount = 10
+
 #print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
 # hcalClient configurable values ------------------------
