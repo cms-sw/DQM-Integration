@@ -149,6 +149,12 @@ hcaloverviewlayout(dqmitems,"11 - Coarse Pedestal Monitor",
                    ],
                    )
 
+hcaloverviewlayout(dqmitems,"12 - HFPlus VS HFMinus Energy",
+                   [{'path':"Hcal/RecHitMonitor_Hcal/Distributions_PassedMinBias/HFP_HFM_Energy",
+                    'description':"Correlation between total energy in HFPlus versus HFMinus. Should be strongly correlated for HI collisions"}
+                    ]
+                   )
+
 hcaloverviewlayout(dqmitems,"1729 - Temporary HF Timing Study Plots",
                    [{'path':"Hcal/DigiMonitor_Hcal/HFTimingStudy/HFTimingStudy_Average_Time",
                     'description':"HF Timing study average time plot, for events passing HLT MinBias trigger, 20<maxenergy<100, 2<=maxtime<=5"},
