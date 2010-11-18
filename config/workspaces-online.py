@@ -85,7 +85,10 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/07 HCAL Pedestal Problems',
                  'Hcal/Layouts/08 HCAL Lumi Problems',
                  'Hcal/Layouts/09 HCAL Calibration Type',
-                 'Hcal/Layouts/10 HCAL Error Thresholds')
+                 'Hcal/Layouts/10 HCAL Error Thresholds',
+                 'Hcal/Layouts/11 ZDC Rechit Energies',
+                 'Hcal/Layouts/12 ZDC Rechit Timing'                 
+                 )
 
 server.workspace('DQMContent',30,'Calorimeter','HCALcalib', '^HcalCalib/',
                  'HcalCalib/Layouts/01 HcalCalib Summary',
