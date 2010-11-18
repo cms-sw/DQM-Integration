@@ -86,7 +86,7 @@ process.hcalRecAlgos.DropChannelStatusBits = cms.vstring('') # Had been ('HcalCe
 process.load('SimCalorimetry.HcalTrigPrimProducers.hcaltpdigi_cff')
 process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clone()
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
-process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
+process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(False)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
 
@@ -147,7 +147,10 @@ process.hcalClient.databaseUpdateTime=60
 # Set values higher at startup  (set back from 0.25 to 0.05 on 15 April 2010)
 process.hcalClient.DeadCell_minerrorrate=0.05
 process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
-                   
+# Increase hotcellmonitor thresholds for HI runs
+process.hcalHotCellMonitor.energyThreshold = cms.untracked.double(50.0)
+process.hcalHotCellMonitor.energyThreshold_HF = cms.untracked.double(200.0)
+
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
                                      "HotCellMonitor",
