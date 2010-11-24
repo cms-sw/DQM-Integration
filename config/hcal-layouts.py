@@ -22,8 +22,10 @@ hcallayout(dqmitems, "02 HCAL Digi Problems",
              'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, if the digi's data valid/error flags are incorrect, or if there is an IDLE-BCN mismatch.  Currently, only digis with IDLE-BCN mismatches are displayed.  This plot is over HE depth 3. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/DigiMonitor_Hcal/problem_digis/HO Depth 4  Problem Digi Rate",
              'description': "A digi cell is considered bad if the capid rotation for that digi was incorrect, if the digi's data valid/error flags are incorrect, or if there is an IDLE-BCN mismatch.  Currently, only digis with IDLE-BCN mismatches are displayed.  This plot is over HO depth 4. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/DigiMonitor_Hcal/bad_digis/1D_digi_plots/BadDigisVsLB",
-              'description': "Total number of bad digis found in HCAL vs luminosity section"}]
+           [{ 'path': "Hcal/DigiMonitor_Hcal/bad_digis/1D_digi_plots/HBHEHF Bad Quality Digis vs LB",
+              'description': "Total number of bad digis found in HBHEHF vs luminosity section"},
+            { 'path': "Hcal/DigiMonitor_Hcal/bad_digis/1D_digi_plots/HO Bad Quality Digis vs LB",
+              'description': "Total number of bad digis found in HO vs luminosity section"}]
            )
 
 hcallayout(dqmitems, "03 HCAL Dead Cell Check",
@@ -35,8 +37,10 @@ hcallayout(dqmitems, "03 HCAL Dead Cell Check",
              'description': "Potential dead cell candidates in HE depth 3. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/DeadCellMonitor_Hcal/problem_deadcells/HO Depth 4  Problem Dead Cell Rate",
              'description': "Potential dead cell candidates in HO depth 4. Seriously dead if dead for >5% of a full run. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HCAL_vs_LS",
-             'description': "Total number of dead cells found in HCAL vs luminosity section"}]
+           [{ 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HBHEHF_vs_LS",
+             'description': "Total number of dead cells found in HBHEHF vs luminosity section"},
+            { 'path': "Hcal/DeadCellMonitor_Hcal/TotalDeadCells_HO_vs_LS",
+             'description': "Total number of dead cells found in HO vs luminosity section"}]
            )
 
 hcallayout(dqmitems, "04 HCAL Hot Cell Check",
@@ -48,8 +52,10 @@ hcallayout(dqmitems, "04 HCAL Hot Cell Check",
                    'description': "A cell is considered potentially hot if it is above some threshold energy, or if it is persistently below some (lower) threshold enery for a number of consecutive events. Seriously hot if hot for >5% of a full run. All depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" },
            { 'path': "Hcal/HotCellMonitor_Hcal/problem_hotcells/HO Depth 4  Problem Hot Cell Rate",
                    'description': "A cell is considered potentially hot if it is above some threshold energy, or if it is persistently below some (lower) threshold enery for a number of consecutive events. Seriously hot if hot for >5% of a full run. All depths. iPhi (1 to 72) by iEta (-41 to 41) More at <a href=https://twiki.cern.ch/twiki/bin/view/CMS/HcalDQMHistograms>HcalDQMHistograms</a>" }],
-           [{ 'path': "Hcal/HotCellMonitor_Hcal/TotalHotCells_HCAL_vs_LS",
-              'description': "Total number of hot cells found in HCAL vs luminosity section"}]
+           [{ 'path': "Hcal/HotCellMonitor_Hcal/TotalHotCells_HBHEHF_vs_LS",
+              'description': "Total number of hot cells found in HBHEHF vs luminosity section"},
+            { 'path': "Hcal/HotCellMonitor_Hcal/TotalHotCells_HO_vs_LS",
+              'description': "Total number of hot cells found in HO vs luminosity section"}]
            )
 
 hcallayout(dqmitems, "05 HCAL Raw Data",
