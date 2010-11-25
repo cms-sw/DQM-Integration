@@ -148,8 +148,8 @@ process.hcalClient.databaseUpdateTime=60
 process.hcalClient.DeadCell_minerrorrate=0.05
 process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
 # Increase hotcellmonitor thresholds for HI runs
-process.hcalHotCellMonitor.energyThreshold = cms.untracked.double(50.0)
-process.hcalHotCellMonitor.energyThreshold_HF = cms.untracked.double(200.0)
+process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
+process.hcalHotCellMonitor.ETThreshold_HF  = cms.untracked.double(10.0)
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
