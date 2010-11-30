@@ -54,6 +54,25 @@ for i in offline caf dev; do
       set +e
     done
   fi
+
+  # File away agent logs.
+  AGENTSDIR=$FILER/old-logs/$HOST/agents
+  agents=($(find $HERE/$i/agents -name \*.txt -exec basename {} \; | awk -F \- '{print $1}' | sort -u) )
+  for agent in ${agents[@]}; do
+    for f in $(find $HERE/$i/agents -name "${agent}-*.txt" -mtime +0 | sort); do
+      set -e
+      [ -f "$f" ] || continue
+      month=$(echo "$f" | perl -pe 's|.*'$agent'-||; s|^([0-9]{6}).*|$1|')
+      case $month in 20[0-9][0-9][01][0-9] ) ;; * )
+        echo "$f: could not determine month from log file name (got: $month)"
+        continue ;;
+      esac
+
+      mkdir -p $AGENTSDIR
+      zip -9Trmojq $AGENTSDIR/${agent}-$month.zip $f
+      set +e
+    done
+  done
 done
 
 ######################################################################
