@@ -55,6 +55,26 @@ for f in $(find $HERE/collector -name 'collector.out.*' | sort); do
 done
 
 ######################################################################
+# File away agent logs.
+AGENTSDIR=$FILER/logs/$HOST/agents
+agents=($(find $HERE/agents -name \*.txt -exec basename {} \; | awk -F \- '{print $1}' | sort -u) )
+for agent in ${agents[@]}; do
+  for f in $(find $HERE/agents -name "${agent}-*.txt" -mtime +0 | sort); do
+    set -e
+    [ -f "$f" ] || continue
+    month=$(echo "$f" | perl -pe 's|.*'$agent'-||; s|^([0-9]{6}).*|$1|')
+    case $month in 20[0-9][0-9][01][0-9] ) ;; * )
+      echo "$f: could not determine month from log file name (got: $month)"
+      continue ;;
+    esac
+
+    mkdir -p $AGENTSDIR
+    zip -9Trmojq $AGENTSDIR/${agent}-$month.zip $f
+    set +e
+  done
+done
+
+######################################################################
 # Compact monitoring logs.
 for f in $(find $FILER/status/*/$HOST/* -name '20[0-9][0-9][01][0-9]*.txt' -mmin +60 | sort); do
   set -e
