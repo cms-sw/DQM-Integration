@@ -29,7 +29,7 @@ COLLECTING_DIR         = '/home/dqmprolocal/output'  #directory to search recent
 DONE_DIR               = '/dqmdata/dqm/done/merged'     #sys.argv[1] # '/home/dqm/idx'        # DQM GUI server index directory
 DROPBOX                = '/dqmdata/dqm/uploads' # directory, to which files are stored
 FILER_MERGED_DIR       = '/dqmdata/dqm/merged' # directory, to backup merged files
-IG_FILE_DROPBOX        = '/dqmdata/EventDisplay/dropbox' #Directory to store ig Files.
+IG_FILE_DROPBOX        = '/dqmdata/dqm/junk/dropbox' #Directory to store ig Files.
 INDEX                  = '/home/dqm/idx'
 INJECTION_DIR          = '/dqmdata/dqm/Tier0Shipping/inject'   #Directory where files get placed once they have been sent.
 JUNK_DIR               = '/dqmdata/dqm/junk'
@@ -65,12 +65,12 @@ RATS={"Collector":{
   "script":"fileRegister.py"
   },
       "Transfer":{
-  "hosts":["srv-c2d05-19"],
+  "hosts":["srv-c2c05-11"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
   "script":"fileTransfer.py"
   },
       "Verify":{
-  "hosts":["srv-c2d05-19"],
+  "hosts":["srv-c2c05-11"],
   "alivechk":"/nfshome0/dqmpro/filecollector/aliveCheck.sh",
   "script":"fileTransferVerify.py"
   },  
