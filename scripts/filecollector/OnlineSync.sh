@@ -91,6 +91,7 @@ do
     --cert $X509_USER_PROXY \
     https://cmsweb.cern.ch/dqm/online/data/browse/Original/ 2>&1 \
     | egrep -oe "<tr><td><a.*</a>" | egrep -o "'>.*<" | egrep -o "[0-9]{5}xxxx" |sort -r | head -n 1)
+  [[ -z $latestDir ]] && continue
   dirs=({${latestLocalDir/xxxx/}..${latestDir/xxxx/}}xxxx)
   #log "INFO: Starting partial synchronization of original files"
   for d in $dirs
