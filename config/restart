@@ -24,7 +24,7 @@ DQMV=${2:-latest}
 ARCH=slc5_amd64_gcc434
 NOW=$(date +%Y%m%d%H%M%S)
 CHECK=$(echo "$3" | md5sum | awk '{print $1}')
-HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
+#HOST=$(hostname | tr '[:upper:]' '[:lower:]' | sed 's/\..*//')
 
 case $HOST in
   srv-c2d04* | dqm* ) SCRAM_ARCH=slc5_amd64_gcc434 DQM_DIR=/home/dqmlocal DQM_SW=/home/dqmlocal/rpms ;;
@@ -334,6 +334,8 @@ case $HOST:${EXTRA:-agents} in
          ) |& visDQMRotateLogs $DQM_DATA/agents/onsync-%Y%m%d%H%M.txt 86400 & 
          
          (/dqmdata/fm-scripts/createOnlineInfo \
+           /dqmdata/offline/repository/data/OnlineData \
+           /dqmdata/offline/agents/zip \
          ) |& visDQMRotateLogs $DQM_DATA/agents/coinfo-%Y%m%d%H%M.txt 86400 &
        fi
       )
