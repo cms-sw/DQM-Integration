@@ -1,7 +1,23 @@
 #! /bin/sh
+HOMEDIR=dirname $0
+YourEmail=lilopera@cern.ch
+
+start(){
+  $HOMEDIR/fileCollector.py lilopera@cern.ch \
+          /home/dqmprolocal/output \
+          /home/dqmprolocal/done  \
+          /dqmdata/dqm/uploads  &
+  
+  $HOMEDIR/producerFileCleanner.py lilopera@cern.ch \
+    /home/dqmprolocal/done \
+    /home/dqmprolocal/output \
+    /dqmdata/dqm/repository/original &
+}
 
 export WorkDir=$(dirname $0)
-YourEmail=lilopera@cern.ch
+}
+
+
 #source /nfshome0/cmssw2/scripts/setup.sh
 if [ -d /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.1.1/etc/profile.d/ ]
 then
@@ -32,6 +48,10 @@ fi
 EXE="$WorkDir/$2 $CFGFILE"
 RUN_STAT=`ps -ef | grep "$2 $CFGFILE" | grep -v grep | wc | awk '{print $1}'`
 PRETTY_NAME=`basename $2 | grep -oP ".*(?=\.[\d\s\w]+)|^\.[\d\s\w]+|^[\d\w]+"`
+
+
+$HOMEDIR/fileCollector.py lilopera@cern.ch /home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads
+
 if [ $RUN_STAT -ne 0 ]
 then
     echo $PRETTY_NAME is running

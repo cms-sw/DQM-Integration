@@ -1,101 +1,184 @@
 #!/usr/bin/env python
-import os, datetime, time,  sys, shutil, glob, re, subprocess as sp,tempfile
-from commonAnTS import *
-if len(sys.argv)<=1 or not os.path.exists(sys.argv[1]):
-  print "No valid configuration file"
-  sys.exit()
-execfile(sys.argv[1])
+import os, time, sys, glob, re, smtplib, socket
+from email.MIMEText import MIMEText
+from traceback import print_exc, format_exc
+from datetime import datetime
+from subprocess import Popen,PIPE
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
-#####         MAIN PROGRAM         ######
+
+EMAIL = sys.argv[1]
+TFILEDONEDIR = sys.argv[2]
+COLLECTDIR = sys.argv[3]
+ORIGINALDONEDIR =sys.argv[4]
+
+#Constans
+PRODUCER_DU_TOP= 90.0  #0% a 100%
+PRODUCER_DU_BOT= 50.0  #0% a 100%
+WAITTIME = 3600 * 4
+SENDMAIL = "/usr/sbin/sendmail" # sendmail location
+HOSTNAME = socket.gethostname().lower()
+
+# --------------------------------------------------------------------
+def logme(msg, *args):
+  procid = "[%s/%d]" % (__file__.rsplit("/", 1)[-1], os.getpid())
+  print datetime.now(), procid, msg % args
+  
+def getDiskUsage(path):
+  fsStats=os.statvfs(path)
+  size=fsStats.f_bsize*fsStats.f_blocks
+  available=fsStats.f_bavail*fsStats.f_bsize
+  used=size-available
+  usedPer=float(used)/size
+  return (size,available,used,usedPer)
+  
+def getDirSize(path): 
+  import stat
+  size=os.stat(path).st_blksize
+  for directory,subdirs,files in os.walk(path):
+    dStats=os.lstat(directory)
+    size+=(dStats[stat.ST_NLINK]-1)*dStats[stat.ST_SIZE]
+    for f in files:  
+      fStats=os.lstat("%s/%s" % (directory,f))
+      fSize=fStats[stat.ST_SIZE]
+      size+=fSize
+      
+  return size
+  
+def sendmail(body="Hello from producerFileCleanner",subject= "Hello!"):
+  scall = Popen("%s -t" % SENDMAIL, shell=True, stdin=PIPE)
+  scall.stdin.write("To: %s\n" % EMAIL)
+  scall.stdin.write("Subject: producerFileCleaner problem on server %s\n" %
+                     HOSTNAME)
+  scall.stdin.write("\n") # blank line separating headers from body
+  scall.stdin.write("%s\n" % body)
+  scall.stdin.close()
+  rc = scall.wait()
+  if rc != 0:
+     logme("ERROR: Sendmail exit with status %s", rc)
+  
+# --------------------------------------------------------------------    
 while True:
   try:
-    doneSize=getDirSize(T_FILE_DONE_DIR)
-    diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage(T_FILE_DONE_DIR)
-  except:
-    doneSize=0
-    diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage("/home")
-  diskPUsage*=100
-  if diskPUsage >= PRODUCER_DU_TOP:
-    DEBUG and debugMsg(0,"Disk usage exeeds Upper boundary of %.2f%% and has reached %.2f%%" % (PRODUCER_DU_TOP,diskPUsage))
+    try:
+      doneSize=getDirSize(TFILEDONEDIR)
+      diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage(TFILEDONEDIR)
+      
+    except:
+      doneSize=0
+      diskSize,userAvailable,diskUsed,diskPUsage=getDiskUsage("/home")
+      
+    diskPUsage*=100
+    if diskPUsage < PRODUCER_DU_TOP:
+      time.sleep(WAITTIME)
+      continue
+      
     quota=long(diskSize*PRODUCER_DU_BOT/100)
     delQuota=diskUsed-quota
-    DEBUG and debugMsg(0,"%s are going to be deleted" %   prettyPrintUnits(delQuota,"b",2))
     if delQuota > doneSize:
-      msg="Something is filling up the disks, %s does not have enough files to get to the Bottom Boundary of %.2f%%" % (T_FILE_DONE_DIR,PRODUCER_DU_BOT)
-      sendmail(YourEmail,body=msg,subject="Something is filling up the disks")
-      debugMsg(1,msg)
+      msg="ERROR: Something is filling up the disks, %s does not" \
+          " have enough files to get to the Bottom Boundary of" \
+          " %.2f%%" % (TFILEDONEDIR,PRODUCER_DU_BOT)
+      sendmail(msg)
+      logme("ERROR: Something is filling up the disks, %s does not" \
+          " have enough files to get to the Bottom Boundary of" \
+          " %.2f%%", TFILEDONEDIR, PRODUCER_DU_BOT)
+      
     aDelQuota=0
     FILE_LIST=[]
-    for directory,subdirs,files in os.walk(T_FILE_DONE_DIR):
+    for directory,subdirs,files in os.walk(TFILEDONEDIR):
       subdirs.sort()
       for f in sorted(files,key=lambda a: a[a.rfind("_R",1)+2:a.rfind("_R",1)+11]):
         fMatch=re.match(r"(DQM|Playback|Playback_full)_V[0-9]{4}_([a-zA-Z]+)_R([0-9]{9})_T[0-9]{8}\.root",f)
         if fMatch:
           subSystem=fMatch.group(2)
           run=fMatch.group(3)
-          destDir="%s/%s/%s/DQM_V0001_%s_R%s.root" % (SOURCES_DONE_DIR,run[0:3],run[3:6],subSystem,run)
+          destDir="%s/%s/%s/DQM_V0001_%s_R%s.root" % (ORIGINALDONEDIR,run[0:3],run[3:6],subSystem,run)
           fullFName="%s/%s" % (directory,f)
-          if os.stat(fullFName).st_size+aDelQuota <= delQuota:
-            FILE_LIST.append(fullFName)
-            aDelQuota+=os.stat(fullFName).st_size
-            if  os.path.exists(destDir):
-              DEBUG and debugMsg(0,"File %s is going to be deleted" % fullFName)
-            else:
-              debugMsg(1,"No subsystem file in repository %s for file %s, deleting any way" % (SOURCES_DONE_DIR,fullFName))
-          else:
+          if os.stat(fullFName).st_size+aDelQuota > delQuota:
             break
-    DEBUG and debugMsg(0,"Found %d files to be deleted" % len(FILE_LIST))
-   #cleanning ouput directory
-    for directory,subdirs,files in os.walk(COLLECTING_DIR):
-      #no subdiretories allowed in COLLECTING_DIR the  directory
+          
+          FILE_LIST.append(fullFName)
+          aDelQuota+=os.stat(fullFName).st_size
+          if not os.path.exists(destDir):
+            logme("WARNING: No subsystem file in repository %s for"
+                  " file %s, deleting any way" % 
+                  (ORIGINALDONEDIR, fullFName))
+            
+    if len(FILE_LIST):
+      logme("INFO: Found %d files to be deleted", len(FILE_LIST))
+      
+    #Cleanning ouput directory
+    for directory,subdirs,files in os.walk(COLLECTDIR):
+      #no subdiretories allowed in COLLECTDIR the  directory
       if subdirs:
-        debugMsg(2,"Output directory %s, must not contain subdirectories, cleanning" % COLLECTING_DIR)
+        logme("ERROR: Output directory %s, must not contain"
+              " subdirectories, cleanning", COLLECTDIR)
+        
       for sd in subdirs:
         fullSdName="%s/%s" % (directory,sd)
         for sdRoot,sdDirs,sdFiles in os.walk(fullSdName,topdown=False):
           for f in sdFiles:
             try:
               os.remove(f)
-              debugMsg(0,"File %s has been removed" % f)
+              logme("INFO: File %s has been removed", f)
             except Exception,e:
-              debugMsg(2,"Problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
+              logme("ERROR: Problem deleting file: [Errno %d] %s, '%s'",
+                      e.errno, e.strerror, e.filename)
+              
           try:
             os.removedir(sdRoot)
-            debugMsg(0,"File %s has been removed" % sdRoot)
+            logme("INFO: File %s has been removed" , sdRoot)
           except Exception,e:
-            debugMsg(2,"Problem deleting directory: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
+            logme("ERROR: Problem deleting directory: [Errno %d] %s, '%s'",
+                      e.errno, e.strerror, e.filename)
+                      
       for f in files:
-        if re.match(r"(DQM|Playback|Playback_full)_V[0-9]{4}_([a-zA-Z]+)_R([0-9]{9})_T[0-9]{8}\.root",f):
+        if re.match(r"(DQM|Playback|Playback_full)_V[0-9]{4}_([a-zA-Z]+)_R([0-9]{9})_T[0-9]{8}\.root", f):
           continue
+          
         if re.match(r".*\.tmp",f):
           continue
-        fullFName="%s/%s" % (directory,f)
+          
+        fullFName="%s/%s" % (directory, f)
         FILE_LIST.append(fullFName)
+        
       #cleaning tmp files:
-      TMP_LIST=glob.glob("%s/*.tmp" % COLLECTING_DIR)
+      TMP_LIST=glob.glob("%s/*.tmp" % COLLECTDIR)
       TMP_LIST.sort(reverse=True,key=lambda x: os.stat(x).st_mtime)
-      len(TMP_LIST)>0 and TMP_LIST.pop(0)
-      DEBUG and debugMsg(0,"Found %d .tmp files to be deleted" % len(TMP_LIST))
+      len(TMP_LIST) > 0 and TMP_LIST.pop(0)
       FILE_LIST.extend(TMP_LIST)
-       #remove files
+      
+    #remove files
     DIR_LIST=[]
     for f in FILE_LIST:
       try:
         os.remove(f)
-        debugMsg(0,"File %s has been removed" % f)
+        logme("INFO: File %s has been removed", f)
       except Exception,e:
-        debugMsg(2,"problem deleting file: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
-      if os.path.dirname(f) not in DIR_LIST and COLLECTING_DIR not in os.path.dirname(f):
+        logme("ERROR: Problem deleting file: [Errno %d] %s, '%s'",
+                e.errno, e.strerror, e.filename)
+      if os.path.dirname(f) not in DIR_LIST and COLLECTDIR not in os.path.dirname(f):
         DIR_LIST.append(os.path.dirname(f))
+        
     #remove emprty directories
     for d in DIR_LIST:
       try:
         os.removedirs(d)
-        debugMsg(0,"Directory %s has been removed" % d)
+        logme("INFO: Directory %s has been removed", d)
       except Exception,e:
-        print e
-        debugMsg(1,"Directory delition failed: [Errno %d] %s, '%s'" % (e.errno,e.strerror,e.filename))
-  time.sleep(PROD_CLEANNER_WAIT_TIME)
+        logme("ERROR: Directory delition failed: [Errno %d] %s, '%s'",
+                e.errno, e.strerror, e.filename)
+
+  except KeyboardInterrupt, e:
+    sys.exit(0)
+
+  except Exception, e:
+    logme('ERROR: %s', e)
+    sendmail ('ERROR: %s\n%s' % (e, format_exc()))
+    print_exc() 
+  
+  time.sleep(WAITTIME)               
+
          
       
     
