@@ -1,66 +1,130 @@
-#! /bin/sh
-HOMEDIR=dirname $0
-YourEmail=lilopera@cern.ch
+#! /bin/zsh
+HOMEDIR=$(dirname $0)
+EMAIL=$1
+TMPDIR=/tmp
+AGENTS=("fileCollector" "producerFileCleanner")
+LOGDIR=$HOMEDIR/log
+STOPFILE=/tmp/stopModules
 
-start(){
-  $HOMEDIR/fileCollector.py lilopera@cern.ch \
+######################################################################
+# Support functions
+startAgents(){
+  [[ $1 == "all" ]] && agents=($AGENTS ) ||
+      agents=$1
+  for a in ${agents[@]}
+  do  
+    case $a in
+      "fileCollector" )
+        $HOMEDIR/fileCollector.py lilopera@cern.ch \
+                /home/dqmprolocal/output \
+                /home/dqmprolocal/done  \
+                /dqmdata/dqm/uploads &
+        ;;
+         
+      "producerFileCleanner" )
+        $HOMEDIR/producerFileCleanner.py lilopera@cern.ch \
+          /home/dqmprolocal/done \
           /home/dqmprolocal/output \
-          /home/dqmprolocal/done  \
-          /dqmdata/dqm/uploads  &
-  
-  $HOMEDIR/producerFileCleanner.py lilopera@cern.ch \
-    /home/dqmprolocal/done \
-    /home/dqmprolocal/output \
-    /dqmdata/dqm/repository/original &
+          /dqmdata/dqm/repository/original &
+        ;;
+    esac 
+  done
 }
 
-export WorkDir=$(dirname $0)
+killproc() {
+  local T title pat nextmsg
+  T=1 title="$1" pat="$2"
+  nextmsg="INFO: Stopping ${title}:"
+  for pid in $(pgrep -u $(id -u) -f "$pat" | sort -rn); do
+    psline=$(ps -o pid=,bsdstart=,args= $pid |
+             perl -n -e 'print join(" ", (split)[0..4])')
+    [ -n "$nextmsg" ] && { echo "$nextmsg"; nextmsg=; }
+    echo -n "Stopping $pid ($psline):"
+    for sig in TERM TERM QUIT KILL; do
+      echo -n " SIG$sig"
+      kill -$sig $pid
+      sleep 1
+      [ $(ps h $pid | wc -l) = 0 ] && break
+      sleep $T
+      T=$(expr $T \* 2)
+      [ $(ps h $pid | wc -l) = 0 ] && break
+    done
+    echo
+    newline="\n"
+  done
 }
 
+logme(){
+  timeTag=$(date +"%Y%m%d")
+  logFile=$LOGDIR/alivecheck.$HOSTNAME.${timeTag}
+  if [[ ${#*} -eq 0 ]]
+  then 
+    while read a 
+    do
+      echo $(date +"%Y-%m-%d %H:%M:%S")" [aliveCheck.sh/$$] $a" >>! $logFile 
+    done
+  else
+    echo $(date +"%Y-%m-%d %H:%M:%S")" [aliveCheck.sh/$$] $*" >>! $logFile
+  fi
+  return 0
+}
 
-#source /nfshome0/cmssw2/scripts/setup.sh
-if [ -d /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.1.1/etc/profile.d/ ]
+######################################################################
+# Setting up the environment
+cd ~
+if [[ -d prod && -e bin/setup_cmssw.sh ]] 
 then
-  XPYTHONPATH=$PYTHONPATH
-  source /home/dqm/rpms/slc4_ia32_gcc345/cms/dqmgui/5.1.1/etc/profile.d/env.sh
+  cd prod
+  source bin/setup_cmssw.sh
+  eval `scramv1 runtime -sh`
+  cd ~
 else
-  source $WorkDir/env.sh
-fi
-export PYTHONPATH=$XPYTHONPATH:$PYTHONPATH
-export HOSTNAME=$HOSTNAME
-
-if [[ $1 == "" ]]
-then
-  echo No config file specifyed
+  logme "ERROR: Could not find prod release of CMSSW please make sure" \
+        "that ~/prod exists and is a symbolic link (ln -s) to the" \
+        "CMSSW area used by dqmpro and the online consumers." \
+        "Also make sure that ~/bin/setup_cmssw.sh points to the right" \
+        "CMSSW installation area on nfs"
   exit
 fi
-if [[ $2 == "" ]]
+
+
+# Stop mode
+if [ -e $STOPFILE ]
 then
-  echo No script file specifyed
+  logme "INFO: Found stop file (${STOPFILE}) at $HOSTNAME. Please" \
+        "remove the file to restart the agents"
+  set -a runningAgents
+  for a in $AGENTS
+  do
+    pgrep -f $a > /dev/null && runningAgents[$(( ${#runningAgents} + 1 ))]=$a
+  done
+  for a in $runningAgents
+  do 
+    killproc "FMS Module [$a] " $a | logme
+  done
   exit
 fi
-if [[ $(dirname $1) == "." ]]
+
+# Running Mode:
+# Finding out if there's any dead agents
+set -a deadAgents
+for a in $AGENTS
+do
+  pgrep -f $a > /dev/null ||  deadAgents[$(( ${#deadAgents} + 1 ))]=$a
+done
+
+# If there are no dead agents just finish
+[[ ${#deadAgents} -eq 0 ]] && exit
+
+logme $deadAgents where stopped and restarted now at $HOSTNAME.
+echo $deadAgents where stopped and restarted now at $HOSTNAME. | mail -s "File management modules not Running" $EMAIL
+
+if [[ ${#deadAgents} -eq ${#AGENTS} ]] 
 then
-  CFGFILE=$WorkDir/$1
-else
-  CFGFILE=$1
-fi
-EXE="$WorkDir/$2 $CFGFILE"
-RUN_STAT=`ps -ef | grep "$2 $CFGFILE" | grep -v grep | wc | awk '{print $1}'`
-PRETTY_NAME=`basename $2 | grep -oP ".*(?=\.[\d\s\w]+)|^\.[\d\s\w]+|^[\d\w]+"`
-
-
-$HOMEDIR/fileCollector.py lilopera@cern.ch /home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads
-
-if [ $RUN_STAT -ne 0 ]
-then
-    echo $PRETTY_NAME is running
-else
-    echo $PRETTY_NAME stopped by unknown reason and restarted now.
-    TIMETAG=$(date +"%Y%m%d_%H%M%S")
-    LOG=$WorkDir/log/LOG.$PRETTY_NAME.$HOSTNAME.$TIMETAG
-    $EXE >& $LOG &
-    date >> $LOG
-    echo $PRETTY_NAME stopped by unknown reason and restarted at $HOSTNAME. >> $LOG
-    echo $PRETTY_NAME stopped by unknown reason and restarted now at $HOSTNAME. | mail -s "$PRETTY_NAME not Running" $YourEmail
+  startAgents all
+else 
+  for a in $deadAgents
+  do
+    startAgents $a
+  done
 fi

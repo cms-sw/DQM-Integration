@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 import os, time, sys, glob, re, shutil, stat, smtplib, socket
 from email.MIMEText import MIMEText
 from fcntl import lockf, LOCK_EX, LOCK_UN
@@ -14,13 +13,17 @@ COLLECTDIR = sys.argv[2] # Directory from where to pick up root files
 TFILEDONEDIR = sys.argv[3] # Directory to store processed *_T files
 DROPBOX = sys.argv[4] # Directory where to liave the files
 
-#Constants
+# Constants
 WAITTIME = 10
+EMAILINTERVAL = 15 * 60 # Time between sent emails 
 SBASEDIR = os.path.abspath(__file__).rsplit("/",1)[0]
 TMPDROPBOX = "%s/.tmpdropbox" % DROPBOX
 RETRIES = 3
 SENDMAIL = "/usr/sbin/sendmail" # sendmail location
 HOSTNAME = socket.gethostname().lower()
+
+# Control variables
+lastEmailSent = datetime.now()
 
 # --------------------------------------------------------------------
 def logme(msg, *args):
@@ -199,8 +202,11 @@ while True:
               logme("ERROR: Problem transfering final file for run"
                     " %09d. Retrying in %d", run, WAITTIME)
               if i == RETRIES-1: 
-                sendmail("ERROR: Problem transfering final file for run"
+                now = datetime.now()
+                if now - EMAILINTERVAL > lastEmailSent:
+                  sendmail("ERROR: Problem transfering final file for run"
                     " %09d.\n Retrying in %d seconds" % (run, WAITTIME))
+                  lastEmailSent = now
                 
               time.sleep(WAITTIME)
             lockf(lFile,LOCK_UN)
@@ -212,5 +218,9 @@ while True:
 
   except Exception, e:
     logme('ERROR: %s', e)
-    sendmail ('ERROR: %s\n%s' % (e, format_exc()))
+    now = datetime.now()
+    if now - EMAILINTERVAL > lastEmailSent:
+      sendmail ('ERROR: %s\n%s' % (e, format_exc()))
+      lastEmailSent = now
+      
     print_exc() 

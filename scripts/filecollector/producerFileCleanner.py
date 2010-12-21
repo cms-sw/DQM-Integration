@@ -15,8 +15,12 @@ ORIGINALDONEDIR =sys.argv[4]
 PRODUCER_DU_TOP= 90.0  #0% a 100%
 PRODUCER_DU_BOT= 50.0  #0% a 100%
 WAITTIME = 3600 * 4
+EMAILINTERVAL = 15 * 60 # Time between sent emails 
 SENDMAIL = "/usr/sbin/sendmail" # sendmail location
 HOSTNAME = socket.gethostname().lower()
+
+# Control variables
+lastEmailSent = datetime.now()
 
 # --------------------------------------------------------------------
 def logme(msg, *args):
@@ -75,10 +79,14 @@ while True:
     quota=long(diskSize*PRODUCER_DU_BOT/100)
     delQuota=diskUsed-quota
     if delQuota > doneSize:
-      msg="ERROR: Something is filling up the disks, %s does not" \
+      now = datetime.now()
+      if now - EMAILINTERVAL > lastEmailSent:
+        msg="ERROR: Something is filling up the disks, %s does not" \
           " have enough files to get to the Bottom Boundary of" \
           " %.2f%%" % (TFILEDONEDIR,PRODUCER_DU_BOT)
-      sendmail(msg)
+        sendmail(msg)
+        lastEmailSent = now
+        
       logme("ERROR: Something is filling up the disks, %s does not" \
           " have enough files to get to the Bottom Boundary of" \
           " %.2f%%", TFILEDONEDIR, PRODUCER_DU_BOT)
@@ -175,6 +183,11 @@ while True:
   except Exception, e:
     logme('ERROR: %s', e)
     sendmail ('ERROR: %s\n%s' % (e, format_exc()))
+    now = datetime.now()
+    if now - EMAILINTERVAL > lastEmailSent:
+      sendmail ('ERROR: %s\n%s' % (e, format_exc()))
+      lastEmailSent = now
+    
     print_exc() 
   
   time.sleep(WAITTIME)               
