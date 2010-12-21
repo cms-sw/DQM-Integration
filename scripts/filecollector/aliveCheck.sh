@@ -11,21 +11,29 @@ STOPFILE=/tmp/stopModules
 startAgents(){
   [[ $1 == "all" ]] && agents=($AGENTS ) ||
       agents=$1
+      
+  mkdir -p /home/dqmprolocal/agents
   for a in ${agents[@]}
   do  
     case $a in
       "fileCollector" )
-        $HOMEDIR/fileCollector.py lilopera@cern.ch \
+        (set -x
+         ($HOMEDIR/fileCollector.py lilopera@cern.ch \
                 /home/dqmprolocal/output \
                 /home/dqmprolocal/done  \
-                /dqmdata/dqm/uploads &
+                /dqmdata/dqm/uploads
+         ) |& $HOMEDIR/visDQMRotateLogs /home/dqmprolocal/agents/fcollect-%Y%m%d%H%M.txt </dev/null 86400 &
+        )
         ;;
          
       "producerFileCleanner" )
-        $HOMEDIR/producerFileCleanner.py lilopera@cern.ch \
+        (set -x
+         ($HOMEDIR/producerFileCleanner.py lilopera@cern.ch \
           /home/dqmprolocal/done \
           /home/dqmprolocal/output \
-          /dqmdata/dqm/repository/original &
+          /dqmdata/dqm/repository/original
+         ) |& $HOMEDIR/visDQMRotateLogs /home/dqmprolocal/agents/pfclean-%Y%m%d%H%M.txt </dev/null 86400 & 
+        )
         ;;
     esac 
   done
