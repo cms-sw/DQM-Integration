@@ -3,7 +3,7 @@ HOMEDIR=$(dirname $0)
 EMAIL=$1
 TMPDIR=/tmp
 AGENTS=("fileCollector" "producerFileCleanner")
-LOGDIR=$HOMEDIR/log
+LOGDIR=/home/dqmprolocal/agents
 STOPFILE=/tmp/stopModules
 
 ######################################################################
@@ -11,8 +11,7 @@ STOPFILE=/tmp/stopModules
 startAgents(){
   [[ $1 == "all" ]] && agents=($AGENTS ) ||
       agents=$1
-      
-  mkdir -p /home/dqmprolocal/agents
+
   for a in ${agents[@]}
   do  
     case $a in
@@ -22,7 +21,7 @@ startAgents(){
                 /home/dqmprolocal/output \
                 /home/dqmprolocal/done  \
                 /dqmdata/dqm/uploads
-         ) |& $HOMEDIR/visDQMRotateLogs /home/dqmprolocal/agents/fcollect-%Y%m%d%H%M.txt </dev/null 86400 &
+         ) |& $HOMEDIR/visDQMRotateLogs $LOGDIR/fcollect-%Y%m%d%H%M.txt </dev/null 86400 &
         )
         ;;
          
@@ -32,7 +31,7 @@ startAgents(){
           /home/dqmprolocal/done \
           /home/dqmprolocal/output \
           /dqmdata/dqm/repository/original
-         ) |& $HOMEDIR/visDQMRotateLogs /home/dqmprolocal/agents/pfclean-%Y%m%d%H%M.txt </dev/null 86400 & 
+         ) |& $HOMEDIR/visDQMRotateLogs $LOGDIR/pfclean-%Y%m%d%H%M.txt </dev/null 86400 & 
         )
         ;;
     esac 
@@ -63,8 +62,8 @@ killproc() {
 }
 
 logme(){
-  timeTag=$(date +"%Y%m%d")
-  logFile=$LOGDIR/alivecheck.$HOSTNAME.${timeTag}
+  timeTag=$(date +"%Y%m%d%H%M")
+  logFile=$LOGDIR/alivecheck-${timeTag}
   if [[ ${#*} -eq 0 ]]
   then 
     while read a 
@@ -79,6 +78,7 @@ logme(){
 
 ######################################################################
 # Setting up the environment
+mkdir -p $LOGDIR
 cd ~
 if [[ -d prod && -e bin/setup_cmssw.sh ]] 
 then
