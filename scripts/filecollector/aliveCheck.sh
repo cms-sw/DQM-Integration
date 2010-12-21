@@ -87,7 +87,13 @@ else
   exit
 fi
 
-
+if [[ -z $EMAIL || ! $EMAIL == *[a-zA-Z0-9\-\_\.]@cern.ch ]]
+then 
+  logme "ERROR: missing or unacceptable email address '$EMAIL'. e.g. " \
+        "$HOMEDIR/aliveCheck.sh yourEmail@cern.ch"
+  exit
+fi
+   
 # Stop mode
 if [ -e $STOPFILE ]
 then
@@ -106,7 +112,7 @@ then
 fi
 
 # Running Mode:
-# Finding out if there's any dead agents
+# Find out if there's any dead agents
 set -a deadAgents
 for a in $AGENTS
 do
