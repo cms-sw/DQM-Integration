@@ -82,6 +82,15 @@ server.workspace('DQMContent', 34, 'Trigger/Lumi', 'HLX', '^HLX')
 server.workspace('DQMContent', 41, 'POG', 'Muons', '^Muons/')
 server.workspace('DQMContent', 42, 'POG', 'JetMet', '^JetMET/')
 server.workspace('DQMContent', 43, 'POG', 'EGamma', '^Egamma/')
+server.workspace('DQMContent', 44, 'POG', 'Btag', '^Btag/',
+                 'Btag/Layouts/00 - Jet Property',
+                 'Btag/Layouts/01 - Tracks in Jet',
+                 'Btag/Layouts/02 - Vertex Property',
+                 'Btag/Layouts/03 - Flight Distance Summary',
+                 'Btag/Layouts/04 - Discriminator Summary',
+                 'Btag/Layouts/05 - 2D-Impact Parameter',
+                 'Btag/Layouts/06 - 3D-Impact Parameter'
+)
 
 server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking FeedBack', '^(Collisions|SiStrip|Tracking|Pixel)/',
                  'Collisions/TrackingFeedBack/00 - Number Of Tracks',
