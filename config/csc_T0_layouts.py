@@ -1,5 +1,706 @@
 def csclayout(i, p, *rows): i["CSC/Layouts/" + p] = DQMItem(layout=rows)
 
+# 03 Distribution within strips
+
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/01 Position on strip ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/02 Position on strip ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/03 Rosition on strip ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/04 Position on strip ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/05 Position on strip ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/06 Position on strip ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/07 Position on strip ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/08 Position on strip ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/09 Position on strip ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/10 Position on strip ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/11 Position on strip ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/12 Position on strip ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/13 Position on strip ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/14 Position on strip ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/15 Position on strip ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/16 Position on strip ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/17 Position on strip ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/18 Position on strip ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/19 Position on strip ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/20 Position on strip ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+			
+#05 Gains
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/21 Gass gain ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/22 Gass gain ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/23 Gass gain ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/24 Gass gain ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/25 Gass gain ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+					
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/26 Gass gain ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/27 Gass gain ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/28 Gass gain ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/29 Gass gain ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/30 Gass gain ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/31 Gass gain ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/32 Gass gain ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/33 Gass gain ME1+12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/34 Gass gain ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/35 Gass gain ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+					
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/36 Gass gain ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/37 Gass gain ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/38 Gass gain ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/39 Gass gain ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/40 Gass gain ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+					
+# 04 Wire Tbin					
+					
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/41 Wire TBin ME-11",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/42 Wire TBin ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/43 Wire TBin ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/44 Wire TBin ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/45 Wire TBin ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/46 Wire TBin ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/47 Wire TBin ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/48 Wire TBin ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/49 Wire TBin ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/50 Wire TBin ME+11",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/51 Wire TBin ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/52 Wire TBin ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/53 Wire TBin ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/54 Wire TBin ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/55 Wire TBin ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/56 Wire TBin ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/57 Wire TBin ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/58 Wire TBin ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+# 04 RecHit Timing		
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/59 RecHit Timing ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/60 RecHit Timing ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/61 RecHit Timing ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/62 RecHit Timing ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/63 RecHit Timing ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/64 RecHit Timing ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/65 RecHit Timing ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/66 RecHit Timing ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/67 RecHit Timing ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/68 RecHit Timing ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/69 RecHit Timing ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/70 RecHit Timing ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/71 RecHit Timing ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/72 RecHit Timing ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/73 RecHit Timing ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/74 RecHit Timing ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/75 RecHit Timing ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/76 RecHit Timing ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/77 RecHit Timing ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/78 RecHit Timing ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+# 06 Pedestal Noise	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/79 Pedestal Noise ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/80 Pedestal Noise ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/81 Pedestal Noise ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/82 Pedestal Noise ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/83 Pedestal Noise ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/84 Pedestal Noise ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/85 Pedestal Noise ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/86 Pedestal Noise ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/87 Pedestal Noise ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/88 Pedestal Noise ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/89 Pedestal Noise ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/90 Pedestal Noise ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/91 Pedestal Noise ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/92 Pedestal Noise ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/93 Pedestal Noise ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/94 Pedestal Noise ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/95 Pedestal Noise ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/96 Pedestal Noise ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/97 Pedestal Noise ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/98 Pedestal Noise ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/99 Resolution ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+# 07 Resolution		
+
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/100 Resolution ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/101 Resolution ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/102 Resolution ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/103 Resolution ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/104 Resolution ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/105 Resolution ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/106 Resolution ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/107 Resolution ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/108 Resolution ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/109 Resolution ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/110 Resolution ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/111 Resolution ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/112 Resolution ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/113 Resolution ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/114 Resolution ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/115 Resolution ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/116 Resolution ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/117 Resolution ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/118 Resolution ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/119 Resolution ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+# 08 Segments
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/120 Segments Directions (Global Phi)",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSGlobalPhi", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/121 Segments Directions (Global Theta)",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSGlobalTheta", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+				
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/122 Segments Overal Chi^2",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSq", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])				
+	
+## Dump Finish			
+
+csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/1 DDUs in readout",
+  	[{'path': "CSC/Summary/All_DDUs_in_Readout", 'description': "Number of Events in DDU. If Readout and Trigger Enable were started in a correct sequence (first, Readout Enable and, then, Trigger Enable) and the rate of events with CSC payload present is not too high (<100 CSCs with data per second per DDU) then all DDUs should give the exact same number of events. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#All_DDUs_in_Readout\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/2 DMB input timeout",
+	[{'path': "CSC/Summary/CSC_DMB_input_timeout", 'description': "Shows TIMEOUT condition on DMB inputs (OR start/stop timeouts for 5 CFEBs, ALCT, TMB). Appearance of entries in this histogram is very bad and typically implies badly timed-in CSCs. To dig out which of the 7 boards is actually responsible for the trouble, one needs to refer the FEB Status (Timeouts, FIFO, L1 pipe) canvas for the offensive chamber (this canvas can be found in the DMB group) For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/3 CSC Status",
+	[{'path': "CSC/EventInfo/reportSummaryMap", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/1 Overall Chamber Occupancy",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hCSCOccupancy", 'description': "Histogram shows overal occupancy of CSCs by different types of signals. If there is a substantial difference a problem with overal occupancy should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/2 Chamber Occupancy Serial RH",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hORecHitSerial", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/3 Chamber Occupancy Serial Segm",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOSegmentSerial", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/4 Chamber Occupancy Serial Strip",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOStripSerial", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/5 Chamber Occupancy Serial Wire",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOWireSerial", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/6 Chamber Occupancy RH",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hORecHits", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/7 Chamber Occupancy Segm",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOSegments", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/8 Chamber Occupancy Strip",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOStrips", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/9 Chamber Occupancy Serial Wire",
+  	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hOWires", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])	
+
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/10 RecHit Occupancy ME -1",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm1", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/11 RecHit Occupancy ME -2",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm2", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/12 RecHit Occupancy ME -3",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm3", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/13 RecHit Occupancy ME -4",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm4", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/14 RecHit Occupancy ME +1",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp1", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/15 RecHit Occupancy ME +2",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp2", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/16 RecHit Occupancy ME +3",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp3", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/17 RecHit Occupancy ME +4",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp4", 'description': " For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])			
+
+csclayout(dqmitems,"CSC DQM Shifter/03 Distribution within strips/01 Reconstructed position on strip ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/03 Distribution within strips/02 Reconstructed position on strip ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHstposp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/01 Wire TBin Fired ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_m11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/02 Wire TBin Fired ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Digis/hWireTBin_p11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/03 RecHit Timing ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/04 RecHit Timing ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/05 Gains/01 Sum 3x3 RecHit Charge ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/05 Gains/02 Sum 3x3 RecHit Charge ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHSumQp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/06 Pedestals/01 Pedestal Noise Distribution ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/06 Pedestals/02 Pedestal Noise Distribution ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/PedestalNoise/hStripPedMEp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/07 Resolution/01 Fitted position on strip - reconstructed for layer 3 ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/07 Resolution/02 Fitted position on strip - reconstructed for layer 3 ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Resolution/hSResidp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
+csclayout(dqmitems,"CSC DQM Shifter/08 Segments/01 Segment Direction",
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSGlobalPhi", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/08 Segments/02 Segment Direction",
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSGlobalTheta", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/08 Segments/03 Segment Overal chi2",
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSq", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+
+
+csclayout(dqmitems,"CSC DQM Shifter/08 Segments/04 Segment normalized Chi2 ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqm11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
+
+csclayout(dqmitems,"CSC DQM Shifter/08 Segments/05 Segment normalized Chi2 ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSqp11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None])
+
 csclayout(dqmitems,"00 Data Integrity/Physics Efficiency 01",
   	[{'path': "CSC/Summary/Physics_EMU", 'description': "CSC Efficiency for Physics. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
 	
