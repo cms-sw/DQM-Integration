@@ -3,6 +3,9 @@ import FWCore.ParameterSet.Config as cms
 import os, sys, socket, string
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
+# Set this to True if running in Heavy Ion mode
+HEAVYION=False
+
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
 HcalPlaybackHost='dqm-c2d07-13'.lower()
@@ -86,7 +89,13 @@ process.hcalRecAlgos.DropChannelStatusBits = cms.vstring('') # Had been ('HcalCe
 process.load('SimCalorimetry.HcalTrigPrimProducers.hcaltpdigi_cff')
 process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clone()
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
-process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(False)
+
+#configuration used in Heavy Ion runs only
+if (HEAVYION):
+    process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(False) 
+    process.hcalDeadCellMonitor.minDeadEventCount = 10
+
+process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
 
@@ -121,14 +130,21 @@ process.hcalMonitor.subSystemFolder=subsystem
 SetTaskParams(process,"subSystemFolder",subsystem)
 process.hcalClient.subSystemFolder=subsystem
 #print "BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
-process.hcalRecHitMonitor.HcalHLTBits=["HLT_HIActivityHF_Coincidence3",
-                                       "HLT_HIL1Tech_HCAL_HF"]
+if (HEAVYION):
+    process.hcalRecHitMonitor.HcalHLTBits=["HLT_HIActivityHF_Coincidence3",
+                                           "HLT_HIL1Tech_HCAL_HF"]
+    
+    process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_HIMinBiasBSC",
+                                              "HLT_HIL1Tech_BSC_minBias"
+                                              ]
 
-process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_HIMinBiasBSC",
-                                          "HLT_HIL1Tech_BSC_minBias"
-                                          ]
-
-process.hcalDeadCellMonitor.minDeadEventCount = 10
+else:
+    process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF"]
+    
+    process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
+                                              "HLT_L1Tech_BSC_minBias",
+                                              "HLT_L1Tech_BSC_minBias_OR"
+                                              ]
 
 #print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
@@ -148,8 +164,9 @@ process.hcalClient.databaseUpdateTime=60
 process.hcalClient.DeadCell_minerrorrate=0.05
 process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
 # Increase hotcellmonitor thresholds for HI runs
-process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
-process.hcalHotCellMonitor.ETThreshold_HF  = cms.untracked.double(10.0)
+if (HEAVYION):
+    process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
+    process.hcalHotCellMonitor.ETThreshold_HF  = cms.untracked.double(10.0)
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
