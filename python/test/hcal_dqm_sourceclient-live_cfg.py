@@ -67,7 +67,7 @@ if version1>=3 and version2>=9:
 
 # HF Corrections to reconstruction
 process.hfreco.firstSample = 3
-process.hfreco.samplesToAdd = 4
+process.hfreco.samplesToAdd = 2
 
 # ZDC Corrections to reco
 process.zdcreco.firstSample  = 4
