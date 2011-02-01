@@ -16,8 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring(
-                 'HLT_HI*'))   
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))   
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -76,8 +75,8 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 #-----------------------
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
-process.load("Configuration.GlobalRuns.reco_TLR_39X")
+process.load("Configuration.StandardSequences.Reconstruction_cff")
+process.load("Configuration.GlobalRuns.reco_TLR_311X")
 
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
@@ -89,7 +88,7 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
-process.TrackMon_hi.doLumiAnalysis = False
+process.TrackMon_genTk.doLumiAnalysis = False
 process.TrackMon_ckf.doLumiAnalysis = False
 
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
@@ -101,7 +100,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 # Quality Test
 #--------------------------
 process.qTester = cms.EDAnalyzer("QualityTester",
-    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_heavyion.xml'),
+    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(5),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
     qtestOnEndLumi = cms.untracked.bool(True),
@@ -138,11 +137,6 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
-# Global Trigger *L1GlobalTrigger) Selection for PhysicsON
-process.physicsBitSelector = cms.EDFilter("PhysDecl",
-                                                   applyfilter = cms.untracked.bool(True),
-                                                   debugOn     = cms.untracked.bool(False)
-                                          )
 # L1 Trigger Bit Selection (bit 40 and 41 for BSC trigger)
 process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
 process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
@@ -158,19 +152,18 @@ process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack
 process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
-process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.heavyIonTracking)
+process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
 process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process.ctftracksP5)
 
 process.p = cms.Path(process.scalersRawToDigi*
                      process.APVPhases*
                      process.consecutiveHEs*
-#                     process.hltTriggerTypeFilter*
+                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
                      process.SiStripSources_LocalReco*
-                     process.eventFilter*
-                     process.RecoForDQM_TrkReco*
-                     process.SiStripSources_TrkReco
+                     process.RecoForDQM_TrkReco_cosmic*
+                     process.SiStripSources_TrkReco_cosmic
 )
 
