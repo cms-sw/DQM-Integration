@@ -88,7 +88,7 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
-process.TrackMon_genTk.doLumiAnalysis = False
+process.TrackMon_gentk.doLumiAnalysis = False
 process.TrackMon_ckf.doLumiAnalysis = False
 
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
