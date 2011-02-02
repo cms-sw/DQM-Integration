@@ -96,6 +96,7 @@ process.castorMonitor = cms.EDAnalyzer("CastorMonitorModule",
                            dump2database       = cms.untracked.bool(False),
                            pedestalsInFC = cms.untracked.bool(False),
                            digiLabel = cms.InputTag("castorDigis"),
+                           rawLabel = cms.InputTag("castorRaw"),
                            CastorRecHitLabel = cms.InputTag("castorreco"),
                           
                            DigiMonitor = cms.untracked.bool(True),
