@@ -74,17 +74,6 @@ version2=string.atoi(version[2])
 if version1>=3 and version2>=9:
         process.hbhereco = process.hbheprereco.clone()
         
-
-
-# Corrections to HF timing
-process.hfreco.firstSample = 3
-process.hfreco.samplesToAdd = 4
-
-# ZDC Corrections to reco
-process.zdcreco.firstSample  = 4
-process.zdcreco.samplesToAdd = 3
-process.zdcreco.recoMethod   = 2
-
 # Allow all rechits in mark&pass events
 process.hfreco.dropZSmarkedPassed=False
 process.horeco.dropZSmarkedPassed=False

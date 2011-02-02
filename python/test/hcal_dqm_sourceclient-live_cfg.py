@@ -64,16 +64,6 @@ version2=string.atoi(version[2])
 if version1>=3 and version2>=9:
     process.hbhereco = process.hbheprereco.clone()
 
-
-# HF Corrections to reconstruction
-process.hfreco.firstSample = 3
-process.hfreco.samplesToAdd = 2
-
-# ZDC Corrections to reco
-process.zdcreco.firstSample  = 4
-process.zdcreco.samplesToAdd = 3
-process.zdcreco.recoMethod   = 2
-
 # Turn off default blocking of dead channels from rechit collection
 process.essourceSev =  cms.ESSource("EmptyESSource",
                                     recordName = cms.string("HcalSeverityLevelComputerRcd"),
