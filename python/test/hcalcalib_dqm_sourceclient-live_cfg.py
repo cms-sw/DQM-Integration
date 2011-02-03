@@ -5,7 +5,7 @@ import os, sys, socket, string
 
 
 # Set this to True is running in Heavy Ion mode
-HEAVYION=True
+HEAVYION=False
 
 
 
@@ -32,7 +32,10 @@ subsystem="HcalCalib"
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*'))
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
+
+if (HEAVYION):
+    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
+    
 process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 
 
