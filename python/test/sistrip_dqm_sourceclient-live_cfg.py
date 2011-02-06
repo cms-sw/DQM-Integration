@@ -100,7 +100,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 # Quality Test
 #--------------------------
 process.qTester = cms.EDAnalyzer("QualityTester",
-    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
+    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_cosmic.xml'),
     prescaleFactor = cms.untracked.int32(5),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
     qtestOnEndLumi = cms.untracked.bool(True),
