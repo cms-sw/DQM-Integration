@@ -1,13 +1,14 @@
 
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("DQM")
+process = cms.Process("RPCDQM")
 
 
 ############## Event Source ####################
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'RPC DQM Consumer'
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_CSCBeamHaloOverlapRing2','HLT_CSCBeamHaloRing2or3', 'HLT_L1Mu*','HLT_L1Mu','HLT_TrackerCosmics'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 ################ HLT Filter######################
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
@@ -71,6 +72,7 @@ process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
 process.rpcdigidqm.DigiLabel = cms.InputTag("rpcunpacker")
 
+
 ################# DCS Info ######################
 process.load("DQM.RPCMonitorDigi.RPCDcsInfo_cfi")
 
@@ -80,7 +82,7 @@ process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
 process.rpcdqmclient.DiagnosticPrescale = cms.untracked.int32(5)
 process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
-
+process.rpcdqmclient.OfflineDQM = cms.untracked.bool(False)
 
 ################# Other Clients ############################
 #process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
@@ -95,6 +97,7 @@ process.load("DQM.RPCMonitorClient.RPCMonitorLinkSynchro_cfi")
 process.load("DQM.RPCMonitorClient.RPCEventSummary_cfi")
 process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
 process.rpcEventSummary.PrescaleFactor = 5
+process.rpcEventSummary.OfflineDQM = cms.untracked.bool(False)
 
 ################# Quality Tests #########################
 process.qTesterRPC = cms.EDAnalyzer("QualityTester",
@@ -105,10 +108,11 @@ process.qTesterRPC = cms.EDAnalyzer("QualityTester",
 )
 
 ################ Chamber Quality ##################
-process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
-                                           MinimumRPCEvents = cms.untracked.int32(10000),
-                                           PrescaleFactor = cms.untracked.int32(1) 
-                                           )
+process.load("DQM.RPCMonitorClient.RPCChamberQuality")
+process.rpcChamberQuality.MinimumRPCEvents = cms.untracked.int32(10000)
+process.rpcChamberQuality.PrescaleFactor = cms.untracked.int32(5) 
+process.rpcChamberQuality.OfflineDQM = cms.untracked.bool(False)
+                             
 
 ################  Sequences ############################
 process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo)
