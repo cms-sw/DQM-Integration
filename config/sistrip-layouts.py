@@ -80,7 +80,7 @@ sistriplayout(dqmitems, "06 - OffTrackCluster (Total Number)",
 sistriplayout(dqmitems, "07 - Tracking ReportSummary",
  [{ 'path': "Tracking/EventInfo/reportSummaryMap",
     'description': " Quality Test results plotted for Tracking parameters : Chi2, TrackRate, #of Hits in Track - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOnlineDQMInstructions>SiStripOnlineDQMInstructions</a> ", 'draw': { 'withref': "no" }}])
-sistriplayout(dqmitems, "08 - Tracks",
+sistriplayout(dqmitems, "08 - Tracks (pp collisions)",
  [{ 'path': "Tracking/TrackParameters/GeneralProperties/NumberOfTracks_GenTk",
     'description': "Number of Reconstructed Tracks  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOnlineDQMInstructions>SiStripOnlineDQMInstructions</a> ", 'draw': { 'withref': "yes" }},
   { 'path': "Tracking/TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk",
