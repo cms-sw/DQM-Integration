@@ -88,7 +88,7 @@ for f, layout in LAYOUTS.items():
         if not row:
           continue
         
-        if type(row) == type(dict):         
+        if type(row) == type(dict()):         
           hLocation = row["path"].split("/")
         else:
           hLocation = row.split("/")
