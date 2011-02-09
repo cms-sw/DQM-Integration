@@ -108,7 +108,7 @@ process.qTesterRPC = cms.EDAnalyzer("QualityTester",
 )
 
 ################ Chamber Quality ##################
-process.load("DQM.RPCMonitorClient.RPCChamberQuality")
+process.load("DQM.RPCMonitorClient.RPCChamberQuality_cfi")
 process.rpcChamberQuality.MinimumRPCEvents = cms.untracked.int32(10000)
 process.rpcChamberQuality.PrescaleFactor = cms.untracked.int32(5) 
 process.rpcChamberQuality.OfflineDQM = cms.untracked.bool(False)
