@@ -82,20 +82,24 @@ while line:
 # Test layouts for correct locations
 for f, layout in LAYOUTS.items():
   print "Testing layouts in file: %s" % f
-  for h, hItem in layout.items():
+  for h, hItem in sorted(layout.items()):
     for col in hItem.layout:
       for row in col:
         if not row:
           continue
-                 
-        hLocation = row["path"].split("/")
+        
+        if type(row) == type(dict):         
+          hLocation = row["path"].split("/")
+        else:
+          hLocation = row.split("/")
+          
         try:
           pT = knownMEs[hLocation[0]]
           for sf in hLocation[1:]:
             pT = pT[sf]
         
         except KeyError, e:
-          print "Path not found %s, for histogram: %s, failed in: %s" % (row["path"],h,e)
+          print "Path not found %s, for histogram: %s, failed in: %s" % ("/".join(hLocation),h,e)
           continue
     
     
