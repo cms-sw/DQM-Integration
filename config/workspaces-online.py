@@ -27,7 +27,8 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/05 - OnTrackCluster (StoN)',
                  'SiStrip/Layouts/06 - OffTrackCluster (Total Number)',
                  'SiStrip/Layouts/07 - Tracking ReportSummary',
-                 'SiStrip/Layouts/08 - Tracks')                 
+                 'SiStrip/Layouts/08 - Tracks (pp collisions)',
+                 'SiStrip/Layouts/09 - Tracks (Cosmic Tracking)')                 
                
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
