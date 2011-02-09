@@ -54,13 +54,13 @@ shiftsistriplayout(dqmitems, "05 - Tracks",
     'description': "Number of Reconstructed Tracks  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }},
   { 'path': "Tracking/TrackParameters/HitProperties/NumberOfRecHitsPerTrack_GenTk",
     'description': "Number of RecHits per Track  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPt_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPt_GenTk",
     'description': "Pt of Reconstructed Track  - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }}],
  [{ 'path': "Tracking/TrackParameters/GeneralProperties/Chi2oNDF_GenTk",
     'description': "Chi Sqare per DoF  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPhi_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackPhi_GenTk",
     'description': "Phi distribution of Reconstructed Tracks  -  <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }},
-  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackEta_ImpactPoint_GenTk",
+  { 'path': "Tracking/TrackParameters/GeneralProperties/TrackEta_GenTk",
     'description': " Eta distribution of Reconstructed Tracks - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a> ", 'draw': { 'withref': "yes" }}])
 
 
