@@ -33,8 +33,8 @@ dtlayout(dqmitems, "00-Summary/07-NoiseChannelsSummary",
 dtlayout(dqmitems, "00-Summary/08-SynchNoiseSummary",
          [{ 'path': "DT/05-Noise/SynchNoise/SynchNoiseSummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Description and Instructions</a>" }])
 
-dtlayout(dqmitems, "00-Summary/09-TestPulseOccupancy",
-         [{ 'path': "DT/10-TestPulses/OccupancySummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Description and Instructions</a>" }])
+#dtlayout(dqmitems, "00-Summary/09-TestPulseOccupancy",
+#         [{ 'path': "DT/10-TestPulses/OccupancySummary", 'description': "<a href=https://twiki.cern.ch/twiki/bin/view/CMS/DTDQMPlots>Description and Instructions</a>" }])
 
 
 #### OCCUPANCIES #################################################################################
