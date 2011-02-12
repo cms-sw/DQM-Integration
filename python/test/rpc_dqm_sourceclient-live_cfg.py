@@ -30,9 +30,8 @@ process.rpcunpacker = cms.EDProducer("RPCUnpackingModule",
 )
 
 
-
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-
+process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
 ## process.RPCCabling = cms.ESSource("PoolDBESSource",
 ##     DBParameters = cms.PSet(
