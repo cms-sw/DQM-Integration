@@ -9,16 +9,7 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
-    SelectEvents = cms.vstring(
-        'HLT_HI*',
-        #'HLT_HICentralityVeto',
-        #'HLT_HIJet35U_Core',
-        #'HLT_HIL1DoubleMuOpen_Core',
-        #'HLT_HIMinBiasBSC_Core',
-        #'HLT_HIPhoton15_Core',
-    )
-)
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
 ### @@@@@@ Comment when running locally @@@@@@ ###
 
 
@@ -74,7 +65,7 @@ process.load("Configuration.StandardSequences.Services_cff")
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff")
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff") ## HI sequences
+process.load("Configuration.StandardSequences.Reconstruction_cff")
 process.load("Configuration.StandardSequences.EndOfProcess_cff")
 process.load("Configuration.EventContent.EventContent_cff")
 process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
@@ -107,46 +98,40 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #----------------------------
 # pixelVertexDQM Configuration
 #----------------------------
-process.pixelVertexDQM = cms.EDAnalyzer(
-    "Vx3DHLTAnalyzer",
-    vertexCollection = cms.InputTag("hiSelectedVertex"),
-    debugMode        = cms.bool(True),
-    nLumiReset       = cms.uint32(1),
-    dataFromFit      = cms.bool(True),
-    minNentries      = cms.uint32(35),
-    # If the histogram has at least "minNentries" then extract Mean and RMS,
-    # or, if we are performing the fit, the number of vertices must be greater
-    # than minNentries otherwise it waits for other nLumiReset
-    xRange           = cms.double(2.0),
-    xStep            = cms.double(0.001),
-    yRange           = cms.double(2.0),
-    yStep            = cms.double(0.001),
-    zRange           = cms.double(30.0),
-    zStep            = cms.double(0.05),
-    VxErrCorr        = cms.double(1.5),
-    fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
-
+process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
+                                        vertexCollection = cms.InputTag("pixelVertices"),
+                                        debugMode        = cms.bool(True),
+                                        nLumiReset       = cms.uint32(1),
+                                        dataFromFit      = cms.bool(True),
+                                        minNentries      = cms.uint32(35),
+                                        # If the histogram has at least "minNentries" then extract Mean and RMS,
+                                        # or, if we are performing the fit, the number of vertices must be greater
+                                        # than minNentries otherwise it waits for other nLumiReset
+                                        xRange           = cms.double(2.0),
+                                        xStep            = cms.double(0.001),
+                                        yRange           = cms.double(2.0),
+                                        yStep            = cms.double(0.001),
+                                        zRange           = cms.double(30.0),
+                                        zStep            = cms.double(0.05),
+                                        VxErrCorr        = cms.double(1.5),
+                                        fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
-    process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt")
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
 else:
-    process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
 
 #----------------------------
 # Pixel-Tracks Configuration
 #----------------------------
-process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.originRadius = 0.2
-process.hiPixel3ProtoTracks.RegionFactoryPSet.RegionPSet.fixedError = 0.5
-process.hiSelectedProtoTracks.maxD0Significance = 100
-process.hiPixelAdaptiveVertex.TkFilterParameters.maxD0Significance = 100
-process.hiPixelAdaptiveVertex.useBeamConstraint = False
-process.hiPixelAdaptiveVertex.PVSelParameters.maxDistanceToBeam = 1.0
+process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
+
 
 #----------------------------
 # Pixel-Vertices Configuration
 #----------------------------
-#process.pixelVertices.useBeamConstraint = False
-#process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
+process.pixelVertices.useBeamConstraint = False
+process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 
 
 #----------------------------
@@ -155,20 +140,18 @@ process.hiPixelAdaptiveVertex.PVSelParameters.maxDistanceToBeam = 1.0
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 
 process.phystrigger = cms.Sequence(
-    process.hltTriggerTypeFilter
-    #  process.gtDigis*
-    #  process.hltLevel1GTSeed
-)
+  process.hltTriggerTypeFilter
+#  process.gtDigis*
+#  process.hltLevel1GTSeed
+  )
 
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
     process.offlineBeamSpot*
     process.siPixelClusters*
     process.siPixelRecHits*
-    process.offlineBeamSpot*
-    process.hiPixelVertices*
-    #process.pixelTracks*
-    #process.pixelVertices*
+    process.pixelTracks*
+    process.pixelVertices*
     process.pixelVertexDQM)
 
 
