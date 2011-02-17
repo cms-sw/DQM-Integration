@@ -6,7 +6,8 @@ process = cms.Process("BeamMonitor")
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
 
 #--------------------------
 # Filters
@@ -77,6 +78,8 @@ del environ["http_proxy"]
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.Reconstruction_cff")
+## Suggest by Laura for default tracking parameter after Greg suggestions
+process.load("Configuration.GlobalRuns.reco_TLR_311X")   
 
 ## Pixelless Tracking
 process.load('RecoTracker/Configuration/RecoTrackerNotStandard_cff')
@@ -104,7 +107,8 @@ process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
 #---- replaces ----
 process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
 #---- new parameters ----
-process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
+# Was originally 
+#process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
 process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
 
 #### END OF TRACKING RECONSTRUCTION ####
@@ -141,7 +145,9 @@ process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
 #process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter*process.gtDigis*process.hltLevel1GTSeed)
 process.dqmcommon = cms.Sequence(process.dqmEnv*process.dqmSaver)
 process.tracking = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
+#process.monitor = cms.Sequence(process.dqmBeamMonitor+process.dqmBeamMonitorBx)
+# Disable bunch by bunch monitoring
+process.monitor = cms.Sequence(process.dqmBeamMonitor)
 #process.tracking_pixelless = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.ctfTracksPixelLess)
 #process.monitor_pixelless = cms.Sequence(process.dqmBeamMonitor_pixelless*process.dqmEnvPixelLess)
 process.tracking_FirstStep = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.trackerlocalreco*process.offlineBeamSpot*process.recopixelvertexing*process.firstStep)
