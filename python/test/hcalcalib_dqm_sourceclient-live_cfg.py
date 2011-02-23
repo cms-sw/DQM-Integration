@@ -110,6 +110,7 @@ process.hcalDetDiagPedestalMonitor.PedestalReferenceData = '/dqmdata/dqm/referen
 # As of 23 March 2010, cannot write extra root/html files from online DQM!
 process.hcalDetDiagLaserMonitor.OutputFilePath           = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
 process.hcalDetDiagPedestalMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
+process.hcalDetDiagNoiseMonitor.OutputFilePath        = '/nfshome0/hcaldqm/DQM_OUTPUT/DetDiag/DetDiagDatasets_Temp/'
 
 # disable output from playback server
 if playbackHCALCALIB==True:
