@@ -40,6 +40,8 @@ process.load("DQM.BeamMonitor.BeamMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
+# NB that resetEveryNLumi means the number of lumis to use for the *running
+# average*
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
 process.dqmBeamMonitorBx.fitEveryNLumi = 60
@@ -79,7 +81,7 @@ del environ["http_proxy"]
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.Reconstruction_cff")
 ## Suggest by Laura for default tracking parameter after Greg suggestions
-process.load("Configuration.GlobalRuns.reco_TLR_311X")   
+process.load("Configuration.GlobalRuns.reco_TLR_311X")
 
 ## Pixelless Tracking
 process.load('RecoTracker/Configuration/RecoTrackerNotStandard_cff')
@@ -96,7 +98,7 @@ process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimary
 process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
- 
+
 ## Skip events with HV off/beam gas scraping events
 process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
 process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
@@ -107,7 +109,7 @@ process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
 #---- replaces ----
 process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
 #---- new parameters ----
-# Was originally 
+# Was originally
 #process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.nSigmaZ = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
 process.newSeedFromTriplets.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
 
