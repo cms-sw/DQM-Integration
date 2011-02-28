@@ -375,6 +375,136 @@ csclayout(dqmitems,"CSC DQM Shifter/00 Dump/121 Segments Directions (Global Thet
 				
 csclayout(dqmitems,"CSC DQM Shifter/00 Dump/122 Segments Overal Chi^2",
 	[{'path': "CSC/CSCOfflineMonitor/Segments/hSChiSq", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])				
+# Anode RH Timing
+ 	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/123 Anode Timing ME-11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/124 Anode Timing ME-11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/125 Anode Timing ME-12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/126 Anode Timing ME-13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/127 Anode Timing ME-21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/128 Anode Timing ME-22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/129 Anode Timing ME-31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/130 Anode Timing ME-32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/131 Anode Timing ME-41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/132 Anode Timing ME-42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/133 Anode Timing ME+11a",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/134 Anode Timing ME+11b",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/135 Anode Timing ME+12",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])		
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/136 Anode Timing ME+13",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/137 Anode Timing ME+21",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/138 Anode Timing ME+22",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/139 Anode Timing ME+31",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/140 Anode Timing ME+32",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/141 Anode Timing ME+41",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/142 Anode Timing ME+42",
+	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+# Segment Timing	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/143 Segment Timing Cathod",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeCathode", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/144 Segment Timing Catod+Anode",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeCombined", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+		
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/145 Segment Timing vs distance IP",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeVsTOF", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+			
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/146 Segment Timing vs Z",
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeVsZ", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])	
+	
+# BX Monitoring	
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/147 the position of ALCT in 7 bx",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX", 'description': "Histogram shows the position of ALCT in 7 bx wide. Expected ALCT centered 99 per cent of time. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/148 the mean position of ALCT in 7 bx",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBXChamberMeans", 'description': "Histogram shows the position of ALCT in 7 bx wide filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/149 the position of ALCT in 7 bx serial",	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBXSerial", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/150 the position of ALCT in 7 bx serial1",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/151 the 2D position of ALCT in 7 bx serial1",	 
+	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/152 ALCT-CLCT Synchronisation 1",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch", 'description': "Histogram shows the position of ALCT in 7 bx wide ALCT-CLCT mach window. Expected mean about 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/153 ALCT-CLCT Synchronisation 2",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatchChamberMeans", 'description': "Histogram shows the position of ALCT in 7 bx wide ALCT-CLCT mach window filled with chamber mean. Expected mean about 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/154 ALCT-CLCT Synchronisation 3",	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatchSerial", 'description': "Histogram shows the position of ALCT in ALCT-CLCT mach window. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/155 ALCT-CLCT Synchronisation 4",
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2", 'description': "Histogram shows the position of ALCT in ALCT-CLCT mach window. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/156 ALCT-CLCT Synchronisation 5",
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])		 
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/157 L1-CLCT Pretrigger check 1",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/158 L1-CLCT Pretrigger check 2",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1AChamberMeans", 'description': "Histogram shows L1-CLCT pretrigger check at TMB filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/159 L1-CLCT Pretrigger check 3",	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1ASerial", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/160 L1-CLCT Pretrigger check 4",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/161 L1-CLCT Pretrigger check 5",	 
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])	
+	 	  		  
+				  
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/162 ALCT and CLCT check 1",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/163 ALCT and CLCT check 2",	
+  	 [{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 	
+csclayout(dqmitems,"CSC DQM Shifter/00 Dump/164 ALCT and CLCT check 3",		
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])	
 	
 ## Dump Finish			
 
@@ -545,6 +675,50 @@ csclayout(dqmitems,"CSC DQM Shifter/04 Timing/04 RecHit Timing ME+",
          None,
          None,
          None])
+	
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/05 Anode RecHit Timing ME-",
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [None,
+         None,
+         None,
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodem11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])	
+	 
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/06 Anode RecHit Timing ME+",
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep13", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep12", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep22", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep32", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep42", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep11b", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep21", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep31", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep41", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+  	[{'path': "CSC/CSCOfflineMonitor/recHits/hRHTimingAnodep11a", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+         None,
+         None,
+         None]) 
+
+csclayout(dqmitems,"CSC DQM Shifter/04 Timing/07 Segments Timing",
+  	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeCathode", 'description': "Histogram shows segment time distribution. Any significant deviation from Gaussian should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+	{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeVsTOF", 'description': "Histogram shows combined segment time distribution (average of cathode times and pruned anode times). Any significant deviation from Gaussian should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+	[{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeCombined", 'description': "Histogram shows combined segment time vs the distance from IP. Any significant fraction of out of zero events should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+	{'path': "CSC/CSCOfflineMonitor/Segments/hSTimeVsZ", 'description': "Histogram shows combined segment time vs Z axis. Any significant fraction of out of zero events should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}
+	]
+	)
 
 csclayout(dqmitems,"CSC DQM Shifter/05 Gains/01 Sum 3x3 RecHit Charge ME-",
         [None,
@@ -700,7 +874,37 @@ csclayout(dqmitems,"CSC DQM Shifter/08 Segments/05 Segment normalized Chi2 ME+",
          None,
          None,
          None])
-
+	 
+csclayout(dqmitems,"CSC DQM Shifter/09 BX Synchronisation Monitoring/01 ALCT-L1 Synchronisation",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX", 'description': "Histogram shows the position of ALCT in 7 bx wide. Expected ALCT centered 99 per cent of time. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBXChamberMeans", 'description': "Histogram shows the position of ALCT in 7 bx wide filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBXSerial", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],
+	 [None,
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])
+	 
+csclayout(dqmitems,"CSC DQM Shifter/09 BX Synchronisation Monitoring/02 ALCT-CLCT Synchronisation",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch", 'description': "Histogram shows the position of ALCT in 7 bx wide ALCT-CLCT mach window. Expected mean about 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatchChamberMeans", 'description': "Histogram shows the position of ALCT in 7 bx wide ALCT-CLCT mach window filled with chamber mean. Expected mean about 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatchSerial", 'description': "Histogram shows the position of ALCT in ALCT-CLCT mach window. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2", 'description': "Histogram shows the position of ALCT in ALCT-CLCT mach window. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],
+	 [None,
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])	
+	  
+csclayout(dqmitems,"CSC DQM Shifter/09 BX Synchronisation Monitoring/03 L1-CLCT Pretrigger check",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1AChamberMeans", 'description': "Histogram shows L1-CLCT pretrigger check at TMB filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1ASerial", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],
+	 [None,
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2DMeans", 'description': "Histogram shows the position of ALCT. Shoild be close to 3. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}])	
+	 	  
+csclayout(dqmitems,"CSC DQM Shifter/09 BX Synchronisation Monitoring/04 ALCT and CLCT check",
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTMatch2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+  	 {'path': "CSC/CSCOfflineMonitor/BXMonitor/hALCTgetBX2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB filled with chamber mean. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."}],	
+  	[{'path': "CSC/CSCOfflineMonitor/BXMonitor/hCLCTL1A2Denominator", 'description': "Histogram shows L1-CLCT pretrigger check at TMB. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#Summary_ME\">here</a>."},
+	None])	
+	 	 
 csclayout(dqmitems,"00 Data Integrity/Physics Efficiency 01",
   	[{'path': "CSC/Summary/Physics_EMU", 'description': "CSC Efficiency for Physics. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#reportSummaryMap\">here</a>."}])
 	
