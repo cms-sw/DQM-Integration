@@ -44,8 +44,8 @@ process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 # average*
 process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
-process.dqmBeamMonitorBx.fitEveryNLumi = 60
-process.dqmBeamMonitorBx.resetEveryNLumi = 60
+process.dqmBeamMonitorBx.fitEveryNLumi = 30
+process.dqmBeamMonitorBx.resetEveryNLumi = 30
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
@@ -132,7 +132,7 @@ else:
   process.dqmBeamMonitorBx.BeamFitter.AsciiFileName = '/nfshome0/yumiceva/BeamMonitorDQM/BeamFitResults_Bx.txt'
 
 #process.dqmBeamMonitor.BeamFitter.InputBeamWidth = 0.006
-process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 40
+process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 25
 
 ## TKStatus
 process.dqmTKStatus = cms.EDAnalyzer("TKStatus",
