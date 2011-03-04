@@ -16,7 +16,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_L3MuonsCosmicTracking*','HLT_RegionalCosmicTracking*'))  
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Jet*','HLT_*Cosmic*','HLT_L1*','HLT_HT*'))  
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -101,7 +101,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 # Quality Test
 #--------------------------
 process.qTester = cms.EDAnalyzer("QualityTester",
-    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_cosmic.xml'),
+    qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(5),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
     qtestOnEndLumi = cms.untracked.bool(True),
@@ -164,7 +164,7 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.DQMCommon*
                      process.SiStripClients*
                      process.SiStripSources_LocalReco*
-                     process.RecoForDQM_TrkReco_cosmic*
-                     process.SiStripSources_TrkReco_cosmic
+                     process.RecoForDQM_TrkReco*
+                     process.SiStripSources_TrkReco
 )
 
