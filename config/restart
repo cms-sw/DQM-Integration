@@ -321,7 +321,7 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/agents/qcontorl \
          $DQM_DATA/agents/register \
          $DQM_DATA/repository/data \
-         $DQM_DIR/config/OfflineRootQuoatas-${D}.py
+         $DQM_DIR/config/OfflineRootQuotas-${D}.py
        ) |& visDQMRotateLogs $DQM_DATA/agents/qcontrol-%Y%m%d%H%M.txt 86400 </dev/null & 
        
        (visDQMVerControlDaemon \
