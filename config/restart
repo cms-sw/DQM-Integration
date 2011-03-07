@@ -314,8 +314,15 @@ case $HOST:${EXTRA:-agents} in
          $DQM_DATA/repository/data \
          $DQM_DATA/ix \
          $DQM_DATA/agents/historic \
+         $DQM_DATA/agents/qcontorl \
          $DQM_DATA/agents/vcontrol \
        ) |& visDQMRotateLogs $DQM_DATA/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & 
+       (visDQMRootFileQuotaControl \
+         $DQM_DATA/agents/qcontorl \
+         $DQM_DATA/agents/register \
+         $DQM_DATA/repository/data \
+         $DQM_DIR/config/OfflineRootQuoatas-${D}.py
+       ) |& visDQMRotateLogs $DQM_DATA/agents/qcontrol-%Y%m%d%H%M.txt 86400 </dev/null & 
        
        (visDQMVerControlDaemon \
          $DQM_DATA/agents/vcontrol \
