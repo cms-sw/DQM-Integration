@@ -16,6 +16,10 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 
+############### Scaler Producer #################
+process.load("EventFilter.ScalersRawToDigi.ScalersRawToDigi_cfi")
+
+
 ################# Geometry  ######################
 process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
 process.load("Geometry.RPCGeometry.rpcGeometry_cfi")
@@ -114,7 +118,7 @@ process.rpcChamberQuality.OfflineDQM = cms.untracked.bool(False)
                              
 
 ################  Sequences ############################
-process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo)
+process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.scalersRawToDigi*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo)
 process.rpcClient = cms.Sequence(process.qTesterRPC*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcDigi*process.rpcClient)
 
