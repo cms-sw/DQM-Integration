@@ -74,8 +74,9 @@ version=os.getenv("CMSSW_VERSION").split("_")
 version1=string.atoi(version[1])
 version2=string.atoi(version[2])
 
-if version1>=3 and version2>=9:
-        process.hbhereco = process.hbheprereco.clone()
+# Use prereco for all releases >= 3_9_X
+if (version1>3) or (version1==3 and version2>=9):
+    process.hbhereco = process.hbheprereco.clone()
         
 # Allow all rechits in mark&pass events
 process.hfreco.dropZSmarkedPassed=False
