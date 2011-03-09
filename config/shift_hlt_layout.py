@@ -2,6 +2,7 @@ def hltlayout(i, p, *rows): i["00 Shift/HLT/" + p] = DQMItem(layout=rows)
   
 
 hltlayout(dqmitems,"01 HLT Stream A Composition", [{'path': "HLT/TrigResults/PathsSummary/HLT LS/HLT_A_LS", 'description': "Shows total rate of Stream A (top Y bin) and the PD's in stream A. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"02 HLT Stream A Composition", [{'path': "HLT/TrigResults/PathsSummary/HLT Correlations/HLT_A_Pass_Normalized_Any", 'description': "Shows relative fraction of the PD's in stream A. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 
 def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows)
