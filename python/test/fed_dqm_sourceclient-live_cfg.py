@@ -29,6 +29,7 @@ process.load("DQM.TrigXMonitorClient.L1TScalersClient_cfi")
 
 # FED Integrity Client
 process.load("DQMServices.Components.DQMFEDIntegrityClient_cff")
+process.dqmFEDIntegrity.fedFolderName = cms.untracked.string("FEDIntegrity_EvF")
 
 process.pDQM = cms.Path(process.l1tsClient+
                         process.hltsClient+
