@@ -127,8 +127,8 @@ process.eventFilter = cms.EDFilter("SimpleEventFilter",
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
-APVPhases = cms.EDProducer("APVCyclePhaseProducerFromL1TS",
+#process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
+process.APVPhases = cms.EDProducer("APVCyclePhaseProducerFromL1TS",
                            defaultPartitionNames = cms.vstring("TI",
                                                    "TO",
                                                    "TP",
