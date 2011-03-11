@@ -9,7 +9,7 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_L1TrackerCosmics_v2','HLT_Jet*'))
 ### @@@@@@ Comment when running locally @@@@@@ ###
 
 
@@ -49,15 +49,16 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 #################################
 ### To use offline alignments ###
 #################################
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
+#process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
 # Query the DB to get the current Global Tag
-import commands
-from os import environ
-environ["http_proxy"] = "http://cmsproxy.cms:3128"
-dasinfo = eval(commands.getoutput("wget -qO- 'http://vocms115.cern.ch:8304/tier0/express_config?run=&stream=Express'"))
-process.GlobalTag.globaltag = dasinfo[0]['global_tag']
-del environ["http_proxy"]
-process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
+#import commands
+#from os import environ
+#environ["http_proxy"] = "http://cmsproxy.cms:3128"
+#dasinfo = eval(commands.getoutput("wget -qO- 'http://vocms115.cern.ch:8304/tier0/express_config?run=&stream=Express'"))
+#process.GlobalTag.globaltag = dasinfo[0]['global_tag']
+#del environ["http_proxy"]
+#process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
+
 
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("FWCore.MessageService.MessageLogger_cfi")
