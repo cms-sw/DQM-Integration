@@ -104,7 +104,7 @@ process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                         debugMode        = cms.bool(True),
                                         nLumiReset       = cms.uint32(1),
                                         dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.uint32(35),
+                                        minNentries      = cms.uint32(20),
                                         # If the histogram has at least "minNentries" then extract Mean and RMS,
                                         # or, if we are performing the fit, the number of vertices must be greater
                                         # than minNentries otherwise it waits for other nLumiReset
@@ -117,7 +117,7 @@ process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                         VxErrCorr        = cms.double(1.5),
                                         fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
 if process.dqmSaver.producer.value() is "Playback":
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
+  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt")
 else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
