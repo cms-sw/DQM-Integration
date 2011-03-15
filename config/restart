@@ -125,7 +125,7 @@ cd $DQM_DIR
 newline=
 if [ $ACT = status ]; then
   case ${EXTRA:-agents} in *agents* )
-    statproc "File agents" "visDQM.*Daemon|visDQMIndex|zip|OnlineSync|createOnlineInfo" ;;
+    statproc "File agents" "visDQM.*Daemon|visDQMRootFileQuotaControl|visDQMIndex|zip|OnlineSync|createOnlineInfo" ;;
   esac
 
   case ${EXTRA:-migration} in *migration* )
@@ -160,7 +160,7 @@ fi
 newline=
 case ${EXTRA:-agents} in *agents* )
   # NB: leave visDQMIndex and zip processes alone
-  killproc "file agents" "visDQM.*Daemon|visDQMZip|OnlineSync|createOnlineInfo" ;;
+  killproc "file agents" "visDQM.*Daemon|visDQMRootFileQuotaControl|visDQMZip|OnlineSync|createOnlineInfo" ;;
 esac
 
 case ${EXTRA:-migration} in *migration* )
@@ -331,8 +331,8 @@ case $HOST:${EXTRA:-agents} in
        
        if [[ $D == offline ]]; then
          (/dqmdata/fm-scripts/visDQMSyncDaemon   \
-           --dirs OnlineData,OfflineData/HIRun2010/StreamExpress,RelVal,OfflineData/HIRun2010/HICorePhysics,OfflineData/HIRun2010/HIAllPhysics/ \
-           --dirs_quotas=30G,20G,15G,15G,50G 130G \
+           --dirs OnlineData,OfflineData/Run2011/StreamExpress,OfflineData/Run2011/Commissioning,OfflineData/Run2011/Cosmics,OfflineData/Run2011/MinimumBias \
+           --dirs_quotas=30G,25G,25G,25G,25G 130G \
            $DQM_DATA/repository/data \
            /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
          ) |& visDQMRotateLogs $DQM_DATA/agents/syncdn-%Y%m%d%H%M.txt 2592000 </dev/null & 
