@@ -31,9 +31,9 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracki
                  'SiStrip/Layouts/09 - Tracks (Cosmic Tracking)')                 
                
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStripLAS', '^SiStripLAS/',
-                 'SiStripLAS/Layouts/00 - SiStripLAS TIB & TOB Summary',                 
-                 'SiStripLAS/Layouts/01 - SiStripLAS TEC+ Summary',                 
-                 'SiStripLAS/Layouts/02 - SiStripLAS TEC- Summary')                 
+                 'SiStripLAS/Layouts/00 - SiStripLAS TIB&TOB',                 
+                 'SiStripLAS/Layouts/01 - SiStripLAS TEC+',                 
+                 'SiStripLAS/Layouts/02 - SiStripLAS TEC-')                 
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/00 Top Physics Efficiency',
