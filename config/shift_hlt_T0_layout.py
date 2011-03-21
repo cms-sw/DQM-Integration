@@ -129,12 +129,6 @@ def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows
 hltlayout(dqmitems,"N of HLT_L1MuOpen_AntiBPTX_v2 muons" ,
   	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt__NOn", 'description': "Multiplicity of HLT muons passing HLT_L1Mu path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"RECO muons Et",
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt__offEtOnOff", 'description': "Et of the RECO muons matched (eta-phi) with the triggering HLT_L1MuOpen_AntiBPTX_v2 muons.   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
-  
-hltlayout(dqmitems,"RECO muons eta-phi",
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt__offEtaoffPhiOff", 'description': "X=eta and Y=phi for RECO muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
-  
 hltlayout(dqmitems,"HLT_L1MuOpen_AntiBPTX_v2 & L1 muons eta-phi",
   	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt__l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
