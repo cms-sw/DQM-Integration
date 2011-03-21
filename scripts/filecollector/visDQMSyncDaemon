@@ -45,7 +45,7 @@ from subprocess import call
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 
 # --------------------------------------------------------------------
-WAITTIME      = 3600 * 4
+WAITTIME      = 60
 RENEWLIFETIME = 3600 * 24 * 365 
 WATCHDIRS     = []
 INDEPQUEUES   = []
@@ -182,8 +182,10 @@ except (GetoptError, KeyError , ValueError ) ,e:
   sys.exit(0)
 # --------------------------------------------------------------------
 # Process files forever.
-while True:  
-  try: 
+loopTimes = 0
+while loopTimes < 2:  
+  try:
+    loopTimes += 1
     currentFileList=[]
     currentFileList = getFileList(DESTDIR)
     newFileList=[]
@@ -215,6 +217,8 @@ while True:
         except:
           pass
     logme('INFO: Finished sync, added %d files and removed %d files', len(addFileList),len(removeFileList))
+    loopTimes += 1
+    continue
           
   except KeyboardInterrupt, e:
     sys.exit(0)
@@ -222,14 +226,15 @@ while True:
   except Exception, e:
     logme('ERROR: %s', e)
     print_exc()
-    call(["klist"])
+    
+    #call(["klist"])
   
-  if (currTime + 7 * 3600) < time.time():
-    currTime = time.time()
-    rValue = call(["kinit","-R"])
-    rValue += call(["aklog"])
-    if rValue != 0:
-      call(["klist"])
-      logme('ERROR: Could not renew kerberos or afs ticket')
-      sys.exit(1)
+#  if (currTime + 7 * 3600) < time.time():
+#    currTime = time.time()
+#    rValue = call(["kinit","-R"])
+#    rValue += call(["aklog"])
+#    if rValue != 0:
+#      call(["klist"])
+#      logme('ERROR: Could not renew kerberos or afs ticket')
+#      sys.exit(1)
   time.sleep(WAITTIME)
