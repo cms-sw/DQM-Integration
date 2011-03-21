@@ -330,13 +330,6 @@ case $HOST:${EXTRA:-agents} in
        ) |& visDQMRotateLogs $DQM_DATA/agents/vcontrol-%Y%m%d%H%M.txt 86400 </dev/null &
        
        if [[ $D == offline ]]; then
-         (/dqmdata/fm-scripts/visDQMSyncDaemon   \
-           --dirs OnlineData,OfflineData/Run2011/StreamExpress,OfflineData/Run2011/Commissioning,OfflineData/Run2011/Cosmics,OfflineData/Run2011/MinimumBias \
-           --dirs_quotas=30G,25G,25G,25G,25G 130G \
-           $DQM_DATA/repository/data \
-           /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/data \
-         ) |& visDQMRotateLogs $DQM_DATA/agents/syncdn-%Y%m%d%H%M.txt 2592000 </dev/null & 
-       
          (/dqmdata/fm-scripts/OnlineSync.sh \
          ) |& visDQMRotateLogs $DQM_DATA/agents/onsync-%Y%m%d%H%M.txt 86400 & 
          
