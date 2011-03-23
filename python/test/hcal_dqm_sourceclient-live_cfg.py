@@ -130,12 +130,23 @@ if (HEAVYION):
                                               ]
 
 else:
-    process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF"]
+    process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF",
+                                           "HLT_L1Tech_BSC_minBias_treshold1_v2"]
     
     process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
                                               "HLT_L1Tech_BSC_minBias",
-                                              "HLT_L1Tech_BSC_minBias_OR"
+                                              "HLT_L1Tech_BSC_minBias_OR",
+                                              "HLT_L1Tech_BSC_minBias_threshold1_v2",
+                                              "HLT_ZeroBias_v1"
                                               ]
+    
+    process.hcalDigiMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
+                                            "HLT_L1Tech_BSC_minBias",
+                                            "HLT_L1Tech_BSC_minBias_OR",
+                                            "HLT_L1Tech_BSC_minBias_threshold1_v2",
+                                            "HLT_ZeroBias_v1"
+                                            ]
+
 
 #print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
