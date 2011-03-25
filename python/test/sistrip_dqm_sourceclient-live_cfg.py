@@ -127,17 +127,7 @@ process.eventFilter = cms.EDFilter("SimpleEventFilter",
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-#process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
-process.APVPhases = cms.EDProducer("APVCyclePhaseProducerFromL1TS",
-                           defaultPartitionNames = cms.vstring("TI",
-                                                   "TO",
-                                                   "TP",
-                                                   "TM"
-                                                    ),
-                           defaultPhases = cms.vint32(60,60,60,60),
-                           magicOffset = cms.untracked.int32(258),
-                           l1TSCollection = cms.InputTag("scalersRawToDigi"),
-                           )
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts2011_cfi")
 
 #--------------------------
 # Filters
