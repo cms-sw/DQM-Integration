@@ -85,7 +85,7 @@ trigvalFVPho(dqmitems,"HLT_Photon15_L1R: Et of RECO Photon objects",
 
 def hltCollLayout(i, p, *rows): i["00 Shift/HLT/Collisions/" + p] = DQMItem(layout=rows)
 
-hltCollLayout(dqmitems,"Eff of HLT_Photon30_Cleaned_L1R L1 seed to RECO",
+hltCollLayout(dqmitems,"Eff of HLT_Photon75_Cleaned_L1R L1 seed to RECO",
 [{'path': "HLT/FourVector/paths/HLT_Photon75_CaloIdVL_IsoL_v1/custom-eff/HLT_Photon75_CaloIdVL_IsoL_v1_wrt__offEt_Eff_L1ToOff", 'description':"Efficiency of L1 seed to RECO for path HLT_Photon75_CaloIdVL_IsoL_v1. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of  HLT_Photon75_CaloIdVL_IsoL_v1 L1 seed wrt RECO in eta-phi RECO space",
