@@ -118,8 +118,8 @@ hltCollLayout(dqmitems,"Eff of HLT_Mu20_v1 to RECO",
 hltCollLayout(dqmitems,"Eff of HLT_Ele45_CaloIdVT_TrkIdT_v2 L1 seed to RECO",
 [{'path': "HLT/FourVector/paths/HLT_Ele45_CaloIdVT_TrkIdT_v2/custom-eff/HLT_Ele45_CaloIdVT_TrkIdT_v2_wrt_HLT_Mu_offEt_Eff_L1ToOff", 'description':"Efficiency of L1 seed to RECO for path HLT_Ele45_CaloIdVT_TrkIdT_v2. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
-hltCollLayout(dqmitems,"Eff of HLT_Ele45_CaloIdVT_TrkIdT_v1 L1 seed wrt RECO in eta-phi RECO space",
-[{'path': "HLT/FourVector/paths/HLT_Ele45_CaloIdVT_TrkIdT_v1/custom-eff/HLT_Ele45_CaloIdVT_TrkIdT_v1_wrt_HLT_Mu_offEtaoffPhi_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO above 2 times HLT threshold for path HLT_Ele45_CaloIdVT_TrkIdT_v1 (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltCollLayout(dqmitems,"Eff of HLT_Ele45_CaloIdVT_TrkIdT_v2 L1 seed wrt RECO in eta-phi RECO space",
+[{'path': "HLT/FourVector/paths/HLT_Ele45_CaloIdVT_TrkIdT_v2/custom-eff/HLT_Ele45_CaloIdVT_TrkIdT_v2_wrt_HLT_Mu_offEtaoffPhi_Eff_L1ToOff", 'description':"Efficiency of L1 to RECO above 2 times HLT threshold for path HLT_Ele45_CaloIdVT_TrkIdT_v2 (eta-phi).   For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 hltCollLayout(dqmitems,"Eff of HLT_Ele45_CaloIdVT_TrkIdT_v2 to its RECO",
 [{'path': "HLT/FourVector/paths/HLT_Ele45_CaloIdVT_TrkIdT_v2/custom-eff/HLT_Ele45_CaloIdVT_TrkIdT_v2_wrt_HLT_Mu_offEt_Eff_OnToOff", 'description':"Efficiency of HLT to RECO for path HLT_Ele45_CaloIdVT_TrkIdT_v2. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
