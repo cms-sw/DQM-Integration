@@ -120,6 +120,10 @@ if not subsystem.endswith("/"):
 process.hcalMonitor.subSystemFolder=subsystem
 SetTaskParams(process,"subSystemFolder",subsystem)
 process.hcalClient.subSystemFolder=subsystem
+
+# special (hopefully temporary) parameter to fix crash in endJob of HcalDQM
+process.hcalClient.online=True
+
 #print "BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 if (HEAVYION):
     process.hcalRecHitMonitor.HcalHLTBits=["HLT_HIActivityHF_Coincidence3",
