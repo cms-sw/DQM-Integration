@@ -36,7 +36,7 @@ process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = 
 if (HEAVYION):
     process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
     
-process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
+#process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 
 
 #----------------------------
