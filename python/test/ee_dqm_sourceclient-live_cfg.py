@@ -692,9 +692,9 @@ if (liveCMS == 1) :
   process.ecalEndcapMonitorClient.dbUpdateTime = 120
 
 if (liveCMS == 1) | (playCMS == 1) :
-  process.EcalBarrelMonitorClient.verbose = False
+  process.ecalBarrelMonitorClient.verbose = False
 
-  process.EcalEndcapMonitorClient.verbose = False
+  process.ecalEndcapMonitorClient.verbose = False
 
 if (globalDAQ == 1) | (liveECAL == 1) :
   process.DQMStore.referenceFileName = '/data/ecalod-disk01/dqm-data/reference/REFERENCE.root'
