@@ -126,7 +126,8 @@ SetTaskParams(process,"subSystemFolder",subsystem)
 process.hcalClient.subSystemFolder=subsystem
 
 # special (hopefully temporary) parameter to fix crash in endJob of HcalDQM
-process.hcalClient.online=True
+# 18 April 2011:  Only enable the following line if hcalClient is crashing:
+#process.hcalClient.online=True
 
 
 #-----------------------------
