@@ -30,9 +30,6 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "SiStripLAS"
-process.dqmSaver.producer = "Playback"
-process.dqmSaver.saveByTime = 1 # 1. if running online
-process.dqmSaver.saveByMinute = 16
 #----------------------------
 # DQM Alignment Software
 #----------------------------
