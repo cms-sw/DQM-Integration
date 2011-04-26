@@ -142,7 +142,7 @@ else:
                                               "HLT_L1Tech_BSC_minBias",
                                               "HLT_L1Tech_BSC_minBias_OR",
                                               "HLT_L1Tech_BSC_minBias_threshold1",
-                                              "HLT_ZeroBias_v1"
+                                              "HLT_ZeroBias"
                                               ]
     
     process.hcalDigiMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
