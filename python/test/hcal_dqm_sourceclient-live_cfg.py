@@ -136,20 +136,20 @@ if (HEAVYION):
 
 else:
     process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF",
-                                           "HLT_L1Tech_BSC_minBias_treshold1_v2"]
+                                           "HLT_L1Tech_BSC_minBias_treshold1"]
     
     process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
                                               "HLT_L1Tech_BSC_minBias",
                                               "HLT_L1Tech_BSC_minBias_OR",
-                                              "HLT_L1Tech_BSC_minBias_threshold1_v2",
+                                              "HLT_L1Tech_BSC_minBias_threshold1",
                                               "HLT_ZeroBias_v1"
                                               ]
     
     process.hcalDigiMonitor.MinBiasHLTBits=["HLT_MinBiasPixel_SingleTrack",
                                             "HLT_L1Tech_BSC_minBias",
                                             "HLT_L1Tech_BSC_minBias_OR",
-                                            "HLT_L1Tech_BSC_minBias_threshold1_v2",
-                                            "HLT_ZeroBias_v1"
+                                            "HLT_L1Tech_BSC_minBias_threshold1",
+                                            "HLT_ZeroBias"
                                             ]
 
 
@@ -170,6 +170,10 @@ process.hcalClient.databaseUpdateTime=60
 # Set values higher at startup  (set back from 0.25 to 0.05 on 15 April 2010)
 process.hcalClient.DeadCell_minerrorrate=0.05
 process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
+
+# Disable the HFLumi from affecting HF Summary Value
+process.hcalClient.Beam_minerrorrate=cms.untracked.double(2.0)
+
 # Increase hotcellmonitor thresholds for HI runs
 if (HEAVYION):
     process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
