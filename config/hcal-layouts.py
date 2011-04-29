@@ -9,7 +9,7 @@ if __name__=="__main__":
 def hcallayout(i, p, *rows): i["Hcal/Layouts/" + p] = DQMItem(layout=rows)
 
 hcallayout(dqmitems, "01 HCAL Summaries",
-           [{ 'path':"Hcal/EventInfo/reportSummaryMapShift",
+           [{ 'path':"Hcal/EventInfo/reportSummaryMap",
              'description':"This shows the fraction of bad cells in each subdetector.  All subdetectors should appear green.  Values should all be above 98%."}]
            )
 
