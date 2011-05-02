@@ -8,6 +8,6 @@ errorlayout(dqmitems, "01 - HO Warning Plots",
     'description': "This plot represents the number of HO dead Cells as a function of the LumiSection.",'draw':{'withref':"no"}}])
 errorlayout(dqmitems, "02 - SiStrip FED errors",
  [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/nFEDErrors",
-    'description': "# of FEDs in error per event - Call Tracker DOC 165503 if the mean value is above 10 ",'draw':{'withref':"no"}}])
+    'description': "# of FEDs in error per event - Call Tracker DOC 165503 if the mean value is above 10 - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftSiStrip>DQMShiftOnlineSiStrip</a>",'draw':{'withref':"no"}}])
 
 
