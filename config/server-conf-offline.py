@@ -12,7 +12,7 @@ LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
-modules = ("GuiDQM",)
+modules = ("Monitoring.DQM.GUI",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8080
