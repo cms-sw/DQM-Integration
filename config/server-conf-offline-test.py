@@ -10,7 +10,7 @@ LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 #LAYOUTS += ["%s/%s_-layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/%s_T0_layouts.py" % (CONFIGDIR, x) for x in
-           ("castor","csc","pixel","sistrip","hcal", "hcalcalib", "eb", "ee","es", "rpc")]
+           ("btag","castor","csc","pixel","sistrip","hcal", "hcalcalib", "eb", "ee","es", "rpc")]
 LAYOUTS += ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
            ("tkal",)]
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
