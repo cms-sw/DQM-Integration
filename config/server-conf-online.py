@@ -30,7 +30,7 @@ else:
   COLLHOST = 'dqm-c2d07-01'
 
 # Extension modules and environment to install.
-modules = ("GuiDQM",)
+modules = ("Monitoring.DQM.GUI",)
 envsetup = "export QUIET_ASSERT=a"
 
 # Server configuration.
