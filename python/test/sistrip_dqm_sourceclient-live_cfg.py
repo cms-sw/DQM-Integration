@@ -79,7 +79,7 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 #process.siStripDigis.UnpackBadChannels = cms.bool(True)
 process.load("Configuration.StandardSequences.Reconstruction_cff")
-process.load("Configuration.GlobalRuns.reco_TLR_311X")
+process.load("Configuration.GlobalRuns.reco_TLR_42X")
 
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
@@ -104,7 +104,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 #--------------------------
 process.qTester = cms.EDAnalyzer("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
-    prescaleFactor = cms.untracked.int32(5),                               
+    prescaleFactor = cms.untracked.int32(3),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
