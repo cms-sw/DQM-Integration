@@ -16,7 +16,9 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Jet*','HLT_*Cosmic*','HLT_L1*','HLT_HT*','HLT_MinBias_Part*','HLT_Physics_v1')) 
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*')) 
+
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
