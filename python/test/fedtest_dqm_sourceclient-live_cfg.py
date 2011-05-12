@@ -46,6 +46,7 @@ process.cscDQMEvF.EventProcessor.FOLDER_EMU = cms.untracked.string('CSC/FEDInteg
 # DT DQM sequence
 process.load("DQM.DTMonitorModule.dtDataIntegrityTask_EvF_cff")
 process.DTDataIntegrityTask.processingMode = "SM"
+process.DTDataIntegrityTask.fedIntegrityFolder = "DT/FEDIntegrity_SM"
 process.dtunpacker.inputLabel = cms.InputTag('source')
 process.dtunpacker.fedbyType = cms.bool(True)
 process.dtunpacker.useStandardFEDid = cms.bool(True)
