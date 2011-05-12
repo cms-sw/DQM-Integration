@@ -46,6 +46,16 @@ process.dqmBeamMonitor.resetEveryNLumi = 5
 process.dqmBeamMonitor.resetPVEveryNLumi = 5
 process.dqmBeamMonitorBx.fitEveryNLumi = 30
 process.dqmBeamMonitorBx.resetEveryNLumi = 30
+
+
+#TriggerName for selecting pv for DIP publication, NO wildcard needed here
+#it will pick all triggers which has these strings in theri name
+process.dqmBeamMonitor.jetTrigger  = cms.untracked.vstring("HLT_ZeroBias_v",
+                                                           "HLT_Jet300_v",
+                                                           "HLT_QuadJet60_v")
+
+process.dqmBeamMonitor.hltResults = cms.InputTag("TriggerResults","","HLT")
+
 ####  SETUP TRACKING RECONSTRUCTION ####
 
 #-------------------------------------------------
