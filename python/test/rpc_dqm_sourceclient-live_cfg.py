@@ -99,5 +99,5 @@ process.rpcChamberQuality.MinimumRPCEvents  = cms.untracked.int32(10000)
 ###############  Sequences ######################
 process.rpcSource = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.scalersRawToDigi*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo*process.qTesterRPC)
 process.rpcClient = cms.Sequence(process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
-process.p = cms.Path(process.rpcSource*process.rpcClient)
-process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcDigi*process.rpcClient)
+#process.p = cms.Path(process.rpcSource*process.rpcClient)
+process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcSource*process.rpcClient)
