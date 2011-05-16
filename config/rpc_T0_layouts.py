@@ -26,7 +26,7 @@ rpclayout(dqmitems, "01-Fatal_FED_Errors",
 
 #RPC Events
 rpclayout(dqmitems, "02-RPC_Events",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCEvents", 'description': rpcevents + rpclink }])
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCEvents", 'description': rpcevents + rpclink }])
 ##-------------------
 
 #RPC Events
@@ -38,46 +38,46 @@ rpclayout(dqmitems, "03-RPC_HV_Status",
 #Roll Quality
 
 rpclayout(dqmitems, "04-Barrel_TOP_summary_Distribution",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel2", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel1", 'description': top + rpclink  }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Wheel2", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Wheel1", 'description': top + rpclink  }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel0", 'description': top + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel-1", 'description': top + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Wheel-2", 'description': top + rpclink  }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Wheel0", 'description': top + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Wheel-1", 'description': top + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Wheel-2", 'description': top + rpclink  }]
           )
 
 
 
 rpclayout(dqmitems, "05-Barrel_TOP_Summary",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel2", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel1", 'description': top + rpclink }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel2", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel1", 'description': top + rpclink }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel0", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel-1", 'description': top + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel-2", 'description': top + rpclink}]
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel0", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel-1", 'description': top + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Roll_vs_Sector_Wheel-2", 'description': top + rpclink}]
           )
 
 
 rpclayout(dqmitems, "06-EndCap_TOP_Summary_Distribution",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk3", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk2", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk1", 'description': top + rpclink }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk3", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk2", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk1", 'description': top + rpclink }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk-3", 'description': top + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk-2", 'description': top + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Distribution_Disk-1", 'description': top + rpclink}]
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk-3", 'description': top + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk-2", 'description': top + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk-1", 'description': top + rpclink}]
           )
 
 
 
 rpclayout(dqmitems, "07-EndCap_TOP_Summary",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk3", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk2", 'description': top + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk1", 'description': top + rpclink }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk3", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk2", 'description': top + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk1", 'description': top + rpclink }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-3", 'description': top + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-2", 'description': top + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-1", 'description': top + rpclink}]
+          [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-3", 'description': top + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-2", 'description': top + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Ring_vs_Segment_Disk-1", 'description': top + rpclink}]
           )  
 
 
@@ -86,32 +86,32 @@ rpclayout(dqmitems, "07-EndCap_TOP_Summary",
 #Occupancy
 
 rpclayout(dqmitems, "08-Barrel_Occupancy",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink }]
           )
 
 rpclayout(dqmitems, "09-Endcap_Occupancy",
-          [{'path': "RPC/RecHits/SummaryHistograms/Occupancy_for_EndcapNegative", 'description': occupancy + rpclink },
-           {'path': "RPC/RecHits/SummaryHistograms/Occupancy_for_EndcapPositive", 'description': occupancy + rpclink }]
+          [{'path': "RPC/Noise/SummaryHistograms/Occupancy_for_EndcapNegative", 'description': occupancy + rpclink },
+           {'path': "RPC/Noise/SummaryHistograms/Occupancy_for_EndcapPositive", 'description': occupancy + rpclink }]
           )
 
 
 rpclayout(dqmitems, "10-Barrel_1DOccupancy",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Wheel_2", 'description': occupancy + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Wheel_1", 'description': occupancy + rpclink  }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Wheel_2", 'description': occupancy + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Wheel_1", 'description': occupancy + rpclink  }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Wheel_0", 'description': occupancy + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Wheel_-1", 'description': occupancy + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Wheel_-2", 'description': occupancy + rpclink  }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Wheel_0", 'description': occupancy + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Wheel_-1", 'description': occupancy + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Wheel_-2", 'description': occupancy + rpclink  }]
           )
 
 rpclayout(dqmitems, "11-EndCap_1DOccupancy",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_3", 'description': occupancy + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_2", 'description': occupancy + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_1", 'description': occupancy + rpclink }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_3", 'description': occupancy + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_2", 'description': occupancy + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_1", 'description': occupancy + rpclink }],
           
-          [{ 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_-3", 'description':occupancy  + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_-2", 'description':occupancy  + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/1DOccupancy_Disk_-1", 'description':occupancy  + rpclink}]
+          [{ 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_-3", 'description':occupancy  + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_-2", 'description':occupancy  + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/1DOccupancy_Disk_-1", 'description':occupancy  + rpclink}]
           )
 
 ##------------------------
@@ -120,12 +120,12 @@ rpclayout(dqmitems, "11-EndCap_1DOccupancy",
 
 ##Number Digi
 rpclayout(dqmitems, "12-Barrel_Number_Of_Digi",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_for_Barrel", 'description': nrofdigi + rpclink }])
+          [{ 'path': "RPC/Noise/SummaryHistograms/NumberOfDigi_for_Barrel", 'description': nrofdigi + rpclink }])
 
 
 rpclayout(dqmitems, "13-Endcap_Number_Of_Digi",
-          [ { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_for_EndcapNegative", 'description': nrofdigi + rpclink },
-            { 'path': "RPC/RecHits/SummaryHistograms/NumberOfDigi_for_EndcapPositive", 'description': nrofdigi + rpclink  }]
+          [ { 'path': "RPC/Noise/SummaryHistograms/NumberOfDigi_for_EndcapNegative", 'description': nrofdigi + rpclink },
+            { 'path': "RPC/Noise/SummaryHistograms/NumberOfDigi_for_EndcapPositive", 'description': nrofdigi + rpclink  }]
           )
 ##-----------------------
 
@@ -134,19 +134,19 @@ rpclayout(dqmitems, "13-Endcap_Number_Of_Digi",
 
 
 rpclayout(dqmitems, "14-Barrel_Number_Of_Clusters",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/NumberOfClusters_for_Barrel", 'description': nrofcl + rpclink }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/NumberOfClusters_for_Barrel", 'description': nrofcl + rpclink }]
           )
 
 
 rpclayout(dqmitems, "15-Endcap_Number_Of_Clusters",
-          [ { 'path': "RPC/RecHits/SummaryHistograms/NumberOfClusters_for_EndcapNegative", 'description': nrofcl + rpclink },
-            { 'path': "RPC/RecHits/SummaryHistograms/NumberOfClusters_for_EndcapPositive", 'description': nrofcl + rpclink  }]
+          [ { 'path': "RPC/Noise/SummaryHistograms/NumberOfClusters_for_EndcapNegative", 'description': nrofcl + rpclink },
+            { 'path': "RPC/Noise/SummaryHistograms/NumberOfClusters_for_EndcapPositive", 'description': nrofcl + rpclink  }]
           )
 ##-----------------------
 
 ##Number Cluster
 rpclayout(dqmitems, "16-RPC_Cluster_Size",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/ClusterSize_for_BarrelandEndcap", 'description': clsize + rpclink }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/ClusterSize_for_BarrelandEndcap", 'description': clsize + rpclink }]
           )
 ##-----------------------
 
@@ -154,23 +154,23 @@ rpclayout(dqmitems, "16-RPC_Cluster_Size",
 
 ##BX
 rpclayout(dqmitems, "17-Barrel_Bunch_Crossing",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_2", 'description': bx + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_1", 'description': bx + rpclink  }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Wheel_2", 'description': bx + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Wheel_1", 'description': bx + rpclink  }],
 
-          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_0", 'description': bx + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_-1", 'description': bx + rpclink  },
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Wheel_-2", 'description': bx + rpclink  }]
+          [{ 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Wheel_0", 'description': bx + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Wheel_-1", 'description': bx + rpclink  },
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Wheel_-2", 'description': bx + rpclink  }]
           )
 
 
 rpclayout(dqmitems, "18-EndCap_Bunch_Crossing",
-          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_3", 'description': bx + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_2", 'description': bx + rpclink },
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_1", 'description': bx + rpclink }],
+          [{ 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_3", 'description': bx + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_2", 'description': bx + rpclink },
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_1", 'description': bx + rpclink }],
           
-          [{ 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-3", 'description': bx + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-2", 'description': bx + rpclink},
-           { 'path': "RPC/RecHits/SummaryHistograms/BxDistribution_Disk_-1", 'description': bx  + rpclink}]
+          [{ 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_-3", 'description': bx + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_-2", 'description': bx + rpclink},
+           { 'path': "RPC/Noise/SummaryHistograms/BxDistribution_Disk_-1", 'description': bx  + rpclink}]
           )
 ##------------------------
 
