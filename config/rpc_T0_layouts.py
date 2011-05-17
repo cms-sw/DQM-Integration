@@ -26,7 +26,7 @@ rpclayout(dqmitems, "01-Fatal_FED_Errors",
 
 #RPC Events
 rpclayout(dqmitems, "02-RPC_Events",
-          [{ 'path': "RPC/Noise/SummaryHistograms/RPCEvents", 'description': rpcevents + rpclink }])
+          [{ 'path': "RPC/Noise/RPCEvents", 'description': rpcevents + rpclink }])
 ##-------------------
 
 #RPC Events
@@ -90,8 +90,8 @@ rpclayout(dqmitems, "08-Barrel_Occupancy",
           )
 
 rpclayout(dqmitems, "09-Endcap_Occupancy",
-          [{'path': "RPC/Noise/SummaryHistograms/Occupancy_for_EndcapNegative", 'description': occupancy + rpclink },
-           {'path': "RPC/Noise/SummaryHistograms/Occupancy_for_EndcapPositive", 'description': occupancy + rpclink }]
+          [{'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap-", 'description': occupancy + rpclink },
+           {'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap+", 'description': occupancy + rpclink }]
           )
 
 
