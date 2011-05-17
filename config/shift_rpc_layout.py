@@ -12,11 +12,11 @@ occupancy = "Occupancy per sector"
 
 #FED Fatal
 shiftrpclayout(dqmitems, "01-Fatal_FED_Errors",
-               [{ 'path': "RPC/FEDIntegrity/FEDFatal", 'description': fed + rpclink }])
+               [{ 'path': "RPC/FEDIntegrity_EvF/FEDFatal", 'description': fed + rpclink }])
 
 #RPC Events
 shiftrpclayout(dqmitems, "02-RPC_Events",
-               [{ 'path': "RPC/AllHits/SummaryHistograms/RPCEvents", 'description': rpcevents + rpclink }])
+               [{ 'path': "RPC/AllHits/RPCEvents", 'description': rpcevents + rpclink }])
 
 
 shiftrpclayout(dqmitems, "03-Quality_State_Overview",
@@ -25,5 +25,5 @@ shiftrpclayout(dqmitems, "03-Quality_State_Overview",
 
 shiftrpclayout(dqmitems, "04-RPC_Occupancy",
                [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink  }],
-               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_EndcapNegative", 'description': occupancy + rpclink  },
-                { 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_EndcapPositive", 'description':  occupancy + rpclink }])
+               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap-", 'description': occupancy + rpclink  },
+                { 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap+", 'description':  occupancy + rpclink }])
