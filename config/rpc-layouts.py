@@ -26,11 +26,6 @@ rpclayout(dqmitems, "02-RPC_Events",
           [{ 'path': "RPC/AllHits/RPCEvents", 'description': rpcevents + rpclink }])
 ##-------------------
 
-#RPC Events
-rpclayout(dqmitems, "03-RPC_HV_Status",
-          [{ 'path': "RPC/DCSInfo/rpcHVStatus", 'description': rpcevents + rpclink }])
-##-------------------
-
 
 #Roll Quality
 
