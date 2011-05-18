@@ -61,10 +61,10 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/08-SynchNoiseSummary')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'RPC', '^RPC/',
-                 'RPC/Layouts/RPC_Summary/Barrel/Barrel_TOP_Summary',
-                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_BarrelOccupancy',
-                 'RPC/Layouts/Occupancy_Summary/Wheels/RPC_EndCapOccupancy',
-                 'RPC/Layouts/RPC_Summary/EndCap/EndCap_TOP_Summary') 
+                 'RPC/Layouts/01-Fatal_FED_Errors',
+                 'RPC/Layouts/02-RPC_Events',
+                 'RPC/Layouts/08-Barrel_Occupancy',
+                 'RPC/Layouts/09-Endcap_Occupancy') 
 
 server.workspace('DQMContent', 30, 'Calorimeter', 'EcalPreshower', '^EcalPreshower/',
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
