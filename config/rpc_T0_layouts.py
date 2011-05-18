@@ -204,13 +204,14 @@ x## rpclayout(dqmitems, "06-EndCap_TOP_Summary_Distribution",
 
 ##Efficiency
 
+rpclayout(dqmitems, "20-Statistics",
+          [{ 'path': "RPC/RPCEfficiency/AllStatistics", 'description': eff + rpclink }])
 
-rpclayout(dqmitems, "20-Barrel_Efficiency_Distribution",
+rpclayout(dqmitems, "21-Barrel_Efficiency_Distribution",
           [{ 'path': "RPC/RPCEfficiency/EffBarrelRoll", 'description': eff + rpclink }]
           )
 
-
-rpclayout(dqmitems, "21-Barrel_Efficiency",
+rpclayout(dqmitems, "22-Barrel_Efficiency",
           [{ 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Sector_Wheel_-2", 'description': eff + rpclink },
            { 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Sector_Wheel_-1", 'description': eff + rpclink  }],
           
@@ -219,17 +220,17 @@ rpclayout(dqmitems, "21-Barrel_Efficiency",
            { 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Sector_Wheel_+2", 'description': eff + rpclink  }]
           )
 
-rpclayout(dqmitems, "22-Endcap_Positive_Efficiency_Distribution",
+rpclayout(dqmitems, "23-Endcap_Positive_Efficiency_Distribution",
           [{ 'path': "RPC/RPCEfficiency/EffEndcapPlusRoll", 'description': eff + rpclink }]
           )
 
 
-rpclayout(dqmitems, "23-Endcap_Negative_Efficiency_Distribution",
+rpclayout(dqmitems, "24-Endcap_Negative_Efficiency_Distribution",
           [{ 'path': "RPC/RPCEfficiency/EffEndcapMinusRoll", 'description': eff + rpclink }]
           )
 
 
-rpclayout(dqmitems, "24-EndCap_Efficiency",
+rpclayout(dqmitems, "25-EndCap_Efficiency",
           [{ 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Segment_Disk_-3", 'description': eff + rpclink },
            { 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Segment_Disk_-2", 'description': eff + rpclink },
            { 'path': "RPC/RPCEfficiency/Efficiency_Roll_vs_Segment_Disk_-1", 'description': eff + rpclink }],
