@@ -9,7 +9,7 @@ top = "RPC TOP Summary Histogram <br><font color=green><b>GREEN</b> - Good Chamb
 occupancy = "Occupancy "; 
 clsize = "Cluster Size of RPC system";
 nrofcl = "Number of clusters, i.e. reconstructed hits.";
-nrofdigi = "Number of digies, i.e. single hits.";
+nrofdigi = "Number of single hits.";
 bx  = "RPC BX distribution "
 
 
@@ -87,8 +87,7 @@ rpclayout(dqmitems, "08-Barrel_Occupancy",
           )
 
 rpclayout(dqmitems, "09-Endcap_Occupancy",
-          [{'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap-", 'description': occupancy + rpclink },
-           {'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap+", 'description': occupancy + rpclink }]
+          [{'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap", 'description': occupancy + rpclink }]
           )
 
 
@@ -115,47 +114,16 @@ rpclayout(dqmitems, "11-EndCap_1DOccupancy",
 
 
 
-## ##Number Digi
-## rpclayout(dqmitems, "12-Barrel_Number_Of_Digi",
-##           [{ 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Barrel", 'description': nrofdigi + rpclink }])
-
-
-## rpclayout(dqmitems, "13-Endcap_Number_Of_Digi",
-##           [ { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Endcap-", 'description': nrofdigi + rpclink },
-##             { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Endcap+", 'description': nrofdigi + rpclink  }]
-##           )
-## ##-----------------------
-
-
 ##Number Digi
-rpclayout(dqmitems, "12-Barrel_Number_Of_Digi",
-          [{ 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel_2", 'description': nrofdigi + rpclink },
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel_1", 'description': nrofdigi + rpclink  }],
-          
-          [{ 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel_0", 'description': nrofdigi + rpclink  },
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel_-1", 'description': nrofdigi + rpclink  },
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Roll_vs_Sector_Wheel_-2", 'description': nrofdigi + rpclink  }]
+rpclayout(dqmitems, "12-Barrel_Multiplicity",
+          [{ 'path': "RPC/AllHits/SummaryHistograms/Multiplicity_Barrel", 'description': nrofdigi + rpclink }])
+
+
+rpclayout(dqmitems, "13-Endcap_Multiplicity",
+          [ { 'path': "RPC/AllHits/SummaryHistograms/Multiplicity_Endcap-", 'description': nrofdigi + rpclink },
+            { 'path': "RPC/AllHits/SummaryHistograms/Multiplicity_Endcap+", 'description': nrofdigi + rpclink  }]
           )
-
-
-          
-         
-rpclayout(dqmitems, "13-Endcap_Number_Of_Digi",
-          [{ 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_3", 'description': occupancy + rpclink },
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_2", 'description': occupancy + rpclink },
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_1", 'description': occupancy + rpclink }],
-          
-          [{ 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_-3", 'description':occupancy  + rpclink},
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_-2", 'description':occupancy  + rpclink},
-           { 'path': "RPC/AllHits/SummaryHistograms/NumberOfDigi_Mean_Ring_vs_Segment_Disk_-1", 'description':occupancy  + rpclink}]
-          )
-
-          
 ##-----------------------
-
-
-
-
 
 ##Number Cluster
 

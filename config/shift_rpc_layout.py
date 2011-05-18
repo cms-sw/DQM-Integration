@@ -25,5 +25,4 @@ shiftrpclayout(dqmitems, "03-Quality_State_Overview",
 
 shiftrpclayout(dqmitems, "04-RPC_Occupancy",
                [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink  }],
-               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap-", 'description': occupancy + rpclink  },
-                { 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap+", 'description':  occupancy + rpclink }])
+               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap", 'description': occupancy + rpclink }])
