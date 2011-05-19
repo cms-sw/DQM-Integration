@@ -1,16 +1,16 @@
 def rpclayout(i, p, *rows): i["RPC/Layouts/" + p] = DQMItem(layout=rows)
 
 ########### define varialbles for frequently used strings ############# 
-rpclink = "   >>> <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC>Description</a>";
+rpclink = '   >>> <a href="https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftRPC">Description</a>'
 
 rpcevents = "Events processed by the RPC DQM"
-fed = "FED Fatal Errors";
-top = "RPC TOP Summary Histogram <br><font color=green><b>GREEN</b> - Good Chamber </font><br> <font color=blue><b>BLUE</b> - Chamber OFF</font><br> <font color=yellow><b>YELLOW</b> - Noisy Strip </font><br> <font color=orange><b>ORANGE</b> - Noisy Chamber </font><br> <font color=pink><b>PINK</b> - Partly Dead Chamber </font><br> <font color=red><b>RED</b> - Fully Dead Chamber </font><br> <font color=aqua><b>LIGHT BLUE</b> - Bad Occupancy Shape </font> <br>";
-occupancy = "Occupancy "; 
-clsize = "Cluster Size of RPC system";
-nrofcl = "Number of Clusters ";
-nrofdigi = "Number of Digi";
-eff = "Efficiency";
+fed = "FED Fatal Errors"
+top = "RPC TOP Summary Histogram <br><font color=green><b>GREEN</b> - Good Chamber </font><br> <font color=blue><b>BLUE</b> - Chamber OFF</font><br> <font color=yellow><b>YELLOW</b> - Noisy Strip </font><br> <font color=orange><b>ORANGE</b> - Noisy Chamber </font><br> <font color=pink><b>PINK</b> - Partly Dead Chamber </font><br> <font color=red><b>RED</b> - Fully Dead Chamber </font><br> <font color=aqua><b>LIGHT BLUE</b> - Bad Occupancy Shape </font> <br>"
+occupancy = "Occupancy " 
+clsize = "Cluster Size of RPC system"
+nrofcl = "Number of Clusters "
+nrofdigi = "Number of Digi"
+eff = "Efficiency"
 bx  = "RPC BX distribution "
 
 
@@ -54,7 +54,7 @@ bx  = "RPC BX distribution "
 ##           )
 
 
-x## rpclayout(dqmitems, "06-EndCap_TOP_Summary_Distribution",
+## rpclayout(dqmitems, "06-EndCap_TOP_Summary_Distribution",
 ##           [{ 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk3", 'description': top + rpclink },
 ##            { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk2", 'description': top + rpclink },
 ##            { 'path': "RPC/Noise/SummaryHistograms/RPCChamberQuality_Distribution_Disk1", 'description': top + rpclink }],
