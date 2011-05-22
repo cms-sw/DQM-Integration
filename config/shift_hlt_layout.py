@@ -29,20 +29,21 @@ def hltlayout(i, p, *rows): i["00 Shift/HLT/Collisions/" + p] = DQMItem(layout=r
   
 
 # slaunwhj -- updated March 9 2011 for new PDs
+# hdyoo -- update May 22 for new PDs (remove forward/METBtag, add MET, BTag)
 
 
+hltlayout(dqmitems,"01 HLT_BTag_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_BTag_Pass_Any", 'description': "Shows total number of BTag PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"01 HLT_Commissioning_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_Commissioning_Pass_Any", 'description': "Shows total number of Commissioning PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"02 HLT_Commissioning_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_Commissioning_Pass_Any", 'description': "Shows total number of Commissioning PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"02 HLT_Cosmics_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_Cosmics_Pass_Any", 'description': "Shows total number of Cosmics PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"03 HLT_Cosmics_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_Cosmics_Pass_Any", 'description': "Shows total number of Cosmics PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"03 HLT_DoubleElectron_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_DoubleElectron_Pass_Any", 'description': "Shows total number of DoubleElectron PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"04 HLT_DoubleElectron_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_DoubleElectron_Pass_Any", 'description': "Shows total number of DoubleElectron PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"04 HLT_DoubleMu_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_DoubleMu_Pass_Any", 'description': "Shows total number of DoubleMu PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"05 HLT_DoubleMu_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_DoubleMu_Pass_Any", 'description': "Shows total number of DoubleMu PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"05 HLT_ElectronHad_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_ElectronHad_Pass_Any", 'description': "Shows total number of ElectronHad PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"06 HLT_ElectronHad_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_ElectronHad_Pass_Any", 'description': "Shows total number of ElectronHad PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"06 HLT_ForwardTriggers_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_ForwardTriggers_Pass_Any", 'description': "Shows total number of ForwardTriggers PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltlayout(dqmitems,"07 HLT_HT_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_HT_Pass_Any", 'description': "Shows total number of HT PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
@@ -52,7 +53,7 @@ hltlayout(dqmitems,"09 HLT_HcalNZS_Pass_Any", [{'path': "HLT/TrigResults/PathsSu
 
 hltlayout(dqmitems,"10 HLT_Jet_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_Jet_Pass_Any", 'description': "Shows total number of Jet PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
-hltlayout(dqmitems,"11 HLT_METBTag_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_METBTag_Pass_Any", 'description': "Shows total number of METBTag PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
+hltlayout(dqmitems,"11 HLT_MET_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_MET_Pass_Any", 'description': "Shows total number of MET PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
 hltlayout(dqmitems,"12 HLT_MinimumBias_Pass_Any", [{'path': "HLT/TrigResults/PathsSummary/HLT Counts/HLT_MinimumBias_Pass_Any", 'description': "Shows total number of MinimumBias PD accepts and the total number of any HLT accepts in this PD. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/TriggerShiftHLTGuide\">here</a>."}])
 
