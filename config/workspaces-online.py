@@ -15,8 +15,7 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/20e - Cluster occupancy Endcap -z Disk 2',
                  'Pixel/Layouts/20f - Cluster occupancy Endcap +z Disk 1',
                  'Pixel/Layouts/20g - Cluster occupancy Endcap +z Disk 2',
-                 'Pixel/Layouts/30b - PKAM event rates',
-                 'Pixel/Layouts/30c - Pixel event rates')
+                 'Pixel/Layouts/30a - Pixel event rates')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'SiStrip', '^(SiStrip|Tracking)/',
                  'SiStrip/Layouts/00 - SiStrip ReportSummary',
