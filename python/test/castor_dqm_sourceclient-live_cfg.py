@@ -123,7 +123,7 @@ process.castorMonitor = cms.EDAnalyzer("CastorMonitorModule",
 
                            PSMonitor= cms.untracked.bool(True),
                            numberSigma = cms.untracked.double(1.5),
-                           thirdRegionThreshold =  cms.untracked.double(100),            
+                           thirdRegionThreshold =  cms.untracked.double(999999.0), # to avoid empty cells in reportSummary            
                            EDMonitor= cms.untracked.bool(True),
                            HIMonitor= cms.untracked.bool(True),
                                        
