@@ -153,3 +153,11 @@ process.schedule = cms.Schedule(process.rawToDigiPath,
 # turn on verbosity in L1TEMUEventInfoClient
 #
 # process.l1EmulatorEventInfoClient.verbose = cms.untracked.bool(True)
+
+# 
+# un-comment next lines in case you use the file for private tests on the L1T server
+#
+#process.dqmSaver.dirName = '.'
+#process.dqmSaver.saveByRun = 1
+#process.dqmSaver.saveAtJobEnd = True
+
