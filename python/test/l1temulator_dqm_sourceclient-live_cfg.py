@@ -94,8 +94,9 @@ process.schedule = cms.Schedule(process.rawToDigiPath,
 # remove a module from hardware validation
 # cff file: L1Trigger.HardwareValidation.L1HardwareValidation_cff
 #
-# process.L1HardwareValidation.remove("deCsctf")
+# process.L1HardwareValidation.remove(process.deCsctf)
 #
+process.L1HardwareValidation.remove(process.deDt)
 
 
 #
