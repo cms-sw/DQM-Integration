@@ -236,6 +236,18 @@ process.options = cms.untracked.PSet(
         'TooFewProducts')
 )
 
+#-----------------------------
+# Quality Tester 
+# check Dead Cells VS LS for RBX losses
+#-----------------------------
+process.qTester = cms.EDAnalyzer("QualityTester",
+    prescaleFactor = cms.untracked.int32(1),
+    qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
+    getQualityTestsFromFile = cms.untracked.bool(True),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
+)
+
 process.p = cms.Path(process.hcalDigis
                      *process.valHcalTriggerPrimitiveDigis
                      *process.l1GtUnpack
@@ -246,20 +258,10 @@ process.p = cms.Path(process.hcalDigis
                      *process.hcalMonitor
                      *process.hcalMonitorTasksOnlineSequence 
                      *process.hcalClient
+                     *process.qTester
                      *process.zdcMonitor
                      *process.zdcClient
                      *process.dqmEnv
                      *process.dqmSaver)
 
 
-#-----------------------------
-# Quality Tester 
-# will add switch to select histograms to be saved soon
-#-----------------------------
-process.qTester = cms.EDAnalyzer("QualityTester",
-    prescaleFactor = cms.untracked.int32(1),
-    qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
-    getQualityTestsFromFile = cms.untracked.bool(True),
-    qtestOnEndLumi = cms.untracked.bool(True),
-    qtestOnEndRun = cms.untracked.bool(True)
-)
