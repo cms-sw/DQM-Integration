@@ -18,11 +18,11 @@ trap "rmdir $HERE/.nodaily" 0 1 2 15
 
 ######################################################################
 # Purge old sessions.
-find "$HERE/gui/www/sessions" -type f -mmin +120 | xargs rm -f
+find "$HERE/gui/sessions" -type f -mmin +120 | xargs rm -f
 
 ######################################################################
 # File away server logs.
-for f in $(find $HERE/gui -name '*log-20*.txt' -mtime +0 | sort); do
+for f in $(find $HERE/gui -name '*log-20*.log' -mtime +0 | sort); do
   set -e
   [ -f "$f" ] || continue
   item=${${f#$HERE/gui/}%/*}
