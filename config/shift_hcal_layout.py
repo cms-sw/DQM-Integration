@@ -107,6 +107,3 @@ shifthcallayout(dqmitems, "11 ZDC Rechit Timing",
                 [{'path': "Hcal/ZDCMonitor/ZDCMonitor_Hcal/2D_RecHitTime",
                   'description':"This shows the map of  mean rechit time in ZDC. The scale on the histogram should be in the range between 19-24 nanoseconds (5 ns)" }]
                 )
-
-
-

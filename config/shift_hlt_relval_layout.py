@@ -1,7 +1,5 @@
 ###
-# """
-# file: DQM/Integration/config/shift_hlt_relval_layout.py
-# 
+# """ 
 # This layout file contains hlt me selection for release validation
 # -each subsystem specifies below O(10) most important validation histograms 
 # -histogram folder is specified as 

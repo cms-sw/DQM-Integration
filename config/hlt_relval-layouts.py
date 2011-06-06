@@ -1,7 +1,5 @@
 ###
-# """
-# file: DQM/Integration/config/hlt_relval-layouts.py
-# 
+# """ 
 # Layout file for trigger release validation
 #  facilitating organization/regrouping of subsystem histograms
 # -use subsystem top-folder as specified in previous stages eg

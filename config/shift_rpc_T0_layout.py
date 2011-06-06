@@ -38,4 +38,3 @@ shiftrpclayout(dqmitems, "06-Efficiency_Distribution",
                [{ 'path': "RPC/RPCEfficiency/EffBarrelRoll", 'description': eff + rpclink  }],
                [{ 'path': "RPC/RPCEfficiency/EffEndcapPlusRoll", 'description': eff + rpclink  },
                 { 'path': "RPC/RPCEfficiency/EffEndcapMinusRoll", 'description':  eff + rpclink }])
-
