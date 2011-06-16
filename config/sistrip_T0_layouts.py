@@ -361,4 +361,26 @@ sistriplayout(dqmitems, "30 - TECB Residual",
      'description': "Hit Residual in TECB Wheel #8"},
    { 'path': "SiStrip/MechanicalView/TEC/side_1/wheel_9/HitResiduals_TEC__wheel__9",
      'description': "Hit Residual in TECB Wheel #9"}])
+sistriplayout(dqmitems, "31 - Beam Monitor Test",
+  [{ 'path': "AlcaBeamMonitor/Validation/hxLumibased PrimaryVertex-DataBase",
+     'description': "description 1"},
+   { 'path': "AlcaBeamMonitor/Validation/hyLumibased PrimaryVertex-DataBase",
+     'description': "description 2"},
+   { 'path': "AlcaBeamMonitor/Validation/hzLumibased PrimaryVertex-DataBase",
+     'description': "description 3"}
+  ],[
+   { 'path': "AlcaBeamMonitor/Validation/hsigmaXLumibased Scalers-DataBase fit",
+     'description': "description 4"},
+   { 'path': "AlcaBeamMonitor/Validation/hsigmaYLumibased Scalers-DataBase fit",
+     'description': "description 5"},
+   { 'path': "AlcaBeamMonitor/Validation/hsigmaZLumibased Scalers-DataBase fit",
+     'description': "description 6"},
+  ])
+sistriplayout(dqmitems, "32 - Offline PV Test",
+  [{ 'path': "OfflinePV/offlinePrimaryVertices/tagDiffX",
+     'description': "description 1"},
+   { 'path': "OfflinePV/offlinePrimaryVertices/tagDiffY",
+     'description': "description 2"}
+  ])
+
 
