@@ -22,7 +22,7 @@ for i in offline caf dev; do
   find "$HERE/$i/gui/www/sessions" -type f -mmin +120 | xargs rm -f
 
   # File away server logs.
-  for f in $(find $HERE/$i/gui -name '*log-20*.txt' -mtime +0 | sort); do
+  for f in $(find $HERE/$i/gui -name '*log-20*.log' -mtime +0 | sort); do
     set -e
     [ -f "$f" ] || continue
     item=${${f#$HERE/$i/gui/}%/*}
