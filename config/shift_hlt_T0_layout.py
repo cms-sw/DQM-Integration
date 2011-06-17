@@ -126,17 +126,17 @@ hltCollLayout(dqmitems,"Eff of HLT_Ele52_CaloIdVT_TrkIdT_v3 to its RECO",
 
 def hltlayout(i, p, *rows): i["00 Shift/HLT/Cosmics/" + p] = DQMItem(layout=rows)
   
-hltlayout(dqmitems,"N of HLT_L1MuOpen_AntiBPTX_v2 muons" ,
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt_HLT_Jet_NOn", 'description': "Multiplicity of HLT muons passing HLT_L1Mu path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"N of HLT_L1SingleMuOpen_AntiBPTX_v2 muons" ,
+  	[{'path': "HLT/FourVector/paths/HLT_L1SingleMuOpen_AntiBPTX_v2/HLT_L1SingleMuOpen_AntiBPTX_v2_wrt_HLT_Jet_NOn", 'description': "Multiplicity of HLT muons passing HLT_L1Mu path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"HLT_L1MuOpen_AntiBPTX_v2 & L1 muons eta-phi",
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/HLT_L1MuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"HLT_L1SingleMuOpen_AntiBPTX_v2 & L1 muons eta-phi",
+  	[{'path': "HLT/FourVector/paths/HLT_L1SingleMuOpen_AntiBPTX_v2/HLT_L1SingleMuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Etal1PhiL1On", 'description': "X=eta and Y=phi for L1 muons that are matched (eta-phi) with HLT muons triggering this path.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"Eff HLT_L1MuOpen_AntiBPTX_v2 to its L1 vs Pt",
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/custom-eff/HLT_L1MuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT path as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"Eff HLT_L1SingleMuOpen_AntiBPTX_v2 to its L1 vs Pt",
+  	[{'path': "HLT/FourVector/paths/HLT_L1SingleMuOpen_AntiBPTX_v2/custom-eff/HLT_L1SingleMuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Et_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT path as function of Et.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
   
-hltlayout(dqmitems,"Eff HLT_L1MuOpen_AntiBPTX_v2 to its L1 vs eta-phi",
-  	[{'path': "HLT/FourVector/paths/HLT_L1MuOpen_AntiBPTX_v2/custom-eff/HLT_L1MuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT path as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
+hltlayout(dqmitems,"Eff HLT_L1SingleMuOpen_AntiBPTX_v2 to its L1 vs eta-phi",
+  	[{'path': "HLT/FourVector/paths/HLT_L1SingleMuOpen_AntiBPTX_v2/custom-eff/HLT_L1SingleMuOpen_AntiBPTX_v2_wrt_HLT_Jet_l1Etal1Phi_Eff_OnToL1", 'description': "Fraction of L1 muons that triggered this HLT path as function of eta-phi.  For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftOfflineHLT\">here</a>."}])
 
 
 
