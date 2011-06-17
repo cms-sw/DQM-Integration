@@ -26,8 +26,7 @@ shiftrpclayout(dqmitems, "03-Quality_State_Overview",
 
 shiftrpclayout(dqmitems, "04-RPC_Occupancy",
                [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink  }],
-               [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap-", 'description': occupancy + rpclink  },
-                { 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap+", 'description':  occupancy + rpclink }])
+               [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap", 'description': occupancy + rpclink  }])
 
 
 shiftrpclayout(dqmitems, "05-Statistics",
@@ -38,4 +37,3 @@ shiftrpclayout(dqmitems, "06-Efficiency_Distribution",
                [{ 'path': "RPC/RPCEfficiency/EffBarrelRoll", 'description': eff + rpclink  }],
                [{ 'path': "RPC/RPCEfficiency/EffEndcapPlusRoll", 'description': eff + rpclink  },
                 { 'path': "RPC/RPCEfficiency/EffEndcapMinusRoll", 'description':  eff + rpclink }])
-
