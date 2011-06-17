@@ -27,16 +27,16 @@ server.plugin('render', BASEDIR + "/style/*.cc")
 #Extensions
 server.extend('DQMRenderLink', server.pathOfPlugin('render'))
 server.extend('DQMToJSON')
-#server.extend('DQMFileAccess', None, "/home/dqmlocal/upload",
-#              { "data": "/home/dqmlocal/data",
-#                "upload": "/home/dqmlocal/upload" })
+server.extend('DQMFileAccess', None, "/home/dqmlocal/upload",
+              { "data": "/home/dqmlocal/data",
+                "upload": "/home/dqmlocal/upload" })
 
 #Sources
 server.source('DQMUnknown')
 server.source('DQMOverlay')
 server.source('DQMStripChart')
 server.source('DQMLive', 'localhost:9190')
-server.source('DQMArchive', BASEDIR + '/idx', '^/Global/')
+server.source('DQMArchive', BASEDIR + '/lidx', '^/Global/')
 server.source('DQMLayout', *LAYOUTS)
 
 #Workspace and Services
