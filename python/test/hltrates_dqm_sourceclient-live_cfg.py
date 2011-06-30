@@ -1,7 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
-
+process.options = cms.untracked.PSet(
+  SkipEvent = cms.untracked.vstring('ProductNotFound') 
+)
 
 #### leave the following few lines uncommented for online running
 process.load("DQM.Integration.test.inputsource_cfi")
@@ -76,7 +78,8 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.load('Configuration.StandardSequences.Geometry_cff')
 process.load('Configuration/StandardSequences/RawToDigi_Data_cff')
 
-
+process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
+process.TkDetMap = cms.Service("TkDetMap")
 
 process.load("DQM.HLTEvF.TrigResRateMon_cfi")
 
