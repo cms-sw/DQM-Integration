@@ -72,4 +72,9 @@ trackinglayout(dqmitems, "07 - Number of rec hits per good track vs LS",
       'description': "Number of rec hits per good track vs LS",
       'draw': { 'withref': "yes" }}])
 
-          
+trackinglayout(dqmitems, "08 - Offline PV Test",
+  [{ 'path': "OfflinePV/offlinePrimaryVertices/tagDiffX",
+     'description': "Difference between good PV and beamspot in x-direction"},
+   { 'path': "OfflinePV/offlinePrimaryVertices/tagDiffY",
+     'description': "Difference between good PV and beamspot in y-direction"}
+    ])
