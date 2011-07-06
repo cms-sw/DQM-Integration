@@ -30,21 +30,21 @@ trackinglayout(dqmitems, "03 - Tracks (pp data) - no track selection",
   { 'path': "Tracking/TrackParameters/GeneralProperties/TrackEta_ImpactPoint_GenTk",
     'description': " Eta distribution of Reconstructed Tracks - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> ", 'draw': { 'withref': "yes" }}])
 
-trackinglayout(dqmitems, "04 - Beam Monitor Test",
+trackinglayout(dqmitems, "04 - Beam Monitor",
   [{ 'path': "AlcaBeamMonitor/Validation/hxLumibased PrimaryVertex-DataBase",
-     'description': "description 1"},
+     'description': ""},
    { 'path': "AlcaBeamMonitor/Validation/hyLumibased PrimaryVertex-DataBase",
-     'description': "description 2"},
+     'description': ""},
    { 'path': "AlcaBeamMonitor/Validation/hzLumibased PrimaryVertex-DataBase",
-     'description': "description 3"}
+     'description': ""}
    ],
    [
-    { 'path': "AlcaBeamMonitor/Validation/hsigmaXLumibased Scalers-DataBase fit",
-     'description': "description 4"},
-    { 'path': "AlcaBeamMonitor/Validation/hsigmaYLumibased Scalers-DataBase fit",
-     'description': "description 5"},
-    { 'path': "AlcaBeamMonitor/Validation/hsigmaZLumibased Scalers-DataBase fit",
-     'description': "description 6"},
+    { 'path': "AlcaBeamMonitor/Debug/hsigmaXLumibased PrimaryVertex-DataBase fit",
+     'description': ""},
+    { 'path': "AlcaBeamMonitor/Debug/hsigmaYLumibased PrimaryVertex-DataBase fit",
+     'description': ""},
+    { 'path': "AlcaBeamMonitor/Debug/hsigmaZLumibased PrimaryVertex-DataBase fit",
+     'description': ""},
    ])
 
 trackinglayout(dqmitems, "05 - Tracks (Cosmic Tracking)",
@@ -72,7 +72,7 @@ trackinglayout(dqmitems, "07 - Number of rec hits per good track vs LS",
       'description': "Number of rec hits per good track vs LS",
       'draw': { 'withref': "yes" }}])
 
-trackinglayout(dqmitems, "08 - Offline PV Test",
+trackinglayout(dqmitems, "08 - Offline PV",
   [{ 'path': "OfflinePV/offlinePrimaryVertices/tagDiffX",
      'description': "Difference between good PV and beamspot in x-direction"},
    { 'path': "OfflinePV/offlinePrimaryVertices/tagDiffY",
