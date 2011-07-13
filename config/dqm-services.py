@@ -1,5 +1,0 @@
-server.service('Online',           'http://cmsweb.cern.ch/dqm/online')
-server.service('Online playback',  'http://cmsweb.cern.ch/dqm/online-playback')
-server.service('Offline',          'http://cmsweb.cern.ch/dqm/offline')
-server.service('CAF',              'http://cmsweb.cern.ch/dqm/caf')
-server.service('Development',      'http://cmsweb.cern.ch/dqm/dev')
