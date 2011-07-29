@@ -45,7 +45,9 @@ server.workspace('DQMContent', 20, 'Tracker/Muons', 'CSC', '^CSC/',
                  'CSC/Layouts/02 EMU Summary/EMU Test06 - DDU Inputs in ERROR-WARNING State',
                  'CSC/Layouts/02 EMU Summary/EMU Test08 - CSCs Reporting Data and Unpacked',
                  'CSC/Layouts/02 EMU Summary/EMU Test10 - CSCs with Errors and Warnings (Fractions)',
-                 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks')
+                 'CSC/Layouts/02 EMU Summary/EMU Test11 - CSCs without Data Blocks',
+		 'CSC/Layouts/06 Physics Efficiency - RecHits Minus',
+		 'CSC/Layouts/07 Physics Efficiency - RecHits Plus')
 
 server.workspace('DQMContent', 20, 'Tracker/Muons', 'DT', '^DT/',
                  'DT/Layouts/00-Summary/00-DataIntegritySummary',

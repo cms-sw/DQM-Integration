@@ -61,13 +61,13 @@ csclayout(dqmitems,"03 Shifter/Chambers without Data (Statistically Significant)
 csclayout(dqmitems,"04 Timing/00 ALCT Timing",
         [{'path': "CSC/Summary/CSC_ALCT0_BXN_mean", 'description': "ALCT0 BXN Mean"},
          {'path': "CSC/Summary/Plus_endcap_ALCT0_dTime", 'description': "Plus Endcap ALCT0 BXN - ALCT_L1A BXN Difference"}],
-        [{'path': "CSC/Summary/CSC_ALCT0_BXN_mean", 'description': "ALCT0 BXN RMS"},
+        [{'path': "CSC/Summary/CSC_ALCT0_BXN_rms", 'description': "ALCT0 BXN RMS"},
          {'path': "CSC/Summary/Minus_endcap_ALCT0_dTime", 'description': "Minus Endcap ALCT0 BXN - ALCT_L1A BXN Difference"}])
 
 csclayout(dqmitems,"04 Timing/01 CLCT Timing",
         [{'path': "CSC/Summary/CSC_CLCT0_BXN_mean", 'description': "CLCT0 BXN Mean"},
          {'path': "CSC/Summary/Plus_endcap_CLCT0_dTime", 'description': "Plus Endcap CLCT0 BXN - CLCT_L1A BXN Difference"}],
-        [{'path': "CSC/Summary/CSC_CLCT0_BXN_mean", 'description': "CLCT0 BXN RMS"},
+        [{'path': "CSC/Summary/CSC_CLCT0_BXN_rms", 'description': "CLCT0 BXN RMS"},
          {'path': "CSC/Summary/Minus_endcap_CLCT0_dTime", 'description': "Minus Endcap CLCT0 BXN - CLCT_L1A BXN Difference"}])
   
 csclayout(dqmitems,"04 Timing/02 AFEB RawHits Timing",
@@ -102,4 +102,23 @@ csclayout(dqmitems,"05 EventDisplay/02 Event Display in Z-Phi projection)",
 
 csclayout(dqmitems,"05 EventDisplay/03 Event Display in X-Y projection",
         [{'path': "CSC/Summary/Event_Display_XY", 'description': "Event Display in X-Y projection (wiregroups and half-strips)"}])
+
+csclayout(dqmitems,"06 Physics Efficiency - RecHits Minus",
+        [{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm1", 'description': "Histogram shows 2D RecHits distribution in ME-1. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+        {'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm2", 'description': "Histogram shows 2D RecHits distribution in ME-2. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewau
+h/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm3", 'description': "Histogram shows 2D RecHits distribution in ME-3. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+        {'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalm4", 'description': "Histogram shows 2D RecHits distribution in ME-4. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewau
+h/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}
+        ]
+        )
+
+csclayout(dqmitems,"07 Physics Efficiency - RecHits Plus",
+        [{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp1", 'description': "Histogram shows 2D RecHits distribution in ME+1. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+        {'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp2", 'description': "Histogram shows 2D RecHits distribution in ME+2. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}],
+        [{'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp3", 'description': "Histogram shows 2D RecHits distribution in ME+3. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewa
+th/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."},
+        {'path': "CSC/CSCOfflineMonitor/recHits/hRHGlobalp4", 'description': "Histogram shows 2D RecHits distribution in ME+4. Any unusual inhomogeneity should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}
+        ]
+        )
 
