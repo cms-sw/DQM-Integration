@@ -511,17 +511,21 @@ csclayout(dqmitems,"CSC DQM Shifter/00 Dump/164 ALCT and CLCT check 3",
 csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/1 DDUs in readout",
   	[{'path': "CSC/Summary/All_DDUs_in_Readout", 'description': "Number of Events in DDU. If Readout and Trigger Enable were started in a correct sequence (first, Readout Enable and, then, Trigger Enable) and the rate of events with CSC payload present is not too high (<100 CSCs with data per second per DDU) then all DDUs should give the exact same number of events. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#All_DDUs_in_Readout\">here</a>."}])
 
-csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/2 DMB input timeout",
-	[{'path': "CSC/Summary/CSC_DMB_input_timeout", 'description': "Shows TIMEOUT condition on DMB inputs (OR start/stop timeouts for 5 CFEBs, ALCT, TMB). Appearance of entries in this histogram is very bad and typically implies badly timed-in CSCs. To dig out which of the 7 boards is actually responsible for the trouble, one needs to refer the FEB Status (Timeouts, FIFO, L1 pipe) canvas for the offensive chamber (this canvas can be found in the DMB group) For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
-		
-csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/3 CSC Status",
-	[{'path': "CSC/EventInfo/reportSummaryMap", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/2 CSC Status",
+        [{'path': "CSC/EventInfo/reportSummaryMap", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
 
-csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/4 Chambers without Data",
+csclayout(dqmitems,"CSC DQM Shifter/01 Data Integrity/3 Chambers without Data",
         [{'path': "CSC/Summary/CSC_STATS_wo_alct", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_alct\">here</a>."},
          {'path': "CSC/Summary/CSC_STATS_wo_clct", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_clct\">here</a>."}],
         [{'path': "CSC/Summary/CSC_STATS_wo_cfeb", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_wo_cfeb\">here</a>."},
          {'path': "CSC/Summary/CSC_STATS_cfeb_bwords", 'description': "For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_STATS_cfeb_bwords\">here</a>."}])
+
+csclayout(dqmitems "CSC DQM Shifter/01 Data Integrity/4 Chambers with Errors and Warnings (Fractions)",
+        [{'path': "CSC/Summary/CSC_Format_Errors_Fract", 'description': "Histogram shows frequency of format errors per CSC record. Pay attention to the temperature scale (it changes from run to run and during a run according to the histogram content). CSCs reporting format errors in more than 1% of events should be flagged. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_Format_Errors_Fract\">here</a>."},
+         {'path': "CSC/Summary/CSC_L1A_out_of_sync_Fract", 'description': "(no description). For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_L1A_out_of_sync\">here</a>."}],
+        [{'path': "CSC/Summary/CSC_DMB_input_fifo_full_Fract", 'description': "Shows a frequency of FIFO-FULL condition on DMB inputs (OR of 7 FIFOs: 5 CFEBs, ALCT, TMB). Appearance of entries in this histogram is very bad and would typically imply a loss of synchronization, even if FIFO-FULL condition clears away. To dig out which of the 7 boards is actually responsible for the trouble, one needs to refer the FEB Status (Timeouts, FIFO, L1 pipe) canvas for the offensive chamber (this canvas can be found in the DMB group) For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_fifo_full_Fract\">here</a>."},
+         {'path': "CSC/Summary/CSC_DMB_input_timeout_Fract", 'description': "Shows a frequency of a TIMEOUT condition on DMB inputs (OR start/stop timeouts for 5 CFEBs, ALCT, TMB). Appearance of entries in this histogram is very bad and typically implies badly timed-in CSCs. To dig out which of the 7 boards is actually responsible for the trouble, one needs to refer the FEB Status (Timeouts, FIFO, L1 pipe) canvas for the offensive chamber (this canvas can be found in the DMB group) For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftCSC#CSC_DMB_input_timeout_Fract\">here</a>."}])
+
 
 csclayout(dqmitems,"CSC DQM Shifter/02 Chamber Occupancy/1 Overall Chamber Occupancy",
   	[{'path': "CSC/CSCOfflineMonitor/Occupancy/hCSCOccupancy", 'description': "Histogram shows overal occupancy of CSCs by different types of signals. If there is a substantial difference a problem with overal occupancy should be reported. For more information please click <a href=\"https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDPGDataMonitorShiftInstructions\">here</a>."}])
