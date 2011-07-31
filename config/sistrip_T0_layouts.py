@@ -66,11 +66,11 @@ sistriplayout(dqmitems, "05 - OffTrackCluster (Total Number)",
      'description': "TotalNumberOf Off-Track clusters in TEC +ve side - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> ", 'draw': { 'withref': "yes" }}])
 
 sistriplayout(dqmitems, "06 - Detailed FED-Detected Errors",
- [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/AnyDAQProblems",
+ [{ 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FEDLevel/VsFedId/AnyDAQProblems",
     'description': "FED IDs having DAQ problem - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> "},
-  { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/CorruptBuffers",
+  { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FEDLevel/VsFedId/CorruptBuffers",
     'description': "FED IDs having corrupt FED buffers - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> "},
-  { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/AnyFEProblems",
+  { 'path': "SiStrip/ReadoutView/FedMonitoringSummary/FrontEndLevel/VsFedId/AnyFEProblems",
     'description': "FED IDs having overflowed, missing or with bad majority address FE units - <a href=https://twiki.cern.ch/twiki/bin/view/CMS/SiStripOfflineDQMInstructions>SiStripOfflineDQMInstructions</a> "}])
 sistriplayout(dqmitems, "07 - OnTrackClusters(Total Number)",
   [{ 'path': "SiStrip/MechanicalView/TIB/Summary_TotalNumberOfClusters_OnTrack__TIB",
