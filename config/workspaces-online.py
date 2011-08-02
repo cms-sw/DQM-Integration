@@ -152,7 +152,7 @@ server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
                  'HLX/Layouts/HLX-EtSumAndLumi-History-Plots')
 
 
-server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1T', '^L1T/',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'L1T', '^(L1T|L1TEMU)/',
                  'L1T/L1TGT/algo_bits',
                  'L1T/L1TGT/tt_bits',
                  'L1T/L1TGT/gtfe_bx',
