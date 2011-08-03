@@ -224,6 +224,8 @@ process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.untracked.int32((1<<5
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 process.load("L1Trigger.Configuration.L1DummyConfig_cff")
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtUnpack_cfi")
+process.load('Configuration/StandardSequences/RawToDigi_Data_cff') #to unpack l1gtEvm
+process.gtEvmDigis.UnpackBxInEvent = cms.int32(1) #to unpack l1gtEvm
 process.l1GtUnpack.DaqGtInputTag = 'source'
 
 
@@ -250,6 +252,7 @@ process.qTester = cms.EDAnalyzer("QualityTester",
 
 process.p = cms.Path(process.hcalDigis
                      *process.valHcalTriggerPrimitiveDigis
+                     *process.gtEvmDigis#to unpack l1gtEvm
                      *process.l1GtUnpack
                      *process.horeco
                      *process.hfreco
