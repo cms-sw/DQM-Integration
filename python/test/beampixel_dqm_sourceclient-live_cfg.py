@@ -9,10 +9,7 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
- 
-
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 ### @@@@@@ Comment when running locally @@@@@@ ###
 
 
@@ -48,21 +45,6 @@ process.dqmEnv.subSystemFolder = "BeamPixel"
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-
-#################################
-### To use offline alignments ###
-#################################
-#process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-# Query the DB to get the current Global Tag
-#import commands
-#from os import environ
-#environ["http_proxy"] = "http://cmsproxy.cms:3128"
-#dasinfo = eval(commands.getoutput("wget -qO- 'http://vocms115.cern.ch:8304/tier0/express_config?run=&stream=Express'"))
-#process.GlobalTag.globaltag = dasinfo[0]['global_tag']
-#del environ["http_proxy"]
-#process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
-
-
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("Configuration.StandardSequences.Services_cff")
@@ -142,13 +124,11 @@ process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFacto
 # Define Sequence
 #----------------------------
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
-
 process.phystrigger = cms.Sequence(
   process.hltTriggerTypeFilter
-#  process.gtDigis*
-#  process.hltLevel1GTSeed
+### To use the L1 Filter uncomment the following line ###
+#  *process.gtDigis*process.hltLevel1GTSeed
   )
-
 process.reconstruction_step = cms.Sequence(
     process.siPixelDigis*
     process.offlineBeamSpot*
