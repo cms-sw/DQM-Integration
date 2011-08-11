@@ -47,6 +47,8 @@ server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 'EcalPreshower/Layouts/01-IntegritySummary-EcalPreshower',
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower')
+
+server.workspace('DQMContent', 30, 'Calorimeter', 'EcalCalibration', '^EcalCalibration/')
                 
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/01 HCAL Summaries',
@@ -105,7 +107,7 @@ server.workspace('DQMContent', 51,'FeedBack for Collisions', 'Tracking FeedBack'
                  'Collisions/TrackingFeedBack/06 - Z-Position Of Closest Approach',
                  'Collisions/TrackingFeedBack/07 - Cluster y width vs. cluster eta'
 )
-server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower)/',
+server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^(Collisions|EcalBarrel|EcalEndcap|EcalPreshower|EcalCalibration)/',
                  "Collisions/EcalFeedBack/00 Single Event Timing EE",
                  "Collisions/EcalFeedBack/01 Timing Mean EE",
                  "Collisions/EcalFeedBack/02 Timing Map EE -",
@@ -118,7 +120,8 @@ server.workspace('DQMContent', 52,'FeedBack for Collisions', 'Ecal FeedBack', '^
                  "Collisions/EcalFeedBack/07 Occupancy EB",
                  "Collisions/EcalFeedBack/08 ES Occupancy",
                  "Collisions/EcalFeedBack/09 ES Energy Map",
-                 "Collisions/EcalFeedBack/10 ES Timing Plot"
+                 "Collisions/EcalFeedBack/10 ES Timing Plot",
+                 "Collisions/EcalFeedBack/11 Ecal Z Mass"
                  )
 server.workspace('DQMContent', 53,'FeedBack for Collisions', 'Hcal FeedBack', '^(Collisions|Hcal)/',
                  "Collisions/HcalFeedBack/01 - HF+,HF- coincidences (with BPTX)",
