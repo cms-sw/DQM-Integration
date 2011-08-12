@@ -48,7 +48,7 @@ server.workspace('DQMContent', 23, 'Calorimeter', 'EcalPreshower', '^EcalPreshow
                 'EcalPreshower/Layouts/02-OccupancySummary-EcalPreshower',
                 'EcalPreshower/Layouts/03-RechitEnergySummary-EcalPreshower')
 
-server.workspace('DQMContent', 30, 'Calorimeter', 'EcalCalibration', '^EcalCalibration/')
+server.workspace('DQMContent', 30, 'Calorimeter', 'EcalCalibration', '^(EcalCalibration|EcalBarrel|EcalEndcap)/')
                 
 server.workspace('DQMContent', 24, 'Calorimeter', 'HCAL', '^Hcal/',
                  'Hcal/Layouts/01 HCAL Summaries',
