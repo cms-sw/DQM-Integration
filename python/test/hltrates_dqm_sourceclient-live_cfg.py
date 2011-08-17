@@ -75,11 +75,34 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 # running the silly RawToDigi
 #
 ################################
-process.load('Configuration.StandardSequences.Geometry_cff')
-process.load('Configuration/StandardSequences/RawToDigi_Data_cff')
 
-process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
-process.TkDetMap = cms.Service("TkDetMap")
+# JMS Aug 16 2011 
+# Remove these
+# We don't need to run raw to digi
+#
+
+#process.load('Configuration.StandardSequences.Geometry_cff')
+#process.load('Configuration/StandardSequences/RawToDigi_Data_cff')
+
+#process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
+#process.TkDetMap = cms.Service("TkDetMap")
+
+####### JMS Aug 16 2011 you do need to prescale
+process.hltPreTrigResRateMon = cms.EDFilter ("HLTPrescaler",
+                                             L1GtReadoutRecordTag = cms.InputTag("NONE"),
+                                             offset = cms.uint32(0)
+                                             )
+
+process.PrescaleService = cms.Service( "PrescaleService",
+    lvl1DefaultLabel = cms.untracked.string( "PSTrigRates" ),
+    lvl1Labels = cms.vstring( 'PS'),
+    prescaleTable = cms.VPSet(
+    cms.PSet(  pathName = cms.string( "rateMon" ),
+        prescales = cms.vuint32(6)
+      ),
+     )
+    )
+
 
 process.load("DQM.HLTEvF.TrigResRateMon_cfi")
 
@@ -89,7 +112,7 @@ process.trRateMon.LuminositySegmentSize = cms.untracked.double(2.3)
 
 
 # Add RawToDigi
-process.p = cms.EndPath(process.RawToDigi*process.trRateMon)
+process.rateMon = cms.EndPath(process.hltPreTrigResRateMon *process.trRateMon)
 
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
