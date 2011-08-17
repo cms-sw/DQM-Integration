@@ -137,6 +137,10 @@ process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalR
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 
+#-------------------------------------------
+#  Pixel Vertex Monitoring based on HLT path
+#-------------------------------------------
+process.load('DQM.BeamMonitor.PixelVTXMonitor_cfi')
 
 #----------------------------
 # Define Sequence
@@ -158,8 +162,10 @@ process.reconstruction_step = cms.Sequence(
     process.pixelVertices*
     process.pixelVertexDQM)
 
+process.high_pu_step = cms.Sequence(
+    process.pixelVTXMonitor)
 
 #----------------------------
 # Define Path
 #----------------------------
-process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
+process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.high_pu_step * process.dqmmodules)
