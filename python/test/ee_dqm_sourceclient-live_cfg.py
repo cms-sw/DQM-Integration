@@ -117,11 +117,11 @@ if (onlyEE == 1) :
 import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
 process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
 
-import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
-process.ecalUncalibHit1 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
+#import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
+#process.ecalUncalibHit1 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
 
-import RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi
-process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi.ecalMaxSampleUncalibRecHit.clone()
+#import RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi
+#process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi.ecalMaxSampleUncalibRecHit.clone()
 
 process.load("RecoLocalCalo.EcalRecProducers.ecalDetIdToBeRecovered_cfi")
 
@@ -142,7 +142,7 @@ process.load("Geometry.EcalMapping.EcalMapping_cfi")
 
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 
-process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
+#process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
 
@@ -440,9 +440,11 @@ process.load("DQM.EcalEndcapMonitorClient.EETrendClient_cfi")
 
 process.ecalEndcapMainSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapRawDataTask*process.ecalEndcapHltTask*process.ecalEndcapTrendTask*process.ecalEndcapTrendClient)
 
-process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
+#process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
+process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
 
-process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
+#process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
+process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
 
 if (liveCMS == 1) | (playCMS == 1) :
   process.ecalBarrelMainSequence.remove(process.ecalBarrelHltTask)
@@ -459,11 +461,12 @@ if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
 
   process.ecalEndcapMainSequence.remove(process.ecalEndcapPedestalOnlineTask)
 
-process.ecalClusterSequence = cms.Sequence(process.hybridClusteringSequence*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
+#process.ecalClusterSequence = cms.Sequence(process.hybridClusteringSequence*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
 
 process.ecalMonitorPath = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
 
-process.ecalPhysicsPath = cms.Path(process.ecalDataSequence*process.ecalPhysicsFilter*process.hltTriggerTypeFilter*process.simEcalTriggerPrimitiveDigis*process.ecalClusterSequence*process.ecalBarrelMainSequence*process.ecalBarrelPhysicsSequence*process.ecalEndcapMainSequence*process.ecalEndcapPhysicsSequence)
+#process.ecalPhysicsPath = cms.Path(process.ecalDataSequence*process.ecalPhysicsFilter*process.hltTriggerTypeFilter*process.simEcalTriggerPrimitiveDigis*process.ecalClusterSequence*process.ecalBarrelMainSequence*process.ecalBarrelPhysicsSequence*process.ecalEndcapMainSequence*process.ecalEndcapPhysicsSequence)
+process.ecalPhysicsPath = cms.Path(process.ecalDataSequence*process.ecalPhysicsFilter*process.hltTriggerTypeFilter*process.simEcalTriggerPrimitiveDigis*process.ecalBarrelMainSequence*process.ecalBarrelPhysicsSequence*process.ecalEndcapMainSequence*process.ecalEndcapPhysicsSequence)
 
 if (localDAQ == 1) | (globalDAQ == 1) :
   process.ecalPhysicsPath.remove(process.hltTriggerTypeFilter)
@@ -471,11 +474,13 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   process.ecalPhysicsPath.remove(process.ecalPhysicsFilter)
 
-process.ecalLaserLedPath = cms.Path(process.ecalDataSequence*process.ecalLaserLedFilter*process.ecalUncalibHit1*process.ecalBarrelMainSequence*process.ecalBarrelLaserTask*process.ecalEndcapMainSequence*process.ecalEndcapLaserTask*process.ecalEndcapLedTask)
+#process.ecalLaserLedPath = cms.Path(process.ecalDataSequence*process.ecalLaserLedFilter*process.ecalUncalibHit1*process.ecalBarrelMainSequence*process.ecalBarrelLaserTask*process.ecalEndcapMainSequence*process.ecalEndcapLaserTask*process.ecalEndcapLedTask)
+process.ecalLaserLedPath = cms.Path(process.ecalDataSequence*process.ecalLaserLedFilter*process.ecalUncalibHit*process.ecalBarrelMainSequence*process.ecalBarrelLaserTask*process.ecalEndcapMainSequence*process.ecalEndcapLaserTask*process.ecalEndcapLedTask)
 
 process.ecalPedestalPath = cms.Path(process.ecalDataSequence*process.ecalPedestalFilter*process.ecalBarrelMainSequence*process.ecalBarrelPedestalTask*process.ecalEndcapMainSequence*process.ecalEndcapPedestalTask)
 
-process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
+#process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
+process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
 
 process.ecalMonitorEndPath = cms.EndPath(process.dqmEnv*process.dqmInfoEB*process.dqmInfoEE*process.dqmQTestEB*process.dqmQTestEE*process.dqmSaver)
 
@@ -536,13 +541,13 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 process.ecalUncalibHit.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalUncalibHit1.MinAmplBarrel = 12.
-process.ecalUncalibHit1.MinAmplEndcap = 16.
-process.ecalUncalibHit1.EBdigiCollection = 'ecalEBunpacker:ebDigis'
-process.ecalUncalibHit1.EEdigiCollection = 'ecalEBunpacker:eeDigis'
+# process.ecalUncalibHit1.MinAmplBarrel = 12.
+# process.ecalUncalibHit1.MinAmplEndcap = 16.
+# process.ecalUncalibHit1.EBdigiCollection = 'ecalEBunpacker:ebDigis'
+# process.ecalUncalibHit1.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
-process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
+# process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
+# process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
 process.ecalDetIdToBeRecovered.ebSrFlagCollection = 'ecalEBunpacker'
 process.ecalDetIdToBeRecovered.eeSrFlagCollection = 'ecalEBunpacker'
@@ -562,19 +567,24 @@ process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHit
 
 process.ecalBarrelCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 
-process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
+#process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
+process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 
-process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+#process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 
 process.ecalBarrelTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEB'
 
 process.ecalEndcapCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
-process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+#process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
-process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+#process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
+process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
-process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+#process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
 process.ecalEndcapTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEE'
 
@@ -586,13 +596,13 @@ if (localDAQ == 1) :
   process.ecalBarrelMonitorClient.maskFile = 'DQM/EcalBarrelMonitorModule/test/data/maskfile-EB.dat'
 
 process.ecalBarrelMonitorClient.location = 'P5_Co'
-process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
+process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'TriggerTower', 'Summary']
 
 if (localDAQ == 1) :
   process.ecalEndcapMonitorClient.maskFile = 'DQM/EcalEndcapMonitorModule/test/data/maskfile-EE.dat'
 
 process.ecalEndcapMonitorClient.location = 'P5_Co'
-process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
+process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'TriggerTower', 'Summary']
 
 #process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
@@ -665,7 +675,7 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 
   process.ecalEndcapMonitorClient.dbTagName = 'CMSSW-offline-private'
 
-if (localDAQ == 1) | (liveCMS == 1) | (liveECAL == 1) :
+if (localDAQ == 1) | (liveCMS == 1) | (liveECAL ==1) :
   process.ecalBarrelMonitorClient.dbName = dbName
   process.ecalBarrelMonitorClient.dbHostName = dbHostName
   process.ecalBarrelMonitorClient.dbHostPort = dbHostPort
@@ -715,4 +725,3 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
-
