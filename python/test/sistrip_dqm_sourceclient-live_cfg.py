@@ -165,8 +165,6 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
-                     process.SiStripSources_LocalReco*
-                     process.RecoForDQM_TrkReco*
-                     process.SiStripSources_TrkReco
+                     process.SiStripSources_LocalReco
 )
 
