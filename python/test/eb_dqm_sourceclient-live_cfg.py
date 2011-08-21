@@ -120,8 +120,8 @@ process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_
 #import RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi
 #process.ecalUncalibHit1 = RecoLocalCalo.EcalRecProducers.ecalFixedAlphaBetaFitUncalibRecHit_cfi.ecalFixedAlphaBetaFitUncalibRecHit.clone()
 
-#import RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi
-#process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi.ecalMaxSampleUncalibRecHit.clone()
+import RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi
+process.ecalUncalibHit2 = RecoLocalCalo.EcalRecProducers.ecalMaxSampleUncalibRecHit_cfi.ecalMaxSampleUncalibRecHit.clone()
 
 process.load("RecoLocalCalo.EcalRecProducers.ecalDetIdToBeRecovered_cfi")
 
@@ -479,8 +479,8 @@ process.ecalLaserLedPath = cms.Path(process.ecalDataSequence*process.ecalLaserLe
 
 process.ecalPedestalPath = cms.Path(process.ecalDataSequence*process.ecalPedestalFilter*process.ecalBarrelMainSequence*process.ecalBarrelPedestalTask*process.ecalEndcapMainSequence*process.ecalEndcapPedestalTask)
 
-#process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
-process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
+process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit2*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
+#process.ecalTestPulsePath = cms.Path(process.ecalDataSequence*process.ecalTestPulseFilter*process.ecalUncalibHit*process.ecalBarrelMainSequence*process.ecalBarrelTestPulseTask*process.ecalEndcapMainSequence*process.ecalEndcapTestPulseTask)
 
 process.ecalMonitorEndPath = cms.EndPath(process.dqmEnv*process.dqmInfoEB*process.dqmInfoEE*process.dqmQTestEB*process.dqmQTestEE*process.dqmSaver)
 
@@ -546,8 +546,8 @@ process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 # process.ecalUncalibHit1.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 # process.ecalUncalibHit1.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
-# process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
-# process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
+process.ecalUncalibHit2.EBdigiCollection = 'ecalEBunpacker:ebDigis'
+process.ecalUncalibHit2.EEdigiCollection = 'ecalEBunpacker:eeDigis'
 
 process.ecalDetIdToBeRecovered.ebSrFlagCollection = 'ecalEBunpacker'
 process.ecalDetIdToBeRecovered.eeSrFlagCollection = 'ecalEBunpacker'
@@ -570,8 +570,8 @@ process.ecalBarrelCosmicTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:
 #process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEB'
 process.ecalBarrelLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 
-#process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
-process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
+process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEB'
+#process.ecalBarrelTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 
 process.ecalBarrelTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEB'
 
@@ -583,8 +583,8 @@ process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:E
 #process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit1:EcalUncalibRecHitsEE'
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
-#process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
-process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
+process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit2:EcalUncalibRecHitsEE'
+#process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
 process.ecalEndcapTimingTask.EcalRecHitCollection = 'ecalRecHit:EcalRecHitsEE'
 
