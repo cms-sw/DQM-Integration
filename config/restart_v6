@@ -249,6 +249,26 @@ case $HOST:${EXTRA:-agents} in
        |& rotatelogs $DQM_DIR/agents/sound-%Y%m%d%H%M.txt 86400 </dev/null & \
      ) >& /dev/null </dev/null & )
     ;;
+  dqm-c2d07-11:*agents* )
+    refuseproc "file agents" "visDQMIndex" "refusing to restart"
+    DQM_DATA=/dqmdata/dqmdev    
+    
+    (set -x
+     (visDQMReceiveDaemon \
+       $DQM_DATA/uploads \
+       $DQM_DATA/repository/original \
+       $DQM_DATA/agents/import-playback \
+       |& rotatelogs $DQM_DIR/agents/receive-%Y%m%d%H%M.txt 86400 </dev/null & \
+     ) >& /dev/null </dev/null & )
+
+    (set -x
+     (visDQMImportDaemon \
+       $DQM_DATA/agents/import-playback \
+       $DQM_DATA/repository/original \
+       $DQM_DIR/ix \
+       |& rotatelogs $DQM_DIR/agents/import-%Y%m%d%H%M.txt 86400 </dev/null & \
+     ) >& /dev/null </dev/null & )
+    ;;
   dqm-c2d07-12:*agents* )
     refuseproc "file agents" "visDQMIndex" "refusing to restart"
 
