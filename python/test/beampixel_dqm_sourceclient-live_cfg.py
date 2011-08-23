@@ -10,7 +10,7 @@ process = cms.Process("BeamPixel")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring('HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_60Jet*', 'HLT_70Jet*'))
+    SelectEvents = cms.vstring('HLT_MinBias_*','HLT_Physics', 'HLT_60Jet*', 'HLT_70Jet*'))
  
 
 ### @@@@@@ Comment when running locally @@@@@@ ###
