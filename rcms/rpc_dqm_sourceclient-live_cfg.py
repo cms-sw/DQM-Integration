@@ -22,7 +22,7 @@ process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 ################# RPC Unpacker  ######################
-process.rpcunpacker = cms.EDProducer("RPCUnpackingModule",
+process.rpcunpacker = cms.EDFilter("RPCUnpackingModule",
     InputLabel = cms.InputTag("source"),
     doSynchro = cms.bool(False)
 )
@@ -69,10 +69,6 @@ process.rpcdigidqm.dqmexpert = True
 process.rpcdigidqm.dqmsuperexpert = False
 process.rpcdigidqm.DigiDQMSaveRootFile = False
 
-################# DCS Info ######################
-process.load("DQM.RPCMonitorDigi.RPCDcsInfo_cfi")
-
-
 ################# DQM Client Modules ####################
 process.load("DQM.RPCMonitorClient.RPCDqmClient_cfi")
 process.rpcdqmclient.RPCDqmClientList = cms.untracked.vstring("RPCNoisyStripTest","RPCOccupancyTest","RPCClusterSizeTest","RPCDeadChannelTest","RPCMultiplicityTest")
@@ -81,7 +77,7 @@ process.rpcdqmclient.MinimumRPCEvents = cms.untracked.int32(10)
 
 
 ################# Other Clients ############################
-#process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
+process.load("DQM.RPCMonitorClient.RPCMon_SS_Dbx_Global_cfi")
 
 
 ################### FED ##################################
@@ -95,7 +91,7 @@ process.rpcEventSummary.EventInfoPath = 'RPC/EventInfo'
 process.rpcEventSummary.PrescaleFactor = 5
 
 ################# Quality Tests #########################
-process.qTesterRPC = cms.EDAnalyzer("QualityTester",
+process.qTesterRPC = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/RPCMonitorClient/test/RPCQualityTests.xml'),
     prescaleFactor = cms.untracked.int32(5),
     qtestOnEndLumi = cms.untracked.bool(True),
@@ -109,7 +105,7 @@ process.rpcChamberQuality = cms.EDAnalyzer("RPCChamberQuality",
                                            )
 
 ################  Sequences ############################
-process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcDcsInfo)
+process.rpcDigi = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.rpcdigidqm*process.rpcMonitorRaw*process.rpcAfterPulse)
 process.rpcClient = cms.Sequence(process.qTesterRPC*process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcDigi*process.rpcClient)
 

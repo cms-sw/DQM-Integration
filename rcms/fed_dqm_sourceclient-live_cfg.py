@@ -1,5 +1,4 @@
 import FWCore.ParameterSet.Config as cms
-import socket
 process = cms.Process("PROD")
 
 process.maxEvents = cms.untracked.PSet(
@@ -7,7 +6,7 @@ process.maxEvents = cms.untracked.PSet(
     )
 
 process.source = cms.Source("DQMHttpSource",
-               sourceURL =   cms.untracked.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),        
+               sourceURL =   cms.untracked.string('http://srv-c2c05-09.cms:22100/urn:xdaq-application:lid=30'),        
                DQMconsumerName = cms.untracked.string('FED EventFilter Histogram Consumer'),
                DQMconsumerPriority = cms.untracked.string('normal'),
                headerRetryInterval = cms.untracked.int32(5),

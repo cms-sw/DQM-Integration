@@ -1,153 +1,114 @@
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("BeamPixel")
-
+process = cms.Process("EvFDQM")
 
 #----------------------------
-# Event Source
+#### Event Source
 #----------------------------
-### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCosmics','HLT_Jet*'))
-### @@@@@@ Comment when running locally @@@@@@ ###
+process.EventStreamHttpReader.consumerName = 'Beam Pixel DQM Consumer'
+#process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(50.0)
 
-
-#----------------------------
-# Filters
-#----------------------------
-# HLT Filter
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
-# 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
-process.physicsBitSelector = cms.EDFilter("PhysDecl",
-                                          applyfilter = cms.untracked.bool(True),
-                                          debugOn     = cms.untracked.bool(False))
-# L1 Filter
-process.load("L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff")
-process.load("HLTrigger.HLTfilters.hltLevel1GTSeed_cfi")
-process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("0 AND (40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
 
 
 #----------------------------
-# DQM Environment
+#### DQM Environment
+#----------------------------
+process.load("DQMServices.Core.DQM_cfg")
+#process.DQMStore.referenceFileName = "DT_reference.root"
+
+
+#----------------------------
+#### DQM Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.DQM.collectorHost = ''
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-process.dqmEnv.subSystemFolder = "BeamPixel"
+process.dqmEnv.subSystemFolder = 'BeamPixel'
+#-----------------------------
 
 
-#----------------------------
-# Sub-system Configuration
-#----------------------------
-### @@@@@@ Comment when running locally @@@@@@ ###
+# message logger
+process.MessageLogger = cms.Service("MessageLogger",
+                                    destinations = cms.untracked.vstring('cout'),
+                                    cout = cms.untracked.PSet(threshold = cms.untracked.string('WARNING'))
+                                    )
+
+# Global tag
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-###########################################
-### TEMPORARY: using offline alignments ###
-###########################################
-process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/CMS_COND_31X_GLOBALTAG"
-process.GlobalTag.globaltag = "GR10_E_V6::All"
-process.GlobalTag.pfnPrefix=cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)(failovertoserver=no)/")
-### @@@@@@ Comment when running locally @@@@@@ ###
-process.load("FWCore.MessageService.MessageLogger_cfi")
-process.load("Configuration.StandardSequences.Services_cff")
-process.load("Configuration.StandardSequences.Geometry_cff")
-process.load("Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff")
-process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.Reconstruction_cff")
-process.load("Configuration.StandardSequences.EndOfProcess_cff")
-process.load("Configuration.EventContent.EventContent_cff")
-process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
-process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
 
 
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-#process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-# RECO data taking february 18th 2010
-#process.GlobalTag.globaltag = "GR09_R_35X_V2::All"
-###### Which data ######
-#process.load("DataDec09_RecoMinBias_Feb18th_Skim_Run124120_cff")
-#process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
-###### DQM Saver ######
-#process.dqmSaver.dirName           = cms.untracked.string("/nfshome0/yumiceva/BeamMonitorDQM/")
-#process.dqmSaver.saveAtJobEnd      = cms.untracked.bool(False)
-#process.dqmSaver.saveByTime        = cms.untracked.int32(-1)
-#process.dqmSaver.saveByRun         = cms.untracked.int32(-1)
-#process.dqmSaver.forceRunNumber    = cms.untracked.int32(-1)
-#process.dqmSaver.saveByLumiSection = cms.untracked.int32(-1)
-#process.dqmSaver.saveByMinute      = cms.untracked.int32(-1)
-###### Output file ######
-#process.Output = cms.OutputModule("PoolOutputModule",
-#                                  fileName = cms.untracked.string( "/tmp/dinardo/BeamPixelResults.root" ),
-#                                  outputCommands = cms.untracked.vstring( "drop *",
-#                                                                          "keep *_*_*_BeamPixel"))
-### @@@@@@ Un-comment when running locally @@@@@@ ###
+#-----------------------------
+#### Sub-system configuration follows
+process.load('Configuration/StandardSequences/Services_cff')
+process.load('FWCore/MessageService/MessageLogger_cfi')
+process.load('Configuration/StandardSequences/GeometryExtended_cff')
+process.load('Configuration/StandardSequences/MagneticField_AutoFromDBCurrent_cff')
+process.load('Configuration/StandardSequences/RawToDigi_Data_cff')
+process.load('Configuration/StandardSequences/Reconstruction_cff')
+process.load('Configuration/StandardSequences/EndOfProcess_cff')
+process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
+process.load('Configuration/EventContent/EventContent_cff')
+
+process.pixelVertexDQM = cms.EDProducer("Vx3DHLTAnalyzer",
+  vertexCollection = cms.InputTag("pixelVertices")
+)
+
+process.pixelVertices = cms.EDProducer("PrimaryVertexProducer",
+    PVSelParameters = cms.PSet(
+        maxDistanceToBeam = cms.double(2), ## 2 cms in case there is no beamspot (ONLY FOR STARTUP!)
+        minVertexFitProb = cms.double(0.01) ## 1% vertex fit probability
+
+    ),
+    verbose = cms.untracked.bool(False),
+    algorithm = cms.string('AdaptiveVertexFitter'), ## 100 is for when the beamspot is not well known (ONLY FOR STARTUP)
+    TkFilterParameters = cms.PSet(
+        maxNormalizedChi2 = cms.double(100.0),
+        minSiliconHits = cms.int32(2), ## hits > 2 - for when the beamspot is not well known (ONLY FOR STARTUP)
+
+        maxD0Significance = cms.double(100.0), ## 100 is for when the beamspot is not well known (ONLY FOR STARTUP)
+
+        minPt = cms.double(0.9), ## better for softish events
+
+        minPixelHits = cms.int32(2) ## hits > 2
+
+    ),
+    beamSpotLabel = cms.InputTag("offlineBeamSpot"),
+    # label of tracks to be used
+    TrackLabel = cms.InputTag("pixelTracks"),
+    useBeamConstraint = cms.bool(False),
+    VtxFinderParameters = cms.PSet(
+        ptCut = cms.double(0.0),
+        vtxFitProbCut = cms.double(0.01), ## 1% vertex fit probability
+        trackCompatibilityToSVcut = cms.double(0.01), ## 1%
+        trackCompatibilityToPVcut = cms.double(0.05), ## 5%
+        maxNbOfVertices = cms.int32(0) ## search all vertices in each cluster
+    ),
+    TkClusParameters = cms.PSet(
+        zSeparation = cms.double(1.0) ## 1 cm max separation betw. clusters
+
+    )
+)
+
+###### FIXES TRIPLETS FOR LARGE BS DISPLACEMENT ######
+
+### pixelTracks
+#---- replaces ----
+process.pixelTracks.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
+#---- new parameters ----
+process.pixelTracks.RegionFactoryPSet.RegionPSet.nSigmaZ  = cms.double(4.06) # was originHalfLength = 15.9; translated assuming sigmaZ ~ 3.8
+process.pixelTracks.RegionFactoryPSet.RegionPSet.beamSpot = cms.InputTag("offlineBeamSpot")
 
 
-#----------------------------
-# pixelVertexDQM Configuration
-#----------------------------
-process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
-                                        vertexCollection = cms.InputTag("pixelVertices"),
-                                        debugMode        = cms.bool(True),
-                                        nLumiReset       = cms.uint32(1),
-                                        dataFromFit      = cms.bool(True),
-                                        minNentries      = cms.uint32(35),
-                                        # If the histogram has at least "minNentries" then extract Mean and RMS,
-                                        # or, if we are performing the fit, the number of vertices must be greater
-                                        # than minNentries otherwise it waits for other nLumiReset
-                                        xRange           = cms.double(2.0),
-                                        xStep            = cms.double(0.001),
-                                        yRange           = cms.double(2.0),
-                                        yStep            = cms.double(0.001),
-                                        zRange           = cms.double(30.0),
-                                        zStep            = cms.double(0.05),
-                                        VxErrCorr        = cms.double(1.5),
-                                        fileName         = cms.string("/nfshome0/yumiceva/BeamMonitorDQM/BeamPixelResults.txt"))
-if process.dqmSaver.producer.value() is "Playback":
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmdev/BeamMonitorDQM/BeamPixelResults.txt") 
-else:
-  process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
-
-#----------------------------
-# Pixel-Tracks Configuration
-#----------------------------
-process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-
-
-#----------------------------
-# Pixel-Vertices Configuration
-#----------------------------
-process.pixelVertices.useBeamConstraint = False
-process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
-
-
-#----------------------------
-# Define Sequence
-#----------------------------
+# DQM Modules
 process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
+#process.physicsEventsFilter = cms.EDFilter("HLTTriggerTypeFilter",
+#                                  # 1=Physics, 2=Calibration, 3=Random, 4=Technical
+#                                  SelectedTriggerType = cms.int32(1)
+#                                  ) 
+#-----------------------------
+### Define the path
+process.reconstruction_step = cms.Path(process.siPixelDigis*process.offlineBeamSpot*process.siPixelClusters*process.siPixelRecHits*process.pixelTracks*process.pixelVertices*process.pixelVertexDQM)
 
-process.phystrigger = cms.Sequence(
-  process.hltTriggerTypeFilter
-#  process.gtDigis*
-#  process.hltLevel1GTSeed
-  )
+process.evfDQMmodulesPath = cms.Path(process.dqmmodules)
 
-process.reconstruction_step = cms.Sequence(
-    process.siPixelDigis*
-    process.offlineBeamSpot*
-    process.siPixelClusters*
-    process.siPixelRecHits*
-    process.pixelTracks*
-    process.pixelVertices*
-    process.pixelVertexDQM)
-
-
-#----------------------------
-# Define Path
-#----------------------------
-process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
+process.schedule = cms.Schedule(process.reconstruction_step,process.evfDQMmodulesPath)

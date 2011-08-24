@@ -2,24 +2,23 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("SiStrpDQMLive")
 
-process.MessageLogger = cms.Service("MessageLogger",
-    debugModules = cms.untracked.vstring('siStripDigis', 
-                                         'siStripClusters', 
-                                         'siStripZeroSuppression', 
-                                        'SiStripClusterizer'),
-    cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
-    destinations = cms.untracked.vstring('cout')
-)
+process.load('FWCore.MessageService.MessageLogger_cfi')
+#process.MessageLogger = cms.Service("MessageLogger",
+#    debugModules = cms.untracked.vstring('siStripDigis', 
+#                                         'siStripClusters', 
+#                                         'siStripZeroSuppression', 
+#                                         'SiStripClusterizer'),
+#    cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
+#    destinations = cms.untracked.vstring('cout')
+#)
 
 #----------------------------
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring(
-                 'HLT_MinBia*','HLT_Jet*','HLT_DiJet*','HLT_HT100U','HLT_MultiVertex*','HLT_Pixel*'))
-#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
-
+#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_L1*','HLT_TrackerCosmics'))
+#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
 # DQM Environment
@@ -39,7 +38,7 @@ process.dqmSaver.producer = "Playback"
 process.dqmSaver.saveByTime = 16
 process.dqmSaver.saveByMinute = 16
 
-process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
+process.dqmEnvTr = cms.EDFilter("DQMEventInfo",
                  subSystemFolder = cms.untracked.string('Tracking'),
                  eventRateWindow = cms.untracked.double(0.5),
                  eventInfoFolder = cms.untracked.string('EventInfo')
@@ -86,7 +85,6 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 process.load("Configuration.StandardSequences.Reconstruction_cff")
-process.load("Configuration.GlobalRuns.reco_TLR_38X")
 
 ## Cosmic Track Reconstruction
 process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
@@ -98,9 +96,12 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 # Strip DQM Source and Client
 #--------------------------
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
-process.TrackMon_gentk.doLumiAnalysis = False
-process.TrackMon_ckf.doLumiAnalysis = False
 
+# Switching Off Digi/Cluster profiles temprarily
+process.SiStripMonitorDigi.TProfTotalNumberOfDigis.subdetswitchon = True
+process.SiStripMonitorClusterReal.TProfTotalNumberOfClusters.subdetswitchon = True
+
+#process.load("DQM.SiStripMonitorClient.SiStripSourceConfigHVOff_cff")
 process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
 process.SiStripAnalyser.TkMapCreationFrequency  = -1
 process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -109,7 +110,7 @@ process.SiStripAnalyser.StaticUpdateFrequency = 5
 #--------------------------
 # Quality Test
 #--------------------------
-process.qTester = cms.EDAnalyzer("QualityTester",
+process.qTester = cms.EDFilter("QualityTester",
     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config.xml'),
     prescaleFactor = cms.untracked.int32(5),                               
     getQualityTestsFromFile = cms.untracked.bool(True),
@@ -131,7 +132,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts_cfi")
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1abc_GR09_cfi")
 
 
 #--------------------------
@@ -151,11 +152,12 @@ process.physicsBitSelector = cms.EDFilter("PhysDecl",
 process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
 process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
-process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 38 OR 39)')
+process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('40 OR 41')
 
 #--------------------------
 # Scheduling
 #--------------------------
+#process.SiStripSources_HVOff     = cms.Sequence(process.SiStripMonitorDigiHVOff*process.SiStripMonitorClusterHVOff)
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
 process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
 process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
@@ -168,13 +170,15 @@ process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process
 process.p = cms.Path(process.scalersRawToDigi*
                      process.APVPhases*
                      process.consecutiveHEs*
-                     process.hltTriggerTypeFilter*
+#                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
+##                     process.SiStripSources_HVOff*
+#                     process.physicsBitSelector*
                      process.SiStripSources_LocalReco*
-                     process.hltLevel1GTSeed*
-                     process.RecoForDQM_TrkReco*
-                     process.SiStripSources_TrkReco
+#                     process.hltLevel1GTSeed*
+                     process.RecoForDQM_TrkReco_cosmic*
+                     process.SiStripSources_TrkReco_cosmic
 )
 

@@ -8,7 +8,6 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
 process.load("Configuration.StandardSequences.Geometry_cff")
 
@@ -18,15 +17,14 @@ process.load("DQM.L1TMonitorClient.L1TEMUMonitorClient_cff")
 #NL//this over-writting may be employed only when needed
 #  ie quick module disabling, before new tags can be corrected)
 from L1Trigger.HardwareValidation.L1HardwareValidation_cff import *
-l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 1, 1, 1, 0, 1, 1]
+##NL//ctp temporarily disabled (infinite time sorting too large collections)
+l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 0, 1, 1, 0, 1, 1]
 newHWSequence = cms.Sequence(deEcal+deHcal+deRct+deGct+deDt+deDttf+deCsc+deCsctf+deRpc+deGmt+deGt*l1compare)
 process.globalReplace("L1HardwareValidation", newHWSequence)
 
-#N//validate online, then migrate to cff for offline
-process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
 #N//needs to be removed from here
-#process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
-#process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz' 
+process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_craft_cff")
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_craft.txt.gz' 
 
 ## Subsystem masking in summary map (case insensitive):
 ## l1t: all, gt, muons, jets, taujets, isoem, nonisoem, met

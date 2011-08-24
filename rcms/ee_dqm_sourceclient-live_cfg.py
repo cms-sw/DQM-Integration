@@ -12,11 +12,11 @@ ecalHostEC    = 'vmepcS2F19-25'.lower()
 ecalHostEB    = 'srv-s2f19-26'.lower()
 ecalHostEE    = 'srv-s2f19-27'.lower()
 
-cmsLiveHostEB = 'dqm-c2d07-03'.lower()
-cmsLiveHostEE = 'dqm-c2d07-04'.lower()
+cmsLiveHostEB = 'srv-c2c05-06'.lower()
+cmsLiveHostEE = 'srv-c2c05-07'.lower()
 
-cmsPlayHostEB = 'dqm-c2d07-13'.lower()
-cmsPlayHostEE = 'dqm-c2d07-14'.lower()
+cmsPlayHostEB = 'srv-c2d04-25'.lower()
+cmsPlayHostEE = 'srv-c2d04-26'.lower()
 
 host = socket.gethostname().split('.')[0].lower()
 
@@ -96,7 +96,7 @@ dbHostPort = 1521
 dbUserName = ''
 dbPassword = ''
 
-if (localDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) :
+if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) :
   try :
     file = open('/nfshome0/ecalpro/DQM/online-DQM/.cms_tstore.conf', 'r')
     for line in file :
@@ -119,11 +119,6 @@ process = cms.Process("ECALDQM")
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
-
-if (onlyEB == 1) :
-  process.ecalEBunpacker.FEDs = [ 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645 ]
-if (onlyEE == 1) :
-  process.ecalEBunpacker.FEDs = [ 601, 602, 603, 604, 605, 606, 607, 608, 609, 646, 647, 648, 649, 650, 651, 652, 653, 654 ]
 
 import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
 process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
@@ -165,17 +160,9 @@ process.load("DQM.EcalBarrelMonitorTasks.EcalBarrelMonitorTasks_cfi")
 
 process.load("DQM.EcalEndcapMonitorTasks.EcalEndcapMonitorTasks_cfi")
 
-if (localDAQ == 1) :
-  process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
+process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
 
-  process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
-
-if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-  import DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi
-  process.ecalBarrelMonitorClient = DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi.ecalBarrelMonitorDbClient.clone()
-
-  import DQM.EcalEndcapMonitorClient.EcalEndcapMonitorDbClient_cfi
-  process.ecalEndcapMonitorClient = DQM.EcalEndcapMonitorClient.EcalEndcapMonitorDbClient_cfi.ecalEndcapMonitorDbClient.clone()
+process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
 
 process.load("DQMServices.Core.DQM_cfg")
 
@@ -183,16 +170,13 @@ if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
   process.dqmSaver = cms.EDAnalyzer("DQMFileSaver",
     saveByRun = cms.untracked.int32(1),
     dirName = cms.untracked.string('.'),
-    convention = cms.untracked.string('Online')
+    convention = cms.untracked.string('Online'),
+    referenceHandling = cms.untracked.string('qtests')
   )
 
-  process.dqmEnv = cms.EDAnalyzer("DQMEventInfo",
+  process.dqmEnv = cms.EDFilter("DQMEventInfo",
     subSystemFolder = cms.untracked.string('Ecal')
   )
-
-if (liveCMS == 1) | (playCMS == 1) :
-  process.load("DQMServices.Components.DQMEnvironment_cfi")
-  process.load("DQM.Integration.test.environment_cfi")
 
 process.dqmInfoEB = cms.EDAnalyzer("DQMEventInfo",
   subSystemFolder = cms.untracked.string('EcalBarrel')
@@ -202,14 +186,19 @@ process.dqmInfoEE = cms.EDAnalyzer("DQMEventInfo",
   subSystemFolder = cms.untracked.string('EcalEndcap')
 )
 
-if (localDAQ == 1) :
-  process.dqmSaver.referenceHandling = cms.untracked.string('skip')
+if (liveCMS == 1) :
+  process.load("DQMServices.Components.DQMEnvironment_cfi")
 
-if (globalDAQ == 1) | (liveECAL == 1) :
-  process.dqmSaver.referenceHandling = cms.untracked.string('all')
+  process.load("DQM.Integration.test.environment_cfi")
 
-if (liveCMS == 1) | (playCMS == 1) :
-  process.dqmSaver.referenceHandling = 'all'
+  process.dqmSaver.referenceHandling = 'qtests'
+
+if (playCMS == 1) :
+  process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+  process.load("DQM.Integration.test.environment_cfi")
+
+  process.dqmSaver.referenceHandling = 'qtests'
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string('red'),
@@ -291,7 +280,7 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 
 if (liveECAL == 1) :
   process.source = cms.Source("EventStreamHttpReader",
-    sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30'),
+    sourceURL = cms.string('http://srv-c2d04-30.cms:22100/urn:xdaq-application:lid=30'),
     consumerPriority = cms.untracked.string('normal'),
     max_event_size = cms.int32(7000000),
     consumerName = cms.untracked.string('Ecal DQM Consumer'),
@@ -311,24 +300,12 @@ if (playCMS == 1) :
 if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
   process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
   process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
-  process.GlobalTag.globaltag = "GR10_H_V6A::All"
+  process.GlobalTag.globaltag = "GR10_H_V2::All"
   process.prefer("GlobalTag")
 
 if (liveCMS == 1) | (playCMS == 1) :
   process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
   process.prefer("GlobalTag")
-
-if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-  process.GlobalTag.toGet = cms.VPSet(
-    cms.PSet(record = cms.string("EcalDQMChannelStatusRcd"),
-             tag = cms.string("EcalDQMChannelStatus_v1_hlt"),
-             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
-            ),
-    cms.PSet(record = cms.string("EcalDQMTowerStatusRcd"),
-             tag = cms.string("EcalDQMTowerStatus_v1_hlt"),
-             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
-            )
-  )
 
 process.MessageLogger = cms.Service("MessageLogger",
   cout = cms.untracked.PSet(
@@ -436,15 +413,13 @@ process.ecalEndcapMonitorSequence = cms.Sequence(process.ecalEndcapMonitorModule
 
 process.load("DQM.EcalBarrelMonitorTasks.EBHltTask_cfi")
 process.load("DQM.EcalBarrelMonitorTasks.EBTrendTask_cfi")
-process.load("DQM.EcalBarrelMonitorClient.EBTrendClient_cfi")
 
-process.ecalBarrelMainSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelRawDataTask*process.ecalBarrelHltTask*process.ecalBarrelTrendTask*process.ecalBarrelTrendClient)
+process.ecalBarrelMainSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelOccupancyTask*process.ecalBarrelIntegrityTask*process.ecalBarrelStatusFlagsTask*process.ecalBarrelRawDataTask*process.ecalBarrelHltTask*process.ecalBarrelTrendTask)
 
 process.load("DQM.EcalEndcapMonitorTasks.EEHltTask_cfi")
 process.load("DQM.EcalEndcapMonitorTasks.EETrendTask_cfi")
-process.load("DQM.EcalEndcapMonitorClient.EETrendClient_cfi")
 
-process.ecalEndcapMainSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapRawDataTask*process.ecalEndcapHltTask*process.ecalEndcapTrendTask*process.ecalEndcapTrendClient)
+process.ecalEndcapMainSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapOccupancyTask*process.ecalEndcapIntegrityTask*process.ecalEndcapStatusFlagsTask*process.ecalEndcapRawDataTask*process.ecalEndcapHltTask*process.ecalEndcapTrendTask)
 
 process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlineTask*process.ecalBarrelCosmicTask*process.ecalBarrelClusterTask*process.ecalBarrelTriggerTowerTask*process.ecalBarrelTimingTask*process.ecalBarrelSelectiveReadoutTask)
 
@@ -561,8 +536,7 @@ process.ecalDetIdToBeRecovered.eeIntegrityChIdErrors = 'ecalEBunpacker:EcalInteg
 process.ecalDetIdToBeRecovered.integrityTTIdErrors = 'ecalEBunpacker:EcalIntegrityTTIdErrors'
 process.ecalDetIdToBeRecovered.integrityBlockSizeErrors = 'ecalEBunpacker:EcalIntegrityBlockSizeErrors'
 
-process.ecalRecHit.killDeadChannels = True
-process.ecalRecHit.ChannelStatusToBeExcluded = [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 78, 142 ]
+process.ecalRecHit.killDeadChannels = False
 process.ecalRecHit.EBuncalibRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEB'
 process.ecalRecHit.EEuncalibRecHitCollection = 'ecalUncalibHit:EcalUncalibRecHitsEE'
 
@@ -588,15 +562,11 @@ process.simEcalTriggerPrimitiveDigis.Label = 'ecalEBunpacker'
 process.simEcalTriggerPrimitiveDigis.InstanceEB = 'ebDigis'
 process.simEcalTriggerPrimitiveDigis.InstanceEE = 'eeDigis'
 
-if (localDAQ == 1) :
-  process.ecalBarrelMonitorClient.maskFile = 'DQM/EcalBarrelMonitorModule/test/data/maskfile-EB.dat'
-
+process.ecalBarrelMonitorClient.maskFile = ''
 process.ecalBarrelMonitorClient.location = 'P5_Co'
 process.ecalBarrelMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
 
-if (localDAQ == 1) :
-  process.ecalEndcapMonitorClient.maskFile = 'DQM/EcalEndcapMonitorModule/test/data/maskfile-EE.dat'
-
+process.ecalEndcapMonitorClient.maskFile = ''
 process.ecalEndcapMonitorClient.location = 'P5_Co'
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
 
@@ -687,7 +657,7 @@ if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) :
 if (liveECAL == 1) :
   process.ecalBarrelMonitorClient.updateTime = 4
   process.ecalBarrelMonitorClient.dbUpdateTime = 120
-
+  
   process.ecalEndcapMonitorClient.updateTime = 4
   process.ecalEndcapMonitorClient.dbUpdateTime = 120
 
@@ -712,6 +682,6 @@ if (localDAQ == 1) | (globalDAQ == 1) :
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/tmp'
 
 if (liveECAL == 1) :
-  process.DQM.collectorHost = 'ecalod-web01.cms'
-  process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
+  process.DQM.collectorHost = 'ecalod-web01'
+  process.dqmSaver.dirName = '/data/ecalod-disk01/TestRuns/DQM-SM/root'
 

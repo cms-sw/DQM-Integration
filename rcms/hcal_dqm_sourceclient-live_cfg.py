@@ -1,20 +1,7 @@
 import FWCore.ParameterSet.Config as cms
+from DQM.HcalMonitorModule.HcalMonitorModule_cfi import * # Can this be done better?
+from DQM.HcalMonitorClient.HcalMonitorClient_cfi import * 
 
-import os, sys, socket
-from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
-
-# Get Host information
-host = socket.gethostname().split('.')[0].lower()
-HcalPlaybackHost='dqm-c2d07-13'.lower()
-HcalCalibPlaybackHost='dqm-c2d07-16'.lower()
-# These are playback servers, not hosts...
-#HcalPlaybackHost='srv-c2d04-25'.lower()
-#HcalCalibPlaybackHost='srv-c2d04-28'.lower()
-
-playbackHCAL=False
-if (host==HcalPlaybackHost):
-    playbackHCAL=True
-    
 process = cms.Process("HCALDQM")
 subsystem="Hcal" # specify subsystem name here
 
@@ -43,8 +30,11 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
 
 #-----------------------------
-# Hcal DQM Source, including Rec Hit Reconstructor
+# Hcal DQM Source, including SimpleReconstrctor
 #-----------------------------
+process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
+process.load("DQM.HcalMonitorModule.ZDCMonitorModule_cfi")
+
 process.load("EventFilter.HcalRawToDigi.HcalRawToDigi_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_hbhe_cfi")
 process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_ho_cfi")
@@ -55,19 +45,44 @@ process.load("RecoLocalCalo.HcalRecProducers.HcalHitReconstructor_zdc_cfi")
 process.hfreco.firstSample = 3
 process.hfreco.samplesToAdd = 4
 
-# ZDC Corrections to reco
-process.zdcreco.firstSample  = 4
-process.zdcreco.samplesToAdd = 3
-process.zdcreco.recoMethod   = 2
-
-# Turn off default blocking of dead channels from rechit collection
+# Turn off default blocking of dead channels from rechit reconstructor
 process.essourceSev =  cms.ESSource("EmptyESSource",
-                                    recordName = cms.string("HcalSeverityLevelComputerRcd"),
-                                    firstValid = cms.vuint32(1),
-                                    iovIsRunNotTime = cms.bool(True)
-                                    )
-process.load("RecoLocalCalo.HcalRecAlgos.hcalRecAlgoESProd_cfi")
-process.hcalRecAlgos.DropChannelStatusBits = cms.vstring('') # Had been ('HcalCellOff','HcalCellDead')
+                                               recordName = cms.string("HcalSeverityLevelComputerRcd"),
+                                               firstValid = cms.vuint32(1),
+                                               iovIsRunNotTime = cms.bool(True)
+                            )
+
+
+process.hcalRecAlgos = cms.ESProducer("HcalRecAlgoESProducer",
+                                      SeverityLevels = cms.VPSet(
+    cms.PSet( Level = cms.int32(0),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(5),
+              RecHitFlags = cms.vstring('HSCP_R1R2','HSCP_FracLeader','HSCP_OuterEnergy',
+                                        'HSCP_ExpFit','ADCSaturationBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(8),
+              RecHitFlags = cms.vstring('HBHEHpdHitMultiplicity', 'HBHEPulseShape', 'HOBit',
+                                        'HFDigiTime', 'HFLongShort', 'ZDCBit', 'CalibrationBit',
+                                        'TimingErrorBit'),
+              ChannelStatus = cms.vstring('')
+              ),
+    cms.PSet( Level = cms.int32(10),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellHot')
+              ),
+    cms.PSet( Level = cms.int32(20),
+              RecHitFlags = cms.vstring(''),
+              ChannelStatus = cms.vstring('HcalCellOff', 'HcalCellDead')
+              )
+    ),
+                                      RecoveredRecHitBits = cms.vstring('TimingAddedBit','TimingSubtractedBit'),
+                                      DropChannelStatusBits = cms.vstring('HcalCellOff',) #'HcalCellDead' had also been present
+                                      )
+
 
 #----------------------------
 # Trigger Emulator
@@ -77,78 +92,76 @@ process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clon
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
 process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
-process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
+
 
 # -------------------------------
-# Hcal DQM Modules
+# hcalMonitor configurable values
 # -------------------------------
+process.hcalMonitor.debug = 0
+process.hcalMonitor.Online = True
 
-process.load("DQM.HcalMonitorModule.HcalMonitorModule_cfi")
-process.load("DQM.HcalMonitorModule.ZDCMonitorModule_cfi")
+process.hcalMonitor.showTiming = False
+process.hcalMonitor.checkNevents=1000
 
-process.load("DQM.HcalMonitorTasks.HcalMonitorTasks_cfi")
-# Set individual parameters for the tasks
-process.load("DQM.HcalMonitorTasks.HcalTasksOnline_cff")
-process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
-if playbackHCAL==True:
-    process.hcalBeamMonitor.lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi_playback/"
-    
+# Turn on/off individual hcalMonitor modules ------------
+process.hcalMonitor.subSystemFolder = cms.untracked.string(subsystem)
+
+process.hcalMonitor.DataFormatMonitor   = True
+process.hcalMonitor.DataIntegrityTask   = False
+process.hcalMonitor.DigiMonitor         = True 
+process.hcalMonitor.RecHitMonitor       = True
+process.hcalMonitor.TrigPrimMonitor     = True
+process.hcalMonitor.DeadCellMonitor     = True
+process.hcalMonitor.HotCellMonitor      = True
+process.hcalMonitor.BeamMonitor         = True
+process.hcalMonitor.ReferencePedestalMonitor     = True
+process.hcalMonitor.DetDiagNoiseMonitor = True
+process.hcalMonitor.DetDiagTimingMonitor = True
+process.hcalMonitor.NZSMonitor                    = True
+
+process.hcalMonitor.LEDMonitor          = False
+process.hcalMonitor.CaloTowerMonitor    = False
+process.hcalMonitor.MTCCMonitor         = False
+process.hcalMonitor.HcalAnalysis        = False
+
+# This takes the default cfg values from the hcalMonitor base class and applies them to the subtasks.
+setHcalTaskValues(process.hcalMonitor)
+
+# Set individual Task values here (otherwise they will remain set to the values specified for the hcalMonitor.)
+
+process.hcalMonitor.BeamMonitor_lumiqualitydir="/nfshome0/hcaldqm/DQM_OUTPUT/lumi/"
+
+# Ignore calibration events in DFMon and DigiMon
+process.hcalMonitor.DataFormatMonitor_AllowedCalibTypes = [0]
+process.hcalMonitor.DigiMonitor_AllowedCalibTypes       = [0]
+process.hcalMonitor.RecHitMonitor_AllowedCalibTypes     = [0]
+process.hcalMonitor.HotCellMonitor_AllowedCalibTypes=[0] # ignore calibration (laser, raddam) events
+process.hcalMonitor.DeadCellMonitor_LBprescale=4 # set to 4 for online running; dead cell histogram checks updated every 4 lumi blocks
+
+
+#-----------------------------
+# Hcal DQM Client
+#-----------------------------
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 process.load("DQM.HcalMonitorClient.ZDCMonitorClient_cfi")
-
-#-----------------------------
-#  Configure Hcal DQM
-#-----------------------------
-# Our subsystem values expected a '/' at end
-# Source code should catch when it's not there, but don't take the chance yet:
-if not subsystem.endswith("/"):
-    subsystem=subsystem+"/"
-process.hcalMonitor.subSystemFolder=subsystem
-SetTaskParams(process,"subSystemFolder",subsystem)
-process.hcalClient.subSystemFolder=subsystem
-#print "BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
-process.hcalRecHitMonitor.HcalHLTBits=["HLT_L1Tech_HCAL_HF_coincidence_PM",
-                                       "HLT_L1Tech_HCAL_HF"]
-
-process.hcalRecHitMonitor.MinBiasHLTBits=["HLT_MinBiasBSC",
-                                          "HLT_L1Tech_BSC_minBias"
-                                          ]
-#print "NEW BITS = ",process.hcalRecHitMonitor.HcalHLTBits.value()
 
 # hcalClient configurable values ------------------------
 # suppresses html output from HCalClient  
 process.hcalClient.baseHtmlDir = ''  # set to '' to prevent html output
+process.hcalClient.subSystemFolder  = cms.untracked.string(subsystem)
+process.hcalClient.prefixME = cms.untracked.string(subsystem)
 
-# Update once per hour, starting after 10 minutes
-process.hcalClient.databaseDir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
+# Set client settings to the same as monitor.  At the moment, this doesn't affect client minErrorFlag
+# Summary Client is also unaffected
+setHcalClientValuesFromMonitor(process.hcalClient,process.hcalMonitor, debug=False)  # turn debug to True to dump out client settings
 
-if (playbackHCAL==True):
-    process.hcalClient.databaseDir = ''
-process.hcalClient.databaseFirstUpdate=10
-process.hcalClient.databaseUpdateTime=60
+process.hcalClient.SummaryClient        = True
+process.hcalClient.databasedir = '/nfshome0/hcaldqm/DQM_OUTPUT/ChannelStatus/' # set to empty to suppress channel status output
 
-# Set values higher at startup  (set back from 0.25 to 0.05 on 15 April 2010)
-process.hcalClient.DeadCell_minerrorrate=0.05
-process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
-                   
-# Don't create problem histograms for tasks that aren't run:
-process.hcalClient.enabledClients = ["DeadCellMonitor",
-                                     "HotCellMonitor",
-                                     "RecHitMonitor",
-                                     "DigiMonitor",
-                                     "RawDataMonitor",
-                                     "TrigPrimMonitor",
-                                     "NZSMonitor",
-                                     "BeamMonitor",
-                                     #"DetDiagPedestalMonitor",
-                                     #"DetDiagLaserMonitor",
-                                     #"DetDiagLEDMonitor",
-                                     #"DetDiagNoiseMonitor",
-                                     "CoarsePedestalMonitor",
-                                     "DetDiagTimingMonitor",
-                                     "Summary"
-                                     ]
-
+# Set larger limits at startup (these are used in calculating the reportSummary)
+process.hcalClient.HotCellClient_minErrorFlag=0.25
+process.hcalClient.DeadCellClient_minErrorFlag=0.25
+process.hcalClient.BeamClient_minErrorFlag=0.20
 
 # Set expected idle BCN time to correct value
 #(6 for runs < 116401; 3560 for runs > c. 117900, 3563 for runs between)
@@ -156,16 +169,8 @@ process.hcalClient.enabledClients = ["DeadCellMonitor",
 
 idle=3559
 process.hcalDigis.ExpectedOrbitMessageTime=cms.untracked.int32(idle)
-process.hcalDigiMonitor.ExpectedOrbitMessageTime = idle
-process.hcalDigiMonitor.shutOffOrbitTest=False
-
-# Turn off dead cell checks in HO ring 2
-process.hcalDeadCellMonitor.excludeHORing2 = True
-
-# Ignore ped-ref differences
-process.hcalCoarsePedestalMonitor.ADCDiffThresh = 2
-# block both hot and dead channels from CoarsePedestal Monitor
-process.hcalClient.CoarsePedestal_BadChannelStatusMask=cms.untracked.int32((1<<5) | (1<<6))
+process.hcalMonitor.DigiMonitor_ExpectedOrbitMessageTime = idle
+process.hcalMonitor.DigiMonitor_shutOffOrbitTest=True
 
 # Allow even bad-quality digis
 #process.hcalDigis.FilterDataQuality=False
@@ -196,7 +201,6 @@ process.p = cms.Path(process.hcalDigis
                      *process.hbhereco
                      *process.zdcreco
                      *process.hcalMonitor
-                     *process.hcalMonitorTasksOnlineSequence 
                      *process.hcalClient
                      *process.zdcMonitor
                      *process.zdcClient
@@ -208,7 +212,7 @@ process.p = cms.Path(process.hcalDigis
 # Quality Tester 
 # will add switch to select histograms to be saved soon
 #-----------------------------
-process.qTester = cms.EDAnalyzer("QualityTester",
+process.qTester = cms.EDFilter("QualityTester",
     prescaleFactor = cms.untracked.int32(1),
     qtList = cms.untracked.FileInPath('DQM/HcalMonitorClient/data/hcal_qualitytest_config.xml'),
     getQualityTestsFromFile = cms.untracked.bool(True),

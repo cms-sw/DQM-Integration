@@ -11,9 +11,6 @@ process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputH
 
 ## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
-process.hlxdqmsource.PrimaryHLXDAQIP = 'vmepcs2f17-22'
-process.hlxdqmsource.SecondaryHLXDAQIP = 'vmepcs2f17-18'
-process.hlxdqmsource.SourcePort = 51007
 
 ## Set up env and saver
 process.load("DQM.Integration.test.environment_cfi")
@@ -22,7 +19,7 @@ process.dqmEnv.subSystemFolder    = "HLX"
 ## Lumi reference file
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hlx_reference.root'
 
-process.hlxQualityTester = cms.EDAnalyzer("QualityTester",
+process.hlxQualityTester = cms.EDFilter("QualityTester",
     # default is 1
     prescaleFactor = cms.untracked.int32(10000),
     # use eventloop for testing only ! default is false
