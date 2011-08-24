@@ -25,7 +25,8 @@ find "$HERE/gui/sessions" -type f -mmin +120 | xargs rm -f
 for f in $(find $HERE/gui -name '*log-20*.log' -mtime +0 | sort); do
   set -e
   [ -f "$f" ] || continue
-  item=${${f#$HERE/gui/}%/*}
+  #item=${${f#$HERE/gui/}%/*}
+  item=www
   month=$(echo "$f" | perl -pe 's|.*log-||; s|^([0-9]{6}).*|$1|')
   case $month in 20[0-9][0-9][01][0-9] ) ;; * )
     echo "$f: could not determine month from log file name (got: $month)"
