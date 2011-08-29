@@ -55,3 +55,5 @@ process.dqmEnv.subSystemFolder = 'HcalTiming'
 process.p = cms.Path(process.hcalDigis*process.l1GtUnpack*process.hcalTimingMonitor*process.dqmEnv*process.dqmSaver)
 
 
+process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")

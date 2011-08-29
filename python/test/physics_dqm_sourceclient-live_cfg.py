@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.7 2010/02/09 11:03:55 lilopera Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.8 2010/02/10 11:13:54 lilopera Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -48,3 +48,4 @@ process.p = cms.Path(
     process.dqmEnv *
     process.dqmSaver
 )
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")

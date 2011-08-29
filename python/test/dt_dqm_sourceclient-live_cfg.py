@@ -47,3 +47,6 @@ process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + proces
 
 #process.dtDQMPathCalib = cms.Path(process.unpackers + process.dqmmodules + process.calibrationEventsFilter * process.dtDQMCalib)
 
+process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
+process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
+process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")

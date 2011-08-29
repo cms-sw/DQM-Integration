@@ -160,7 +160,7 @@ process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process
 process.p = cms.Path(process.scalersRawToDigi*
                      process.APVPhases*
                      process.consecutiveHEs*
-                     process.hltTriggerTypeFilter*
+#                     process.hltTriggerTypeFilter*
                      process.RecoForDQM_LocalReco*
                      process.DQMCommon*
                      process.SiStripClients*
@@ -169,3 +169,20 @@ process.p = cms.Path(process.scalersRawToDigi*
                      process.SiStripSources_TrkReco
 )
 
+process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
+process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
+process.ecalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataRepacker")
+process.gctDigis.inputLabel = cms.InputTag("rawDataRepacker")
+process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataRepacker")
+process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.muonCSCDigis.InputObjects = cms.InputTag("rawDataRepacker")
+process.muonDTDigis.inputLabel = cms.InputTag("rawDataRepacker")
+process.muonRPCDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
+process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
+process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataRepacker")

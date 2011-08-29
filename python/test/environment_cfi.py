@@ -9,7 +9,7 @@ from DQMServices.Components.DQMEnvironment_cfi import *
 
 dqmSaver.convention = 'Online'
 dqmSaver.referenceHandling = 'all'
-dqmSaver.dirName = '/home/dqmprolocal/output'
+dqmSaver.dirName = '/tmp/'
 dqmSaver.producer = 'DQM'
 dqmSaver.saveByTime = 1
 dqmSaver.saveByLumiSection = -1

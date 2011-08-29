@@ -57,3 +57,5 @@ process.p = cms.Path(process.preScaler*
                process.ecalPreshowerMonitorClient*
                process.dqmSaver)
 
+process.esRawToDigi.sourceTag = cms.InputTag("rawDataRepacker")
+process.ecalPreshowerRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")

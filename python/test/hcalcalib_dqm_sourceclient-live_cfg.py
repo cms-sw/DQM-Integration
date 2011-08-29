@@ -246,3 +246,13 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
 )
+process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")

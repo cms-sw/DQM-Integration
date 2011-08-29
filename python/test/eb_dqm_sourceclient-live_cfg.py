@@ -716,3 +716,12 @@ if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 
+process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalEndcapHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")

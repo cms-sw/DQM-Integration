@@ -101,3 +101,5 @@ process.rpcSource = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.
 process.rpcClient = cms.Sequence(process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.rpcSource*process.rpcClient)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcSource*process.rpcClient)
+process.rpcunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")

@@ -161,3 +161,5 @@ process.options = cms.untracked.PSet(
 process.p = cms.Path(process.castorDigis*process.castorreco*process.castorMonitor*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.castorDigis*process.castorMonitor*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.castorMonitor*process.dqmEnv*process.dqmSaver)
+process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
+process.castorMonitor.rawLabel = cms.InputTag("rawDataRepacker")

@@ -48,3 +48,4 @@ process.seqDigitization = cms.Path( process.siStripDigis )
 process.DQMCommon   = cms.Sequence(process.dqmEnv*process.dqmSaver)
 
 process.seqAnalysis = cms.Path( process.LaserAlignmentProducerDQM*process.DQMCommon)
+process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
