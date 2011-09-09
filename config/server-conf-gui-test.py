@@ -10,7 +10,7 @@ LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
             ("castor","csc", "dt", "eb", "ee", "es","hcal", "hcalcalib", "hlt", "hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip" , "fed" )]
 
-modules = ("Monitoring.DQM.GUI",)
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 #server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'

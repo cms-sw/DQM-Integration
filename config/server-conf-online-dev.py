@@ -26,7 +26,7 @@ SRVDIR   = '/home/dqmlocal'
 COLLHOST = 'localhost'
 
 # Extension modules and environment to install.
-modules = ("Monitoring.DQM.GUI",)
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 # Server configuration.

@@ -6,7 +6,7 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 LAYOUTS = ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
 	   ("tkal",)]
 
-modules = ("Monitoring.DQM.GUI",)
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 server.port        = 8040

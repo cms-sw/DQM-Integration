@@ -16,7 +16,7 @@ LAYOUTS += ["%s/%s_caf_layouts.py" % (CONFIGDIR, x) for x in
 LAYOUTS += [CONFIGDIR + "/shift_hlt_relval_layout.py"]
 LAYOUTS += [CONFIGDIR + "/hlt_relval-layouts.py"]
 
-modules = ("Monitoring.DQM.GUI",)
+modules = ("GuiDQM",)
 envsetup = "export QUIET_ASSERT=a"
 
 #server.instrument  = 'valgrind --num-callers=999 `cmsvgsupp` --error-limit=no'
