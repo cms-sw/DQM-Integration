@@ -48,3 +48,12 @@ process.seqDigitization = cms.Path( process.siStripDigis )
 process.DQMCommon   = cms.Sequence(process.dqmEnv*process.dqmSaver)
 
 process.seqAnalysis = cms.Path( process.LaserAlignmentProducerDQM*process.DQMCommon)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")

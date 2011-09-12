@@ -47,3 +47,14 @@ process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + proces
 
 #process.dtDQMPathCalib = cms.Path(process.unpackers + process.dqmmodules + process.calibrationEventsFilter * process.dtDQMCalib)
 
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
+    process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
+    process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")

@@ -161,3 +161,13 @@ process.options = cms.untracked.PSet(
 process.p = cms.Path(process.castorDigis*process.castorreco*process.castorMonitor*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.castorDigis*process.castorMonitor*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.castorMonitor*process.dqmEnv*process.dqmSaver)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.castorMonitor.rawLabel = cms.InputTag("rawDataRepacker")

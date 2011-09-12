@@ -120,3 +120,28 @@ MessageLogger = cms.Service("MessageLogger",
 
 #process.p = cms.Path(process.dqmCSCClient+process.dqmEnv+process.dqmSaver)
 process.p = cms.Path(process.dqmCSCClient * process.muonCSCDigis * process.cscTriggerPrimitiveDigis * process.lctreader * process.csc2DRecHits * process.cscSegments * process.cscMonitor + process.dqmEnv + process.dqmSaver)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
+    process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
+    process.ecalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataRepacker")
+    process.gctDigis.inputLabel = cms.InputTag("rawDataRepacker")
+    process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+    process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataRepacker")
+    process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.muonCSCDigis.InputObjects = cms.InputTag("rawDataRepacker")
+    process.muonDTDigis.inputLabel = cms.InputTag("rawDataRepacker")
+    process.muonRPCDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
+    process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
+    process.cscMonitor.FEDRawDataCollectionTag = cms.InputTag("rawDataRepacker")
+    process.dqmCSCClient.InputObjects = cms.untracked.InputTag("rawDataRepacker")

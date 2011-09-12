@@ -57,3 +57,12 @@ process.p = cms.Path(process.preScaler*
                process.ecalPreshowerMonitorClient*
                process.dqmSaver)
 
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.esRawToDigi.sourceTag = cms.InputTag("rawDataRepacker")
+    process.ecalPreshowerRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")

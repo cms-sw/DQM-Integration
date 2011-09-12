@@ -2,12 +2,13 @@ import FWCore.ParameterSet.Config as cms
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
 import os, sys, socket, string
-
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
 
 # Set this to True is running in Heavy Ion mode
 HEAVYION=False
-
-
+if runType == runTypes.hi_run:
+      HEAVYION=True
 
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
@@ -246,3 +247,19 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
 )
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+
+if (HEAVYION):
+     process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+     process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+     process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")

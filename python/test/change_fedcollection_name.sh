@@ -4,7 +4,7 @@ set -o nounset
 [ $# -gt 0 ] || { echo "==> cfg file name must be provided!"; exit 1; }
 cfg=$1
 
-sname="Repacked"
+sname="rawDataRepacker"
 [ $# -gt 1 ] && sname=$2
 
 let "blines = 200"

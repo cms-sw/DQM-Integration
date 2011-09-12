@@ -101,3 +101,13 @@ process.rpcSource = cms.Sequence(process.rpcunpacker*process.rpcRecHits*process.
 process.rpcClient = cms.Sequence(process.rpcdqmclient*process.rpcChamberQuality*process.rpcEventSummary*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.rpcSource*process.rpcClient)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcSource*process.rpcClient)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.rpcunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")

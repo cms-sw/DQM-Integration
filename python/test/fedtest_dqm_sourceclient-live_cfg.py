@@ -131,3 +131,25 @@ process.evfDQMmodulesPath = cms.Path(
                               process.dqmmodules 
 )
 process.schedule = cms.Schedule(process.evfDQMPath,process.evfDQMmodulesPath)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
+    process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.esRawToDigi.sourceTag = cms.InputTag("rawDataRepacker")
+    process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.rpcunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataRepacker")
+    process.cscDQMEvF.InputObjects = cms.untracked.InputTag("rawDataRepacker")
+    process.ebDQMEvF.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalPreshowerFEDIntegrityTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.eeDQMEvF.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.l1tfed.rawTag = cms.InputTag("rawDataRepacker")
+    process.siStripFEDCheck.RawDataTag = cms.InputTag("rawDataRepacker")

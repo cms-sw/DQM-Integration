@@ -716,3 +716,19 @@ if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalEndcapHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
+    process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")

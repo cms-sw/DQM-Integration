@@ -137,3 +137,13 @@ process.SiPixelDigiSource.diskOn = True
 process.p = cms.Path(process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
 ####process.p = cms.Path(process.hltTriggerTypeFilter*process.Reco*process.DQMmodules*process.SiPixelRawDataErrorSource*process.SiPixelDigiSource*process.SiPixelClusterSource*process.PixelP5DQMClientWithDataCertification)
 #process.p = cms.Path(process.Reco*process.RecoStrips*process.trackReco*process.DQMmodules*process.siPixelP5DQM_cosmics_source*process.PixelP5DQMClientWithDataCertification)
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
+
+if (runType == runTypes.hi_run):
+    process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataRepacker")

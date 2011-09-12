@@ -2,10 +2,14 @@ import FWCore.ParameterSet.Config as cms
 
 import os, sys, socket, string
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
 
 # Set this to True if running in Heavy Ion mode
 HEAVYION=False
-
+if runType == runTypes.hi_run:
+  HEAVYION=True
+ 
 # Get Host information
 host = socket.gethostname().split('.')[0].lower()
 HcalPlaybackHost='dqm-c2d07-13'.lower()
@@ -268,3 +272,34 @@ process.p = cms.Path(process.hcalDigis
                      *process.dqmSaver)
 
 
+
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+
+if (HEAVYION):
+    process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
+    process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
+    process.ecalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataRepacker")
+    process.gctDigis.inputLabel = cms.InputTag("rawDataRepacker")
+    process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+    process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataRepacker")
+    process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+    process.muonCSCDigis.InputObjects = cms.InputTag("rawDataRepacker")
+    process.muonDTDigis.inputLabel = cms.InputTag("rawDataRepacker")
+    process.muonRPCDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
+    process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
+    process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+    process.zdcMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")

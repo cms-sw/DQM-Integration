@@ -7,6 +7,11 @@ DQM.collectorPort = 9090
 
 from DQMServices.Components.DQMEnvironment_cfi import *
 
+global runTypes
+global runType
+runTypes = type('Enum', () , {'pp_run':0,'cosmic_run':1,'hi_run':2})
+runType = runTypes.pp_run
+
 dqmSaver.convention = 'Online'
 dqmSaver.referenceHandling = 'all'
 dqmSaver.dirName = '/home/dqmprolocal/output'

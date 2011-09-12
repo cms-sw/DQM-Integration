@@ -2,7 +2,14 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("HcalTimingTest")
 
 process.load("DQM.Integration.test.inputsource_cfi")
+from DQM.Integration.test.environment_cfi import runType, runTypes
+print "Running with run type = ", runType
 
+# Set this to True if running in Heavy Ion mode
+HEAVYION=False
+if runType == runTypes.hi_run:
+      HEAVYION=True
+      
 process.EventStreamHttpReader.consumerName = 'Hcal Timing DQM Consumer'
 
 process.MessageLogger = cms.Service("MessageLogger",
@@ -54,4 +61,10 @@ process.dqmEnv.subSystemFolder = 'HcalTiming'
 
 process.p = cms.Path(process.hcalDigis*process.l1GtUnpack*process.hcalTimingMonitor*process.dqmEnv*process.dqmSaver)
 
-
+#--------------------------------------------------
+# Heavy Ion Specific Fed Raw Data Collection Label
+#--------------------------------------------------
+if (HEAVYION):
+    process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
+    process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+    
