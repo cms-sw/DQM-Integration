@@ -109,12 +109,6 @@ process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('firs
 process.dqmBeamMonitorBx.BeamFitter.TrackCollection = cms.untracked.InputTag('firstStepTracksWithQuality')
 process.offlinePrimaryVertices.TrackLabel = cms.InputTag("firstStepTracksWithQuality")
 
-## Skip events with HV off/beam gas scraping events
-process.newSeedFromTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.newSeedFromPairs.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
-process.secTriplets.ClusterCheckPSet.MaxNumberOfPixelClusters=2000
-process.fifthSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 10000
-process.fourthPLSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters=10000
 ### 0th step of iterative tracking
 #---- replaces ----
 process.newSeedFromTriplets.RegionFactoryPSet.ComponentName = 'GlobalRegionProducerFromBeamSpot' # was GlobalRegionProducer
