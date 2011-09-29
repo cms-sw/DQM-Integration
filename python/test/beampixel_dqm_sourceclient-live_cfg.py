@@ -9,7 +9,7 @@ process = cms.Process("BeamPixel")
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*', 'HLT_70Jet*','HLT_300Tower0p*'))
 ### @@@@@@ Comment when running locally @@@@@@ ###
 
 
@@ -118,7 +118,15 @@ process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalR
 #----------------------------
 process.pixelVertices.useBeamConstraint = False
 process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
+# Suggested by Andrea to avoid the runaway effect on #of pixel verteces at high PileUp
+process.load("RecoPixelVertexing.PixelLowPtUtilities.ClusterShapeHitFilterESProducer_cfi")
+process.pixelTracks.OrderedHitsFactoryPSet.GeneratorPSet.SeedComparitorPSet.ComponentName = 'LowPtClusterShapeSeedComparitor'
 
+#-------------------------------------------
+#  Pixel Vertex Monitoring based on HLT path
+#-------------------------------------------
+process.load('DQM.BeamMonitor.PixelVTXMonitor_cfi')
+process.pixelVTXMonitor.HLTPathsOfInterest = cms.vstring('HLT_70Jet10_v','HLT_70Jet13_v', 'HLT_300Tower0p', 'HLT_ZeroBias','HLT_Physics_v')
 
 #----------------------------
 # Define Sequence
@@ -138,11 +146,13 @@ process.reconstruction_step = cms.Sequence(
     process.pixelVertices*
     process.pixelVertexDQM)
 
+process.high_pu_step = cms.Sequence(
+    process.pixelVTXMonitor)
 
 #----------------------------
 # Define Path
 #----------------------------
-process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.dqmmodules)
+process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.high_pu_step * process.dqmmodules)
 
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
