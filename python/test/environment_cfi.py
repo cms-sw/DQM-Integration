@@ -35,7 +35,6 @@ runParameters.register ('runkey',
 
 # Fix to allow scram to compile
 if len(sys.argv) > 1:
-  print sys.argv
   runParameters.parseArguments()
 
 runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2}
