@@ -7,11 +7,6 @@ DQM.collectorPort = 9090
 
 from DQMServices.Components.DQMEnvironment_cfi import *
 
-global runTypes
-global runType
-runTypes = type('Enum', () , {'pp_run':0,'cosmic_run':1,'hi_run':2})
-runType = runTypes.pp_run
-
 dqmSaver.convention = 'Online'
 dqmSaver.referenceHandling = 'all'
 dqmSaver.dirName = '/home/dqmprolocal/output'
@@ -22,3 +17,27 @@ dqmSaver.saveByMinute = 8
 dqmSaver.saveByRun = 1
 dqmSaver.saveAtJobEnd = False
 
+#RunType, and Runkey selection from RCMS
+import sys
+from FWCore.ParameterSet.VarParsing import VarParsing
+runParameters = VarParsing ('analysis')
+runParameters.register ('runtype',
+  'pp_run',
+  VarParsing.multiplicity.singleton,
+  VarParsing.varType.string,
+  "Type of Run in CMS")
+
+runParameters.register ('runkey',
+  'pp_run',
+  VarParsing.multiplicity.singleton,
+  VarParsing.varType.string,
+  "Run Keys of CMS")
+
+# Fix to allow scram to compile
+if len(sys.argv) > 1:
+  print sys.argv
+  runParameters.parseArguments()
+
+runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2}
+runTypes = type('Enum', () , runTypesDict)
+runType = runTypesDict[runParameters.runtype]
