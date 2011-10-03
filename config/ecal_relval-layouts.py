@@ -1,4 +1,3 @@
-
 def ecalvalidationlayout(i, p, *rows): i["RelVal/Data/ECAL/" + p] = DQMItem(layout=rows)
 
 ecalvalidationlayout(dqmitems, "00 Ecal RecHit size",
@@ -54,11 +53,11 @@ ecalvalidationlayout(dqmitems, "13 EE RecHit phi",
 
 #Timing : missing in the offline
 ecalvalidationlayout(dqmitems, "14 EB RecHit time",
-  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Rec hits time(barrel) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEc#alExpert</a>" }]
+  [{ 'path': "EcalBarrel/EBSummaryClient/EBTMT timing mean 1D summary", 'description': "Rec hits time(barrel) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEc#alExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "15 EE RecHit time",
   [{ 'path': "EcalEndcap/EESummaryClient/EBTMT EE- timing mean 1D summary", 'description': "Rec hits time(EE-) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEc#alExpert</a>" }],
-  [{ 'path': "EcalEndcap/EESummaryClient/EBTMT EE +timing mean 1D summary", 'description': "Rec hits time(EE+) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEc#alExpert</a>" }]
+  [{ 'path': "EcalEndcap/EESummaryClient/EBTMT EE +timing mean 1D summary", 'description': "Rec hits time(EE+) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEc#alExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "16 Preshower timing",
   [{ 'path': "EcalPreshower/ESRecoSummary/recHits_ES_time", 'description': "Preshower timing. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
