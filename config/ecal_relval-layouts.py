@@ -9,8 +9,8 @@ ecalvalidationlayout(dqmitems, "01 ES RecHit size (Z -1)",
   [{ 'path': "EcalPreshower/ESOccupancyTask/ES Num of RecHits Z -1 P 2", 'description': "Number of rec hits (ES -1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "02 ES RecHit size (Z +1)",
-  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Num of RecHits Z +1 P 1", 'description': "Number of rec hits (ES +1 P1) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Num of RecHits Z +1 P 2", 'description': "Number of rec hits (ES +1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Num of RecHits Z 1 P 1", 'description': "Number of rec hits (ES +1 P1) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES Num of RecHits Z 1 P 2", 'description': "Number of rec hits (ES +1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "03 EB RecHit spectra",
   [{ 'path': "EcalBarrel/EBOccupancyTask/EBOT rec hit spectrum", 'description': "Energy of rec hits (barrel) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
@@ -24,8 +24,8 @@ ecalvalidationlayout(dqmitems, "05 ES RecHit spectra (Z -1)",
   [{ 'path': "EcalPreshower/ESOccupancyTask/ES RecHit Energy Z -1 P 2", 'description': "Energy of rec hits (ES -1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "06 ES RecHit spectra (Z +1)",
-  [{ 'path': "EcalPreshower/ESOccupancyTask/ES RecHit Energy Z +1 P 1", 'description': "Energy of rec hits (ES +1 P1) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
-  [{ 'path': "EcalPreshower/ESOccupancyTask/ES RecHit Energy Z +1 P 2", 'description': "Energy of rec hits (ES +1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES RecHit Energy Z 1 P 1", 'description': "Energy of rec hits (ES +1 P1) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
+  [{ 'path': "EcalPreshower/ESOccupancyTask/ES RecHit Energy Z 1 P 2", 'description': "Energy of rec hits (ES +1 P2) <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
 ecalvalidationlayout(dqmitems, "07 EB RecHit max energy",
   [{ 'path': "EcalBarrel/EBRecoSummary/recHits_EB_energyMax", 'description': "Reconstructed hits max energy in the barrel. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
