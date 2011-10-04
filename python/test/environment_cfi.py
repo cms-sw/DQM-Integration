@@ -37,6 +37,6 @@ runParameters.register ('runkey',
 if len(sys.argv) > 1:
   runParameters.parseArguments()
 
-runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2}
+runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2,'hpu_run':3}
 runTypes = type('Enum', () , runTypesDict)
 runType = runTypesDict[runParameters.runkey]
