@@ -176,7 +176,7 @@ process.p = cms.Path(process.scalersRawToDigi*
 #--------------------------------------------------
 # For high PU run - no tracking in cmssw42x
 #--------------------------------------------------
-if (runType == runTypes.pp_run):
+if (runType == runTypes.hpu_run):
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
                          process.consecutiveHEs*
