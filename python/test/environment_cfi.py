@@ -39,4 +39,7 @@ if len(sys.argv) > 1:
 
 runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2,'hpu_run':3}
 runTypes = type('Enum', () , runTypesDict)
-runType = runTypesDict[runParameters.runkey]
+if not runParameters.runkey.strip():
+  runParameters.runkey = 'pp_run'
+   
+runType = runTypesDict[runParameters.runkey.strip()]
