@@ -10,7 +10,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQMResults')
 process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1000.0)
-process.EventStreamHttpReader.consumerName = 'HLTTrigerResults DQM Consumer'
+process.EventStreamHttpReader.consumerName = 'HLTTrigerResults'
 
 #### end first online running section
 
