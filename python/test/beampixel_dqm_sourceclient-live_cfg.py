@@ -2,7 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("BeamPixel")
 
-
 #----------------------------
 # Event Source
 #----------------------------
@@ -11,7 +10,6 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*', 'HLT_70Jet*','HLT_300Tower0p*'))
 ### @@@@@@ Comment when running locally @@@@@@ ###
-
 
 #----------------------------
 # Filters
@@ -29,7 +27,6 @@ process.load("HLTrigger.HLTfilters.hltLevel1GTSeed_cfi")
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
 process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string("0 AND (40 OR 41) AND NOT (36 OR 37 OR 38 OR 39) AND (NOT 42 OR 43) AND (42 OR NOT 43)")
 
-
 #----------------------------
 # DQM Environment
 #----------------------------
@@ -38,7 +35,6 @@ process.load("DQM.Integration.test.environment_cfi")
 #process.DQM.collectorHost = ''
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 process.dqmEnv.subSystemFolder = "BeamPixel"
-
 
 #----------------------------
 # Sub-system Configuration
@@ -56,7 +52,6 @@ process.load("Configuration.StandardSequences.EndOfProcess_cff")
 process.load("Configuration.EventContent.EventContent_cff")
 process.load("RecoTracker.TkTrackingRegions.GlobalTrackingRegion_cfi")
 process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
-
 
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
@@ -80,10 +75,9 @@ process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi
 #                                                                          "keep *_*_*_BeamPixel"))
 ### @@@@@@ Un-comment when running locally @@@@@@ ###
 
-
-#----------------------------
+#-----------------------------
 # pixelVertexDQM Configuration
-#----------------------------
+#-----------------------------
 process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                         vertexCollection = cms.InputTag("pixelVertices"),
                                         debugMode        = cms.bool(True),
@@ -106,21 +100,19 @@ if process.dqmSaver.producer.value() is "Playback":
 else:
   process.pixelVertexDQM.fileName = cms.string("/nfshome0/dqmpro/BeamMonitorDQM/BeamPixelResults.txt")
 
-
 #----------------------------
 # Pixel-Tracks Configuration
 #----------------------------
 process.PixelTrackReconstructionBlock.RegionFactoryPSet.ComponentName = "GlobalRegionProducer"
-
-
-#----------------------------
-# Pixel-Vertices Configuration
-#----------------------------
-process.pixelVertices.useBeamConstraint = False
-process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
-# Suggested by Andrea to avoid the runaway effect on #of pixel verteces at high PileUp
+# If it becomes the default configuration, this can be removed:
 process.load("RecoPixelVertexing.PixelLowPtUtilities.ClusterShapeHitFilterESProducer_cfi")
 process.pixelTracks.OrderedHitsFactoryPSet.GeneratorPSet.SeedComparitorPSet.ComponentName = 'LowPtClusterShapeSeedComparitor'
+
+#-----------------------------
+# Pixel-Vertices Configuration
+#-----------------------------
+process.pixelVertices.useBeamConstraint = False
+process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 
 #-------------------------------------------
 #  Pixel Vertex Monitoring based on HLT path
