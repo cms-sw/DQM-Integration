@@ -86,8 +86,8 @@ process.schedule = cms.Schedule(process.evfDQMmodulesPath)
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
+from DQM.Integration.test.environment_cfi import runType, runTypes, runParameters
+process.dqmProvInfo.runType = cms.untracked.string(runParameters.runkey)
 
 if (runType == runTypes.hi_run):
     process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
