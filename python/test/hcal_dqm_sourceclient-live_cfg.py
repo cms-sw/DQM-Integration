@@ -2,12 +2,26 @@ import FWCore.ParameterSet.Config as cms
 
 import os, sys, socket, string
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
+
+
+process = cms.Process("HCALDQM")
+subsystem="Hcal" # specify subsystem name here
+
+#----------------------------
+# DQM Environment
+#-----------------------------
+process.load("DQMServices.Core.DQM_cfg")
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder = subsystem
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
+
+print "Running with run type = ", process.runType.getRunType()
 
 # Set this to True if running in Heavy Ion mode
 HEAVYION=False
-if runType == runTypes.hi_run:
+if process.runType.getRunType() == process.runType.hi_run:
   HEAVYION=True
  
 # Get Host information
@@ -21,25 +35,12 @@ HcalCalibPlaybackHost='dqm-c2d07-16'.lower()
 playbackHCAL=False
 if (host==HcalPlaybackHost):
     playbackHCAL=True
-    
-process = cms.Process("HCALDQM")
-subsystem="Hcal" # specify subsystem name here
 
 #----------------------------
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
-
-#----------------------------
-# DQM Environment
-#-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
-process.load("DQMServices.Components.DQMEnvironment_cfi")
-
-process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = subsystem
-process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
 
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
@@ -88,7 +89,7 @@ process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hc
 #configuration used in Heavy Ion runs only
 if (HEAVYION):
     process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(False) 
-    process.hcalDeadCellMonitor.minDeadEventCount = 10
+    #process.hcalDeadCellMonitor.minDeadEventCount = 10
 
 process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)

@@ -2,12 +2,26 @@ import FWCore.ParameterSet.Config as cms
 from DQM.HcalMonitorTasks.HcalMonitorTasks_cfi import SetTaskParams
 
 import os, sys, socket, string
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
+
+process = cms.Process("HCALDQM")
+subsystem="HcalCalib"
+
+#----------------------------
+# DQM Environment
+#-----------------------------
+process.load("DQMServices.Core.DQM_cfg")
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+
+process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder = subsystem
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
+
+
+print "Running with run type = ", process.runType.getRunType()
 
 # Set this to True is running in Heavy Ion mode
 HEAVYION=False
-if runType == runTypes.hi_run:
+if process.runType.getRunType() == process.runType.hi_run:
       HEAVYION=True
 
 # Get Host information
@@ -21,11 +35,6 @@ HcalCalibPlaybackHost='dqm-c2d07-16'.lower()
 playbackHCALCALIB=False
 if (host==HcalCalibPlaybackHost):
     playbackHCALCALIB=True
-    
-
-process = cms.Process("HCALDQM")
-
-subsystem="HcalCalib"
 
 #----------------------------
 # Event Source
@@ -38,18 +47,6 @@ if (HEAVYION):
     process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
     
 #process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
-
-
-#----------------------------
-# DQM Environment
-#-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
-process.load("DQMServices.Components.DQMEnvironment_cfi")
-
-process.load("DQM.Integration.test.environment_cfi")
-process.dqmEnv.subSystemFolder = subsystem
-process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
-
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------

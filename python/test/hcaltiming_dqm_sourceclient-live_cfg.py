@@ -2,8 +2,8 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("HcalTimingTest")
 
 process.load("DQM.Integration.test.inputsource_cfi")
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
+
+print "Running with run type = ", process.runType.getRunType()
 
 # Set this to True if running in Heavy Ion mode
 HEAVYION=False

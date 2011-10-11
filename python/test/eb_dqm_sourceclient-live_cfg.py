@@ -719,10 +719,10 @@ if (liveECAL == 1) :
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
 
-if (runType == runTypes.hi_run):
+print "Running with run type = ", process.runType.getRunType()
+
+if (process.runType.getRunType() == process.runType.hi_run):
     process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
     process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
     process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")

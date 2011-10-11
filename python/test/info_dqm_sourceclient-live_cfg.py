@@ -86,10 +86,10 @@ process.schedule = cms.Schedule(process.evfDQMmodulesPath)
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes, runParameters
-process.dqmProvInfo.runType = cms.untracked.string(runParameters.runkey)
+#, runParameters
+process.dqmProvInfo.runType = process.runType.getRunTypeName()
 
-if (runType == runTypes.hi_run):
+if (process.runType.getRunType() == process.runType.hi_run):
     process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
     process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")

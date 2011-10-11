@@ -2,15 +2,15 @@ import FWCore.ParameterSet.Config as cms
 
 from DQMServices.Core.DQM_cfg import *
 
-DQM.collectorHost = 'dqm-prod-local.cms'
+DQM.collectorHost = 'dqm-integration.cms'
 DQM.collectorPort = 9090
 
 from DQMServices.Components.DQMEnvironment_cfi import *
 
 dqmSaver.convention = 'Online'
 dqmSaver.referenceHandling = 'all'
-dqmSaver.dirName = '/home/dqmprolocal/output'
-dqmSaver.producer = 'DQM'
+dqmSaver.dirName = '/home/dqmdevlocal/output'
+dqmSaver.producer = 'Playback'
 dqmSaver.saveByTime = 1
 dqmSaver.saveByLumiSection = -1
 dqmSaver.saveByMinute = 8
@@ -20,6 +20,8 @@ dqmSaver.saveAtJobEnd = False
 #RunType, and Runkey selection from RCMS
 import sys
 from FWCore.ParameterSet.VarParsing import VarParsing
+from dqmPythonTypes import *
+
 runParameters = VarParsing ('analysis')
 runParameters.register ('runtype',
   'pp_run',
@@ -37,9 +39,8 @@ runParameters.register ('runkey',
 if len(sys.argv) > 1:
   runParameters.parseArguments()
 
-runTypesDict = {'pp_run':0,'cosmic_run':1,'hi_run':2,'hpu_run':3}
-runTypes = type('Enum', () , runTypesDict)
+runType = RunType(['pp_run','cosmic_run','hi_run','hpu_run'])
 if not runParameters.runkey.strip():
   runParameters.runkey = 'pp_run'
-   
-runType = runTypesDict[runParameters.runkey.strip()]
+
+runType.setRunType(runParameters.runkey.strip())
