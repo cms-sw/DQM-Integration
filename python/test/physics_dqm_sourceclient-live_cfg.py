@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.8 2010/02/10 11:13:54 lilopera Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.9 2011/09/12 18:42:10 dutta Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -52,8 +52,8 @@ process.p = cms.Path(
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
 
-if (runType == runTypes.hi_run):
+print "Running with run type = ", process.runType.getRunType()
+
+if (process.runType.getRunType() == process.runType.hi_run):
     process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")

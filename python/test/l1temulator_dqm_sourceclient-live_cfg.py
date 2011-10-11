@@ -165,10 +165,10 @@ process.L1HardwareValidation.remove(process.deDt)
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
 
-if (runType == runTypes.hi_run):
+print "Running with run type = ", process.runType.getRunType()
+
+if (process.runType.getRunType() == process.runType.hi_run):
     process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
     process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")

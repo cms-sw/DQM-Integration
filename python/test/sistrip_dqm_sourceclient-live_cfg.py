@@ -36,7 +36,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #from DQM.Integration.test.environment_cfi import HEAVYION
 
 process.load("DQM.Integration.test.environment_cfi")
-from DQM.Integration.test.environment_cfi import runType, runTypes
+
 
 process.dqmEnv.subSystemFolder    = "SiStrip"
 process.dqmSaver.producer = "Playback"
@@ -176,7 +176,7 @@ process.p = cms.Path(process.scalersRawToDigi*
 #--------------------------------------------------
 # For high PU run - no tracking in cmssw42x
 #--------------------------------------------------
-if (runType == runTypes.hpu_run):
+if (process.runType.getRunType() == process.runType.hpu_run):
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
                          process.consecutiveHEs*
@@ -191,10 +191,10 @@ if (runType == runTypes.hpu_run):
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-from DQM.Integration.test.environment_cfi import runType, runTypes
-print "Running with run type = ", runType
 
-if (runType == runTypes.hi_run):
+print "Running with run type = ", process.runType.getRunType()
+
+if (process.runType.getRunType() == process.runType.hi_run):
     process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.csctfDigis.producer = cms.InputTag("rawDataRepacker")
     process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
