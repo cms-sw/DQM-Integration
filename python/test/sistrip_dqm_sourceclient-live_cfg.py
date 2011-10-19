@@ -16,9 +16,6 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring('HLT_L1*','HLT_*Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*')) 
-
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -86,7 +83,8 @@ process.load("Configuration.StandardSequences.Reconstruction_cff")
 process.load("Configuration.GlobalRuns.reco_TLR_42X")
 
 ## Cosmic Track Reconstruction
-process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
+if (process.runType.getRunType() == process.runType.cosmic_run):
+    process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
 # offline beam spot
 process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
@@ -97,11 +95,6 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 process.TrackMon_gentk.doLumiAnalysis = False
 process.TrackMon_ckf.doLumiAnalysis = False
-
-process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
-process.SiStripAnalyser.TkMapCreationFrequency  = -1
-process.SiStripAnalyser.ShiftReportFrequency = -1
-process.SiStripAnalyser.StaticUpdateFrequency = 5
 
 #--------------------------
 # Quality Test
@@ -153,25 +146,68 @@ process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 
 # Scheduling
 #--------------------------
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
-process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
-process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
-process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
-process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process.ctftracksP5)
 
-process.p = cms.Path(process.scalersRawToDigi*
-                     process.APVPhases*
-                     process.consecutiveHEs*
-                     process.hltTriggerTypeFilter*
-                     process.RecoForDQM_LocalReco*
-                     process.DQMCommon*
-                     process.SiStripClients*
-                     process.SiStripSources_LocalReco*
-                     process.RecoForDQM_TrkReco*
-                     process.SiStripSources_TrkReco
-)
+if (process.runType.getRunType() == process.runType.pp_run):
+    #event selection for pp collisions
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+    # Source and Client config for pp collisions
+    process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
+    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+    process.SiStripAnalyser.TkMapCreationFrequency  = -1
+    process.SiStripAnalyser.ShiftReportFrequency = -1
+    process.SiStripAnalyser.StaticUpdateFrequency = 5
+    process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
+    # Reco for pp collisions
+    process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
+
+    process.p = cms.Path(process.scalersRawToDigi*
+                         process.APVPhases*
+                         process.consecutiveHEs*
+                         process.hltTriggerTypeFilter*
+                         process.RecoForDQM_LocalReco*
+                         process.DQMCommon*
+                         process.SiStripClients*
+                         process.SiStripSources_LocalReco*
+                         process.RecoForDQM_TrkReco*
+                         process.SiStripSources_TrkReco
+                         )
+
+
+if (process.runType.getRunType() == process.runType.cosmic_run):  
+    # event selection for cosmic data
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_*Cosmic*','HLT_L1*')) 
+    # Source and Client config for cosmic data
+    process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack_ckf*process.MonitorTrackResiduals_ckf*process.TrackMon_ckf)
+    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_Cosmic_cff")
+    process.SiStripAnalyserCosmic.TkMapCreationFrequency  = -1
+    process.SiStripAnalyserCosmic.ShiftReportFrequency = -1
+    process.SiStripAnalyserCosmic.StaticUpdateFrequency = 5   
+    process.SiStripClients           = cms.Sequence(process.SiStripAnalyserCosmic)
+    # Reco for cosmic data
+    process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process.ctftracksP5)
+
+    process.qTester = cms.EDAnalyzer("QualityTester",
+                                     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_cosmic.xml'),
+                                     prescaleFactor = cms.untracked.int32(2),
+                                     getQualityTestsFromFile = cms.untracked.bool(True),
+                                     qtestOnEndLumi = cms.untracked.bool(True),
+                                     qtestOnEndRun = cms.untracked.bool(True)
+                                     )
+   
+    process.p = cms.Path(process.scalersRawToDigi*
+                         process.APVPhases*
+                         process.consecutiveHEs*
+                         process.hltTriggerTypeFilter*
+                         process.RecoForDQM_LocalReco*
+                         process.DQMCommon*
+                         process.SiStripClients*
+                         process.SiStripSources_LocalReco*
+                         process.RecoForDQM_TrkReco_cosmic*
+                         process.SiStripSources_TrkReco_cosmic
+                         )
+
 
 #--------------------------------------------------
 # For high PU run - no tracking in cmssw42x
