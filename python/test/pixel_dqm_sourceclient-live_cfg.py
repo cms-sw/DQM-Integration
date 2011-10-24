@@ -21,13 +21,6 @@ process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 
-#----------------------------
-# High Pileup Configuration
-#-----------------------------
-if (process.runType.getRunType() == process.runType.hpu_run):
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
-
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
@@ -45,6 +38,15 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
+
+#----------------------------
+# High Pileup Configuration
+#-----------------------------
+if (process.runType.getRunType() == process.runType.hpu_run):
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
+
+
 
 #-----------------------------
 # Magnetic Field
