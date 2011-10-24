@@ -165,6 +165,13 @@ process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTri
 #process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.gtDigis*process.dqmcommon*process.hltLevel1GTSeed*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
 
 #--------------------------------------------------
+# For high PU run - no tracking in cmssw42x
+#--------------------------------------------------
+if (process.runType.getRunType() == process.runType.hpu_run):
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+    process.p = cms.Path(process.scalersRawToDigi*process.dqmTKStatus*process.hltTriggerTypeFilter*process.dqmcommon*process.tracking_FirstStep*process.offlinePrimaryVertices*process.monitor)
+
+#--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
 

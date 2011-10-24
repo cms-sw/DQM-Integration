@@ -147,6 +147,12 @@ process.high_pu_step = cms.Sequence(
 process.p = cms.Path(process.phystrigger * process.reconstruction_step * process.high_pu_step * process.dqmmodules)
 
 #--------------------------------------------------
+# For high PU run - no tracking in cmssw42x
+#--------------------------------------------------
+if (process.runType.getRunType() == process.runType.hpu_run):
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+
+#--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
 

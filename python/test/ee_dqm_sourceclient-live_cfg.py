@@ -715,6 +715,11 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
+#--------------------------------------------------
+# For high PU run 
+#--------------------------------------------------
+if (process.runType.getRunType() == process.runType.hpu_run):
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label

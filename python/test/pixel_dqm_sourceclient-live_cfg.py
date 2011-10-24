@@ -26,7 +26,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 #-----------------------------
 if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
+        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
 
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
