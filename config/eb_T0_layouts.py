@@ -408,7 +408,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-01", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-01/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-01", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-01", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -585,7 +585,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-02", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-02/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-02", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-02", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -762,7 +762,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-03", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-03/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-03", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-03", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -939,7 +939,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-04", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-04/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-04", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-04", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -1116,7 +1116,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-05", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-05/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-05", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-05", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -1293,7 +1293,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-06", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-06/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-06", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-06", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -1470,7 +1470,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-07", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-07/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-07", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-07", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -1647,7 +1647,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-08", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-08/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-08", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-08", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -1824,7 +1824,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-09", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-09/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-09", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-09", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2001,7 +2001,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-10", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-10/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-10", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-10", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2178,7 +2178,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-11", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-11/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-11", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-11", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2355,7 +2355,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-12", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-12/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-12", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-12", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2532,7 +2532,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-13", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-13/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-13", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-13", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2709,7 +2709,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-14", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-14/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-14", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-14", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -2886,7 +2886,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-15", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-15/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-15", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-15", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3063,7 +3063,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-16", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-16/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-16", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-16", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3240,7 +3240,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-17", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-17/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-17", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-17", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3417,7 +3417,7 @@ eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB-18", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB-18/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB-18", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB-18", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3594,7 +3594,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+01", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+01/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+01", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+01", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3771,7 +3771,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+02", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+02/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+02", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+02", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -3948,7 +3948,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+03", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+03/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+03", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+03", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -4125,7 +4125,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+04", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+04/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+04", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+04", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -4302,7 +4302,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+05", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+05/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+05", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+05", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -4479,7 +4479,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+06", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+06/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+06", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+06", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -4656,7 +4656,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+07", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+07/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+07", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+07", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -4833,7 +4833,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+08", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+08/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+08", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+08", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5010,7 +5010,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+09", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+09/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+09", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+09", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5187,7 +5187,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+10", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+10/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+10", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+10", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5364,7 +5364,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+11", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+11/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+11", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+11", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5541,7 +5541,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+12", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+12/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+12", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+12", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5718,7 +5718,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+13", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+13/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+13", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+13", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -5895,7 +5895,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+14", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+14/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+14", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+14", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -6072,7 +6072,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+15", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+15/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+15", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+15", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -6249,7 +6249,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+16", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+16/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+16", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+16", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -6426,7 +6426,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+17", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+17/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+17", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+17", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
@@ -6603,7 +6603,7 @@ eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/00 Integrity/00 Channel Inte
 eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/00 Integrity/01 Gain Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/GainSwitch/EBIT gain switch EB+18", 'description': "Occupancy of integrity errors of type: GAIN SWITCH. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
-eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/00 Integrity/02 TT Integrity,"
+eblayout(dqmitems, "01 By Supermodule/EB+18/Experts/00 Integrity/02 TT Integrity",
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTId/EBIT TTId EB+18", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER ID. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }],
   [{ 'path': "EcalBarrel/EBIntegrityTask/TTBlockSize/EBIT TTBlockSize EB+18", 'description': "Occupancy of integrity errors of type: TRIGGER TOWER BLOCK SIZE. <a href=https://twiki.cern.ch/twiki/bin/view/CMS/DQMShiftEcalExpert>DQMShiftEcalExpert</a>" }])
 
