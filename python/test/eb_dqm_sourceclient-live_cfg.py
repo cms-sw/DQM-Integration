@@ -446,7 +446,7 @@ process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlin
 
 process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
 
-if (liveCMS == 0) & (liveEcal == 0)
+if (liveCMS == 0) & (liveEcal == 0) :
   process.ecalDataSequence.remove(process.l1GtEvmUnpack)
 
 if (liveCMS == 1) | (playCMS == 1) :
@@ -603,55 +603,33 @@ if (localDAQ == 1) :
 process.ecalEndcapMonitorClient.location = 'P5_Co'
 process.ecalEndcapMonitorClient.enabledClients = ['Integrity', 'StatusFlags', 'Occupancy', 'PedestalOnline', 'Pedestal', 'TestPulse', 'Laser', 'Led', 'Timing', 'Cosmic', 'TriggerTower', 'Cluster', 'Summary']
 
-#process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
-#process.ecalBarrelLaserTask.laserWavelengths = [ 1 ]
 
-#process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapLaserTask.laserWavelengths = [ 1 ]
+process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
 
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
-#process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
 
-#process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
-#process.ecalBarrelMonitorClient.laserWavelengths = [ 1 ]
 
-#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
-#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
 
-#process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
 
 if (liveECAL == 1) | (liveCMS == 1) :
-  #process.ecalBarrelPedestalTask.MGPAGains = [ 1, 6, 12 ]
   process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
-  #process.ecalBarrelPedestalTask.MGPAGainsPN = [ 1, 16 ]
   process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
-  #process.ecalBarrelTestPulseTask.MGPAGains = [ 1, 6, 12 ]
   process.ecalBarrelTestPulseTask.MGPAGains = [ 12 ]
-  #process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 1, 16 ]
   process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 16 ]
 
-  #process.ecalEndcapPedestalTask.MGPAGains = [ 1, 6, 12 ]
   process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
-  #process.ecalEndcapPedestalTask.MGPAGainsPN = [ 1, 16 ]
   process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
-  #process.ecalEndcapTestPulseTask.MGPAGains = [ 1, 6, 12 ]
   process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
-  #process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 1, 16 ]
   process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 16 ]
 
-  #process.ecalBarrelMonitorClient.MGPAGains = [ 1, 6, 12 ]
   process.ecalBarrelMonitorClient.MGPAGains = [ 12 ]
-  #process.ecalBarrelMonitorClient.MGPAGainsPN = [ 1, 16 ]
   process.ecalBarrelMonitorClient.MGPAGainsPN = [ 16 ]
 
-  #process.ecalEndcapMonitorClient.MGPAGains = [ 1, 6, 12 ]
   process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
-  #process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
   process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
 
   process.ecalBarrelTimingTask.useBeamStatus = cms.untracked.bool(True)
