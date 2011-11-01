@@ -114,6 +114,8 @@ if (onlyEB == 1) :
 if (onlyEE == 1) :
   process.ecalEBunpacker.FEDs = [ 601, 602, 603, 604, 605, 606, 607, 608, 609, 646, 647, 648, 649, 650, 651, 652, 653, 654 ]
 
+process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
+
 import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
 process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
 
@@ -422,7 +424,7 @@ if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   process.dqmQTestEE.prescaleFactor = 16
   process.dqmQTestEE.qtestOnEndLumi = True
 
-process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.ecalUncalibHit*process.ecalDetIdToBeRecovered*process.ecalRecHit)
+process.ecalDataSequence = cms.Sequence(process.preScaler*process.ecalEBunpacker*process.l1GtEvmUnpack*process.ecalUncalibHit*process.ecalDetIdToBeRecovered*process.ecalRecHit)
 
 process.ecalBarrelMonitorSequence = cms.Sequence(process.ecalBarrelMonitorModule*process.ecalBarrelMonitorClient)
 
@@ -444,6 +446,9 @@ process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlin
 
 process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
 
+if (liveCMS == 0) & (liveEcal == 0)
+  process.ecalDataSequence.remove(process.l1GtEvmUnpack)
+
 if (liveCMS == 1) | (playCMS == 1) :
   process.ecalBarrelMainSequence.remove(process.ecalBarrelHltTask)
 
@@ -459,7 +464,9 @@ if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
 
   process.ecalEndcapMainSequence.remove(process.ecalEndcapPedestalOnlineTask)
 
-process.ecalClusterSequence = cms.Sequence(process.hybridClusteringSequence*process.multi5x5BasicClusters*process.multi5x5SuperClusters)
+process.ecalClusterSequence = cms.Sequence(process.hybridClusteringSequence*process.multi5x5ClusteringSequence)
+
+process.ecalClusterSequence.remove(process.multi5x5SuperClustersWithPreshower)
 
 process.ecalMonitorPath = cms.Path(process.ecalDataSequence*process.ecalBarrelMonitorSequence*process.ecalEndcapMonitorSequence)
 
@@ -530,8 +537,10 @@ if (onlyEE == 1) :
   if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
     process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
-if (localDAQ == 1) | (globalDAQ == 1) :
-  process.ecalEBunpacker.silentMode = False
+#if (localDAQ == 1) | (globalDAQ == 1) :
+#  process.ecalEBunpacker.silentMode = False
+
+process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag("source")
 
 process.ecalUncalibHit.EBdigiCollection = 'ecalEBunpacker:ebDigis'
 process.ecalUncalibHit.EEdigiCollection = 'ecalEBunpacker:eeDigis'
@@ -599,8 +608,8 @@ process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelLaserTask.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
-process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
-#process.ecalEndcapLaserTask.laserWavelengths = [ 1 ]
+#process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
+process.ecalEndcapLaserTask.laserWavelengths = [ 1 ]
 
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
 #process.ecalEndcapLedTask.ledWavelengths = [ 1 ]
@@ -610,8 +619,8 @@ process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 #process.ecalBarrelMonitorClient.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
-process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
-#process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
+#process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
+process.ecalEndcapMonitorClient.laserWavelengths = [ 1 ]
 
 #process.ecalEndcapMonitorClient.ledWavelengths = [ 1 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
@@ -645,6 +654,9 @@ if (liveECAL == 1) | (liveCMS == 1) :
   #process.ecalEndcapMonitorClient.MGPAGainsPN = [ 1, 16 ]
   process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
 
+  process.ecalBarrelTimingTask.useBeamStatus = cms.untracked.bool(True)
+  process.ecalEndcapTimingTask.useBeamStatus = cms.untracked.bool(True)
+
 if (liveECAL == 1) :
   process.ecalBarrelMonitorClient.dbTagName = 'CMSSW-online-private'
 
@@ -665,7 +677,7 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 
   process.ecalEndcapMonitorClient.dbTagName = 'CMSSW-offline-private'
 
-if (localDAQ == 1) | (liveCMS == 1) | (liveECAL == 1) :
+if (localDAQ == 1) | (liveCMS == 1) | (liveECAL ==1) :
   process.ecalBarrelMonitorClient.dbName = dbName
   process.ecalBarrelMonitorClient.dbHostName = dbHostName
   process.ecalBarrelMonitorClient.dbHostPort = dbHostPort
@@ -715,6 +727,7 @@ if (localDAQ == 1) | (globalDAQ == 1) :
 if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
+
 #--------------------------------------------------
 # For high PU run 
 #--------------------------------------------------
@@ -729,6 +742,7 @@ print "Running with run type = ", process.runType.getRunType()
 
 if (process.runType.getRunType() == process.runType.hi_run):
     process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag("rawDataRepacker")
     process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
     process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
     process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
