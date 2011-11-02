@@ -306,10 +306,10 @@ if (localDAQ == 1) :
   process.GlobalTag.globaltag = "GR10_H_V0::All"
 
 if (globalDAQ == 1) :
-  process.GlobalTag.globaltag = "GR_H_V17::All"
+  process.GlobalTag.globaltag = "GR_H_V23::All"
 
 if (liveECAL == 1) :
-  process.GlobalTag.globaltag = "GR_H_V20::All"
+  process.GlobalTag.globaltag = "GR_H_V23::All"
 
 if (liveCMS == 1) | (playCMS == 1) :
   process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
@@ -446,7 +446,7 @@ process.ecalBarrelPhysicsSequence = cms.Sequence(process.ecalBarrelPedestalOnlin
 
 process.ecalEndcapPhysicsSequence = cms.Sequence(process.ecalEndcapPedestalOnlineTask*process.ecalEndcapCosmicTask*process.ecalEndcapClusterTask*process.ecalEndcapTriggerTowerTask*process.ecalEndcapTimingTask*process.ecalEndcapSelectiveReadoutTask)
 
-if (liveCMS == 0) & (liveEcal == 0) :
+if (liveCMS == 0) & (liveECAL == 0) :
   process.ecalDataSequence.remove(process.l1GtEvmUnpack)
 
 if (liveCMS == 1) | (playCMS == 1) :
@@ -706,19 +706,21 @@ if (liveECAL == 1) :
   process.DQM.collectorHost = 'ecalod-web01.cms'
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 
+if (liveCMS == 1) | (playCMS == 1) :
+
 #--------------------------------------------------
 # For high PU run 
 #--------------------------------------------------
-if (process.runType.getRunType() == process.runType.hpu_run):
+  if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
 
-print "Running with run type = ", process.runType.getRunType()
+  print "Running with run type = ", process.runType.getRunType()
 
-if (process.runType.getRunType() == process.runType.hi_run):
+  if (process.runType.getRunType() == process.runType.hi_run):
     process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
     process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag("rawDataRepacker")
     process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataRepacker")
