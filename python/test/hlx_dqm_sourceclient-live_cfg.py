@@ -11,9 +11,12 @@ process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputH
 
 ## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
-process.hlxdqmsource.PrimaryHLXDAQIP = 'vmepcs2f17-22'
-process.hlxdqmsource.SecondaryHLXDAQIP = 'vmepcs2f17-18'
-process.hlxdqmsource.SourcePort = 51007
+## changed machine below from 22 to 21 
+process.hlxdqmsource.PrimaryHLXDAQIP = 'vmepcs2f17-21'
+## keeping machine 18 below out; haven't tested it to find out what it does
+## process.hlxdqmsource.SecondaryHLXDAQIP = 'vmepcs2f17-18'
+## changed port below from 51007 to 51010; connects to DQMIsolator
+process.hlxdqmsource.SourcePort = 51010
 
 ## Set up env and saver
 process.load("DQM.Integration.test.environment_cfi")
