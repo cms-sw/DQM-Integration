@@ -55,6 +55,7 @@ process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + proces
 print "Running with run type = ", process.runType.getRunType()
 
 if (process.runType.getRunType() == process.runType.hi_run):
+    process.dtunpacker.fedbyType = cms.bool(False)
     process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
     process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
     process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")
