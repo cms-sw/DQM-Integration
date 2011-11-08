@@ -75,6 +75,7 @@ process.es_pool = cms.ESSource(
 process.load("EventFilter.CastorRawToDigi.CastorRawToDigi_cfi")
 process.load("RecoLocalCalo.CastorReco.CastorSimpleReconstructor_cfi")
 
+process.castorreco.tsFromDB = cms.untracked.bool(False)
 
 process.castorDigis = cms.EDProducer("CastorRawToDigi",
    CastorFirstFED = cms.untracked.int32(690),
