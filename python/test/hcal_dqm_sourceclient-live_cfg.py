@@ -85,13 +85,13 @@ process.hcalRecAlgos.DropChannelStatusBits = cms.vstring('') # Had been ('HcalCe
 process.load('SimCalorimetry.HcalTrigPrimProducers.hcaltpdigi_cff')
 process.valHcalTriggerPrimitiveDigis = process.simHcalTriggerPrimitiveDigis.clone()
 process.valHcalTriggerPrimitiveDigis.inputLabel = cms.VInputTag('hcalDigis', 'hcalDigis')
+process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 
 #configuration used in Heavy Ion runs only
 if (HEAVYION):
     process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(False) 
     #process.hcalDeadCellMonitor.minDeadEventCount = 10
 
-process.valHcalTriggerPrimitiveDigis.FrontEndFormatError = cms.untracked.bool(True)
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
 
