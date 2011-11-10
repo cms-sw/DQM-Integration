@@ -34,7 +34,6 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
 
-
 process.dqmEnv.subSystemFolder    = "SiStrip"
 process.dqmSaver.producer = "Playback"
 process.dqmSaver.saveByTime = 60
@@ -95,6 +94,8 @@ process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 process.load("DQM.SiStripMonitorClient.SiStripSourceConfigP5_cff")
 process.TrackMon_gentk.doLumiAnalysis = False
 process.TrackMon_ckf.doLumiAnalysis = False
+process.TrackMon_hi.doLumiAnalysis = False
+process.TrackMon_ckf.AlgoName = 'CKFTk'
 
 #--------------------------
 # Quality Test
@@ -248,3 +249,35 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
     process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
     process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
+
+
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+
+    # Quality test for HI                                                                                                                  
+    process.qTester = cms.EDAnalyzer("QualityTester",
+                                     qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_heavyion.xml'),
+                                     prescaleFactor = cms.untracked.int32(3),
+                                     getQualityTestsFromFile = cms.untracked.bool(True),
+                                     qtestOnEndLumi = cms.untracked.bool(True),
+                                     qtestOnEndRun = cms.untracked.bool(True)
+                                     )
+
+    # Reco for HI collisions                                                                                                           
+    process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
+    process.RecoForDQM_TrkReco = cms.Sequence(process.offlineBeamSpot*process.heavyIonTracking)
+    # Sources for HI tracks
+    process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_hi*process.MonitorTrackResiduals_hi*process.TrackMon_hi)
+
+    process.p = cms.Path(process.scalersRawToDigi*
+                         process.APVPhases*
+                         process.consecutiveHEs*
+                         process.hltTriggerTypeFilter*
+                         process.RecoForDQM_LocalReco*
+                         process.DQMCommon*
+                         process.SiStripClients*
+                         process.SiStripSources_LocalReco*
+                         process.SiStripBaselineValidator*
+                         process.RecoForDQM_TrkReco*
+                         process.SiStripSources_TrkReco
+                         )
+
