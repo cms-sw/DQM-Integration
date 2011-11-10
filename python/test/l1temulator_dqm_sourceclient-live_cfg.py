@@ -72,6 +72,10 @@ process.RawToDigi.remove("castorDigis")
 # L1HvVal + emulator monitoring path
 process.l1HwValEmulatorMonitorPath = cms.Path(process.l1HwValEmulatorMonitor)
 
+# for RCT at P5, read FED vector from OMDS
+process.load("L1TriggerConfig.RCTConfigProducers.l1RCTOmdsFedVectorProducer_cfi")
+process.valRctDigis.getFedsFromOmds = cms.bool(True)
+
 #
 process.l1EmulatorMonitorClientPath = cms.Path(process.l1EmulatorMonitorClient)
 
