@@ -13,6 +13,7 @@ process.MessageLogger = cms.Service("MessageLogger",
     destinations = cms.untracked.vstring('cout')
 )
 
+QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'
 #----------------------------
 # Event Source
 #-----------------------------
@@ -29,8 +30,6 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 # DQM Environment
 #-----------------------------
 process.load("DQMServices.Core.DQM_cfg")
-process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
-
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -38,15 +37,8 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
-
-#----------------------------
-# High Pileup Configuration
-#-----------------------------
-if (process.runType.getRunType() == process.runType.hpu_run):
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
-
-
+if (process.runType.getRunType() != process.runType.hi_run):
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
 
 #-----------------------------
 # Magnetic Field
@@ -99,6 +91,24 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 ##process.load("RecoLocalTracker.Configuration.RecoLocalTracker_Cosmics_cff")
 #process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
+#----------------------------------
+# High Pileup Configuration Changes
+#----------------------------------
+if (process.runType.getRunType() == process.runType.hpu_run):
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
+
+#--------------------------------
+# Heavy Ion Configuration Changes
+#--------------------------------
+if (process.runType.getRunType() == process.runType.hi_run):
+    QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_tier0_qualitytest_heavyions.xml'
+    process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
+    process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
+    process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
+    process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataRepacker")
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+        SelectEvents = cms.vstring('HI*'))
 
 #--------------------------
 # Pixel DQM Source and Client
@@ -107,7 +117,7 @@ process.load("DQM.SiPixelCommon.SiPixelP5DQM_source_cff")
 process.load("DQM.SiPixelCommon.SiPixelP5DQM_client_cff")
 
 process.qTester = cms.EDAnalyzer("QualityTester",
-    qtList = cms.untracked.FileInPath('DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'),
+    qtList = cms.untracked.FileInPath(QTestfile),
     prescaleFactor = cms.untracked.int32(1),
     getQualityTestsFromFile = cms.untracked.bool(True),
     verboseQT = cms.untracked.bool(False),
@@ -128,6 +138,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
+
 #--------------------------
 # Scheduling
 #--------------------------
@@ -153,7 +164,3 @@ process.p = cms.Path(process.Reco*process.DQMmodules*process.SiPixelRawDataError
 #--------------------------------------------------
 
 print "Running with run type = ", process.runType.getRunType()
-
-if (process.runType.getRunType() == process.runType.hi_run):
-    process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
-    process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataRepacker")
