@@ -8,7 +8,6 @@ process = cms.Process("DTDQM")
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'DT DQM Consumer'
 
-
 #----------------------------
 #### DQM Environment
 #----------------------------
@@ -24,6 +23,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'DT'
+#process.dqmSaver.dirName = "."
 #-----------------------------
 
 
@@ -59,3 +59,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
     process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
     process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataRepacker")
+    process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
+    
+    process.dtDigiMonitor.ResetCycle = cms.untracked.int32(9999)
