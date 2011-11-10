@@ -146,7 +146,7 @@ server.workspace('DQMContent', 30, 'Calorimeter', 'Castor', '^Castor/',
                  'Castor/Layouts/CASTOR Total Energy ratio EM to HAD per event' 
                 )
 	  
-server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX',
+server.workspace('DQMContent', 40, 'Trigger/Lumi', 'HLX', '^HLX/',
                  'HLX/Layouts/HF-Comparison',
                  'HLX/Layouts/HLX-Averages',
                  'HLX/Layouts/HLX-Luminosity',

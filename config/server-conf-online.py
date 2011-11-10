@@ -3,11 +3,11 @@ CONFIGDIR = os.path.normcase(os.path.abspath(__file__)).rsplit('/', 1)[0]
 
 # Modifiable parameters.
 LAYOUTS = ["%s/%s-layouts.py" % (CONFIGDIR, x) for x in
-	   ("castor","csc", "dt", "eb", "ee", "ecalcalib","es","hcal", "hcalcalib", "hlt", "l1t", "l1temulator", "rpc", "pixel", "sistrip", "sistriplas")]
+	   ("castor","csc", "dt", "eb", "ee", "ecalcalib","es","hcal", "hcalcalib", "hlt","hlx", "l1t", "l1temulator", "rpc", "pixel", "sistrip", "sistriplas")]
 LAYOUTS += ["%s/%s_overview_layouts.py" % (CONFIGDIR, x) for x in
             ("sistrip","ecal","hcal","beammonitor","l1t","hlt")]
 LAYOUTS += ["%s/shift_%s_layout.py" % (CONFIGDIR, x) for x in
-            ("beam","castor","csc", "dt", "eb", "ee", "error", "es","hcal", "hlt", "info", "l1t", "rpc", "pixel", "sistrip" , "fed" )]
+            ("beam","castor","csc", "dt", "eb", "ee", "error", "es","hcal", "hlt","hlx" ,"info", "l1t", "rpc", "pixel", "sistrip" , "fed" )]
 
 # Do not modify configuration below this line.
 HOST      = socket.gethostname().lower()
