@@ -116,7 +116,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 # Simple filter for event
 process.eventFilter = cms.EDFilter("SimpleEventFilter",
-                   EventsToSkip = cms.untracked.int32(5)
+                   EventsToSkip = cms.untracked.int32(2)
 )
 
 #--------------------------
@@ -252,7 +252,14 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
     process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
 
-
+    # Select events based on the pixel cluster multiplicity
+    import  HLTrigger.special.hltPixelActivityFilter_cfi
+    process.multFilter = HLTrigger.special.hltPixelActivityFilter_cfi.hltPixelActivityFilter.clone(
+        inputTag  = cms.InputTag('siPixelClusters'),
+        minClusters = cms.uint32(150),
+        maxClusters = cms.uint32(50000)
+        )
+    # Trigger selection
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
     # Quality test for HI                                                                                                                  
@@ -263,12 +270,15 @@ if (process.runType.getRunType() == process.runType.hi_run):
                                      qtestOnEndLumi = cms.untracked.bool(True),
                                      qtestOnEndRun = cms.untracked.bool(True)
                                      )
-
-    # Reco for HI collisions                                                                                                           
-    process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
-    process.RecoForDQM_TrkReco = cms.Sequence(process.offlineBeamSpot*process.heavyIonTracking)
+    
     # Sources for HI tracks
+    process.SiStripBaselineValidator.srcProcessedRawDigi =  cms.InputTag('siStripVRDigis','virginRawDataRepacker')
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_hi*process.MonitorTrackResiduals_hi*process.TrackMon_hi)
+    # Reco for HI collisions
+    process.load("Configuration.StandardSequences.RawToDigi_Repacked_cff")
+    process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
+    process.RecoForDQM_LocalReco = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.siStripVRDigis*process.gtDigis*process.trackerlocalreco)
+    process.RecoForDQM_TrkReco = cms.Sequence(process.offlineBeamSpot*process.heavyIonTracking)
 
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
