@@ -106,7 +106,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
     process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
     process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
-    process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataRepacker")
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('HI*'))
 
