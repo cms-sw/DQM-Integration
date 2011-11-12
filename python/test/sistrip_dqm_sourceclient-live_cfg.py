@@ -76,6 +76,7 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 #-----------------------
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
+process.load("Configuration.StandardSequences.RawToDigi_Repacked_cff")
 #process.siStripDigis.UnpackBadChannels = cms.bool(True)
 process.load("Configuration.StandardSequences.Reconstruction_cff")
 #process.load("Configuration.GlobalRuns.reco_TLR_42X")
@@ -186,7 +187,8 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
 
 
 
-else : #if (process.runType.getRunType() == process.runType.pp_run):
+#else :
+if (process.runType.getRunType() == process.runType.pp_run):
     #event selection for pp collisions
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
@@ -260,7 +262,8 @@ if (process.runType.getRunType() == process.runType.hi_run):
         maxClusters = cms.uint32(50000)
         )
     # Trigger selection
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*'))
+#
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
     # Quality test for HI                                                                                                                  
     process.qTester = cms.EDAnalyzer("QualityTester",
@@ -272,14 +275,20 @@ if (process.runType.getRunType() == process.runType.hi_run):
                                      )
     
     # Sources for HI tracks
-    process.SiStripBaselineValidator.srcProcessedRawDigi =  cms.InputTag('siStripVRDigis','virginRawDataRepacker')
+    process.SiStripBaselineValidator.srcProcessedRawDigi =  cms.InputTag('siStripVRDigis','VirginRaw')
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_hi*process.MonitorTrackResiduals_hi*process.TrackMon_hi)
+# Defining the client
+    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+    process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
+    process.SiStripAnalyser.TkMapCreationFrequency  = -1
+    process.SiStripAnalyser.ShiftReportFrequency = -1
+    process.SiStripAnalyser.StaticUpdateFrequency = 5
+    process.SiStripClients  = cms.Sequence(process.SiStripAnalyser)
     # Reco for HI collisions
-    process.load("Configuration.StandardSequences.RawToDigi_Repacked_cff")
     process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
     process.RecoForDQM_LocalReco = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.siStripVRDigis*process.gtDigis*process.trackerlocalreco)
     process.RecoForDQM_TrkReco = cms.Sequence(process.offlineBeamSpot*process.heavyIonTracking)
-
+    
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
                          process.consecutiveHEs*
