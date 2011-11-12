@@ -164,7 +164,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.pixelVertexDQM = cms.EDAnalyzer("Vx3DHLTAnalyzer",
                                             vertexCollection = cms.InputTag("hiSelectedVertex"),
                                             debugMode        = cms.bool(True),
-                                            nLumiReset       = cms.uint32(1),
+                                            nLumiReset       = cms.uint32(5),
                                             dataFromFit      = cms.bool(True),
                                             minNentries      = cms.uint32(20),
                                             # If the histogram has at least "minNentries" then extract Mean and RMS,
