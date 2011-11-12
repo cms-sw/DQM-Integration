@@ -183,6 +183,7 @@ process.hcalClient.Beam_minerrorrate=cms.untracked.double(2.0)
 if (HEAVYION):
     process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
     process.hcalHotCellMonitor.ETThreshold_HF  = cms.untracked.double(10.0)
+    process.hcalDigiMonitor.maxDigiSizeHF = cms.untracked.int32(10)
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
