@@ -218,6 +218,13 @@ if (process.runType.getRunType() == process.runType.pp_run):
 #--------------------------------------------------
 if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+#
+    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+    process.SiStripAnalyser.TkMapCreationFrequency  = -1
+    process.SiStripAnalyser.ShiftReportFrequency = -1
+    process.SiStripAnalyser.StaticUpdateFrequency = 5
+    process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
+    
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
                          process.consecutiveHEs*
