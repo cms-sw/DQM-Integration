@@ -179,11 +179,11 @@ process.hcalClient.HotCell_minerrorrate =cms.untracked.double(0.10)
 # Disable the HFLumi from affecting HF Summary Value
 process.hcalClient.Beam_minerrorrate=cms.untracked.double(2.0)
 
+process.hcalDigiMonitor.maxDigiSizeHF = cms.untracked.int32(10)
 # Increase hotcellmonitor thresholds for HI runs
 if (HEAVYION):
     process.hcalHotCellMonitor.ETThreshold = cms.untracked.double(10.0)
     process.hcalHotCellMonitor.ETThreshold_HF  = cms.untracked.double(10.0)
-    process.hcalDigiMonitor.maxDigiSizeHF = cms.untracked.int32(10)
 
 # Don't create problem histograms for tasks that aren't run:
 process.hcalClient.enabledClients = ["DeadCellMonitor",
