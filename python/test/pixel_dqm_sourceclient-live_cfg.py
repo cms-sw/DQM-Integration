@@ -13,7 +13,6 @@ process.MessageLogger = cms.Service("MessageLogger",
     destinations = cms.untracked.vstring('cout')
 )
 
-QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'
 #----------------------------
 # Event Source
 #-----------------------------
@@ -98,17 +97,6 @@ if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
 
-#--------------------------------
-# Heavy Ion Configuration Changes
-#--------------------------------
-if (process.runType.getRunType() == process.runType.hi_run):
-    QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_tier0_qualitytest_heavyions.xml'
-    process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
-    process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
-    process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_HI*'))
-
 #--------------------------
 # Pixel DQM Source and Client
 #--------------------------
@@ -116,13 +104,26 @@ process.load("DQM.SiPixelCommon.SiPixelP5DQM_source_cff")
 process.load("DQM.SiPixelCommon.SiPixelP5DQM_client_cff")
 
 process.qTester = cms.EDAnalyzer("QualityTester",
-    qtList = cms.untracked.FileInPath(QTestfile),
+    qtList = cms.untracked.FileInPath("DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml"),
     prescaleFactor = cms.untracked.int32(1),
     getQualityTestsFromFile = cms.untracked.bool(True),
     verboseQT = cms.untracked.bool(False),
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
 )
+
+#--------------------------------
+# Heavy Ion Configuration Changes
+#--------------------------------
+if (process.runType.getRunType() == process.runType.hi_run):
+        process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
+        process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
+        process.qTester = cms.EDAnalyzer("QualityTester",
+            qtList = cms.untracked.FileInPath("DQM/SiPixelMonitorClient/test/sipixel_tier0_qualitytest_heavyions.xml"))
+        process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
+        process.sipixelEDAClientP5 = cms.EDAnalyzer("SiPixelEDAClient", inputSource = cms.untracked.string("rawDataRepacker"))
+        process.sipixelDaqInfo     = cms.EDAnalyzer("SiPixelDaqInfo",   daqSource   = cms.untracked.string("rawDataRepacker"))
+        process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HI*'))
 
 #--------------------------
 # Web Service
