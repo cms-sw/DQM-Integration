@@ -251,7 +251,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
     process.siPixelDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.siStripDigis.ProductLabel = cms.InputTag("rawDataRepacker")
-    process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
     process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
 
     # Select events based on the pixel cluster multiplicity
@@ -273,17 +272,17 @@ if (process.runType.getRunType() == process.runType.hi_run):
                                      qtestOnEndLumi = cms.untracked.bool(True),
                                      qtestOnEndRun = cms.untracked.bool(True)
                                      )
-    
-    # Sources for HI tracks
+
+    # Sources for HI 
     process.SiStripBaselineValidator.srcProcessedRawDigi =  cms.InputTag('siStripVRDigis','VirginRaw')
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_hi*process.MonitorTrackResiduals_hi*process.TrackMon_hi)
-# Defining the client
-    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
-    process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
-    process.SiStripAnalyser.TkMapCreationFrequency  = -1
-    process.SiStripAnalyser.ShiftReportFrequency = -1
-    process.SiStripAnalyser.StaticUpdateFrequency = 5
-    process.SiStripClients  = cms.Sequence(process.SiStripAnalyser)
+# Client for HI
+    process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_HeavyIons_cff")
+    process.SiStripAnalyserHI.RawDataTag = cms.untracked.InputTag("rawDataRepacker")
+    process.SiStripAnalyserHI.TkMapCreationFrequency  = -1
+    process.SiStripAnalyserHI.ShiftReportFrequency = -1
+    process.SiStripAnalyserHI.StaticUpdateFrequency = 5
+    process.SiStripClients  = cms.Sequence(process.SiStripAnalyserHI)
     # Reco for HI collisions
     process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff")
     process.RecoForDQM_LocalReco = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.siStripVRDigis*process.gtDigis*process.trackerlocalreco)
@@ -297,8 +296,9 @@ if (process.runType.getRunType() == process.runType.hi_run):
                          process.DQMCommon*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
-                         process.SiStripBaselineValidator*
                          process.RecoForDQM_TrkReco*
-                         process.SiStripSources_TrkReco
+                         process.SiStripSources_TrkReco*
+                         process.multFilter*
+                         process.SiStripBaselineValidator                         
                          )
 
