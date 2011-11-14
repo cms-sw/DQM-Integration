@@ -207,23 +207,23 @@ process.options = cms.untracked.PSet(
 #        process.hltHighLevel
 #        )
 
-    process.p = cms.Path(process.hcalDigis
-                         *process.l1GtUnpack
-                         *process.horeco
-                         *process.hfreco
-                         *process.hbhereco
-                         *process.hcalMonitor
-                         *process.hcalMonitorTasksCalibrationSequence 
-                         *process.hcalClient
-                         *process.dqmEnv
-                         *process.dqmSaver)
+#    process.p = cms.Path(process.hcalDigis
+#                         *process.l1GtUnpack
+#                         *process.horeco
+#                         *process.hfreco
+#                         *process.hbhereco
+#                         *process.hcalMonitor
+#                         *process.hcalMonitorTasksCalibrationSequence 
+#                         *process.hcalClient
+#                         *process.dqmEnv
+#                         *process.dqmSaver)
 
 #################################################################
 
 
 
-else:
-    process.p = cms.Path(process.hcalDigis
+
+process.p = cms.Path(process.hcalDigis
                          *process.l1GtUnpack
                          *process.horeco
                          *process.hfreco
