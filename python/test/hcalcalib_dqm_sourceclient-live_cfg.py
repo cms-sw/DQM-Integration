@@ -44,7 +44,7 @@ process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
 
 if (HEAVYION):
-    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
+#    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
     process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
     
 #process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
@@ -184,14 +184,15 @@ process.options = cms.untracked.PSet(
 #                                                               #
 #################################################################
 
-if (HEAVYION):
+#if (HEAVYION):
     # Define new Heavy Ion labels
-    process.hcalDigis.InputLabel                    = cms.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagNoiseMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagLaserMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalMonitor.FEDRawDataCollection        = cms.untracked.InputTag("hltHcalCalibrationRaw")
-    process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
+## The section below is commented out due to being obsolete in 2011
+#    process.hcalDigis.InputLabel                    = cms.InputTag("hltHcalCalibrationRaw")
+#    process.hcalDetDiagNoiseMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
+#    process.hcalDetDiagLaserMonitor.RawDataLabel    = cms.untracked.InputTag("hltHcalCalibrationRaw")
+#    process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+#    process.hcalMonitor.FEDRawDataCollection        = cms.untracked.InputTag("hltHcalCalibrationRaw")
+#    process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
     #process.hcalRawDataMonitor.digiLabel            = cms.untracked.InputTag("hltHcalCalibrationRaw")
 
 #    process.hltHighLevel = cms.EDFilter("HLTHighLevel",
@@ -260,4 +261,5 @@ if (HEAVYION):
      process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
      process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
      process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
+     process.hcalDetDiagLaserMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
      process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
