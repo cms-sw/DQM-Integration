@@ -264,11 +264,11 @@ if (process.runType.getRunType() == process.runType.hi_run):
     import  HLTrigger.special.hltPixelActivityFilter_cfi
     process.multFilter = HLTrigger.special.hltPixelActivityFilter_cfi.hltPixelActivityFilter.clone(
         inputTag  = cms.InputTag('siPixelClusters'),
-        minClusters = cms.uint32(150),
+        minClusters = cms.uint32(10000),
         maxClusters = cms.uint32(50000)
         )
     # Trigger selection
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*'))
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*','HLT_HIMinBias*'))
 #
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
     # Quality test for HI                                                                                                                  
