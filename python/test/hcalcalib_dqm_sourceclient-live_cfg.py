@@ -42,6 +42,7 @@ if (host==HcalCalibPlaybackHost):
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
+process.EventStreamHttpReader.max_queue_depth = cms.int32(100)
 
 if (HEAVYION):
 #    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
