@@ -279,6 +279,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
                                      )
 
     # Sources for HI 
+    process.load("Configuration.StandardSequences.RawToDigi_Repacked_cff")
     process.SiStripBaselineValidator.srcProcessedRawDigi =  cms.InputTag('siStripVRDigis','VirginRaw')
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_hi*process.MonitorTrackResiduals_hi*process.TrackMon_hi)
 # Client for HI
