@@ -76,10 +76,8 @@ process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
 #-----------------------
 ## Collision Reconstruction
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
-process.load("Configuration.StandardSequences.RawToDigi_Repacked_cff")
 #process.siStripDigis.UnpackBadChannels = cms.bool(True)
 process.load("Configuration.StandardSequences.Reconstruction_cff")
-#process.load("Configuration.GlobalRuns.reco_TLR_42X")
 
 ## Cosmic Track Reconstruction
 if (process.runType.getRunType() == process.runType.cosmic_run):
