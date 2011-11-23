@@ -150,7 +150,7 @@ process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siS
 
 if (process.runType.getRunType() == process.runType.cosmic_run):
     # event selection for cosmic data
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_*Cosmic*','HLT_ZeroBias*'))
     # Reference run for cosmic
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_cosmic.root'
     # Source and Client config for cosmic data
