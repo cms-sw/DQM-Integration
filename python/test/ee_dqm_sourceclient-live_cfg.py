@@ -300,7 +300,7 @@ if (liveCMS == 1) | (playCMS == 1) :
 
 if (localDAQ == 1) | (globalDAQ == 1) | (liveECAL == 1) :
   process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-  process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
+  process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
 
 if (localDAQ == 1) :
   process.GlobalTag.globaltag = "GR10_H_V0::All"
@@ -318,11 +318,11 @@ if (globalDAQ == 1) | (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
   process.GlobalTag.toGet = cms.VPSet(
     cms.PSet(record = cms.string("EcalDQMChannelStatusRcd"),
              tag = cms.string("EcalDQMChannelStatus_v1_hlt"),
-             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
+             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
             ),
     cms.PSet(record = cms.string("EcalDQMTowerStatusRcd"),
              tag = cms.string("EcalDQMTowerStatus_v1_hlt"),
-             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
+             connect = cms.untracked.string("frontier://(proxyurl=http://localhost:3128)(serverurl=http://localhost:8000/FrontierOnProd)(serverurl=http://localhost:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_34X_ECAL")
             )
   )
 
