@@ -48,7 +48,7 @@ process.seqDigitization = cms.Path( process.siStripDigis )
 process.DQMCommon   = cms.Sequence(process.dqmEnv*process.dqmSaver)
 
 process.seqAnalysis = cms.Path( process.LaserAlignmentProducerDQM*process.DQMCommon)
-
+process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

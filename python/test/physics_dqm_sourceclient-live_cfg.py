@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.9 2011/09/12 18:42:10 dutta Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.10 2011/10/11 14:20:10 lilopera Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -49,6 +49,7 @@ process.p = cms.Path(
     process.dqmSaver
 )
 
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

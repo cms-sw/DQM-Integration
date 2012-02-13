@@ -102,6 +102,8 @@ process.rpcClient = cms.Sequence(process.rpcdqmclient*process.rpcChamberQuality*
 #process.p = cms.Path(process.rpcSource*process.rpcClient)
 process.p = cms.Path(process.hltTriggerTypeFilter*process.rpcSource*process.rpcClient)
 
+process.rpcunpacker.InputLabel = cms.InputTag("rawDataCollector")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

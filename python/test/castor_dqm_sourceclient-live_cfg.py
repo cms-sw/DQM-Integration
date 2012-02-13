@@ -163,6 +163,10 @@ process.p = cms.Path(process.castorDigis*process.castorreco*process.castorMonito
 #process.p = cms.Path(process.castorDigis*process.castorMonitor*process.dqmEnv*process.dqmSaver)
 #process.p = cms.Path(process.castorMonitor*process.dqmEnv*process.dqmSaver)
 
+
+process.castorDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.castorMonitor.rawLabel = cms.InputTag("rawDataCollector")
+    
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

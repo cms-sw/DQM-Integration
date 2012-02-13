@@ -233,7 +233,22 @@ if (process.runType.getRunType() == process.runType.hpu_run):
                          process.SiStripSources_LocalReco
                          )
 
-
+process.castorDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.csctfDigis.producer = cms.InputTag("rawDataCollector")
+process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataCollector")
+process.ecalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataCollector")
+process.gctDigis.inputLabel = cms.InputTag("rawDataCollector")
+process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
+process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataCollector")
+process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.muonCSCDigis.InputObjects = cms.InputTag("rawDataCollector")
+process.muonDTDigis.inputLabel = cms.InputTag("rawDataCollector")
+process.muonRPCDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
+process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

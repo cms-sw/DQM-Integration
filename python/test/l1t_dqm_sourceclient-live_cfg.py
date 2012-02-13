@@ -190,7 +190,24 @@ process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
 #--------------------------------------------------
 
 print "Running with run type = ", process.runType.getRunType()
-
+process.castorDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.csctfDigis.producer = cms.InputTag("rawDataCollector")
+process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataCollector")
+process.ecalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataCollector")
+process.gctDigis.inputLabel = cms.InputTag("rawDataCollector")
+process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
+process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataCollector")
+process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.muonCSCDigis.InputObjects = cms.InputTag("rawDataCollector")
+process.muonDTDigis.inputLabel = cms.InputTag("rawDataCollector")
+process.muonRPCDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
+process.bxTiming.FedSource = cms.untracked.InputTag("rawDataCollector")
+process.l1s.fedRawData = cms.InputTag("rawDataCollector")
+    
 if (process.runType.getRunType() == process.runType.hi_run):
     process.castorDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.csctfDigis.producer = cms.InputTag("rawDataRepacker")

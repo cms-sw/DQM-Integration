@@ -57,6 +57,9 @@ process.p = cms.Path(process.preScaler*
                process.ecalPreshowerMonitorClient*
                process.dqmSaver)
 
+
+process.esRawToDigi.sourceTag = cms.InputTag("rawDataCollector")
+process.ecalPreshowerRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

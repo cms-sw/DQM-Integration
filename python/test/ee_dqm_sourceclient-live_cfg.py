@@ -707,7 +707,17 @@ if (liveECAL == 1) :
   process.dqmSaver.dirName = '/data/ecalod-disk01/dqm-data/storage-manager/root'
 
 if (liveCMS == 1) | (playCMS == 1) :
-
+  process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataCollector")
+  process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag("rawDataCollector")
+  process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapHltTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  
 #--------------------------------------------------
 # For high PU run 
 #--------------------------------------------------

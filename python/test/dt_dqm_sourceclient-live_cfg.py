@@ -47,6 +47,10 @@ process.dtDQMPathPhys = cms.Path(process.unpackers + process.dqmmodules + proces
 
 #process.dtDQMPathCalib = cms.Path(process.unpackers + process.dqmmodules + process.calibrationEventsFilter * process.dtDQMCalib)
 
+process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataCollector")
+process.dtunpacker.inputLabel = cms.InputTag("rawDataCollector")
+process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
+process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label

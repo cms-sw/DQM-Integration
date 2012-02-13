@@ -714,6 +714,17 @@ if (liveCMS == 1) | (playCMS == 1) :
   if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
+  process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataCollector")
+  process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag("rawDataCollector")
+  process.ecalBarrelHltTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapHltTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+  process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------

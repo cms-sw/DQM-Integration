@@ -98,6 +98,8 @@ if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
 
+
+process.siPixelDigis.InputLabel   = cms.InputTag("rawDataCollector")
 #--------------------------------
 # Heavy Ion Configuration Changes
 #--------------------------------
@@ -123,6 +125,9 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndLumi = cms.untracked.bool(True),
     qtestOnEndRun = cms.untracked.bool(True)
 )
+
+process.sipixelEDAClientP5.inputSource = cms.untracked.string("rawDataCollector")
+process.sipixelDaqInfo.daqSource   = cms.untracked.string("rawDataCollector")
 if (process.runType.getRunType() == process.runType.hi_run):
         process.sipixelEDAClientP5.inputSource = cms.untracked.string("rawDataRepacker")
         process.sipixelDaqInfo.daqSource   = cms.untracked.string("rawDataRepacker")

@@ -248,10 +248,20 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndRun = cms.untracked.bool(True)
 )
 
+process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataCollector")
+process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
+process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
+process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalDetDiagLaserMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
-
 if (HEAVYION):
      process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
      process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataRepacker")

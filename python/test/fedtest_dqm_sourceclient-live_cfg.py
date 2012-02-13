@@ -135,6 +135,21 @@ process.schedule = cms.Schedule(process.evfDQMPath,process.evfDQMmodulesPath)
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
+process.dtunpacker.inputLabel = cms.InputTag("rawDataCollector")
+process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataCollector")
+process.esRawToDigi.sourceTag = cms.InputTag("rawDataCollector")
+process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.rpcunpacker.InputLabel = cms.InputTag("rawDataCollector")
+process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
+process.SiPixelHLTSource.RawInput = cms.InputTag("rawDataCollector")
+process.cscDQMEvF.InputObjects = cms.untracked.InputTag("rawDataCollector")
+process.ebDQMEvF.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+process.ecalPreshowerFEDIntegrityTask.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+process.eeDQMEvF.FEDRawDataCollection = cms.InputTag("rawDataCollector")
+process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
+process.l1tfed.rawTag = cms.InputTag("rawDataCollector")
+process.siStripFEDCheck.RawDataTag = cms.InputTag("rawDataCollector")
+
 
 print "Running with run type = ", process.runType.getRunType()
 
