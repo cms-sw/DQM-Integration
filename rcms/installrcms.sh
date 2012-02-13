@@ -10,7 +10,6 @@ if [ "$1" = "live" ] ; then
         ln -sfv l1temulator_dqm_sourceclient-live_cfg.py                     dqmfu_03-4_cfg.py
         ln -sfv hcal_dqm_sourceclient-live_cfg.py                            dqmfu_03-5_cfg.py
         ln -sfv physics_dqm_sourceclient-live_cfg.py                         dqmfu_03-6_cfg.py
-        ln -sfv info_dqm_sourceclient-live_cfg.py                            dqmfu_03-7_cfg.py
 
         ln -sfv ee_dqm_sourceclient-live_cfg.py                              dqmfu_04-1_cfg.py
         ln -sfv rpc_dqm_sourceclient-live_cfg.py                             dqmfu_04-2_cfg.py
