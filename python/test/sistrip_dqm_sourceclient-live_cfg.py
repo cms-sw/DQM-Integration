@@ -156,6 +156,7 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
     # Source and Client config for cosmic data
     process.SiStripSources_TrkReco_cosmic = cms.Sequence(process.SiStripMonitorTrack_ckf*process.TrackMon_ckf)
     process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_Cosmic_cff")
+    process.SiStripAnalyserCosmic.RawDataTag = cms.untracked.InputTag("rawDataCollector")
     process.SiStripAnalyserCosmic.TkMapCreationFrequency  = -1
     process.SiStripAnalyserCosmic.ShiftReportFrequency = -1
     process.SiStripAnalyserCosmic.StaticUpdateFrequency = 5
@@ -249,6 +250,7 @@ process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
 process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataCollector")
+process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
