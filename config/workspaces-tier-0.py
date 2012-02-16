@@ -5,11 +5,12 @@ server.workspace('DQMContent', 3, 'Summaries', 'Everything', '^')
 
 server.workspace('DQMContent', 10, 'Tracker/Muons', 'Pixel', '^Pixel/',
                  'Pixel/Layouts/00b - Pixel_Error_Summary',
-                 'Pixel/Layouts/01 - Pixel_Digi_Summary',
+                 'Pixel/Layouts/01 - Pixel_FEDOccupancy_Summary',
                  'Pixel/Layouts/02 - Pixel_Cluster_Summary',
                  'Pixel/Layouts/03 - Pixel_Track_Summary',
                  'Pixel/Layouts/05 - Barrel OnTrack cluster positions',
-                 'Pixel/Layouts/06 - Endcap OnTrack cluster positions')
+                 'Pixel/Layouts/06 - Endcap OnTrack cluster positions',
+                 'Pixel/Layouts/07 - Pixel_Digi_Summary',)
 
 server.workspace('DQMContent', 11, 'Tracker/Muons', 'SiStrip', '^SiStrip/',
                                   'SiStrip/Layouts/00 - SiStrip ReportSummary',
