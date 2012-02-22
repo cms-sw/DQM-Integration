@@ -197,6 +197,7 @@ if (process.runType.getRunType() == process.runType.pp_run):
     process.SiStripAnalyser.TkMapCreationFrequency  = -1
     process.SiStripAnalyser.ShiftReportFrequency = -1
     process.SiStripAnalyser.StaticUpdateFrequency = 5
+    process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
     process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
     # Reco for pp collisions
     process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
@@ -222,6 +223,7 @@ if (process.runType.getRunType() == process.runType.hpu_run):
     process.SiStripAnalyser.TkMapCreationFrequency  = -1
     process.SiStripAnalyser.ShiftReportFrequency = -1
     process.SiStripAnalyser.StaticUpdateFrequency = 5
+    process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
     process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
     
     process.p = cms.Path(process.scalersRawToDigi*
@@ -250,7 +252,6 @@ process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
 process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 process.siStripFEDMonitor.RawDataTag = cms.untracked.InputTag("rawDataCollector")
-process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
