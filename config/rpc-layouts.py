@@ -18,7 +18,7 @@ bx  = "RPC BX distribution "
 
 #FED Fatal
 rpclayout(dqmitems, "01-Fatal_FED_Errors",
-          [{ 'path': "RPC/FEDIntegrity_EvF/FEDFatal", 'description': fed + rpclink }])
+          [{ 'path': "RPC/FEDIntegrity_SM/FEDFatal", 'description': fed + rpclink }])
 ##-------------------
 
 #RPC Events
@@ -96,15 +96,11 @@ rpclayout(dqmitems, "10-Barrel_1DOccupancy",
           )
 
 rpclayout(dqmitems, "11-EndCap_1DOccupancy",
-          [{ 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_3", 'description': occupancy + rpclink },
-           { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_2", 'description': occupancy + rpclink },
-           { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_1", 'description': occupancy + rpclink }],
-          
-          [{ 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_-3", 'description':occupancy  + rpclink},
-           { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_-2", 'description':occupancy  + rpclink},
-           { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Disk_-1", 'description':occupancy  + rpclink}]
+          [ { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Ring_2",  'description': occupancy + rpclink },
+            { 'path': "RPC/AllHits/SummaryHistograms/1DOccupancy_Ring_3",  'description': occupancy + rpclink }]
           )
 
+        
 ##------------------------
 
 

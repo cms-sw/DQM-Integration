@@ -17,16 +17,16 @@ shiftrpclayout(dqmitems, "01-RPC_HV_Status",
 
 
 shiftrpclayout(dqmitems, "02-RPC_Events",
-               [{ 'path': "RPC/Noise/RPCEvents", 'description': rpcevents + rpclink }])
+               [{ 'path': "RPC/AllHits/RPCEvents", 'description': rpcevents + rpclink }])
 
 
 shiftrpclayout(dqmitems, "03-Quality_State_Overview",
-               [{ 'path': "RPC/Noise/SummaryHistograms/RPC_System_Quality_Overview", 'description': quality + rpclink }])
+               [{ 'path': "RPC/AllHits/SummaryHistograms/RPC_System_Quality_Overview", 'description': quality + rpclink }])
 
 
 shiftrpclayout(dqmitems, "04-RPC_Occupancy",
-               [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink  }],
-               [{ 'path': "RPC/Noise/SummaryHistograms/Occupancy_for_Endcap", 'description': occupancy + rpclink  }])
+               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Barrel", 'description': occupancy + rpclink  }],
+               [{ 'path': "RPC/AllHits/SummaryHistograms/Occupancy_for_Endcap", 'description': occupancy + rpclink  }])
 
 
 shiftrpclayout(dqmitems, "05-Statistics",
