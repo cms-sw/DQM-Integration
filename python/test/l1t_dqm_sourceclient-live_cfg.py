@@ -44,8 +44,8 @@ process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 es_prefer_GlobalTag = cms.ESPrefer('GlobalTag')
 process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
-#
-process.load("Configuration.StandardSequences.Geometry_cff")
+#process.load("Configuration.StandardSequences.Geometry_cff")
+process.load("Configuration.StandardSequences.GeometryRecoDB_cff")
 
 #-------------------------------------
 # sequences needed for L1 trigger DQM
