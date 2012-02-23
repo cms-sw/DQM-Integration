@@ -19,10 +19,10 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 process.hltTriggerTypeFilter.SelectedTriggerType = 1
 
 ################# Geometry  #####################
-process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
-process.load("Geometry.RPCGeometry.rpcGeometry_cfi")
-process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
-
+#process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
+#process.load("Geometry.RPCGeometry.rpcGeometry_cfi")
+#process.load("Geometry.MuonNumbering.muonNumberingInitialization_cfi")
+process.load("Configuration.StandardSequences.GeometryRecoDB_cff")
 ################ Condition ######################
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 

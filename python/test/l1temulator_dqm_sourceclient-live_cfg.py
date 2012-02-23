@@ -42,9 +42,9 @@ process.load("DQM.Integration.test.environment_cfi")
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
-#
-process.load("Configuration.StandardSequences.Geometry_cff")
+#process.load("Configuration.StandardSequences.Geometry_cff")
 
+process.load("Configuration.StandardSequences.GeometryRecoDB_cff")
 #-------------------------------------
 # sequences needed for L1 emulator DQM
 #
