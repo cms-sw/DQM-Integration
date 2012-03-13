@@ -28,19 +28,17 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 #----------------------------
 # BeamMonitor
 #-----------------------------
-process.load("DQM.BeamMonitor.BeamMonitor_cff")
+#process.load("DQM.BeamMonitor.BeamMonitor_cff") # for reducing/normal tracking
+process.load("DQM.BeamMonitor.BeamMonitor_Pixel_cff") #for pixel tracks/vertices
 process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
-
-
 
 
 ####  SETUP TRACKING RECONSTRUCTION ####
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 
 
@@ -83,6 +81,25 @@ process.monitor = cms.Sequence(process.dqmBeamMonitor)
 if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run):
 
     print "Running pp"
+
+    process.castorDigis.InputLabel = cms.InputTag("rawDataCollector")
+    process.csctfDigis.producer = cms.InputTag("rawDataCollector")
+    process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataCollector")
+    process.ecalDigis.InputLabel = cms.InputTag("rawDataCollector")
+    process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataCollector")
+    process.gctDigis.inputLabel = cms.InputTag("rawDataCollector")
+    process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
+    process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataCollector")
+    process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
+    process.muonCSCDigis.InputObjects = cms.InputTag("rawDataCollector")
+    process.muonDTDigis.inputLabel = cms.InputTag("rawDataCollector")
+    process.muonRPCDigis.InputLabel = cms.InputTag("rawDataCollector")
+    process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
+    process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
+    process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
+
+
+
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
              SelectEvents = cms.vstring('HLT_L1*',
                                         'HLT_Jet*',
@@ -94,32 +111,18 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
                                       )
 
     process.load("Configuration.StandardSequences.Reconstruction_cff")
-    process.load("RecoTracker.IterativeTracking.iterativeTk_cff")
+    process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
 
-    ## Pixelless Tracking
-    process.load('RecoTracker/Configuration/RecoTrackerNotStandard_cff')
-    process.MeasurementTracker.pixelClusterProducer = cms.string("")
 
     # Offline Beam Spot
     process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
-
-    ## Offline PrimaryVertices
-    import RecoVertex.PrimaryVertexProducer.OfflinePrimaryVertices_cfi
-    process.offlinePrimaryVertices = RecoVertex.PrimaryVertexProducer.OfflinePrimaryVertices_cfi.offlinePrimaryVertices.clone()
 
 
     process.dqmBeamMonitor.OnlineMode = True              
     process.dqmBeamMonitor.resetEveryNLumi = 5
     process.dqmBeamMonitor.resetPVEveryNLumi = 5
-    process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 25
-
-    process.dqmBeamMonitor.BeamFitter.TrackCollection = cms.untracked.InputTag('generalTracks')
-
-
-    process.offlinePrimaryVertices.TrackLabel = cms.InputTag("generalTracks")
-    process.offlinePrimaryVertices.label=cms.string("")
-    process.offlinePrimaryVertices.minNdof=cms.double(0.0)
-    process.offlinePrimaryVertices.useBeamConstraint=cms.bool(False)
+    process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
+    process.dqmBeamMonitor.PVFitter.errorScale = 1.23 #keep checking this with new release
 
 
     #TriggerName for selecting pv for DIP publication, NO wildcard needed here
@@ -130,52 +133,31 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
 
     process.dqmBeamMonitor.hltResults = cms.InputTag("TriggerResults","","HLT")
 
-    #fast general track reco
-    process.iterTracking =cms.Sequence(process.InitialStep
-                                  *process.LowPtTripletStep
-                                  *process.PixelPairStep
-                                  *process.DetachedTripletStep
-                                  *process.MixedTripletStep
-                                  *process.PixelLessStep
-                                  *process.TobTecStep
-                                  *process.generalTracks) 
+    #pixel  track/vertices reco
+    process.pixelVertices.TkFilterParameters.minPt = process.pixelTracks.RegionFactoryPSet.RegionPSet.ptMin
 
+    process.offlinePrimaryVertices.TrackLabel = cms.InputTag("pixelTracks")
 
-    process.tracking_FirstStep = cms.Sequence(process.siPixelDigis
-                                         *process.siStripDigis
-                                         *process.trackerlocalreco
-                                         *process.offlineBeamSpot
-                                         *process.recopixelvertexing
-                                         *process.iterTracking)
+    process.tracking_FirstStep  = cms.Sequence(process.siPixelDigis* 
+                                               process.offlineBeamSpot*
+                                               process.siPixelClusters*
+                                               process.siPixelRecHits*
+                                               process.pixelTracks*
+                                               process.pixelVertices
+                                           )
 
+    #--pixel tracking ends here-----
 
     process.p = cms.Path(process.scalersRawToDigi
                          *process.dqmTKStatus
                          *process.hltTriggerTypeFilter
                          *process.dqmcommon
                          *process.tracking_FirstStep
-                         *process.offlinePrimaryVertices
                          *process.monitor)
 
 
 
 
-
-process.castorDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.csctfDigis.producer = cms.InputTag("rawDataCollector")
-process.dttfDigis.DTTF_FED_Source = cms.InputTag("rawDataCollector")
-process.ecalDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.ecalPreshowerDigis.sourceTag = cms.InputTag("rawDataCollector")
-process.gctDigis.inputLabel = cms.InputTag("rawDataCollector")
-process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
-process.gtEvmDigis.EvmGtInputTag = cms.InputTag("rawDataCollector")
-process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.muonCSCDigis.InputObjects = cms.InputTag("rawDataCollector")
-process.muonDTDigis.inputLabel = cms.InputTag("rawDataCollector")
-process.muonRPCDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
-process.siPixelDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 
 #--------------------------------------------------
 # Heavy Ion Stuff
