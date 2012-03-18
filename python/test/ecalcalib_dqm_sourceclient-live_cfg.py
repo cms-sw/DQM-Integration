@@ -88,12 +88,6 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("DQM.Integration.test.environment_cfi")
 
-process.dqmEnvEE = cms.EDAnalyzer("DQMEventInfo",
-                                  subSystemFolder = cms.untracked.string('EcalEndcap/Calibration'),
-                                  eventRateWindow = cms.untracked.double(0.5),
-                                  eventInfoFolder = cms.untracked.string('EventInfo')
-                                  )
-
 
 ### FILTERS ###
 
@@ -161,18 +155,10 @@ process.ecalDataSequence = cms.Sequence(
 process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelMonitorModule +
     process.ecalEndcapMonitorModule +
-    process.ecalBarrelTrendTask +
-    process.ecalEndcapTrendTask +
-    process.ecalBarrelPedestalOnlineTask +
     process.ecalBarrelOccupancyTask +
     process.ecalBarrelIntegrityTask +
-    process.ecalBarrelStatusFlagsTask +
-    process.ecalBarrelRawDataTask +
-    process.ecalEndcapPedestalOnlineTask +
     process.ecalEndcapOccupancyTask +
-    process.ecalEndcapIntegrityTask +
-    process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask
+    process.ecalEndcapIntegrityTask
 )
 
 process.ecalLaserPath = cms.Path(
@@ -180,9 +166,11 @@ process.ecalLaserPath = cms.Path(
     process.ecalLaserFilter *    
     process.ecalDataSequence *
     process.ecalUncalibHit1 *
-    (process.ecalMonitorBaseSequence +
+    (
+    process.ecalMonitorBaseSequence +
     process.ecalBarrelLaserTask +
-    process.ecalEndcapLaserTask)
+    process.ecalEndcapLaserTask
+    )
 )
 
 process.ecalLedPath = cms.Path(
@@ -190,17 +178,21 @@ process.ecalLedPath = cms.Path(
     process.ecalLedFilter *
     process.ecalDataSequence *
     process.ecalUncalibHit1 *
-    (process.ecalMonitorBaseSequence +
-    process.ecalEndcapLedTask)
+    (
+    process.ecalMonitorBaseSequence +    
+    process.ecalEndcapLedTask
+    )
 )
 
 process.ecalPedestalPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalPedestalFilter *    
     process.ecalDataSequence *
-    (process.ecalMonitorBaseSequence +
+    (
+    process.ecalMonitorBaseSequence +    
     process.ecalBarrelPedestalTask +
-    process.ecalEndcapPedestalTask)
+    process.ecalEndcapPedestalTask
+    )
 )    
 
 process.ecalTestPulsePath = cms.Path(
@@ -208,9 +200,11 @@ process.ecalTestPulsePath = cms.Path(
     process.ecalTestPulseFilter *    
     process.ecalDataSequence *
     process.ecalUncalibHit2 *
-    (process.ecalMonitorBaseSequence +
+    (
+    process.ecalMonitorBaseSequence +    
     process.ecalBarrelTestPulseTask +
-    process.ecalEndcapTestPulseTask)
+    process.ecalEndcapTestPulseTask
+    )
 )
 
 process.ecalClientPath = cms.Path(
@@ -222,7 +216,6 @@ process.ecalClientPath = cms.Path(
 
 process.ecalMonitorEndPath = cms.EndPath(
     process.dqmEnv +
-    process.dqmEnvEE +
     process.dqmQTestEB +
     process.dqmQTestEE
 )
@@ -301,6 +294,11 @@ process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:EcalUncalibRecHitsEE"
 process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit2:EcalUncalibRecHitsEE"
 
+process.ecalBarrelIntegrityTask.subfolder = "Calibration"
+process.ecalEndcapIntegrityTask.subfolder = "Calibration"
+process.ecalBarrelOccupancyTask.subfolder = "Calibration"
+process.ecalEndcapOccupancyTask.subfolder = "Calibration"
+
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
@@ -320,8 +318,6 @@ process.ecalBarrelMonitorClient.MGPAGains = [ 12 ]
 process.ecalBarrelMonitorClient.MGPAGainsPN = [ 16 ]
 process.ecalEndcapMonitorClient.MGPAGains = [ 12 ]
 process.ecalEndcapMonitorClient.MGPAGainsPN = [ 16 ]
-process.ecalBarrelMonitorClient.produceReports = cms.untracked.bool(False)
-process.ecalEndcapMonitorClient.produceReports = cms.untracked.bool(False)
 
 process.ecalBarrelMonitorClient.location = "P5_Co"
 process.ecalEndcapMonitorClient.location = "P5_Co"
@@ -331,8 +327,13 @@ process.ecalEndcapMonitorClient.verbose = False
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
 
-process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Pedestal", "TestPulse", "Laser", "Summary"]
-process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Pedestal", "TestPulse", "Laser", "Led", "Summary"]
+process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Summary"]
+process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Led", "Summary"]
+process.ecalBarrelMonitorClient.subfolder = "Calibration"
+process.ecalEndcapMonitorClient.subfolder = "Calibration"
+
+process.ecalBarrelMonitorClient.produceReports = False
+process.ecalEndcapMonitorClient.produceReports = False
 
 os.environ["TNS_ADMIN"] = "/etc"
 dbName = ""
@@ -378,8 +379,11 @@ process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
  ## DQM common modules ##
 
 process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference.root"
-process.dqmEnv.subSystemFolder = cms.untracked.string("EcalBarrel/Calibration")
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
+process.dqmEnv.subSystemFolder = cms.untracked.string("EcalCalibration")
+
+ ## Source ##
+process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")
+process.source.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
 
  ## Run type specific ##
 if process.runType.getRunType() == process.runType.cosmic_run :

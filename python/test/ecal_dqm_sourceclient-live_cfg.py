@@ -82,12 +82,6 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 
 process.load("DQM.Integration.test.environment_cfi")
 
-process.dqmEnvEE = cms.EDAnalyzer("DQMEventInfo",
-                                  subSystemFolder = cms.untracked.string('EcalEndcap'),
-                                  eventRateWindow = cms.untracked.double(0.5),
-                                  eventInfoFolder = cms.untracked.string('EventInfo')
-                                  )
-
 
 ### FILTERS ###
 
@@ -158,21 +152,21 @@ process.ecalClusterSequence.remove(process.multi5x5SuperClustersWithPreshower)
 process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelMonitorModule +
     process.ecalEndcapMonitorModule +
-    process.ecalBarrelTrendTask +
-    process.ecalEndcapTrendTask +
-    process.ecalBarrelPedestalOnlineTask +
     process.ecalBarrelOccupancyTask +
     process.ecalBarrelIntegrityTask +
-    process.ecalBarrelStatusFlagsTask +
-    process.ecalBarrelRawDataTask +
-    process.ecalEndcapPedestalOnlineTask +
     process.ecalEndcapOccupancyTask +
-    process.ecalEndcapIntegrityTask +
-    process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask
+    process.ecalEndcapIntegrityTask
 )
 
 process.ecalMonitorSequence = cms.Sequence(
+    process.ecalBarrelTrendTask +
+    process.ecalEndcapTrendTask +
+    process.ecalBarrelPedestalOnlineTask +
+    process.ecalBarrelStatusFlagsTask +
+    process.ecalBarrelRawDataTask +
+    process.ecalEndcapPedestalOnlineTask +
+    process.ecalEndcapStatusFlagsTask +
+    process.ecalEndcapRawDataTask +
     process.ecalBarrelCosmicTask +
     process.ecalBarrelClusterTask +
     process.ecalBarrelTriggerTowerTask +
@@ -189,11 +183,15 @@ process.ecalMonitorPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalPhysicsFilter *
     process.ecalDataSequence *
-    (process.ecalClusterSequence +
+    (
+    process.ecalClusterSequence +
         process.l1GtEvmUnpack +    
-    process.simEcalTriggerPrimitiveDigis) *
-    (process.ecalMonitorBaseSequence +
-    process.ecalMonitorSequence)
+    process.simEcalTriggerPrimitiveDigis
+    ) *
+    (
+    process.ecalMonitorBaseSequence +
+    process.ecalMonitorSequence
+    )
 )
 
 process.ecalClientPath = cms.Path(
@@ -205,7 +203,6 @@ process.ecalClientPath = cms.Path(
 
 process.ecalMonitorEndPath = cms.EndPath(
     process.dqmEnv +
-    process.dqmEnvEE +
     process.dqmQTestEB +
     process.dqmQTestEE
 )
@@ -321,7 +318,11 @@ process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
  ## DQM common modules ##
 
 process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root"
-process.dqmEnv.subSystemFolder = cms.untracked.string("EcalBarrel")
+process.dqmEnv.subSystemFolder = cms.untracked.string("Ecal")
+
+ ## Source ##
+process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
+process.source.SelectHLTOutput = cms.untracked.string("hltOutputA")
 
  ## Run type specific ##
 if process.runType.getRunType() == process.runType.cosmic_run :
