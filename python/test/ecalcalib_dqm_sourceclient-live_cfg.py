@@ -158,7 +158,11 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelOccupancyTask +
     process.ecalBarrelIntegrityTask +
     process.ecalEndcapOccupancyTask +
-    process.ecalEndcapIntegrityTask
+    process.ecalEndcapIntegrityTask +
+    process.ecalBarrelStatusFlagsTask +
+    process.ecalBarrelRawDataTask +
+    process.ecalEndcapStatusFlagsTask +
+    process.ecalEndcapRawDataTask
 )
 
 process.ecalLaserPath = cms.Path(
@@ -294,17 +298,21 @@ process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:EcalUncalibRecHitsEE"
 process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit2:EcalUncalibRecHitsEE"
 
-process.ecalBarrelIntegrityTask.subfolder = "Calibration"
-process.ecalEndcapIntegrityTask.subfolder = "Calibration"
-process.ecalBarrelOccupancyTask.subfolder = "Calibration"
-process.ecalEndcapOccupancyTask.subfolder = "Calibration"
-
 process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
 process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
+
+process.ecalBarrelIntegrityTask.subfolder = "Calibration"
+process.ecalBarrelOccupancyTask.subfolder = "Calibration"
+process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
+process.ecalBarrelRawDataTask.subfolder = "Calibration"
+process.ecalEndcapIntegrityTask.subfolder = "Calibration"
+process.ecalEndcapOccupancyTask.subfolder = "Calibration"
+process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
+process.ecalEndcapRawDataTask.subfolder = "Calibration"
 
 process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
 process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
@@ -329,11 +337,12 @@ process.ecalEndcapMonitorClient.updateTime = 4
 
 process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Summary"]
 process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Led", "Summary"]
-process.ecalBarrelMonitorClient.subfolder = "Calibration"
-process.ecalEndcapMonitorClient.subfolder = "Calibration"
 
 process.ecalBarrelMonitorClient.produceReports = False
 process.ecalEndcapMonitorClient.produceReports = False
+
+process.ecalBarrelMonitorClient.subfolder = "Calibration"
+process.ecalEndcapMonitorClient.subfolder = "Calibration"
 
 os.environ["TNS_ADMIN"] = "/etc"
 dbName = ""

@@ -155,23 +155,23 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelOccupancyTask +
     process.ecalBarrelIntegrityTask +
     process.ecalEndcapOccupancyTask +
-    process.ecalEndcapIntegrityTask
+    process.ecalEndcapIntegrityTask +
+    process.ecalBarrelStatusFlagsTask +
+    process.ecalBarrelRawDataTask +
+    process.ecalEndcapStatusFlagsTask +
+    process.ecalEndcapRawDataTask
 )
 
 process.ecalMonitorSequence = cms.Sequence(
     process.ecalBarrelTrendTask +
     process.ecalEndcapTrendTask +
     process.ecalBarrelPedestalOnlineTask +
-    process.ecalBarrelStatusFlagsTask +
-    process.ecalBarrelRawDataTask +
-    process.ecalEndcapPedestalOnlineTask +
-    process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask +
     process.ecalBarrelCosmicTask +
     process.ecalBarrelClusterTask +
     process.ecalBarrelTriggerTowerTask +
     process.ecalBarrelTimingTask +
     process.ecalBarrelSelectiveReadoutTask +
+    process.ecalEndcapPedestalOnlineTask +
     process.ecalEndcapCosmicTask +
     process.ecalEndcapClusterTask +
     process.ecalEndcapTriggerTowerTask +
