@@ -81,6 +81,8 @@ process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
 )
 
 process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnvEB = process.dqmEnv.clone()
+process.dqmEnvEE = process.dqmEnv.clone()
 
 
 ### FILTERS ###
@@ -159,19 +161,19 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelStatusFlagsTask +
     process.ecalBarrelRawDataTask +
     process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask
+    process.ecalEndcapRawDataTask +
+    process.ecalBarrelPedestalOnlineTask +
+    process.ecalEndcapPedestalOnlineTask
 )
 
 process.ecalMonitorSequence = cms.Sequence(
     process.ecalBarrelTrendTask +
     process.ecalEndcapTrendTask +
-    process.ecalBarrelPedestalOnlineTask +
     process.ecalBarrelCosmicTask +
     process.ecalBarrelClusterTask +
     process.ecalBarrelTriggerTowerTask +
     process.ecalBarrelTimingTask +
     process.ecalBarrelSelectiveReadoutTask +
-    process.ecalEndcapPedestalOnlineTask +
     process.ecalEndcapCosmicTask +
     process.ecalEndcapClusterTask +
     process.ecalEndcapTriggerTowerTask +
@@ -202,7 +204,8 @@ process.ecalClientPath = cms.Path(
 )
 
 process.ecalMonitorEndPath = cms.EndPath(
-    process.dqmEnv +
+    process.dqmEnvEB +
+    process.dqmEnvEE +
     process.dqmQTestEB +
     process.dqmQTestEE
 )
@@ -318,7 +321,9 @@ process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
  ## DQM common modules ##
 
 process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root"
-process.dqmEnv.subSystemFolder = cms.untracked.string("Ecal")
+
+process.dqmEnvEB.subSystemFolder = cms.untracked.string("EcalBarrel")
+process.dqmEnvEE.subSystemFolder = cms.untracked.string("EcalEndcap")
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
