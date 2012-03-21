@@ -94,6 +94,7 @@ if (HEAVYION):
 
 process.HcalTPGCoderULUT.LUTGenerationMode = cms.bool(False)
 process.valHcalTriggerPrimitiveDigis.FG_threshold = cms.uint32(2)
+process.valHcalTriggerPrimitiveDigis.InputTagFEDRaw = cms.InputTag("rawDataCollector")
 
 # -------------------------------
 # Hcal DQM Modules
