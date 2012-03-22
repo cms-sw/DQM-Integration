@@ -58,6 +58,13 @@ process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 
 print "Running with run type = ", process.runType.getRunType()
 
+
+if (process.runType.getRunType() == process.runType.pp_run):
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_pp.root'
+
+if (process.runType.getRunType() == process.runType.cosmic_run):
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_cosmic.root'
+
 if (process.runType.getRunType() == process.runType.hi_run):
     process.dtunpacker.fedbyType = cms.bool(False)
     process.dttfunpacker.DTTF_FED_Source = cms.InputTag("rawDataRepacker")
@@ -66,3 +73,5 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataRepacker")
     
     process.dtDigiMonitor.ResetCycle = cms.untracked.int32(9999)
+
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_hi.root'
