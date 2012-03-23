@@ -4,14 +4,14 @@ echo removin all soflinks
 if [ "$1" = "live" ] ; then
     echo live
     echo "creating softlinks"     
-        ln -sfv eb_dqm_sourceclient-live_cfg.py                              dqmfu_03-1_cfg.py
+        ln -sfv ecal_dqm_sourceclient-live_cfg.py                            dqmfu_03-1_cfg.py
         ln -sfv fedtest_dqm_sourceclient-live_cfg.py                         dqmfu_03-2_cfg.py
         ln -sfv l1t_dqm_sourceclient-live_cfg.py                             dqmfu_03-3_cfg.py
         ln -sfv l1temulator_dqm_sourceclient-live_cfg.py                     dqmfu_03-4_cfg.py
         ln -sfv hcal_dqm_sourceclient-live_cfg.py                            dqmfu_03-5_cfg.py
         ln -sfv physics_dqm_sourceclient-live_cfg.py                         dqmfu_03-6_cfg.py
 
-        ln -sfv ee_dqm_sourceclient-live_cfg.py                              dqmfu_04-1_cfg.py
+        ln -sfv ecalcalib_dqm_sourceclient-live_cfg.py                       dqmfu_04-1_cfg.py
         ln -sfv rpc_dqm_sourceclient-live_cfg.py                             dqmfu_04-2_cfg.py
         ln -sfv csc_dqm_sourceclient-live_cfg.py                             dqmfu_04-3_cfg.py
         ln -sfv es_dqm_sourceclient-live_cfg.py                              dqmfu_04-4_cfg.py
@@ -39,7 +39,7 @@ if [ "$1" = "live" ] ; then
 elif [ "$1" = "playback" ] ; then
   echo playback
   echo "creating softlinks"
-     ln -sfv eb_dqm_sourceclient-live_cfg.py                    dqmfu_13-1_cfg.py
+     ln -sfv ecal_dqm_sourceclient-live_cfg.py                  dqmfu_13-1_cfg.py
      ln -sfv fedtest_dqm_sourceclient-live_cfg.py               dqmfu_13-2_cfg.py
      ln -sfv l1t_dqm_sourceclient-live_cfg.py                   dqmfu_13-3_cfg.py
      ln -sfv l1temulator_dqm_sourceclient-live_cfg.py           dqmfu_13-4_cfg.py
@@ -47,7 +47,7 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv physics_dqm_sourceclient-live_cfg.py               dqmfu_13-6_cfg.py
      ln -sfv info_dqm_sourceclient-live_cfg.py                  dqmfu_13-7_cfg.py 
      
-     ln -sfv ee_dqm_sourceclient-live_cfg.py                    dqmfu_14-1_cfg.py
+     ln -sfv ecalcalib_dqm_sourceclient-live_cfg.py             dqmfu_14-1_cfg.py
      ln -sfv rpc_dqm_sourceclient-live_cfg.py                   dqmfu_14-2_cfg.py
      ln -sfv csc_dqm_sourceclient-live_cfg.py                   dqmfu_14-3_cfg.py
      ln -sfv es_dqm_sourceclient-live_cfg.py                    dqmfu_14-4_cfg.py
