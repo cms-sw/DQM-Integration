@@ -97,6 +97,7 @@ process.load("FWCore.Modules.preScaler_cfi")
 
 process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 
+process.ecalCalibrationFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalLaserFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalLedFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalPedestalFilter = cms.EDFilter("EcalMonitorPrescaler")
@@ -164,9 +165,7 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelStatusFlagsTask +
     process.ecalBarrelRawDataTask +
     process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask +
-    process.ecalBarrelPedestalOnlineTask +
-    process.ecalEndcapPedestalOnlineTask
+    process.ecalEndcapRawDataTask
 )
 
 process.ecalLaserPath = cms.Path(
@@ -216,6 +215,8 @@ process.ecalTestPulsePath = cms.Path(
 )
 
 process.ecalClientPath = cms.Path(
+    process.ecalPreRecoSequence *
+    process.ecalCalibrationFilter +
     process.ecalBarrelTrendClient +
     process.ecalEndcapTrendClient +
     process.ecalBarrelMonitorClient +
@@ -281,6 +282,12 @@ process.ecalUncalibHit2.EEdigiCollection = "ecalEBunpacker:eeDigis"
 
  ## Filters ##
 
+process.ecalCalibrationFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
+process.ecalCalibrationFilter.laserPrescaleFactor = cms.untracked.int32(1)
+process.ecalCalibrationFilter.ledPrescaleFactor = cms.untracked.int32(1)
+process.ecalCalibrationFilter.pedestalPrescaleFactor = cms.untracked.int32(1)
+process.ecalCalibrationFilter.testpulsePrescaleFactor = cms.untracked.int32(1)
+    
 process.ecalLaserFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
 process.ecalLaserFilter.laserPrescaleFactor = cms.untracked.int32(1)
 
@@ -339,15 +346,14 @@ process.ecalEndcapMonitorClient.verbose = False
 
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
-
 process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Summary"]
 process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Led", "Summary"]
 
-process.ecalBarrelMonitorClient.produceReports = False
-process.ecalEndcapMonitorClient.produceReports = False
-
 process.ecalBarrelMonitorClient.subfolder = "Calibration"
 process.ecalEndcapMonitorClient.subfolder = "Calibration"
+
+process.ecalBarrelMonitorClient.produceReports = False
+process.ecalEndcapMonitorClient.produceReports = False
 
 os.environ["TNS_ADMIN"] = "/etc"
 dbName = ""
@@ -392,10 +398,10 @@ process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
 
  ## DQM common modules ##
 
-process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference.root"
+process.dqmEnvEB.subSystemFolder = cms.untracked.string("EcalBarrel/Calibration")
+process.dqmEnvEE.subSystemFolder = cms.untracked.string("EcalEndcap/Calibration")
 
-process.dqmEnvEB.subSystemFolder = cms.untracked.string("EcalBarrel")
-process.dqmEnvEE.subSystemFolder = cms.untracked.string("EcalEndcap")
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference.root"
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")

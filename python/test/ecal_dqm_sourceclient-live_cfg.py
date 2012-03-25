@@ -135,7 +135,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.ecalPreRecoSequence = cms.Sequence(
     process.preScaler +
-    process.hltTriggerTypeFilter +
+
     process.ecalEBunpacker
 )
 
@@ -161,14 +161,14 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelStatusFlagsTask +
     process.ecalBarrelRawDataTask +
     process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask +
-    process.ecalBarrelPedestalOnlineTask +
-    process.ecalEndcapPedestalOnlineTask
+    process.ecalEndcapRawDataTask
 )
 
 process.ecalMonitorSequence = cms.Sequence(
     process.ecalBarrelTrendTask +
     process.ecalEndcapTrendTask +
+    process.ecalBarrelPedestalOnlineTask +
+    process.ecalEndcapPedestalOnlineTask +
     process.ecalBarrelCosmicTask +
     process.ecalBarrelClusterTask +
     process.ecalBarrelTriggerTowerTask +
@@ -187,7 +187,7 @@ process.ecalMonitorPath = cms.Path(
     process.ecalDataSequence *
     (
     process.ecalClusterSequence +
-        process.l1GtEvmUnpack +    
+    process.l1GtEvmUnpack +    
     process.simEcalTriggerPrimitiveDigis
     ) *
     (
@@ -197,6 +197,8 @@ process.ecalMonitorPath = cms.Path(
 )
 
 process.ecalClientPath = cms.Path(
+    process.ecalPreRecoSequence *
+    process.ecalPhysicsFilter +
     process.ecalBarrelTrendClient +
     process.ecalEndcapTrendClient +
     process.ecalBarrelMonitorClient +
@@ -256,8 +258,7 @@ process.simEcalTriggerPrimitiveDigis.InstanceEE = "eeDigis"
  ## Filters ##
 
 process.ecalPhysicsFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
-process.ecalPhysicsFilter.cosmicPrescaleFactor = cms.untracked.int32(1)
-process.ecalPhysicsFilter.physicsPrescaleFactor = cms.untracked.int32(1)
+process.ecalPhysicsFilter.clusterPrescaleFactor = cms.untracked.int32(1)
 
 process.hltTriggerTypeFilter.SelectedTriggerType = 1 # 0=random, 1=physics, 2=calibration, 3=technical
 
@@ -320,10 +321,10 @@ process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
 
  ## DQM common modules ##
 
-process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root"
-
 process.dqmEnvEB.subSystemFolder = cms.untracked.string("EcalBarrel")
 process.dqmEnvEE.subSystemFolder = cms.untracked.string("EcalEndcap")
+
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root"
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
