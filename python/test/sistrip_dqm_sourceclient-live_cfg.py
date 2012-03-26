@@ -190,7 +190,7 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
 if (process.runType.getRunType() == process.runType.pp_run):
     #event selection for pp collisions
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
-    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     # Source and Client config for pp collisions
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.TrackMon_gentk)
     process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
@@ -219,6 +219,7 @@ if (process.runType.getRunType() == process.runType.pp_run):
 if (process.runType.getRunType() == process.runType.hpu_run):
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 #
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
     process.SiStripAnalyser.TkMapCreationFrequency  = -1
     process.SiStripAnalyser.ShiftReportFrequency = -1
@@ -286,7 +287,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     # Trigger selection
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*','HLT_HIMinBias*'))
 #
-    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference.root'
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_hi.root'
     # Quality test for HI                                                                                                                  
     process.qTester = cms.EDAnalyzer("QualityTester",
                                      qtList = cms.untracked.FileInPath('DQM/SiStripMonitorClient/data/sistrip_qualitytest_config_heavyion.xml'),
