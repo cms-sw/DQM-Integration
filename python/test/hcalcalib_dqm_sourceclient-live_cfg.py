@@ -43,7 +43,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
 process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
 process.EventStreamHttpReader.max_queue_depth = cms.int32(100)
-
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
 if (HEAVYION):
 #    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
     process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
@@ -248,17 +248,17 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndRun = cms.untracked.bool(True)
 )
 
-process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
-process.l1GtUnpack.DaqGtInputTag = cms.InputTag("rawDataCollector")
-process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
-process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
-process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalDetDiagLaserMonitor.RawDataLabel = cms.untracked.InputTag("rawDataCollector")
-process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataCollector")
+process.hcalDigis.InputLabel = cms.InputTag("hltHcalCalibrationRaw")
+process.l1GtUnpack.DaqGtInputTag = cms.InputTag("hltHcalCalibrationRaw")
+process.hcalDataIntegrityMonitor.RawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalDetDiagNoiseMonitor.RawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalDetDiagPedestalMonitor.rawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalDetDiagTimingMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalDetDiagLaserMonitor.RawDataLabel = cms.untracked.InputTag("hltHcalCalibrationRaw")
+process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("hltHcalCalibrationRaw")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
