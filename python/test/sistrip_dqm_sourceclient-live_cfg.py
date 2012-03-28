@@ -148,6 +148,12 @@ process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*proces
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
 process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
 
+#--------------------------
+# Global Plot Switches
+#--------------------------
+process.SiStripMonitorClusterReal.TH1ClusterCharge.moduleswitchon = True
+
+
 if (process.runType.getRunType() == process.runType.cosmic_run):
     # event selection for cosmic data
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_*Cosmic*','HLT_ZeroBias*'))
