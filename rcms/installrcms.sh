@@ -45,7 +45,6 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv l1temulator_dqm_sourceclient-live_cfg.py           dqmfu_13-4_cfg.py
      ln -sfv hcal_dqm_sourceclient-live_cfg.py                  dqmfu_13-5_cfg.py
      ln -sfv physics_dqm_sourceclient-live_cfg.py               dqmfu_13-6_cfg.py
-     ln -sfv info_dqm_sourceclient-live_cfg.py                  dqmfu_13-7_cfg.py 
      
      ln -sfv ecalcalib_dqm_sourceclient-live_cfg.py             dqmfu_14-1_cfg.py
      ln -sfv rpc_dqm_sourceclient-live_cfg.py                   dqmfu_14-2_cfg.py
@@ -65,6 +64,7 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv sistriplas_dqm_sourceclient-live_cfg.py            dqmfu_16-4_cfg.py
 
      ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_17-1_cfg.py
+     ln -sfv info_dqm_sourceclient-live_cfg.py                  dqmfu_17-2_cfg.py
      
   echo "copying cfg from python test"
   cp ../python/test/*live_cfg.py .
