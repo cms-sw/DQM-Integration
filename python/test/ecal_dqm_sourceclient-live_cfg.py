@@ -135,11 +135,11 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.ecalPreRecoSequence = cms.Sequence(
     process.preScaler +
-
+    process.hltTriggerTypeFilter +
     process.ecalEBunpacker
 )
 
-process.ecalDataSequence = cms.Sequence(
+process.ecalRecoSequence = cms.Sequence(
     process.ecalUncalibHit *
     process.ecalDetIdToBeRecovered *
     process.ecalRecHit
@@ -161,14 +161,14 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelStatusFlagsTask +
     process.ecalBarrelRawDataTask +
     process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask
+    process.ecalEndcapRawDataTask +
+    process.ecalBarrelPedestalOnlineTask +
+    process.ecalEndcapPedestalOnlineTask
 )
 
 process.ecalMonitorSequence = cms.Sequence(
     process.ecalBarrelTrendTask +
     process.ecalEndcapTrendTask +
-    process.ecalBarrelPedestalOnlineTask +
-    process.ecalEndcapPedestalOnlineTask +
     process.ecalBarrelCosmicTask +
     process.ecalBarrelClusterTask +
     process.ecalBarrelTriggerTowerTask +
@@ -184,7 +184,7 @@ process.ecalMonitorSequence = cms.Sequence(
 process.ecalMonitorPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalPhysicsFilter *
-    process.ecalDataSequence *
+    process.ecalRecoSequence *
     (
     process.ecalClusterSequence +
     process.l1GtEvmUnpack +    
@@ -331,9 +331,12 @@ process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
 process.source.SelectHLTOutput = cms.untracked.string("hltOutputA")
 
  ## Run type specific ##
+
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
+    process.ecalBarrelMonitorClient.produceReports = False
+    process.ecalEndcapMonitorClient.produceReports = False
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 

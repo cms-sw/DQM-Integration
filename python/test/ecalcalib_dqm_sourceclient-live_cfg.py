@@ -149,7 +149,7 @@ process.ecalPreRecoSequence = cms.Sequence(
     process.ecalEBunpacker
 )
 
-process.ecalDataSequence = cms.Sequence(
+process.ecalRecoSequence = cms.Sequence(
     process.ecalUncalibHit *
     process.ecalDetIdToBeRecovered *
     process.ecalRecHit
@@ -165,13 +165,15 @@ process.ecalMonitorBaseSequence = cms.Sequence(
     process.ecalBarrelStatusFlagsTask +
     process.ecalBarrelRawDataTask +
     process.ecalEndcapStatusFlagsTask +
-    process.ecalEndcapRawDataTask
+    process.ecalEndcapRawDataTask +
+    process.ecalBarrelPedestalOnlineTask +
+    process.ecalEndcapPedestalOnlineTask
 )
 
 process.ecalLaserPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalLaserFilter *    
-    process.ecalDataSequence *
+    process.ecalRecoSequence *
     process.ecalUncalibHit1 *
     (
     process.ecalMonitorBaseSequence +
@@ -183,7 +185,7 @@ process.ecalLaserPath = cms.Path(
 process.ecalLedPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalLedFilter *
-    process.ecalDataSequence *
+    process.ecalRecoSequence *
     process.ecalUncalibHit1 *
     (
     process.ecalMonitorBaseSequence +    
@@ -194,7 +196,7 @@ process.ecalLedPath = cms.Path(
 process.ecalPedestalPath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalPedestalFilter *    
-    process.ecalDataSequence *
+    process.ecalRecoSequence *
     (
     process.ecalMonitorBaseSequence +    
     process.ecalBarrelPedestalTask +
@@ -205,7 +207,7 @@ process.ecalPedestalPath = cms.Path(
 process.ecalTestPulsePath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalTestPulseFilter *    
-    process.ecalDataSequence *
+    process.ecalRecoSequence *
     process.ecalUncalibHit2 *
     (
     process.ecalMonitorBaseSequence +    
@@ -310,21 +312,12 @@ process.ecalEndcapLaserTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:
 process.ecalEndcapLedTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit1:EcalUncalibRecHitsEE"
 process.ecalEndcapTestPulseTask.EcalUncalibratedRecHitCollection = "ecalUncalibHit2:EcalUncalibRecHitsEE"
 
-process.ecalBarrelLaserTask.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapLaserTask.laserWavelengths = [ 1, 4 ]
+process.ecalBarrelLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
+process.ecalEndcapLaserTask.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapLedTask.ledWavelengths = [ 1, 2 ]
-process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 4 ]
-process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 4 ]
+process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
+process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
-
-process.ecalBarrelIntegrityTask.subfolder = "Calibration"
-process.ecalBarrelOccupancyTask.subfolder = "Calibration"
-process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
-process.ecalBarrelRawDataTask.subfolder = "Calibration"
-process.ecalEndcapIntegrityTask.subfolder = "Calibration"
-process.ecalEndcapOccupancyTask.subfolder = "Calibration"
-process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
-process.ecalEndcapRawDataTask.subfolder = "Calibration"
 
 process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
 process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
@@ -346,11 +339,9 @@ process.ecalEndcapMonitorClient.verbose = False
 
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
-process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Summary"]
-process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "Occupancy", "Pedestal", "TestPulse", "Laser", "Led", "Summary"]
 
-process.ecalBarrelMonitorClient.subfolder = "Calibration"
-process.ecalEndcapMonitorClient.subfolder = "Calibration"
+process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Pedestal", "TestPulse", "Laser", "Summary"]
+process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline","Pedestal", "TestPulse", "Laser", "Led", "Summary"]
 
 process.ecalBarrelMonitorClient.produceReports = False
 process.ecalEndcapMonitorClient.produceReports = False
@@ -408,9 +399,16 @@ process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer
 process.source.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
 
  ## Run type specific ##
+useSubdir = True
+
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
+    useSubdir = False
+    process.ecalBarrelMonitorClient.produceReports = True
+    process.ecalEndcapMonitorClient.produceReports = True
+    process.ecalBarrelMonitorClient.reducedReports = True
+    process.ecalEndcapMonitorClient.reducedReports = True
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
@@ -425,3 +423,19 @@ process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag(FedRawData)
 process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
+
+ ## Avoid plot name clashes ##
+
+if useSubdir :
+    process.ecalBarrelIntegrityTask.subfolder = "Calibration"
+    process.ecalBarrelOccupancyTask.subfolder = "Calibration"
+    process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
+    process.ecalBarrelRawDataTask.subfolder = "Calibration"
+    process.ecalBarrelPedestalOnlineTask.subfolder = "Calibration"
+    process.ecalEndcapIntegrityTask.subfolder = "Calibration"
+    process.ecalEndcapOccupancyTask.subfolder = "Calibration"
+    process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
+    process.ecalEndcapRawDataTask.subfolder = "Calibration"
+    process.ecalEndcapPedestalOnlineTask.subfolder = "Calibration"
+    process.ecalBarrelMonitorClient.subfolder = "Calibration"
+    process.ecalEndcapMonitorClient.subfolder = "Calibration"
