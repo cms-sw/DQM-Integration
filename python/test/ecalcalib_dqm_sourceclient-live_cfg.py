@@ -399,12 +399,10 @@ process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer
 process.source.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
 
  ## Run type specific ##
-useSubdir = True
 
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
-    useSubdir = False
     process.ecalBarrelMonitorClient.produceReports = True
     process.ecalEndcapMonitorClient.produceReports = True
     process.ecalBarrelMonitorClient.reducedReports = True
@@ -425,17 +423,15 @@ process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 
  ## Avoid plot name clashes ##
-
-if useSubdir :
-    process.ecalBarrelIntegrityTask.subfolder = "Calibration"
-    process.ecalBarrelOccupancyTask.subfolder = "Calibration"
-    process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
-    process.ecalBarrelRawDataTask.subfolder = "Calibration"
-    process.ecalBarrelPedestalOnlineTask.subfolder = "Calibration"
-    process.ecalEndcapIntegrityTask.subfolder = "Calibration"
-    process.ecalEndcapOccupancyTask.subfolder = "Calibration"
-    process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
-    process.ecalEndcapRawDataTask.subfolder = "Calibration"
-    process.ecalEndcapPedestalOnlineTask.subfolder = "Calibration"
-    process.ecalBarrelMonitorClient.subfolder = "Calibration"
-    process.ecalEndcapMonitorClient.subfolder = "Calibration"
+process.ecalBarrelIntegrityTask.subfolder = "Calibration"
+process.ecalBarrelOccupancyTask.subfolder = "Calibration"
+process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
+process.ecalBarrelRawDataTask.subfolder = "Calibration"
+process.ecalBarrelPedestalOnlineTask.subfolder = "Calibration"
+process.ecalEndcapIntegrityTask.subfolder = "Calibration"
+process.ecalEndcapOccupancyTask.subfolder = "Calibration"
+process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
+process.ecalEndcapRawDataTask.subfolder = "Calibration"
+process.ecalEndcapPedestalOnlineTask.subfolder = "Calibration"
+process.ecalBarrelMonitorClient.subfolder = "Calibration"
+process.ecalEndcapMonitorClient.subfolder = "Calibration"
