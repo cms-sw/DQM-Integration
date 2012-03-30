@@ -135,7 +135,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.ecalPreRecoSequence = cms.Sequence(
     process.preScaler +
-    process.hltTriggerTypeFilter +
+#    process.hltTriggerTypeFilter +
     process.ecalEBunpacker
 )
 
@@ -335,13 +335,14 @@ process.source.SelectHLTOutput = cms.untracked.string("hltOutputA")
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
-    process.ecalBarrelMonitorClient.produceReports = False
-    process.ecalEndcapMonitorClient.produceReports = False
+#    process.ecalBarrelMonitorClient.produceReports = False
+#    process.ecalEndcapMonitorClient.produceReports = False
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "rawDataCollector"
+
 if process.runType.getRunType() == process.runType.hi_run:
     FedRawData = "rawDataRepacker"
 

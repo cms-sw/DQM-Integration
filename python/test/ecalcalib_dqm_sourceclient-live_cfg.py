@@ -145,7 +145,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 process.ecalPreRecoSequence = cms.Sequence(
     process.preScaler +
-    process.hltTriggerTypeFilter +
+#    process.hltTriggerTypeFilter +
     process.ecalEBunpacker
 )
 
@@ -397,25 +397,22 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference
  ## Source ##
 process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")
 process.source.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
+process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration_v*"))
 
  ## Run type specific ##
 
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
-    process.ecalBarrelMonitorClient.produceReports = True
-    process.ecalEndcapMonitorClient.produceReports = True
-    process.ecalBarrelMonitorClient.reducedReports = True
-    process.ecalEndcapMonitorClient.reducedReports = True
-
-  ## Calilbration Specific configuration
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration*"))
+#    process.ecalBarrelMonitorClient.produceReports = True
+#    process.ecalEndcapMonitorClient.produceReports = True
+#    process.ecalBarrelMonitorClient.reducedReports = True
+#    process.ecalEndcapMonitorClient.reducedReports = True
+elif process.runType.getRunType() == process.runType.hpu_run:
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "hltEcalCalibrationRaw"
-if process.runType.getRunType() == process.runType.hi_run:
-    FedRawData = "rawDataRepacker"
 
 process.ecalEBunpacker.InputLabel = cms.InputTag(FedRawData)
 process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
@@ -425,15 +422,15 @@ process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 
  ## Avoid plot name clashes ##
-process.ecalBarrelIntegrityTask.subfolder = cms.untracked.string("Calibration")
-process.ecalBarrelOccupancyTask.subfolder = cms.untracked.string("Calibration")
-process.ecalBarrelStatusFlagsTask.subfolder = cms.untracked.string("Calibration")
-process.ecalBarrelRawDataTask.subfolder = cms.untracked.string("Calibration")
-process.ecalBarrelPedestalOnlineTask.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapIntegrityTask.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapOccupancyTask.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapStatusFlagsTask.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapRawDataTask.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapPedestalOnlineTask.subfolder = cms.untracked.string("Calibration")
-process.ecalBarrelMonitorClient.subfolder = cms.untracked.string("Calibration")
-process.ecalEndcapMonitorClient.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelIntegrityTask.subfolder = "Calibration"
+process.ecalBarrelOccupancyTask.subfolder = "Calibration"
+process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
+process.ecalBarrelRawDataTask.subfolder = "Calibration"
+process.ecalBarrelPedestalOnlineTask.subfolder = "Calibration"
+process.ecalEndcapIntegrityTask.subfolder = "Calibration"
+process.ecalEndcapOccupancyTask.subfolder = "Calibration"
+process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
+process.ecalEndcapRawDataTask.subfolder = "Calibration"
+process.ecalEndcapPedestalOnlineTask.subfolder = "Calibration"
+process.ecalBarrelMonitorClient.subfolder = "Calibration"
+process.ecalEndcapMonitorClient.subfolder = "Calibration"
