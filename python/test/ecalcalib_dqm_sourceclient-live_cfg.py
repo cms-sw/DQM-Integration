@@ -410,7 +410,7 @@ if process.runType.getRunType() == process.runType.cosmic_run :
 
   ## Calilbration Specific configuration
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration"))
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "hltEcalCalibrationRaw"
