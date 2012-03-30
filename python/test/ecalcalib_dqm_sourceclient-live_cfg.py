@@ -407,8 +407,10 @@ if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalEndcapMonitorClient.produceReports = True
     process.ecalBarrelMonitorClient.reducedReports = True
     process.ecalEndcapMonitorClient.reducedReports = True
-elif process.runType.getRunType() == process.runType.hpu_run:
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
+
+  ## Calilbration Specific configuration
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "hltEcalCalibrationRaw"
@@ -423,15 +425,15 @@ process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 
  ## Avoid plot name clashes ##
-process.ecalBarrelIntegrityTask.subfolder = "Calibration"
-process.ecalBarrelOccupancyTask.subfolder = "Calibration"
-process.ecalBarrelStatusFlagsTask.subfolder = "Calibration"
-process.ecalBarrelRawDataTask.subfolder = "Calibration"
-process.ecalBarrelPedestalOnlineTask.subfolder = "Calibration"
-process.ecalEndcapIntegrityTask.subfolder = "Calibration"
-process.ecalEndcapOccupancyTask.subfolder = "Calibration"
-process.ecalEndcapStatusFlagsTask.subfolder = "Calibration"
-process.ecalEndcapRawDataTask.subfolder = "Calibration"
-process.ecalEndcapPedestalOnlineTask.subfolder = "Calibration"
-process.ecalBarrelMonitorClient.subfolder = "Calibration"
-process.ecalEndcapMonitorClient.subfolder = "Calibration"
+process.ecalBarrelIntegrityTask.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelOccupancyTask.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelStatusFlagsTask.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelRawDataTask.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelPedestalOnlineTask.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapIntegrityTask.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapOccupancyTask.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapStatusFlagsTask.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapRawDataTask.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapPedestalOnlineTask.subfolder = cms.untracked.string("Calibration")
+process.ecalBarrelMonitorClient.subfolder = cms.untracked.string("Calibration")
+process.ecalEndcapMonitorClient.subfolder = cms.untracked.string("Calibration")
