@@ -328,7 +328,7 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
-process.source.SelectHLTOutput = cms.untracked.string("hltOutputA")
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputA")
 
  ## Run type specific ##
 

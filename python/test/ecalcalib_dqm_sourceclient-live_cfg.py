@@ -396,8 +396,8 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")
-process.source.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
-process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration_v*"))
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration_v*"))
 
  ## Run type specific ##
 
