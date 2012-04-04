@@ -115,7 +115,7 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 # Simple filter for event
 process.eventFilter = cms.EDFilter("SimpleEventFilter",
-                   EventsToSkip = cms.untracked.int32(2)
+                   EventsToSkip = cms.untracked.int32(3)
 )
 
 #--------------------------
@@ -200,6 +200,7 @@ if (process.runType.getRunType() == process.runType.pp_run):
     # Source and Client config for pp collisions
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
     process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
+    process.SiStripAnalyser.UseGoodTracks  = cms.untracked.bool(True)
     process.SiStripAnalyser.TkMapCreationFrequency  = -1
     process.SiStripAnalyser.ShiftReportFrequency = -1
     process.SiStripAnalyser.StaticUpdateFrequency = 5
@@ -216,6 +217,7 @@ if (process.runType.getRunType() == process.runType.pp_run):
                          process.DQMCommon*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
+                         process.eventFilter*
                          process.RecoForDQM_TrkReco*
                          process.SiStripSources_TrkReco
                          )
