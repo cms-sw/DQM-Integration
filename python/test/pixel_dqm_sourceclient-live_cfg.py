@@ -25,7 +25,7 @@ process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
 #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 #process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
-
+##
 #----------------------------
 # DQM Environment
 #-----------------------------
@@ -37,8 +37,12 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
-if (process.runType.getRunType() != process.runType.hi_run):
-    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference.root'
+process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference_pp.root'
+if (process.runType.getRunType() == process.runType.hi_run):
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference_hi.root'
+
+if (process.runType.getRunType() == process.runType.cosmic_run):
+    process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference_cosmic.root'
 
 #-----------------------------
 # Magnetic Field
