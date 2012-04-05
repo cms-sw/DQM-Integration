@@ -10,7 +10,8 @@ process.MessageLogger = cms.Service( "MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStripLAS DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_TrackerCalibration*'))  
+process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCalibration*'))
+process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputTrackerCalibration') 
 
 process.maxEvents = cms.untracked.PSet(
   input = cms.untracked.int32( -1 )
@@ -48,7 +49,7 @@ process.seqDigitization = cms.Path( process.siStripDigis )
 process.DQMCommon   = cms.Sequence(process.dqmEnv*process.dqmSaver)
 
 process.seqAnalysis = cms.Path( process.LaserAlignmentProducerDQM*process.DQMCommon)
-process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
+process.siStripDigis.ProductLabel = cms.InputTag("hltTrackerCalibrationRaw")
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
