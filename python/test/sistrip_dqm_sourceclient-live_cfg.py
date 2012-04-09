@@ -195,7 +195,8 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
 #else :
 if (process.runType.getRunType() == process.runType.pp_run):
     #event selection for pp collisions
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+    #process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_ZeroBias*'))
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     # Source and Client config for pp collisions
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
@@ -206,8 +207,37 @@ if (process.runType.getRunType() == process.runType.pp_run):
     process.SiStripAnalyser.StaticUpdateFrequency = 5
     process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
     process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
+
     # Reco for pp collisions
-    process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
+
+    process.load('RecoTracker.Configuration.RecoTracker_cff')
+    
+    process.newCombinedSeeds.seedCollections = cms.VInputTag(
+        cms.InputTag('initialStepSeeds'),
+        )
+    
+    process.load('RecoTracker.FinalTrackSelectors.MergeTrackCollections_cff')
+    process.generalTracks.TrackProducers = (
+        cms.InputTag('initialStepTracks'),
+        )
+            
+    process.generalTracks.hasSelector=cms.vint32(1)
+    process.generalTracks.selectedTrackQuals = cms.VInputTag(
+        cms.InputTag("initialStepSelector","initialStep"),
+        )
+    process.generalTracks.setsToMerge = cms.VPSet( cms.PSet( tLists=cms.vint32(0), pQual=cms.bool(True) ) )
+
+    process.load("RecoTracker.IterativeTracking.iterativeTk_cff")
+    
+    process.iterTracking =cms.Sequence(
+        process.InitialStep
+        *process.generalTracks
+        )
+
+                        
+    #process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
+    process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.iterTracking)
+    
 
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
@@ -217,7 +247,6 @@ if (process.runType.getRunType() == process.runType.pp_run):
                          process.DQMCommon*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
-                         process.eventFilter*
                          process.RecoForDQM_TrkReco*
                          process.SiStripSources_TrkReco
                          )
