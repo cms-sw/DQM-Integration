@@ -16,6 +16,9 @@ process.MessageLogger = cms.Service("MessageLogger",
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
+## uncomment for running on playback
+#process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:50082/urn:xdaq-application:lid=29')
+## uncomment for running on live
 #process.EventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
 
 #----------------------------
@@ -38,11 +41,29 @@ process.dqmSaver.producer = "Playback"
 process.dqmSaver.saveByTime = 60
 process.dqmSaver.saveByMinute = 60
 
+## uncomment for running in local
+#process.dqmSaver.dirName     = '.'
+
 process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
                  subSystemFolder = cms.untracked.string('Tracking'),
                  eventRateWindow = cms.untracked.double(0.5),
                  eventInfoFolder = cms.untracked.string('EventInfo')
 )
+
+## uncooment for running in local
+## collector
+#process.DQM.collectorHost = 'vmepcs2b18-25.cms'
+#process.DQM.collectorPort = 9190
+
+#--------------------------
+#  Lumi Producer and DB access
+#-------------------------
+#process.DBService=cms.Service('DBService',
+#                              authPath= cms.untracked.string('/nfshome0/popcondev/conddb/')
+#                              )
+#process.DIPLumiProducer=cms.ESSource("DIPLumiProducer",
+#          connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER')
+#                            )
 
 #-----------------------------
 # Magnetic Field
@@ -83,8 +104,16 @@ process.load("Configuration.StandardSequences.Reconstruction_cff")
 if (process.runType.getRunType() == process.runType.cosmic_run):
     process.load("RecoTracker.Configuration.RecoTrackerP5_cff")
 
-# offline beam spot
-process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+## # offline beam spot
+## process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+## # online beam spot
+## process.load("RecoVertex.BeamSpotProducer.BeamSpotOnline_cff")
+
+# handle onlineBeamSpot w/o changing all configuration
+# the same shortcut is also used in Express ;)
+# http://cmslxr.fnal.gov/lxr/source/Configuration/DataProcessing/python/RecoTLR.py#044
+import RecoVertex.BeamSpotProducer.BeamSpotOnline_cfi
+process.offlineBeamSpot = RecoVertex.BeamSpotProducer.BeamSpotOnline_cfi.onlineBeamSpotProducer.clone()
 
 #--------------------------
 # Strip DQM Source and Client
@@ -228,16 +257,14 @@ if (process.runType.getRunType() == process.runType.pp_run):
     process.generalTracks.setsToMerge = cms.VPSet( cms.PSet( tLists=cms.vint32(0), pQual=cms.bool(True) ) )
 
     process.load("RecoTracker.IterativeTracking.iterativeTk_cff")
-    
-    process.iterTracking =cms.Sequence(
+
+    process.iterTracking_FirstStep =cms.Sequence(
         process.InitialStep
         *process.generalTracks
         )
 
-                        
     #process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.ckftracks)
-    process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.iterTracking)
-    
+    process.RecoForDQM_TrkReco       = cms.Sequence(process.offlineBeamSpot*process.recopixelvertexing*process.iterTracking_FirstStep)
 
     process.p = cms.Path(process.scalersRawToDigi*
                          process.APVPhases*
