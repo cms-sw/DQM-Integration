@@ -27,6 +27,7 @@ if [ "$1" = "live" ] ; then
         ln -sfv fed_dqm_sourceclient-live_cfg.py                             dqmfu_06-2_cfg.py
         ln -sfv hlx_dqm_sourceclient-live_cfg.py                             dqmfu_06-3_cfg.py
         ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py                       dqmfu_06-4_cfg.py
+        ln -sfv lumi_dqm_sourceclient-live_cfg.py                            dqmfu_06-5_cfg.py
 
         ln -sfv hltrates_dqm_sourceclient-live_cfg.py                        dqmfu_07-1_cfg.py
         ln -sfv sistriplas_dqm_sourceclient-live_cfg.py                      dqmfu_07-2_cfg.py
@@ -62,6 +63,7 @@ elif [ "$1" = "playback" ] ; then
      ln -sfv fed_dqm_sourceclient-live_cfg.py                   dqmfu_16-2_cfg.py
      ln -sfv hcalcalib_dqm_sourceclient-live_cfg.py             dqmfu_16-3_cfg.py
      ln -sfv sistriplas_dqm_sourceclient-live_cfg.py            dqmfu_16-4_cfg.py
+     ln -sfv lumi_dqm_sourceclient-live_cfg.py                  dqmfu_16-5_cfg.py
 
      ln -sfv hltrates_dqm_sourceclient-live_cfg.py              dqmfu_17-1_cfg.py
      ln -sfv info_dqm_sourceclient-live_cfg.py                  dqmfu_17-2_cfg.py
