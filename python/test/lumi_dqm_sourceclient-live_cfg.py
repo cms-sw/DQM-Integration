@@ -1,51 +1,20 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQMLumi")
-#process.MessageLogger = cms.Service("MessageLogger",
-#    debugModules = cms.untracked.vstring('siPixelDigis',
-#                                         'siPixelClusters'),
-#    cout = cms.untracked.PSet(threshold = cms.untracked.string('ERROR')),
-#    destinations = cms.untracked.vstring('cout')
-#)
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 
 #----------------------------
 # Event Source
 #----------------------------
-### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
 process.EventStreamHttpReader.consumerName = 'DQM Luminosity Consumer'
 process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputALCALUMIPIXELS')
 
-
-#process.source = cms.Source("EmptySource",
-#       numberEventsInRun = cms.untracked.uint32(100),
-#       firstRun = cms.untracked.uint32(167807),
-#       numberEventsInLuminosityBlock = cms.untracked.uint32(1),
-#       firstLuminosityBlock = cms.untracked.uint32(10)
-#       )
-#process.maxEvents = cms.untracked.PSet(
-#      input = cms.untracked.int32(-1)
-#      )
-#process.source= cms.Source("PoolSource",
-#        processingMode=cms.untracked.string('RunsAndLumis'),        
-#        fileNames=cms.untracked.vstring(
-#        'file:/tmp/lumi/009F3522-D604-E111-A08D-003048F1183E.root')
-#)
 #----------------------------
 # DQM Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-process.DQM.collectorHost = 'dqm-integration.cms'
-process.DQM.collectorPort = 9090
-
-### @@@@@@ Un-comment when running locally @@@@@@ ###
-process.dqmEnv.subSystemFolder = "Info/Lumi"
-process.dqmSaver.dirName = '.'
-process.dqmSaver.saveByTime = 60
-process.dqmSaver.saveByMinute = 60
 
 #---------------------------------------------
 # Global Tag
