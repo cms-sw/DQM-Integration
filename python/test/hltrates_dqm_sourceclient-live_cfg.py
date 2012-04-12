@@ -94,7 +94,7 @@ process.hltPreTrigResRateMon = cms.EDFilter ("HLTPrescaler",
                                              )
 
 process.PrescaleService = cms.Service( "PrescaleService",
-    lvl1DefaultLabel = cms.untracked.string( "PSTrigRates" ),
+    lvl1DefaultLabel = cms.string( "PSTrigRates" ),
     lvl1Labels = cms.vstring( 'PS'),
     prescaleTable = cms.VPSet(
     cms.PSet(  pathName = cms.string( "rateMon" ),
