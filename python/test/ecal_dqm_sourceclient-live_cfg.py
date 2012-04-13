@@ -64,7 +64,7 @@ process.load("DQMServices.Core.DQM_cfg")
 
 process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string("red"),
-  prescaleFactor = cms.untracked.int32(0),
+  prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath("DQM/EcalBarrelMonitorModule/test/data/EcalBarrelQualityTests.xml"),
   getQualityTestsFromFile = cms.untracked.bool(True),
   qtestOnEndLumi = cms.untracked.bool(True),
@@ -73,7 +73,7 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
 
 process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string("red"),
-  prescaleFactor = cms.untracked.int32(0),
+  prescaleFactor = cms.untracked.int32(1),
   qtList = cms.untracked.FileInPath("DQM/EcalEndcapMonitorModule/test/data/EcalEndcapQualityTests.xml"),
   getQualityTestsFromFile = cms.untracked.bool(True),
   qtestOnEndLumi = cms.untracked.bool(True),
