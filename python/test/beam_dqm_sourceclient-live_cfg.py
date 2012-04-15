@@ -107,7 +107,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
                                         'HLT_HT*',
                                         'HLT_MinBias_*',
                                         'HLT_Physics*',
-                                        'HLT_ZeroBias_v*')
+                                        'HLT_ZeroBias*')
                                       )
 
     process.load("Configuration.StandardSequences.Reconstruction_cff")
