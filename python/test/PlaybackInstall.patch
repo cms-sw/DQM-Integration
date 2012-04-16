@@ -1,10 +1,61 @@
+? __init__.py
+Index: PlaybackInstall.patch
+===================================================================
+RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/PlaybackInstall.patch,v
+retrieving revision 1.8
+diff -u -p -r1.8 PlaybackInstall.patch
+--- PlaybackInstall.patch	8 Jul 2011 16:40:43 -0000	1.8
++++ PlaybackInstall.patch	16 Apr 2012 08:57:22 -0000
+@@ -1,42 +0,0 @@
+-Index: environment_cfi.py
+-===================================================================
+-RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/environment_cfi.py,v
+-retrieving revision 1.11
+-diff -u -p -r1.11 environment_cfi.py
+---- environment_cfi.py	11 May 2011 09:52:20 -0000	1.11
+-+++ environment_cfi.py	12 May 2011 12:15:07 -0000
+-@@ -2,15 +2,15 @@ import FWCore.ParameterSet.Config as cms
+- 
+- from DQMServices.Core.DQM_cfg import *
+- 
+--DQM.collectorHost = 'dqm-prod-local.cms'
+-+DQM.collectorHost = 'dqm-integration.cms'
+- DQM.collectorPort = 9090
+- 
+- from DQMServices.Components.DQMEnvironment_cfi import *
+- 
+- dqmSaver.convention = 'Online'
+- dqmSaver.referenceHandling = 'all'
+--dqmSaver.dirName = '/home/dqmprolocal/output'
+--dqmSaver.producer = 'DQM'
+-+dqmSaver.dirName = '/home/dqmdevlocal/output'
+-+dqmSaver.producer = 'Playback'
+- dqmSaver.saveByTime = 1
+- dqmSaver.saveByLumiSection = -1
+- dqmSaver.saveByMinute = 8
+-Index: inputsource_cfi.py
+-===================================================================
+-RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/inputsource_cfi.py,v
+-retrieving revision 1.26
+-diff -u -p -r1.26 inputsource_cfi.py
+---- inputsource_cfi.py	29 Apr 2010 12:03:21 -0000	1.26
+-+++ inputsource_cfi.py	12 May 2011 12:15:07 -0000
+-@@ -20,7 +20,7 @@ source = cms.Source("EventStreamHttpRead
+-     consumerName = cms.untracked.string('DQM Source'),
+-     SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
+-     max_queue_depth = cms.int32(5),
+--    maxEventRequestRate = cms.untracked.double(100.0),
+-+    maxEventRequestRate = cms.untracked.double(10.0),
+-     SelectEvents = cms.untracked.PSet(
+-         SelectEvents = cms.vstring('*')
+-     ),
 Index: environment_cfi.py
 ===================================================================
 RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/environment_cfi.py,v
-retrieving revision 1.11
-diff -u -p -r1.11 environment_cfi.py
---- environment_cfi.py	11 May 2011 09:52:20 -0000	1.11
-+++ environment_cfi.py	12 May 2011 12:15:07 -0000
+retrieving revision 1.23
+diff -u -p -r1.23 environment_cfi.py
+--- environment_cfi.py	26 Mar 2012 16:44:05 -0000	1.23
++++ environment_cfi.py	16 Apr 2012 08:57:22 -0000
 @@ -2,15 +2,15 @@ import FWCore.ParameterSet.Config as cms
  
  from DQMServices.Core.DQM_cfg import *
@@ -27,16 +78,21 @@ diff -u -p -r1.11 environment_cfi.py
 Index: inputsource_cfi.py
 ===================================================================
 RCS file: /cvs_server/repositories/CMSSW/CMSSW/DQM/Integration/python/test/inputsource_cfi.py,v
-retrieving revision 1.26
-diff -u -p -r1.26 inputsource_cfi.py
---- inputsource_cfi.py	29 Apr 2010 12:03:21 -0000	1.26
-+++ inputsource_cfi.py	12 May 2011 12:15:07 -0000
-@@ -20,7 +20,7 @@ source = cms.Source("EventStreamHttpRead
+retrieving revision 1.33
+diff -u -p -r1.33 inputsource_cfi.py
+--- inputsource_cfi.py	26 Mar 2012 16:44:05 -0000	1.33
++++ inputsource_cfi.py	16 Apr 2012 08:57:22 -0000
+@@ -20,12 +20,10 @@ source = cms.Source("EventStreamHttpRead
      consumerName = cms.untracked.string('DQM Source'),
-     SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
+     SelectHLTOutput = cms.untracked.string('hltOutputA'),
      max_queue_depth = cms.int32(5),
 -    maxEventRequestRate = cms.untracked.double(100.0),
 +    maxEventRequestRate = cms.untracked.double(10.0),
      SelectEvents = cms.untracked.PSet(
          SelectEvents = cms.vstring('*')
      ),
+     headerRetryInterval = cms.untracked.int32(3),
+     dropOldLumisectionEvents = cms.untracked.bool(True)
+ )
+-
+-
