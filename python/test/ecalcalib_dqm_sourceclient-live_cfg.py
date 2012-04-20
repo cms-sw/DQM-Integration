@@ -100,7 +100,7 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 process.ecalCalibrationFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalLaserFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalLedFilter = cms.EDFilter("EcalMonitorPrescaler")
-process.ecalPedestalFilter = cms.EDFilter("EcalMonitorPrescaler")
+#process.ecalPedestalFilter = cms.EDFilter("EcalMonitorPrescaler")
 process.ecalTestPulseFilter = cms.EDFilter("EcalMonitorPrescaler")
 
 
@@ -193,16 +193,16 @@ process.ecalLedPath = cms.Path(
     )
 )
 
-process.ecalPedestalPath = cms.Path(
-    process.ecalPreRecoSequence *
-    process.ecalPedestalFilter *    
-    process.ecalRecoSequence *
-    (
-    process.ecalMonitorBaseSequence +    
-    process.ecalBarrelPedestalTask +
-    process.ecalEndcapPedestalTask
-    )
-)    
+#process.ecalPedestalPath = cms.Path(
+#    process.ecalPreRecoSequence *
+#    process.ecalPedestalFilter *    
+#    process.ecalRecoSequence *
+#    (
+#    process.ecalMonitorBaseSequence +    
+#    process.ecalBarrelPedestalTask +
+#    process.ecalEndcapPedestalTask
+#    )
+#)    
 
 process.ecalTestPulsePath = cms.Path(
     process.ecalPreRecoSequence *
@@ -239,7 +239,7 @@ process.dqmEndPath = cms.EndPath(
 process.schedule = cms.Schedule(
     process.ecalLaserPath,
     process.ecalLedPath,
-    process.ecalPedestalPath,
+#    process.ecalPedestalPath,
     process.ecalTestPulsePath,
     process.ecalClientPath,
     process.ecalMonitorEndPath,
@@ -296,8 +296,8 @@ process.ecalLaserFilter.laserPrescaleFactor = cms.untracked.int32(1)
 process.ecalLedFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
 process.ecalLedFilter.ledPrescaleFactor = cms.untracked.int32(1)
 
-process.ecalPedestalFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
-process.ecalPedestalFilter.pedestalPrescaleFactor = cms.untracked.int32(1)
+#process.ecalPedestalFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
+#process.ecalPedestalFilter.pedestalPrescaleFactor = cms.untracked.int32(1)
 
 process.ecalTestPulseFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
 process.ecalTestPulseFilter.testpulsePrescaleFactor = cms.untracked.int32(1)
@@ -319,12 +319,12 @@ process.ecalBarrelMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.laserWavelengths = [ 1, 2, 3, 4 ]
 process.ecalEndcapMonitorClient.ledWavelengths = [ 1, 2 ]
 
-process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
-process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
+#process.ecalBarrelPedestalTask.MGPAGains = [ 12 ]
+#process.ecalBarrelPedestalTask.MGPAGainsPN = [ 16 ]
 process.ecalBarrelTestPulseTask.MGPAGains = [ 12 ]
 process.ecalBarrelTestPulseTask.MGPAGainsPN = [ 16 ]
-process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
-process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
+#process.ecalEndcapPedestalTask.MGPAGains = [ 12 ]
+#process.ecalEndcapPedestalTask.MGPAGainsPN = [ 16 ]
 process.ecalEndcapTestPulseTask.MGPAGains = [ 12 ]
 process.ecalEndcapTestPulseTask.MGPAGainsPN = [ 16 ]
 process.ecalBarrelMonitorClient.MGPAGains = [ 12 ]
@@ -340,8 +340,8 @@ process.ecalEndcapMonitorClient.verbose = False
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
 
-process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Pedestal", "TestPulse", "Laser", "Summary"]
-process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline","Pedestal", "TestPulse", "Laser", "Led", "Summary"]
+process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "TestPulse", "Laser", "Summary"]
+process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "TestPulse", "Laser", "Led", "Summary"]
 
 process.ecalBarrelMonitorClient.produceReports = False
 process.ecalEndcapMonitorClient.produceReports = False
