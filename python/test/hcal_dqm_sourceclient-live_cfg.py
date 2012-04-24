@@ -215,7 +215,7 @@ process.hcalDigiMonitor.ExpectedOrbitMessageTime = idle
 process.hcalDigiMonitor.shutOffOrbitTest=False
 
 # Turn off dead cell checks in HO ring 2
-process.hcalDeadCellMonitor.excludeHORing2 = True
+process.hcalDeadCellMonitor.excludeHORing2 = False
 
 # Ignore ped-ref differences
 process.hcalCoarsePedestalMonitor.ADCDiffThresh = 2
