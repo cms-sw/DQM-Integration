@@ -6,8 +6,8 @@ process = cms.Process("EvFDQM")
 #### Event Source
 #----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'FEDTest DQM Consumer'
-#process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(50.0)
+process.DQMEventStreamHttpReader.consumerName = 'FEDTest DQM Consumer'
+#process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(50.0)
 
 
 

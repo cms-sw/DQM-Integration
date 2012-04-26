@@ -100,7 +100,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
 
 
 
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
              SelectEvents = cms.vstring('HLT_L1*',
                                         'HLT_Jet*',
                                         'HLT_*Cosmic*',
@@ -185,7 +185,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     #----------------------------
     # Event Source
     #-----------------------------
-    process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
+    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
           SelectEvents = cms.vstring(
                                      'HLT_HI*'
                                         )

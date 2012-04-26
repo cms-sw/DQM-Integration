@@ -8,9 +8,9 @@ process.options = cms.untracked.PSet(
 #### leave the following few lines uncommented for online running
 process.load("DQM.Integration.test.inputsource_cfi")
 process.load("DQM.Integration.test.environment_cfi")
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQMResults')
-process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1000.0)
-process.EventStreamHttpReader.consumerName = 'HLTTrigerResults'
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQMResults')
+process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(1000.0)
+process.DQMEventStreamHttpReader.consumerName = 'HLTTrigerResults'
 
 #### end first online running section
 
@@ -29,7 +29,7 @@ process.EventStreamHttpReader.consumerName = 'HLTTrigerResults'
 
 
 # old, not used
-#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c07-13.cms:11100/urn:xdaq-application:lid=50')
+#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://srv-c2c07-13.cms:11100/urn:xdaq-application:lid=50')
 
 
 process.load("DQMServices.Core.DQM_cfg")

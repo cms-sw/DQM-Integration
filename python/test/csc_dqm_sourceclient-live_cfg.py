@@ -39,7 +39,7 @@ process.csc2DRecHits.readBadChambers = cms.bool(False)
 
 process.load("DQM.Integration.test.inputsource_cfi")
 
-process.EventStreamHttpReader.consumerName = 'CSC DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'CSC DQM Consumer'
 
 #----------------------------
 # DQM Environment

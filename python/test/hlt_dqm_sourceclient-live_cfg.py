@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
 process.load("DQMServices.Core.DQM_cfg")
 process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/hlt_reference.root"
@@ -34,7 +34,7 @@ process.p = cms.EndPath(process.hltSeedL1Logic)
 
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
-process.EventStreamHttpReader.consumerName = 'HLT DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'HLT DQM Consumer'
 process.dqmEnv.subSystemFolder = 'HLT'
 #process.hltResults.plotAll = True
 

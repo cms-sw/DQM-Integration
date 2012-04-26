@@ -396,8 +396,8 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration_v*"))
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputCalibration")
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("HLT_EcalCalibration_v*"))
 
  ## Run type specific ##
 
@@ -409,7 +409,7 @@ if process.runType.getRunType() == process.runType.cosmic_run :
 #    process.ecalBarrelMonitorClient.reducedReports = True
 #    process.ecalEndcapMonitorClient.reducedReports = True
 elif process.runType.getRunType() == process.runType.hpu_run:
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "hltEcalCalibrationRaw"

@@ -523,19 +523,19 @@ if (onlyEB == 1) :
   process.ecalMonitorEndPath.remove(process.dqmQTestEE)
 
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-  process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('*'))
-#  process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('HLT_Physics','HLT_EcalCalibration'))
-#  process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('HLT_MinBiasEcal','HLT_L1MuOpen','HLT_EcalCalibration'))
+  process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('*'))
+#  process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('HLT_Physics','HLT_EcalCalibration'))
+#  process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet( SelectEvents = cms.vstring('HLT_MinBiasEcal','HLT_L1MuOpen','HLT_EcalCalibration'))
 
 if (onlyEB == 1) :
   process.dqmEnv.subSystemFolder = 'EcalBarrel'
   if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-    process.EventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
+    process.DQMEventStreamHttpReader.consumerName = 'EcalBarrel DQM Consumer'
 
 if (onlyEE == 1) :
   process.dqmEnv.subSystemFolder = 'EcalEndcap'
   if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :
-    process.EventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
+    process.DQMEventStreamHttpReader.consumerName = 'EcalEndcap DQM Consumer'
 
 #if (localDAQ == 1) | (globalDAQ == 1) :
 #  process.ecalEBunpacker.silentMode = False
@@ -722,7 +722,7 @@ if (liveCMS == 1) | (playCMS == 1) :
 # For high PU run 
 #--------------------------------------------------
   if (process.runType.getRunType() == process.runType.hpu_run):
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
 
 #--------------------------------------------------
 # Heavy Ion Specific Fed Raw Data Collection Label

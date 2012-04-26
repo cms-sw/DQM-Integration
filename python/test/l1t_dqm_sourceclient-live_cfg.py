@@ -16,11 +16,11 @@ process = cms.Process("DQM")
 
 process.load("DQM.Integration.test.inputsource_cfi")
 #
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring("*")
     )
-process.EventStreamHttpReader.consumerName = 'L1T DQM Consumer'
-process.EventStreamHttpReader.maxEventRequestRate = cms.untracked.double(25.0)   
+process.DQMEventStreamHttpReader.consumerName = 'L1T DQM Consumer'
+process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(25.0)   
 
 
 #----------------------------

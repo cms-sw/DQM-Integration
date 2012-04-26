@@ -16,10 +16,10 @@ process = cms.Process("L1TEmuDQMlive")
 
 process.load("DQM.Integration.test.inputsource_cfi")
 #
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring("*")
     )
-process.EventStreamHttpReader.consumerName = 'L1TEMU DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'L1TEMU DQM Consumer'
 
 
 #----------------------------

@@ -18,13 +18,13 @@ QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+process.DQMEventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
-#process.EventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
+#process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_Rando*'))
+#process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://srv-c2c05-07.cms:22100/urn:xdaq-application:lid=30')
 ##
 #----------------------------
 # DQM Environment
@@ -99,7 +99,7 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 # High Pileup Configuration Changes
 #----------------------------------
 if (process.runType.getRunType() == process.runType.hpu_run):
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
 
 
@@ -112,7 +112,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
     process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
     process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
         SelectEvents = cms.vstring('HLT_HI*'))
 
 #--------------------------

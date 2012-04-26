@@ -40,15 +40,15 @@ if (host==HcalCalibPlaybackHost):
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
-process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
-process.EventStreamHttpReader.max_queue_depth = cms.int32(100)
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
+process.DQMEventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
+process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
+process.DQMEventStreamHttpReader.max_queue_depth = cms.int32(100)
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
 if (HEAVYION):
-#    process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
-    process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
+#    process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
+    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
     
-#process.EventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
+#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------

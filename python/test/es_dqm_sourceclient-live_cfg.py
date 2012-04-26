@@ -7,7 +7,7 @@ process.load('FWCore/MessageService/MessageLogger_cfi')
 process.load("FWCore.Modules.preScaler_cfi")
 
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = cms.untracked.string('Ecal PreShower')
+process.DQMEventStreamHttpReader.consumerName = cms.untracked.string('Ecal PreShower')
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 process.load("EventFilter.ESRawToDigi.esRawToDigi_cfi")

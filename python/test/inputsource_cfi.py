@@ -3,7 +3,7 @@ import socket
 maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
 )
-source = cms.Source("EventStreamHttpReader",
+source = cms.Source("DQMEventStreamHttpReader",
     #General porpouse SMProxy Server
     #sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30'),
     

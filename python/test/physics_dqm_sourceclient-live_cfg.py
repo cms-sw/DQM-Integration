@@ -1,4 +1,4 @@
-# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.10 2011/10/11 14:20:10 lilopera Exp $
+# $Id: physics_dqm_sourceclient-live_cfg.py,v 1.11 2012/02/13 15:09:30 lilopera Exp $
 
 import FWCore.ParameterSet.Config as cms
 
@@ -9,11 +9,11 @@ process = cms.Process("Physics")
 #-----------------------------
 
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'Physics DQM Consumer'
-#process.EventStreamHttpReader.sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
+process.DQMEventStreamHttpReader.consumerName = 'Physics DQM Consumer'
+#process.DQMEventStreamHttpReader.sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
 
 #filter on specific trigger types
-#process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+#process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
 #    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_L1Tech_HCAL_HF_coincidence_PM','HLT_*BSC','HLT_HFThreshold*','HLT_L1*','HLT_*SingleTrack')
 #) 
 

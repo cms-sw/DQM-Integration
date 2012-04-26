@@ -8,7 +8,7 @@ process = cms.Process("BeamPixel")
 #----------------------------
 ### @@@@@@ Comment when running locally @@@@@@ ###
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
+process.DQMEventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
 
 
 #----------------------------
@@ -76,7 +76,7 @@ process.phystrigger = cms.Sequence(
 if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run):
     print "Running pp "
 
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*',
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*',
                                                                                            'HLT_Jet*',
                                                                                            'HLT_*Cosmic*',
                                                                                            'HLT_HT*',
@@ -169,8 +169,8 @@ if (process.runType.getRunType() == process.runType.hi_run):
 
     process.load("Configuration.StandardSequences.ReconstructionHeavyIons_cff") ## HI sequences
 
-    process.EventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
-    process.EventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
+    process.DQMEventStreamHttpReader.consumerName = "Beam Pixel DQM Consumer"
+    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
              SelectEvents = cms.vstring( 'HLT_HI*')
                 )
 

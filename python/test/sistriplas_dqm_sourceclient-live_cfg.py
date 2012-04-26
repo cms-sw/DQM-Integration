@@ -9,9 +9,9 @@ process.MessageLogger = cms.Service( "MessageLogger",
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'SiStripLAS DQM Consumer'
-process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCalibration*'))
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputTrackerCalibration') 
+process.DQMEventStreamHttpReader.consumerName = 'SiStripLAS DQM Consumer'
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCalibration*'))
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputTrackerCalibration') 
 
 process.maxEvents = cms.untracked.PSet(
   input = cms.untracked.int32( -1 )

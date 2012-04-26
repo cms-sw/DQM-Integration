@@ -40,7 +40,7 @@ if (host==HcalPlaybackHost):
 # Event Source
 #-----------------------------
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
 
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 

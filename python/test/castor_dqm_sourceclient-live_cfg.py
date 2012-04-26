@@ -5,7 +5,7 @@ process = cms.Process("CASTORDQM")
 # Event Source
 #================================+
 process.load("DQM.Integration.test.inputsource_cfi")
-process.EventStreamHttpReader.consumerName = 'CASTOR DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'CASTOR DQM Consumer'
 
 #================================
 # DQM Environment

@@ -10,7 +10,7 @@ HEAVYION=False
 if runType == runTypes.hi_run:
       HEAVYION=True
       
-process.EventStreamHttpReader.consumerName = 'Hcal Timing DQM Consumer'
+process.DQMEventStreamHttpReader.consumerName = 'Hcal Timing DQM Consumer'
 
 process.MessageLogger = cms.Service("MessageLogger",
      categories   = cms.untracked.vstring(''),

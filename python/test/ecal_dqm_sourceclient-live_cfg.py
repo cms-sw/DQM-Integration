@@ -328,7 +328,7 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
-process.EventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputA")
+process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputA")
 
  ## Run type specific ##
 
@@ -338,7 +338,7 @@ if process.runType.getRunType() == process.runType.cosmic_run :
 #    process.ecalBarrelMonitorClient.produceReports = False
 #    process.ecalEndcapMonitorClient.produceReports = False
 elif process.runType.getRunType() == process.runType.hpu_run:
-    process.EventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "rawDataCollector"
