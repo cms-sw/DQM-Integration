@@ -23,10 +23,10 @@ agents_pnames=("fileCollector" "producerFileCleanner")
 agents_executables=("/nfshome0/dqmpro/filecollector/fileCollector2.py" "/nfshome0/dqmpro/filecollector/producerFileCleanner.py")
 if [[ $USER =~ 'dqmpr.*' ]]
 then
-  agents_parameters=("/home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads", \
+  agents_parameters=("/home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads" \
                      "/cmsnfshome0/nfshome0/dqmpro/filecollector/RootArchivalAndTransferSystem_cfg.py")
 else
-  agents_parameters=("/home/dqmdevlocal/output /home/dqmdevlocal/done /dqmdata/dqmintegration/upload", \
+  agents_parameters=("/home/dqmdevlocal/output /home/dqmdevlocal/done /dqmdata/dqmintegration/upload" \
                      "/cmsnfshome0/nfshome0/dqmpro/filecollector/RootArchivalAndTransferSystem_cfg.py")
 fi
 WorkDir=$( dirname ${agents_executables[0]} )
@@ -34,6 +34,7 @@ WorkDir=$( dirname ${agents_executables[0]} )
 [[ -e $WorkDir/.stop ]] && echo Found stop file not starting the agents && exit 0
 
 msg=
+new_line=
 for pos in $(seq 0 $(( ${#agents_executables[@]} - 1 ))); do
   RUN_STAT=`ps -ef | grep -P "(${agents_executables[$pos]})" | grep -v grep | wc | awk '{print $1}'`
   if [ $RUN_STAT -ne 0 ];then
@@ -47,7 +48,8 @@ for pos in $(seq 0 $(( ${#agents_executables[@]} - 1 ))); do
     [[ ! -e $WorkDir/.start ]] && 
          echo ${agents_pnames[$pos]} stopped by unknown reason and restarted at $HOSTNAME. >> $LOG ||
          echo ${agents_pnames[$pos]} Found .start file, starting
-    msg=$msg'\n'${agents_pnames[$pos]} stopped by unknown reason and restarted now at $HOSTNAME.    
+    [[ ! -z $msg ]] && new_line="\n"    
+    msg=$msg$new_line${agents_pnames[$pos]}" stopped by unknown reason and restarted now at $HOSTNAME."
   fi
 done
 
