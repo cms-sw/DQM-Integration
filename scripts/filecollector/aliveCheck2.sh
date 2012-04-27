@@ -51,7 +51,7 @@ for pos in $(seq 0 $(( ${#agents_executables[@]} - 1 ))); do
   fi
 done
 
-[[ ! -e $WorkDir/.start ]] && echo $msg | mail -s "File Collection Agents not Running" $YourEmail
+[[ ! -e $WorkDir/.start && ! -z $msg ]] && echo $msg | mail -s "File Collection Agents not Running" $YourEmail
 
 if [[ -e $WorkDir/.start ]]
 then
