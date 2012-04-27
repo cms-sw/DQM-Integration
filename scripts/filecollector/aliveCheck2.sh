@@ -35,7 +35,7 @@ WorkDir=$( dirname ${agents_executables[0]} )
 
 msg=
 for pos in $(seq 0 $(( ${#agents_executables[@]} - 1 ))); do
-  RUN_STAT=`ps -ef | grep -P "(${agent_executable[$pos]})" | grep -v grep | wc | awk '{print $1}'`
+  RUN_STAT=`ps -ef | grep -P "(${agents_executables[$pos]})" | grep -v grep | wc | awk '{print $1}'`
   if [ $RUN_STAT -ne 0 ];then
     echo ${agents_pnames[$pos]} is running
   else
