@@ -19,32 +19,40 @@ else
 fi
 export PYTHONPATH=$XPYTHONPATH:$PYTHONPATH
 export HOSTNAME=$HOSTNAME
-
+agents_pnames=("fileCollector" "producerFileCleanner")
+agents_executables=("/nfshome0/dqmpro/filecollector/fileCollector2.py" "/nfshome0/dqmpro/filecollector/producerFileCleanner.py")
 if [[ $USER =~ 'dqmpr.*' ]]
 then
-  EXE="/nfshome0/dqmpro/filecollector/fileCollector2.py /home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads"
+  agents_parameters=("/home/dqmprolocal/output /home/dqmprolocal/done /dqmdata/dqm/uploads", \
+                     "/cmsnfshome0/nfshome0/dqmpro/filecollector/RootArchivalAndTransferSystem_cfg.py")
 else
-  EXE="/nfshome0/dqmpro/filecollector/fileCollector2.py /home/dqmdevlocal/output /home/dqmdevlocal/done /dqmdata/dqmintegration/upload"
+  agents_parameters=("/home/dqmdevlocal/output /home/dqmdevlocal/done /dqmdata/dqmintegration/upload", \
+                     "/cmsnfshome0/nfshome0/dqmpro/filecollector/RootArchivalAndTransferSystem_cfg.py")
 fi
-WorkDir=$( dirname ${EXE/.*} )
+WorkDir=$( dirname ${agents_executables[0]} )
 [[ -e $WorkDir/.start ]] && [[ -e $WorkDir/.stop ]] && rm $WorkDir/.stop
 [[ -e $WorkDir/.stop ]] && echo Found stop file not starting the agents && exit 0
-RUN_STAT=`ps -ef | grep "$EXE" | grep -v grep | wc | awk '{print $1}'`
-PRETTY_NAME=fileCollector2 #`basename $2 | grep -oP ".*(?=\.[\d\s\w]+)|^\.[\d\s\w]+|^[\d\w]+"`
-if [ $RUN_STAT -ne 0 ]
-then
-    echo $PRETTY_NAME is running
-else
-    echo $PRETTY_NAME stopped by unknown reason and restarted now.
+
+msg=
+for pos in $(seq 0 $(( ${#agents_executables[@]} - 1 ))); do
+  RUN_STAT=`ps -ef | grep -P "(${agent_executable[$pos]})" | grep -v grep | wc | awk '{print $1}'`
+  if [ $RUN_STAT -ne 0 ];then
+    echo ${agents_pnames[$pos]} is running
+  else
+    echo ${agents_pnames[$pos]} stopped by unknown reason and restarted now.
     TIMETAG=$(date +"%Y%m%d_%H%M%S")
-    LOG=$WorkDir/log/LOG.$PRETTY_NAME.$HOSTNAME.$TIMETAG
-    $EXE >& $LOG &
+    LOG=$WorkDir/log/LOG.${agents_pnames[$pos]}.$HOSTNAME.$TIMETAG
+    ${agents_executables[$pos]} ${agents_parameters[$pos]} >& $LOG &
     date >> $LOG
     [[ ! -e $WorkDir/.start ]] && 
-         echo $PRETTY_NAME stopped by unknown reason and restarted at $HOSTNAME. >> $LOG ||
-         echo $PRETTY_NAME Found .start file, starting
-    [[ ! -e $WorkDir/.start ]] && echo $PRETTY_NAME stopped by unknown reason and restarted now at $HOSTNAME. | mail -s "$PRETTY_NAME not Running" $YourEmail
-fi
+         echo ${agents_pnames[$pos]} stopped by unknown reason and restarted at $HOSTNAME. >> $LOG ||
+         echo ${agents_pnames[$pos]} Found .start file, starting
+    msg=$msg'\n'${agents_pnames[$pos]} stopped by unknown reason and restarted now at $HOSTNAME.    
+  fi
+done
+
+[[ ! -e $WorkDir/.start ]] && echo $msg | mail -s "File Collection Agents not Running" $YourEmail
+
 if [[ -e $WorkDir/.start ]]
 then
   sleep 10
