@@ -96,10 +96,11 @@ def uploadFile(fName, subsystem, run):
     
     version += 1
 
-  if not os.path.exists("%s/V%04d" % (DROPBOX,version)):
-    os.makedirs("%s/V%04d" % (DROPBOX,version))
+  if not os.path.exists("%s/%04d" % (DROPBOX,version)):
+    os.makedirs("%s/%04d" % (DROPBOX,version))
+    os.chmod("%s/%04d" % (DROPBOX,version),2775)
                   
-  finalfile="%s/V%04d/DQM_V0001_%s_R%s.root" %   (DROPBOX,version,subsystem,run)        
+  finalfile="%s/%04d/DQM_V0001_%s_R%s.root" %   (DROPBOX,version,subsystem,run)        
   originFileName="%s.origin" % finalfile     
   try:
     os.rename(finalTMPfile,finalfile)
