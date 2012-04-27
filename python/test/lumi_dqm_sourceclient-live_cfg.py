@@ -26,9 +26,9 @@ process.load("DQM.Integration.test.environment_cfi")
 process.DBService=cms.Service('DBService',
                               authPath= cms.untracked.string('/nfshome0/popcondev/conddb')
                               )
-process.expressLumiProducer=cms.EDProducer("ExpressLumiProducer",
-                    connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER'),
-                     )
+process.DIPLumiProducer=cms.ESSource("DIPLumiProducer",
+     connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER')
+                                     )
 #---------------------------
 #----------------------------
 # Sub-system Configuration
@@ -60,7 +60,6 @@ process.load("DQMServices/Components/DQMLumiMonitor_cfi")
 # Define Sequence
 #----------------------------
 process.dqmmodules = cms.Sequence(process.dqmEnv
-                                  + process.expressLumiProducer
                                   + process.dqmLumiMonitor    
                                   + process.dqmSaver)
 #----------------------------
