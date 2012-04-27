@@ -1,4 +1,4 @@
-import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile
+import os, datetime, time,  sys, shutil, glob, re, subprocess as sp, tempfile, socket
 TIME_OUT=700
 DEBUG=False
 def getDirSize(path): 
@@ -21,6 +21,23 @@ def getDiskUsage(path):
   usedPer=float(used)/size
   return (size,available,used,usedPer)
 
+def getNumRunsWithinTime(path,timeDelta):
+  numRuns=0
+  currTime=time.time()
+  STAY_DIR={}
+  for directory,subdirs,files in os.walk(path):
+    for f in sorted(files, key=lambda x: os.stat("%s/%s" % (directory,x)).st_mtime,reverse=True):
+      fullFName="%s/%s" % (directory,f)
+      fMatch=re.match(r".*_R([0-9]{9}).*",f)
+      if fMatch:
+        run=fMatch.group(1)
+        fMtime=os.stat(fullFName).st_mtime
+        if currTime - timeDelta*3600 <= fMtime:
+          STAY_DIR.setdefault(run,fMtime)
+        else:
+          break
+  numRuns=len(STAY_DIR.keys())
+  return numRuns
   
 def debugMsg(level,message):
   LEVELS=["INFO","WARNING","ERROR"]
@@ -30,6 +47,27 @@ def debugMsg(level,message):
   sys.stdout.write(msg)
   return True
   
+def prettyPrintUnits(value,unit,decimals=0):
+  """
+Provide human readable units
+  """
+  runit=""
+  if unit is "b":
+    units=["B","KB","MB","GB","TB"]
+    it=iter(units)
+    v=long(value/1024)
+    p=0
+    runit=it.next()
+    while v > 0:
+      v=long(v/1024)
+      try:
+        runit=it.next()
+        p+=1
+      except:
+        break
+    return "%%.%df %%s " % decimals % (float(value)/pow(1024,p),runit)
+  else:
+    return "%%.%df %%s " % decimals % (value,"%") 
   
 def executeCmd(cmd):
   stdOutFile=tempfile.TemporaryFile(bufsize=0)
@@ -54,15 +92,17 @@ def executeCmd(cmd):
   return (stdOutFile,stdErrFile,cmdHdl.returncode)
   
   
-def sendmail(EmailAddress,run=123456789,body=""):
+def sendmail(EmailAddress,run=123456789,body="",subject="File merge failed."):
   import os, smtplib
   from email.MIMEText import MIMEText
-  server=os.getenv("HOSTNAME")
+  server=socket.gethostname() #os.getenv("HOSTNAME")
+  user=os.getenv("USER")
+  ServerMail="%s@%s" % (user,server)
   s=smtplib.SMTP("localhost")
   tolist=[EmailAddress] #[EmailAddress, "lat@cern.ch"]
   if not body: body="File copy to dropbox failed by unknown reason for run:%09d on server: %s" % (run,server)
   msg = MIMEText(body)
-  msg['Subject'] = "File merge failed."
+  msg['Subject'] = subject
   msg['From'] = ServerMail
   msg['To'] = EmailAddress
   s.sendmail(ServerMail,tolist,msg.as_string())
