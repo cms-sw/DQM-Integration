@@ -27,7 +27,7 @@ process.DBService=cms.Service('DBService',
                               authPath= cms.untracked.string('/nfshome0/popcondev/conddb')
                               )
 process.expressLumiProducer=cms.EDProducer("ExpressLumiProducer",
-                      connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER'),
+                      connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER')
                                           )
 #---------------------------
 #----------------------------
