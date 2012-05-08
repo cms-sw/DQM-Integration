@@ -15,6 +15,7 @@ process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutp
 # DQM Environment
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
+process.dqmEnv.subSystemFolder    = "Info/Lumi"
 
 #---------------------------------------------
 # Global Tag
