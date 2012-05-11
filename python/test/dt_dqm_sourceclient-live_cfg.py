@@ -52,18 +52,41 @@ process.dtunpacker.inputLabel = cms.InputTag("rawDataCollector")
 process.gtDigis.DaqGtInputTag = cms.InputTag("rawDataCollector")
 process.scalersRawToDigi.scalersInputTag = cms.InputTag("rawDataCollector")
 
-#--------------------------------------------------
-# Heavy Ion Specific Fed Raw Data Collection Label
-#--------------------------------------------------
-
 print "Running with run type = ", process.runType.getRunType()
 
+#----------------------------
+#### pp run settings 
+#----------------------------
 
 if (process.runType.getRunType() == process.runType.pp_run):
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_pp.root'
 
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+             SelectEvents = cms.vstring('HLT_Mu*', 
+                                        'HLT_DoubleMu*', 
+                                        'HLT_L1SingleMu*', 
+                                        'HLT_IsoMu*', 
+                                        'HLT_Dimuon*', 
+                                        'HLT_L2DoubleMu*', 
+                                        'HLT_L2Mu*', 
+                                        'HLT_L1TrackerCosmics*')
+                                      )
+
+#----------------------------
+#### cosmic run settings 
+#----------------------------
+
 if (process.runType.getRunType() == process.runType.cosmic_run):
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_cosmic.root'
+
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+             SelectEvents = cms.vstring('HLT_L1TrackerCosmics*',
+                                        'HLT_L1SingleMuOpen_AntiBPTX*')
+                                      )
+
+#----------------------------
+#### HI run settings 
+#----------------------------
 
 if (process.runType.getRunType() == process.runType.hi_run):
     process.dtunpacker.fedbyType = cms.bool(False)
@@ -75,3 +98,14 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.dtDigiMonitor.ResetCycle = cms.untracked.int32(9999)
 
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_hi.root'
+
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+             SelectEvents = cms.vstring('HLT_Mu*', 
+                                        'HLT_DoubleMu*', 
+                                        'HLT_L1SingleMu*', 
+                                        'HLT_IsoMu*', 
+                                        'HLT_Dimuon*', 
+                                        'HLT_L2DoubleMu*', 
+                                        'HLT_L2Mu*', 
+                                        'HLT_L1TrackerCosmics*')
+                                      )
