@@ -41,7 +41,7 @@ process.dqmSaver.producer = "Playback"
 process.dqmSaver.saveByTime = 60
 process.dqmSaver.saveByMinute = 60
 
-## uncomment for running in local
+# uncomment for running in local
 #process.dqmSaver.dirName     = '.'
 
 process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
@@ -52,7 +52,7 @@ process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
 
 ## uncooment for running in local
 ## collector
-#process.DQM.collectorHost = 'vmepcs2b18-25.cms'
+#process.DQM.collectorHost = 'vmepcs2b18-20.cms'
 #process.DQM.collectorPort = 9190
 
 #--------------------------
@@ -170,6 +170,10 @@ process.load('HLTrigger/HLTfilters/hltLevel1GTSeed_cfi')
 process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
 process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 38 OR 39)')
 
+# HLT trigger selection (HLT_ZeroBias)
+process.load('HLTrigger.HLTfilters.hltHighLevel_cfi')
+process.hltHighLevel.HLTPaths = cms.vstring( 'HLT_ZeroBias_*' )
+
 #--------------------------
 # Scheduling
 #--------------------------
@@ -224,8 +228,9 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
 #else :
 if (process.runType.getRunType() == process.runType.pp_run):
     #event selection for pp collisions
-    #process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_ZeroBias_*'))
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_*'))
+    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))    
+    #process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_ZeroBias_*'))
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     # Source and Client config for pp collisions
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
@@ -274,6 +279,7 @@ if (process.runType.getRunType() == process.runType.pp_run):
                          process.DQMCommon*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
+                         process.hltHighLevel *
                          process.RecoForDQM_TrkReco*
                          process.SiStripSources_TrkReco
                          )
