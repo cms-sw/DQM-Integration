@@ -18,6 +18,8 @@ WAITTIME = 3600 * 4
 EMAILINTERVAL = 15 * 60 # Time between sent emails 
 SENDMAIL = "/usr/sbin/sendmail" # sendmail location
 HOSTNAME = socket.gethostname().lower()
+EXEDIR = os.path.dirname(__file__)
+STOP_FILE = "%s/.stop" % EXEDIR
 
 # Control variables
 lastEmailSent = 0
@@ -62,6 +64,11 @@ def sendmail(body="Hello from producerFileCleanner",subject= "Hello!"):
   
 # --------------------------------------------------------------------    
 while True:
+  #Check if you need to stop.
+  if os.path.exists(STOP_FILE):
+    logme("INFO: Stop file found, quitting")
+    sys.exit(0)
+
   try:
     try:
       doneSize=getDirSize(TFILEDONEDIR)
