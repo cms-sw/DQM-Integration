@@ -20,7 +20,7 @@ SENDMAIL = "/usr/sbin/sendmail" # sendmail location
 HOSTNAME = socket.gethostname().lower()
 
 # Control variables
-lastEmailSent = datetime.now()
+lastEmailSent = 0
 
 # --------------------------------------------------------------------
 def logme(msg, *args):
@@ -79,7 +79,7 @@ while True:
     quota=long(diskSize*PRODUCER_DU_BOT/100)
     delQuota=diskUsed-quota
     if delQuota > doneSize:
-      now = datetime.now()
+      now = time.time()
       if now - EMAILINTERVAL > lastEmailSent:
         msg="ERROR: Something is filling up the disks, %s does not" \
           " have enough files to get to the Bottom Boundary of" \
@@ -96,11 +96,11 @@ while True:
     for directory,subdirs,files in os.walk(TFILEDONEDIR):
       subdirs.sort()
       for f in sorted(files,key=lambda a: a[a.rfind("_R",1)+2:a.rfind("_R",1)+11]):
-        fMatch=re.match(r"(DQM|Playback|Playback_full)_V[0-9]{4}_([a-zA-Z]+)_R([0-9]{9})_T[0-9]{8}\.root",f)
+        fMatch=re.match(r"(DQM|Playback|Playback_full)_V[0-9]{4}_([0-9a-zA-Z]+)_R([0-9]{9})(_T[0-9]{8}|)\.root",f)
         if fMatch:
           subSystem=fMatch.group(2)
           run=fMatch.group(3)
-          destDir="%s/%s/%s/DQM_V0001_%s_R%s.root" % (ORIGINALDONEDIR,run[0:3],run[3:6],subSystem,run)
+          destDir="%s/%sxxxx/%sxx/DQM_V0001_%s_R%s.root" % (ORIGINALDONEDIR,run[0:5],run[0:7],subSystem,run)
           fullFName="%s/%s" % (directory,f)
           if os.stat(fullFName).st_size+aDelQuota > delQuota:
             break
@@ -183,7 +183,7 @@ while True:
   except Exception, e:
     logme('ERROR: %s', e)
     sendmail ('ERROR: %s\n%s' % (e, format_exc()))
-    now = datetime.now()
+    now = time.time()
     if now - EMAILINTERVAL > lastEmailSent:
       sendmail ('ERROR: %s\n%s' % (e, format_exc()))
       lastEmailSent = now
