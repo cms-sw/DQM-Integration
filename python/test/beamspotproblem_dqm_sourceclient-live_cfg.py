@@ -49,7 +49,7 @@ process.monitor = cms.Sequence(process.dqmBeamSpotProblemMonitor)
 #--------------------------
 # Proton-Proton Stuff
 #--------------------------
-if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run):
+if (process.runType.getRunType() == process.runType.pp_run ):
 
     print "Running pp"
 
