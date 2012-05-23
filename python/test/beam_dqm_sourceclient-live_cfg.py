@@ -30,6 +30,7 @@ process.dqmEnvPixelLess.subSystemFolder = 'BeamMonitor_PixelLess'
 #-----------------------------
 #process.load("DQM.BeamMonitor.BeamMonitor_cff") # for reducing/normal tracking
 process.load("DQM.BeamMonitor.BeamMonitor_Pixel_cff") #for pixel tracks/vertices
+process.load("DQM.BeamMonitor.BeamSpotProblemMonitor_cff")
 process.load("DQM.BeamMonitor.BeamMonitorBx_cff")
 process.load("DQM.BeamMonitor.BeamMonitor_PixelLess_cff")
 process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
@@ -72,6 +73,28 @@ process.dqmcommon = cms.Sequence(process.dqmEnv
 
 process.monitor = cms.Sequence(process.dqmBeamMonitor)
 
+
+#------------------------------------------------------------
+# BeamSpotProblemMonitor Modules
+#-----------------------------------------------------------
+process.dqmBeamSpotProblemMonitor.AlarmONThreshold  = 10
+process.dqmBeamSpotProblemMonitor.AlarmOFFThreshold = 12
+process.dqmBeamSpotProblemMonitor.nCosmicTrk        = 10
+process.dqmBeamSpotProblemMonitor.doTest            = True
+
+
+process.qTester = cms.EDAnalyzer("QualityTester",
+                                 qtList = cms.untracked.FileInPath('DQM/BeamMonitor/test/BeamSpotAvailableTest.xml'),
+                                 prescaleFactor = cms.untracked.int32(1),                               
+                                 testInEventloop = cms.untracked.bool(False),
+                                 verboseQT =  cms.untracked.bool(True)                 
+                                )
+
+process.BeamSpotProblemModule = cms.Sequence( process.qTester
+ 	  	                             *process.dqmBeamSpotProblemMonitor
+                                            )
+
+#-----------------------------------------------------------
 
 
 #--------------------------
@@ -155,7 +178,8 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
                          *process.hltTriggerTypeFilter
                          *process.dqmcommon
                          *process.tracking_FirstStep
-                         *process.monitor)
+                         *process.monitor
+                         *process.BeamSpotProblemModule)
 
 
 
@@ -254,5 +278,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
                         *process.filter_step
                         *process.HIRecoForDQM
                         *process.dqmcommon
-                        *process.monitor)
+                        *process.monitor
+                        *process.BeamSpotProblemModule)
 
