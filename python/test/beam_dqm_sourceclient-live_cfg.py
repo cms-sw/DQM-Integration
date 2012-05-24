@@ -77,10 +77,11 @@ process.monitor = cms.Sequence(process.dqmBeamMonitor)
 #------------------------------------------------------------
 # BeamSpotProblemMonitor Modules
 #-----------------------------------------------------------
+process.dqmBeamSpotProblemMonitor.monitorName       = "BeamMonitor/BeamSpotProblemMonitor"
 process.dqmBeamSpotProblemMonitor.AlarmONThreshold  = 10
 process.dqmBeamSpotProblemMonitor.AlarmOFFThreshold = 12
 process.dqmBeamSpotProblemMonitor.nCosmicTrk        = 10
-process.dqmBeamSpotProblemMonitor.doTest            = True
+process.dqmBeamSpotProblemMonitor.doTest            = False
 
 
 process.qTester = cms.EDAnalyzer("QualityTester",
