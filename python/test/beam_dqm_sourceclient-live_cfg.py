@@ -86,6 +86,7 @@ process.dqmBeamSpotProblemMonitor.doTest            = True
 process.qTester = cms.EDAnalyzer("QualityTester",
                                  qtList = cms.untracked.FileInPath('DQM/BeamMonitor/test/BeamSpotAvailableTest.xml'),
                                  prescaleFactor = cms.untracked.int32(1),                               
+                                 qtestOnEndLumi = cms.untracked.bool(True),
                                  testInEventloop = cms.untracked.bool(False),
                                  verboseQT =  cms.untracked.bool(True)                 
                                 )
@@ -94,6 +95,9 @@ process.BeamSpotProblemModule = cms.Sequence( process.qTester
  	  	                             *process.dqmBeamSpotProblemMonitor
                                             )
 
+#make it off for cosmic run
+if ( process.runType.getRunType() == process.runType.cosmic_run):
+    process.dqmBeamSpotProblemMonitor.AlarmOFFThreshold = 5       #Should be < AlalrmONThreshold 
 #-----------------------------------------------------------
 
 
