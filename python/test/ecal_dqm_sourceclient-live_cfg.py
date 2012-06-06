@@ -8,17 +8,6 @@ process = cms.Process("DQM")
 
 process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
-process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
-
-import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
-process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
-
-process.load("RecoLocalCalo.EcalRecProducers.ecalDetIdToBeRecovered_cfi")
-
-process.load("RecoLocalCalo.EcalRecProducers.ecalRecHit_cfi")
-
-process.load("RecoLocalCalo.EcalRecAlgos.EcalSeverityLevelESProducer_cfi")
-
 process.load("Geometry.CaloEventSetup.CaloGeometry_cfi")
 
 process.load("Geometry.CaloEventSetup.CaloTopology_cfi")
@@ -31,6 +20,17 @@ process.load("Geometry.EcalMapping.EcalMapping_cfi")
 
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 
+process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
+
+import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
+process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
+
+process.load("RecoLocalCalo.EcalRecProducers.ecalDetIdToBeRecovered_cfi")
+
+process.load("RecoLocalCalo.EcalRecProducers.ecalRecHit_cfi")
+
+process.load("RecoLocalCalo.EcalRecAlgos.EcalSeverityLevelESProducer_cfi")
+
 process.load("RecoEcal.EgammaClusterProducers.ecalClusteringSequence_cff")
 
 process.load("CalibCalorimetry.EcalLaserCorrection.ecalLaserCorrectionService_cfi")
@@ -39,7 +39,7 @@ process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_cfi
 
 process.load("EventFilter.L1GlobalTriggerRawToDigi.l1GtEvmUnpack_cfi")
 
-
+    
 ### ECAL DQM MODULES ###
 
 process.load("DQM.EcalBarrelMonitorModule.EcalBarrelMonitorModule_cfi")
@@ -52,10 +52,8 @@ process.load("DQM.EcalBarrelMonitorClient.EBTrendClient_cfi")
 process.load("DQM.EcalEndcapMonitorTasks.EETrendTask_cfi")
 process.load("DQM.EcalEndcapMonitorClient.EETrendClient_cfi")
 
-import DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi
-process.ecalBarrelMonitorClient = DQM.EcalBarrelMonitorClient.EcalBarrelMonitorDbClient_cfi.ecalBarrelMonitorDbClient.clone()
-import DQM.EcalEndcapMonitorClient.EcalEndcapMonitorDbClient_cfi
-process.ecalEndcapMonitorClient = DQM.EcalEndcapMonitorClient.EcalEndcapMonitorDbClient_cfi.ecalEndcapMonitorDbClient.clone()
+process.load("DQM.EcalBarrelMonitorClient.EcalBarrelMonitorClient_cfi")
+process.load("DQM.EcalEndcapMonitorClient.EcalEndcapMonitorClient_cfi")
 
 
 ### DQM COMMON MODULES ###
@@ -70,7 +68,6 @@ process.dqmQTestEB = cms.EDAnalyzer("QualityTester",
   qtestOnEndLumi = cms.untracked.bool(True),
   qtestOnEndRun = cms.untracked.bool(True)
 )
-
 process.dqmQTestEE = cms.EDAnalyzer("QualityTester",
   reportThreshold = cms.untracked.string("red"),
   prescaleFactor = cms.untracked.int32(1),
@@ -211,7 +208,6 @@ process.ecalMonitorEndPath = cms.EndPath(
     process.dqmQTestEB +
     process.dqmQTestEE
 )
-
 process.dqmEndPath = cms.EndPath(
     process.dqmSaver
 )
@@ -230,6 +226,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 
 
 ### CUSTOMIZATIONS ###
+
  ## Reconstruction Modules ##
 
 process.ecalUncalibHit.EBdigiCollection = "ecalEBunpacker:ebDigis"
@@ -264,19 +261,22 @@ process.hltTriggerTypeFilter.SelectedTriggerType = 1 # 0=random, 1=physics, 2=ca
 
  ## Ecal DQM modules ##
 
+process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Timing", "Cosmic", "TriggerTower", "Cluster", "Summary"]
+process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Timing", "Cosmic", "TriggerTower", "Cluster", "Summary"]
+
+process.ecalBarrelMonitorClient.reducedReports = False
+process.ecalEndcapMonitorClient.reducedReports = False
+
 process.ecalBarrelTimingTask.useBeamStatus = cms.untracked.bool(True)
 process.ecalEndcapTimingTask.useBeamStatus = cms.untracked.bool(True)
 
 process.ecalBarrelMonitorClient.location = "P5_Co"
 process.ecalEndcapMonitorClient.location = "P5_Co"
-process.ecalBarrelMonitorClient.verbose = False
-process.ecalEndcapMonitorClient.verbose = False
+process.ecalBarrelMonitorClient.verbose = True
+process.ecalEndcapMonitorClient.verbose = True
 
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
-
-process.ecalBarrelMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Timing", "Cosmic", "TriggerTower", "Cluster", "Summary"]
-process.ecalEndcapMonitorClient.enabledClients = ["Integrity", "StatusFlags", "Occupancy", "PedestalOnline", "Timing", "Cosmic", "TriggerTower", "Cluster", "Summary"]
 
 os.environ["TNS_ADMIN"] = "/etc"
 dbName = ""
@@ -328,17 +328,12 @@ process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
-process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string("hltOutputA")
 
  ## Run type specific ##
 
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
-#    process.ecalBarrelMonitorClient.produceReports = False
-#    process.ecalEndcapMonitorClient.produceReports = False
-elif process.runType.getRunType() == process.runType.hpu_run:
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "rawDataCollector"
@@ -347,10 +342,11 @@ if process.runType.getRunType() == process.runType.hi_run:
     FedRawData = "rawDataRepacker"
 
 process.ecalEBunpacker.InputLabel = cms.InputTag(FedRawData)
+
 process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
+process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag(FedRawData)
+process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.l1GtEvmUnpack.EvmGtInputTag = cms.InputTag(FedRawData)
 process.ecalBarrelTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapTrendTask.FEDRawDataCollection = cms.InputTag(FedRawData)
-process.ecalBarrelSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag(FedRawData)
-process.ecalEndcapSelectiveReadoutTask.FEDRawDataCollection = cms.InputTag(FedRawData)
