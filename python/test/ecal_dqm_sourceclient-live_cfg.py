@@ -272,8 +272,8 @@ process.ecalEndcapTimingTask.useBeamStatus = cms.untracked.bool(True)
 
 process.ecalBarrelMonitorClient.location = "P5_Co"
 process.ecalEndcapMonitorClient.location = "P5_Co"
-process.ecalBarrelMonitorClient.verbose = True
-process.ecalEndcapMonitorClient.verbose = True
+process.ecalBarrelMonitorClient.verbose = False
+process.ecalEndcapMonitorClient.verbose = False
 
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
@@ -334,6 +334,8 @@ process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.ecalMonitorEndPath.remove(process.dqmQTestEB)
     process.ecalMonitorEndPath.remove(process.dqmQTestEE)
+elif process.runType.getRunType() == process.runType.hpu_run:
+    process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
  ## FEDRawDataCollection name ##
 FedRawData = "rawDataCollector"
