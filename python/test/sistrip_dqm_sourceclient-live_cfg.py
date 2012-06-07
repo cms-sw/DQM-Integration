@@ -200,7 +200,11 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
     process.SiStripAnalyserCosmic.ShiftReportFrequency = -1
     process.SiStripAnalyserCosmic.StaticUpdateFrequency = 5
     process.SiStripClients           = cms.Sequence(process.SiStripAnalyserCosmic)
+
     # Reco for cosmic data
+    process.load('RecoTracker.SpecialSeedGenerators.SimpleCosmicBONSeeder_cfi')
+    process.simpleCosmicBONSeeds.ClusterCheckPSet.MaxNumberOfCosmicClusters = 450
+
     process.RecoForDQM_TrkReco_cosmic = cms.Sequence(process.offlineBeamSpot*process.ctftracksP5)
 
     process.qTester = cms.EDAnalyzer("QualityTester",
