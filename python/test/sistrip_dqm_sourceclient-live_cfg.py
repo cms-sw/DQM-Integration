@@ -237,6 +237,10 @@ if (process.runType.getRunType() == process.runType.pp_run):
     #process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_ZeroBias_*'))
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     # Source and Client config for pp collisions
+
+    process.SiStripMonitorDigi.UseDCSFiltering = cms.bool(False)
+    process.SiStripMonitorClusterReal.UseDCSFiltering = cms.bool(False)
+    
     process.SiStripSources_TrkReco   = cms.Sequence(process.SiStripMonitorTrack_gentk*process.MonitorTrackResiduals_gentk*process.TrackMon_gentk)
     process.load("DQM.SiStripMonitorClient.SiStripClientConfigP5_cff")
     process.SiStripAnalyser.UseGoodTracks  = cms.untracked.bool(True)
