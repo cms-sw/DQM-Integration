@@ -159,27 +159,9 @@ process.schedule = cms.Schedule(process.rawToDigiPath,
 #
 #process.schedule.remove(process.l1tSyncPath)
 
-                                    
-#
-# available data masks (case insensitive):
-#    all, gt, muons, jets, taujets, isoem, nonisoem, met
-process.l1tEventInfoClient.dataMaskedSystems = cms.untracked.vstring(
-                                                            "Muons",
-                                                            "Jets",
-                                                            "TauJets",
-                                                            "IsoEm",
-                                                            "NonIsoEm",
-                                                            "MET"
-                                                            )
-
-#
-# available emulator masks (case insensitive):
-#    all, dttf, dttpg, csctf, csctpg, rpc, gmt, ecal, hcal, rct, gct, glt
-process.l1tEventInfoClient.emulatorMaskedSystems = cms.untracked.vstring("All")
-
-
 # 
-# un-comment next lines in case you use the file for private tests on the L1T server
+# un-comment next lines in case you use the file for private tests on the playback server
+# see https://twiki.cern.ch/twiki/bin/view/CMS/DQMTest for instructions
 #
 #process.dqmSaver.dirName = '.'
 #process.dqmSaver.saveByRun = 1

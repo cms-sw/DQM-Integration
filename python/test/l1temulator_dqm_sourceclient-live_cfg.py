@@ -107,7 +107,7 @@ process.L1HardwareValidation.remove(process.deDt)
 # remove a L1 trigger system from the comparator integrated in hardware validation
 # cfi file: L1Trigger.HardwareValidation.L1Comparator_cfi
 #
-# process.l1compare.COMPARE_COLLS = [1, 1, 1, 1,  1, 1, 1, 1, 1, 0, 1, 1]
+# process.l1compare.COMPARE_COLLS = [0, 0, 1, 1,  0, 1, 0, 0, 1, 0, 1, 0]
 #
 
 
@@ -136,7 +136,7 @@ process.L1HardwareValidation.remove(process.deDt)
 # names are case sensitive, order is irrelevant
 # "ECAL", "HCAL", "RCT", "GCT", "DTTF", "DTTPG", "CSCTF", "CSCTPG", "RPC", "GMT", "GT"
 #
-# process.l1temuEventInfoClient.MaskL1Systems = cms.vstring("ECAL")
+# process.l1temuEventInfoClient.DisableL1Systems = cms.vstring("ECAL")
 #
 
 
@@ -150,7 +150,7 @@ process.L1HardwareValidation.remove(process.deDt)
 # "Mu", "NoIsoEG", "IsoEG", "CenJet", "ForJet", "TauJet", "ETM", "ETT", "HTT", "HTM", 
 # "HfBitCounts", "HfRingEtSums", "TechTrig", "GtExternal
 #
-# process.l1temuEventInfoClient.MaskL1Objects =  cms.vstring("ETM")   
+# process.l1temuEventInfoClient.DisableL1Objects =  cms.vstring("ETM")   
 #
 
 
@@ -159,8 +159,8 @@ process.L1HardwareValidation.remove(process.deDt)
 #
 # process.l1EmulatorEventInfoClient.verbose = cms.untracked.bool(True)
 
-# 
-# un-comment next lines in case you use the file for private tests on the L1T server
+# un-comment next lines in case you use the file for private tests on the playback server
+# see https://twiki.cern.ch/twiki/bin/view/CMS/DQMTest for instructions
 #
 #process.dqmSaver.dirName = '.'
 #process.dqmSaver.saveByRun = 1
