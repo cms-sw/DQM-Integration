@@ -69,7 +69,7 @@ process.phystrigger = cms.Sequence(process.hltTriggerTypeFilter
 #--------------------------------------------------
 # Proton-Proton Specific Part
 #--------------------------------------------------
-if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run):
+if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run or process.runType.getRunType() == process.runType.hpu_run):
     print "Running pp "
 
     process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*',
