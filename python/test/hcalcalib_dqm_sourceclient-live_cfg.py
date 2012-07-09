@@ -173,9 +173,7 @@ process.l1GtUnpack.DaqGtInputTag = 'source'
 # Scheduling
 #-----------------------------
 process.options = cms.untracked.PSet(
-    Rethrow = cms.untracked.vstring('ProductNotFound', 
-        'TooManyProducts', 
-        'TooFewProducts')
+  SkipEvent = cms.untracked.vstring('ProductNotFound')
 )
 
 
@@ -225,7 +223,7 @@ process.options = cms.untracked.PSet(
 
 
 process.p = cms.Path(process.hcalDigis
-                         *process.l1GtUnpack
+                         #*process.l1GtUnpack
                          *process.horeco
                          *process.hfreco
                          *process.hbhereco
