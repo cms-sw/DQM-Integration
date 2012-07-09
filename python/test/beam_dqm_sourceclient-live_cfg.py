@@ -106,7 +106,7 @@ if ( process.runType.getRunType() == process.runType.cosmic_run):
 # Proton-Proton Stuff
 #--------------------------
 
-if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run):
+if (process.runType.getRunType() == process.runType.pp_run or process.runType.getRunType() == process.runType.cosmic_run or process.runType.getRunType() == process.runType.hpu_run):
 
     print "Running pp"
 
