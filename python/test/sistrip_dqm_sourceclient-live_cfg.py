@@ -179,7 +179,7 @@ process.hltHighLevel.HLTPaths = cms.vstring( 'HLT_ZeroBias_*' )
 #--------------------------
 process.SiStripSources_LocalReco = cms.Sequence(process.siStripFEDMonitor*process.SiStripMonitorDigi*process.SiStripMonitorClusterReal)
 process.DQMCommon                = cms.Sequence(process.qTester*process.dqmEnv*process.dqmEnvTr*process.dqmSaver)
-process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco)
+process.RecoForDQM_LocalReco     = cms.Sequence(process.siPixelDigis*process.siStripDigis*process.gtDigis*process.trackerlocalreco*process.gtEvmDigis)
 
 #--------------------------
 # Global Plot Switches
@@ -221,7 +221,6 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
                          process.hltTriggerTypeFilter*
                          process.RecoForDQM_LocalReco*
                          process.DQMCommon*
-                         process.RawToDigi*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
                          process.RecoForDQM_TrkReco_cosmic*
@@ -286,7 +285,6 @@ if (process.runType.getRunType() == process.runType.pp_run):
                          process.hltTriggerTypeFilter*
                          process.RecoForDQM_LocalReco*
                          process.DQMCommon*
-                         process.RawToDigi*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
                          process.hltHighLevel *
@@ -361,7 +359,6 @@ if (process.runType.getRunType() == process.runType.hpu_run):
                          process.hltTriggerTypeFilter*
                          process.RecoForDQM_LocalReco*
                          process.DQMCommon*
-                         process.RawToDigi*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
                          process.hltHighLevel *
@@ -452,7 +449,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
                          process.hltTriggerTypeFilter*
                          process.RecoForDQM_LocalReco*
                          process.DQMCommon*
-                         process.RawToDigi*
                          process.SiStripClients*
                          process.SiStripSources_LocalReco*
                          process.RecoForDQM_TrkReco*
