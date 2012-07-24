@@ -86,13 +86,13 @@ process.siPixelDigis.IncludeErrors = True
 #--------
 # HLT Filters: trigger path filters for 3 triggers in the AlCaLumi stream
 # NB: Only ZeroBiasSelector_cfi being used for now
-process.load("DQM.PLumDQM.ZeroBiasSelector_cfi")
-process.load("DQM.PLumDQM.AlCaLumiPixelsZeroBiasSelector_cfi")
-process.load("DQM.PLumDQM.RandomTriggerSelector_cfi")
+process.load("DQM.PixelLumi.ZeroBiasSelector_cfi")
+process.load("DQM.PixelLumi.AlCaLumiPixelsZeroBiasSelector_cfi")
+process.load("DQM.PixelLumi.RandomTriggerSelector_cfi")
 
 # Make three instances of pixel_lumi_dqm; only 1 being used for now
 #------------------------------------------------------------------
-from DQM.PLumDQM.PixelLumiDQM_cfi import pixel_lumi_dqm 
+from DQM.PixelLumi.PixelLumiDQM_cfi import pixel_lumi_dqm 
 
 process.PixelLumiDqmAlcaLumiPixel = pixel_lumi_dqm
 
