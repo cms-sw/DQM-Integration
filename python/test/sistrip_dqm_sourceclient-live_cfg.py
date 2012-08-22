@@ -171,8 +171,11 @@ process.hltLevel1GTSeed.L1TechTriggerSeeding = cms.bool(True)
 process.hltLevel1GTSeed.L1SeedsLogicalExpression = cms.string('NOT (36 OR 37 OR 38 OR 39)')
 
 # HLT trigger selection (HLT_ZeroBias)
+# modified for 0 Tesla HLT menu (no ZeroBias_*)
 process.load('HLTrigger.HLTfilters.hltHighLevel_cfi')
-process.hltHighLevel.HLTPaths = cms.vstring( 'HLT_ZeroBias_*' )
+process.hltHighLevel.HLTPaths = cms.vstring( 'HLT_ZeroBias_*' , 'HLT_ZeroBias1_*' )
+process.hltHighLevel.andOr = cms.bool(True)
+process.hltHighLevel.throw =  cms.bool(False)
 
 #--------------------------
 # Scheduling
