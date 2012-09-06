@@ -6,8 +6,6 @@ process = cms.Process("DQM")
 
 ### RECONSTRUCTION MODULES ###
 
-process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
-
 process.load("Geometry.CaloEventSetup.CaloGeometry_cfi")
 
 process.load("Geometry.CaloEventSetup.CaloTopology_cfi")
@@ -20,10 +18,10 @@ process.load("Geometry.EcalMapping.EcalMapping_cfi")
 
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
 
-process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
+from EventFilter.EcalRawToDigi.EcalUnpackerData_cfi import ecalEBunpacker
+process.ecalDigis = ecalEBunpacker.clone()
 
-import RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi
-process.ecalUncalibHit = RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi.ecalGlobalUncalibRecHit.clone()
+process.load("RecoLocalCalo.EcalRecProducers.ecalGlobalUncalibRecHit_cfi")
 
 process.load("RecoLocalCalo.EcalRecProducers.ecalDetIdToBeRecovered_cfi")
 
@@ -91,6 +89,7 @@ process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 process.ecalPhysicsFilter = cms.EDFilter("EcalMonitorPrescaler")
 
 
+
 ### JOB PARAMETERS ###
 
 process.maxEvents = cms.untracked.PSet(
@@ -133,11 +132,11 @@ process.MessageLogger = cms.Service("MessageLogger",
 process.ecalPreRecoSequence = cms.Sequence(
     process.preScaler +
 #    process.hltTriggerTypeFilter +
-    process.ecalEBunpacker
+    process.ecalDigis
 )
 
 process.ecalRecoSequence = cms.Sequence(
-    process.ecalUncalibHit *
+    process.ecalGlobalUncalibRecHit *
     process.ecalDetIdToBeRecovered *
     process.ecalRecHit
 )
@@ -229,32 +228,16 @@ process.load("DQM.Integration.test.inputsource_cfi")
 
  ## Reconstruction Modules ##
 
-process.ecalUncalibHit.EBdigiCollection = "ecalEBunpacker:ebDigis"
-process.ecalUncalibHit.EEdigiCollection = "ecalEBunpacker:eeDigis"
-
-process.ecalDetIdToBeRecovered.ebSrFlagCollection = "ecalEBunpacker"
-process.ecalDetIdToBeRecovered.eeSrFlagCollection = "ecalEBunpacker"
-process.ecalDetIdToBeRecovered.ebIntegrityGainErrors = "ecalEBunpacker:EcalIntegrityGainErrors"
-process.ecalDetIdToBeRecovered.ebIntegrityGainSwitchErrors = "ecalEBunpacker:EcalIntegrityGainSwitchErrors"
-process.ecalDetIdToBeRecovered.ebIntegrityChIdErrors = "ecalEBunpacker:EcalIntegrityChIdErrors"
-process.ecalDetIdToBeRecovered.eeIntegrityGainErrors = "ecalEBunpacker:EcalIntegrityGainErrors"
-process.ecalDetIdToBeRecovered.eeIntegrityGainSwitchErrors = "ecalEBunpacker:EcalIntegrityGainSwitchErrors"
-process.ecalDetIdToBeRecovered.eeIntegrityChIdErrors = "ecalEBunpacker:EcalIntegrityChIdErrors"
-process.ecalDetIdToBeRecovered.integrityTTIdErrors = "ecalEBunpacker:EcalIntegrityTTIdErrors"
-process.ecalDetIdToBeRecovered.integrityBlockSizeErrors = "ecalEBunpacker:EcalIntegrityBlockSizeErrors"
-
 process.ecalRecHit.killDeadChannels = True
 process.ecalRecHit.ChannelStatusToBeExcluded = [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 78, 142 ]
-process.ecalRecHit.EBuncalibRecHitCollection = "ecalUncalibHit:EcalUncalibRecHitsEB"
-process.ecalRecHit.EEuncalibRecHitCollection = "ecalUncalibHit:EcalUncalibRecHitsEE"
 
-process.simEcalTriggerPrimitiveDigis.Label = "ecalEBunpacker"
+process.simEcalTriggerPrimitiveDigis.Label = "ecalDigis"
 process.simEcalTriggerPrimitiveDigis.InstanceEB = "ebDigis"
 process.simEcalTriggerPrimitiveDigis.InstanceEE = "eeDigis"
 
  ## Filters ##
 
-process.ecalPhysicsFilter.EcalRawDataCollection = cms.InputTag("ecalEBunpacker")
+process.ecalPhysicsFilter.EcalRawDataCollection = cms.InputTag("ecalDigis")
 process.ecalPhysicsFilter.clusterPrescaleFactor = cms.untracked.int32(1)
 
 process.hltTriggerTypeFilter.SelectedTriggerType = 1 # 0=random, 1=physics, 2=calibration, 3=technical
@@ -277,47 +260,6 @@ process.ecalEndcapMonitorClient.verbose = False
 
 process.ecalBarrelMonitorClient.updateTime = 4
 process.ecalEndcapMonitorClient.updateTime = 4
-
-os.environ["TNS_ADMIN"] = "/etc"
-dbName = ""
-dbHostName = ""
-dbHostPort = 1521
-dbUserName = ""
-dbPassword = ""
-
-try :
-    file = open("/nfshome0/ecalpro/DQM/online-DQM/.cms_tstore.conf", "r")
-    for line in file :
-        if line.find("dbName") >= 0 :
-            dbName = line.split()[2]
-        if line.find("dbHostName") >= 0 :
-            dbHostName = line.split()[2]
-        if line.find("dbHostPort") >= 0 :
-            dbHostPort = int(line.split()[2])
-        if line.find("dbUserName") >= 0 :
-            dbUserName = line.split()[2]
-        if line.find("dbPassword") >= 0 :
-            dbPassword = line.split()[2]
-    file.close()
-except IOError :
-    pass
-
-process.ecalBarrelMonitorClient.dbName = dbName
-process.ecalBarrelMonitorClient.dbHostName = dbHostName
-process.ecalBarrelMonitorClient.dbHostPort = dbHostPort
-process.ecalBarrelMonitorClient.dbUserName = dbUserName
-process.ecalBarrelMonitorClient.dbPassword = dbPassword
-
-process.ecalEndcapMonitorClient.dbName = dbName
-process.ecalEndcapMonitorClient.dbHostName = dbHostName
-process.ecalEndcapMonitorClient.dbHostPort = dbHostPort
-process.ecalEndcapMonitorClient.dbUserName = dbUserName
-process.ecalEndcapMonitorClient.dbPassword = dbPassword
-
-process.ecalBarrelMonitorClient.dbUpdateTime = 120
-process.ecalBarrelMonitorClient.dbUpdateTime = 120
-process.ecalBarrelMonitorClient.dbTagName = "CMSSW-online-central"
-process.ecalEndcapMonitorClient.dbTagName = "CMSSW-online-central"
 
  ## DQM common modules ##
 
@@ -343,7 +285,7 @@ FedRawData = "rawDataCollector"
 if process.runType.getRunType() == process.runType.hi_run:
     FedRawData = "rawDataRepacker"
 
-process.ecalEBunpacker.InputLabel = cms.InputTag(FedRawData)
+process.ecalDigis.InputLabel = cms.InputTag(FedRawData)
 
 process.ecalBarrelRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
 process.ecalEndcapRawDataTask.FEDRawDataCollection = cms.InputTag(FedRawData)
