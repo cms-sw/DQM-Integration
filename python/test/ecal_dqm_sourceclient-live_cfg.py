@@ -119,7 +119,7 @@ process.ecalRecoSequence = cms.Sequence(
 )
 
 process.ecalClusterSequence = cms.Sequence(
-    process.hybridClusteringSequence +
+    process.hybridClusteringSequence *
     process.multi5x5ClusteringSequence
 )
 process.ecalClusterSequence.remove(process.multi5x5SuperClustersWithPreshower)
@@ -140,8 +140,8 @@ process.ecalClientPath = cms.Path(
 )
 
 process.dqmEndPath = cms.EndPath(
-    process.dqmEnv +
-    process.dqmQTest +
+    process.dqmEnv *
+    process.dqmQTest *
     process.dqmSaver
 )
 

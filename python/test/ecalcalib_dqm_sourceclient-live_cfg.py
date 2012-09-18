@@ -141,7 +141,7 @@ process.ecalClientPath = cms.Path(
 )
 
 process.dqmEndPath = cms.EndPath(
-    process.dqmEnv + +
+    process.dqmEnv *
     process.dqmSaver
 )
 
