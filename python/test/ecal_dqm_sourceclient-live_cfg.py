@@ -134,8 +134,6 @@ process.ecalMonitorPath = cms.Path(
 )
 
 process.ecalClientPath = cms.Path(
-    process.ecalPreRecoSequence *
-    process.ecalPhysicsFilter *
     process.ecalMonitorClient
 )
 
@@ -176,7 +174,7 @@ process.ecalPhysicsFilter.clusterPrescaleFactor = cms.untracked.int32(1)
  ## Ecal DQM modules ##
 
 process.ecalMonitorTask.online = True
-process.ecalMonitorClient.workers = ["ClusterTask", "EnergyTask", "IntegrityTask", "OccupancyTask", "RawDataTask", "TimingTask", "TrigPrimTask", "TowerStatusTask", "PresampleTask", "SelectiveReadoutTask"]
+process.ecalMonitorTask.workers = ["ClusterTask", "EnergyTask", "IntegrityTask", "OccupancyTask", "RawDataTask", "TimingTask", "TrigPrimTask", "PresampleTask", "SelectiveReadoutTask"]
 process.ecalMonitorTask.workerParameters.common.hltTaskMode = 0
 process.ecalMonitorTask.workerParameters.TrigPrimTask.runOnEmul = True
 
@@ -197,6 +195,8 @@ process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
 
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.dqmEndPath.remove(process.dqmQTest)
+    process.ecalMonitorTask.workers = ["EnergyTask", "IntegrityTask", "OccupancyTask", "RawDataTask", "TrigPrimTask", "PresampleTask", "SelectiveReadoutTask"]
+    process.ecalMonitorClient.workers = ["IntegrityClient", "OccupancyClient", "PresampleClient", "RawDataClient", "SelectiveReadoutClient", "TrigPrimClient", "SummaryClient"]    
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 

@@ -124,7 +124,6 @@ process.ecalLaserLedPath = cms.Path(
     process.ecalLaserLedMonitorTask *
     process.ecalPNDiodeMonitorTask
 )
-
 process.ecalTestPulsePath = cms.Path(
     process.ecalPreRecoSequence *
     process.ecalTestPulseFilter *    
