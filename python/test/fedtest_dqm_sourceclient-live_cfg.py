@@ -53,10 +53,10 @@ process.dtunpacker.useStandardFEDid = cms.bool(True)
 process.dtunpacker.dqmOnly = cms.bool(True)
 
 # ECAL DQM sequences
-process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
-process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
 process.load("Geometry.EcalMapping.EcalMapping_cfi")
 process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
+from EventFilter.EcalRawToDigi.EcalUnpackerData_cfi import ecalEBunpacker
+process.ecalDigis = ecalEBunpacker.clone()
 import DQM.EcalBarrelMonitorTasks.EBHltTask_cfi
 process.ebDQMEvF = DQM.EcalBarrelMonitorTasks.EBHltTask_cfi.ecalBarrelHltTask.clone()
 process.ebDQMEvF.folderName = cms.untracked.string('FEDIntegrity_SM')
@@ -118,7 +118,7 @@ process.dqmmodules = cms.Sequence(process.dqmEnv + process.dqmSaver)
 process.evfDQMPath = cms.Path(#process.physicsEventsFilter+
                               process.cscDQMEvF +
  			      process.dtunpacker +
- 			      process.ecalEBunpacker  + process.ebDQMEvF + process.eeDQMEvF +
+ 			      process.ecalDigis  + process.ebDQMEvF + process.eeDQMEvF +
 			      process.l1tfed +
  			      process.siPixelDigis + process.SiPixelHLTSource +
                               process.siStripFEDCheck + 
@@ -136,7 +136,7 @@ process.schedule = cms.Schedule(process.evfDQMPath,process.evfDQMmodulesPath)
 # Heavy Ion Specific Fed Raw Data Collection Label
 #--------------------------------------------------
 process.dtunpacker.inputLabel = cms.InputTag("rawDataCollector")
-process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataCollector")
+process.ecalDigis.InputLabel = cms.InputTag("rawDataCollector")
 process.esRawToDigi.sourceTag = cms.InputTag("rawDataCollector")
 process.hcalDigis.InputLabel = cms.InputTag("rawDataCollector")
 process.rpcunpacker.InputLabel = cms.InputTag("rawDataCollector")
@@ -155,7 +155,7 @@ print "Running with run type = ", process.runType.getRunType()
 
 if (process.runType.getRunType() == process.runType.hi_run):
     process.dtunpacker.inputLabel = cms.InputTag("rawDataRepacker")
-    process.ecalEBunpacker.InputLabel = cms.InputTag("rawDataRepacker")
+    process.ecalDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.esRawToDigi.sourceTag = cms.InputTag("rawDataRepacker")
     process.hcalDigis.InputLabel = cms.InputTag("rawDataRepacker")
     process.rpcunpacker.InputLabel = cms.InputTag("rawDataRepacker")
