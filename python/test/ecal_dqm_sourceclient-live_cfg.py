@@ -196,7 +196,8 @@ process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
 if process.runType.getRunType() == process.runType.cosmic_run :
     process.dqmEndPath.remove(process.dqmQTest)
     process.ecalMonitorTask.workers = ["EnergyTask", "IntegrityTask", "OccupancyTask", "RawDataTask", "TrigPrimTask", "PresampleTask", "SelectiveReadoutTask"]
-    process.ecalMonitorClient.workers = ["IntegrityClient", "OccupancyClient", "PresampleClient", "RawDataClient", "SelectiveReadoutClient", "TrigPrimClient", "SummaryClient"]    
+    process.ecalMonitorClient.workers = ["IntegrityClient", "OccupancyClient", "PresampleClient", "RawDataClient", "SelectiveReadoutClient", "TrigPrimClient", "SummaryClient"]
+    process.ecalMonitorClient.workerParameters.SummaryClient.activeSources = ["Integrity", "RawData", "Presample", "TriggerPrimitives", "HotCell"]
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
