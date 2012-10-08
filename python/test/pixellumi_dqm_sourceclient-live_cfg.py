@@ -99,17 +99,17 @@ process.PixelLumiDqmHFGetter = cms.EDAnalyzer("HFLumiGetter")
 
 #----------------
 # Lumi from "DIP"
-#----------------
-process.DBService=cms.Service('DBService',
-                              authPath= cms.untracked.string('/nfshome0/popcondev/conddb')       
-                              )
-process.GlobalTag.DBParameters.authenticationPath = process.DBService.authPath
-process.DIPLumiProducer=cms.ESSource("DIPLumiProducer",
-                                     connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER')
-                                     # NB: Zhen's recommendion below does NOT work for Online;
-                                     #     Crashes at end of LS!!!
-                                     #     connect=cms.string('oracle://cms_orcon_prod/cms_lumi_prod')
-                                     )
+#-------------------------------------------------
+# process.DBService=cms.Service('DBService',
+#         authPath= cms.untracked.string('/nfshome0/centraltspro/secure/')       
+# )
+process.GlobalTag.DBParameters.authenticationPath = cms.untracked.string('/nfshome0/centraltspro/secure/')
+# process.DIPLumiProducer=cms.ESSource("DIPLumiProducer",
+#                                      connect=cms.string('oracle://cms_omds_lb/CMS_RUNTIME_LOGGER')
+#                                      #Zhen recommends:
+# #        connect=cms.string('oracle://cms_orcon_prod/cms_lumi_prod')
+# #        crashes at end of lumisection
+#                                     )
 
 process.options = cms.untracked.PSet(
     wantSummary = cms.untracked.bool(True)
@@ -126,6 +126,7 @@ process.DQMEventStreamHttpReader.consumerName = 'DQM Pixel Luminosity Consumer'
 process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputALCALUMIPIXELS')
 process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(200.0)
 process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('AlCa_LumiPixels_ZeroBias_v*'))
+
 
 # Only unpack pixel data; there is nothing else, really.
 process.MyRawToDigi = cms.Sequence(process.siPixelDigis)
@@ -169,8 +170,7 @@ process.plumdqm_alca_zerobias_step = cms.Path(
 #--------------------
 process.schedule = cms.Schedule(process.raw2digi_step,
                                 process.reconstruction_step,
-                                process.HF,
-                                #process.plumdqm_alca_lumipixel_step,
+#                                process.HF,
                                 process.plumdqm_alca_zerobias_step,
                                 #process.plumdqm_alca_random_step,
                                 process.dqm_step)
