@@ -88,7 +88,8 @@ from DQM.PixelLumi.PixelLumiDQM_cfi import pixel_lumi_dqm
 process.PixelLumiDqmAlcaLumiPixel = pixel_lumi_dqm
 
 process.PixelLumiDqmZeroBias = pixel_lumi_dqm.clone(
-    resetEveryNLumiSections=cms.untracked.int32(1)
+    resetEveryNLumiSections=cms.untracked.int32(1),
+    logFileName = cms.untracked.string("/nfshome0/dqmpro/pixel_lumi.txt")
     )
 
 process.PixelLumiDqmRandom = pixel_lumi_dqm.clone(
