@@ -89,9 +89,14 @@ process.PixelLumiDqmAlcaLumiPixel = pixel_lumi_dqm
 
 process.PixelLumiDqmZeroBias = pixel_lumi_dqm.clone(
     resetEveryNLumiSections=cms.untracked.int32(1),
-    logFileName = cms.untracked.string("/nfshome0/dqmpro/pixel_lumi.txt")
+    logFileName = cms.untracked.string("/nfshome0/dqmdev/pixel_lumi.txt")
     )
+if process.dqmSaver.producer.value() is "Playback":
+    process.PixelLumiDqmZeroBias.logFileName = cms.untracked.string("/nfshome0/dqmdev/pixel_lumi.txt")
+else:
+    process.PixelLumiDqmZeroBias.logFileName = cms.untracked.string("/nfshome0/dqmpro/pixel_lumi.txt")
 
+    
 process.PixelLumiDqmRandom = pixel_lumi_dqm.clone(
     resetEveryNLumiSections=cms.untracked.int32(20)
     )
