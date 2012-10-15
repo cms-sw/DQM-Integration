@@ -190,8 +190,7 @@ process.ecalTestPulseFilter.testpulsePrescaleFactor = cms.untracked.int32(1)
  ## DQM common modules ##
 
 process.dqmEnv.subSystemFolder = cms.untracked.string("EcalCalibration")
-
-process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecalcalib_reference.root"
+process.dqmSaver.convention = "Online"
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("EcalCalibration DQM Consumer")

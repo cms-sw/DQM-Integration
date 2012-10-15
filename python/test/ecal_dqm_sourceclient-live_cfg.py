@@ -49,12 +49,12 @@ process.load("DQM.EcalBarrelMonitorClient.EcalMonitorClient_cfi")
 process.load("DQMServices.Core.DQM_cfg")
 
 process.dqmQTest = cms.EDAnalyzer("QualityTester",
-  reportThreshold = cms.untracked.string("red"),
-  prescaleFactor = cms.untracked.int32(1),
-  qtList = cms.untracked.FileInPath("DQM/EcalCommon/data/EcalQualityTests.xml"),
-  getQualityTestsFromFile = cms.untracked.bool(True),
-  qtestOnEndLumi = cms.untracked.bool(True),
-  qtestOnEndRun = cms.untracked.bool(True)
+    reportThreshold = cms.untracked.string("red"),
+    prescaleFactor = cms.untracked.int32(1),
+    qtList = cms.untracked.FileInPath("DQM/EcalCommon/data/EcalQualityTests.xml"),
+    getQualityTestsFromFile = cms.untracked.bool(True),
+    qtestOnEndLumi = cms.untracked.bool(True),
+    qtestOnEndRun = cms.untracked.bool(True)
 )
 
 process.load("DQM.Integration.test.environment_cfi")
@@ -185,19 +185,23 @@ process.ecalMonitorClient.workerParameters.SummaryClient.activeSources = ["Integ
  ## DQM common modules ##
 
 process.dqmEnv.subSystemFolder = cms.untracked.string("Ecal")
-
-process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference.root"
+process.dqmSaver.convention = "Online"
 
  ## Source ##
 process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
 
  ## Run type specific ##
 
-if process.runType.getRunType() == process.runType.cosmic_run :
+if process.runType.getRunType() == process.runType.pp_run :
+    process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference_pp.root"
+elif process.runType.getRunType() == process.runType.cosmic_run :
+    process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference_cosmic.root"
     process.dqmEndPath.remove(process.dqmQTest)
     process.ecalMonitorTask.workers = ["EnergyTask", "IntegrityTask", "OccupancyTask", "RawDataTask", "TrigPrimTask", "PresampleTask", "SelectiveReadoutTask"]
     process.ecalMonitorClient.workers = ["IntegrityClient", "OccupancyClient", "PresampleClient", "RawDataClient", "SelectiveReadoutClient", "TrigPrimClient", "SummaryClient"]
     process.ecalMonitorClient.workerParameters.SummaryClient.activeSources = ["Integrity", "RawData", "Presample", "TriggerPrimitives", "HotCell"]
+elif process.runType.getRunType() == process.runType.hi_run:
+    process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/ecal_reference_hi.root"
 elif process.runType.getRunType() == process.runType.hpu_run:
     process.source.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring("*"))
 
