@@ -69,7 +69,12 @@ if (process.runType.getRunType() == process.runType.pp_run):
                                         'HLT_Dimuon*', 
                                         'HLT_L2DoubleMu*', 
                                         'HLT_L2Mu*', 
-                                        'HLT_L1TrackerCosmics*')
+                                        'HLT_L1TrackerCosmics*',
+                                        'HLT_PADimuon*',
+                                        'HLT_PADoubleMu*',
+                                        'HLT_PAL1DoubleMu*',
+                                        'HLT_PAL1SingleMu*',
+                                        'HLT_PAMu*')
                                       )
 
 #----------------------------
