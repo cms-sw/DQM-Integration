@@ -115,6 +115,7 @@ process.hcalBeamMonitor.hotrate=0.40
 
 process.load("DQM.HcalMonitorClient.HcalMonitorClient_cfi")
 process.load("DQM.HcalMonitorClient.ZDCMonitorClient_cfi")
+process.load("DQM.HcalMonitorTasks.HcalZDCMonitor_cfi")
 
 #-----------------------------
 #  Configure Hcal DQM
@@ -257,6 +258,11 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndRun = cms.untracked.bool(True)
 )
 
+if (HEAVYION):
+    process.hcalDigis.InputLabel="rawDataRepacker"
+    process.hcalDigis.FilterDataQuality=False
+    process.zdcMonitor.FEDRawDataCollection="rawDataRepacker"
+
 process.p = cms.Path(process.hcalDigis
                      *process.valHcalTriggerPrimitiveDigis
                      *process.gtEvmDigis#to unpack l1gtEvm
@@ -269,7 +275,7 @@ process.p = cms.Path(process.hcalDigis
                      *process.hcalMonitorTasksOnlineSequence 
                      *process.hcalClient
                      *process.qTester
-                     *process.zdcMonitor
+                     *process.hcalZDCMonitor
                      *process.zdcClient
                      *process.dqmEnv
                      *process.dqmSaver)
@@ -331,4 +337,5 @@ if (HEAVYION):
     process.hcalNZSMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
     process.hcalNoiseMonitor.RawDataLabel = cms.untracked.InputTag("rawDataRepacker")
     process.hcalRawDataMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
+    process.hcalDigiMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
     process.zdcMonitor.FEDRawDataCollection = cms.untracked.InputTag("rawDataRepacker")
