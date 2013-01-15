@@ -6,6 +6,7 @@ process = cms.Process("CASTORDQM")
 #================================+
 process.load("DQM.Integration.test.inputsource_cfi")
 process.DQMEventStreamHttpReader.consumerName = 'CASTOR DQM Consumer'
+process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 
 #================================
 # DQM Environment
@@ -66,7 +67,6 @@ process.es_pool = cms.ESSource(
            )
    )
 )
-
 
 
 #-----------------------------
