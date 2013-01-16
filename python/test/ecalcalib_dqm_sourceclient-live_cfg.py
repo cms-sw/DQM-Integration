@@ -187,6 +187,9 @@ process.ecalTestPulseFilter.testpulsePrescaleFactor = cms.untracked.int32(1)
 
  ## Ecal DQM modules ##
 
+process.ecalLaserLedMonitorTask.workerParameters.common.laserWavelengths = [2, 3, 4]
+process.ecalCalibMonitorClient.workerParameters.common.laserWavelengths = [2, 3, 4]
+
  ## DQM common modules ##
 
 process.dqmEnv.subSystemFolder = cms.untracked.string("EcalCalibration")
