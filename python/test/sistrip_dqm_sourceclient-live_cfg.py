@@ -258,6 +258,8 @@ if (process.runType.getRunType() == process.runType.pp_run):
     process.SiStripAnalyser.RawDataTag = cms.untracked.InputTag("rawDataCollector")
     process.SiStripClients           = cms.Sequence(process.SiStripAnalyser)
 
+    process.SiStripMonitorDigi.TotalNumberOfDigisFailure.integrateNLumisections = cms.int32(25)
+    
     # Reco for pp collisions
 
     process.load('RecoTracker.Configuration.RecoTracker_cff')
