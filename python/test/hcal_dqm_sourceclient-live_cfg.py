@@ -258,11 +258,6 @@ process.qTester = cms.EDAnalyzer("QualityTester",
     qtestOnEndRun = cms.untracked.bool(True)
 )
 
-if (HEAVYION):
-    process.hcalDigis.InputLabel="rawDataRepacker"
-    process.hcalDigis.FilterDataQuality=False
-    process.zdcMonitor.FEDRawDataCollection="rawDataRepacker"
-
 process.p = cms.Path(process.hcalDigis
                      *process.valHcalTriggerPrimitiveDigis
                      *process.gtEvmDigis#to unpack l1gtEvm
@@ -276,7 +271,6 @@ process.p = cms.Path(process.hcalDigis
                      *process.hcalClient
                      *process.qTester
                      *process.hcalZDCMonitor
-                     *process.zdcClient
                      *process.dqmEnv
                      *process.dqmSaver)
 
