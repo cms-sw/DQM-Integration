@@ -107,7 +107,7 @@ process.castorMonitor = cms.EDAnalyzer("CastorMonitorModule",
                            CastorJetIDLabel     = cms.InputTag("ak7CastorJetID"),
                           
 			   DataIntMonitor= cms.untracked.bool(True),
-			   TowerJetMonitor= cms.untracked.bool(True),
+			   TowerJetMonitor= cms.untracked.bool(False),
 
                            DigiMonitor = cms.untracked.bool(True),
                            DigiPerChannel = cms.untracked.bool(True), 
