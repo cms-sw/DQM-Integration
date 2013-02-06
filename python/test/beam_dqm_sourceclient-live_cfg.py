@@ -153,7 +153,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
     process.dqmBeamMonitor.resetPVEveryNLumi = 5
     process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
     process.dqmBeamMonitor.PVFitter.minVertexNdf = 10
-    process.dqmBeamMonitor.PVFitter.errorScale = 1.32 #keep checking this with new release
+    process.dqmBeamMonitor.PVFitter.errorScale = 1.18 #keep checking this with new release
 
 
     #TriggerName for selecting pv for DIP publication, NO wildcard needed here
@@ -229,7 +229,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.dqmBeamMonitor.BeamFitter.MinimumTotalLayers = 3   ## using pixel triplets
     process.dqmBeamMonitor.PVFitter.minVertexNdf = 10
     process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
-    process.dqmBeamMonitor.PVFitter.errorScale = 1.32
+    process.dqmBeamMonitor.PVFitter.errorScale = 1.18
 
     process.dqmBeamMonitor.jetTrigger  = cms.untracked.vstring("HLT_HI")
 
