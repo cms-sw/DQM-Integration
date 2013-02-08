@@ -20,7 +20,7 @@ process.load("DQM.Integration.test.inputsource_cfi")
 process.DQMEventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
 process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*',
-                               'HLT_Physics*','HLT_ZeroBias*','HLT_PAL1*','HLT_PAZeroBias_*',,'HLT_PA*'))
+                               'HLT_Physics*','HLT_ZeroBias*','HLT_PAL1*','HLT_PAZeroBias_*','HLT_PA*'))
 
 ##
 #----------------------------
