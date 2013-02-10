@@ -135,7 +135,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
                                         'HLT_HT*',
                                         'HLT_MinBias_*',
                                         'HLT_Physics*',
-                                        'HLT_ZeroBias*'
+                                        'HLT_ZeroBias_*',
                                         'HLT_PAL1*',
                                         'HLT_PAZeroBias_*')
                                       )
@@ -153,12 +153,13 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
     process.dqmBeamMonitor.resetPVEveryNLumi = 5
     process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
     process.dqmBeamMonitor.PVFitter.minVertexNdf = 10
-    process.dqmBeamMonitor.PVFitter.errorScale = 1.18 #keep checking this with new release
+    process.dqmBeamMonitor.PVFitter.errorScale = 1.3 #keep checking this with new release
 
 
     #TriggerName for selecting pv for DIP publication, NO wildcard needed here
     #it will pick all triggers which has these strings in theri name
     process.dqmBeamMonitor.jetTrigger  = cms.untracked.vstring("HLT_PAZeroBias_v",
+                                                               "HLT_ZeroBias_v*", 
                                                                "HLT_QuadJet60_Di",
                                                                "HLT_QuadJet80_L1",
                                                                "HLT_QuadJet90_L1")
@@ -229,7 +230,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.dqmBeamMonitor.BeamFitter.MinimumTotalLayers = 3   ## using pixel triplets
     process.dqmBeamMonitor.PVFitter.minVertexNdf = 10
     process.dqmBeamMonitor.PVFitter.minNrVerticesForFit = 20
-    process.dqmBeamMonitor.PVFitter.errorScale = 1.18
+    process.dqmBeamMonitor.PVFitter.errorScale = 1.3
 
     process.dqmBeamMonitor.jetTrigger  = cms.untracked.vstring("HLT_HI")
 
