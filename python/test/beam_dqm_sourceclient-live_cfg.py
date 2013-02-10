@@ -159,7 +159,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
     #TriggerName for selecting pv for DIP publication, NO wildcard needed here
     #it will pick all triggers which has these strings in theri name
     process.dqmBeamMonitor.jetTrigger  = cms.untracked.vstring("HLT_PAZeroBias_v",
-                                                               "HLT_ZeroBias_v*", 
+                                                               "HLT_ZeroBias_v", 
                                                                "HLT_QuadJet60_Di",
                                                                "HLT_QuadJet80_L1",
                                                                "HLT_QuadJet90_L1")
