@@ -135,7 +135,7 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
                                         'HLT_HT*',
                                         'HLT_MinBias_*',
                                         'HLT_Physics*',
-                                        'HLT_ZeroBias_*',
+                                        'HLT_ZeroBias*',
                                         'HLT_PAL1*',
                                         'HLT_PAZeroBias_*')
                                       )
