@@ -136,10 +136,8 @@ process.qTester = cms.EDAnalyzer("QualityTester",
 )
 
 #--------------------------
-# Web Service
+# Service
 #--------------------------
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
-
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 # Simple filter for event

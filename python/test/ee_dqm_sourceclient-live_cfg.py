@@ -414,7 +414,6 @@ process.MessageLogger = cms.Service("MessageLogger",
   destinations = cms.untracked.vstring('cout')
 )
 
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 
 process.preScaler.prescaleFactor = 1
 

@@ -414,8 +414,6 @@ process.MessageLogger = cms.Service("MessageLogger",
   destinations = cms.untracked.vstring('cout')
 )
 
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
-
 process.preScaler.prescaleFactor = 1
 
 if (liveECAL == 1) | (liveCMS == 1) | (playCMS == 1) :

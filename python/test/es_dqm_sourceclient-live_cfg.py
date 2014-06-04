@@ -22,7 +22,6 @@ process.ecalPreshowerRecHit.ESMIPADC = cms.double(50)
 process.ecalPreshowerRecHit.ESdigiCollection = cms.InputTag("esRawToDigi")
 process.ecalPreshowerRecHit.ESRecoAlgo = cms.int32(0)
 
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.preScaler.prescaleFactor = 1
 
 #process.dqmInfoES = cms.EDAnalyzer("DQMEventInfo",

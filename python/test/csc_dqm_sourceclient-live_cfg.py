@@ -80,10 +80,8 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 
 #--------------------------
-# Web Service
+# Service
 #--------------------------
-
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 #--------------------------

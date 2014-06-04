@@ -87,7 +87,7 @@ WriteDQMSummaryIntoOMDS::readData(const std::string & file)
  std::string Run="Run";
  // string needed for parsing 
  char subsys[50], comp[50], tmp[3];
- int i=0, j=0, l=0;
+ int l=0;
    //reading the file and filling the struct
   while(!indata.eof()) {
     indata.getline(line,100);
@@ -99,11 +99,11 @@ WriteDQMSummaryIntoOMDS::readData(const std::string & file)
     if ( l==1  || first_three_char ==spaces) continue;
     if (first_three_char==Run){
       // getting run number and subdetector name 
-      i=  sscanf( line, "%s%d%s", tmp , &ItemI_tmp.m_run , subsys);
+      sscanf( line, "%s%d%s", tmp , &ItemI_tmp.m_run , subsys);
       ItemI_tmp.m_subsystem = subsys;
     } else {
       // getting the string/component between the < .... > and the status
-      j=  sscanf( line, "<%[^>]>%f",comp,&ItemI_tmp.m_status );
+      sscanf( line, "<%[^>]>%f",comp,&ItemI_tmp.m_status );
       ItemI_tmp.m_reportcontent=comp;
          m_itemvec.push_back(ItemI_tmp);
        }

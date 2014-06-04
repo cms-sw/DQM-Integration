@@ -111,9 +111,8 @@ if (process.runType.getRunType() == process.runType.hi_run):
         process.sipixelEDAClientP5.inputSource = cms.untracked.string("rawDataRepacker")
         process.sipixelDaqInfo.daqSource   = cms.untracked.string("rawDataRepacker")
 #--------------------------
-# Web Service
+# Service
 #--------------------------
-process.ModuleWebRegistry = cms.Service("ModuleWebRegistry")
 process.AdaptorConfig = cms.Service("AdaptorConfig")
 
 #--------------------------
