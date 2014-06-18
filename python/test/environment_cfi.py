@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 #from DQMServices.Core.DQM_cfg import *
+from DQMServices.Core.DQMStore_cfi import *
 
 DQM = cms.Service("DQM",                                                                                                                                                                           
                   debug = cms.untracked.bool(False),
