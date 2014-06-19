@@ -16,17 +16,16 @@ QTestfile = 'DQM/SiPixelMonitorClient/test/sipixel_qualitytest_config.xml'
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'Pixel DQM Consumer'
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring('HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*',
-                               'HLT_Physics*','HLT_ZeroBias*','HLT_PAL1*','HLT_PAZeroBias_*','HLT_PA*'))
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 ##
 #----------------------------
 # DQM Environment
 #-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -34,6 +33,9 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "Pixel"
+# for local running
+process.dqmSaver.dirName = '.'
+
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference_pp.root'
 if (process.runType.getRunType() == process.runType.hi_run):
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/pixel_reference_hi.root'
@@ -55,10 +57,10 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #-------------------------------------------------
 # GLOBALTAG
 #-------------------------------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-
-#If Frontier is used in xdaq environment use the following service
-#    service = SiteLocalConfigService {}
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #-----------------------
 #  Reconstruction Modules
@@ -73,9 +75,9 @@ process.load("RecoLocalTracker.SiPixelClusterizer.SiPixelClusterizer_cfi")
 #----------------------------------
 # High Pileup Configuration Changes
 #----------------------------------
-if (process.runType.getRunType() == process.runType.hpu_run):
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
+#if (process.runType.getRunType() == process.runType.hpu_run):
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+#        SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_*Cosmic*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*','HLT_HcalNZS*'))
 
 
 process.siPixelDigis.InputLabel   = cms.InputTag("rawDataCollector")
@@ -87,8 +89,8 @@ if (process.runType.getRunType() == process.runType.hi_run):
     process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
     process.load('Configuration.StandardSequences.RawToDigi_Repacked_cff')
     process.siPixelDigis.InputLabel   = cms.InputTag("rawDataRepacker")
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('HLT_HI*'))
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
+#        SelectEvents = cms.vstring('HLT_HI*'))
 
 #--------------------------
 # Pixel DQM Source and Client
@@ -119,9 +121,10 @@ process.AdaptorConfig = cms.Service("AdaptorConfig")
 # Filters
 #--------------------------
 # HLT Filter
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
+process.hltTriggerTypeFilter = cms.EDFilter("HLTTriggerTypeFilter",
+    SelectedTriggerType = cms.int32(1)
+)
 
 #--------------------------
 # Scheduling
