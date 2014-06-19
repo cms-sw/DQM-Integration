@@ -14,19 +14,15 @@ process.MessageLogger = cms.Service("MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'SiStrip DQM Consumer'
-## uncomment for running on playback
-#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:50082/urn:xdaq-application:lid=29')
-## uncomment for running on live
-#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30')
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 # DQM Environment
 #-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
-process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
-
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -35,6 +31,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #from DQM.Integration.test.environment_cfi import HEAVYION
 
 process.load("DQM.Integration.test.environment_cfi")
+process.DQM.filter = '^(SiStrip|Tracking)(/[^/]+){0,5}$'
 
 process.dqmEnv.subSystemFolder    = "SiStrip"
 process.dqmSaver.producer = "Playback"
@@ -42,7 +39,7 @@ process.dqmSaver.saveByTime = 60
 process.dqmSaver.saveByMinute = 60
 
 # uncomment for running in local
-#process.dqmSaver.dirName     = '.'
+process.dqmSaver.dirName     = '.'
 
 process.dqmEnvTr = cms.EDAnalyzer("DQMEventInfo",
                  subSystemFolder = cms.untracked.string('Tracking'),
@@ -78,7 +75,11 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #--------------------------
 # Calibration
 #--------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
+
 #--------------------------------------------
 ## Patch to avoid using Run Info information in reconstruction
 #
@@ -158,9 +159,10 @@ process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts2011_cfi")
 # Filters
 #--------------------------
 # HLT Filter
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
+process.hltTriggerTypeFilter = cms.EDFilter("HLTTriggerTypeFilter",
+    SelectedTriggerType = cms.int32(1)
+)
 
 # L1 Trigger Bit Selection (bit 40 and 41 for BSC trigger)
 process.load('L1TriggerConfig.L1GtConfigProducers.L1GtTriggerMaskTechTrigConfig_cff')
@@ -190,7 +192,7 @@ process.SiStripMonitorClusterReal.TH1ClusterCharge.moduleswitchon = True
 
 if (process.runType.getRunType() == process.runType.cosmic_run):
     # event selection for cosmic data
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_*Cosmic*','HLT_ZeroBias*'))
+#    process.DQMStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*','HLT_*Cosmic*','HLT_ZeroBias*'))
     # Reference run for cosmic
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_cosmic.root'
     # Source and Client config for cosmic data
@@ -233,14 +235,14 @@ if (process.runType.getRunType() == process.runType.cosmic_run):
 #else :
 if (process.runType.getRunType() == process.runType.pp_run):
     #event selection for pp collisions
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*',
-                                                                                                  'HLT_Jet*',
-                                                                                                  'HLT_HT*',
-                                                                                                  'HLT_MinBias_*',
-                                                                                                  'HLT_Physics*',
-                                                                                                  'HLT_ZeroBias*',
-                                                                                                  'HLT_PAL1*',
-                                                                                                  'HLT_PAZeroBias_*'))    
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_L1*',
+#                                                                                                  'HLT_Jet*',
+#                                                                                                  'HLT_HT*',
+#                                                                                                  'HLT_MinBias_#*',
+#                                                                                                  'HLT_Physics*#',
+#                                                                                                  'HLT_ZeroBias#*',
+#                                                                                                  'HLT_PAL1*',
+#                                                                                                  'HLT_PAZeroBias_*'))    
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
     # Source and Client config for pp collisions
 
@@ -316,7 +318,7 @@ if (process.runType.getRunType() == process.runType.hpu_run):
     # it should already be ok, but the name could be changed
     process.hltHighLevel.HLTPaths = cms.vstring( 'HLT_ZeroBias*' )
 
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
 #
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_pp.root'
 
@@ -423,7 +425,7 @@ if (process.runType.getRunType() == process.runType.hi_run):
         maxClusters = cms.uint32(50000)
         )
     # Trigger selection
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*','HLT_HIMinBias*'))
+#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIJet*','HLT_HICentralityVeto*','HLT_HIFullTrack*','HLT_HIMinBias*'))
 #
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/sistrip_reference_hi.root'
     # Quality test for HI                                                                                                                  
