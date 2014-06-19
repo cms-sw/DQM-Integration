@@ -78,7 +78,11 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 # Condition for P5 cluster
 #process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 # Condition for lxplus
-process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
+#process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:com10', '')
+
 
 #--------------------------------------------
 ## Patch to avoid using Run Info information in reconstruction
@@ -153,7 +157,8 @@ process.eventFilter = cms.EDFilter("SimpleEventFilter",
 process.load("DPGAnalysis.SiStripTools.eventwithhistoryproducerfroml1abc_cfi")
 
 # APV Phase Producer
-process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts2011_cfi")
+#process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1ts2011_cfi")
+process.load("DPGAnalysis.SiStripTools.apvcyclephaseproducerfroml1tsDB_cfi")
 
 #--------------------------
 # Filters
