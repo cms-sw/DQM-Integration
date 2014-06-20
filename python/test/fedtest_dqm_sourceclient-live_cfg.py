@@ -5,11 +5,11 @@ process = cms.Process("EvFDQM")
 #----------------------------
 #### Event Source
 #----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'FEDTest DQM Consumer'
-#process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(50.0)
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 
-
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 #### DQM Environment
@@ -23,6 +23,7 @@ process.load("DQMServices.Core.DQM_cfg")
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'FEDTest'
+process.dqmSaver.dirName = '.'
 #-----------------------------
 
 
