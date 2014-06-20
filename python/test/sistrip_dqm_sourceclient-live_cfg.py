@@ -78,11 +78,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 # Condition for P5 cluster
 #process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 # Condition for lxplus
-#process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
-process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:com10', '')
-
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #--------------------------------------------
 ## Patch to avoid using Run Info information in reconstruction
