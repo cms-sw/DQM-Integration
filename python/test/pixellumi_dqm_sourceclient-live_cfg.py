@@ -37,12 +37,14 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 #----------
 # GLOBALTAG
 #----------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #----------------
 # DQM Environment
 #----------------
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #-----------------------------------------------------------------------------
@@ -50,7 +52,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #-----------------------------------------------------------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "PixelLumi"
-
+process.dqmSaver.dirName = '.'
 #------------------------
 #  Reconstruction Modules
 #------------------------
