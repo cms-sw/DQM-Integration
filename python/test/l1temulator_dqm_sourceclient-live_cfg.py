@@ -13,34 +13,35 @@ process = cms.Process("L1TEmuDQMlive")
 #----------------------------
 # Event Source
 #
-
-process.load("DQM.Integration.test.inputsource_cfi")
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 #
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring("*")
-    )
-process.DQMEventStreamHttpReader.consumerName = 'L1TEMU DQM Consumer'
-
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 # DQM Environment
 #
  
 #
-process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.dqmEnv.subSystemFolder = 'L1TEMU'
 
 #
 process.load("DQM.Integration.test.environment_cfi")
+# for local test
+process.dqmSaver.dirName = '.'
 #
 # no references needed
 # replace DQMStore.referenceFileName = "L1TEMU_reference.root"
 
 #
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
 
