@@ -5,25 +5,25 @@ process = cms.Process("DTDQM")
 #----------------------------
 #### Event Source
 #----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'DT DQM Consumer'
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 #### DQM Environment
 #----------------------------
-process.load("DQMServices.Core.DQM_cfg")
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+process.load("DQM.Integration.test.environment_cfi")
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference.root'
 #process.DQMStore.referenceFileName = "DT_reference.root"
-
-process.load("DQMServices.Components.DQMEnvironment_cfi")
-
 
 #----------------------------
 #### DQM Live Environment
 #----------------------------
-process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'DT'
-#process.dqmSaver.dirName = "."
+process.dqmSaver.dirName = "."
 #-----------------------------
 
 
@@ -31,9 +31,10 @@ process.dqmEnv.subSystemFolder = 'DT'
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("DQM.DTMonitorModule.dt_dqm_sourceclient_common_cff")
 #---- for P5 (online) DB access
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 #---- for offline DB
-#process.GlobalTag.globaltag = "GR09_H_V2::All"
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
+
 
 # message logger
 process.MessageLogger = cms.Service("MessageLogger",
@@ -61,21 +62,6 @@ print "Running with run type = ", process.runType.getRunType()
 if (process.runType.getRunType() == process.runType.pp_run):
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_pp.root'
 
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-             SelectEvents = cms.vstring('HLT_Mu*', 
-                                        'HLT_DoubleMu*', 
-                                        'HLT_L1SingleMu*', 
-                                        'HLT_IsoMu*', 
-                                        'HLT_Dimuon*', 
-                                        'HLT_L2DoubleMu*', 
-                                        'HLT_L2Mu*', 
-                                        'HLT_L1TrackerCosmics*',
-                                        'HLT_PADimuon*',
-                                        'HLT_PADoubleMu*',
-                                        'HLT_PAL1DoubleMu*',
-                                        'HLT_PAL1SingleMu*',
-                                        'HLT_PAMu*')
-                                      )
 
 #----------------------------
 #### cosmic run settings 
@@ -84,10 +70,6 @@ if (process.runType.getRunType() == process.runType.pp_run):
 if (process.runType.getRunType() == process.runType.cosmic_run):
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_cosmic.root'
 
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-             SelectEvents = cms.vstring('HLT_L1TrackerCosmics*',
-                                        'HLT_L1SingleMuOpen_AntiBPTX*')
-                                      )
 
 #----------------------------
 #### HI run settings 
@@ -104,13 +86,3 @@ if (process.runType.getRunType() == process.runType.hi_run):
 
     process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/dt_reference_hi.root'
 
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-             SelectEvents = cms.vstring('HLT_Mu*', 
-                                        'HLT_DoubleMu*', 
-                                        'HLT_L1SingleMu*', 
-                                        'HLT_IsoMu*', 
-                                        'HLT_Dimuon*', 
-                                        'HLT_L2DoubleMu*', 
-                                        'HLT_L2Mu*', 
-                                        'HLT_L1TrackerCosmics*')
-                                      )
