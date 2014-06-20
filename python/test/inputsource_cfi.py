@@ -1,29 +1,64 @@
 import FWCore.ParameterSet.Config as cms
-import socket
-maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+import FWCore.ParameterSet.VarParsing as VarParsing
+
+import sys
+from dqmPythonTypes import *
+
+options = VarParsing.VarParsing('analysis')
+
+options.register('runNumber',
+                 194533,
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.int,
+                 "Run number.")
+
+options.register('runInputDir',
+                 '/fff/BU0/test',
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.string,
+                 "Directory where the DQM files will appear.")
+
+options.register('skipFirstLumis',
+                 False, # default value
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.bool,
+                 "Skip (and ignore the minEventsPerLumi parameter) for the files which have been available at the begining of the processing. ")
+
+# Parameters for runType
+
+options.register('runtype',
+         'pp_run',
+        VarParsing.VarParsing.multiplicity.singleton,
+        VarParsing.VarParsing.varType.string,
+          "Type of Run in CMS")
+
+options.register ('runkey',
+          'pp_run',
+          VarParsing.VarParsing.multiplicity.singleton,
+          VarParsing.VarParsing.varType.string,
+          "Run Keys of CMS")
+
+options.parseArguments()
+
+# Fix to allow scram to compile
+#if len(sys.argv) > 1:
+#  options.parseArguments()
+
+runType = RunType(['pp_run','cosmic_run','hi_run','hpu_run'])
+if not options.runkey.strip():
+  options.runkey = 'pp_run'
+
+runType.setRunType(options.runkey.strip())
+
+# Input source
+source = cms.Source("DQMStreamerReader",
+    runNumber = cms.untracked.uint32(options.runNumber),
+    runInputDir = cms.untracked.string(options.runInputDir),
+    streamLabel = cms.untracked.string(''),
+    minEventsPerLumi = cms.untracked.int32(9999),
+    delayMillis = cms.untracked.uint32(500),
+    skipFirstLumis = cms.untracked.bool(options.skipFirstLumis),
+    deleteDatFiles = cms.untracked.bool(False),
+    endOfRunKills  = cms.untracked.bool(False),
 )
-source = cms.Source("DQMEventStreamHttpReader",
-    #General porpouse SMProxy Server
-    #sourceURL = cms.string('http://dqm-c2d07-30.cms:22100/urn:xdaq-application:lid=30'),
-    
-    #SMPlayback Server
-    #sourceURL = cms.string('http://dqm-c2d07-30:50082/urn:xdaq-application:lid=29'),
-    
-    #local SMProxy Serve
-    sourceURL = cms.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),
-    
-    #Storage Manager
-    #sourceURL = cms.string('http://srv-c2c06-13.cms:11100/urn:xdaq-application:lid=50'),
-    consumerPriority = cms.untracked.string('normal'),
-    max_event_size = cms.int32(7000000),
-    consumerName = cms.untracked.string('DQM Source'),
-    SelectHLTOutput = cms.untracked.string('hltOutputDQM'),
-    max_queue_depth = cms.int32(5),
-    maxEventRequestRate = cms.untracked.double(100.0),
-    SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('*')
-    ),
-    headerRetryInterval = cms.untracked.int32(3),
-    dropOldLumisectionEvents = cms.untracked.bool(True)
-)
+
