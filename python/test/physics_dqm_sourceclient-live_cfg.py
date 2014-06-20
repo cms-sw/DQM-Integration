@@ -8,30 +8,31 @@ process = cms.Process("Physics")
 # Event Source
 #-----------------------------
 
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'Physics DQM Consumer'
-#process.DQMEventStreamHttpReader.sourceURL = "http://localhost:50082/urn:xdaq-application:lid=29"
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 
-#filter on specific trigger types
-#process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-#    SelectEvents = cms.vstring('HLT_Activity*','HLT_MinBias*','HLT_L1Tech_HCAL_HF_coincidence_PM','HLT_*BSC','HLT_HFThreshold*','HLT_L1*','HLT_*SingleTrack')
-#) 
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 # DQM Environment
 #-----------------------------
 
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Physics'
+# for local test
+process.dqmSaver.dirName = '.'
 
 # 0=random, 1=physics, 2=calibration, 3=technical
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
+process.hltTriggerTypeFilter = cms.EDFilter("HLTTriggerTypeFilter",
+    SelectedTriggerType = cms.int32(1)
+)
 
 #---- for P5 (online) DB access
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 process.load('Configuration/StandardSequences/GeometryIdeal_cff')
 process.load('Configuration/StandardSequences/MagneticField_AutoFromDBCurrent_cff')
