@@ -5,17 +5,11 @@ process = cms.Process("DQM")
 #----------------------------
 #### Event Source
 #----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'Info DQM Consumer'
-process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(10.0)
-#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30:22100/urn:xdaq-application:lid=30')
-#process.DQMEventStreamHttpReader.sourceURL = cms.string('http://dqm-c2d07-30.cms:50082/urn:xdaq-application:lid=29')
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 
-#----------------------------
-#### DQM Environment
-#----------------------------
-process.load("DQMServices.Core.DQM_cfg")
-#process.DQMStore.referenceFileName = "DT_reference.root"
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 #### DQM Environment
@@ -24,6 +18,7 @@ process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'Info'
 process.dqmSaver.saveByRun = 1
 process.dqmSaver.saveByMinute = 4
+process.dqmSaver.dirName = '.'
 #-----------------------------
 process.load("DQMServices.Components.DQMProvInfo_cfi")
 
@@ -35,7 +30,10 @@ process.MessageLogger = cms.Service("MessageLogger",
                                     )
 
 # Global tag
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #process.GlobalTag.connect = "frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_31X_GLOBALTAG"
