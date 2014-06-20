@@ -13,36 +13,33 @@ process = cms.Process("DQM")
 #----------------------------
 # Event Source
 #
-
-process.load("DQM.Integration.test.inputsource_cfi")
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 #
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.vstring("*")
-    )
-process.DQMEventStreamHttpReader.consumerName = 'L1T DQM Consumer'
-process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(25.0)   
-
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #----------------------------
 # DQM Environment
 #
  
 #
-process.load("DQMServices.Core.DQM_cfg")
-
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 process.dqmEnv.subSystemFolder = 'L1T'
 
 #
 process.load("DQM.Integration.test.environment_cfi")
+process.dqmSaver.dirName = '.'
 #
 # references needed
 process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/l1t_reference.root"
 
-#
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-es_prefer_GlobalTag = cms.ESPrefer('GlobalTag')
-process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#es_prefer_GlobalTag = cms.ESPrefer('GlobalTag')
+#process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.GeometryRecoDB_cff")
