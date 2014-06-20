@@ -10,12 +10,12 @@ subsystem="Hcal" # specify subsystem name here
 #----------------------------
 # DQM Environment
 #-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = subsystem
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
+process.dqmSaver.dirName = '.'
 
 print "Running with run type = ", process.runType.getRunType()
 
@@ -39,13 +39,20 @@ if (host==HcalPlaybackHost):
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'Hcal DQM Consumer'
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# DB Condition for online cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+
+# DB condition for offline test
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 
