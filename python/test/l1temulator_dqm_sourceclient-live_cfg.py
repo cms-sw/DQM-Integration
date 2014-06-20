@@ -39,7 +39,7 @@ process.dqmSaver.dirName = '.'
 #
 # Condition for P5 cluster
 #process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
-process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
+#process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 # Condition for lxplus
 process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
