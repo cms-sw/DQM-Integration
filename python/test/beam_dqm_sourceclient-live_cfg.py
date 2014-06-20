@@ -138,19 +138,6 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
     process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 
 
-
-#    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-#             SelectEvents = cms.vstring('HLT_L1*',
-#                                        'HLT_Jet*',
-#                                        'HLT_*Cosmic*',
-#                                        'HLT_HT*',
-#                                        'HLT_MinBias_*',
-#                                        'HLT_Physics*',
-#                                        'HLT_ZeroBias*',
-#                                        'HLT_PAL1*',
-#                                        'HLT_PAZeroBias_*')
-#                                      )
-
     process.load("Configuration.StandardSequences.Reconstruction_cff")
     process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
 
@@ -229,11 +216,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
     #----------------------------
     # Event Source
     #-----------------------------
-#    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
-#          SelectEvents = cms.vstring(
-#                                     'HLT_HI*'
-#                                        )
-#                                     )
 
     process.dqmBeamMonitor.OnlineMode = True                  ## in MC the LS are not ordered??
     process.dqmBeamMonitor.resetEveryNLumi = 10
