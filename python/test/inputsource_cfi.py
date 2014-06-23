@@ -55,10 +55,10 @@ source = cms.Source("DQMStreamerReader",
     runNumber = cms.untracked.uint32(options.runNumber),
     runInputDir = cms.untracked.string(options.runInputDir),
     streamLabel = cms.untracked.string(''),
-    minEventsPerLumi = cms.untracked.int32(9999),
+    minEventsPerLumi = cms.untracked.int32(1),
     delayMillis = cms.untracked.uint32(500),
     skipFirstLumis = cms.untracked.bool(options.skipFirstLumis),
     deleteDatFiles = cms.untracked.bool(False),
-    endOfRunKills  = cms.untracked.bool(False),
+    endOfRunKills  = cms.untracked.bool(True),
 )
 
