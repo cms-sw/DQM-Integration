@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 #from DQMServices.Core.DQM_cfg import *
+from DQMServices.Core.DQMStore_cfi import *
 
 DQM = cms.Service("DQM",                                                                                                                                                                           
                   debug = cms.untracked.bool(False),
@@ -41,8 +42,8 @@ runParameters.register ('runkey',
   "Run Keys of CMS")
 
 # Fix to allow scram to compile
-if len(sys.argv) > 1:
-  runParameters.parseArguments()
+#if len(sys.argv) > 1:
+#  runParameters.parseArguments()
 
 runType = RunType(['pp_run','cosmic_run','hi_run','hpu_run'])
 if not runParameters.runkey.strip():

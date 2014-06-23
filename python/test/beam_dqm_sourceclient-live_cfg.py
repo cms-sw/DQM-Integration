@@ -5,21 +5,26 @@ process = cms.Process("BeamMonitor")
 #----------------------------
 # Common part for PP and H.I Running
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
 
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #--------------------------
 # HLT Filter
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
-
+process.hltTriggerTypeFilter = cms.EDFilter("HLTTriggerTypeFilter",
+    SelectedTriggerType = cms.int32(1)
+)
 
 #----------------------------
 # DQM Live Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'BeamMonitor'
+# uncomment for running local test
+process.dqmSaver.dirName     = '.'
 
 import DQMServices.Components.DQMEnvironment_cfi
 process.dqmEnvPixelLess = DQMServices.Components.DQMEnvironment_cfi.dqmEnv.clone()
@@ -39,9 +44,15 @@ process.load("DQM.BeamMonitor.BeamConditionsMonitor_cff")
 ####  SETUP TRACKING RECONSTRUCTION ####
 process.load("Configuration.StandardSequences.Geometry_cff")
 process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
 process.load("Configuration.StandardSequences.RawToDigi_Data_cff")
 
+#---------------
+# Calibration
+#---------------
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 # Change Beam Monitor variables
 if process.dqmSaver.producer.value() is "Playback":
@@ -127,19 +138,6 @@ if (process.runType.getRunType() == process.runType.pp_run or process.runType.ge
     process.siStripDigis.ProductLabel = cms.InputTag("rawDataCollector")
 
 
-
-    process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(
-             SelectEvents = cms.vstring('HLT_L1*',
-                                        'HLT_Jet*',
-                                        'HLT_*Cosmic*',
-                                        'HLT_HT*',
-                                        'HLT_MinBias_*',
-                                        'HLT_Physics*',
-                                        'HLT_ZeroBias*',
-                                        'HLT_PAL1*',
-                                        'HLT_PAZeroBias_*')
-                                      )
-
     process.load("Configuration.StandardSequences.Reconstruction_cff")
     process.load("RecoVertex.PrimaryVertexProducer.OfflinePixel3DPrimaryVertices_cfi")
 
@@ -218,11 +216,6 @@ if (process.runType.getRunType() == process.runType.hi_run):
     #----------------------------
     # Event Source
     #-----------------------------
-    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(
-          SelectEvents = cms.vstring(
-                                     'HLT_HI*'
-                                        )
-                                     )
 
     process.dqmBeamMonitor.OnlineMode = True                  ## in MC the LS are not ordered??
     process.dqmBeamMonitor.resetEveryNLumi = 10

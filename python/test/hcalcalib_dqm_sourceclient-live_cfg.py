@@ -9,13 +9,12 @@ subsystem="HcalCalib"
 #----------------------------
 # DQM Environment
 #-----------------------------
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = subsystem
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hcal_reference.root'
-
+process.dqmSaver.dirName = "."
 
 print "Running with run type = ", process.runType.getRunType()
 
@@ -39,20 +38,28 @@ if (host==HcalCalibPlaybackHost):
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
-process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
-process.DQMEventStreamHttpReader.max_queue_depth = cms.int32(100)
-process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
-if (HEAVYION):
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
+
+#process.DQMEventStreamHttpReader.consumerName = 'Hcal Orbit Gap DQM Consumer'
+#process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HcalCalibratio*','HLT_TechTrigHCALNoise*','HLT_L1Tech_HBHEHO_totalOR*'))
+#process.DQMEventStreamHttpReader.max_queue_depth = cms.int32(100)
+#process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibration')
+#if (HEAVYION):
 #    process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputCalibrationHI')
-    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
+#    process.DQMEventStreamHttpReader.SelectEvents =  cms.untracked.PSet(SelectEvents = cms.vstring('HLT_HIHcalCalibration_v*','HLT_HcalCalibration_v*'))
     
 #process.DQMEventStreamHttpReader.sourceURL = cms.string('http://%s:23100/urn:xdaq-application:lid=30' % socket.gethostname())
 #-----------------------------
 # Hcal Conditions: from Global Conditions Tag 
 #-----------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# DB Condition for online cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# DB condition for offline test
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 

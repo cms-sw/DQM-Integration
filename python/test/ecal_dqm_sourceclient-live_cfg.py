@@ -43,10 +43,8 @@ process.load("DQM.EcalCommon.EcalDQMBinningService_cfi")
 process.load("DQM.EcalBarrelMonitorTasks.EcalMonitorTask_cfi")
 process.load("DQM.EcalBarrelMonitorClient.EcalMonitorClient_cfi")
 
-
 ### DQM COMMON MODULES ###
 
-process.load("DQMServices.Core.DQM_cfg")
 
 process.dqmQTest = cms.EDAnalyzer("QualityTester",
     reportThreshold = cms.untracked.string("red"),
@@ -74,7 +72,12 @@ process.maxEvents = cms.untracked.PSet(
   input = cms.untracked.int32(-1)
 )
 
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:com10', '')
 
 process.GlobalTag.toGet = cms.VPSet(
     cms.PSet(
@@ -188,7 +191,11 @@ process.dqmEnv.subSystemFolder = cms.untracked.string("Ecal")
 process.dqmSaver.convention = "Online"
 
  ## Source ##
-process.source.consumerName = cms.untracked.string("Ecal DQM Consumer")
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
  ## Run type specific ##
 

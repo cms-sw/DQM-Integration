@@ -1,15 +1,19 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("DQM")
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+# used in the old input source
+#process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputHLTDQM')
 
-process.load("DQMServices.Core.DQM_cfg")
-process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/hlt_reference.root"
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 process.load("DQM.Integration.test.environment_cfi")
+process.DQMStore.referenceFileName = "/dqmdata/dqm/reference/hlt_reference.root"
+process.dqmSaver.dirName = '.'
 
 process.load("Configuration.StandardSequences.GeometryPilot2_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
@@ -19,7 +23,9 @@ process.SiStripDetInfoFileReader = cms.Service("SiStripDetInfoFileReader")
 process.TkDetMap = cms.Service("TkDetMap")
 
 #---- for P5 (online) DB access
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
 process.load("DQM.HLTEvF.HLTMonitor_cff")
 process.load("DQM.HLTEvF.HLTMonitorClient_cff")
@@ -34,7 +40,6 @@ process.p = cms.EndPath(process.hltSeedL1Logic)
 
 
 process.pp = cms.Path(process.dqmEnv+process.dqmSaver)
-process.DQMEventStreamHttpReader.consumerName = 'HLT DQM Consumer'
 process.dqmEnv.subSystemFolder = 'HLT'
 #process.hltResults.plotAll = True
 

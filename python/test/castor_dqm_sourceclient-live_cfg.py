@@ -4,14 +4,15 @@ process = cms.Process("CASTORDQM")
 #=================================
 # Event Source
 #================================+
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'CASTOR DQM Consumer'
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_600Tower*','HLT_L1*','HLT_Jet*','HLT_HT*','HLT_MinBias_*','HLT_Physics*', 'HLT_ZeroBias*'))
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 #================================
 # DQM Environment
 #================================
-process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 #process.DQMStore.referenceFileName = 'castor_reference.root'
 
@@ -144,7 +145,8 @@ process.castorMonitor = cms.EDAnalyzer("CastorMonitorModule",
 #process.dqmSaver.dirName = '/tmp/'
 #process.dqmSaver.convention = 'Online'
 #process.dqmSaver.saveByRun = True
-
+# for local test
+process.dqmSaver.dirName = '.'
 
 #-----------------------------
 # Scheduling

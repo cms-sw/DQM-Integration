@@ -5,9 +5,11 @@ process = cms.Process("hlxdqmlive")
 from FWCore.MessageLogger.MessageLogger_cfi import *
 
 ## Input source
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'HLX DQM Consumer'
-process.DQMEventStreamHttpReader.maxEventRequestRate = cms.untracked.double(5.0)
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 ## HLX configuration
 process.load("DQM.HLXMonitor.hlx_dqm_sourceclient_cfi")
@@ -21,6 +23,9 @@ process.hlxdqmsource.SourcePort = 51010
 ## Set up env and saver
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "HLX"
+
+process.load("DQMServices.Components.DQMEnvironment_cfi")
+process.dqmSaver.dirName = '.'
 
 ## Lumi reference file
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/hlx_reference.root'

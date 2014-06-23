@@ -8,10 +8,11 @@ process.MessageLogger = cms.Service( "MessageLogger",
 #----------------------------
 # Event Source
 #-----------------------------
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'SiStripLAS DQM Consumer'
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_TrackerCalibration*'))
-process.DQMEventStreamHttpReader.SelectHLTOutput = cms.untracked.string('hltOutputTrackerCalibration') 
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 process.maxEvents = cms.untracked.PSet(
   input = cms.untracked.int32( -1 )
@@ -22,15 +23,18 @@ process.siStripDigis.ProductLabel = "source"#"hltCalibrationRaw"
 #--------------------------
 # Calibration
 #--------------------------
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 
-process.load("DQMServices.Core.DQM_cfg" )
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 #----------------------------
 # DQM Live Environment
 #-----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder    = "SiStripLAS"
+process.dqmSaver.dirName = '.'
 #----------------------------
 # DQM Alignment Software
 #----------------------------

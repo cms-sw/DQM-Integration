@@ -8,15 +8,17 @@ isOfflineDQM = False
 process = cms.Process("RPCDQM")
 
 ############## Event Source #####################
-process.load("DQM.Integration.test.inputsource_cfi")
-process.DQMEventStreamHttpReader.consumerName = 'RPC DQM Consumer'
- #process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('HLT_MinBia*','HLT_CSCBeamHaloOverlapRing2','HLT_CSCBeamHaloRing2or3', 'HLT_L1Mu*','HLT_L1Mu','HLT_TrackerCosmics'))
-process.DQMEventStreamHttpReader.SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('*'))
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
 
 ############### HLT Filter#######################
-process.load("HLTrigger.special.HLTTriggerTypeFilter_cfi")
 # 0=random, 1=physics, 2=calibration, 3=technical
-process.hltTriggerTypeFilter.SelectedTriggerType = 1
+process.hltTriggerTypeFilter = cms.EDFilter("HLTTriggerTypeFilter",
+    SelectedTriggerType = cms.int32(1)
+)
 
 ################# Geometry  #####################
 #process.load("Geometry.MuonCommonData.muonIdealGeometryXML_cfi")
@@ -27,14 +29,18 @@ process.load("Configuration.StandardSequences.GeometryRecoDB_cff")
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 ############# DQM Cetral Modules ################
-process.load("DQMServices.Core.DQM_cfg")
-process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+#process.load("DQMServices.Core.DQM_cfg")
+# Condition for P5 cluster
+#process.load("DQM.Integration.test.FrontierCondition_GT_cfi")
+# Condition for lxplus
+process.load("DQM.Integration.test.FrontierCondition_GT_Offline_cfi") 
 process.GlobalTag.RefreshEachRun = cms.untracked.bool(True)
 
 ############## DQM Enviroment ###################
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'RPC'
 process.load("DQMServices.Components.DQMEnvironment_cfi")
+process.dqmSaver.dirName = '.'
 
 process.DQMStore.referenceFileName = '/dqmdata/dqm/reference/rpc_reference.root'
 

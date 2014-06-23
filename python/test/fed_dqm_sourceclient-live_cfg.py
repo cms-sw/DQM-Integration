@@ -6,16 +6,14 @@ process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
     )
 
-process.source = cms.Source("DQMHttpSource",
-               sourceURL =   cms.untracked.string('http://%s:22100/urn:xdaq-application:lid=30' % socket.gethostname()),        
-               DQMconsumerName = cms.untracked.string('FED EventFilter Histogram Consumer'),
-               DQMconsumerPriority = cms.untracked.string('normal'),
-               headerRetryInterval = cms.untracked.int32(5),
-               maxDQMEventRequestRate =  cms.untracked.double(1.0),
-               topLevelFolderName =    cms.untracked.string('*')
-                            )
 
-process.load("DQMServices.Core.DQM_cfg")
+# for live online DQM in P5
+#process.load("DQM.Integration.test.inputsource_cfi")
+
+# for testing in lxplus
+process.load("DQM.Integration.test.fileinputsource_cfi")
+
+#process.load("DQMServices.Core.DQM_cfg")
 process.load("DQMServices.Components.DQMEnvironment_cfi")
 
 #----------------------------
@@ -23,6 +21,7 @@ process.load("DQMServices.Components.DQMEnvironment_cfi")
 #----------------------------
 process.load("DQM.Integration.test.environment_cfi")
 process.dqmEnv.subSystemFolder = 'FED'
+process.dqmSaver.dirName = '.'
 
 process.load("DQM.TrigXMonitorClient.HLTScalersClient_cfi")
 process.load("DQM.TrigXMonitorClient.L1TScalersClient_cfi")
